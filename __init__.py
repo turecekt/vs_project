@@ -8,10 +8,10 @@ The example module supplies one function, compute().  For example,
 
 
 def compute(x):
-    """ Functon compute returns evaluation of expression using argument x
+    """ Functon compute returns evaluation of expression using argument x.
 
     Args:
-        - input - Input of the function
+        - x - Input of the function
 
     Returns:
         - output - Output of the function
