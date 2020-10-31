@@ -1,5 +1,7 @@
 """This is "Morseovka" project.
 
+It is not suitable for blind people.
+
 The main module supplies one function, userInput().
 
 >>> compute(3)
@@ -16,3 +18,4 @@ def userInput(inputString):
     Returns:
         - output - Output of the function
     """
+
