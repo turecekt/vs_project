@@ -7,6 +7,7 @@ The example module supplies one function, factorial().  For example,
 6
 """
 
+
 def compute(x):
     """
     Functon compute returns evaluation of expression
