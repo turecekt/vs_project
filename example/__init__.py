@@ -1,4 +1,4 @@
-"""This is the "example" module.
+"""This is the "example" module. Owner Michal Raska
 
 The example module supplies one function, compute().  For example,
 
