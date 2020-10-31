@@ -1,19 +1,18 @@
-"""This is the "example" module.
+"""This is "Morseovka" project.
 
-The example module supplies one function, compute().  For example,
+The main module supplies one function, userInput().
 
 >>> compute(3)
 3
 """
 
 
-def compute(x):
-    """Functon compute returns evaluation of expression using argument x.
+def userInput(inputString):
+    """Function userInput reads keyboard input as argument inputString.
 
     Args:
-        - x - Input of the function
+        - inputString - Input of the function
 
     Returns:
         - output - Output of the function
     """
-    return x * x - 2 * x
