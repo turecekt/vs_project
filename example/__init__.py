@@ -16,4 +16,4 @@ def compute(x):
     Returns:
         - output - Output of the function
     """
-    return x * x - x
+    return x * x - 2 * x
