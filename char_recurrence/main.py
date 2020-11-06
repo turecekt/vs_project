@@ -30,9 +30,14 @@ def read_file(input_file, arg_len):
 
     return data
 
+def number_char(file_data):
+    num_char = len(file_data)
+
+    return num_char
 
 def main():
     file_data  = arguments()
+    number_char(file_data)
 
 if __name__ == '__main__':
     main()
