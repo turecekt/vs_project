@@ -1,11 +1,10 @@
 import sys
-import re
 from argparse import ArgumentParser
 
 def arguments():
-    # Method for parsing argument from stdin or as parameters
+    # Method for parsing argument from std-in or as parameters
     # Use argparse library
-    # Without parameter it read from stdin else from input file
+    # Without parameter it read from std-in else from input file
     # return all arguments
     parser = ArgumentParser()
     parser.add_argument("-f", "--file", dest = "filename", action = "store",
@@ -20,7 +19,8 @@ def arguments():
         return read_file(args, arg_len)
 
 def read_file(input_file, arg_len):
-
+    # Method for reading char to specific char #
+    # Method return @data (string which will be working next)
     if arg_len != 1:
         with open(input_file, "rt") as f:
             text = f.read()
