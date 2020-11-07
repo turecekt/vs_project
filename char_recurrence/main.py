@@ -1,6 +1,8 @@
 import re
 import sys
 from argparse import ArgumentParser
+from operator import itemgetter
+
 
 def arguments():
     # Method for parsing argument from std-in or as parameters
@@ -40,16 +42,24 @@ def number_occurence(file_data):
     my_list = []
     file_data = file_data.lower()
     for char in file_data:
-        if char.isalpha():
+        if re.match('^[a-z]+$', char):
             count = len(re.findall(char, file_data))
             if not tuple((char, count)) in my_list:
                 my_list.append(tuple((char, count)))
 
     return my_list
 
+def print_number_occurence(list):
+    for x in list:
+        print('Znak \"', x[0], "\" sa v texte nachadza : ", x[1], "krat")
+    print("Najcastejsie sa vyskutuje znak: \"", max(list, key = itemgetter(1))[0], "\" a pocet vyskytov je: ", max(list, key = itemgetter(1))[1])
+    print("Najmenej sa vyskutuje znak: \"", min(list, key = itemgetter(1))[0], "\" a pocet vyskytov je: ", min(list, key = itemgetter(1))[1])
+
+
 def main():
     file_data  = arguments()
     number_char(file_data)
+    print_number_occurence(number_occurence(file_data.replace(" ", "")))
 
 if __name__ == '__main__':
     main()
