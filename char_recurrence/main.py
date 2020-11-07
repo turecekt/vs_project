@@ -1,3 +1,4 @@
+import re
 import sys
 from argparse import ArgumentParser
 
@@ -34,6 +35,17 @@ def number_char(file_data):
     num_char = len(file_data)
 
     return num_char
+
+def number_occurence(file_data):
+    my_list = []
+    file_data = file_data.lower()
+    for char in file_data:
+        if char.isalpha():
+            count = len(re.findall(char, file_data))
+            if not tuple((char, count)) in my_list:
+                my_list.append(tuple((char, count)))
+
+    return my_list
 
 def main():
     file_data  = arguments()
