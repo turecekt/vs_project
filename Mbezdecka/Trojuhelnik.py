@@ -5,22 +5,26 @@ jaky je jeho obvod a obsah
 zda je nebo neni pravouhly
 
 """
+A = [0,0]
+i = 0
 check = False
 
 print("Zadej souradnice pro bod A, danou souradnici vzdy potvrd enterem")
 while check == False:
-    xA = input()
-    check = xA.isnumeric()
+    A[i] = input()
+    check = A[i].isnumeric()
     if check == False:
         print("Nezadal jsi ciselnou hodnotu!! Zkus to znovu")
     
 check = False   
+i = i+1
 while check == False:
-    xB = input()
-    check = xB.isnumeric()
+    A[i] = input()
+    check = A[i].isnumeric()
     if check == False:
         print("Nezadal jsi ciselnou hodnotu!! Zkus to znovu")
 
 """uzivatelsky test nacteni
-print(xA, xB)
+
+print(A)
 """
