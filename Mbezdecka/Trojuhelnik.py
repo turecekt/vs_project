@@ -81,11 +81,11 @@ print(C)
 """ vypocet stran"""
 import  math
 
-Sa = math.sqrt(((float(B[0]) - float(C[0]))**2 + (float(B[1]) - float(C[1]))**2))
+Sa = round(math.sqrt((float(B[0]) - float(C[0]))**2 + (float(B[1]) - float(C[1]))**2))
 
-Sb = math.sqrt((float(A[0]) - float(C[0]))**2 + (float(A[1]) - float(C[1]))**2)
+Sb = round(math.sqrt((float(A[0]) - float(C[0]))**2 + (float(A[1]) - float(C[1]))**2))
 
-Sc = math.sqrt((float(A[0]) - float(B[0]))**2 + (float(A[1]) - float(B[1]))**2)
+Sc = round(math.sqrt((float(A[0]) - float(B[0]))**2 + (float(A[1]) - float(B[1]))**2))
 
 
 
@@ -98,13 +98,23 @@ else:
     check= False
     pass
 
-print("Delka strany a je: ",round(Sa))
-print("Delka strany b je: ",round(Sb))
-print("Delka strany c je: ",round(Sc))
 
+""" vypis hodnot trojuhelniku"""
 if check == True:
+    print("Delka strany a je: ",round(Sa))
+    print("Delka strany b je: ",round(Sb))
+    print("Delka strany c je: ",round(Sc))
     obvod = Sa+Sb+Sc
     s = obvod/2
     obsah =math.sqrt(s*(s-Sa)*(s-Sb)*(s-Sc))
     print("Obvod trojuhelniku je: ",round(obvod))
     print("Obsah trojuhelniku je: ",round(obsah))
+   
+
+    if Sc**2 == Sb**2 + Sc**2 or Sa**2 == Sb**2 + Sc**2 or Sb**2 == Sa**2 + Sc**2:
+        print("Trojuhelnik je pravouhly")
+    else:
+        print("Trojuhelnik neni pravouhly")
+        pass
+
+    
