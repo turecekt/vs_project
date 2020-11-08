@@ -1,16 +1,13 @@
-""" Toto je program pro nacteni bodu trojuhelniku v 2d prostoru
+"""Toto je program pro nacteni bodu trojuhelniku v 2d prostoru
 overeni zda lze setrojit
 jakou ma delku stran
 jaky je jeho obvod a obsah
 zda je nebo neni pravouhly
-
 """
-A = [0,0]
-B = [0,0]
-C = [0,0]
-
+A = [0, 0]
+B = [0, 0]
+C = [0, 0]
 i = 0
-
 check = False
 
 """ Nacteni Bodu A"""
@@ -30,7 +27,6 @@ while check == False:
         print("Nezadal jsi ciselnou hodnotu!! Zkus to znovu")
 
 """uzivatelsky test nacteni
-
 print(A)
 """
 """nacteni bodu B"""
@@ -52,7 +48,6 @@ while check == False:
         print("Nezadal jsi ciselnou hodnotu!! Zkus to znovu")
 
 """uzivatelsky test nacteni
-
 print(B)
 """
 """nacteni bodu C"""
@@ -74,20 +69,14 @@ while check == False:
         print("Nezadal jsi ciselnou hodnotu!! Zkus to znovu")
 
 """uzivatelsky test nacteni
-
 print(C)
 """
 
 """ vypocet stran"""
 import  math
-
 Sa = round(math.sqrt((float(B[0]) - float(C[0]))**2 + (float(B[1]) - float(C[1]))**2))
-
 Sb = round(math.sqrt((float(A[0]) - float(C[0]))**2 + (float(A[1]) - float(C[1]))**2))
-
 Sc = round(math.sqrt((float(A[0]) - float(B[0]))**2 + (float(A[1]) - float(B[1]))**2))
-
-
 
 """test sestrojitelnosti"""
 if Sa + Sb > Sc and Sa + Sc> Sb and Sb + Sc > Sa:
@@ -97,7 +86,6 @@ else:
     print("Trojuhelnik nelze setrojit")
     check= False
     pass
-
 
 """ vypis hodnot trojuhelniku"""
 if check == True:
@@ -110,11 +98,8 @@ if check == True:
     print("Obvod trojuhelniku je: ",round(obvod))
     print("Obsah trojuhelniku je: ",round(obsah))
    
-
     if Sc**2 == Sb**2 + Sc**2 or Sa**2 == Sb**2 + Sc**2 or Sb**2 == Sa**2 + Sc**2:
         print("Trojuhelnik je pravouhly")
     else:
         print("Trojuhelnik neni pravouhly")
         pass
-
-    
