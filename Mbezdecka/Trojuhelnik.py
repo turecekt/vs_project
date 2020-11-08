@@ -10,6 +10,7 @@ B = [0,0]
 C = [0,0]
 
 i = 0
+
 check = False
 
 """ Nacteni Bodu A"""
@@ -79,13 +80,16 @@ print(C)
 
 """ vypocet stran"""
 import  math
-i = (B[0] - C[0])**2 + (B[1] - C[1])**2
-stra = math.sqrt(i)
-i = (A[0] - C[0])**2 + (A[1] - C[1])**2
-strb = math.sqrt(i)
-i = (A[0] - B[0])**2 + (A[1] - B[1])**2
-strc = math.sqrt(i)
+Sa = ((B[0] - C[0])**2 + (B[1] - C[1])**2)
+Sa = math.sqrt(Sa)
+Sb = (A[0] - C[0])**2 + (A[1] - C[1])**2
+Sb = math.sqrt(Sb)
+Sc = (A[0] - B[0])**2 + (A[1] - B[1])**2
+Sc = math.sqrt(Sc)
 
 """test sestrojitelnosti"""
-if stra + strb > strc and stra + strc > strb and strb + strc > stra
-    print("Trojuhelnik lze setrojit)
+if stra + strb > strc and stra + strc > strb and strb + strc > stra:
+    print("Trojuhelnik lze setrojit")
+else:
+    print("Trojuhelnik nelze setrojit")
+    pass
