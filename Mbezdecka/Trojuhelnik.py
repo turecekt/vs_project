@@ -80,16 +80,31 @@ print(C)
 
 """ vypocet stran"""
 import  math
-Sa = ((B[0] - C[0])**2 + (B[1] - C[1])**2)
-Sa = math.sqrt(Sa)
-Sb = (A[0] - C[0])**2 + (A[1] - C[1])**2
-Sb = math.sqrt(Sb)
-Sc = (A[0] - B[0])**2 + (A[1] - B[1])**2
-Sc = math.sqrt(Sc)
+
+Sa = math.sqrt(((float(B[0]) - float(C[0]))**2 + (float(B[1]) - float(C[1]))**2))
+
+Sb = math.sqrt((float(A[0]) - float(C[0]))**2 + (float(A[1]) - float(C[1]))**2)
+
+Sc = math.sqrt((float(A[0]) - float(B[0]))**2 + (float(A[1]) - float(B[1]))**2)
+
+
 
 """test sestrojitelnosti"""
-if stra + strb > strc and stra + strc > strb and strb + strc > stra:
+if Sa + Sb > Sc and Sa + Sc> Sb and Sb + Sc > Sa:
     print("Trojuhelnik lze setrojit")
+    check= True
 else:
     print("Trojuhelnik nelze setrojit")
+    check= False
     pass
+
+print("Delka strany a je: ",round(Sa))
+print("Delka strany b je: ",round(Sb))
+print("Delka strany c je: ",round(Sc))
+
+if check == True:
+    obvod = Sa+Sb+Sc
+    s = obvod/2
+    obsah =math.sqrt(s*(s-Sa)*(s-Sb)*(s-Sc))
+    print("Obvod trojuhelniku je: ",round(obvod))
+    print("Obsah trojuhelniku je: ",round(obsah))
