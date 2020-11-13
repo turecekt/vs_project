@@ -1,3 +1,22 @@
+"""This is triangle module.
+
+Triangle module supplies many useful functions for trinagle computation
+in two dimensional space such as lengthOfSide() etc.
+
+>>> checkIfconstructable([[1,1],[1,2],[1,3]])
+True
+>>> checkIfconstructable([[1,1],[1,2],[1,1]])
+False
+>>> lengthOfSide([1,1],[1,12])
+11.0
+>>> countArea([3,5,4])
+6.0
+>>> checkIfRightAngled([3,5,4])
+True
+>>> countPerimeter([1,2,3,4])
+10
+"""
+
 import math
 
 def checkIfconstructable(arr):
