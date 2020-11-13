@@ -55,19 +55,20 @@ def division(a, b) -> float:
 
 
 def randomExample():
-    """ Function for creating random math examples
+    """
+    Function for creating random math examples
     Parameters:
-        operator (int): random number representing final operator of math example [1:+, 2:-, 3:*, 4:/]
+        operator (int): random number for operator [1; 2; 3; 4]
         a (int): random number <-10, 10>
         b (int): random number <10, 10>
 
     Returns: result of math expression
     """
-    operator = random.randint(1, 4)
-    a = random.randint(-10, 10)
+
+    operator = random.randint(4, 4)
+    a = random.randint(-1, 1)
     b = random.randint(-1, 1)
 
-    # part of code for division
     if operator == 4:
         if b < 0:
             print(f"{a}/({b})")
@@ -75,9 +76,8 @@ def randomExample():
             print(f"{a}/{b}")
 
         result = division(a, b)
-        if not result:
+        if result is False:
             return randomExample()
-
 
     # part of code for multiply
     elif operator == 3:
@@ -108,7 +108,10 @@ def randomExample():
 
 
 def compareResults(pc, user) -> bool:
-    """ Function which compare two values, right result of math example and user answer
+    """
+    Function which compare two values,
+    right result of math example and user answer
+
     Args:
         pc: Right result of math example
         user: Answer of user
@@ -118,7 +121,7 @@ def compareResults(pc, user) -> bool:
     try:
         if float(pc) == float(user):
             return True
-    except:
+    except ValueError:
         return False
     return False
 
@@ -137,6 +140,35 @@ def average(times) -> float:
     return round(av, 2)
 
 
+"""
+Unit tests for 6 main functions
+"""
+
+
+def test_sum():
+    assert sum(2, 2) == 4
+
+
+def test_subtraction():
+    assert subtraction(5, 2) == 3
+
+
+def test_multiply():
+    assert multiply(4, 8) == 32
+
+
+def test_division():
+    assert division(0, 1) == 0
+
+
+def test_average():
+    assert average([1, 2, 6]) == 3
+
+
+def test_compareResults():
+    assert compareResults(4, 4)
+
+
 points = 0
 i = 0
 times = list()
@@ -149,7 +181,7 @@ while i < repetition:
     user = input("Your answer: ")
 
     stop = perf_counter()
-    times.append(stop-start)
+    times.append(stop - start)
 
     if compareResults(pc, user):
         points += 1
