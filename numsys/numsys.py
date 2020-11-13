@@ -1,3 +1,28 @@
+##
+# @mainpage ČÍSELNÉ SOUSTAVY
+# @version 0.0.1
+# @section intro Úvod
+# Závěrečný projekt do předmětu Nástroje pro vývoj softwarových projektů
+#
+# @section  The sole purpose of the program
+# lorem ipsum dolor sit amet purpose of the program dolor sit amet
+#
+##
+
+##
+# @file numsys.py
+# @brief Převodník numerických soustav
+# @author Matěj Mazáč <m_mazac@utb.cz>
+#
+# @section description Několik funkcí převádějících celá, kladná čísla z desítkové soustavy
+#
+##
+
+##
+# @brief Vrací zadané číslo převedené do dvojkové soustavy
+# @param[in] number číslo určené pro převod do dvojkové soustavy
+#
+##
 def convertToBinary(number):
 	convertedNumber = ""
 	remainder = number
@@ -11,6 +36,11 @@ def convertToBinary(number):
 
 	return convertedNumber
 
+##
+# @brief Vrací zadané číslo převedené do osmičkové soustavy
+# @param[in] number číslo určené pro převod do osmičkové soustavy
+#
+##
 def convertToOctal(number): 
 	convertedNumber = ""
 	remainder = number
@@ -35,6 +65,11 @@ def convertToOctal(number):
 
 	return convertedNumber
 
+##
+# @brief Vrací zadané číslo převedené do šestnáctkové soustavy
+# @param[in] number číslo určené pro převod do šestnáctkové soustavy
+#
+##
 def convertToHexadecimal(number): 
 	convertedNumber = ""
 	remainder = number
