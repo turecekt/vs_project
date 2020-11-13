@@ -49,6 +49,8 @@ def division(a, b) -> float:
 
     Returns: division of two numbers (double)
     """
+    if b == 0:
+        return False
     return round((a / b), 2)
 
 
@@ -63,19 +65,19 @@ def randomExample():
     """
     operator = random.randint(1, 4)
     a = random.randint(-10, 10)
-    b = random.randint(-10, 10)
+    b = random.randint(-1, 1)
 
     # part of code for division
     if operator == 4:
-        if b == 0:
-            randomExample()
+        if b < 0:
+            print(f"{a}/({b})")
         else:
-            if b < 0:
-                print(f"{a}/({b})")
-            else:
-                print(f"{a}/{b}")
+            print(f"{a}/{b}")
 
-            result = division(a, b)
+        result = division(a, b)
+        if not result:
+            return randomExample()
+
 
     # part of code for multiply
     elif operator == 3:
