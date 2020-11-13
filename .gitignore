@@ -1,0 +1,6 @@
+app.pyc
+input.pyc
+triangle.pyc
+.pytest_cache
+__pycache__
+Settings.json
