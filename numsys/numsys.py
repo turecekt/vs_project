@@ -29,6 +29,11 @@
 #
 ##
 def convertToBinary(number):
+	if number < 0:
+		return "number parameter cant be negative"
+	if isinstance(number, int) == False:
+		return "number parameter must be round(int)"
+
 	convertedNumber = ""
 	remainder = number
 	while remainder > 0:
@@ -47,6 +52,11 @@ def convertToBinary(number):
 #
 ##
 def convertToOctal(number): 
+	if number < 0:
+		return "number parameter cant be negative"
+	if isinstance(number, int) == False:
+		return "number parameter must be round(int)"
+
 	convertedNumber = ""
 	remainder = number
 	while remainder > 0:
@@ -76,6 +86,11 @@ def convertToOctal(number):
 #
 ##
 def convertToHexadecimal(number): 
+	if number < 0:
+		return "number parameter cant be negative"
+	if isinstance(number, int) == False:
+		return "number parameter must be round(int)"
+	
 	convertedNumber = ""
 	remainder = number
 	while remainder > 0:
@@ -118,8 +133,26 @@ def convertToHexadecimal(number):
 def test_convertToBinary():
 	assert convertToBinary(20) == "10100"
 
+def test_convertToBinaryNegativeParameter():
+	assert convertToBinary(-20) == "number parameter cant be negative"
+
+def test_convertToBinaryParameterNotRound():
+	assert convertToBinary(20.5) == "number parameter must be round(int)"
+
 def test_convertToOctal():
 	assert convertToOctal(20) == "24"
 
+def test_convertToOctalNegativeParameter():
+	assert convertToOctal(-20) == "number parameter cant be negative"
+
+def test_convertToOctalParameterNotRound():
+	assert convertToBinary(20.5) == "number parameter must be round(int)"
+
 def test_convertToHexadecimal():
 	assert convertToHexadecimal(185) == "B9"
+
+def test_convertToHexadecimalNegativeParameter():
+	assert convertToHexadecimal(-20) == "number parameter cant be negative"
+
+def test_convertToHexadecimalParameterNotRound():
+	assert convertToBinary(20.5) == "number parameter must be round(int)"
