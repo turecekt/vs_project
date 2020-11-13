@@ -1,23 +1,17 @@
-def convertToBinary(number): 
-
-    convertedNumber = ""
+def convertToBinary(number):
+	convertedNumber = ""
 	remainder = number
-
 	while remainder != 0
 		if(remainder % 2 == 0)
 			convertedNumber += "0"
 		else
 			convertedNumber += "1"
-
 		remainder = remainder / 2
-  
     return convertedNumber
 
 def convertToOctal(number): 
-
     convertedNumber = ""
 	remainder = number
-
 	while remainder != 0
 		if(remainder % 8 == 0)
 			convertedNumber += "0"
@@ -35,16 +29,12 @@ def convertToOctal(number):
 			convertedNumber += "6"
 		if(remainder % 8 == 7)
 			convertedNumber += "7"
-
 		remainder = remainder / 8
-  
     return convertedNumber
 
 def convertToHexadecimal(number): 
-
     convertedNumber = ""
 	remainder = number
-
 	while remainder != 0
 		if(remainder % 16 == 0)
 			convertedNumber += "0"
@@ -78,7 +68,14 @@ def convertToHexadecimal(number):
 			convertedNumber += "E"
 		if(remainder % 16 == 15)
 			convertedNumber += "F"
-
 		remainder = remainder / 16
-  
     return convertedNumber
+
+def test_convertToBinary():
+	assert convertToBinary(20) == "10100"
+
+def test_convertToOctal():
+	assert convertToOctal(20) == "24"
+
+def test_convertToHexadecimal():
+	assert convertToHexadecimal(20) == "14"
