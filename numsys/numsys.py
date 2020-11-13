@@ -13,6 +13,33 @@ def convertToBinary(number):
   
     return convertedNumber
 
+def convertToOctal(number): 
+
+    convertedNumber = ""
+	remainder = number
+
+	while remainder != 0
+		if(remainder % 8 == 0)
+			convertedNumber += "0"
+		if(remainder % 8 == 1)
+			convertedNumber += "1"
+		if(remainder % 8 == 2)
+			convertedNumber += "2"
+		if(remainder % 8 == 3)
+			convertedNumber += "3"
+		if(remainder % 8 == 4)
+			convertedNumber += "4"
+		if(remainder % 8 == 5)
+			convertedNumber += "5"
+		if(remainder % 8 == 6)
+			convertedNumber += "6"
+		if(remainder % 8 == 7)
+			convertedNumber += "7"
+
+		remainder = remainder / 8
+  
+    return convertedNumber
+
 def convertToHexadecimal(number): 
 
     convertedNumber = ""
