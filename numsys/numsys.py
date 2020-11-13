@@ -4,8 +4,13 @@
 # @section intro Úvod
 # Závěrečný projekt do předmětu Nástroje pro vývoj softwarových projektů
 #
-# @section  The sole purpose of the program
-# lorem ipsum dolor sit amet purpose of the program dolor sit amet
+# @section assignment Zadání
+# VSTUP
+# - Kladné celé číslo v desítkové soustavě
+# - Cílová soustava (2, 8, 16, apod.)
+# - Bude čistě na řešitelském týmu, aby vymyslelo vhodný způsob zadávání vstupu (parametricky, dotazy na uživatele, či jinak).
+# VÝSTUP
+# - Číslo v cílové číselné soustavě
 #
 ##
 
