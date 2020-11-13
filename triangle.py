@@ -19,6 +19,7 @@ True
 
 import math
 
+
 def checkIfconstructable(arr):
     """Check if is trinagle constructable.
 
@@ -34,6 +35,7 @@ def checkIfconstructable(arr):
     else:
         return True
 
+
 def lengthOfSide(A, B):
     """Count distance between two points in two dimensiaonal space.
 
@@ -46,6 +48,7 @@ def lengthOfSide(A, B):
 
     """
     return math.sqrt((B[0] - A[0])*(B[0] - A[0])+(B[1]-A[1])*(B[1]-A[1]))
+
 
 def countPerimeter(distances):
     """Count perimeter from distances.
