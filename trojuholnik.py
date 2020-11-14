@@ -37,8 +37,8 @@ def pravouhlost(a, b, c):
     >>> pravouhlost(5, 8, 9)
     Nie je pravouhly
     """
-    if((a > 0 and b > 0 and c > 0) and (a**2 == b**2+c**2
-                                        or b**2 == c**2+a**2 or c**2 == a**2+b**2)):
+    if((a > 0 and b > 0 and c > 0)
+       and (a**2 == b**2+c**2 or b**2 == c**2+a**2 or c**2 == a**2+b**2)):
         print("Je pravouhly")
     else:
         print("Nie je pravouhly")
