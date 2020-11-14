@@ -5,6 +5,7 @@ Program si vyziada suradnice 3 bodov,
 nasledne zisti dlzky stran, zostrojitelnost, pravouhlost, obvod a obsah
 """
 import math
+import sys
 
 
 def vypocetStrany(x1, y1, x2, y2):
@@ -60,6 +61,7 @@ def obsah(a, b, c):
 def vstup():
     """
     Komunikacia s uzivatelom.
+    
     Uzivatel ma na vyber vypocet alebo ukoncenie programu.
     V pripade volby vypoctu, program vyzve uzivatela,
     aby zadal suradnnice 3 bodov
@@ -72,18 +74,19 @@ def vstup():
             y1 = int(input("Zadaj y1: "))
             x2 = int(input("Zadaj x2: "))
             y2 = int(input("Zadaj y2: "))
-            x3 = int(input("Zadaj x3: ")) 
+            x3 = int(input("Zadaj x3: "))
             y3 = int(input("Zadaj y3: "))
             vypis(x1, y1, x2, y2, x3, y3)
         elif(vstup == 'N'):
             sys.exit()
-        else:    
+        else:
             print("Zadaj Y alebo N")
 
 
 def vypis(x1, y1, x2, y2, x3, y3):
     """
     Vypise vypocitane hodnoty a vlastnosti potencialneho trojuholnika.
+    
     Dlzky stran, Zostrojitelnost, Obvod, Obsah, Pravouhlost
     """
     a = vypocetStrany(x1, y1, x2, y2)
