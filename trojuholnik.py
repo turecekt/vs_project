@@ -45,6 +45,16 @@ def pravouhlost(a, b, c):
         print("Nie je pravouhly")
 
 
+def obvod(a, b, c):
+    """
+    Vrati obvod trojuholnika.
+
+    >>> obvod(4, 5, 8)
+    17
+    """
+    return a + b + c
+
+
 def obsah(a, b, c):
     """
     Vypocita obsah trojuholnika pomocou Heronovho vzorca.
@@ -98,9 +108,8 @@ def vypis(x1, y1, x2, y2, x3, y3):
     print("{:.2f}".format(c))
     if(zostrojitelnost(a, b, c)):
         print("Trojuholnik sa da zostrojit")
-        obvod = a + b + c
         print("Obvod: ")
-        print("{:.2f}".format(obvod))
+        print("{:.2f}".format(obvod(a, b, c)))
         print("Obsah: ")
         print("{:.2f}".format(obsah(a, b, c)))
         pravouhlost(a, b, c)
