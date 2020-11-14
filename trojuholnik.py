@@ -61,7 +61,7 @@ def obsah(a, b, c):
 def vstup():
     """
     Komunikacia s uzivatelom.
-    
+
     Uzivatel ma na vyber vypocet alebo ukoncenie programu.
     V pripade volby vypoctu, program vyzve uzivatela,
     aby zadal suradnnice 3 bodov
