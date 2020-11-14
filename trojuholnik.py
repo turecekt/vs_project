@@ -122,4 +122,5 @@ if __name__ == '__main__':
 
 
 def test_obvod():
+    """Testuje funkciu obvod."""
     assert obvod(6, 3, 4) == 13
