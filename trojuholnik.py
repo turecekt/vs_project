@@ -1,9 +1,9 @@
-'''
-Trojuholnik
+"""
+Trojuholnik.
 
 Program si vyziada suradnice 3 bodov,
 nasledne zisti dlzky stran, zostrojitelnost, pravouhlost, obvod a obsah
-'''
+"""
 import math
 '''
 Vypocita vzdialenost dvoch bodov
