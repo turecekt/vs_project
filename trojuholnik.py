@@ -85,5 +85,7 @@ if __name__ == '__main__':
 
 def test_zostrojitelnost():
     """Test zostrojitelnosti."""
-    assert if zostrojitelnost(0, 0, 0) is False
-    assert if zostrojitelnost(2, 5, 4) is True
+    assert if zostrojitelnost(0, 0, 0) is True:
+        print("Neda sa zostrojit!!!")
+    assert if zostrojitelnost(2, 5, 4) is False:
+        print("Da sa zostrojit!!!")
