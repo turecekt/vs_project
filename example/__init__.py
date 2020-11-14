@@ -1,6 +1,5 @@
 """This is the "example" module.
 
-
 The example module supplies one function: compute(). For example,
 
 >>> compute(3)
