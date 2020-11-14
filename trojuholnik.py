@@ -81,11 +81,3 @@ if __name__ == '__main__':
         pravouhlost(a, b, c)
     else:
         print("Trojuholnik sa neda zostrojit")
-
-
-def test_zostrojitelnost():
-    """Test zostrojitelnosti."""
-    assert if zostrojitelnost(0, 0, 0) is True:
-        print("Neda sa zostrojit!!!")
-    assert if zostrojitelnost(2, 5, 4) is False:
-        print("Da sa zostrojit!!!")
