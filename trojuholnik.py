@@ -57,13 +57,35 @@ def obsah(a, b, c):
         return obsah
 
 
-if __name__ == '__main__':
-    x1 = 0
-    x2 = 9
-    x3 = 5
-    y1 = 4
-    y2 = 5
-    y3 = 3
+def vstup():
+    """
+    Komunikacia s uzivatelom.
+    Uzivatel ma na vyber vypocet alebo ukoncenie programu.
+    V pripade volby vypoctu, program vyzve uzivatela,
+    aby zadal suradnnice 3 bodov
+    """
+    while(True):
+        vstup = input("Vypocitat trojuholnik [Y/N]: ")
+        if(vstup == 'Y'):
+            print("Zadaj suradnice 3 bodov: ")
+            x1 = int(input("Zadaj x1: "))
+            y1 = int(input("Zadaj y1: "))
+            x2 = int(input("Zadaj x2: "))
+            y2 = int(input("Zadaj y2: "))
+            x3 = int(input("Zadaj x3: ")) 
+            y3 = int(input("Zadaj y3: "))
+            vypis(x1, y1, x2, y2, x3, y3)
+        elif(vstup == 'N'):
+            sys.exit()
+        else:    
+            print("Zadaj Y alebo N")
+
+
+def vypis(x1, y1, x2, y2, x3, y3):
+    """
+    Vypise vypocitane hodnoty a vlastnosti potencialneho trojuholnika.
+    Dlzky stran, Zostrojitelnost, Obvod, Obsah, Pravouhlost
+    """
     a = vypocetStrany(x1, y1, x2, y2)
     b = vypocetStrany(x2, y2, x3, y3)
     c = vypocetStrany(x3, y3, x1, y1)
@@ -71,7 +93,7 @@ if __name__ == '__main__':
     print("{:.2f}".format(a))
     print("{:.2f}".format(b))
     print("{:.2f}".format(c))
-    if(zostrojitelnost(a, b, c) is True):
+    if(zostrojitelnost(a, b, c)):
         print("Trojuholnik sa da zostrojit")
         obvod = a + b + c
         print("Obvod: ")
@@ -81,3 +103,7 @@ if __name__ == '__main__':
         pravouhlost(a, b, c)
     else:
         print("Trojuholnik sa neda zostrojit")
+
+
+if __name__ == '__main__':
+    vstup()
