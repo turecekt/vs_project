@@ -119,3 +119,7 @@ def vypis(x1, y1, x2, y2, x3, y3):
 
 if __name__ == '__main__':
     vstup()
+
+
+def test_obvod():
+    assert obvod(6, 3, 4) == True
