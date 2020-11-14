@@ -86,7 +86,7 @@ def vstup():
 def vypis(x1, y1, x2, y2, x3, y3):
     """
     Vypise vypocitane hodnoty a vlastnosti potencialneho trojuholnika.
-    
+
     Dlzky stran, Zostrojitelnost, Obvod, Obsah, Pravouhlost
     """
     a = vypocetStrany(x1, y1, x2, y2)
