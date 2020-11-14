@@ -8,7 +8,7 @@ import math
 
 
 def vypocetStrany(x1, y1, x2, y2):
-    """Vypocita vzdialenost dvoch bodov
+    """Vypocita vzdialenost dvoch bodov.
 
     >>> vypocetStrany(0, 0, 0, 2)
     2,0
@@ -84,6 +84,6 @@ if __name__ == '__main__':
 
 
 def test_zostrojitelnost():
-    """test zostrojitelnosti."""
-    assert zostrojitelnost(0, 0, 0) == False
-    assert zostrojitelnost(2, 5, 4) == True
+    """Test zostrojitelnosti."""
+    assert if zostrojitelnost(0, 0, 0) is False
+    assert if zostrojitelnost(2, 5, 4) is True
