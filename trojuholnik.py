@@ -11,7 +11,7 @@ def vypocetStrany(x1, y1, x2, y2):
     """Vypocita vzdialenost dvoch bodov.
 
     >>> vypocetStrany(0, 0, 0, 2)
-    2,0
+    2.0
     """
     strana = math.sqrt((x1 - x2)**2 + (y1 - y2)**2)
     return strana
