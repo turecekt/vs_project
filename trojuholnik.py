@@ -1,5 +1,6 @@
 '''
 Trojuholnik
+
 Program si vyziada suradnice 3 bodov,
 nasledne zisti dlzky stran, zostrojitelnost, pravouhlost, obvod a obsah
 '''
@@ -77,5 +78,5 @@ if __name__ == '__main__':
         print("Trojuholnik sa neda zostrojit")
 
 def test_zostrojitelnost():
-    assert zostrojitelnost(0,0,0) == False
-    assert zostrojitelnost(2,5,4) == True
+    assert zostrojitelnost(0, 0, 0) == False
+    assert zostrojitelnost(2, 5, 4) == True
