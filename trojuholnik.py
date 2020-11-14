@@ -19,7 +19,7 @@ def vypocetStrany(x1, y1, x2, y2):
 
 def zostrojitelnost(a, b, c):
     """
-    Zisti zostrojitelnost trojuholnika zo zadanych 3 stran
+    Zisti zostrojitelnost trojuholnika zo zadanych 3 stran.
 
     >>> zostrojitelnost(5, 6, 7)
     True
@@ -32,11 +32,11 @@ def zostrojitelnost(a, b, c):
 
 def pravouhlost(a, b, c):
     """
-    Zisti pravouhlost trojuholnika zo zadanych troch stran
+    Zisti pravouhlost trojuholnika zo zadanych troch stran.
+    
     >>> pravouhlost(5, 8, 9)
     Nie je pravouhly
     """
-
     if((a > 0 and b > 0 and c > 0) and (a**2 == b**2+c**2 or b**2 == c**2+a**2 or c**2 == a**2+b**2)):
         print("Je pravouhly")
     else:
@@ -45,13 +45,14 @@ def pravouhlost(a, b, c):
 
 def obsah(a, b, c):
     """
-    Vypocita obsah trojuholnika pomocou Heronovho vzorca
+    Vypocita obsah trojuholnika pomocou Heronovho vzorca.
+    
     >>> obsah(4,9,8)
     15.998046755776157
     """
     if(zostrojitelnost(a, b, c)):
         p=(a+b+c) / 2
-        obsah = math.sqrt(p*(p-a)*(p-b)*(p-c))
+        obsah = math.sqrt(p * (p - a) * (p - b) * (p - c))
         return obsah
 
 
@@ -82,5 +83,6 @@ if __name__ == '__main__':
 
 
 def test_zostrojitelnost():
-    assert zostrojitelnost(0, 0, 0) == False
-    assert zostrojitelnost(2, 5, 4) == True
+    """test zostrojitelnosti."""
+    assert zostrojitelnost(0, 0, 0) = False
+    assert zostrojitelnost(2, 5, 4) = True
