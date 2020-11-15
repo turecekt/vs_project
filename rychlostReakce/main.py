@@ -65,9 +65,9 @@ def randomExample():
     Returns: result of math expression
     """
 
-    operator = random.randint(4, 4)
-    a = random.randint(-1, 1)
-    b = random.randint(-1, 1)
+    operator = random.randint(1, 4)
+    a = random.randint(-10, 10)
+    b = random.randint(-10, 10)
 
     if operator == 4:
         if b < 0:
