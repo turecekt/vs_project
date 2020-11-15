@@ -141,7 +141,7 @@ def average(times) -> float:
 
 
 """
-Unit tests for 6 main functions
+Unit tests for all functions
 """
 
 
@@ -167,6 +167,11 @@ def test_average():
 
 def test_compareResults():
     assert compareResults(4, 4)
+
+
+def test_RandomExample():
+    res = randomExample()
+    assert (100 >= res >= -100 or res is False)
 
 
 points = 0
