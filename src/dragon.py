@@ -68,11 +68,9 @@ def move_right(posx, posy, cnt, angle):
 
 
 def generate_dragon(iteration):
-    """
+    """Generate Heighway Dragon line route.
 
-     Generate Heighway Dragon line route.
      returns generated line route
-
     """
     right = 'r'
     left = 'l'
@@ -94,11 +92,9 @@ def generate_dragon(iteration):
 
 
 def update():
-    """
+    """Graph update function.
 
-     Graph update function.
      No return.
-
     """
     global dragon, x, y, position, size, angle_left, angle_right
     if(position < size-1):
