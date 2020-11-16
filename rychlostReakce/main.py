@@ -189,27 +189,29 @@ def test_RandomExample():
     assert (100 >= res >= -100 or res is False)
 
 
-points = 0
-i = 0
-times = list()
-repetition = 5
+def startProgram():
+    """Call this function will start the program."""
+    points = 0
+    i = 0
+    times = list()
+    repetition = 5
 
-while i < repetition:
-    start = perf_counter()
+    while i < repetition:
+        start = perf_counter()
 
-    pc = randomExample()
-    user = input("Your answer: ")
+        pc = randomExample()
+        user = input("Your answer: ")
 
-    stop = perf_counter()
-    times.append(stop - start)
+        stop = perf_counter()
+        times.append(stop - start)
 
-    if compareResults(pc, user):
-        points += 1
+        if compareResults(pc, user):
+            points += 1
 
-    else:
-        print(f"Your answer is wrong! Right answer is {pc}")
+        else:
+            print(f"Your answer is wrong! Right answer is {pc}")
 
-    i += 1
+        i += 1
 
-print(f"\nYou got {points} of {repetition} points")
-print(f"Average time is {average(times)} seconds")
+    print(f"\nYou got {points} of {repetition} points")
+    print(f"Average time is {average(times)} seconds")
