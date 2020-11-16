@@ -6,14 +6,14 @@ import pyqtgraph as pg
 
 """Input values."""
 
-iteration = int(input('Pocet interakci:'))
-linecolor = 'k'#input('Barva cary:')
-backgroundcolor = 'k'#input('Barva pozadi:')
+number = int(input('Pocet interakci:'))
+linecolor = 'k'  # input('Barva cary:')
+backgroundcolor = 'k'  # input('Barva pozadi:')
 
 """
  Move left
  in = pos , count , angle
- ret number of rotation, pos array
+ returns modified positions x, y
  1 = up , 0 = no change , -1 = down
  [90,180,270,360] degree
  [1,0,-1,0] = y
@@ -39,7 +39,7 @@ def move_left(posx, posy, cnt, angle):
 """
  Move right
  in = pos , count , angle
- ret number of rotation, pos array
+ returns modified positions x, y
  1 = up , 0 = no change , -1 = down
  [90,180,270,360] degree
  [-1,0,1,0] = y
@@ -60,12 +60,14 @@ def move_right(posx, posy, cnt, angle):
     y = y + static_y[angle]
     local_posy[cnt] = y
     return local_posx[cnt], local_posy[cnt]
-    
 
 
-def generate_dragon():
-    """Generate Heighway Dragon line route."""
-    global right, left, old, new
+def generate_dragon(iteration):
+    """
+     Generate Heighway Dragon line route.
+     returns generated line route
+    """
+    #global right, left, old, new
     right = 'r'
     left = 'l'
     old = right
@@ -82,21 +84,32 @@ def generate_dragon():
         new = (new) + (old)
         old = new
         loop_cycle = loop_cycle+1
+    return new, left, right
 
 
-generate_dragon()
+new = ''
+left = ''
+right = ''
+
+new, left, right = generate_dragon(number)
 
 position = 0
 angle_right = 0
 angle_left = 3 - angle_right
+
 size = len(new)
+
 app = QtGui.QApplication([])
+
 x = np.zeros(size)
 y = np.zeros(size)
+
 win = pg.GraphicsLayoutWidget(show=True, title="Dragon")
 win.setBackground(linecolor[0])
 win.resize(1024, 768)
+
 plot = win.addPlot(title="Dragon plot")
+
 dragon = plot.plot(x, y)
 
 
@@ -128,7 +141,7 @@ def update():
                 angle_left = 3-(angle_right)
                 if(angle_left < 0):
                     angle_left = 0
-            x[position], y[position]=  move_left(x, y, position, angle_left)
+            x[position], y[position] = move_left(x, y, position, angle_left)
         else:  # done or empty
             pass
         dragon.setData(x, y)
