@@ -1,11 +1,8 @@
-
-
 """Random math examples.
 
 Author: Daberger Jiri <j_daberger@utb.cz>
 Description: Counting response of user on easy math examples
 """
-
 
 import random
 from time import perf_counter
@@ -166,6 +163,9 @@ Unit tests for all functions
 >>> division(0, 1)
 0
 
+>>> average([1, 2, 6])
+3
+
 >>> compareResults(4, 4)
 True
 """
@@ -233,3 +233,6 @@ def startProgram():
 
     print(f"\nYou got {points} of {repetition} points")
     print(f"Average time is {average(times)} seconds")
+
+
+print("Welcome to my generator of math examples! \n")
