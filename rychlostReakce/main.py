@@ -236,3 +236,4 @@ def startProgram():
 
 
 print("Welcome to my generator of math examples! \n")
+startProgram()
