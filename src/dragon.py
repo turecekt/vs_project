@@ -69,9 +69,9 @@ def move_right(posx, posy, cnt, angle):
 
 def generate_dragon(iteration):
     """
-    Generate Heighway Dragon line route
+    Generate Heighway Dragon line route.
 
-    returns generated line route
+    returns generated line route.
     """
     right = 'r'
     left = 'l'
@@ -134,7 +134,7 @@ def update():
 
 
 def main():
-    """Reads input and displays dragon."""
+    """Do main function that Reads input and displays dragon."""
     global new, left, right, app, backgroundcolor, dragon
     global size, x, y, win, timer
     number = int(input('Pocet interakci:'))
