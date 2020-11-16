@@ -7,8 +7,8 @@ import pyqtgraph as pg
 """Input values."""
 
 iteration = int(input('Pocet interakci:'))
-linecolor = input('Barva cary:')
-backgroundcolor = input('Barva pozadi:')
+linecolor = 'k'#input('Barva cary:')
+backgroundcolor = 'k'#input('Barva pozadi:')
 
 """
  Move left
@@ -23,14 +23,17 @@ backgroundcolor = input('Barva pozadi:')
 
 def move_left(posx, posy, cnt, angle):
     """Move left function."""
+    local_posx = posx
+    local_posy = posy
     static_y = [1, 0, -1, 0]
     static_x = [0, -1, 0, 1]
-    x = posx[cnt]
+    x = local_posx[cnt]
     x = x + static_x[angle]
-    posx[cnt] = x
-    y = posy[cnt]
+    local_posx[cnt] = x
+    y = local_posy[cnt]
     y = y + static_y[angle]
-    posy[cnt] = y
+    local_posy[cnt] = y
+    return local_posx[cnt], local_posy[cnt]
 
 
 """
@@ -46,14 +49,18 @@ def move_left(posx, posy, cnt, angle):
 
 def move_right(posx, posy, cnt, angle):
     """Move right function."""
+    local_posx = posx
+    local_posy = posy
     static_y = [-1, 0, 1, 0]  # static mapping
     static_x = [0, -1, 0, 1]  # static mapping
-    x = posx[cnt]
+    x = local_posx[cnt]
     x = x + static_x[angle]
-    posx[cnt] = x
-    y = posy[cnt]
+    local_posx[cnt] = x
+    y = local_posy[cnt]
     y = y + static_y[angle]
-    posy[cnt] = y
+    local_posy[cnt] = y
+    return local_posx[cnt], local_posy[cnt]
+    
 
 
 def generate_dragon():
@@ -111,7 +118,7 @@ def update():
                 if(angle_right > 3):
                     angle_right = 0
 
-            move_right(x, y, position, angle_right)
+            x[position], y[position] = move_right(x, y, position, angle_right)
         elif new[position] == (left):  # left
             if(new[position-1] == (left)):
                 angle_left += 1
@@ -121,7 +128,7 @@ def update():
                 angle_left = 3-(angle_right)
                 if(angle_left < 0):
                     angle_left = 0
-            move_left(x, y, position, angle_left)
+            x[position], y[position]=  move_left(x, y, position, angle_left)
         else:  # done or empty
             pass
         dragon.setData(x, y)
