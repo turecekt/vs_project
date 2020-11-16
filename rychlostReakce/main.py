@@ -152,6 +152,24 @@ def average(times) -> float:
 Unit tests for all functions
 """
 
+"""Tests in comment.
+
+>>> sum(2, 2)
+4
+
+>>> subtraction(5, 2)
+3
+
+>>> multiply(4, 8)
+32
+
+>>> division(0, 1)
+0
+
+>>> compareResults(4, 4)
+True
+"""
+
 
 def test_sum():
     """Unit test for sum function."""
