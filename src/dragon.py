@@ -1,4 +1,3 @@
-"""Import libraries."""
 from pyqtgraph.Qt import QtGui, QtCore
 import numpy as np
 import pyqtgraph as pg
@@ -12,7 +11,7 @@ linecolor = 'k'
 
 position = 0
 angle_right = 0
-angle_left = 3 - angle_right
+angle_left = (3 - angle_right)
 
 
 """
