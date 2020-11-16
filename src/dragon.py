@@ -1,16 +1,16 @@
-'''import libraries'''
+"""import libraries"""
 from pyqtgraph.Qt import QtGui, QtCore
 import numpy as np
 import pyqtgraph as pg
 
 
-'''Input values'''
+"""Input values"""
 
 iteration = int(input('Pocet interakci:'))
 linecolor = input('Barva cary:')
 backgroundcolor = input('Barva pozadi:')
 
-'''
+"""
  move left
  in = pos , count , angle
  ret number of rotation, pos array
@@ -18,11 +18,11 @@ backgroundcolor = input('Barva pozadi:')
  [90,180,270,360] degree
  [1,0,-1,0] = y
  [0,-1,0,1] = x
-'''
+"""
 
 
 def move_left(posx, posy, cnt, angle):
-    '''move left function'''
+    """move left function"""
     static_y = [1, 0, -1, 0]
     static_x = [0, -1, 0, 1]
     x = posx[cnt]
@@ -33,7 +33,7 @@ def move_left(posx, posy, cnt, angle):
     posy[cnt] = y
 
 
-'''
+"""
  move right
  in = pos , count , angle
  ret number of rotation, pos array
@@ -41,11 +41,11 @@ def move_left(posx, posy, cnt, angle):
  [90,180,270,360] degree
  [-1,0,1,0] = y
  [0,-1,0,1] = x
-'''
+"""
 
 
 def move_right(posx, posy, cnt, angle):
-    '''move right function'''
+    """move right function"""
     static_y = [-1, 0, 1, 0]  # static mapping
     static_x = [0, -1, 0, 1]  # static mapping
     x = posx[cnt]
@@ -57,7 +57,7 @@ def move_right(posx, posy, cnt, angle):
 
 
 def generate_dragon():
-    '''generate Heighway Dragon line route'''
+    """generate Heighway Dragon line route"""
     global right, left, old, new
     right = 'r'
     left = 'l'
@@ -94,7 +94,7 @@ dragon = plot.plot(x, y)
 
 
 def update():
-    '''Graph update function'''
+    """Graph update function"""
     global dragon, x, y, position, size, angle_left, angle_right
     if(position < size-1):
         if new[position] == (right):  # right
