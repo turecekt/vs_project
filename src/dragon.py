@@ -4,11 +4,16 @@ import numpy as np
 import pyqtgraph as pg
 
 
-"""Input values."""
+new = ''
+left = ''
+right = ''
+number = 0
+linecolor = 'k'
 
-number = int(input('Pocet interakci:'))
-linecolor = 'k'  # input('Barva cary:')
-backgroundcolor = 'k'  # input('Barva pozadi:')
+position = 0
+angle_right = 0
+angle_left = 3 - angle_right
+
 
 """
  Move left
@@ -67,7 +72,6 @@ def generate_dragon(iteration):
      Generate Heighway Dragon line route.
      returns generated line route
     """
-    #global right, left, old, new
     right = 'r'
     left = 'l'
     old = right
@@ -87,34 +91,10 @@ def generate_dragon(iteration):
     return new, left, right
 
 
-new = ''
-left = ''
-right = ''
-
-new, left, right = generate_dragon(number)
-
-position = 0
-angle_right = 0
-angle_left = 3 - angle_right
-
-size = len(new)
-
-app = QtGui.QApplication([])
-
-x = np.zeros(size)
-y = np.zeros(size)
-
-win = pg.GraphicsLayoutWidget(show=True, title="Dragon")
-win.setBackground(linecolor[0])
-win.resize(1024, 768)
-
-plot = win.addPlot(title="Dragon plot")
-
-dragon = plot.plot(x, y)
-
-
 def update():
-    """Graph update function."""
+    """Graph update function.
+     No return.
+    """
     global dragon, x, y, position, size, angle_left, angle_right
     if(position < size-1):
         if new[position] == (right):  # right
@@ -150,12 +130,36 @@ def update():
         y[position] = y[position-1]  # store old pos to new
 
 
-timer = QtCore.QTimer()
-timer.timeout.connect(update)
-timer.start(1)
+def main():
+    global new, left, right, app, backgroundcolor, dragon
+    global size, x, y, win, timer
+
+    """Input values."""
+    number = int(input('Pocet interakci:'))
+    linecolor = 'k'  # input('Barva cary:')
+    backgroundcolor = 'k'  # input('Barva pozadi:')
+
+    new, left, right = generate_dragon(number)
+    size = len(new)
+
+    app = QtGui.QApplication([])
+    x = np.zeros(size)
+    y = np.zeros(size)
+
+    win = pg.GraphicsLayoutWidget(show=True, title="Dragon")
+    win.setBackground(linecolor[0])
+    win.resize(1024, 768)
+
+    plot = win.addPlot(title="Dragon plot")
+
+    dragon = plot.plot(x, y)
+    timer = QtCore.QTimer()
+    timer.timeout.connect(update)
+    timer.start(1)
 
 
 if __name__ == '__main__':
     import sys
+    main()
     if (sys.flags.interactive != 1) or not hasattr(QtCore, 'PYQT_VERSION'):
         QtGui.QApplication.instance().exec_()
