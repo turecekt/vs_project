@@ -1,15 +1,19 @@
-#!/usr/bin/env python
+
+
+"""Random math examples.
+
+Author: Daberger Jiri <j_daberger@utb.cz>
+Description: Counting response of user on easy math examples
+"""
+
 
 import random
-
-# Author: Daberger Jiri <j_daberger@utb.cz>
-# Description: Counting response of user on easy math examples
-
 from time import perf_counter
 
 
 def sum(a, b) -> int:
-    """
+    """Sum function.
+
     Args:
         a: int
         b: int
@@ -20,7 +24,8 @@ def sum(a, b) -> int:
 
 
 def subtraction(a, b) -> int:
-    """
+    """Subtraction function.
+
     Args:
         a: int
         b: int
@@ -31,7 +36,8 @@ def subtraction(a, b) -> int:
 
 
 def multiply(a, b) -> int:
-    """
+    """Multiply function.
+
     Args:
         a: int
         b: int
@@ -42,7 +48,8 @@ def multiply(a, b) -> int:
 
 
 def division(a, b) -> float:
-    """
+    """Division function.
+
     Args:
         a: int
         b: int
@@ -55,8 +62,8 @@ def division(a, b) -> float:
 
 
 def randomExample():
-    """
-    Function for creating random math examples
+    """For creating random math examples.
+
     Parameters:
         operator (int): random number for operator [1; 2; 3; 4]
         a (int): random number <-10, 10>
@@ -64,7 +71,6 @@ def randomExample():
 
     Returns: result of math expression
     """
-
     operator = random.randint(1, 4)
     a = random.randint(-10, 10)
     b = random.randint(-10, 10)
@@ -108,7 +114,8 @@ def randomExample():
 
 
 def compareResults(pc, user) -> bool:
-    """
+    """Compare results function.
+
     Function which compare two values,
     right result of math example and user answer
 
@@ -127,7 +134,8 @@ def compareResults(pc, user) -> bool:
 
 
 def average(times) -> float:
-    """ Method for counting average time of user reply
+    """For counting average time of user reply.
+
     Args:
         times: List of times
 
@@ -146,30 +154,37 @@ Unit tests for all functions
 
 
 def test_sum():
+    """Unit test for sum function."""
     assert sum(2, 2) == 4
 
 
 def test_subtraction():
+    """Unit test for subtraction function."""
     assert subtraction(5, 2) == 3
 
 
 def test_multiply():
+    """Unit test for multiply function."""
     assert multiply(4, 8) == 32
 
 
 def test_division():
+    """Unit test for division function."""
     assert division(0, 1) == 0
 
 
 def test_average():
+    """Unit test for average function."""
     assert average([1, 2, 6]) == 3
 
 
 def test_compareResults():
+    """Unit test for compareResults function."""
     assert compareResults(4, 4)
 
 
 def test_RandomExample():
+    """Unit test for RandomExample function."""
     res = randomExample()
     assert (100 >= res >= -100 or res is False)
 
