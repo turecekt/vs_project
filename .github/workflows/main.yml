@@ -1,7 +1,6 @@
 
-0 contributors
-29 lines (25 sloc) 674 Bytes
-name: Python checker
+
+name: main
 
 on: [push, pull_request]
 
