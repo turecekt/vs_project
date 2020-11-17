@@ -8,7 +8,8 @@ new = ''
 left = ''
 right = ''
 number = 0
-linecolor = 'k'
+linecolor = 'r'  # b, g, r, c, m, y, k, w
+backgroundcolor = 'k'
 
 position = 0
 angle_right = 0
@@ -146,13 +147,28 @@ def update():
     return []
 
 
-def main():
-    """Do main function that Reads input and displays dragon."""
+def main(arg):
+    """
+    Do main function that Reads input and displays dragon.
+
+    >>> main(['dragon.py'])
+    1
+    1
+    """
     global new, left, right, app, backgroundcolor, dragon
-    global size, x, y, win, timer
-    number = int(input('Pocet interakci:'))
-    linecolor = 'k'  # input('Barva cary:')
-    backgroundcolor = 'k'  # input('Barva pozadi:')
+    global size, x, y, win, timer, linecolor, number
+    print(len(arg))
+    if(len(arg) == 1):
+        return 1
+    if(len(arg) == 2):  # count of iteration
+        number = int(arg[1])
+    elif(len(arg) == 3):  # color of draw line
+        number = int(arg[1])
+        linecolor = str(arg[2])
+    elif(len(arg) == 4):  # color of background
+        number = int(arg[1])
+        linecolor = str(arg[2])
+        backgroundcolor = str(arg[3])
 
     new, left, right = generate_dragon(number)
     size = len(new)
@@ -162,12 +178,12 @@ def main():
     y = np.zeros(size)
 
     win = pg.GraphicsLayoutWidget(show=True, title="Dragon")
-    win.setBackground(linecolor[0])
+    win.setBackground(backgroundcolor)
     win.resize(1024, 768)
 
     plot = win.addPlot(title="Dragon plot")
 
-    dragon = plot.plot(x, y)
+    dragon = plot.plot(x, y, pen=linecolor)
     timer = QtCore.QTimer()
     timer.timeout.connect(update)
     timer.start(1)
@@ -176,6 +192,8 @@ def main():
 
 if __name__ == '__main__':
     import sys
-    main()
+    stop = main(sys.argv)
+    if(stop == 1):
+        sys.exit()
     if (sys.flags.interactive != 1) or not hasattr(QtCore, 'PYQT_VERSION'):
         QtGui.QApplication.instance().exec_()
