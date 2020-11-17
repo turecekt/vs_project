@@ -27,6 +27,8 @@ jobs:
     - name: Test with pytest
       run: |
         export QT_DEBUG_PLUGINS=1
+        sudo dpkg --add-architecture i386
+        sudo apt update
         sudo apt-get install libxcb-icccm4
         sudo apt install libxcb-image0
         pytest --doctest-modules --cov=dragon -s
