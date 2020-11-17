@@ -5,4 +5,5 @@ test_python.py:Problem with QT libraries linking with cloud VM. Works on local m
 ## Usage
 Python3 dragon.py [number of iteration] [line color] [background color]  
   
-  Example: python3 9 w k
+  Example: python3 dragon.py 9 w k  
+  [9] iterations, [w] white line, [k] black background
