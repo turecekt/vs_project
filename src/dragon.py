@@ -35,16 +35,23 @@ def move_left(posx, posy, cnt, angle):
     >>> move_left([0], [0], 0, 0)
     (0, 1)
     """
+    # saves input values to local
     local_posx = posx
     local_posy = posy
-    static_y = [1, 0, -1, 0]
-    static_x = [0, -1, 0, 1]
+    # defines a table for x and y coordinates rotation
+    static_y = [1, 0, -1, 0]  # static mapping
+    static_x = [0, -1, 0, 1]  # static mapping
+    # load to x and y
+    # merge x and y value with static table
+    # replace new value to old one
     x = local_posx[cnt]
     x = x + static_x[angle]
     local_posx[cnt] = x
+
     y = local_posy[cnt]
     y = y + static_y[angle]
     local_posy[cnt] = y
+    # Return modified value
     return local_posx[cnt], local_posy[cnt]
 
 
@@ -66,22 +73,28 @@ def move_right(posx, posy, cnt, angle):
     >>> move_right([0], [0], 0, 0)
     (0, -1)
     """
+    # saves input values to local
     local_posx = posx
     local_posy = posy
+    # defines a table for x and y coordinates rotation
     static_y = [-1, 0, 1, 0]  # static mapping
     static_x = [0, -1, 0, 1]  # static mapping
+    # load to x and y
+    # merge x and y value with static table
+    # replace new value to old one
     x = local_posx[cnt]
     x = x + static_x[angle]
     local_posx[cnt] = x
     y = local_posy[cnt]
     y = y + static_y[angle]
     local_posy[cnt] = y
+    # Return modified value
     return local_posx[cnt], local_posy[cnt]
 
 
 def generate_dragon(iteration):
     """
-    Generates Heighway Dragon line route.
+    Generate Heighway Dragon line route.
 
     returns generated line route.
     >>> generate_dragon(1)
