@@ -1,5 +1,6 @@
 """Include files."""
 from dragon import move_left, move_right, generate_dragon  # , main
+# import runpy as rp
 
 
 def test_move_left():
@@ -26,9 +27,19 @@ def test_generate_dragon():
     assert generate_dragon(3) == ('rrlrrll', 'l', 'r')
     assert generate_dragon(4) == ('rrlrrllrrrllrll', 'l', 'r')
 
+
 # Problem with QT libraries linking with cloud VM
 # works on local machine or VM
+
+
 # def test_main():
-#    """Tests main function."""
-#    assert main(['dragon.py', 5, 'k', 'w']) == 0
-#    assert main(['dragon.py']) == 1
+# """Tests main function."""
+# assert main(['dragon.py', 5, 'k', 'w']) == 0
+# assert main(['dragon.py']) == 1
+
+
+# def test_init():
+# """Tests init function."""
+# import sys
+# sys.argv = ['dragon.py', 9]
+# assert rp.run_module('dragon', run_name='__main__')

@@ -5,13 +5,14 @@ import pyqtgraph as pg
 
 
 new = ''
-left = ''
-right = ''
+left = 'l'
+right = 'r'
 number = 0
 linecolor = 'r'  # b, g, r, c, m, y, k, w
 backgroundcolor = 'k'
 
 position = 0
+size = 0
 angle_right = 0
 angle_left = (3 - angle_right)
 
@@ -144,7 +145,7 @@ def update():
         position += 1
         x[position] = x[position-1]  # store old pos to new
         y[position] = y[position-1]  # store old pos to new
-    return []
+    return 0
 
 
 def main(arg):
