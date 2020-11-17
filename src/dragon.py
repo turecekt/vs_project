@@ -27,7 +27,12 @@ angle_left = (3 - angle_right)
 
 
 def move_left(posx, posy, cnt, angle):
-    """Move left function."""
+    """
+    Move left function.
+
+    >>> move_left([0], [0], 0, 0)
+    (0, 1)
+    """
     local_posx = posx
     local_posy = posy
     static_y = [1, 0, -1, 0]
@@ -53,7 +58,12 @@ def move_left(posx, posy, cnt, angle):
 
 
 def move_right(posx, posy, cnt, angle):
-    """Move right function."""
+    """
+    Move right function.
+
+    >>> move_right([0], [0], 0, 0)
+    (0, -1)
+    """
     local_posx = posx
     local_posy = posy
     static_y = [-1, 0, 1, 0]  # static mapping
@@ -72,6 +82,8 @@ def generate_dragon(iteration):
     Generate Heighway Dragon line route.
 
     returns generated line route.
+    >>> generate_dragon(1)
+    ('r', 'l', 'r')
     """
     right = 'r'
     left = 'l'
@@ -131,6 +143,7 @@ def update():
         position += 1
         x[position] = x[position-1]  # store old pos to new
         y[position] = y[position-1]  # store old pos to new
+    return []
 
 
 def main():
@@ -158,6 +171,7 @@ def main():
     timer = QtCore.QTimer()
     timer.timeout.connect(update)
     timer.start(1)
+    return 0
 
 
 if __name__ == '__main__':
