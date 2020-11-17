@@ -103,17 +103,17 @@ def generate_dragon(iteration):
     old = right
     new = old
     loop_cycle = 1
-    while loop_cycle < iteration:
-        new = (old) + (right)
-        old = old[::-1]
-        for char in range(0, len(old)):
-            if old[char] == right:
-                old = (old[:char]) + (left) + (old[char+1:])
-            elif old[char] == left:
-                old = (old[:char]) + (right) + (old[char+1:])
-        new = (new) + (old)
-        old = new
-        loop_cycle = loop_cycle+1
+    while loop_cycle < iteration:  # loop until number of iteration is met
+        new = (old) + (right)  # add right to new and store it to new
+        old = old[::-1]  # reverse old
+        for char in range(0, len(old)):  # for each character in old
+            if old[char] == right:  # if it is right
+                old = (old[:char]) + (left) + (old[char+1:])  # move it left
+            elif old[char] == left:  # if it is left
+                old = (old[:char]) + (right) + (old[char+1:])  # move it right
+        new = (new) + (old)  # add it to new
+        old = new  # replace old with new
+        loop_cycle = loop_cycle+1  # increase cycle
     return new
 
 
@@ -122,18 +122,21 @@ def update():
     Graph update function.
 
     No return.
+    angle_left is reversed value of angle_right
+    angle_right [0.1.2.3]
+    angle_left  [3.2.1.0]
     """
     global dragon, x, y, position, size, angle_left, angle_right
     if(position < size-1):
         if new[position] == (right):  # right
-            if(new[position-1] == (right)):
-                angle_right += 1
-                if(angle_left < 0):
+            if(new[position-1] == (right)):  # if previous was same
+                angle_right += 1  # increase angle
+                if(angle_left < 0):  # Limit value
                     angle_left = 0
                 if(angle_right > 3):
                     angle_right = 0
-            else:
-                angle_right = 3 - angle_left
+            else:  # if previous was diffrent
+                angle_right = 3 - angle_left  # calculate reversed value
                 if(angle_right < 0):
                     angle_right = 0
                 if(angle_right > 3):
@@ -141,19 +144,19 @@ def update():
 
             x[position], y[position] = move_right(x, y, position, angle_right)
         elif new[position] == (left):  # left
-            if(new[position-1] == (left)):
-                angle_left += 1
-                if(angle_left > 3):
+            if(new[position-1] == (left)):  # if previous was same
+                angle_left += 1  # increase angle
+                if(angle_left > 3):  # Limit value
                     angle_left = 0
-            else:
-                angle_left = 3-(angle_right)
+            else:  # if previous was diffrent
+                angle_left = 3-(angle_right)  # calculate reversed value
                 if(angle_left < 0):
                     angle_left = 0
             x[position], y[position] = move_left(x, y, position, angle_left)
         else:  # done or empty
             pass
-        dragon.setData(x, y)
-        position += 1
+        dragon.setData(x, y)  # update plot
+        position += 1  # increase position
         x[position] = x[position-1]  # store old pos to new
         y[position] = y[position-1]  # store old pos to new
     return 0
