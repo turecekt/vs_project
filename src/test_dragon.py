@@ -1,5 +1,5 @@
 """Include files."""
-from dragon import move_left, move_right, generate_dragon
+from dragon import move_left, move_right, generate_dragon, main
 
 
 def test_move_left():
@@ -27,4 +27,5 @@ def test_generate_dragon():
     assert generate_dragon(4) == ('rrlrrllrrrllrll', 'l', 'r')
 
 
-# def test_
+def test_main():
+    assert main() == 0
