@@ -27,4 +27,5 @@ jobs:
     - name: Test with pytest
       run: |
         export QT_DEBUG_PLUGINS=1
+        sudo apt-get install libxcb-iccm4
         pytest --doctest-modules --cov=dragon -s
