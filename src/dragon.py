@@ -98,7 +98,7 @@ def generate_dragon(iteration):
 
     returns generated line route.
     >>> generate_dragon(1)
-    ('r', 'l', 'r')
+    'r'
     """
     old = right
     new = old
