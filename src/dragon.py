@@ -166,8 +166,8 @@ def main(arg):
     """Do main function that Reads input and displays dragon."""
     global new, left, right, app, backgroundcolor, dragon
     global size, x, y, win, timer, linecolor, number
-    if(len(arg) == 1):
-        number = 9
+    if(len(arg) == 1):  # if no values received
+        number = 9  # set iteration to 9
     if(len(arg) == 2):  # count of iteration
         number = int(arg[1])
     elif(len(arg) == 3):  # color of draw line
@@ -177,24 +177,24 @@ def main(arg):
         number = int(arg[1])
         linecolor = str(arg[2])
         backgroundcolor = str(arg[3])
+    new = generate_dragon(number)  # Generate dragon plot values
 
-    new = generate_dragon(number)
-    size = len(new)
-
-    app = QtGui.QApplication([])
-    x = np.zeros(size)
+    app = QtGui.QApplication([])  # create plot application
+    size = len(new)  # get size of new
+    x = np.zeros(size)  # create array of zeros based on size of new
     y = np.zeros(size)
 
+    # set plot application settings
     win = pg.GraphicsLayoutWidget(show=True, title="Dragon")
     win.setBackground(backgroundcolor)
     win.resize(1024, 768)
 
-    plot = win.addPlot(title="Dragon plot")
+    plot = win.addPlot(title="Dragon plot")  # add plot
 
-    dragon = plot.plot(x, y, pen=linecolor)
-    timer = QtCore.QTimer()
-    timer.timeout.connect(update)
-    timer.start(1)
+    dragon = plot.plot(x, y, pen=linecolor)  # plot empty arrays
+    timer = QtCore.QTimer()  # Init timer
+    timer.timeout.connect(update)  # join timer update to funtion
+    timer.start(1)  # set timer update time
     return 0
 
 
