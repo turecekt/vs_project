@@ -21,24 +21,11 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install flake8 flake8-docstrings pytest pyqtgraph PyQt5 pytest-cov
+        pip install flake8 flake8-docstrings pytest pytest-cov
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Lint with flake8
       run: |
         flake8 --show-source .
     - name: Test with pytest
       run: |
-        export QT_DEBUG_PLUGINS=1
-        sudo dpkg --add-architecture i386
-        sudo apt update
-        sudo apt-get install libxcb-icccm4
-        sudo apt-get install -y  libglib2.0-0 libxcb-shape0 libxcb-shm0 \
-        libxcb-xfixes0 libxcb-randr0 libxcb-image0 \
-        libfontconfig1 libgl1-mesa-glx \
-        libxi6 libsm6 libxrender1 libpulse0 \
-        libxcomposite1 libxslt1.1 libsqlite3-0 \
-        libxcb-keysyms1 libxcb-xtest0 libxcb-render-util0 \
-        libxcb-xkb1 libxkbcommon-x11-0 libxcb-xinerama0 
-        ldd /opt/hostedtoolcache/Python/3.9.0/x64/lib/python3.9/site-packages/PyQt5/Qt/plugins/platforms/libqxcb.so
-        export QT_PLUGIN_PATH=/opt/hostedtoolcache/Python/3.9.0/x64/lib/python3.9/site-packages/PyQt5/Qt/plugins
         pytest --doctest-modules --cov=dragon -s
