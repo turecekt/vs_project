@@ -155,10 +155,10 @@ def update():
             x[position], y[position] = move_left(x, y, position, angle_left)
         else:  # done or empty
             pass
-        dragon.setData(x, y)  # update plot
         position += 1  # increase position
         x[position] = x[position-1]  # store old pos to new
         y[position] = y[position-1]  # store old pos to new
+        dragon.setData(x, y)  # update plot
     return 0
 
 
@@ -180,7 +180,7 @@ def main(arg):
     new = generate_dragon(number)  # Generate dragon plot values
 
     app = QtGui.QApplication([])  # create plot application
-    size = len(new)  # get size of new
+    size = (len(new)+1)  # get size of new
     x = np.zeros(size)  # create array of zeros based on size of new
     y = np.zeros(size)
 
@@ -191,7 +191,12 @@ def main(arg):
 
     plot = win.addPlot(title="Dragon plot")  # add plot
 
-    dragon = plot.plot(x, y, pen=linecolor)  # plot empty arrays
+    static_posx = [-1, 0, 0]  # predefined cords for lines
+    static_posy = [0, 0, -1]  #
+    dragon = plot.plot(static_posx, static_posy)
+    dragon.setPen(linecolor, width=3)
+    dragon = plot.plot(x, y)  # plot empty arrays
+    dragon.setPen(linecolor, width=3)
     timer = QtCore.QTimer()  # Init timer
     timer.timeout.connect(update)  # join timer update to funtion
     timer.start(1)  # set timer update time
