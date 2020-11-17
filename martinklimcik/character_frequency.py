@@ -21,6 +21,11 @@ VÝSTUP
 • Informace o nejméně častém znaku
 • Informace o průměrné četnosti
 • Informace o četnosti jednotlivých znaků abecedy (bez diakritiky)
+
+Tests:
+>>> test_open_file()
+>>> test_count_char_freq()
+>>> test_calculate_stats()
 """
 from string import ascii_lowercase
 from typing import List, AnyStr
@@ -203,20 +208,30 @@ def calculate_stats(alphabet: dict) -> CharStats:
     return s
 
 
+# === Unit Tests ===
+TEST_FILE_1 = 'martinklimcik/test_file_1.txt'
+TEST_FILE_2 = 'martinklimcik/test_file_2.txt'
+TEST_FILE_INVALID = 'martinklimcik/test_file_99.txt'
+
+
 def test_open_file():
     """Test open_file method."""
-    content = get_file_content('test_file_2')
+    # Open file
+    content = get_file_content(TEST_FILE_2)
     assert len(content) == 2
-    assert all([a == b for a, b in zip(content, ['aaa', 'zzz'])])
-    content = get_file_content('test_file_99')
+    assert content == ['aaa\n', 'zzz'], f"Content: {content}"
+    # Try open non-existent file
+    content = get_file_content(TEST_FILE_INVALID)
     assert content is None
 
 
 def test_count_char_freq():
     """Test count_char_freq method."""
-    s = count_char_freq(''.join(get_file_content('test_file_2.txt')))
+    # count character frequency of test file
+    s = count_char_freq(''.join(get_file_content(TEST_FILE_2)))
     assert s['a'] == 3
     assert s['z'] == 3
+    # count char freq of directly given text
     s = count_char_freq('The Test\n 123456 t')
     assert s['t'] == 4
     assert s['h'] == 1
@@ -226,8 +241,9 @@ def test_count_char_freq():
 
 def test_calculate_stats():
     """Test calculate_stats method."""
+    # Calculate stats of input from test file
     s = calculate_stats(count_char_freq(
-        ''.join(get_file_content('test_file_1.txt'))))
+        ''.join(get_file_content(TEST_FILE_1))))
     assert s.total_count == 2231
     assert s.unique_chars_count == 20
     assert s.average == pytest.approx(111.55, 0.01)
@@ -240,6 +256,7 @@ def test_calculate_stats():
     assert s.missing_chars == ['j', 'k', 'w', 'x', 'y', 'z']
 
 
+# === Run script - only when not imported ===
 if __name__ == "__main__":
     INPUT_VALUES = get_input()
     freq = count_char_freq(INPUT_VALUES)
