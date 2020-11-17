@@ -26,4 +26,4 @@ jobs:
         flake8 --show-source .
     - name: Test with pytest
       run: |
-        pytest --doctest-modules --cov=dragon
+        pytest --doctest-modules --cov=dragon -s
