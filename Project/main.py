@@ -27,7 +27,8 @@ def main():
     if numeral_system_type_arg == "-h":
         print(decimalToHexadecimal.convert(input_number))
     else:
-        print("Unable to convert")
+        pass
+        # print("Unable to convert")
 
 
 if __name__ == '__main__':
