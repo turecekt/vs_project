@@ -1,11 +1,6 @@
-"""
-function to calculate binary number from decimal number
-input -> decimal number
-output -> binary number
-"""
-
-
-def decimal_to_binary():
-    # TODO Add code to convert decimal number to binary number
-
-    pass
+def convert(dec_num):
+    if dec_num == 0:
+        return 0
+    else:
+        convert(int(dec_num / 2))
+        return dec_num % 2
