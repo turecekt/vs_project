@@ -31,4 +31,5 @@ jobs:
         sudo apt update
         sudo apt-get install libxcb-icccm4
         sudo apt install libxcb-image0
+        sudo apt-get install -y libxcb-keysyms1
         pytest --doctest-modules --cov=dragon -s
