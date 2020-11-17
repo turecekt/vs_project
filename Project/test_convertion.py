@@ -10,7 +10,8 @@ import decimalToHexadecimal
 class TestConvertion(unittest.TestCase):
 
     def test_decimal_to_binary(self):
-        pass
+        self.assertEqual(decimalToBinary.convert(78), "1001110")
+        self.assertEqual(decimalToBinary.convert(1234567890), "1001001100101100000001011010010")
 
     def test_decimal_to_octal(self):
         self.assertEqual(decimalToOctal.convert(234), "352")
