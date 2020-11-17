@@ -31,4 +31,5 @@ jobs:
         flake8 --show-source .
     - name: Test with pytest
       run: |
+        QT_QPA_PLATFORM=offscreen
         pytest --doctest-modules --cov=dragon -s
