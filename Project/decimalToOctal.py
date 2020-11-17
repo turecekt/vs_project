@@ -1,11 +1,10 @@
-
 def convert(input_number):
-    x = input_number
+    text = ""
     k = []
-    
-    while (input_number > 0):
+
+    while input_number > 0:
         # calc
-        a = int(float(input_number % 8))
+        a = int(input_number % 8)
 
         # a add to array
         k.append(a)
@@ -20,5 +19,4 @@ def convert(input_number):
     for j in k[::-1]:
         text = text + str(j)
 
-    return(text)
-
+    return text

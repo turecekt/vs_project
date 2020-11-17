@@ -13,11 +13,12 @@ class TestConvertion(unittest.TestCase):
         pass
 
     def test_decimal_to_octal(self):
-        pass
+        self.assertEqual(decimalToOctal.convert(234), "352")
+        self.assertEqual(decimalToOctal.convert(2781), "5335")
 
     def test_decimal_to_hexadecimal(self):
-        self.assertEqual(decimalToHexadecimal.convert(100), "064")
-        self.assertEqual(decimalToHexadecimal.convert("15119"), "03B0F")
+        self.assertEqual(decimalToHexadecimal.convert(100), "64")
+        self.assertEqual(decimalToHexadecimal.convert("15119"), "3B0F")
 
 
 if __name__ == '__main__':
