@@ -1,6 +1,9 @@
-def convert(dec_num):
-    if dec_num == 0:
-        return 0
+def convert(num):
+    binar=''
+    if num == 0:
+        binar='0'+binar
     else:
-        convert(int(dec_num / 2))
-        return dec_num % 2
+        while num>0:
+            binar=str(num%2)+binar
+            num=num//2
+    return binar
