@@ -16,7 +16,6 @@ def main():
         numeral_system_type_arg = sys.argv[1]
         input_number = int(sys.argv[2])
     else:
-        # raise TypeError
         numeral_system_type_arg = "not valid"
         input_number = 0
 
@@ -26,9 +25,8 @@ def main():
         print(decimalToOctal.convert(input_number))
     if numeral_system_type_arg == "-h":
         print(decimalToHexadecimal.convert(input_number))
-    else:
-        pass
-        # print("Unable to convert")
+    if numeral_system_type_arg == "not valid":
+        print("Unable to convert")
 
 
 if __name__ == '__main__':
