@@ -28,4 +28,5 @@ jobs:
       run: |
         export QT_DEBUG_PLUGINS=1
         sudo apt-get install libxcb-icccm4
+        sudo apt install libxcb-image0
         pytest --doctest-modules --cov=dragon -s
