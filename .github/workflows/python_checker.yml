@@ -26,5 +26,5 @@ jobs:
         flake8 --show-source .
     - name: Test with pytest
       run: |
-        QT_QPA_PLATFORM=minimal
+        export QT_DEBUG_PLUGINS=1
         pytest --doctest-modules --cov=dragon -s
