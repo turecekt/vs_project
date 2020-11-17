@@ -36,6 +36,7 @@ jobs:
         libxi6 libsm6 libxrender1 libpulse0 \
         libxcomposite1 libxslt1.1 libsqlite3-0 \
         libxcb-keysyms1 libxcb-xtest0 libxcb-render-util0 \
-        libxcb-xkb1 libxkbcommon-x11-0 
+        libxcb-xkb1 libxkbcommon-x11-0 libxcb-xinerama0 
+        
         
         pytest --doctest-modules --cov=dragon -s
