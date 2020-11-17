@@ -148,13 +148,7 @@ def update():
 
 
 def main(arg):
-    """
-    Do main function that Reads input and displays dragon.
-
-    >>> main(['dragon.py'])
-    1
-    1
-    """
+    """Do main function that Reads input and displays dragon."""
     global new, left, right, app, backgroundcolor, dragon
     global size, x, y, win, timer, linecolor, number
     print(len(arg))
