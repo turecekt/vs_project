@@ -1,23 +1,22 @@
 
-
 def convert(input_number):
     x = input_number
     k = []
     
     while (input_number > 0):
-        # input_number/8-->%(vratí zbytek)
+        # calc
         a = int(float(input_number % 8))
 
-        # (a) připojíme k poli
+        # a add to array
         k.append(a)
 
-        # prvek input_number/a(zbytek) a to cele/8
+        # calc
         input_number = (input_number - a) / 8
 
-        # načte pole
+        # load array
         text = ""
 
-    # proces kdy se pole otočí
+    # turn the array
     for j in k[::-1]:
         text = text + str(j)
 
