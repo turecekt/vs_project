@@ -1,5 +1,5 @@
 """Include files."""
-from dragon import move_left, move_right, generate_dragon, main
+from dragon import move_left, move_right, generate_dragon  # , main
 
 
 def test_move_left():
