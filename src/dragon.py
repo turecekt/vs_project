@@ -81,14 +81,12 @@ def move_right(posx, posy, cnt, angle):
 
 def generate_dragon(iteration):
     """
-    Generate Heighway Dragon line route.
+    Generates Heighway Dragon line route.
 
     returns generated line route.
     >>> generate_dragon(1)
     ('r', 'l', 'r')
     """
-    right = 'r'
-    left = 'l'
     old = right
     new = old
     loop_cycle = 1
@@ -103,7 +101,7 @@ def generate_dragon(iteration):
         new = (new) + (old)
         old = new
         loop_cycle = loop_cycle+1
-    return new, left, right
+    return new
 
 
 def update():
@@ -152,9 +150,8 @@ def main(arg):
     """Do main function that Reads input and displays dragon."""
     global new, left, right, app, backgroundcolor, dragon
     global size, x, y, win, timer, linecolor, number
-    print(len(arg))
     if(len(arg) == 1):
-        return 1
+        number = 9
     if(len(arg) == 2):  # count of iteration
         number = int(arg[1])
     elif(len(arg) == 3):  # color of draw line
@@ -165,7 +162,7 @@ def main(arg):
         linecolor = str(arg[2])
         backgroundcolor = str(arg[3])
 
-    new, left, right = generate_dragon(number)
+    new = generate_dragon(number)
     size = len(new)
 
     app = QtGui.QApplication([])
