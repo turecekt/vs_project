@@ -21,11 +21,11 @@ def test_move_right():
 
 def test_generate_dragon():
     """Tests function generate_dragon."""
-    assert generate_dragon(0) == ('r', 'l', 'r')
-    assert generate_dragon(1) == ('r', 'l', 'r')
-    assert generate_dragon(2) == ('rrl', 'l', 'r')
-    assert generate_dragon(3) == ('rrlrrll', 'l', 'r')
-    assert generate_dragon(4) == ('rrlrrllrrrllrll', 'l', 'r')
+    assert generate_dragon(0) == 'r'
+    assert generate_dragon(1) == 'r'
+    assert generate_dragon(2) == 'rrl'
+    assert generate_dragon(3) == ('rrlrrll')
+    assert generate_dragon(4) == ('rrlrrllrrrllrll')
 
 
 # Problem with QT libraries linking with cloud VM
