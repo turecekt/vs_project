@@ -29,4 +29,5 @@ def test_generate_dragon():
 
 def test_main():
     """Tests main function."""
-    assert main() == 0
+    assert main(['dragon.py', 5, 'k', 'w']) == 0
+    assert main(['dragon.py']) == 1
