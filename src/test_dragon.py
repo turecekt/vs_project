@@ -26,7 +26,8 @@ def test_generate_dragon():
     assert generate_dragon(3) == ('rrlrrll', 'l', 'r')
     assert generate_dragon(4) == ('rrlrrllrrrllrll', 'l', 'r')
 
-# Problem with QT libraries linking with cloud VM (works on local machine or VM)
+# Problem with QT libraries linking with cloud VM
+# works on local machine or VM
 # def test_main():
 #    """Tests main function."""
 #    assert main(['dragon.py', 5, 'k', 'w']) == 0
