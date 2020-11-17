@@ -6,6 +6,7 @@ output -> hexadecimal number
 
 
 def convert(input_number):
+    input_number = int(input_number)
     x = (input_number % 16)  # modulo
     chars = "0123456789ABCDEF"
     rest = input_number / 16  # rest after division

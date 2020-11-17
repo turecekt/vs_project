@@ -12,9 +12,7 @@ def pass_args(numeral_system, input_number):
 
 
 def main():
-    # Variables
-
-    if len(sys.argv) == 3:
+    if len(sys.argv) == 3:  # get arguments from terminal
         numeral_system_type_arg = sys.argv[1]
         input_number = int(sys.argv[2])
     else:
