@@ -37,6 +37,16 @@ def obvod(a1, b1, c1):
 
 
 """
+Funkce počítá obsah pomocí Heronova vzorce, tudíž není potřeba znát výšku v trojúhleníku.
+"""
+
+
+def obsah(a1, b1, c1):
+    s = (a1+b1+c1)/2
+    return sqrt(s*(s-a1)*(s-b1)*(s-c1))
+
+
+"""
 Program začíná v tomto místě.
 Uživatel je vyzván, aby zadal souřadnice bodů.
 """
@@ -59,9 +69,10 @@ print("Délka strany a je ", "{:.2f}".format(a))
 print("Délka strany b je ", "{:.2f}".format(b))
 print("Délka strany c je ", "{:.2f}".format(c))
 print()
-if setrojitelnost(a, b, c) == 1:
+if setrojitelnost(a, b, c):
     print("Zadaný trojúhelník lze setrojit.")
     print("Obvod trojúhelníku je ", "{:.2f}".format(obvod(a, b, c)))
+    print("Obsah trojúhelníku je ", "{:.2f}".format(obsah(a, b, c)))
 else:
-    print("Zadaný trojúhelník neexistuje - nelze spočítat obvod. ")
+    print("Zadaný trojúhelník neexistuje - nelze spočítat obvod a obsah.")
 
