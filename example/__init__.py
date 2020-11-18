@@ -27,3 +27,32 @@ print(retezec.lower())
 retezecMalym = retezec.lower()
 print(retezec.count("a"))
 print(retezecMalym.count("a"))
+print(retezecMalym.count("b"))
+a = retezecMalym.count("a")
+b = retezecMalym.count("b")
+nejcetnejsi = print(max(a,b))
+text = "Ananas"
+def pocetZnaku(text):
+
+    return text.count("a")
+print("počet znaků")
+print(pocetZnaku(text))
+
+
+str = input ("Enter a string")
+print ("String is ",str)
+str = str.lower()
+count = {}
+for x in str:
+    if x in count.keys():
+        count[x] +=1
+    else:
+        count[x] = 1
+print(count)
+for x in count.keys ():
+    print("znak",x ,"se v textu vyskytuje: ",count[x])
+
+    
+
+
+
