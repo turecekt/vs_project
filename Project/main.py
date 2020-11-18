@@ -19,6 +19,10 @@ def main():
         numeral_system_type_arg = "not valid"
         input_number = 0
 
+    # enables functionality for both lowercase and uppercase arguments
+    numeral_system_type_arg = numeral_system_type_arg.lower()
+
+    # choose what arguments is used
     if numeral_system_type_arg == "-b":
         print(decimalToBinary.convert(input_number))
     if numeral_system_type_arg == "-o":
