@@ -7,10 +7,6 @@ import decimalToOctal
 import decimalToHexadecimal
 
 
-def pass_args(numeral_system, input_number):
-    return numeral_system, input_number
-
-
 def main():
     if len(sys.argv) == 3:  # get arguments from terminal
         numeral_system_type_arg = sys.argv[1]
@@ -22,14 +18,14 @@ def main():
     # enables functionality for both lowercase and uppercase arguments
     numeral_system_type_arg = numeral_system_type_arg.lower()
 
-    # choose what arguments is used
+    # choose what argument is used
     if numeral_system_type_arg == "-b":
         print(decimalToBinary.convert(input_number))
-    if numeral_system_type_arg == "-o":
+    elif numeral_system_type_arg == "-o":
         print(decimalToOctal.convert(input_number))
-    if numeral_system_type_arg == "-h":
+    elif numeral_system_type_arg == "-h":
         print(decimalToHexadecimal.convert(input_number))
-    if numeral_system_type_arg == "not valid":
+    else:
         print("Unable to convert")
 
 
