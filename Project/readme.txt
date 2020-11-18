@@ -6,6 +6,8 @@ possible arguments:
     -o  ( for octal number )
     -h  ( for hexadecimal number )
 
+possible input number:
+    - input must be number of type integer
 
 example of usage:
 
