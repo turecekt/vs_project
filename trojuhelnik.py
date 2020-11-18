@@ -48,7 +48,7 @@ def pravouhlost(a1, b1, c1):
 # Program začíná v tomto místě.
 # Uživatel je vyzván, aby zadal souřadnice bodů.
 
-# Hodnoty bodů jsou zadány "natvrdo" kvůli testování. 
+# Hodnoty bodů jsou zadány "natvrdo" kvůli testování.
 """
 ax = int(input("Zadej souřadnici x bodu A: "))
 ay = int(input("Zadej souřadnici y bodu A: "))
@@ -89,3 +89,7 @@ if pravouhlost(a, b, c):
 
 def test_obvod():
     assert obvod(1, 2, 3) == 6
+
+
+def test_obsah():
+    assert obsah(5, 4, sqrt(41)) == 10
