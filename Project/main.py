@@ -11,6 +11,8 @@ def main():
     if len(sys.argv) == 3:  # get arguments from terminal
         numeral_system_type_arg = sys.argv[1]
         input_number = int(sys.argv[2])
+
+    # TODO refactor else case
     else:
         numeral_system_type_arg = "not valid"
         input_number = 0
