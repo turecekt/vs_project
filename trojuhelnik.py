@@ -27,6 +27,16 @@ def setrojitelnost(a1, b1, c1):
 
 
 """
+Funkce počítá obvod trojúhelníku.
+Počítá přesně, zobrazeny budou ale jen dvě desetinná čísla
+"""
+
+
+def obvod(a1, b1, c1):
+    return a1+b1+c1
+
+
+"""
 Program začíná v tomto místě.
 Uživatel je vyzván, aby zadal souřadnice bodů.
 """
@@ -51,6 +61,7 @@ print("Délka strany c je ", "{:.2f}".format(c))
 print()
 if setrojitelnost(a, b, c) == 1:
     print("Zadaný trojúhelník lze setrojit.")
+    print("Obvod trojúhelníku je ", "{:.2f}".format(obvod(a, b, c)))
 else:
-    print("Zadaný trojúhelník neexistuje.")
+    print("Zadaný trojúhelník neexistuje - nelze spočítat obvod. ")
 
