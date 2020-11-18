@@ -42,17 +42,34 @@ print(pocetZnaku(text))
 str = input ("Enter a string")
 print ("String is ",str)
 str = str.lower()
+str = str.replace(" ","")
+print ("String is ",str)
 count = {}
 for x in str:
     if x in count.keys():
         count[x] +=1
+         
     else:
         count[x] = 1
 print(count)
+
 for x in count.keys ():
     print("znak",x ,"se v textu vyskytuje: ",count[x])
 
-    
+print("Počet různých znaků: ",len(count))
+
+MaxDictVal = max(count, key=count.get)
+print("Nejčetnější znak:",MaxDictVal)
+
+MinDictVal = min(count, key=count.get)
+print("Nejméně četný znak:",MinDictVal)
+
+
+"""Ještě pořešit:
+    - jak vypsat všechny nejméně četné znaky
+    - Text se bude načítat ze souboru
+    - průměrná četnost"""
+
 
 
 
