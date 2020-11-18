@@ -37,13 +37,25 @@ def obvod(a1, b1, c1):
 
 
 """
-Funkce počítá obsah pomocí Heronova vzorce, tudíž není potřeba znát výšku v trojúhleníku.
+Funkce počítá obsah pomocí Heronova vzorce, tudíž není potřeba znát výšku v trojúhelníku.
 """
 
 
 def obsah(a1, b1, c1):
     s = (a1+b1+c1)/2
     return sqrt(s*(s-a1)*(s-b1)*(s-c1))
+
+
+"""
+Funkce pomocí Pythagorovy věty zjistí pravoúhlost trojúhelníku.
+"""
+
+
+def pravouhlost(a1, b1, c1):
+    if c1**2 == (a1**2 + b1**2):
+        return 1
+    else:
+        return 0
 
 
 """
@@ -73,6 +85,9 @@ if setrojitelnost(a, b, c):
     print("Zadaný trojúhelník lze setrojit.")
     print("Obvod trojúhelníku je ", "{:.2f}".format(obvod(a, b, c)))
     print("Obsah trojúhelníku je ", "{:.2f}".format(obsah(a, b, c)))
+    if pravouhlost(a, b, c):
+        print("Trojúhelník je pravoúhlý.")
+    else:
+        print("Trojúhelník není pravoúhlý.")
 else:
-    print("Zadaný trojúhelník neexistuje - nelze spočítat obvod a obsah.")
-
+    print("Zadaný trojúhelník neexistuje - nelze spočítat obvod a obsah ani určit pravoúhlost.")
