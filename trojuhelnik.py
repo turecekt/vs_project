@@ -4,44 +4,39 @@
 from math import sqrt
 
 
-"""
-Projekt AK1VS - Trojúhelník
-"""
-
-
-# Fuknce pro výpočet délky stran.
-# Delka je počítána přesně, nicméně se v programu zobrazují pouze
-# dve desetinná místa.
-# a1, a2 jsou souřadnice bodu A; b1, b2 souřadnice bodu B
-
 def delka_strany(a1, a2, b1, b2):
+    """Vypočítá délku strany, vrací jeho přesnou hodnotu.
+
+    Argumenty:
+        a1 - souřadnice x 1. bodu
+        a2 - souřadnice y 1. bodu
+        b1 - souřadnice x 2. bodu
+        b2 - souřadnice y 2. bodu
+    """
     return sqrt(((b1 - a1) ** 2) + ((b2 - a2) ** 2))
 
 
-# Funkce určuje, jestli lze dany trojúhelník sestrojit.
-# Pokud ano, vrací 1, jinak 0.
 def sestrojitelnost(a1, b1, c1):
+    """Určí, jestli lze trojúhelník sestrojit. Pokud ano, vrací 1, jinak 0."""
     if a1 + b1 > c1 and a1 + c1 > b1 and b1 + c1 > a1:
         return 1
     else:
         return 0
 
 
-# Funkce počítá obvod trojúhelníku.
-# Počítá přesně, zobrazeny budou ale jen dve desetinná čísla.
 def obvod(a1, b1, c1):
+    """Spočítá obvod, vrátí jeho přesnou hodnotu"""
     return a1 + b1 + c1
 
 
-# Funkce počítá obsah pomocí Heronova vzorce,
-# tudíž není potřeba znát výšku v trojúhelníku.
 def obsah(a1, b1, c1):
+    """Pomocí Heronova vzorce spočítá obsah a vrátí jeho hodnotu"""
     s = (a1 + b1 + c1) / 2
     return sqrt(s * (s - a1) * (s - b1) * (s - c1))
 
 
-# Funkce pomocí Pythagorovy věty zjistí pravouhlost trojúhelníku.
 def pravouhlost(a1, b1, c1):
+    """Pythagorovou větou určí pravoúhlost, pokud je pravoúhlý, vrací 1."""
     if c1 ** 2 == (a1 ** 2 + b1 ** 2) and (a != 0 and b != 0 and c != 0):
         return 1
     else:
