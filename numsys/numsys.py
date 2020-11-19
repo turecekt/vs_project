@@ -128,7 +128,7 @@ def test_convertToBinary():
     assert convertToBinary(-20.5) == \
         "number parameter must be round(int)"
     assert convertToBinary("asdk") == \
-        "number parameter must be round(int)" 
+        "number parameter must be round(int)"
 
 
 def test_convertToOctal():
@@ -159,4 +159,3 @@ def test_convertToHexadecimal():
         "number parameter must be round(int)"
     assert convertToHexadecimal("asdk") == \
         "number parameter must be round(int)"
-
