@@ -290,7 +290,16 @@ def test_calculate_stats():
     _eq(s.all_chars['T'], 175)
     _eq(s.all_chars['C'], 92)
     _eq(s.missing_chars, ['J', 'K', 'W', 'X', 'Y', 'Z'])
-    print(s)
+    # Simplistic printout test
+    printout = str(s)
+    _eq(len(printout), 535)  # check length of the result
+    # check some lines
+    assert 'Least frequent characters with 22 occurrences: Q, F, H' in printout
+    assert 'Most frequent character with 244 occurrences: E' in printout
+    assert 'There are 20 individual characters from the alphabet, ' \
+           'average count per character being 111.55' in printout
+    assert 'Alphabet characters that do not appear at all: ' \
+           'J, K, W, X, Y, Z' in printout
 
 
 # === Run script - only when not imported ===
