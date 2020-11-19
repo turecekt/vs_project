@@ -1,7 +1,7 @@
 # --coding: utf-8 --
-    """Kódování přidáno kvůli porblémům s testváním."""
+   """Kódování přidáno kvůli porblémům s testváním."""
 
-    
+
 from math import sqrt
 
 
