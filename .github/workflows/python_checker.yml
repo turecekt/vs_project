@@ -26,8 +26,4 @@ jobs:
         flake8 --show-source .
     - name: Test with pytest
       run: |
-<<<<<<< HEAD
-        pytest --doctest-modules --cov=. --cov-fail-under=75 * -s
-=======
         pytest --doctest-modules --cov=. --cov-report term-missing -s --cov-fail-under=75 -v
->>>>>>> aa24e1e45f06cdc7416858964faeb56810202dc7
