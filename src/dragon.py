@@ -213,21 +213,35 @@ def update():
     return 0
 
 
+def arg_decode(argument):
+    """CLI input decode function.
+
+    Decodes console input values.
+    Returns numer of iterations, color of line and background.
+    """
+    if(len(argument) == 1):  # if no values received
+        iter_number = 9
+        return iter_number, 'r', 'k'  # set iteration to 9
+    if(len(argument) == 2):  # count of iteration
+        iter_number = int(argument[1])
+        return iter_number, 'r', 'k'
+    elif(len(argument) == 3):  # color of draw line
+        iter_number = int(argument[1])
+        loc_linecolor = str(argument[2])
+        return iter_number, loc_linecolor, 'k'
+    elif(len(argument) == 4):  # color of background
+        iter_number = int(argument[1])
+        loc_linecolor = str(argument[2])
+        loc_backgroundcolor = str(argument[3])
+        return iter_number, loc_linecolor, loc_backgroundcolor
+    return -1
+
+
 def main(arg):
     """Do main function that Reads input and displays dragon."""
     global new, left, right, app, backgroundcolor, dragon
     global size, x, y, win, timer, linecolor, number
-    if(len(arg) == 1):  # if no values received
-        number = 9  # set iteration to 9
-    if(len(arg) == 2):  # count of iteration
-        number = int(arg[1])
-    elif(len(arg) == 3):  # color of draw line
-        number = int(arg[1])
-        linecolor = str(arg[2])
-    elif(len(arg) == 4):  # color of background
-        number = int(arg[1])
-        linecolor = str(arg[2])
-        backgroundcolor = str(arg[3])
+    number, linecolor, backgroundcolor = arg_decode(arg)
     new = generate_dragon(number)  # Generate dragon plot values
 
     app = QtGui.QApplication([])  # create plot application

@@ -1,5 +1,6 @@
 """Include files."""
-from dragon import move_left, move_right, generate_dragon, modify_pos  # , main
+from dragon import move_left, move_right, \
+                   generate_dragon, modify_pos, arg_decode  # , main
 # import runpy as rp
 
 
@@ -62,6 +63,15 @@ def test_modify_pos():
 
     assert modify_pos([0, 0, 0, 0], [0, 0, 0, 0], 1, -1, -4, 3, ['r', 'l']) \
         == ([0, 1, 1, 0], [0, 0, 0, 0], 2, 3, 0, ['r', 'l'])
+
+
+def test_arg_decode():
+    """Tests input arguments."""
+    assert arg_decode([]) == -1
+    assert arg_decode(['dragon.py']) == (9, 'r', 'k')
+    assert arg_decode(['dragon.py', 5, 'y']) == (5, 'y', 'k')
+    assert arg_decode(['dragon.py', 5, 'y', 'b']) == (5, 'y', 'b')
+
 
 # Problem with QT libraries linking with cloud VM
 # works on local machine or VM
