@@ -10,8 +10,10 @@ Projekt AK1VS - Trojúhelník
 
 
 # Fuknce pro výpočet délky stran.
-# Delka je počítána přesně, nicméně se v programu zobrazují pouze dve desetinná místa.
+# Delka je počítána přesně, nicméně se v programu zobrazují pouze
+# dve desetinná místa.
 # a1, a2 jsou souřadnice bodu A; b1, b2 souřadnice bodu B
+
 def delka_strany(a1, a2, b1, b2):
     return sqrt(((b1 - a1) ** 2) + ((b2 - a2) ** 2))
 
@@ -31,7 +33,8 @@ def obvod(a1, b1, c1):
     return a1 + b1 + c1
 
 
-# Funkce počítá obsah pomocí Heronova vzorce, tudíž není potřeba znát výšku v trojúhelníku.
+# Funkce počítá obsah pomocí Heronova vzorce,
+# tudíž není potřeba znát výšku v trojúhelníku.
 def obsah(a1, b1, c1):
     s = (a1 + b1 + c1) / 2
     return sqrt(s * (s - a1) * (s - b1) * (s - c1))
@@ -82,7 +85,8 @@ if setrojitelnost(a, b, c):
     print("Obvod trojúhelníku je ", "{:.2f}".format(obvod(a, b, c)))
     print("Obsah trojúhelníku je ", "{:.2f}".format(obsah(a, b, c)))
 else:
-    print("Zadaný trojúhelník neexistuje - nelze spočítat obvod a obsah ani určit pravoúhlost.")
+    print("Zadaný trojúhelník neexistuje - nelze spočítat" +
+          "obvod a obsah ani určit pravoúhlost.")
 if pravouhlost(a, b, c):
     print("Trojúhelník je pravoúhlý.")
 
@@ -97,4 +101,7 @@ def test_obsah():
 
 def test_pravouhlost():
     assert pravouhlost(3, 4, 5) == 1
-    
+
+
+def test_delka_strany():
+    assert delka_strany(0, 0, 0, 5) == 5
