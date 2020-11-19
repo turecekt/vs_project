@@ -209,9 +209,9 @@ def calculate_stats(alphabet: dict) -> CharStats:
 
 
 # === Unit Tests ===
-TEST_FILE_1 = 'martinklimcik/test_file_1.txt'
-TEST_FILE_2 = 'martinklimcik/test_file_2.txt'
-TEST_FILE_INVALID = 'martinklimcik/test_file_99.txt'
+TEST_FILE_1 = 'test_file_1.txt'
+TEST_FILE_2 = 'test_file_2.txt'
+TEST_FILE_INVALID = 'test_file_99.txt'
 
 
 def test_open_file():
