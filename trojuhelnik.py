@@ -1,6 +1,4 @@
-"""Projekt AK1VS - Trojúhelník. """
-
-
+"""Projekt AK1VS - Trojúhelník."""
 from math import sqrt
 
 
