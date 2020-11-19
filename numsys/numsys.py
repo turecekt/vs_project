@@ -9,10 +9,10 @@ def convertToBinary(number):
     Returns:
     convertedNumber - číslo převedené do dvojkové soustavy
     """
-    if number < 0:
-        return "number parameter cant be negative"
     if not isinstance(number, int):
         return "number parameter must be round(int)"
+    if number < 0:
+        return "number parameter cant be negative"
 
     convertedNumber = ""
     remainder = number
@@ -34,10 +34,10 @@ def convertToOctal(number):
     Returns:
     convertedNumber - číslo převedené do osmičkové soustavy
     """
-    if number < 0:
-        return "number parameter cant be negative"
     if not isinstance(number, int):
         return "number parameter must be round(int)"
+    if number < 0:
+        return "number parameter cant be negative"
 
     convertedNumber = ""
     remainder = number
@@ -71,10 +71,10 @@ def convertToHexadecimal(number):
     Returns:
     convertedNumber - číslo převedené do šestnástkové soustavy
     """
-    if number < 0:
-        return "number parameter cant be negative"
     if not isinstance(number, int):
         return "number parameter must be round(int)"
+    if number < 0:
+        return "number parameter cant be negative"
 
     convertedNumber = ""
     remainder = number
@@ -119,49 +119,44 @@ def convertToHexadecimal(number):
 def test_convertToBinary():
     """Otestuje správnost převodu do dvojkové soustavy."""
     assert convertToBinary(20) == "10100"
-
-
-def test_convertToBinaryNegativeParameter():
     """Otestuje zda-li funkce nepřijímá jako argument záporná čísla."""
     assert convertToBinary(-20) == \
         "number parameter cant be negative"
-
-
-def test_convertToBinaryParameterNotRound():
     """Otestuje zda-li funkce nepřijímá jako argument desetinná čísla."""
     assert convertToBinary(20.5) == \
         "number parameter must be round(int)"
+    assert convertToBinary(-20.5) == \
+        "number parameter must be round(int)"
+    assert convertToBinary("asdk") == \
+        "number parameter must be round(int)" 
 
 
 def test_convertToOctal():
     """Otestuje správnost převodu do osmičkové soustavy."""
     assert convertToOctal(20) == "24"
-
-
-def test_convertToOctalNegativeParameter():
     """Otestuje zda-li funkce nepřijímá jako argument záporná čísla."""
     assert convertToOctal(-20) == \
         "number parameter cant be negative"
-
-
-def test_convertToOctalParameterNotRound():
     """Otestuje zda-li funkce nepřijímá jako argument desetinná čísla."""
-    assert convertToBinary(20.5) == \
+    assert convertToOctal(20.5) == \
+        "number parameter must be round(int)"
+    assert convertToOctal(-20.5) == \
+        "number parameter must be round(int)"
+    assert convertToOctal("asdk") == \
         "number parameter must be round(int)"
 
 
 def test_convertToHexadecimal():
     """Otestuje správnost převodu do šestnástkové soustavy."""
     assert convertToHexadecimal(185) == "B9"
-
-
-def test_convertToHexadecimalNegativeParameter():
     """Otestuje zda-li funkce nepřijímá jako argument záporná čísla."""
     assert convertToHexadecimal(-20) == \
         "number parameter cant be negative"
-
-
-def test_convertToHexadecimalParameterNotRound():
     """Otestuje zda-li funkce nepřijímá jako argument desetinná čísla."""
-    assert convertToBinary(20.5) == \
+    assert convertToHexadecimal(20.5) == \
         "number parameter must be round(int)"
+    assert convertToHexadecimal(-20.5) == \
+        "number parameter must be round(int)"
+    assert convertToHexadecimal("asdk") == \
+        "number parameter must be round(int)"
+
