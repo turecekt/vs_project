@@ -1,4 +1,5 @@
 # --coding: utf-8 --
+    """Kódování přidáno kvůli porblémům s testváním."""
 
 
 from math import sqrt
@@ -25,12 +26,12 @@ def sestrojitelnost(a1, b1, c1):
 
 
 def obvod(a1, b1, c1):
-    """Spočítá obvod, vrátí jeho přesnou hodnotu"""
+    """Spočítá obvod, vrátí jeho přesnou hodnotu."""
     return a1 + b1 + c1
 
 
 def obsah(a1, b1, c1):
-    """Pomocí Heronova vzorce spočítá obsah a vrátí jeho hodnotu"""
+    """Pomocí Heronova vzorce spočítá obsah a vrátí jeho hodnotu."""
     s = (a1 + b1 + c1) / 2
     return sqrt(s * (s - a1) * (s - b1) * (s - c1))
 
@@ -87,20 +88,25 @@ if pravouhlost(a, b, c):
 
 
 def test_obvod():
+    """Testuje funkci pro výpočet obvodu."""
     assert obvod(1, 2, 3) == 6
 
 
 def test_obsah():
+    """Testuje funkci pro výpočet obsahu."""
     assert obsah(5, 4, sqrt(41)) == 10
 
 
 def test_pravouhlost():
+    """Testuje funkci pro určení pravoúhlosti."""
     assert pravouhlost(3, 4, 5) == 1
 
 
 def test_delka_strany():
+    """Testuje funkci pro výpočet délek stran."""
     assert delka_strany(0, 0, 0, 5) == 5
 
 
 def test_sestrojitelnost():
+    """Testuje funkci pro určení sestrojitelnosti."""
     assert sestrojitelnost(3, 4, 5) == 1
