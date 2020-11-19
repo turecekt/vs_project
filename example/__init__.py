@@ -17,29 +17,19 @@ def compute(x):
         - output - Output of the function
     """
     return x * x - 2 * x
-x=2
-print(x**2)
-print (compute(1))
-print("___")
-
-retezec = "Abeceda"
-print(retezec.lower())
-retezecMalym = retezec.lower()
-print(retezec.count("a"))
-print(retezecMalym.count("a"))
-print(retezecMalym.count("b"))
-a = retezecMalym.count("a")
-b = retezecMalym.count("b")
-nejcetnejsi = print(max(a,b))
-text = "Ananas"
-def pocetZnaku(text):
-
-    return text.count("a")
-print("počet znaků")
-print(pocetZnaku(text))
 
 
-str = input ("Enter a string")
+soubor = open('basnicka.txt', encoding='utf-8')
+obsah = soubor.read()
+soubor.close()
+"""print("kolikátý je to znak: ",obsah.find("#"))"""
+ukoncovaciZnak = obsah.find("#")
+obsah = obsah[0:ukoncovaciZnak]
+print ("ukončovací znak: ",ukoncovaciZnak)
+print(obsah)
+
+"""str = input ("Enter a string")"""
+str = obsah
 print ("String is ",str)
 str = str.lower()
 str = str.replace(" ","")
@@ -65,10 +55,14 @@ MinDictVal = min(count, key=count.get)
 print("Nejméně četný znak:",MinDictVal)
 
 
+
+
+
 """Ještě pořešit:
     - jak vypsat všechny nejméně četné znaky
-    - Text se bude načítat ze souboru
+    - když text nebude obsahovat #, tak neodečítat -1
     - průměrná četnost"""
+
 
 
 
