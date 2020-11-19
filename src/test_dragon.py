@@ -1,5 +1,5 @@
 """Include files."""
-from dragon import move_left, move_right, generate_dragon  # , main
+from dragon import move_left, move_right, generate_dragon, modify_pos  # , main
 # import runpy as rp
 
 
@@ -27,6 +27,41 @@ def test_generate_dragon():
     assert generate_dragon(3) == ('rrlrrll')
     assert generate_dragon(4) == ('rrlrrllrrrllrll')
 
+
+def test_modify_pos():
+    """Tests function for modified positions."""
+    assert modify_pos([0, 0], [0, 0], 0, 0, 0, 2, ['l']) \
+        == ([-1, -1], [0, 0], 1, 1, 0, ['l'])
+
+    assert modify_pos([0, 0], [0, 0], 0, 0, 0, 2, ['r']) \
+        == ([-1, -1], [0, 0], 1, 0, 1, ['r'])
+
+    assert modify_pos([0, 0], [0, 0], 0, 0, 0, 2, ['l', 'l']) \
+        == ([-1, -1], [0, 0], 1, 1, 0, ['l', 'l'])
+
+    assert modify_pos([0, 0], [0, 0], 0, 0, 0, 2, ['r', 'r']) \
+        == ([-1, -1], [0, 0], 1, 0, 1, ['r', 'r'])
+
+    assert modify_pos([0, 0, 0, 0], [0, 0, 0, 0], 1, 4, 0, 3, ['l', 'r']) \
+        == ([0, 0, 0, 0], [0, -1, -1, 0], 2, 3, 0, ['l', 'r'])
+
+    assert modify_pos([0, 0, 0, 0], [0, 0, 0, 0], 1, -6, 0, 3, ['l', 'r']) \
+        == ([0, 0, 0, 0], [0, -1, -1, 0], 2, 0, 0, ['l', 'r'])
+
+    assert modify_pos([0, 0, 0, 0], [0, 0, 0, 0], 1, -1, 3, 3, ['r', 'r']) \
+        == ([0, 0, 0, 0], [0, -1, -1, 0], 2, 0, 0, ['r', 'r'])
+
+    assert modify_pos([0, 0, 0, 0], [0, 0, 0, 0], 1, -1, 3, 3, ['r', 'l']) \
+        == ([0, 0, 0, 0], [0, 1, 1, 0], 2, 0, 3, ['r', 'l'])
+
+    assert modify_pos([0, 0, 0, 0], [0, 0, 0, 0], 1, 3, 3, 3, ['l', 'l']) \
+        == ([0, 0, 0, 0], [0, 1, 1, 0], 2, 0, 3, ['l', 'l'])
+
+    assert modify_pos([0, 0, 0, 0], [0, 0, 0, 0], 1, -1, 6, 3, ['r', 'l']) \
+        == ([0, 0, 0, 0], [0, 1, 1, 0], 2, 0, 0, ['r', 'l'])
+
+    assert modify_pos([0, 0, 0, 0], [0, 0, 0, 0], 1, -1, -4, 3, ['r', 'l']) \
+        == ([0, 1, 1, 0], [0, 0, 0, 0], 2, 3, 0, ['r', 'l'])
 
 # Problem with QT libraries linking with cloud VM
 # works on local machine or VM

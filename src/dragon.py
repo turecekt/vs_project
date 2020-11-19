@@ -21,6 +21,8 @@ angle_left = (3 - angle_right)
  Move left
  in = pos , count , angle
  returns modified positions x, y
+
+ angle (0-3)
  1 = up , 0 = no change , -1 = down
  [90,180,270,360] degree
  [1,0,-1,0] = y
@@ -44,13 +46,13 @@ def move_left(posx, posy, cnt, angle):
     # load to x and y
     # merge x and y value with static table
     # replace new value to old one
-    x = local_posx[cnt]
-    x = x + static_x[angle]
-    local_posx[cnt] = x
+    tmp_x = local_posx[cnt]
+    tmp_x = tmp_x + static_x[angle]
+    local_posx[cnt] = tmp_x
 
-    y = local_posy[cnt]
-    y = y + static_y[angle]
-    local_posy[cnt] = y
+    tmp_y = local_posy[cnt]
+    tmp_y = tmp_y + static_y[angle]
+    local_posy[cnt] = tmp_y
     # Return modified value
     return local_posx[cnt], local_posy[cnt]
 
@@ -59,6 +61,8 @@ def move_left(posx, posy, cnt, angle):
  Move right
  in = pos , count , angle
  returns modified positions x, y
+
+ angle (0-3)
  1 = up , 0 = no change , -1 = down
  [90,180,270,360] degree
  [-1,0,1,0] = y
@@ -82,12 +86,12 @@ def move_right(posx, posy, cnt, angle):
     # load to x and y
     # merge x and y value with static table
     # replace new value to old one
-    x = local_posx[cnt]
-    x = x + static_x[angle]
-    local_posx[cnt] = x
-    y = local_posy[cnt]
-    y = y + static_y[angle]
-    local_posy[cnt] = y
+    tmp_x = local_posx[cnt]
+    tmp_x = tmp_x + static_x[angle]
+    local_posx[cnt] = tmp_x
+    tmp_y = local_posy[cnt]
+    tmp_y = tmp_y + static_y[angle]
+    local_posy[cnt] = tmp_y
     # Return modified value
     return local_posx[cnt], local_posy[cnt]
 
@@ -117,48 +121,95 @@ def generate_dragon(iteration):
     return new
 
 
+def modify_pos(local_x, local_y,
+               pos, local_angle_left,
+               local_angle_right, local_size,
+               local_new):
+    """Modify generated line route function.
+
+    Function modifies plot position array with predefined plot direction
+    Input:  x array,
+            y array,
+            current position in array
+            angle change left,
+            angle change right,
+            size of arrays,
+            array of generated line route
+
+    Return: modified x array,
+            modified y array,
+            current position
+            modified angle left
+            modified angle right
+            unchanged line route array
+
+    angle_left is reversed value of angle_right
+    angle_right [0,1,2,3]
+    angle_left  [3,2,1,0]
+
+    >>> modify_pos([0,0,0,0], [0,0,0,0], 1, -1, -4, 3, ['r','l'])
+    ([0, 1, 1, 0], [0, 0, 0, 0], 2, 3, 0, ['r', 'l'])
+    """
+    if(pos < local_size-1):
+        if local_new[pos] == (right):  # right
+            if(local_new[pos-1] == (right)):  # if previous was same
+                local_angle_right += 1  # increase angle
+                if(local_angle_left < 0):  # Limit value
+                    local_angle_left = 0
+                if(local_angle_right > 3):
+                    local_angle_right = 0
+            else:  # if previous was diffrent
+                # calculate reversed value
+                local_angle_right = 3 - local_angle_left
+                if(local_angle_right < 0):  # Limit value
+                    local_angle_right = 0
+                if(local_angle_right > 3):
+                    local_angle_right = 0
+                if(local_angle_left < 0):
+                    local_angle_left = 0
+                if(local_angle_left > 3):
+                    local_angle_left = 3
+            # get modified position
+            local_x[pos], local_y[pos] = move_right(local_x, local_y, pos,
+                                                    local_angle_right)
+        elif local_new[pos] == (left):  # left
+            if(local_new[pos-1] == (left)):  # if previous was same
+                local_angle_left += 1  # increase angle
+                if(local_angle_left > 3):  # Limit value
+                    local_angle_left = 0
+            else:  # if previous was diffrent
+                # calculate reversed value
+                local_angle_left = 3-(local_angle_right)
+                if(local_angle_left < 0):  # Limit value
+                    local_angle_left = 0
+                if(local_angle_left > 3):
+                    local_angle_left = 3
+                if(local_angle_right < 0):
+                    local_angle_right = 0
+                if(local_angle_right > 3):
+                    local_angle_right = 0
+            # get modified position
+            local_x[pos], local_y[pos] = move_left(local_x, local_y, pos,
+                                                   local_angle_left)
+        pos += 1  # increase position
+        local_x[pos] = local_x[pos-1]  # store old pos to new
+        local_y[pos] = local_y[pos-1]  # store old pos to new
+    return local_x, local_y, pos, local_angle_left, \
+        local_angle_right, local_new
+
+
 def update():
     """
     Graph update function.
 
-    No return.
-    angle_left is reversed value of angle_right
-    angle_right [0,1,2,3]
-    angle_left  [3,2,1,0]
+    No return value.
     """
-    global dragon, x, y, position, size, angle_left, angle_right
-    if(position < size-1):
-        if new[position] == (right):  # right
-            if(new[position-1] == (right)):  # if previous was same
-                angle_right += 1  # increase angle
-                if(angle_left < 0):  # Limit value
-                    angle_left = 0
-                if(angle_right > 3):
-                    angle_right = 0
-            else:  # if previous was diffrent
-                angle_right = 3 - angle_left  # calculate reversed value
-                if(angle_right < 0):
-                    angle_right = 0
-                if(angle_right > 3):
-                    angle_right = 0
-
-            x[position], y[position] = move_right(x, y, position, angle_right)
-        elif new[position] == (left):  # left
-            if(new[position-1] == (left)):  # if previous was same
-                angle_left += 1  # increase angle
-                if(angle_left > 3):  # Limit value
-                    angle_left = 0
-            else:  # if previous was diffrent
-                angle_left = 3-(angle_right)  # calculate reversed value
-                if(angle_left < 0):
-                    angle_left = 0
-            x[position], y[position] = move_left(x, y, position, angle_left)
-        else:  # done or empty
-            pass
-        position += 1  # increase position
-        x[position] = x[position-1]  # store old pos to new
-        y[position] = y[position-1]  # store old pos to new
-        dragon.setData(x, y)  # update plot
+    global dragon, x, y, position, angle_left, angle_right, size, new
+    x, y, position, angle_left, angle_right, new = modify_pos(x, y, position,
+                                                              angle_left,
+                                                              angle_right,
+                                                              size, new)
+    dragon.setData(x, y)  # update plot
     return 0
 
 
@@ -193,10 +244,8 @@ def main(arg):
 
     static_posx = [-1, 0, 0]  # predefined cords for lines
     static_posy = [0, 0, -1]  #
-    dragon = plot.plot(static_posx, static_posy)
-    dragon.setPen(linecolor, width=3)
-    dragon = plot.plot(x, y)  # plot empty arrays
-    dragon.setPen(linecolor, width=3)
+    dragon = plot.plot(static_posx, static_posy, pen=linecolor)
+    dragon = plot.plot(x, y, pen=linecolor)  # plot empty arrays
     timer = QtCore.QTimer()  # Init timer
     timer.timeout.connect(update)  # join timer update to funtion
     timer.start(1)  # set timer update time
@@ -205,8 +254,6 @@ def main(arg):
 
 if __name__ == '__main__':
     import sys
-    stop = main(sys.argv)
-    if(stop == 1):
-        sys.exit()
+    main(sys.argv)
     if (sys.flags.interactive != 1) or not hasattr(QtCore, 'PYQT_VERSION'):
         QtGui.QApplication.instance().exec_()
