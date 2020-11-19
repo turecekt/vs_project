@@ -20,7 +20,7 @@ def delka_strany(a1, a2, b1, b2):
 
 # Funkce určuje, jestli lze dany trojúhelník sestrojit.
 # Pokud ano, vrací 1, jinak 0.
-def setrojitelnost(a1, b1, c1):
+def sestrojitelnost(a1, b1, c1):
     if a1 + b1 > c1 and a1 + c1 > b1 and b1 + c1 > a1:
         return 1
     else:
@@ -80,7 +80,7 @@ print("Délka strany b je ", "{:.2f}".format(b))
 print("Délka strany c je ", "{:.2f}".format(c))
 print()
 
-if setrojitelnost(a, b, c):
+if sestrojitelnost(a, b, c):
     print("Zadaný trojúhelník lze setrojit.")
     print("Obvod trojúhelníku je ", "{:.2f}".format(obvod(a, b, c)))
     print("Obsah trojúhelníku je ", "{:.2f}".format(obsah(a, b, c)))
@@ -105,3 +105,7 @@ def test_pravouhlost():
 
 def test_delka_strany():
     assert delka_strany(0, 0, 0, 5) == 5
+
+
+def test_sestrojitelnost():
+    assert sestrojitelnost(3, 4, 5) == 1
