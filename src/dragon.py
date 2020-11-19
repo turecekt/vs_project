@@ -123,8 +123,8 @@ def update():
 
     No return.
     angle_left is reversed value of angle_right
-    angle_right [0.1.2.3]
-    angle_left  [3.2.1.0]
+    angle_right [0,1,2,3]
+    angle_left  [3,2,1,0]
     """
     global dragon, x, y, position, size, angle_left, angle_right
     if(position < size-1):
