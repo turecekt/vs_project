@@ -127,15 +127,16 @@ def count_char_freq(text: str) -> {}:
 class CharStats:
     """Class containing calculated stats for further use."""
 
-    all_chars = None  # dict with frequency of each alphabetical character
-    total_count = None  # total number of characters
-    min_count = None  # number of appearances of least frequent char
-    max_count = None  # number of appearances of most frequent char
-    unique_chars_count = None  # alphabet chars that appears at least once
-    average = None  # averaged count per unique character
-    min_chars = None  # list of least frequent chars
-    max_chars = None  # list of most frequent chars
-    missing_chars = []  # list of ascii chars that do not appear at all
+    def __init__(self):
+        self.all_chars = None  # dict with frequency of each alphabetical char
+        self.total_count = None  # total number of characters
+        self.min_count = None  # number of appearances of least frequent char
+        self.max_count = None  # number of appearances of most frequent char
+        self.unique_chars_count = None  # count chars appearing at least once
+        self.average = None  # averaged count per unique character
+        self.min_chars = None  # list of least frequent chars
+        self.max_chars = None  # list of most frequent chars
+        self.missing_chars = []  # list of ascii chars not present at all
 
     def __str__(self):
         """
@@ -253,7 +254,8 @@ def test_calculate_stats():
     assert s.max_chars == ['e']
     assert s.all_chars['t'] == 175
     assert s.all_chars['c'] == 92
-    assert s.missing_chars == ['j', 'k', 'w', 'x', 'y', 'z']
+    assert s.missing_chars == ['j', 'k', 'w', 'x', 'y', 'z'], \
+        f"{s.missing_chars}"
 
 
 # === Run script - only when not imported ===
