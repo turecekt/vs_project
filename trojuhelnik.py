@@ -93,3 +93,8 @@ def test_obvod():
 
 def test_obsah():
     assert obsah(5, 4, sqrt(41)) == 10
+
+
+def test_pravouhlost():
+    assert pravouhlost(3, 4, 5) == 1
+    
