@@ -128,6 +128,7 @@ class CharStats:
     """Class containing calculated stats for further use."""
 
     def __init__(self):
+        """Initialise default values."""
         self.all_chars = None  # dict with frequency of each alphabetical char
         self.total_count = None  # total number of characters
         self.min_count = None  # number of appearances of least frequent char
