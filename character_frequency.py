@@ -290,12 +290,9 @@ def test_calculate_stats():
     _eq(s.all_chars['T'], 175)
     _eq(s.all_chars['C'], 92)
     _eq(s.missing_chars, ['J', 'K', 'W', 'X', 'Y', 'Z'])
+    print(s)
 
 
-test_open_file()
-test_input()
-test_count_char_freq()
-test_calculate_stats()
 # === Run script - only when not imported ===
 if __name__ == "__main__":
     INPUT_VALUES = get_input()
