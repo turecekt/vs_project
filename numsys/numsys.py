@@ -1,13 +1,16 @@
 from os import system, name
 
+
 class Convertor:
 
     def __init__(self):
-        clear()
+        self.clear()
+
+    def run(self):
         print("Welcome in math dimensions convertor \n")
 
         end = False
-        while end == False:
+        while not end:
             print("Choose numeric dimension into which")
             print("you'd like to convert your number")
             print("1 - Binary")
@@ -19,26 +22,34 @@ class Convertor:
 
             if userInput == "1":
                 print("Type in number you'd like to convert to binary: ")
-                print(convertToBinary(int(input())))
+                try:
+                    print(self.convertToBinary(int(input())))
+                except ValueError:
+                    print("You must type in round number")
 
             elif userInput == "2":
                 print("Type in number you'd like to convert to octal: ")
-                print(convertToOctal(int(input())))
+                try:
+                    print(self.convertToOctal(int(input())))
+                except ValueError:
+                    print("You must type in round number")
 
             elif userInput == "3":
-                print("Type in number you'd like to convert to binary: ")
-                print(convertToHexadecimal(int(input())))
+                print("Type in number you'd like to convert to hexadecimal: ")
+                try:
+                    print(self.convertToHexadecimal(int(input())))
+                except ValueError:
+                    print("You must type in round number")
 
             elif userInput == "4":
                 end = True
             else:
                 print("Wrong input!")
-            
-            print()
-            print()
-            
 
-    def convertToBinary(number):
+            print()
+            print()
+
+    def convertToBinary(self, number):
         if number < 0:
             return "number parameter cant be negative"
         if not isinstance(number, int):
@@ -55,9 +66,7 @@ class Convertor:
 
         return convertedNumber
 
-
-
-    def convertToOctal(number):
+    def convertToOctal(self, number):
         if number < 0:
             return "number parameter cant be negative"
         if not isinstance(number, int):
@@ -86,9 +95,7 @@ class Convertor:
 
         return convertedNumber
 
-
-
-    def convertToHexadecimal(number):
+    def convertToHexadecimal(self, number):
         if number < 0:
             return "number parameter cant be negative"
         if not isinstance(number, int):
@@ -133,47 +140,45 @@ class Convertor:
 
         return convertedNumber
 
-
-    def clear():
+    def clear(self):
         if name == "nt":
             _ = system("cls")
         else:
             _ = system("clear")
 
+    def test_convertToBinary(self):
+        assert self.convertToBinary(20) == "10100"
 
-    def test_convertToBinary():
-        assert convertToBinary(20) == "10100"
+    def test_convertToBinaryNegativeParameter(self):
+        assert self.convertToBinary(-20) == \
+            "number parameter cant be negative"
 
+    def test_convertToBinaryParameterNotRound(self):
+        assert self.convertToBinary(20.5) == \
+            "number parameter must be round(int)"
 
-    def test_convertToBinaryNegativeParameter():
-        assert convertToBinary(-20) == "number parameter cant be negative"
+    def test_convertToOctal(self):
+        assert self.convertToOctal(20) == "24"
 
+    def test_convertToOctalNegativeParameter(self):
+        assert self.convertToOctal(-20) == \
+            "number parameter cant be negative"
 
-    def test_convertToBinaryParameterNotRound():
-        assert convertToBinary(20.5) == "number parameter must be round(int)"
+    def test_convertToOctalParameterNotRound(self):
+        assert self.convertToBinary(20.5) == \
+            "number parameter must be round(int)"
 
+    def test_convertToHexadecimal(self):
+        assert self.convertToHexadecimal(185) == "B9"
 
-    def test_convertToOctal():
-        assert convertToOctal(20) == "24"
+    def test_convertToHexadecimalNegativeParameter(self):
+        assert self.convertToHexadecimal(-20) == \
+            "number parameter cant be negative"
 
+    def test_convertToHexadecimalParameterNotRound(self):
+        assert self.convertToBinary(20.5) == \
+            "number parameter must be round(int)"
 
-    def test_convertToOctalNegativeParameter():
-        assert convertToOctal(-20) == "number parameter cant be negative"
-
-
-    def test_convertToOctalParameterNotRound():
-        assert convertToBinary(20.5) == "number parameter must be round(int)"
-
-
-    def test_convertToHexadecimal():
-        assert convertToHexadecimal(185) == "B9"
-
-
-    def test_convertToHexadecimalNegativeParameter():
-        assert convertToHexadecimal(-20) == "number parameter cant be negative"
-
-
-    def test_convertToHexadecimalParameterNotRound():
-        assert convertToBinary(20.5) == "number parameter must be round(int)"
 
 convertor = Convertor()
+convertor.run()
