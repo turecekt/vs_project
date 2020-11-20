@@ -236,5 +236,10 @@ def startProgram():
     print(f"Average time is {average(times)} seconds")
 
 
-print("Welcome to my generator of math examples! \n")
+def welcome():
+    """Welcome function."""
+    print("Welcome to my generator of math examples! \n")
+
+
+welcome()
 # startProgram()
