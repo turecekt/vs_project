@@ -145,61 +145,52 @@ def average(times) -> float:
     return round(av, 2)
 
 
-"""
-Unit tests for all functions
-"""
-
-"""Tests in comment.
-
->>> sum(2, 2)
-4
-
->>> subtraction(5, 2)
-3
-
->>> multiply(4, 8)
-32
-
->>> division(0, 1)
-0
-
->>> average([1, 2, 6])
-3
-
->>> compareResults(4, 4)
-True
-"""
-
-
 def test_sum():
     """Unit test for sum function."""
     assert sum(2, 2) == 4
+    assert sum(2, -2) == 0
+    assert sum(5, 8) == 13
+    assert sum(0, 0) != -5
 
 
 def test_subtraction():
     """Unit test for subtraction function."""
     assert subtraction(5, 2) == 3
+    assert subtraction(-7, -2) != 9
+    assert subtraction(2, 0) == 2
+    assert subtraction(-2, 2) == -4
 
 
 def test_multiply():
     """Unit test for multiply function."""
     assert multiply(4, 8) == 32
+    assert multiply(4, 0) == 0
+    assert multiply(4, -1) == -4
+    assert multiply(2, 8) != 31
 
 
 def test_division():
     """Unit test for division function."""
     assert division(0, 1) == 0
-    assert division(9, 3) == 3
+    assert division(8, 1) == 8
+    assert division(10, 5) == 2
+    assert division(10, 2) != 2
 
 
 def test_average():
     """Unit test for average function."""
     assert average([1, 2, 6]) == 3
+    assert average([2, 2, 2]) == 2
+    assert average([5, 4, 3]) == 4
+    assert average([1, 1, 1]) == 1
 
 
 def test_compareResults():
     """Unit test for compareResults function."""
     assert compareResults(4, 4)
+    assert compareResults(0, 0)
+    assert compareResults(8, 8)
+    assert not compareResults(5, 2)
 
 
 def test_RandomExample():
@@ -236,10 +227,5 @@ def startProgram():
     print(f"Average time is {average(times)} seconds")
 
 
-def welcome():
-    """Welcome function."""
-    print("Welcome to my generator of math examples! \n")
-
-
-welcome()
+print("Welcome to my generator of math examples! \n")
 # startProgram()
