@@ -189,6 +189,7 @@ def test_multiply():
 def test_division():
     """Unit test for division function."""
     assert division(0, 1) == 0
+    assert division(9, 3) == 3
 
 
 def test_average():
@@ -236,4 +237,4 @@ def startProgram():
 
 
 print("Welcome to my generator of math examples! \n")
-startProgram()
+# startProgram()
