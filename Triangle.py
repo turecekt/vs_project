@@ -4,22 +4,23 @@ To determinate if we can get a triangle according to inputs and if so,
 to calcul lenght of the sides,
 to calcul perimetr and area of the triangle.
 
->>> checkNumbers(1,2,3,4,5,6)
+Unit tests:
+>>> checkNumbers("1,2,3,4,5,6")
 True
 
->>> checkNumbers(1,x,3,y,5,6)
+>>> checkNumbers("1,x,3,y,5,6")
 False
 
->>> checkLenght(1,2,3,4,5,6)
+>>> checkLenght("1,2,3,4,5,6")
 True
 
->>> checkLenght(1,2,3,4)
+>>> checkLenght("1,2,3,4")
 False
 """
 
 
 def checkNumbers(coords):
-    """Function check if all inputs are a numbers.
+    """Check if all inputs are a numbers.
 
     Args:
         - coords - Input of the function
@@ -37,7 +38,7 @@ def checkNumbers(coords):
 
 
 def checkLenght(coords):
-    """Function check if input includes exactly six numbers.
+    """Check if input includes exactly six numbers.
 
     Args:
         - coords - Input of the function
