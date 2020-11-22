@@ -1,7 +1,6 @@
-"""
+"""Toto je program pro nacteni bodu trojuhelniku v 2d prostoru.
 
-Toto je program pro nacteni bodu trojuhelniku v 2d prostoru.
-Overeni zda lze setrojit.
+Overi zda lze setrojit.
 Jakou ma delku stran.
 Jaky je jeho obvod a obsah.
 Zda je nebo neni pravouhly.
