@@ -18,66 +18,22 @@ check = False
 
 """ Nacteni Bodu A"""
 print("Zadej souradnice x a y pro bod A, danou souradnici vzdy potvrd enterem")
-while check is False:
-    A[i] = input()
-    check = A[i].isnumeric()
-    if check is False:
-        print("Nezadal jsi ciselnou hodnotu!! Zkus to znovu")
-check = False
-i = i+1
+A[0] = input()
+A[1] = input()
 
-while check is False:
-    A[i] = input()
-    check = A[i].isnumeric()
-    if check is False:
-        print("Nezadal jsi ciselnou hodnotu!! Zkus to znovu")
 
-"""uzivatelsky test nacteni
-print(A)
-"""
 """nacteni bodu B"""
-i = 0
-check = False
+
 print("Zadej souradnice x a y pro bod B, danou souradnici vzdy potvrd enterem")
-while check is False:
-    B[i] = input()
-    check = B[i].isnumeric()
-    if check is False:
-        print("Nezadal jsi ciselnou hodnotu!! Zkus to znovu")
+B[0] = input()
+B[1] = input()
 
-check = False
-i = i+1
 
-while check is False:
-    B[i] = input()
-    check = B[i].isnumeric()
-    if check is False:
-        print("Nezadal jsi ciselnou hodnotu!! Zkus to znovu")
-
-"""uzivatelsky test nacteni
-print(B)
-"""
 """nacteni bodu C"""
-i = 0
-check = False
+
 print("Zadej souradnice x a y pro bod C, danou souradnici vzdy potvrd enterem")
-while check is False:
-    C[i] = input()
-    check = C[i].isnumeric()
-    if check is False:
-        print("Nezadal jsi ciselnou hodnotu!! Zkus to znovu")
-
-check = False
-i = i+1
-while check is False:
-    C[i] = input()
-    check = C[i].isnumeric()
-    if check is False:
-        print("Nezadal jsi ciselnou hodnotu!! Zkus to znovu")
-
-"""uzivatelsky test nacteni
-print(C)
-"""
+C[0] = input()
+C[1] = input()
 
 """ vypocet stran"""
 bc[0] = float(B[0]) - float(C[0])
@@ -85,10 +41,11 @@ bc[1] = float(B[1]) - float(C[1])
 ac[0] = float(A[0]) - float(C[0])
 ac[1] = float(A[1]) - float(C[1])
 ab[0] = float(A[0]) - float(B[0])
-ac[1] = float(A[1]) - float(B[1])
-Sa = round(math.sqrt(bc[0]**2 + bc[1]**2))
-Sb = round(math.sqrt(ac[0]**2 + ac[1]**2))
-Sc = round(math.sqrt(ab[0]**2 + ab[1]**2))
+ab[1] = float(A[1]) - float(B[1])
+
+Sa = float(math.sqrt(float(bc[0])**2 + float(bc[1]**2)))
+Sb = float(math.sqrt(float(ac[0]**2) + float(ac[1]**2)))
+Sc = float(math.sqrt(ab[0]**2 + ab[1]**2))
 
 """test sestrojitelnosti"""
 if Sa + Sb > Sc and Sa + Sc > Sb and Sb + Sc > Sa:
@@ -101,20 +58,23 @@ else:
 
 """ vypis hodnot trojuhelniku"""
 if check is True:
-    print("Delka strany a je: ", round(Sa))
-    print("Delka strany b je: ", round(Sb))
-    print("Delka strany c je: ", round(Sc))
+    print("Delka strany a je: ", round(Sa, 3))
+    print("Delka strany b je: ", round(Sb, 3))
+    print("Delka strany c je: ", round(Sc, 3))
     obvod = Sa+Sb+Sc
     s = obvod/2
     obsah = math.sqrt(s*(s-Sa)*(s-Sb)*(s-Sc))
-    print("Obvod trojuhelniku je: ", round(obvod))
-    print("Obsah trojuhelniku je: ", round(obsah))
+    print("Obvod trojuhelniku je: ", round(obvod, 3))
+    print("Obsah trojuhelniku je: ", round(obsah, 3))
 
     SbSc = Sb**2 + Sc**2
-    SaSb = Sb**2 + Sa**2
+    SaSb = Sa**2 + Sb**2
     SaSc = Sa**2 + Sc**2
+    round(SbSc)
+    round(SaSb)
+    round(SaSc)
 
-    if Sc**2 == SaSb or Sa**2 == SbSc or Sb**2 == SaSc:
+    if round(Sc**2) == SaSb or round(Sa**2) == SbSc or round(Sb**2) == SaSc:
         print("Trojuhelnik je pravouhly")
     else:
         print("Trojuhelnik neni pravouhly")
