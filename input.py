@@ -31,7 +31,8 @@ def parsePoint(pointInput):
         unifiedPointInput.replace(char, "")
     coordinantes = unifiedPointInput.split(",")
     if (len(coordinantes) < 2 or len(coordinantes) > 2):
-        raise Exception("Wrong format of point. Allowed formats ar 'number, number' and '(number, number)'")
+        raise Exception(("Wrong format of point. Allowed formats are"
+    "'number, number' and '(number, number)'"))
     return[float(coordinantes[0]), float(coordinantes[1])]
 
 
