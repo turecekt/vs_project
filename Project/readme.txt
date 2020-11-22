@@ -15,3 +15,9 @@ example of usage:
     python main.py -h 15119
     python main.py -h "15119"
 
+
+Made by:
+Petr Zámečník
+Matěj Vaculík
+Kryštof Knápek
+
