@@ -27,8 +27,8 @@ class TestConvertion(unittest.TestCase):
 
     def test_decimal_to_hexadecimal(self):
         """Function testing hexadecimal conversion."""
-        self.assertEqual(decimalToHexadecimal.convert(100), "64")
-        self.assertEqual(decimalToHexadecimal.convert("15119"), "3B0F")
+        self.assertEqual(decimalToHexadecimal.convert(100), "064")
+        self.assertEqual(decimalToHexadecimal.convert("15119"), "03B0F")
 
 
 if __name__ == '__main__':
