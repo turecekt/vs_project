@@ -1,3 +1,5 @@
+"""Main Function."""
+
 # library imports
 import sys
 
@@ -8,6 +10,7 @@ import decimalToHexadecimal
 
 
 def main():
+    """Get arguments from console, then call functions to convert number."""
     if len(sys.argv) == 3:  # get arguments from terminal
         numeral_system_type_arg = sys.argv[1]
         input_number = int(sys.argv[2])
