@@ -11,6 +11,9 @@ import math
 A = [0, 0]
 B = [0, 0]
 C = [0, 0]
+bc = [0, 0]
+ab = [0, 0]
+ac = [0, 0]
 i = 0
 check = False
 
@@ -108,8 +111,11 @@ if check is True:
     print("Obvod trojuhelniku je: ", round(obvod))
     print("Obsah trojuhelniku je: ", round(obsah))
 
-    if Sc**2 == Sb**2 + Sc**2 or Sa**2 == Sb**2 + Sc**2 or
-    Sb**2 == Sa**2 + Sc**2:
+    SbSc = Sb**2 + Sc**2
+    SaSb = Sb**2 + Sa**2
+    SaSc = Sa**2 + Sc**2
+
+    if Sc**2 == SaSb or Sa**2 == SbSc or Sb**2 == SaSc:
         print("Trojuhelnik je pravouhly")
     else:
         print("Trojuhelnik neni pravouhly")
