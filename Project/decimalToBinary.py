@@ -1,5 +1,8 @@
-# Function that converts decimal number to binary number
+"""Function that converts decimal number to binary number."""
+
+
 def convert(num):
+    """Convert decimal number to binary."""
     binar = ''
     if num == 0:
         binar = '0' + binar

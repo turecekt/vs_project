@@ -1,4 +1,8 @@
+"""Function that converts decimal number to octal number."""
+
+
 def convert(input_number):
+    """Convert decimal number to octal."""
     text = ""
     k = []
 
