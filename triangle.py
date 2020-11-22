@@ -3,9 +3,9 @@
 Triangle module supplies many useful functions for trinagle computation
 in two dimensional space such as lengthOfSide() etc.
 
->>> checkIfconstructable([[1,1],[1,2],[1,3]])
+>>> checkIfconstructable([[1,1],[1,2],[2,3]])
 True
->>> checkIfconstructable([[1,1],[1,2],[1,1]])
+>>> checkIfconstructable([[1,1],[1,2],[1,3]])
 False
 >>> lengthOfSide([1,1],[1,12])
 11.0
@@ -24,16 +24,16 @@ def checkIfconstructable(arr):
     """Check if is trinagle constructable.
 
     Args:
-        arr (list): list of coordinants
+        arr (list): list of points
 
     Returns:
         bool: True if constructable
 
     """
-    if arr[0] == arr[1] or arr[0] == arr[2] or arr[1] == arr[2]:
-        return False
-    else:
-        return True
+    a = lengthOfSide(arr[0], arr[1])
+    b = lengthOfSide(arr[1], arr[2])
+    c = lengthOfSide(arr[2], arr[0])
+    return a + b > c and a + c > b and b + c > a
 
 
 def lengthOfSide(A, B):
