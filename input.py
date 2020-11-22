@@ -1,13 +1,13 @@
 """This is input reading module.
 
 Input reading module suplies functions for reading values from stdin
-and parse them to coordinantes.
+and parse them to points.
 
->>> parsePoint('(11,1)')
+>>> parsePoint("(11,1)")
 [11.0, 1.0]
->>> parsePoint('5.2,7.6')
+>>> parsePoint("5.2,7.6")
 [5.2, 7.6]
->>> getPoints(['1','2','3'], "test")
+>>> getPoints(["1","2","3"], "test")
 [[1.0, 1.0], [1.0, 2.0], [1.0, 3.0]]
 """
 
@@ -31,7 +31,10 @@ def parsePoint(pointInput):
         unifiedPointInput.replace(char, "")
     coordinantes = unifiedPointInput.split(",")
     if (len(coordinantes) < 2 or len(coordinantes) > 2):
-        raise Exception("Wrong format of point. Allowed formats ar 'number, number' and '(number, number)'")
+        raise Exception((
+            "Wrong format of point. Allowed formats are"
+            "'number, number' and '(number, number)'"
+            ))
     return[float(coordinantes[0]), float(coordinantes[1])]
 
 
@@ -39,7 +42,8 @@ def getPoints(pointsNames, enviroment):
     """Read point from terminal.
 
     Args:
-        pointsNames (list of strings): name of the points in two dimensional space
+        pointsNames (list of strings): name of the points
+            in two dimensional space
         enviroment (string): enviroment of app
 
     Returns:
@@ -55,6 +59,6 @@ def getPoints(pointsNames, enviroment):
         if enviroment == "__main__":
             point = input(question)
         else:
-            point = "1,"+point+""
+            point = "1,"+pointName+""
         points.append(parsePoint((point)))
     return points
