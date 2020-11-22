@@ -3,12 +3,6 @@
 Input reading module suplies functions for reading values from stdin
 and parse them to points.
 
->>> parsePoint("(11,1)")
-[11.0, 1.0]
->>> parsePoint("5.2,7.6")
-[5.2, 7.6]
->>> getPoints(["1","2","3"], "test")
-[[1.0, 1.0], [1.0, 2.0], [1.0, 3.0]]
 """
 
 
@@ -24,15 +18,25 @@ def parsePoint(pointInput):
     Raises:
         Exception: when coordinantes are in invalid format or are not numbers
 
+    >>> parsePoint("5.2,7.6")
+    [5.2, 7.6]
+    >>> parsePoint("a,3")
+    Traceback (most recent call last):
+        ...
+    ValueError: could not convert string to float: 'a'
+    >>> parsePoint("1,1,1")
+    Traceback (most recent call last):
+        ...
+    Exception: Wrong format of point. Allowed formats are \
+'number, number' and '(number, number)'
     """
-    unifiedPointInput = pointInput
-    removeChars = ["(", ")", " ", "[", "]"]
-    for char in removeChars:
-        unifiedPointInput.replace(char, "")
+    unifiedPointInput = pointInput.replace("(", "")
+    unifiedPointInput = pointInput.replace(")", "")
+    unifiedPointInput = pointInput.replace(" ", "")
     coordinantes = unifiedPointInput.split(",")
     if (len(coordinantes) < 2 or len(coordinantes) > 2):
         raise Exception((
-            "Wrong format of point. Allowed formats are"
+            "Wrong format of point. Allowed formats are "
             "'number, number' and '(number, number)'"
             ))
     return[float(coordinantes[0]), float(coordinantes[1])]
@@ -52,6 +56,8 @@ def getPoints(pointsNames, enviroment):
     Raises:
         Exception: Wrong format of point.
 
+    >>> getPoints(["1","2","3"], "test")
+    [[1.0, 1.0], [1.0, 2.0], [1.0, 3.0]]
     """
     points = []
     for pointName in pointsNames:
