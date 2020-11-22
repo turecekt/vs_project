@@ -1,11 +1,13 @@
 """
-function to calculate hexadecimal number from decimal number
+function to calculate hexadecimal number from decimal number.
+
 input -> decimal number
 output -> hexadecimal number
 """
 
 
 def convert(input_number):
+    """Convert decimal number to hexadecimal."""
     input_number = int(input_number)
     x = (input_number % 16)  # modulo
     chars = "0123456789ABCDEF"
