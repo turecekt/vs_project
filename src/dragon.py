@@ -34,6 +34,15 @@ def move_left(posx, posy, cnt, angle):
     """
     Move left function.
 
+    Args:
+        - posx - array of x positions
+        - posy - array of y positions
+        - cnt  - position in array
+        - angle - angle of rotation [0-3]
+    Returns:
+        - posx[cnt] - modified value of x position
+        - posy[cnt] - modified value of y position
+
     >>> move_left([0], [0], 0, 0)
     (0, 1)
     """
@@ -74,6 +83,15 @@ def move_right(posx, posy, cnt, angle):
     """
     Move right function.
 
+    Args:
+        - posx - array of x positions
+        - posy - array of y positions
+        - cnt  - position in array
+        - angle - angle of rotation [0-3]
+    Returns:
+        - posx[cnt] - modified value of x position
+        - posy[cnt] - modified value of y position
+
     >>> move_right([0], [0], 0, 0)
     (0, -1)
     """
@@ -100,7 +118,12 @@ def generate_dragon(iteration):
     """
     Generate Heighway Dragon line route.
 
-    returns generated line route.
+    Args:
+        - iteration - number of iterations
+
+    Returns:
+        - new - array of generated line routing
+
     >>> generate_dragon(1)
     'r'
     """
@@ -128,7 +151,7 @@ def modify_pos(local_x, local_y,
     """Modify generated line route function.
 
     Function modifies plot position array with predefined plot direction
-    Input:  x array,
+    Args:   x array,
             y array,
             current position in array
             angle change left,
@@ -136,7 +159,7 @@ def modify_pos(local_x, local_y,
             size of arrays,
             array of generated line route
 
-    Return: modified x array,
+    Returns: modified x array,
             modified y array,
             current position
             modified angle left
@@ -210,11 +233,18 @@ def update():
                                                               angle_right,
                                                               size, new)
     dragon.setData(x, y)  # update plot
-    return 0
 
 
 def arg_decode(argument):
     """CLI input decode function.
+
+    Args:
+        - argument - array of console arguments
+    Returns:
+        - iter_number - number of iterations
+        - line_color - color of line
+        - background_color - color of background
+        - -1 - if no argument
 
     Decodes console input values.
     Returns numer of iterations, color of line and background.
@@ -238,7 +268,11 @@ def arg_decode(argument):
 
 
 def main(arg):
-    """Do main function that Reads input and displays dragon."""
+    """Do main function that Reads input and displays dragon.
+
+    Args:
+        - arg- arguments passed from console
+    """
     global new, left, right, app, backgroundcolor, dragon
     global size, x, y, win, timer, linecolor, number
     number, linecolor, backgroundcolor = arg_decode(arg)
@@ -246,6 +280,7 @@ def main(arg):
 
     app = QtGui.QApplication([])  # create plot application
     size = (len(new)+1)  # get size of new
+    print(size)
     x = np.zeros(size)  # create array of zeros based on size of new
     y = np.zeros(size)
 
@@ -263,7 +298,6 @@ def main(arg):
     timer = QtCore.QTimer()  # Init timer
     timer.timeout.connect(update)  # join timer update to funtion
     timer.start(1)  # set timer update time
-    return 0
 
 
 if __name__ == '__main__':
