@@ -54,7 +54,7 @@ def randomExample():
 
 print("Welcome to my generator of math examples! \n")
 usr = sys.argv
-if len(usr) > 4:
+if 'start' in usr:
     points = 0
     i = 0
     times = list()
