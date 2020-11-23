@@ -280,7 +280,6 @@ def main(arg):
 
     app = QtGui.QApplication([])  # create plot application
     size = (len(new)+1)  # get size of new
-    print(size)
     x = np.zeros(size)  # create array of zeros based on size of new
     y = np.zeros(size)
 
