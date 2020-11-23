@@ -52,9 +52,14 @@ def randomExample():
     return result
 
 
-print("Welcome to my generator of math examples! \n")
-usr = sys.argv
-if 'start' in usr:
+def startProgram(param):
+    """Start this method will generate examples.
+
+    Args:
+        param: Gets info from user
+
+    Returns: Result of user
+    """
     points = 0
     i = 0
     times = list()
@@ -64,7 +69,10 @@ if 'start' in usr:
         start = perf_counter()
 
         pc = randomExample()
-        user = input("Your answer: ")
+        if param == 'user':
+            user = input("Enter answer: ")
+        else:
+            user = param
 
         stop = perf_counter()
         times.append(stop - start)
@@ -78,3 +86,12 @@ if 'start' in usr:
 
     print(f"\nYou got {points} of {repetition} points")
     print(f"Average time is {MathFunctions.average(times)} seconds")
+
+
+print("Welcome to my generator of math examples! \n")
+usr = sys.argv
+if 'start' not in usr:
+    """This will start program with a default value set to 5."""
+    startProgram(5)
+else:
+    startProgram('user')

@@ -1,4 +1,4 @@
-"""Math functions."""
+"""Math functions with tests."""
 
 
 def sum(a, b) -> int:
@@ -66,7 +66,7 @@ def average(times) -> float:
 
     Args:
         times: List of times
-    Returns: average time (double)
+    Returns: Average time (double)
     >>> average([1, 2, 6])
     3.0
     """
@@ -87,7 +87,7 @@ def compareResults(pc, user) -> bool:
         pc: Right result of math example
         user: Answer of user
 
-    Returns: true or false
+    Returns: True or False
     >>> compareResults(7, 7)
     True
     >>> compareResults(7, 5)
@@ -107,10 +107,10 @@ def divider(a, b):
     """Divide operator function.
 
     Args:
-        a:
-        b:
+        a: int
+        b: int
 
-    Returns:
+    Returns: Print for user
     >>> divider(4, 2)
     4/2
     >>> divider(4, -2)
@@ -126,10 +126,10 @@ def multipler(a, b):
     """Multiple operator function.
 
     Args:
-        a:
-        b:
+        a: int
+        b: int
 
-    Returns:
+    Returns: Print for user
     >>> multipler(4, 2)
     4*2
     >>> multipler(4, -2)
@@ -145,10 +145,10 @@ def minus(a, b):
     """Subtraction operator function.
 
     Args:
-        a:
-        b:
+        a: int
+        b: int
 
-    Returns:
+    Returns: Print for user
     >>> minus(4, 2)
     4-2
     >>> minus(4, -2)
@@ -164,10 +164,10 @@ def plus(a, b):
     """Sum operator function.
 
     Args:
-        a:
-        b:
+        a: int
+        b: int
 
-    Returns:
+    Returns: Print for user
     >>> plus(4, 2)
     4+2
     >>> plus(4, -2)
@@ -183,10 +183,10 @@ def points(pc, user):
     """Points function.
 
     Args:
-        pc:
-        user:
+        pc: int
+        user: int
 
-    Returns:
+    Returns: True or False
     >>> points(5, 5)
     True
     >>> points(4, 8)
