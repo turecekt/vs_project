@@ -17,8 +17,3 @@ def minMax(pole):
 
     print("Minimum je cislo", min, "na indexu", minIndex)
     print("Maximum je cislo", max, "na indexu", maxIndex)
-
-
-pole = [3, 2, 5, 5, 4, 3, 8]
-print(pole)
-minMax(pole)

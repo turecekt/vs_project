@@ -32,9 +32,3 @@ def selectionsort(pole):
         pole[i], pole[minIndex] = pole[minIndex], pole[i]
 
     print("Serazene pole:", pole)
-
-pole = [5,5,4,4,8,9,11,25,1,52,225]
-print(pole)
-bubblesort(pole)
-insertionsort(pole)
-selectionsort(pole)
