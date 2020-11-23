@@ -1,5 +1,7 @@
 import sys
 import random
+from minMax import *
+from sortingAlgoritms import *
 
 cisla = []
 platnyVStup = True
@@ -35,4 +37,27 @@ else:
             break
 
 if platnyVStup:
-    print(cisla)
+    print("Vstup:", cisla)
+    print()
+    minMax(cisla)
+    print()
+    print("Ktery tridici algoritmus chcete pouzit?")
+    sortingAlgo = input(
+        "Bubblesort(b) / InsertionSort(i) / SelectionSort(s) ").lower()
+    print()
+
+    # bubblesort
+    if sortingAlgo == "b":
+        bubblesort(cisla)
+
+    # insertion sort
+    elif sortingAlgo == "i":
+        insertionsort(cisla)
+
+    # selection sort
+    elif sortingAlgo == "s":
+        selectionsort(cisla)
+
+    # neplatny algoritmus
+    else:
+        print("Vybrani algoritmu selhalo!")
