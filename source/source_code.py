@@ -63,3 +63,7 @@ def test_morse_specials():
     assert into_morse_code(",.?/-()") == "--..-- .-.-.- ..--.. -..-. -....- -.--. -.--.- " 
 def test_morse_numeric():
     assert into_morse_code("123456789") == ".---- ..--- ...-- ....- ..... -.... --... ---.. ----. "
+def test_morse_sentence():
+    assert into_morse_code("MAME RADI AP1VS") == "-- .- -- .  .-. .- -.. ..  .- .--. .---- ...- ... "
+def test_morse_decoding():
+    assert from_morse_code("-.. --- -... .-. -.--  ...- . -.-. . .-.") == "DOBRY VECER"
