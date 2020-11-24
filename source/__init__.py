@@ -15,11 +15,30 @@ morse_code = {  '1': '.----',   '2': '..---',   '3': '...--',
                 ')':'-.--.-',
                 }
 
- def into_morse_code(string): 
+def into_morse_code(string):
     result = '' 
          for char in string: 
         if char != ' ': 
             result += morse_code[char] + ' '
         else: 
             result += ' '
-    return result 
+    return result
+
+def from_morse_code(string):
+    string += ' '
+
+    result = ''
+    citext = ''
+    for char in string:
+        if (char != ' '):
+            i = 0
+            citext += char
+        else:
+            i += 1
+            if i == 2 :
+                result += ' '
+            else:
+                result += list(morse_code.keys())[list(morse_code
+                .values()).index(citext)]
+                citext = ''
+    return result
