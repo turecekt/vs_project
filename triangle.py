@@ -91,8 +91,8 @@ def checkIfRightAngled(distances):
     """
     sortedDistances = list(distances)
     sortedDistances.sort()
-    if (sortedDistances[2]*sortedDistances[2] == sortedDistances[1] *
-       sortedDistances[1] + sortedDistances[0]*sortedDistances[0]):
+    if (int(sortedDistances[2]**2) == int(sortedDistances[0]**2)
+            + int(sortedDistances[1]**2)):
         return True
     else:
         return False
