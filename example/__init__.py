@@ -106,3 +106,12 @@ def test_morse_decoding():
     """Test of morse code decoding."""
     assert from_morse_code("-.. --- -... .-. -.--  " +
                            "...- . -.-. . .-.") == "DOBRY VECER"
+
+
+def test_morse_alphabet_backwards():
+    """Test of morse code alphabet."""
+    assert from_morse_code(".- -... -.-. -.. . ..-. --. .... " +
+                           ".. .--- -.- .-.. -- -. --- .--. --.- " +
+                           ".-. ... - ..- ...- .-- " +
+                           "-..- -.-- --..") == ("ABCDEFGHIJKL"
+                                                 "MNOPQRSTUVWXYZ")
