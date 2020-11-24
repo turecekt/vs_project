@@ -3,7 +3,7 @@
 The example module supplies one function: compute(). For example,
 
 >>> compute(3)
-3
+-3
 """
 
 
