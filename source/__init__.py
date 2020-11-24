@@ -14,3 +14,12 @@ morse_code = {  '1': '.----',   '2': '..---',   '3': '...--',
                 '/':'-..-.',    '-':'-....-',   '(':'-.--.', 
                 ')':'-.--.-',
                 }
+
+ def into_morse_code(string): 
+    result = '' 
+         for char in string: 
+        if char != ' ': 
+            result += morse_code[char] + ' '
+        else: 
+            result += ' '
+    return result 
