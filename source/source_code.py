@@ -10,14 +10,14 @@ morse_code = {  '1': '.----',   '2': '..---',   '3': '...--',
                 'R':'.-.',      'S':'...',      'T':'-', 
                 'U':'..-',      'V':'...-',     'W':'.--', 
                 'X':'-..-',     'Y':'-.--',     'Z':'--..', 
-                ', ':'--..--',  '.':'.-.-.-',   '?':'..--..', 
+                ',':'--..--',  '.':'.-.-.-',   '?':'..--..', 
                 '/':'-..-.',    '-':'-....-',   '(':'-.--.', 
                 ')':'-.--.-',
                 }
 
 def into_morse_code(string):
     result = '' 
-         for char in string: 
+    for char in string: 
         if char != ' ': 
             result += morse_code[char] + ' '
         else: 
@@ -48,10 +48,18 @@ if __name__ == '__main__':
     if zadani == "1": 
         string = input("Zadejte zprávu pro přeložení do morseovy abecedy: ")
         result = into_morse_code(string.upper()) 
-        print (result) 
+        print (result)
     elif zadani == "2": 
         string = input("Zadejte zprávu pro přeložení z morseovy abecedy: ")
         result = from_morse_code(string) 
         print (result) 
     else: 
         print ("nebylo zadané správné číslo. zadejte 1 nebo 2")
+
+
+def test_morse_alphabet():
+    assert into_morse_code("ABCDEFGHIJKLMNOPQRSTUVWXYZ") == ".- -... -.-. -.. . ..-. --. .... .. .--- -.- .-.. -- -. --- .--. --.- .-. ... - ..- ...- .-- -..- -.-- --.. "
+def test_morse_specials():
+    assert into_morse_code(",.?/-()") == "--..-- .-.-.- ..--.. -..-. -....- -.--. -.--.- " 
+def test_morse_numeric():
+    assert into_morse_code("123456789") == ".---- ..--- ...-- ....- ..... -.... --... ---.. ----. "
