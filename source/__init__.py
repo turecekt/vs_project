@@ -42,3 +42,16 @@ def from_morse_code(string):
                 .values()).index(citext)]
                 citext = ''
     return result
+
+if __name__ == '__main__': 
+    zadani = input("Vyberte akci (1) = Překlad do morseovy abecedy; (2) = Překlad z morseovy abecedy")
+    if zadani == "1": 
+        string = input("Zadejte zprávu pro přeložení do morseovy abecedy: ")
+        result = into_morse_code(string.upper()) 
+        print (result) 
+    elif zadani == "2": 
+        string = input("Zadejte zprávu pro přeložení z morseovy abecedy: ")
+        result = from_morse_code(string) 
+        print (result) 
+    else: 
+        print ("nebylo zadané správné číslo. zadejte 1 nebo 2")
