@@ -9,7 +9,7 @@ I also included a timer to easily compare effectiveness.
 
 
 import time as t
-import numpy as np
+import random
 
 
 def checkIn(n):
@@ -207,7 +207,8 @@ if __name__ == "__main__":
     while d != '1' and d != '2' and d != '3':
         d = input("Please choose a valid option: ")
     if d == '3':
-        d = str(np.random.randint(1, 3))
+        random.seed()
+        d = str(random.randrange(1, 3))
 
     if(d == '1'):
         print("A heuristic method was used to determine that...")
