@@ -2,7 +2,6 @@ from lxml import html
 from lxml.html.clean import Cleaner
 from lxml.html.clean import clean_html
 
-
 class Htmlhelper:
     def stripTags(self, data):
         cleaner = Cleaner(page_structure=True,
