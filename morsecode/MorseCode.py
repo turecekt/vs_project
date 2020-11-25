@@ -19,7 +19,7 @@ morseCodeDictionary = {"a": ".-", "b": "-...", "c": "-.-.", "d": "-..",
 
 
 def encode(text):
-    """Returns the morse code of argument text.
+    """Returns morse code.
 
     Args:
         - text - Some text for encoding
@@ -27,7 +27,6 @@ def encode(text):
     Returns:
         - Encrypted string
     """
-
     morseCodetList = []
     for letter in text:
         morseCodetList.append(morseCodeDictionary.get(letter))

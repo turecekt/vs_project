@@ -8,5 +8,4 @@ from MorseCode import encode
                          ("morseovka", "--|---|.-.|...|.|---|...-|-.-|.-")])
 def test_encrypt(input, expected):
     """Tests encode function."""
-
     assert(encode(input) == expected)
