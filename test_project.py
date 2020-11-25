@@ -10,6 +10,14 @@ def sqrt(x):
     return x**(1/2)
 
 
+def pwr(x):
+    """Power calculation.
+
+    Returns calculated value of x. As in sqrt, i use operator "**"
+    """
+    return x**(2)
+
+
 def getInput():
     """Users input.
 
@@ -66,10 +74,10 @@ def IsRectangular(a, b, c):
     """Rectanguar check.
 
     Function which calculates if triangle is rectangular or not. Firstly i
-    check if the equation is correct, if it passes then it returns true,
+    check if the pythagoras equation is correct, if it passes then it returns true,
     if not then it returns false.
     """
-    if (c ** 2) == (a ** 2) + (b ** 2):
+    if pwr(c) == pwr(a) + pwr(b):
         return True
     else:
         return False
@@ -90,11 +98,34 @@ def IsConstucrable(a, b, c):
 def test_sqrt():
     """Square root check.
 
-    Test which check if square root function works, using local variable and
+    Tests if square root function works, using local variable and
     precalculated result
     """
     x = 25
-    sqrt(x) == 5
+    assert sqrt(x) == 5
+    assert sqrt(36) == 6
+
+
+def test_pwr():
+    """Power check.
+
+    Tests if power function works, using local variable and
+    precalculated result
+    """
+    x = 5
+    assert pwr(x) == 25
+    assert pwr(3) == 9
+
+
+def test_round():
+    """Round test.
+
+    Tests if round function works properly, using local variable
+    and precounted result, we check if the build in function can
+    properly round numbers, in my case to 2 decimal places.
+    """
+    x = 2.126324345
+    assert round(x, 2) == 2.13
 
 
 def test_perimeter():
@@ -157,7 +188,7 @@ def test_getSideFromCoordinate():
     y1 = 5
     y2 = 8
     xy = 5
-    assert xy == sqrt(((x1 - y1) ** 2) + ((x2 - y2) ** 2))
+    assert xy == sqrt((pwr(x1 - y1)) + (pwr(x2 - y2)))
 
 
 if __name__ == '__main__':
@@ -172,9 +203,9 @@ if __name__ == '__main__':
     co2 = [int(tmp[2]), int(tmp[3])]
     co3 = [int(tmp[4]), int(tmp[5])]
 
-    a = sqrt((co2[0] - co3[0]) ** 2 + (co2[1] - co3[1]) ** 2)
-    b = sqrt((co1[0] - co3[0]) ** 2 + (co1[1] - co3[1]) ** 2)
-    c = sqrt((co1[0] - co2[0]) ** 2 + (co1[1] - co2[1]) ** 2)
+    a = sqrt(pwr(co2[0] - co3[0]) + pwr(co2[1] - co3[1]))
+    b = sqrt(pwr(co1[0] - co3[0]) + pwr(co1[1] - co3[1]))
+    c = sqrt(pwr(co1[0] - co2[0]) + pwr(co1[1] - co2[1]))
 
     """Rounding Numbers.
 
