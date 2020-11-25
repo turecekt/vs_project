@@ -157,7 +157,7 @@ if __name__ == '__main__':
 
     Here i call the getInput() and save its return values into variable tmp.
     In next 3 lines i make multidimensional arrays which contains coordinates
-    for the sides equation
+    for the sides equation, and convert them to int.
     """
     tmp = getInput()
     co1 = [int(tmp[0]), int(tmp[1])]
