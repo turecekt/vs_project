@@ -19,7 +19,7 @@ morseCodeDictionary = {"a": ".-", "b": "-...", "c": "-.-.", "d": "-..",
 
 
 def encode(text):
-    """Returns encoding string.
+    """Return encoded morse code of argumet text as string.
 
     Args:
         - text - Some text for encoding
