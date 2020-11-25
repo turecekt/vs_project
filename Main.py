@@ -16,6 +16,7 @@ def checkIn(n):
     """Sieve letters.
 
     Check if input 'n' contains any letters.
+
     >>> checkIn('111')
     False
     >>> checkIn('1a1')
@@ -53,6 +54,7 @@ def isPrime(n):
     If false, move on to next i.
     If true, return False -> n is not a prime.
     If false, but the for loop has finished, return True -> n is a prime.
+
     >>> isPrime(5)
     True
     >>> isPrime(6)
@@ -92,6 +94,7 @@ def optimizedIsPrime(n):
     divisible by 2 or 3 without a remainder => number is not a prime.
     From this point we only check n against numbers 6k±1,
     where k starts at 5 and increments by 6.
+
     >>> optimizedIsPrime(5)
     True
     >>> optimizedIsPrime(6)
@@ -115,6 +118,33 @@ def optimizedIsPrime(n):
     return True
 
 
+def pickAlg(d):
+    """Pick and run algorithm.
+
+    Based on users choice, algorithm is picked, ran and timed.
+    Results are then printed.
+    """
+    if(d == '1'):
+        print("A heuristic method was used to determine that...")
+        t1_start = t.time()
+        if (optimizedIsPrime(n)):
+            print(n, " is a prime number")
+        else:
+            print(n, " is not a prime number")
+        t1_stop = t.time()
+
+    if(d == '2'):
+        print("A deterministic method was used to determine that...")
+        t1_start = t.time()
+        if (isPrime(n)):
+            print(n, " is a prime number")
+        else:
+            print(n, " is not a prime number")
+        t1_stop = t.time()
+
+    print("...that process took ", round((t1_stop - t1_start), 4), " seconds.")
+
+
 def test_checkIn():
     """.
 
@@ -126,21 +156,6 @@ def test_checkIn():
 
     n = '1'
     assert not checkIn(n)
-
-
-def test_getNum():
-    """.
-
-    Because getNum() obtains input and its logical part relies on this input,
-    in this unit test I only assert the logic component
-    (in this case: if input doesn't contain any restrictions).
-    First n doesn't contain any restrictions, so final bool value is False
-    Second n does contain some restrictions, so final bool value is True
-    """
-    n = '2'
-    assert not checkIn(n) or (n.find(",") != -1) or not float(n).is_integer()
-    n = '2a,.'
-    assert checkIn(n) or (n.find(",") != -1) or not float(n).is_integer()
 
 
 def test_isPrime():
@@ -183,12 +198,7 @@ if __name__ == "__main__":
     digits I would use heuristic algorithm. But for the sake of easier testing
     I switched to the current method.
     """
-    # test_checkIn()
-    # test_getNum()
-    # test_isPrime()
-    # test_optimizedIsPrime()
-
-    n = getNum()
+    n = getNum(0)
     print("[ 1 ] --> Heuristic method (optimized)")
     print("[ 2 ] --> Deterministic method (not optimized)")
     print('''[ 3 ] --> I DONT CARE! - RANDOM CHOICE!
@@ -200,22 +210,4 @@ if __name__ == "__main__":
         random.seed()
         d = str(random.randrange(1, 3))
 
-    if(d == '1'):
-        print("A heuristic method was used to determine that...")
-        t1_start = t.time()
-        if (optimizedIsPrime(n)):
-            print(n, " is a prime number")
-        else:
-            print(n, " is not a prime number")
-        t1_stop = t.time()
-
-    if(d == '2'):
-        print("A deterministic method was used to determine that...")
-        t1_start = t.time()
-        if (isPrime(n)):
-            print(n, " is a prime number")
-        else:
-            print(n, " is not a prime number")
-        t1_stop = t.time()
-
-    print("...that process took ", round((t1_stop - t1_start), 4), " seconds.")
+    pickAlg(d)
