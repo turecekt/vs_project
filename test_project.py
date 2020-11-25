@@ -205,6 +205,20 @@ def test_getSideFromCoordinate():
     assert xy == sqrt((pwr(x1 - y1)) + (pwr(x2 - y2)))
 
 
+def test_convertToInt():
+    """Conversiom.
+
+    Tests if function split(), and conversion of int work properly by
+    comparing to int value of stringValue which was previously of type
+    string.
+    """
+    stringValue = "1 2"
+    stringValue = stringValue.split()
+    tmp = [int(stringValue[0]), int(stringValue[1])]
+    assert tmp[0] == 1
+    assert tmp[1] == 2
+
+
 if __name__ == '__main__':
     """Assign input.
 
