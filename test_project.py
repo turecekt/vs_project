@@ -1,15 +1,13 @@
-"""Module Triangle.
-
-This code calculates sides of triangle from user given coordinates.
-With the calculated sides, it also calculates perimeter and area
-of the triangle aswell as if the triangle is constuctable and
-if its rectangular.
-"""
+"""Module (file) descrption."""
 
 
-import numpy as np
-# Import of numerical library,
-# which is used in code for power and square root function
+def sqrt(x):
+    """Square root calc.
+
+    Returns calculated value of x. Operator "**" works as power would in
+    numpy.
+    """
+    return x**(1/2)
 
 
 def getInput():
@@ -59,7 +57,7 @@ def ReturnArea(a, b, c, perimeter):
     then it calculates the area, round it to 2 decimal places and return it.
     """
     s = perimeter / 2
-    S = np.sqrt(s * ((s - a) * (s - b) * (s - c)))
+    S = sqrt((s * ((s - a) * (s - b) * (s - c))))
     S = round(S, 2)
     return S
 
@@ -71,7 +69,7 @@ def IsRectangular(a, b, c):
     check if the equation is correct, if it passes then it returns true,
     if not then it returns false.
     """
-    if np.power(c, 2) == np.power(a, 2) + np.power(b, 2):
+    if (c ** 2) == (a ** 2) + (b ** 2):
         return True
     else:
         return False
@@ -87,6 +85,16 @@ def IsConstucrable(a, b, c):
         return True
     else:
         return False
+
+
+def test_sqrt():
+    """Square root check.
+
+    Test which check if square root function works, using local variable and
+    precalculated result
+    """
+    x = 25
+    sqrt(x) == 5
 
 
 def test_perimeter():
@@ -149,7 +157,7 @@ def test_getSideFromCoordinate():
     y1 = 5
     y2 = 8
     xy = 5
-    assert xy == np.sqrt(np.power(x1 - y1, 2) + np.power(x2 - y2, 2))
+    assert xy == sqrt(((x1 - y1) ** 2) + ((x2 - y2) ** 2))
 
 
 if __name__ == '__main__':
@@ -164,9 +172,9 @@ if __name__ == '__main__':
     co2 = [int(tmp[2]), int(tmp[3])]
     co3 = [int(tmp[4]), int(tmp[5])]
 
-    a = np.sqrt(np.power(co2[0] - co3[0], 2) + np.power(co2[1] - co3[1], 2))
-    b = np.sqrt(np.power(co1[0] - co3[0], 2) + np.power(co1[1] - co3[1], 2))
-    c = np.sqrt(np.power(co1[0] - co2[0], 2) + np.power(co1[1] - co2[1], 2))
+    a = sqrt((co2[0] - co3[0]) ** 2 + (co2[1] - co3[1]) ** 2)
+    b = sqrt((co1[0] - co3[0]) ** 2 + (co1[1] - co3[1]) ** 2)
+    c = sqrt((co1[0] - co2[0]) ** 2 + (co1[1] - co2[1]) ** 2)
 
     """Rounding Numbers.
 
