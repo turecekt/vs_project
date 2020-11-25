@@ -19,13 +19,13 @@ morseCodeDictionary = {"a": ".-", "b": "-...", "c": "-.-.", "d": "-..",
 
 
 def encode(text):
-    """Returns morse code.
+    """Returns encoded string.
 
     Args:
         - text - Some text for encoding
 
     Returns:
-        - Encrypted string
+        - encoded string
     """
     morseCodetList = []
     for letter in text:
