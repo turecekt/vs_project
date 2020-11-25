@@ -183,10 +183,12 @@ def test_constuctable():
 def test_returnSide():
     """Return test.
 
-    Tests if returned value for printing is correct.
+    Tests if returned value of a is correct for printing.
     """
     a = 2
-    ReturnSide(a, b, c) == 2
+    b = 4
+    c = 7
+    assert ReturnSide(a, b, c) == 2
 
 
 def test_getSideFromCoordinate():
