@@ -38,11 +38,13 @@ def ReturnSide(a, b, c):
     """Sides of triangle.
 
     Defined function which prints each calculated side of the
-    triangle, it takes variables "a,b,c" from main.
+    triangle, it takes variables "a,b,c" from main. Return is
+    for testing purposes
     """
     print("Side a is:", a)
     print("Side b is:", b)
     print("Side c is:", c)
+    return a
 
 
 def ReturnPerimeter(a, b, c):
@@ -178,6 +180,15 @@ def test_constuctable():
     assert IsConstucrable(a, b, c)
 
 
+def test_returnSide():
+    """Return test.
+
+    Tests if returned value for printing is correct.
+    """
+    a = 2
+    ReturnSide(a, b, c) == 2
+
+
 def test_getSideFromCoordinate():
     """Test of coordinate equation.
 
@@ -215,7 +226,6 @@ if __name__ == '__main__':
     a = round(a, 2)
     b = round(b, 2)
     c = round(c, 2)
-
     """Calculated sides.
 
     Calling function ReturnSide which prints text defined in function on screen
