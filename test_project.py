@@ -1,4 +1,10 @@
-"""Module (file) descrption."""
+"""Module Triangle.
+
+This code calculates sides of triangle from user given coordinates.
+With the calculated sides, it also calculates perimeter and area
+of the triangle aswell as if the triangle is constuctable and
+if its rectangular.
+"""
 
 
 import numpy as np
