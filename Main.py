@@ -118,7 +118,7 @@ def optimizedIsPrime(n):
     return True
 
 
-def pickAlg(d):
+def pickAlg(d, n):
     """Pick and run algorithm.
 
     Based on users choice, algorithm is picked, ran and timed.
@@ -150,6 +150,11 @@ def test_checkIn():
 
     First n contains a letter so checkIn returns true
     Second n doesn't contains a letter so checkIn returns false
+
+    >>> checkIn('1a')
+    True
+    >>> checkIn('1')
+    False
     """
     n = '1a'
     assert checkIn(n)
@@ -167,6 +172,13 @@ def test_isPrime():
     isPrime() returns True
     6 is not a prime number because it has more that 2 distinct factors,,
     isPrime() returns False
+
+    >>> isPrime(-5)
+    False
+    >>> isPrime(5)
+    True
+    >>> isPrime(6)
+    False
     """
     assert not isPrime(-5)
     assert isPrime(5)
@@ -182,6 +194,13 @@ def test_optimizedIsPrime():
     isPrime() returns True
     6 is not a prime number because it has more that 2 distinct factors,,
     isPrime() returns False
+
+    >>> optimizedIsPrime(-5)
+    False
+    >>> optimizedIsPrime(5)
+    True
+    >>> optimizedIsPrime(6)
+    False
     """
     assert not optimizedIsPrime(-5)
     assert optimizedIsPrime(5)
@@ -198,7 +217,7 @@ if __name__ == "__main__":
     digits I would use heuristic algorithm. But for the sake of easier testing
     I switched to the current method.
     """
-    n = getNum(0)
+    n = getNum()
     print("[ 1 ] --> Heuristic method (optimized)")
     print("[ 2 ] --> Deterministic method (not optimized)")
     print('''[ 3 ] --> I DONT CARE! - RANDOM CHOICE!
@@ -210,4 +229,4 @@ if __name__ == "__main__":
         random.seed()
         d = str(random.randrange(1, 3))
 
-    pickAlg(d)
+    pickAlg(d, n)
