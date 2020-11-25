@@ -1,7 +1,8 @@
 """Welcome to 'MorseCode' module.
 
 This module encode all ASCII alphabet characters,
-where letters are separated with '|' character.
+where letters are separated with '|' character,
+words are separated with '||' character.
 Module also supplies function: encode().
 
 For example:
@@ -15,7 +16,7 @@ morseCodeDictionary = {"a": ".-", "b": "-...", "c": "-.-.", "d": "-..",
                        "m": "--", "n": "-.", "o": "---", "p": ".--.",
                        "q": "--.-", "r": ".-.", "s": "...", "t": "-",
                        "u": "..-", "v": "...-", "w": ".--", "x": "-..-",
-                       "y": "-.--", "z": "--.."}
+                       "y": "-.--", "z": "--..", " ": ""}
 
 
 def encode(text):
