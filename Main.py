@@ -32,16 +32,6 @@ def getNum():
     Gets input from the user. Checks if the input is an integer.
     Input must be a whole number and can't contain '.', ',' or any letters.
     Returns the number as int since input() creates a string.
-    >>> getNum()
-    Please enter any integer: a
-    Please enter any integer: 1a
-    Please enter any integer: 1,2
-    Please enter any integer: 1.2
-    Please enter any integer: 2
-    2
-    >>> getNums()
-    Please enter any integer: -2
-    -2
     """
     n = input("Please enter any integer: ")
     while checkIn(n) or (n.find(",") != -1) or not float(n).is_integer():
@@ -64,11 +54,11 @@ def isPrime(n):
     If true, return False -> n is not a prime.
     If false, but the for loop has finished, return True -> n is a prime.
     >>> isPrime(5)
-    5 is a prime number
+    True
     >>> isPrime(6)
-    6 is not a prime number
+    False
     >>> isPrime(-5)
-    -5 is not a prime number
+    False
     """
     if(n <= 1):
         return False
@@ -103,11 +93,11 @@ def optimizedIsPrime(n):
     From this point we only check n against numbers 6k±1,
     where k starts at 5 and increments by 6.
     >>> optimizedIsPrime(5)
-    5 is a prime number
+    True
     >>> optimizedIsPrime(6)
-    6 is not a prime number
+    False
     >>> optimizedIsPrime(-5)
-    -5 is not a prime number
+    False
     """
     if (n <= 1):
         return False
