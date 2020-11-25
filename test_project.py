@@ -74,7 +74,8 @@ def IsRectangular(a, b, c):
     """Rectanguar check.
 
     Function which calculates if triangle is rectangular or not. Firstly i
-    check if the pythagoras equation is correct, if it passes then it returns true,
+    check if the pythagoras equation is correct, if it passes then it
+    returns true,
     if not then it returns false.
     """
     if pwr(c) == pwr(a) + pwr(b):
