@@ -17,13 +17,12 @@ morseCodeDictionary = {"a": ".-", "b": "-...", "c": "-.-.", "d": "-..",
 
 
 def encode(text):
-    """Function that returns encrypted text in morse code using argument text.
-
-    Function encrypt all ASCII alphabet characters.
+    """Returns encoded text in morse code of argument text.
+    Function encode all ASCII alphabet characters.
     Letters are separated with '|' character.
 
     Args:
-        - text - Some text for encrypting
+        - text - Some text for encoding
 
     Returns:
         - Encrypted string
