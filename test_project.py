@@ -219,6 +219,19 @@ def test_convertToInt():
     assert tmp[1] == 2
 
 
+def test_ofInt():
+    """Int value.
+
+    Testing if int() function rounds decimal places with result from
+    round() function.
+    """
+    k = 1.1232345
+    z = 1.1445765476
+    k = round(k, 0)
+    z = int(z)
+    assert k == z
+
+
 if __name__ == '__main__':
     """Assign input.
 
