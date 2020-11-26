@@ -109,6 +109,19 @@ def test_sqrt():
     assert sqrt(36) == 6
 
 
+def test_sqrt_mdArray():
+    """Square root with multi array.
+
+    Testing if sqrt() function works with multidimensional array
+    by comparint it to precalculated result
+    """
+    tmp = [5, 8, 2, 4]
+    co1 = [tmp[0], tmp[1]]
+    co2 = [tmp[2], tmp[3]]
+    a = sqrt(pwr(co1[0] - co2[0]) + pwr(co1[1] - co2[1]))
+    assert a == 5
+
+
 def test_pwr():
     """Power check.
 
