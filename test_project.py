@@ -232,6 +232,19 @@ def test_ofInt():
     assert k == z
 
 
+def test_Assign():
+    """Asign check.
+
+    This test checks if out user input stored in array is geting correctly
+    asigned to variable co1 which is multidimensional array
+    """
+    tmp = [1, 2, 3, 4, 5, 6]
+    int(tmp[0])
+    int(tmp[1])
+    co1 = [tmp[0], tmp[1]]
+    assert co1[0] == tmp[0]
+
+
 if __name__ == '__main__':
     """Assign input.
 
