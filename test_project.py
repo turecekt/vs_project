@@ -27,7 +27,8 @@ def getInput():
     correct amount of numbers. If not he is asked to input them again.
     After that i returne variable tmp.
     """
-    tmp = input("Input 6 coordinates, i.e(a1 b1 a2 b2 a3 b3)")
+    print("Recomended coordinates for rectangular triangle i.e(2 1 6 4 6 1)")
+    tmp = input("Input 6 coordinates, i.e(x1 y1 x2 y2 x3 y3)")
     while len(tmp.split()) != 6:
         tmp = input("Wrong input try again, i.e(a1 b1 a2 b2 a3 b3)")
     tmp = tmp.split()
@@ -102,7 +103,8 @@ def test_sqrt():
     """Square root check.
 
     Tests if square root function works, using local variable and
-    precalculated result
+    precalculated result. By assert we tell pytest what line of code
+    it should check
     """
     x = 25
     assert sqrt(x) == 5
@@ -113,7 +115,7 @@ def test_sqrt_mdArray():
     """Square root with multi array.
 
     Testing if sqrt() function works with multidimensional array
-    by comparint it to precalculated result
+    by comparing it to precalculated result
     """
     tmp = [5, 8, 2, 4]
     co1 = [tmp[0], tmp[1]]
@@ -137,8 +139,8 @@ def test_round():
     """Round test.
 
     Tests if round function works properly, using local variable
-    and precounted result, we check if the build in function can
-    properly round numbers, in my case to 2 decimal places.
+    and precalculated result, we check if the buildin function can
+    properly round numbers, in this case to 2 decimal places.
     """
     x = 2.126324345
     assert round(x, 2) == 2.13
@@ -147,9 +149,8 @@ def test_round():
 def test_perimeter():
     """Test of perimeter.
 
-    Test witch checks if function ReturnPerimeter works correctly. By assert we
-    tell pytest what line of code it should check. It compares calculated value
-    to return value from the function.
+    Test witch checks if function ReturnPerimeter works correctly.
+    It compares calculated value to return value from the function.
     """
     assert ReturnPerimeter(2, 3, 4) == 9
 
@@ -196,7 +197,7 @@ def test_constuctable():
 def test_returnSide():
     """Return test.
 
-    Tests if returned value of a is correct for printing.
+    Tests if returned value of "a" is correct for printing.
     """
     a = 2
     b = 4
@@ -207,7 +208,7 @@ def test_returnSide():
 def test_getSideFromCoordinate():
     """Test of coordinate equation.
 
-    Test witch checks if equation works properly, it compares precalculated
+    Test which checks if equation works properly, it compares precalculated
     result with the result from equation using local variables.
     """
     x1 = 2
@@ -221,9 +222,9 @@ def test_getSideFromCoordinate():
 def test_convertToInt():
     """Conversiom.
 
-    Tests if function split(), and conversion of int work properly by
-    comparing to int value of stringValue which was previously of type
-    string.
+    Tests if function split(), and conversion of int() work properly by
+    comparing to int value, we use "stringValue" which was previously of type
+    string but then converted using above mentioned functions.
     """
     stringValue = "1 2"
     stringValue = stringValue.split()
@@ -248,7 +249,7 @@ def test_ofInt():
 def test_Assign():
     """Asign check.
 
-    This test checks if out user input stored in array is geting correctly
+    This test checks if our user input stored in array is geting correctly
     asigned to variable co1 which is multidimensional array
     """
     tmp = [1, 2, 3, 4, 5, 6]
@@ -262,7 +263,7 @@ if __name__ == '__main__':
     """Assign input.
 
     Here i call the getInput() and save its return values into variable tmp.
-    In next 3 lines i make multidimensional arrays which contains coordinates
+    In next 3 lines i make multidimensional arrays which contain coordinates
     for the sides equation, and convert them to int.
     """
     tmp = getInput()
