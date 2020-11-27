@@ -8,10 +8,6 @@ I also included a timer to easily compare effectiveness.
 """
 
 
-import time as t
-import random
-
-
 def checkIn(n):
     """Sieve letters.
 
@@ -118,31 +114,37 @@ def optimizedIsPrime(n):
     return True
 
 
-def pickAlg(d, n):
+def pickAlg(n):
     """Pick and run algorithm.
 
     Based on users choice, algorithm is picked, ran and timed.
     Results are then printed.
     """
-    if(d == '1'):
-        print("A heuristic method was used to determine that...")
-        t1_start = t.time()
+    if len(str(n)) > 7:
         if (optimizedIsPrime(n)):
-            print(n, " is a prime number")
+            print('''A heuristic method was used to determine that
+                {0} is a prime number'''.format(n))
         else:
-            print(n, " is not a prime number")
-        t1_stop = t.time()
+            print('''A heuristic method was used to determine that
+                {0} is not a prime number'''.format(n))
 
-    if(d == '2'):
-        print("A deterministic method was used to determine that...")
-        t1_start = t.time()
+    if len(str(n)) <= 7:
         if (isPrime(n)):
-            print(n, " is a prime number")
+            print('''A deterministic method was used to determine that
+                {0} is a prime number'''.format(n))
         else:
-            print(n, " is not a prime number")
-        t1_stop = t.time()
+            print('''A deterministic method was used to determine that
+                {0} is not a prime number'''.format(n))
 
-    print("...that process took ", round((t1_stop - t1_start), 4), " seconds.")
+
+if __name__ == "__main__":
+    """.
+
+    Here I save user input in variable n. Then I call the pickAlg()
+    function and give it n as argument
+    """
+    n = getNum()
+    pickAlg(n)
 
 
 def test_checkIn():
@@ -207,26 +209,12 @@ def test_optimizedIsPrime():
     assert not optimizedIsPrime(6)
 
 
-if __name__ == "__main__":
-    """.
+def test_pickAlg():
+    """Test for pickAlg() function.
 
-    Here I save user input in variable n. Before proceeding to the prime check
-    algorithms I give the user a choice of algorithm. Initially I simply
-    choose algortihm based on how large a given n is. For n with 5 or less
-    digits I would use deterministic algorithm and for n with more than 5
-    digits I would use heuristic algorithm. But for the sake of easier testing
-    I switched to the current method.
+    Saves n as 5, and output is the expected output.
+    Then asserts that output from pickAlg() matches the expected one
     """
-    n = getNum()
-    print("[ 1 ] --> Heuristic method (optimized)")
-    print("[ 2 ] --> Deterministic method (not optimized)")
-    print('''[ 3 ] --> I DONT CARE! - RANDOM CHOICE!
-    (WARNING: 50% chance it will take a long time if n is large enough)''')
-    d = input("Please choose an option: ")
-    while d != '1' and d != '2' and d != '3':
-        d = input("Please choose a valid option: ")
-    if d == '3':
-        random.seed()
-        d = str(random.randrange(1, 3))
-
-    pickAlg(d, n)
+    n = 5
+    o = "A deterministic method was used to determine that 5 is a prime number"
+    assert pickAlg(n) == o
