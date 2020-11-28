@@ -72,26 +72,46 @@ def printSupportLanguages():
         index += 1
 
 # Funkce, která zajišťuje správný výběr podporovaného jazyka
-def language():
+def getLanguageIndex():
     print("Select languages:")
     printSupportLanguages()
     # Smyčka se opakuje, tak douho, dokud není vybrán správný jazyk
     while True:
-        indexLanguageStr = input("Enter number of language: ")
         # Kontrola, jestli je uživatelský vstup číslo
         try:
-            indexLanguageInt = int(indexLanguageStr) - 1
+            index = int(input("Enter number of language: ")) - 1
+        except ValueError:
+            print("Not an integer!")
+            continue 
+        if (index >= 0 and index < len(languages)):
+            return index
+
+# Funkce, která zajišťuje správný výběr překladu
+def isLanguageTranslation():
+    print("Translate from:")
+    print("1 - Language")
+    print("2 - Morse code")
+    while True:
+        # Kontrola, jestli je uživatelský vstup číslo
+        try:
+            index = int(input("Enter the translation number: "))
         except ValueError:
             print("Not an integer!")
             continue
-        if (indexLanguageInt >= 0 and indexLanguageInt < len(languages)):
-            return indexLanguageInt
+        if (index == 1):
+            return True
+        elif (index == 2):
+            return False
+        else:
+            continue
 
 # Funkce s logikou hlavní smyčky programu    
 def mainLoop():
     # Menu (základní nastavení pro kódování a dekódování)
     print("Welcome to the translator!\n")
-    lang = language()
+    languageIndex = getLanguageIndex()
+    print()
+    isLangTranslation = isLanguageTranslation()
     
 # Spuštění hlavní smyčky
 mainLoop()
