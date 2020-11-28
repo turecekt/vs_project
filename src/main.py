@@ -1,5 +1,5 @@
 # Mapování písmen abecedy na znaky Morseovy abecedy
-alphabet_morse = {
+alphabetMorse = {
     "a": ".-",
     "b": "-...",
     "c": "-.-.",
@@ -30,7 +30,7 @@ alphabet_morse = {
 }
 
 # Mapování znaků Morseovy abecedy na písmena abecedy
-morse_alphabet = {
+morseAlphabet = {
     ".-": "a",
     "-...": "b",
     "-.-.": "c",
@@ -82,11 +82,38 @@ def isAlphabetTranslation():
         else:
             continue
 
+def alphabetTranslation(text):
+    result = ""
+    for char in text.lower():
+        if char in alphabetMorse:
+            result += alphabetMorse[char]
+    return result
+
+def morseCodeTranslation(text):
+    return "MORSE CODE"
+
+def translation(text, isAlphabet):
+    return alphabetTranslation(text) if isAlphabet else morseCodeTranslation(text)
+
 # Funkce s logikou hlavní smyčky programu    
-def mainLoop():
+def mainLoop(isRepeat):
     # Menu (základní nastavení pro kódování a dekódování)
-    print("Welcome to the translator!\n")
+    print("Welcome to the Translator!\n") if isRepeat == False else print("Translator\n")
     isAlphabet = isAlphabetTranslation()
+    print()
+
+    text = input("Enter text between \"\": ")
+    print()
+    
+    print("Translation:")
+    print(translation(text, isAlphabet))
+
+isRepeat = False
+exitCode = 'n'
     
 # Spuštění hlavní smyčky
-mainLoop()
+while exitCode != 'y':
+    mainLoop(isRepeat)
+    exitCode = input("\nDo you want exit program (y/n): ").lower()
+    print()
+    isRepeat = True
