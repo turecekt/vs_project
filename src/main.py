@@ -8,6 +8,7 @@ alphabet_morse = {
     "f": "..-.",
     "g": "--.",
     "h": "....",
+    "ch": "----",
     "i": "..",
     "j": ".---",
     "k": "-.-",
@@ -38,6 +39,7 @@ morse_alphabet = {
     "..-.": "f",
     "--.": "g",
     "....": "h",
+    "----": "ch",
     "..": "i",
     ".---": "j",
     "-.-": "k",
@@ -61,35 +63,10 @@ morse_alphabet = {
 # Mezera
 space = " ";
 
-# Podporované jazyky
-languages = ["English", "Czech"]
-
-# Funkce, která vypíše do konzole podporované jazyky
-def printSupportLanguages():
-    index = 1
-    for language in languages:
-        print(str(index) + " - " + language)
-        index += 1
-
-# Funkce, která zajišťuje správný výběr podporovaného jazyka
-def getLanguageIndex():
-    print("Select languages:")
-    printSupportLanguages()
-    # Smyčka se opakuje, tak douho, dokud není vybrán správný jazyk
-    while True:
-        # Kontrola, jestli je uživatelský vstup číslo
-        try:
-            index = int(input("Enter number of language: ")) - 1
-        except ValueError:
-            print("Not an integer!")
-            continue 
-        if (index >= 0 and index < len(languages)):
-            return index
-
 # Funkce, která zajišťuje správný výběr překladu
-def isLanguageTranslation():
+def isAlphabetTranslation():
     print("Translate from:")
-    print("1 - Language")
+    print("1 - Alphabet")
     print("2 - Morse code")
     while True:
         # Kontrola, jestli je uživatelský vstup číslo
@@ -109,9 +86,7 @@ def isLanguageTranslation():
 def mainLoop():
     # Menu (základní nastavení pro kódování a dekódování)
     print("Welcome to the translator!\n")
-    languageIndex = getLanguageIndex()
-    print()
-    isLangTranslation = isLanguageTranslation()
+    isAlphabet = isAlphabetTranslation()
     
 # Spuštění hlavní smyčky
 mainLoop()
