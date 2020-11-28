@@ -151,24 +151,6 @@ if __name__ == "__main__":
     pickAlg(n)
 
 
-def test_checkIn():
-    """.
-
-    First n contains a letter so checkIn returns true
-    Second n doesn't contains a letter so checkIn returns false
-
-    >>> checkIn('1a')
-    True
-    >>> checkIn('1')
-    False
-    """
-    n = '1a'
-    assert checkIn(n)
-
-    n = '1'
-    assert not checkIn(n)
-
-
 def test_isPrime():
     """.
 
