@@ -28,6 +28,7 @@ alphabet_morse = {
     "z": "--.."
 }
 
+# Mapování znaků Morseovy abecedy na písmena abecedy
 morse_alphabet = {
     ".-": "a",
     "-...": "b",
