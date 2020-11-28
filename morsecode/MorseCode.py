@@ -1,8 +1,8 @@
 """Welcome to 'MorseCode' module.
 
-This module encode all ASCII alphabet characters,
-where letters are separated with '|' character,
-words are separated with '||' character.
+This module encode all ASCII alphabet characters,numbers
+and special characters where letters are separated with '|'
+character, words are separated with '||' character.
 Module also supplies function: encode().
 
 For example:
@@ -19,7 +19,11 @@ morseCodeDictionary = {"a": ".-", "b": "-...", "c": "-.-.", "d": "-..",
                        "y": "-.--", "z": "--..", " ": "",
                        "0": "-----", "1": ".----", "2": "..---", "3": "...--",
                        "4": "....-", "5": ".....", "6": "-....", "7": "--...",
-                       "8": "---..", "9": "----."}
+                       "8": "---..", "9": "----.",
+                       ".": ".-.-.-", ",": "--..--", "?": "..--..",
+                       "!": "--...-", ";": "-.-.-.", ":": "---...",
+                       "(": "-.--.", ")": "-.--.-", "\"": ".-..-.",
+                       "-": "-....-", "_": "..--.-", "@": ".--.-."}
 
 
 def encode(text):
