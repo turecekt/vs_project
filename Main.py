@@ -207,15 +207,3 @@ def test_optimizedIsPrime():
     assert not optimizedIsPrime(-5)
     assert optimizedIsPrime(5)
     assert not optimizedIsPrime(6)
-
-
-def test_pickAlg():
-    """Test for pickAlg() function.
-
-    Saves n as 5, and output is the expected output.
-    Then asserts that output from pickAlg() matches the expected one
-    """
-    n = 5
-    o = "A deterministic method was used to determine that 5 is a prime number"
-    ao = pickAlg(n)
-    assert ao == o
