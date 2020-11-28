@@ -123,18 +123,22 @@ def pickAlg(n):
     if len(str(n)) > 7:
         if (optimizedIsPrime(n)):
             print('''A heuristic method was used to determine that
-                {0} is a prime number'''.format(n))
+{0} is a prime number'''.format(n))
+            return 1
         else:
             print('''A heuristic method was used to determine that
-                {0} is not a prime number'''.format(n))
+{0} is not a prime number'''.format(n))
+            return 0
 
     if len(str(n)) <= 7:
         if (isPrime(n)):
             print('''A deterministic method was used to determine that
-                {0} is a prime number'''.format(n))
+{0} is a prime number'''.format(n))
+            return 1
         else:
             print('''A deterministic method was used to determine that
-                {0} is not a prime number'''.format(n))
+{0} is not a prime number'''.format(n))
+            return 0
 
 
 if __name__ == "__main__":
@@ -207,3 +211,15 @@ def test_optimizedIsPrime():
     assert not optimizedIsPrime(-5)
     assert optimizedIsPrime(5)
     assert not optimizedIsPrime(6)
+
+
+def test_pickAlg():
+    """Test for pickAlg() function.
+
+    Saves n as 5, and output is the expected output.
+    Then asserts that output from pickAlg() matches the expected one
+    """
+    n = 5
+    o = 1
+    ao = pickAlg(n)
+    assert ao == o
