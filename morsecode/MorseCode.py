@@ -10,6 +10,7 @@ For example:
 >>> encode("ahoj")
 '.-|....|---|.---'
 """
+import unicodedata
 morseCodeDictionary = {"a": ".-", "b": "-...", "c": "-.-.", "d": "-..",
                        "e": ".", "f": "..-.", "g": "--.", "h": "....",
                        "i": "..", "j": ".---", "k": "-.-", "l": ".-..",
@@ -36,7 +37,21 @@ def encode(text):
         - encoded string
     """
     morseCodetList = []
+    text = removeDiacritic(text.lower())
     for letter in text:
         morseCodetList.append(morseCodeDictionary.get(letter))
 
     return "|".join(morseCodetList)
+
+
+def removeDiacritic(text):
+    """Return text with removed diacritic.
+
+    Args:
+        - text - Some text for encoding
+
+    Returns:
+        - string with removed diacritic
+    """
+    nfkdForm = unicodedata.normalize('NFKD', text)
+    return u"".join([c for c in nfkdForm if not unicodedata.combining(c)])
