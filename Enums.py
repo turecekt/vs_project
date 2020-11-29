@@ -1,6 +1,4 @@
-""" Modul obshaujici definice vyctovych typu.
-
-"""
+""" Modul obshaujici definice vyctovych typu."""
 
 
 def enum(**enums):

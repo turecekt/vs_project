@@ -20,8 +20,7 @@ def showError(err):
 
 
 def showStart():
-    """ Metoda vypisuje do konzole start aplikace.
-    """
+    """ Metoda vypisuje do konzole start aplikace."""
 
     print('\t***************************************************************')
     print('\t     *****************************************************')
@@ -37,8 +36,7 @@ def showStart():
 
 
 def showEnd():
-    """ Metoda vypisuje do konzole ukonceni aplikace.
-    """
+    """ Metoda vypisuje do konzole ukonceni aplikace."""
 
     print('\n\t***************************************************************')
     print('\t                   Dekuji za spolupraci.')

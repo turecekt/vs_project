@@ -1,10 +1,8 @@
-""" Modul obshaujici tridu translatoru Morseovi abecedy.
-"""
+""" Modul obshaujici tridu translatoru Morseovi abecedy."""
 
 
 class Translator:
-    """ Trida zverejnujici funkce pro kodovani/dekodovani Morseovi abecedy.
-    """
+    """ Trida zverejnujici funkce pro kodovani/dekodovani Morseovi abecedy."""
 
     def __init__(self):
         """ Konstruktor tridy.
