@@ -7,6 +7,7 @@ Umoznuje uzivateli snadne ovladani poskytovanych funkci.
 
 import Enums
 import Translator
+import sys
 
 
 def showError(err):
@@ -116,9 +117,12 @@ def runProccess(action):
 showStart()
 
 # vytvorime behove promenne
-appLoop = True
+appLoop = False
 state = Enums.States.MENU
 action = Enums.Actions.UNKNOWN
+
+if (len(sys.argv) - 1 > 0):
+    appLoop = True
 
 # vytvorime smycku aplikace
 while(appLoop):
