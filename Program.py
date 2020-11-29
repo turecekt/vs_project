@@ -15,6 +15,9 @@ def showError(err):
 
     Args:
         - err - String obsahujici chybovou zpravu.
+
+    >>> showError('test')
+    >>>> !!! test !!! <<<<
     """
     print('\n\t>>>> !!! ' + err + ' !!! <<<<\n')
 
