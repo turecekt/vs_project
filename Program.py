@@ -11,7 +11,7 @@ import Translator
 
 def showError(err):
     """Metoda vypisuje naformatovanou chybovou zpravu do konzole.
-    
+
     Args:
         - err - String obsahujici chybovou zpravu.
     """
@@ -30,12 +30,14 @@ def showStart():
     print('\n\t                   Autor: Filip SPACEK\n')
     print('\t          *******************************************')
     print('\t     *****************************************************')
-    print('\t***************************************************************\n\n')
+    print('\t***************************************************************')
+    print('\n')
 
 
 def showEnd():
     """Metoda vypisuje do konzole ukonceni aplikace."""
-    print('\n\t***************************************************************')
+    print('')
+    print('\t***************************************************************')
     print('\t                   Dekuji za spolupraci.')
     print('\t                      Mejte hezky den.')
 
@@ -50,9 +52,9 @@ def showMenu():
 
 
 def parseAction():
-    """Metoda vyhodnocuje predany uzivatelsky vstup a prevadi jej na pozadovanou akci.
+    """Metoda vyhodnocuje uzivatelsky vstup a prevadi jej na pozadovanou akci.
 
-    Pokud uzivatel zada chybne vstup, metoda ho upozorni a necha ho zadat znovu.
+    Pokud uzivatel zada chybne vstup, metoda ho upozorni a necha zadat znovu.
 
     Return:
         - Vrati pozadovanou akci formou vyctoveho typu.
@@ -72,7 +74,7 @@ def parseAction():
 
 
 def checkUserInputText(txt):
-    """Metoda proveri predany uzivatelsky vstup, zda-li je spravne zadan pro potreby kodovani/dekodovani.
+    """Metoda proveri uzivatelsky vstup, zda-li je spravne zadan.
 
     Args:
         - txt - String pro otestovani.
@@ -84,7 +86,7 @@ def checkUserInputText(txt):
 
 
 def runProccess(action):
-    """Metoda spusti pozadovanou akci kodovani/dekodovani a vysledek vypise do konzole.
+    """Metoda spusti kodovani/dekodovani a vysledek vypise do konzole.
 
     Args:
         - action - Akce dle vyctoveho typu.
@@ -92,14 +94,17 @@ def runProccess(action):
     print('\n\tPREVOD')
     print('\t***************************************************************')
     if (action == Enums.Actions.ENCODE):
-        txt = input('\tVepiste text k zakodovani ohraniceny uvozovkami a bez diakritiky.\n\t')
+        txt = input('\tVepiste text k zakodovani ohraniceny uvozovkami' +
+                    ' a bez diakritiky.\n\t')
         if (not checkUserInputText(txt)):
             showError('Neni zadan text, nebo neni ohranicen uvozovkami.')
         txt = txt[1:len(txt) - 1]
         translator = Translator.Translator()
         print('\n\t' + translator.encode(txt) + '\n')
     else:
-        txt = input('\tVepiste text k dekodovani ohraniceny uvozovkami. Kazdy znak musi byt oddelen od predchoziho mezerou. Provolene znaky jsou pouze "." a "-".\n\t')
+        txt = input('\tVepiste text k dekodovani ohraniceny uvozovkami.' +
+                    ' Kazdy znak musi byt oddelen od predchoziho mezerou.' +
+                    ' Provolene znaky jsou pouze "." a "-".\n\t')
         if (not checkUserInputText(txt)):
             showError('Neni zadan text, nebo neni ohranicen uvozovkami.')
         txt = txt[1:len(txt) - 1]
