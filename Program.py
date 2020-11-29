@@ -1,4 +1,4 @@
-""" Hlavni modul aplikace.
+"""Hlavni modul aplikace.
 
 Modul obsahujici vstup do cele aplikace.
 Umoznuje uzivateli snadne ovladani poskytovanych funkci.
@@ -10,18 +10,16 @@ import Translator
 
 
 def showError(err):
-    """ Metoda vypisuje naformatovanou chybovou zpravu do konzole.
+    """Metoda vypisuje naformatovanou chybovou zpravu do konzole.
     
     Args:
         - err - String obsahujici chybovou zpravu.
     """
-
     print('\n\t>>>> !!! ' + err + ' !!! <<<<\n')
 
 
 def showStart():
-    """ Metoda vypisuje do konzole start aplikace."""
-
+    """Metoda vypisuje do konzole start aplikace."""
     print('\t***************************************************************')
     print('\t     *****************************************************')
     print('\t          *******************************************\n')
@@ -36,16 +34,14 @@ def showStart():
 
 
 def showEnd():
-    """ Metoda vypisuje do konzole ukonceni aplikace."""
-
+    """Metoda vypisuje do konzole ukonceni aplikace."""
     print('\n\t***************************************************************')
     print('\t                   Dekuji za spolupraci.')
     print('\t                      Mejte hezky den.')
 
 
 def showMenu():
-    """ Metoda vypisuje naformatovane menu do konzole."""
-
+    """Metoda vypisuje naformatovane menu do konzole."""
     print('\tMENU')
     print('\t***************************************************************')
     print('\tZ - Zakodovat text do Morseovi abecedy')
@@ -54,14 +50,13 @@ def showMenu():
 
 
 def parseAction():
-    """ Metoda vyhodnocuje predany uzivatelsky vstup a prevadi jej na pozadovanou akci.
+    """Metoda vyhodnocuje predany uzivatelsky vstup a prevadi jej na pozadovanou akci.
 
     Pokud uzivatel zada chybne vstup, metoda ho upozorni a necha ho zadat znovu.
 
     Return:
         - Vrati pozadovanou akci formou vyctoveho typu.
     """
-
     action = Enums.Actions.UNKNOWN
     while (action == Enums.Actions.UNKNOWN):
         c = input('\tZvolena akce: ').upper()
@@ -77,7 +72,7 @@ def parseAction():
 
 
 def checkUserInputText(txt):
-    """ Metoda proveri predany uzivatelsky vstup, zda-li je spravne zadan pro potreby kodovani/dekodovani.
+    """Metoda proveri predany uzivatelsky vstup, zda-li je spravne zadan pro potreby kodovani/dekodovani.
 
     Args:
         - txt - String pro otestovani.
@@ -85,17 +80,15 @@ def checkUserInputText(txt):
     Return:
         - Vrati True, pokud je v poradku, v opacnem pripade vrati False.
     """
-
     return (txt.startswith('"') and txt.endswith('"') and len(txt) > 2)
 
 
 def runProccess(action):
-    """ Metoda spusti pozadovanou akci kodovani/dekodovani a vysledek vypise do konzole.
+    """Metoda spusti pozadovanou akci kodovani/dekodovani a vysledek vypise do konzole.
 
     Args:
         - action - Akce dle vyctoveho typu.
     """
-
     print('\n\tPREVOD')
     print('\t***************************************************************')
     if (action == Enums.Actions.ENCODE):
