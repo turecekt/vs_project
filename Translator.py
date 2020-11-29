@@ -1,11 +1,11 @@
-""" Modul obshaujici tridu translatoru Morseovi abecedy."""
+"""Modul obshaujici tridu translatoru Morseovi abecedy."""
 
 
 class Translator:
-    """ Trida zverejnujici funkce pro kodovani/dekodovani Morseovi abecedy."""
+    """Trida zverejnujici funkce pro kodovani/dekodovani Morseovi abecedy."""
 
     def __init__(self):
-        """ Konstruktor tridy.
+        """Konstruktor tridy.
 
         Definuje Morseovu abecedu.
         """
@@ -59,7 +59,7 @@ class Translator:
                         '@': '.--.-.'}
 
     def decodeChar(self, enc):
-        """ Metoda dekoduje znak z Morseovi abecedy do alfabeticke.
+        """Metoda dekoduje znak z Morseovi abecedy do alfabeticke.
 
         Args:
             - enc - Zakodovany znak.
@@ -67,29 +67,28 @@ class Translator:
         Returns:
             - Dekodovany znak, pripadne ?, pokud se nepovede dekodovat.
         """
-
         for key, value in self.abeceda.items():
             if (value == enc):
                 return str(key)
         return '?'
 
     def encodeChar(self, dec):
-        """ Metoda kodujici znak z alfabeticke abecedy do Morseovi.
+        """Metoda kodujici znak z alfabeticke abecedy do Morseovi.
 
         Args:
             - dec - Znak k zakodovani.
 
         Returns:
-            - Zakodovany znak, pripadne zakodovany ?, pokud se nepovede zakodovat.
+            - Zakodovany znak, pripadne zakodovany ?,
+              pokud se nepovede zakodovat.
         """
-
         for key, value in self.abeceda.items():
             if (key == dec.upper()):
                 return str(value)
         return '..--..'
 
     def encode(self, txt):
-        """ Metoda kodujici string z alfabeticke abecedy do Morseovi.
+        """Metoda kodujici string z alfabeticke abecedy do Morseovi.
 
         Args:
             - txt - String k zakodovani.
@@ -97,14 +96,13 @@ class Translator:
         Returns:
             - Zakodovany string.
         """
-
         enc = ''
         for i in range(0, len(txt)):
             enc = enc + self.encodeChar(txt[i]) + ' '
         return enc
 
     def decode(self, txt):
-        """ Metoda dekodujici string z Morseovi abecedy do alfabeticke.
+        """Metoda dekodujici string z Morseovi abecedy do alfabeticke.
 
         Args:
             - txt - String k dekodovani.
@@ -112,7 +110,6 @@ class Translator:
         Returns:
             - Dekodovany string.
         """
-
         dec = ''
         w = ''
         for i in range(0, len(txt)):
