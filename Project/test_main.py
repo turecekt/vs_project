@@ -1,3 +1,4 @@
+"""Test for testing main function."""
 import main
 import sys
 
