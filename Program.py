@@ -14,10 +14,7 @@ def showError(err):
     """Metoda vypisuje naformatovanou chybovou zpravu do konzole.
 
     Args:
-        - err - String obsahujici chybovou zpravu.
-
-    >>> showError('test')
-    >>>> !!! test !!! <<<<
+        - err - String obsahujici chybovou zpravu.    
     """
     print('\n\t>>>> !!! ' + err + ' !!! <<<<\n')
 
@@ -61,7 +58,7 @@ def parseAction():
     Pokud uzivatel zada chybne vstup, metoda ho upozorni a necha zadat znovu.
 
     Return:
-        - Vrati pozadovanou akci formou vyctoveho typu.
+        - Vrati pozadovanou akci formou vyctoveho typu.    
     """
     action = Enums.Actions.UNKNOWN
     while (action == Enums.Actions.UNKNOWN):
@@ -85,6 +82,9 @@ def checkUserInputText(txt):
 
     Return:
         - Vrati True, pokud je v poradku, v opacnem pripade vrati False.
+
+    >>> checkUserInputText('"test"')
+    True
     """
     return (txt.startswith('"') and txt.endswith('"') and len(txt) > 2)
 
