@@ -18,14 +18,6 @@ def convert_binary(input_number):
     return binar
 
 
-def test_convert_binary():
-    """Test function convert_binary."""
-    assert convert_binary(78) == "1001110"
-    assert convert_binary(1) == "1"
-    assert convert_binary(100) == "1100100"
-    assert convert_binary(2020) == "11111100100"
-
-
 def convert_octal(input_number):
     """Convert decimal number to octal."""
     text = ""
@@ -54,14 +46,6 @@ def convert_octal(input_number):
     return text
 
 
-def test_convert_octal():
-    """Test function convert decimal num to octal."""
-    assert convert_octal(156) == "234"
-    assert convert_octal(0) == "0"
-    assert convert_octal(123456789) == "726746425"
-    assert convert_octal(2020) == "3744"
-
-
 def convert_hexadecimal(input_number):
     """Convert decimal number to hexadecimal."""
     input_number = int(input_number)
@@ -76,42 +60,25 @@ def convert_hexadecimal(input_number):
     return convert_hexadecimal(rest) + chars[x]
 
 
-def test_convert_hexadecimal():
-    """Test function convert_hexadecimal."""
-    if sys.version_info > (3, 0):
-        assert convert_hexadecimal(0) == "0"
-        assert convert_hexadecimal(100) == "064"
-        assert convert_hexadecimal(15119) == "03B0F"
-    else:
-        assert convert_hexadecimal(0) == "0"
-        assert convert_hexadecimal(100) == "64"
-        assert convert_hexadecimal(15119) == "03B0F"
+"""Get arguments from console, then call functions to convert number."""
+if len(sys.argv) == 3:  # get arguments from terminal
+    numeral_system_type_arg = sys.argv[1]
+    input_number = int(sys.argv[2])
 
+# TODO refactor else case
+else:
+    numeral_system_type_arg = "not valid"
+    input_number = 0
 
-def main():
-    """Get arguments from console, then call functions to convert number."""
-    if len(sys.argv) == 3:  # get arguments from terminal
-        numeral_system_type_arg = sys.argv[1]
-        input_number = int(sys.argv[2])
+# enables functionality for both lowercase and uppercase arguments
+numeral_system_type_arg = numeral_system_type_arg.lower()
 
-    # TODO refactor else case
-    else:
-        numeral_system_type_arg = "not valid"
-        input_number = 0
-
-    # enables functionality for both lowercase and uppercase arguments
-    numeral_system_type_arg = numeral_system_type_arg.lower()
-
-    # choose what argument is used
-    if numeral_system_type_arg == "-b":
-        print(convert_binary(input_number))
-    elif numeral_system_type_arg == "-o":
-        print(convert_octal(input_number))
-    elif numeral_system_type_arg == "-h":
-        print(convert_hexadecimal(input_number))
-    else:
-        print("Unable to convert")
-
-
-if __name__ == '__main__':
-    main()
+# choose what argument is used
+if numeral_system_type_arg == "-b":
+    print(convert_binary(input_number))
+elif numeral_system_type_arg == "-o":
+    print(convert_octal(input_number))
+elif numeral_system_type_arg == "-h":
+    print(convert_hexadecimal(input_number))
+else:
+    print("Unable to convert")
