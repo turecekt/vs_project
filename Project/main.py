@@ -79,9 +79,13 @@ def convert_hexadecimal(input_number):
 def test_convert_hexadecimal():
     """Test function convert_hexadecimal."""
     if sys.version_info > (3, 0):
+        assert convert_hexadecimal(0) == "0"
         assert convert_hexadecimal(100) == "064"
+        assert convert_hexadecimal(15119) == "03B0F"
     else:
+        assert convert_hexadecimal(0) == "0"
         assert convert_hexadecimal(100) == "64"
+        assert convert_hexadecimal(15119) == "03B0F"
 
 
 def main():
