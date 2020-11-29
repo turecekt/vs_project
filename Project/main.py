@@ -3,9 +3,6 @@
 # library imports
 import sys
 
-# module imports
-import decimalToOctal
-
 
 def convert_binary(input_number):
     """Convert decimal number to binary."""
@@ -27,6 +24,42 @@ def test_convert_binary():
     assert convert_binary(1) == "1"
     assert convert_binary(100) == "1100100"
     assert convert_binary(2020) == "11111100100"
+
+
+def convert_octal(input_number):
+    """Convert decimal number to octal."""
+    text = ""
+    k = []
+
+    if input_number == 0:
+        text = '0'
+
+    while input_number > 0:
+        # calc
+        a = int(input_number % 8)
+
+        # a add to array
+        k.append(a)
+
+        # calc
+        input_number = (input_number - a) / 8
+
+        # load array
+        text = ""
+
+    # turn the array
+    for j in k[::-1]:
+        text = text + str(j)
+
+    return text
+
+
+def test_convert_octal():
+    """Test function convert decimal num to octal."""
+    assert convert_octal(156) == "234"
+    assert convert_octal(0) == "0"
+    assert convert_octal(123456789) == "726746425"
+    assert convert_octal(2020) == "3744"
 
 
 def convert_hexadecimal(input_number):
@@ -69,7 +102,7 @@ def main():
     if numeral_system_type_arg == "-b":
         print(convert_binary(input_number))
     elif numeral_system_type_arg == "-o":
-        print(decimalToOctal.convert(input_number))
+        print(convert_octal(input_number))
     elif numeral_system_type_arg == "-h":
         print(convert_hexadecimal(input_number))
     else:
