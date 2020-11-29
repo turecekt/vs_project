@@ -1,8 +1,8 @@
-""" Modul obshaujici definice vyctovych typu."""
+"""Modul obshaujici definice vyctovych typu."""
 
 
 def enum(**enums):
-    """ Funkce umoznujici vytvoreni vyctoveho typu.
+    """Funkce umoznujici vytvoreni vyctoveho typu.
 
     Args:
         - enums - Volitelny parametr obsahujici pozadovany vycet.
@@ -10,7 +10,6 @@ def enum(**enums):
     Returns:
         Nove vytvoreny vyctovy typ.
     """
-
     return type('Enum', (), enums)
 
 
