@@ -4,8 +4,29 @@
 import sys
 
 # module imports
-import decimalToBinary
 import decimalToOctal
+
+
+def convert_binary(input_number):
+    """Convert decimal number to binary."""
+    binar = ''
+    if input_number == 0:
+        binar = '0' + binar
+    else:
+        # Cycle and divide number that is higher than 0
+        while input_number > 0:
+            binar = str(input_number % 2) + binar
+            input_number = input_number // 2
+    # Returns converted binary number
+    return binar
+
+
+def test_convert_binary():
+    """Test function convert_binary."""
+    assert convert_binary(78) == "1001110"
+    assert convert_binary(1) == "1"
+    assert convert_binary(100) == "1100100"
+    assert convert_binary(2020) == "11111100100"
 
 
 def convert_hexadecimal(input_number):
@@ -46,7 +67,7 @@ def main():
 
     # choose what argument is used
     if numeral_system_type_arg == "-b":
-        print(decimalToBinary.convert(input_number))
+        print(convert_binary(input_number))
     elif numeral_system_type_arg == "-o":
         print(decimalToOctal.convert(input_number))
     elif numeral_system_type_arg == "-h":
