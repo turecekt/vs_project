@@ -62,7 +62,8 @@ def parseAction():
     """
     action = Enums.Actions.UNKNOWN
     while (action == Enums.Actions.UNKNOWN):
-        c = input('\tZvolena akce: ').upper()
+        #c = input('\tZvolena akce: ').upper()
+        c = 'Z'
         if (c == 'Z'):
             action = Enums.Actions.ENCODE
         elif (c == 'D'):
@@ -98,17 +99,19 @@ def runProccess(action):
     print('\n\tPREVOD')
     print('\t***************************************************************')
     if (action == Enums.Actions.ENCODE):
-        txt = input('\tVepiste text k zakodovani ohraniceny uvozovkami' +
-                    ' a bez diakritiky.\n\t')
+        #txt = input('\tVepiste text k zakodovani ohraniceny uvozovkami' +
+        #            ' a bez diakritiky.\n\t')
+        txt = '"test"'
         if (not checkUserInputText(txt)):
             showError('Neni zadan text, nebo neni ohranicen uvozovkami.')
         txt = txt[1:len(txt) - 1]
         translator = Translator.Translator()
         print('\n\t' + translator.encode(txt) + '\n')
     else:
-        txt = input('\tVepiste text k dekodovani ohraniceny uvozovkami.' +
-                    ' Kazdy znak musi byt oddelen od predchoziho mezerou.' +
-                    ' Provolene znaky jsou pouze "." a "-".\n\t')
+        #txt = input('\tVepiste text k dekodovani ohraniceny uvozovkami.' +
+        #            ' Kazdy znak musi byt oddelen od predchoziho mezerou.' +
+        #            ' Provolene znaky jsou pouze "." a "-".\n\t')
+        txt = '".-"'
         if (not checkUserInputText(txt)):
             showError('Neni zadan text, nebo neni ohranicen uvozovkami.')
         txt = txt[1:len(txt) - 1]
