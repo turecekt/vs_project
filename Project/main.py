@@ -6,7 +6,6 @@ import sys
 # module imports
 import decimalToBinary
 import decimalToOctal
-import decimalToHexadecimal
 
 
 def convert_hexadecimal(input_number):
