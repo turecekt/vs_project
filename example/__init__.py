@@ -1,1 +1,0 @@
-"""Silence heals your soul."""
