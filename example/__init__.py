@@ -24,7 +24,14 @@ obsah = soubor.read()
 soubor.close()
 """print("kolikátý je to znak: ",obsah.find("#"))"""
 ukoncovaciZnak = obsah.find("#")
-obsah = obsah[0:ukoncovaciZnak]
+if ukoncovaciZnak < 0:
+   obsah = obsah
+else:
+   obsah = obsah[0:ukoncovaciZnak]
+
+    
+    
+
 print ("ukončovací znak: ",ukoncovaciZnak)
 print(obsah)
 
@@ -57,10 +64,19 @@ print("Nejméně četný znak:",MinDictVal)
 
 
 
+for x in count.keys ():
+    if count[x] == 2:
+        print("jen písmena",x)
+    else:
+        print("nefunguje")
+
+
 
 """Ještě pořešit:
     - jak vypsat všechny nejméně četné znaky
-    - když text nebude obsahovat #, tak neodečítat -1
+        ještě získat hodnotu nejméně četného znaku a potom vypsat
+        jen ty nejméně četné
+    - když text nebude obsahovat #, tak neodečítat -1    --- hotovo
     - průměrná četnost"""
 
 
