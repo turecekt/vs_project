@@ -18,6 +18,20 @@ def constructability(Jedna, Dva, Tri):
         return 'Trojůhelník není sestrojitelný'
 
 
+def biggest(stranaJedna, stranaDva, stranaTri):
+    """Return the biggest number."""
+    big = stranaJedna
+    if big > stranaDva:
+        if big > stranaTri:
+            return big
+        else:
+            return stranaTri
+    elif stranaDva > stranaTri:
+        return stranaDva
+    else:
+        return stranaTri
+
+
 if __name__ == '__main__':
     try:
         Ax = float(input("Napiš pozici x bodu A:"))
@@ -37,3 +51,4 @@ print(a)
 print(b)
 print(c)
 print(constructability(a, b, c))
+print("Největší strana má délku", biggest(a, b, c))
