@@ -93,7 +93,7 @@ def encrypt(zprava):
 
 def decrypt(zprava):
     """Vrací přeložený text z morseovy soustavy.
-    
+
     Arguments:
     zprava - morseova soustava určená k převodu do textu
     Returns:
