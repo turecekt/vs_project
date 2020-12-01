@@ -86,13 +86,15 @@ def main():
     pointC = None
 
     # uncomment these 3 lines below to skip CLI input and use parameter values
-    # pointA = Vector2(0,0)
-    # pointB = Vector2(5,0)
-    # pointC = Vector2(0,5)
+    pointA = Vector2(0,0)
+    pointB = Vector2(5,0)
+    pointC = Vector2(0,5)
 
     # inform user about program functionality
     print()
+    print("===============================================")
     print("Welcome to the ultimate triangle analysis tool!")
+    print("===============================================")
     print()
     print("This program gives you basic information about your triangle.")
 
@@ -118,6 +120,17 @@ def main():
     sideA = getSideLenght(pointA, pointB)
     sideB = getSideLenght(pointB, pointC)
     sideC = getSideLenght(pointC, pointA)
+
+    # displaying result information
+    print()
+    print("==============================================================")
+    print("====================TRIANGLE INFORMATION======================")
+    print("==============================================================")
+    print("Triangle sides lengths:")
+    print("Side A lenght => " + str(sideA))
+    print("Side A lenght => " + str(sideB))
+    print("Side A lenght => " + str(sideC))
+    print()
 
 
 # Executes the main function
