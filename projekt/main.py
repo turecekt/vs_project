@@ -10,6 +10,14 @@ def lengthofside(jednaX, dveX, jednaY, dveY):
     return vysledek
 
 
+def constructability(Jedna, Dva, Tri):
+    """Return if the triangle can be constructed."""
+    if Jedna + Dva > Tri and Dva + Tri > Jedna and Jedna + Tri > Dva:
+        return 'Trojúhelník je sestrojitelný'
+    else:
+        return 'Trojůhelník není sestrojitelný'
+
+
 if __name__ == '__main__':
     try:
         Ax = float(input("Napiš pozici x bodu A:"))
@@ -28,3 +36,4 @@ c = lengthofside(Bx, Ax, By, Ay)
 print(a)
 print(b)
 print(c)
+print(constructability(a, b, c))
