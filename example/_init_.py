@@ -68,12 +68,11 @@ Znaky = {
     "Ť": "",
 }
 
+
 def encrypt(zprava):
     """ Vrací zadanou zprávu převedenou do morseovi abecedy.
-
     Arguments:
         zprava - text určený k převodu do morseovy soustavy
-
     Returns:
         sifra - text přeložený do morseovy soustavy
     """
@@ -91,9 +90,9 @@ def encrypt(zprava):
             sifra += ' '
     return sifra
 
+
 def decrypt(zprava):
     """Vrací přeložený text z morseovy soustavy.
-
     Arguments:
         zprava - morseova soustava určená k převodu do textu
     Returns:
@@ -106,11 +105,11 @@ def decrypt(zprava):
 
     if zprava == " ":
         return "Chyba: prázdné pole"
-    
+ 
     for pole in zprava:
-        if(pole != '-' and pole!='.' and pole!=' '):
-             vystup = 'špatný formát zadávání'
-             return vystup
+        if(pole != '-' and pole != '.' and pole != ' '):
+            vystup = 'špatný formát zadávání'
+            return vystup
 
     for pole in zprava:
         if (pole != ' '):
@@ -118,8 +117,8 @@ def decrypt(zprava):
             znak += pole
         else:
             i += 1
-            if i == 2 :
-                vystup  += ' '
+            if i == 2:
+                vystup += ' '
             else:
                 vystup += list(Znaky.keys())[list(Znaky.values()).index(znak)]
                 znak = ''
