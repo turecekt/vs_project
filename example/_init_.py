@@ -151,3 +151,15 @@ def main():
    
 if __name__ == '__main__': 
     main() 
+
+def test_decrypt():
+    """Otestuje správnost převodu z morseovi abecedy do textu"""
+    assert decrypt("- . ... -") == "TEST"
+    """Otestuje správnost převodu z morseovi abecedy do textu"""
+    assert decrypt("..--- -----") == "20"
+    """Otestuje zda funkce překládá znaky mimo morseovu abecedu"""
+    assert decrypt("AWEGWRHGWRh") == "špatný formát zadávání"
+    """Otestuje zda funkce pracuje s prázdným parametrem"""
+    assert decrypt("") == "Chyba: prázdné pole"
+    """Otestuje správnost převodu z morseovi abecedy do textu"""
+    assert decrypt("- . ... - .---- ..--- .--.-.") == "TEST12@"
