@@ -50,22 +50,63 @@ def alphabet_to_morse(text: str) -> str:
     return result
 
 
+def get_key(letter: str, dictionary: dict) -> str:
+    """Get key from dictionary.
+
+    Return key from dictionary by value.
+    """
+    for key, value in dictionary.items():
+        if letter == value:
+            return key
+
+
+def morse_to_alphabet(text: str) -> str:
+    """Translate text from morse code.
+
+    Return text translated from morse code.
+    """
+    text = text.split('||')
+    code = []
+    for word in text:
+        code += [word.split('|')]
+
+    result = ''
+    for word in code:
+        for letter in word:
+            result += get_key(letter, translator)
+        result += ' '
+    return result.lower().capitalize()
+
+
 def test_remove_diacritics() -> None:
     """Test remove_diacritics function.
     """
-    assert(remove_diacritics('áčďéěíňóřšťúůýž') == 'ACDEEINORSTUUYZ')
-    assert(remove_diacritics('Příliš žluťoučký kůň úpěl ďábelské ódy.') == 'PRILIS ZLUTOUCKY KUN UPEL DABELSKE ODY.')
+    assert (remove_diacritics('áčďéěíňóřšťúůýž') == 'ACDEEINORSTUUYZ')
+    assert (remove_diacritics('Příliš žluťoučký kůň úpěl ďábelské ódy.') == 'PRILIS ZLUTOUCKY KUN UPEL DABELSKE ODY.')
 
 
 def test_alphabet_to_morse() -> None:
     """Test alphabet_to_morse function.
     """
-    assert(alphabet_to_morse('Nechť již hříšné saxofony ďáblů rozezvučí síň úděsnými tóny waltzu, tanga a quickstepu.')
-           == '-.|.|----|-||.---|..|--..||....|.-.|..|...|-.|.||...|.-|-..-|---|..-.|---|-.|-.--|' +
-              '|-..|.-|-...|.-..|..-||.-.|---|--..|.|--..|...-|..-|-.-.|..||...|..|-.||..-|-..|.|...|-.|-.--|--|..|' +
-              '|-|---|-.|-.--||.--|.-|.-..|-|--..|..-|--..--||-|.-|-.|--.|.-|' +
-              '|.-||--.-|..-|..|-.-.|-.-|...|-|.|.--.|..-|.-.-.-|')
+    assert (alphabet_to_morse('Nechť již hříšné saxofony ďáblů rozezvučí síň úděsnými tóny waltzu, tanga a quickstepu.')
+            == '-.|.|----|-||.---|..|--..||....|.-.|..|...|-.|.||...|.-|-..-|---|..-.|---|-.|-.--|'
+               '|-..|.-|-...|.-..|..-||.-.|---|--..|.|--..|...-|..-|-.-.|..||...|..|-.||..-|-..|.|...|-.|-.--|--|..|'
+               '|-|---|-.|-.--||.--|.-|.-..|-|--..|..-|--..--||-|.-|-.|--.|.-|'
+               '|.-||--.-|..-|..|-.-.|-.-|...|-|.|.--.|..-|.-.-.-|')
+    assert (alphabet_to_morse('My e-mail address is: stuart_little@utb.cz, but you can call me "Steve";')
+            == '--|-.--||.|-....-|--|.-|..|.-..||.-|-..|-..|.-.|.|...|...||..|...|---...|'
+               '|...|-|..-|.-|.-.|-|..--.-|.-..|..|-|-|.-..|.|.--.-.|..-|-|-...|.-.-.-|-.-.|--..|--..--||-...|..-|-|'
+               '|-.--|---|..-||-.-.|.-|-.||-.-.|.-|.-..|.-..||--|.||.-..-.|...|-|.|...-|.|.-..-.|-.-.-.|')
+
+
+def test_get_key() -> None:
+    """Test get_key function.
+    """
+    assert (get_key('.---', translator) == 'J')
+    assert (get_key('-....', translator) == '6')
+    assert (get_key('.--.-.', translator) == '@')
 
 
 test_remove_diacritics()
 test_alphabet_to_morse()
+test_get_key()
