@@ -71,6 +71,7 @@ Znaky = {
 
 def encrypt(zprava):
     """Vrací zadanou zprávu převedenou do morseovi abecedy.
+
     Arguments:
     zprava - text určený k převodu do morseovy soustavy
     Returns:
@@ -92,6 +93,7 @@ def encrypt(zprava):
 
 def decrypt(zprava):
     """Vrací přeložený text z morseovy soustavy.
+    
     Arguments:
     zprava - morseova soustava určená k převodu do textu
     Returns:
