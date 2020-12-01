@@ -74,7 +74,7 @@ c = lengthofside(Bx, Ax, By, Ay)
 
 print("Délka strany a je: ", a)
 print("Délka strany b je: ", b)
-print("Délka strany c je: ",c)
+print("Délka strany c je: ", c)
 print(constructability(a, b, c))
 print("Největší strana má délku", biggest(a, b, c))
 print(rightangle(c, a, b))
