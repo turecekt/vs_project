@@ -2,6 +2,7 @@
 
 from morse import encrypt, decrypt, choice
 
+
 def test_decrypt():
     """Otestuje správnost převodu z morseovi abecedy do textu."""
     assert decrypt("- . ... -") == "TEST"
