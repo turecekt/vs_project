@@ -183,3 +183,4 @@ def test_encrypt():
 def test_choice():
     """Ověření parametru pro volání definicí."""
     assert choice(0) == "Špatný formát zadávání"
+    
