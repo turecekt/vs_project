@@ -123,3 +123,31 @@ def decrypt(zprava):
                 vystup += list(Znaky.keys())[list(Znaky.values()).index(znak)]
                 znak = ''
     return vystup
+
+def choice(vyber):
+    """Vrací definici dle zadaného parametru.
+    
+    Arguments:
+        vyber - hodnota určující volání definice
+
+    Returns:
+        result - vrací hodnotu zvolené definice
+    """
+
+    if vyber == 1:
+        result = encrypt('test')
+
+    elif vyber == 2:
+        result = decrypt('- . ... -')
+        
+    else: result = 'špatný formát zadávání'
+    
+    return result
+
+def main(): 
+   
+    volani = choice(2)
+    print (volani) 
+   
+if __name__ == '__main__': 
+    main() 
