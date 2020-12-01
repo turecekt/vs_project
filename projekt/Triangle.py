@@ -11,7 +11,13 @@ def lengthofside(jednaX, dveX, jednaY, dveY):
 
 
 def constructability(Jedna, Dva, Tri):
-    """Return if the triangle can be constructed."""
+    """Return if the triangle can be constructed.
+
+    >>> constructability(5, 4, 3)
+    'Trojúhelník je sestrojitelný'
+    >>> constructability(500, 4, 3)
+    'Trojůhelník není sestrojitelný'
+    """
     if Jedna + Dva > Tri and Dva + Tri > Jedna and Jedna + Tri > Dva:
         return 'Trojúhelník je sestrojitelný'
     else:
@@ -19,7 +25,13 @@ def constructability(Jedna, Dva, Tri):
 
 
 def biggest(stranaJedna, stranaDva, stranaTri):
-    """Return the biggest number."""
+    """Return the biggest number.
+
+    >>> biggest(1, 2, 3)
+    3
+    >>> biggest(50.1, 94.20, 4/2)
+    94.2
+    """
     big = stranaJedna
     if big > stranaDva:
         if big > stranaTri:
@@ -58,6 +70,12 @@ def area(A, B, C):
 
 
 if __name__ == '__main__':
+    Ax = 1.0
+    Ay = 1.0
+    Bx = 1.0
+    By = 1.0
+    Cx = 1.0
+    Cy = 1.0
     try:
         Ax = float(input("Napiš pozici x bodu A:"))
         Ay = float(input("Napiš pozici y bodu A:"))
@@ -68,15 +86,15 @@ if __name__ == '__main__':
     except ValueError:
         print("Nebylo zadano číslo")
 
-a = lengthofside(Cx, Bx, Cy, By)
-b = lengthofside(Ax, Cx, Ay, Cy)
-c = lengthofside(Bx, Ax, By, Ay)
+    a = lengthofside(Cx, Bx, Cy, By)
+    b = lengthofside(Ax, Cx, Ay, Cy)
+    c = lengthofside(Bx, Ax, By, Ay)
 
-print("Délka strany a je: ", a)
-print("Délka strany b je: ", b)
-print("Délka strany c je: ", c)
-print(constructability(a, b, c))
-print("Největší strana má délku", biggest(a, b, c))
-print(rightangle(c, a, b))
-print("Obvod trojúhelníku je: ", perimeter(a, b, c))
-print("Obsah trojúhelníku je: ", area(a, b, c))
+    print("Délka strany a je: ", a)
+    print("Délka strany b je: ", b)
+    print("Délka strany c je: ", c)
+    print(constructability(a, b, c))
+    print("Největší strana má délku", biggest(a, b, c))
+    print(rightangle(c, a, b))
+    print("Obvod trojúhelníku je: ", perimeter(a, b, c))
+    print("Obsah trojúhelníku je: ", area(a, b, c))
