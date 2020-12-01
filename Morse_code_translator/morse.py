@@ -1,3 +1,8 @@
+"""
+Závěrečný projekt - ZM
+This code translates text to morse/morse to text with letters, numbers and punctuation.
+"""
+
 class MorseCodeTranslator:
 
     #  Morse code
@@ -59,6 +64,11 @@ class MorseCodeTranslator:
     }
 
     def translate_morse(self, morse, strict=True):
+
+        """
+        Translates morse code to english.
+        """
+
         if morse == "":
             return "You must provide a string of text to translate"
 
@@ -83,6 +93,11 @@ class MorseCodeTranslator:
         return translation.rstrip()
 
     def translate_text(self, text):
+
+        """
+        Translates text to morse code.
+        """
+
         if text == "":
             return "You must provide a morse code string to translate"
 
