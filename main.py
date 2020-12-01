@@ -6,25 +6,31 @@ class Vector2:
         self.xCoordinate = xCoordinate
         self.yCoordinate = yCoordinate
 
+    def __str__(self):
+        return f"[{self.xCoordinate}, {self.yCoordinate}]"
+
+
 def isConstructable():
     """
+
     Find is triangle can be constructed.
 
     Return boolean informing about constructablity of a triangle
     >>> isConstructable(???)
     ???
-    """ 
+    """
 
     return False
 
 def getSideLenght(pointA, pointB):
     """
+
     Find length of a side.
 
     Return side length
     >>> getSideLenght(???)
     ???
-    """ 
+    """
 
     return 1
 
@@ -126,6 +132,11 @@ def main():
     print("==============================================================")
     print("====================TRIANGLE INFORMATION======================")
     print("==============================================================")
+    print("Data used for calculations:")
+    print("Point A coordinates => " + str(pointA))
+    print("Point B coordinates => " + str(pointB))
+    print("Point C coordinates => " + str(pointC))
+    print("--------------------------------------------------------------")
     print("Triangle sides lengths:")
     print("Side A lenght => " + str(sideA))
     print("Side A lenght => " + str(sideB))
