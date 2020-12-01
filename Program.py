@@ -7,7 +7,6 @@ Umoznuje uzivateli snadne ovladani poskytovanych funkci.
 
 import Enums
 import Translator
-import sys
 
 
 def showError(err):
@@ -62,7 +61,7 @@ def parseAction():
     """
     action = Enums.Actions.UNKNOWN
     while (action == Enums.Actions.UNKNOWN):
-        c = input('\tZvolena akce: ').upper()        
+        c = input('\tZvolena akce: ').upper()
         if (c == 'Z'):
             action = Enums.Actions.ENCODE
         elif (c == 'D'):
@@ -99,7 +98,7 @@ def runProccess(action):
     print('\t***************************************************************')
     if (action == Enums.Actions.ENCODE):
         txt = input('\tVepiste text k zakodovani ohraniceny uvozovkami' +
-                    ' a bez diakritiky.\n\t')        
+                    ' a bez diakritiky.\n\t')
         if (not checkUserInputText(txt)):
             showError('Neni zadan text, nebo neni ohranicen uvozovkami.')
         else:
@@ -109,7 +108,7 @@ def runProccess(action):
     else:
         txt = input('\tVepiste text k dekodovani ohraniceny uvozovkami.' +
                     ' Kazdy znak musi byt oddelen od predchoziho mezerou.' +
-                    ' Provolene znaky jsou pouze "." a "-".\n\t')        
+                    ' Provolene znaky jsou pouze "." a "-".\n\t')
         if (not checkUserInputText(txt)):
             showError('Neni zadan text, nebo neni ohranicen uvozovkami.')
         else:
