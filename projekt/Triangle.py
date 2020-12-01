@@ -106,18 +106,12 @@ def area(A, B, C):
 
 
 if __name__ == '__main__':
-    try:
-        Ax = float(input("Napiš pozici x bodu A:"))
-        Ay = float(input("Napiš pozici y bodu A:"))
-        Bx = float(input("Napiš pozici x bodu B:"))
-        By = float(input("Napiš pozici y bodu B:"))
-        Cx = float(input("Napiš pozici x bodu C:"))
-        Cy = float(input("Napiš pozici y bodu C:"))
-    except ValueError:
-        print("Nebylo zadano číslo")
-    a = lengthofside(Cx, Bx, Cy, By)
-    b = lengthofside(Ax, Cx, Ay, Cy)
-    c = lengthofside(Bx, Ax, By, Ay)
+    print("Zadávané body oddělujte mezerníkem")
+    print("v pořadí A[x,y], B[x,y], C[x,y]")
+    Ax, Ay, Bx, By, Cx, Cy = input("Zadejte pozice: ").split()
+    a = lengthofside(float(Cx), float(Bx), float(Cy), float(By))
+    b = lengthofside(float(Ax), float(Cx), float(Ay), float(Cy))
+    c = lengthofside(float(Bx), float(Ax), float(By), float(Ay))
     print("Délka stran a:", a, "b:", b, "c:", c)
     print(constructability(a, b, c), "a", rightangle(c, a, b))
     print("Obvod trojúhelníku je: ", perimeter(a, b, c))
