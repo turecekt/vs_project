@@ -1,10 +1,12 @@
+"""Závěrečný projekt - ZM.
+This code translates text to morse/morse to text with letters,
+ numbers and punctuation.
 """
-Závěrečný projekt - ZM
-This code translates text to morse/morse to text with letters, numbers and punctuation.
-"""
+
 
 class MorseCodeTranslator:
 
+    """Text to morse vocabulary """
     #  Morse code
     morse = {
         # Letters
@@ -64,17 +66,22 @@ class MorseCodeTranslator:
     }
 
     def translate_morse(self, morse, strict=True):
-
         """
         Translates morse code to english.
-        """
 
+        Accepts:
+            morse (str): A string of morse code to translate
+            strict (bool): If True, parse and return morse code with 4 spaces
+
+        Returns:
+            str: A translated string of text
+        """
         if morse == "":
             return "You must provide a string of text to translate"
 
         if "    " in morse:
             if strict:
-                return "Unable to translate morse code. Found 4 spaces in morse code string"
+                return "Unable to translate morse code (4 spaces)."
             else:
                 morse.replace("    ", "   ")
 
@@ -93,11 +100,15 @@ class MorseCodeTranslator:
         return translation.rstrip()
 
     def translate_text(self, text):
-
         """
         Translates text to morse code.
-        """
 
+        Accepts:
+            text (str): A string of text to translate
+
+        Returns:
+            str: A translated string of morse code
+        """
         if text == "":
             return "You must provide a morse code string to translate"
 
