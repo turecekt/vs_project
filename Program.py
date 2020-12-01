@@ -62,8 +62,7 @@ def parseAction():
     """
     action = Enums.Actions.UNKNOWN
     while (action == Enums.Actions.UNKNOWN):
-        '''c = input('\tZvolena akce: ').upper()'''
-        c = 'Z'
+        c = input('\tZvolena akce: ').upper()        
         if (c == 'Z'):
             action = Enums.Actions.ENCODE
         elif (c == 'D'):
@@ -99,36 +98,33 @@ def runProccess(action):
     print('\n\tPREVOD')
     print('\t***************************************************************')
     if (action == Enums.Actions.ENCODE):
-        '''txt = input('\tVepiste text k zakodovani ohraniceny uvozovkami' +
-                    ' a bez diakritiky.\n\t')'''
-        txt = '"test"'
+        txt = input('\tVepiste text k zakodovani ohraniceny uvozovkami' +
+                    ' a bez diakritiky.\n\t')        
         if (not checkUserInputText(txt)):
             showError('Neni zadan text, nebo neni ohranicen uvozovkami.')
-        txt = txt[1:len(txt) - 1]
-        translator = Translator.Translator()
-        print('\n\t' + translator.encode(txt) + '\n')
+        else:
+            txt = txt[1:len(txt) - 1]
+            translator = Translator.Translator()
+            print('\n\t' + translator.encode(txt) + '\n')
     else:
-        '''txt = input('\tVepiste text k dekodovani ohraniceny uvozovkami.' +
+        txt = input('\tVepiste text k dekodovani ohraniceny uvozovkami.' +
                     ' Kazdy znak musi byt oddelen od predchoziho mezerou.' +
-                    ' Provolene znaky jsou pouze "." a "-".\n\t')'''
-        txt = '".-"'
+                    ' Provolene znaky jsou pouze "." a "-".\n\t')        
         if (not checkUserInputText(txt)):
             showError('Neni zadan text, nebo neni ohranicen uvozovkami.')
-        txt = txt[1:len(txt) - 1]
-        translator = Translator.Translator()
-        print('\n\t' + translator.decode(txt) + '\n')
+        else:
+            txt = txt[1:len(txt) - 1]
+            translator = Translator.Translator()
+            print('\n\t' + translator.decode(txt) + '\n')
 
 
 # vypiseme do konzole start aplikace
 showStart()
 
 # vytvorime behove promenne
-appLoop = False
+appLoop = True
 state = Enums.States.MENU
 action = Enums.Actions.UNKNOWN
-
-if (len(sys.argv) - 1 > 0):
-    appLoop = True
 
 # vytvorime smycku aplikace
 while(appLoop):
