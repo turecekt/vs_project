@@ -1,4 +1,4 @@
-"""Morse code translator.
+"""@package docstring.
 
 @file             project.py
 @author           Ondrej Marecek <o_marecek@utb.cz>
@@ -31,33 +31,34 @@ library = {'A': '.-', 'B': '-...',
            '?': '..--..', '/': '-..-.', '-': '-....-',
            '(': '-.--.', ')': '-.--.-', ' ': '.....'}
 
-"""Translating morse code to latin from user inserted txt."""
-
 
 def morseencrypt(txt):
-    """Setting new string that will be used as output."""
+    """Convert morse code to latin from user inserted txt."""
+    """Test for morseencrypt function
+    >>>morseencrypt('.-')
+    'A'
+    True"""
     translation = ''
-    """Swapping keys from library."""
     lib_encrypt = dict([(v, k) for k, v in library.items()])
-    """For cycle that will cycle trough user inserted morse code and finding the equivalent inside library."""
     for x in txt:
         translation += lib_encrypt.get(x)
-        """Return stripped translation."""
     return translation.strip()
 
 
-"""Translating latin to morse code from user inserted txt."""
-
-
 def morsedecrypt(txt):
-    """Setting new string that will be used as output."""
+    """Convert latin to morse code from user inserted txt."""
+    """ Test of morsedecrypt function
+    >>> morsedecrypt('A')
+    '.-'
+    True"""
     translation = ''
-    """"""
     txt = txt.upper()
     for x in txt:
         translation += library.get(x) + ' '
     return translation.strip()
 
+
+"""Menu section."""
 pokracuj = True
 while pokracuj:
     print("Menu: (Zadejte číslo, popřípadě zmáčkněte enter)")
@@ -72,16 +73,16 @@ while pokracuj:
     else:
         print("Zadejte morseovku/text který chcete přeložit")
         text = input(":")
-        if vyber =="1":
-            print(morseEncrypt(text))
+        if vyber == "1":
+            print(morseencrypt(text))
             print("Chcete zpátky do menu a opakovat program? y/n")
             pokracuj = input().upper()
             if pokracuj == "N":
                 pokracuj = False
             else:
                 pokracuj = True
-        elif vyber =="2":
-            print(morseDecrypt(text))
+        elif vyber == "2":
+            print(morsedecrypt(text))
             print("Chcete zpátky do menu a opakovat program? y/n")
             pokracuj = input().upper()
             if pokracuj == "N":
@@ -92,7 +93,3 @@ while pokracuj:
             exit()
 else:
     exit()
-
-
-
-
