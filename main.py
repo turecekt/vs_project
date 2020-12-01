@@ -15,7 +15,7 @@ def isConstructable():
     ???
     """ 
 
-    return false
+    return False
 
 def getSideLenght(pointA, pointB):
     """
@@ -52,7 +52,7 @@ def getArea(sideA, sideB, sideC):
     s = (sideA + sideB + sideC) / 2
 
     # calculate the area
-    area = (s*(s-a)*(s-b)*(s-c)) ** 0.5
+    area = (s*(s-sideA)*(s-sideB)*(s-sideC)) ** 0.5
 
     return area
 
@@ -65,7 +65,7 @@ def isRightAngled():
     ???
     """ 
 
-    return false
+    return False
 
 def convertRawPointDataIntoVector(rawData):
     """
