@@ -44,6 +44,12 @@ def rightangle(C, A, B):
         return 'Trojúhelník není pravoúhlý'
 
 
+def perimeter(A, B, C):
+    """Count the perimeter of triangle."""
+    o = A + B + C
+    return o
+
+
 if __name__ == '__main__':
     try:
         Ax = float(input("Napiš pozici x bodu A:"))
@@ -65,3 +71,4 @@ print(c)
 print(constructability(a, b, c))
 print("Největší strana má délku", biggest(a, b, c))
 print(rightangle(c, a, b))
+print("Obvod trojúhelníku je: ", perimeter(a, b, c))
