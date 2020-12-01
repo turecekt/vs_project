@@ -67,3 +67,26 @@ Znaky = {
     "Ú": "",
     "Ť": "",
 }
+
+def encrypt(zprava): 
+    """ Vrací zadanou zprávu převedenou do morseovi abecedy.
+
+    Arguments:
+        zprava - text určený k převodu do morseovy soustavy
+
+    Returns:
+        sifra - text přeložený do morseovy soustavy
+    """
+
+    zprava = zprava.upper()
+    sifra = '' 
+
+    if zprava == "":
+        return "Chyba: prázdné pole"
+
+    for pole in zprava: 
+        if pole != ' ': 
+            sifra += Znaky[pole] + ' '
+        else: 
+            sifra += ' '
+    return sifra 
