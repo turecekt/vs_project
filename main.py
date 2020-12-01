@@ -80,27 +80,39 @@ def convertRawPointDataIntoVector(rawData):
     return pointCoordinates
 
 def main():
+    # defining star variables
+    pointA = None
+    pointB = None
+    pointC = None
+
+    # uncomment these 3 lines below to skip CLI input and use parameter values
+    # pointA = Vector2(0,0)
+    # pointB = Vector2(5,0)
+    # pointC = Vector2(0,5)
+
     # inform user about program functionality
     print()
     print("Welcome to the ultimate triangle analysis tool!")
     print()
     print("This program gives you basic information about your triangle.")
-    print("You will be now asked to input coordinates of your triangle")
-    print()
-    print("Please, input each point of triangle like this => [5;6]")
-    print("Other input will be rejected!")
-    print()
 
-    # getting user input
-    print("Now enter your triangle coordinates:")
-    pointARawData = float(input('Enter first point: '))
-    pointBRawData = float(input('Enter second point: '))
-    pointCRawData = float(input('Enter third point: '))
+    if pointA is None and pointB is None and pointC is None:
+        print("You will be now asked to input coordinates of your triangle")
+        print()
+        print("Please, input each point of triangle like this => [5;6]")
+        print("Other input will be rejected!")
+        print()
 
-    # converting raw data in string form into vector form
-    pointA = convertRawPointDataIntoVector(pointARawData)
-    pointB = convertRawPointDataIntoVector(pointBRawData)
-    pointC = convertRawPointDataIntoVector(pointCRawData)
+        # getting user input
+        print("Now enter your triangle coordinates:")
+        pointARawData = float(input('Enter first point: '))
+        pointBRawData = float(input('Enter second point: '))
+        pointCRawData = float(input('Enter third point: '))
+
+        # converting raw data in string form into vector form
+        pointA = convertRawPointDataIntoVector(pointARawData)
+        pointB = convertRawPointDataIntoVector(pointBRawData)
+        pointC = convertRawPointDataIntoVector(pointCRawData)
 
     # calculating side lenghts based of end points coordinates
     sideA = getSideLenght(pointA, pointB)
