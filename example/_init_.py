@@ -163,3 +163,17 @@ def test_decrypt():
     assert decrypt("") == "Chyba: prázdné pole"
     """Otestuje správnost převodu z morseovi abecedy do textu"""
     assert decrypt("- . ... - .---- ..--- .--.-.") == "TEST12@"
+    
+def test_encrypt():
+    """Otestuje správnost převodu z textu do morseovi abecedy"""
+    assert encrypt("test") == "- . ... - "
+    """Otestuje správnost převodu z textu do morseovi abecedy"""
+    assert encrypt("20") == "..--- ----- "
+    """Otestuje zda funkce pracuje s prázdným parametrem"""
+    assert encrypt("") == "Chyba: prázdné pole"
+    """Otestuje správnost převodu z textu do morseovi abecedy"""
+    assert encrypt("test12@") == "- . ... - .---- ..--- .--.-. "
+    
+def test_choice():
+    """Otestuje správnost parametru volajícho funkce pro kódování/dekódování morseovky"""
+    assert choice(0) == "špatný formát zadávání"    
