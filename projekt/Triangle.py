@@ -107,7 +107,7 @@ def area(A, B, C):
 
 if __name__ == '__main__':
     print("Zadávané body oddělujte mezerníkem")
-    print("v pořadí A[x,y], B[x,y], C[x,y]")
+    print("v pořadí A[x,y], B[x,y], C[x,y] a jen 6 hodnot")
     Ax, Ay, Bx, By, Cx, Cy = input("Zadejte pozice: ").split()
     a = lengthofside(float(Cx), float(Bx), float(Cy), float(By))
     b = lengthofside(float(Ax), float(Cx), float(Ay), float(Cy))
