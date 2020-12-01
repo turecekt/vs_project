@@ -50,6 +50,13 @@ def perimeter(A, B, C):
     return o
 
 
+def area(A, B, C):
+    """Calculate area of triangle."""
+    s = perimeter(A, B, C) / 2
+    S = math.sqrt(s*(s-A)*(s-B)*(s-C))
+    return S
+
+
 if __name__ == '__main__':
     try:
         Ax = float(input("Napiš pozici x bodu A:"))
@@ -72,3 +79,4 @@ print(constructability(a, b, c))
 print("Největší strana má délku", biggest(a, b, c))
 print(rightangle(c, a, b))
 print("Obvod trojúhelníku je: ", perimeter(a, b, c))
+print("Obsah trojúhelníku je: ", area(a, b, c))
