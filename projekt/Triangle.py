@@ -3,7 +3,11 @@ import math
 
 
 def lengthofside(jednaX, dveX, jednaY, dveY):
-    """Calculate length of a side."""
+    """Calculate length of a side.
+
+    >>> lengthofside(2, 5, -8, 3)
+    11.40175425099138
+    """
     sa = jednaX - dveX
     sb = jednaY - dveY
     vysledek = math.sqrt(sa * sa + sb * sb)
@@ -31,6 +35,8 @@ def biggest(stranaJedna, stranaDva, stranaTri):
     3
     >>> biggest(50.1, 94.20, 4/2)
     94.2
+    >>> biggest(-50, 3, 8)
+    8
     """
     big = stranaJedna
     if big > stranaDva:
@@ -73,8 +79,16 @@ def perimeter(A, B, C):
 
 
 def area(A, B, C):
-    """Calculate area of triangle."""
-    s = perimeter(A, B, C) / 2
+    """Calculate area of triangle.
+
+    >>> area(2, 5, 4)
+    35.4964786985977
+    >>> area(0, 5, 2)
+    12.0
+    >>> area(8, 10, 2)
+    178.82113968991473
+    """
+    s = A + B + C / 2
     S = math.sqrt(s*(s-A)*(s-B)*(s-C))
     return S
 
@@ -94,11 +108,8 @@ if __name__ == '__main__':
     b = lengthofside(Ax, Cx, Ay, Cy)
     c = lengthofside(Bx, Ax, By, Ay)
 
-    print("Délka strany a je: ", a)
-    print("Délka strany b je: ", b)
-    print("Délka strany c je: ", c)
-    print(constructability(a, b, c))
+    print("Délka stran a:", a, "b:", b, "c:", c)
+    print(constructability(a, b, c), "a", rightangle(c, a, b))
     print("Největší strana má délku", biggest(a, b, c))
-    print(rightangle(c, a, b))
     print("Obvod trojúhelníku je: ", perimeter(a, b, c))
     print("Obsah trojúhelníku je: ", area(a, b, c))
