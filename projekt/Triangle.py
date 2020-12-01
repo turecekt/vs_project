@@ -19,6 +19,8 @@ def constructability(Jedna, Dva, Tri):
 
     >>> constructability(5, 4, 3)
     'Trojúhelník je sestrojitelný'
+    >>> constructability(8, 5, 7)
+    'Trojúhelník je sestrojitelný'
     >>> constructability(500, 4, 3)
     'Trojůhelník není sestrojitelný'
     """
@@ -37,6 +39,10 @@ def biggest(stranaJedna, stranaDva, stranaTri):
     94.2
     >>> biggest(-50, 3, 8)
     8
+    >>> biggest(100, 0, -5)
+    100
+    >>> biggest(100,0,110)
+    110
     """
     big = stranaJedna
     if big > stranaDva:
@@ -54,6 +60,10 @@ def rightangle(C, A, B):
     """Check if the triangle has a right angle.
 
     >>> rightangle(5, 4, 3)
+    'Trojúhelník je pravoúhlý'
+    >>> rightangle(4, 5, 3)
+    'Trojúhelník je pravoúhlý'
+    >>> rightangle(3, 4, 5)
     'Trojúhelník je pravoúhlý'
     >>> rightangle(500, 2, 1)
     'Trojúhelník není pravoúhlý'
@@ -73,6 +83,8 @@ def perimeter(A, B, C):
 
     >>> perimeter(2, 5, 3)
     10
+    >>> perimeter(5,5,5)
+    15
     """
     o = A + B + C
     return o
@@ -82,14 +94,14 @@ def area(A, B, C):
     """Calculate area of triangle.
 
     >>> area(2, 5, 4)
-    35.4964786985977
-    >>> area(0, 5, 2)
-    12.0
-    >>> area(8, 10, 2)
-    178.82113968991473
+    3.799671038392666
+    >>> area(8, 5, 3)
+    0.0
+    >>> area(8, 10, 3)
+    9.921567416492215
     """
-    s = A + B + C / 2
-    S = math.sqrt(s*(s-A)*(s-B)*(s-C))
+    s = (A + B + C) / 2
+    S = math.sqrt(s*(s-(A))*(s-(B))*(s-(C)))
     return S
 
 
@@ -103,13 +115,10 @@ if __name__ == '__main__':
         Cy = float(input("Napiš pozici y bodu C:"))
     except ValueError:
         print("Nebylo zadano číslo")
-
     a = lengthofside(Cx, Bx, Cy, By)
     b = lengthofside(Ax, Cx, Ay, Cy)
     c = lengthofside(Bx, Ax, By, Ay)
-
     print("Délka stran a:", a, "b:", b, "c:", c)
     print(constructability(a, b, c), "a", rightangle(c, a, b))
-    print("Největší strana má délku", biggest(a, b, c))
     print("Obvod trojúhelníku je: ", perimeter(a, b, c))
     print("Obsah trojúhelníku je: ", area(a, b, c))
