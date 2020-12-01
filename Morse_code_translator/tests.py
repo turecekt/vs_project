@@ -5,6 +5,7 @@ from morse import MorseCodeTranslator
 
 class TestMorseCodeTranslator(unittest.TestCase):
     """Unit tests."""
+
     # Morse code to text
     def test_morse_to_text_no_morse(self):
         """Unit tests."""
