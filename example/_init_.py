@@ -134,7 +134,6 @@ def choice(vyber):
     Returns:
         result - vrací hodnotu zvolené definice
     """
-
     if vyber == 1:
         result = encrypt('test')
 
@@ -143,14 +142,15 @@ def choice(vyber):
 
     else:
         result = 'špatný formát zadávání'
-   
+
     return result
 
 
-def main():  
+def main():
+    """Volání definice v parametru."""
     volani = choice(2)
-    print (volani) 
-   
+    print(volani)
+
 
 if __name__ == '__main__':
     main()
@@ -182,4 +182,4 @@ def test_encrypt():
 
 def test_choice():
     """Ověření parametru pro volání definicí."""
-    assert choice(0) == "Špatný formát zadávání"   
+    assert choice(0) == "Špatný formát zadávání"
