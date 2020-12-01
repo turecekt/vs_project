@@ -106,13 +106,17 @@ def area(A, B, C):
 
 
 if __name__ == '__main__':
-    print("Zadávané body oddělujte mezerníkem")
-    print("v pořadí A[x,y], B[x,y], C[x,y] a jen 6 hodnot")
+    print("Zadávané hodnoty oddělujte mezerníkem\n",
+          "v pořadí A[x,y], B[x,y], C[x,y]\n",
+          "ZADEJTE 6 HODNOT!")
     Ax, Ay, Bx, By, Cx, Cy = input("Zadejte pozice: ").split()
     a = lengthofside(float(Cx), float(Bx), float(Cy), float(By))
     b = lengthofside(float(Ax), float(Cx), float(Ay), float(Cy))
     c = lengthofside(float(Bx), float(Ax), float(By), float(Ay))
-    print("Délka stran a:", a, "b:", b, "c:", c)
-    print(constructability(a, b, c), "a", rightangle(c, a, b))
-    print("Obvod trojúhelníku je: ", perimeter(a, b, c))
-    print("Obsah trojúhelníku je: ", area(a, b, c))
+    print("Délka stran a:", a, "b:", b, "c:", c, "\n",
+          constructability(a, b, c), "\n",
+          rightangle(c, a, b),
+          "\nObvod trojúhelníku je: ", perimeter(a, b, c),
+          "\nObsah trojúhelníku je: ", area(a, b, c),
+          "\nNejvětší strana má délku: ", biggest(a, b, c)
+          )
