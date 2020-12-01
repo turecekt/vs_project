@@ -32,6 +32,18 @@ def biggest(stranaJedna, stranaDva, stranaTri):
         return stranaTri
 
 
+def rightangle(C, A, B):
+    """Check if the triangle has a right angle."""
+    if C * C == A * A + B * B:
+        return 'Trojúhelník je pravoúhlý'
+    elif A * A == C * C + B * B:
+        return 'Trojúhelník je pravoúhlý'
+    elif B * B == C * C + A * A:
+        return 'Trojúhelník je pravoúhlý'
+    else:
+        return 'Trojúhelník není pravoúhlý'
+
+
 if __name__ == '__main__':
     try:
         Ax = float(input("Napiš pozici x bodu A:"))
@@ -52,3 +64,4 @@ print(b)
 print(c)
 print(constructability(a, b, c))
 print("Největší strana má délku", biggest(a, b, c))
+print(rightangle(c, a, b))
