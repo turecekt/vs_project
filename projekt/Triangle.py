@@ -45,7 +45,13 @@ def biggest(stranaJedna, stranaDva, stranaTri):
 
 
 def rightangle(C, A, B):
-    """Check if the triangle has a right angle."""
+    """Check if the triangle has a right angle.
+
+    >>> rightangle(5, 4, 3)
+    'Trojúhelník je pravoúhlý'
+    >>> rightangle(500, 2, 1)
+    'Trojúhelník není pravoúhlý'
+    """
     if C * C == A * A + B * B:
         return 'Trojúhelník je pravoúhlý'
     elif A * A == C * C + B * B:
@@ -57,7 +63,11 @@ def rightangle(C, A, B):
 
 
 def perimeter(A, B, C):
-    """Count the perimeter of triangle."""
+    """Count the perimeter of triangle.
+
+    >>> perimeter(2, 5, 3)
+    10
+    """
     o = A + B + C
     return o
 
@@ -70,12 +80,6 @@ def area(A, B, C):
 
 
 if __name__ == '__main__':
-    Ax = 1.0
-    Ay = 1.0
-    Bx = 1.0
-    By = 1.0
-    Cx = 1.0
-    Cy = 1.0
     try:
         Ax = float(input("Napiš pozici x bodu A:"))
         Ay = float(input("Napiš pozici y bodu A:"))
