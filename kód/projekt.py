@@ -6,3 +6,4 @@ This is a temporary script file.
 """
 
 DObey den toto je test
+Moze byt
