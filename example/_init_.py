@@ -124,9 +124,10 @@ def decrypt(zprava):
                 znak = ''
     return vystup
 
+
 def choice(vyber):
     """Vrací definici dle zadaného parametru.
-    
+
     Arguments:
         vyber - hodnota určující volání definice
 
@@ -139,41 +140,46 @@ def choice(vyber):
 
     elif vyber == 2:
         result = decrypt('- . ... -')
-        
-    else: result = 'špatný formát zadávání'
-    
+
+    else:
+        result = 'špatný formát zadávání'
+   
     return result
 
-def main(): 
-   
+
+def main():  
     volani = choice(2)
     print (volani) 
    
-if __name__ == '__main__': 
-    main() 
+
+if __name__ == '__main__':
+    main()
+
 
 def test_decrypt():
-    """Otestuje správnost převodu z morseovi abecedy do textu"""
+    """Otestuje správnost převodu z morseovi abecedy do textu."""
     assert decrypt("- . ... -") == "TEST"
-    """Otestuje správnost převodu z morseovi abecedy do textu"""
+    """Otestuje správnost převodu z morseovi abecedy do textu."""
     assert decrypt("..--- -----") == "20"
-    """Otestuje zda funkce překládá znaky mimo morseovu abecedu"""
-    assert decrypt("AWEGWRHGWRh") == "špatný formát zadávání"
-    """Otestuje zda funkce pracuje s prázdným parametrem"""
+    """Otestuje zda funkce překládá znaky mimo morseovu abecedu."""
+    assert decrypt("AWEGWRHGWRh") == "Špatný formát zadávání"
+    """Otestuje zda funkce pracuje s prázdným parametrem."""
     assert decrypt("") == "Chyba: prázdné pole"
-    """Otestuje správnost převodu z morseovi abecedy do textu"""
+    """Otestuje správnost převodu z morseovi abecedy do textu."""
     assert decrypt("- . ... - .---- ..--- .--.-.") == "TEST12@"
-    
+
+
 def test_encrypt():
-    """Otestuje správnost převodu z textu do morseovi abecedy"""
+    """Otestuje správnost převodu z textu do morseovi abecedy."""
     assert encrypt("test") == "- . ... - "
-    """Otestuje správnost převodu z textu do morseovi abecedy"""
+    """Otestuje správnost převodu z textu do morseovi abecedy."""
     assert encrypt("20") == "..--- ----- "
-    """Otestuje zda funkce pracuje s prázdným parametrem"""
+    """Otestuje zda funkce pracuje s prázdným parametrem."""
     assert encrypt("") == "Chyba: prázdné pole"
-    """Otestuje správnost převodu z textu do morseovi abecedy"""
+    """Otestuje správnost převodu z textu do morseovi abecedy."""
     assert encrypt("test12@") == "- . ... - .---- ..--- .--.-. "
-    
+
+
 def test_choice():
-    """Otestuje správnost parametru volajícho funkce pro kódování/dekódování morseovky"""
-    assert choice(0) == "špatný formát zadávání"    
+    """Ověření parametru pro volání definicí."""
+    assert choice(0) == "Špatný formát zadávání"   
