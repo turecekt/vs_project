@@ -12,27 +12,25 @@ class Vector2:
 
 def isConstructable():
     """
-
     Find is triangle can be constructed.
 
     Return boolean informing about constructablity of a triangle
     >>> isConstructable(???)
     ???
     """
-
     return False
+
 
 def getSideLenght(pointA, pointB):
     """
-
     Find length of a side.
 
     Return side length
     >>> getSideLenght(???)
     ???
     """
-
     return 1
+
 
 def getPerimeter(sideA, sideB, sideC):
     """
@@ -41,9 +39,9 @@ def getPerimeter(sideA, sideB, sideC):
     Return triangle perimeter
     >>> getPerimeter(???)
     ???
-    """ 
-
+    """
     return 1
+
 
 def getArea(sideA, sideB, sideC):
     """
@@ -53,7 +51,6 @@ def getArea(sideA, sideB, sideC):
     >>> getArea(???)
     ???
     """
-
     # calculate the semi-perimeter
     s = (sideA + sideB + sideC) / 2
 
@@ -62,6 +59,7 @@ def getArea(sideA, sideB, sideC):
 
     return area
 
+
 def isRightAngled():
     """
     Find if triangle is rightangled.
@@ -69,21 +67,21 @@ def isRightAngled():
     Return true if triangle is right angled
     >>> isRightAngled(???)
     ???
-    """ 
-
+    """
     return False
+
 
 def convertRawPointDataIntoVector(rawData):
     """
-    Convert raw point data into it's vector coordinates form
+    Convert raw point data into it's vector coordinates form.
 
     Return converted raw data in vector form
     >>> convertRawPointDataIntoVector(???)
     ???
-    """ 
-
-    pointCoordinates = Vector2(0,0)
+    """
+    pointCoordinates = Vector2(0, 0)
     return pointCoordinates
+
 
 def main():
     # defining star variables
@@ -92,9 +90,9 @@ def main():
     pointC = None
 
     # uncomment these 3 lines below to skip CLI input and use parameter values
-    pointA = Vector2(0,0)
-    pointB = Vector2(5,0)
-    pointC = Vector2(0,5)
+    pointA = Vector2(0, 0)
+    pointB = Vector2(5, 0)
+    pointC = Vector2(0, 5)
 
     # inform user about program functionality
     print()
