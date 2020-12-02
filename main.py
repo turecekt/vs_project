@@ -244,6 +244,9 @@ def main():
     # calculating triangle perimeter
     trianglePerimeter = getPerimeter(sideA, sideB, sideC)
 
+    # calculating triangle area
+    triangleArea = getArea(sideA, sideB, sideC)
+
     # displaying result information
     print()
     print("==============================================================")
@@ -262,6 +265,8 @@ def main():
     print("Side A lenght => " + str(sideC))
     print("--------------------------------------------------------------")
     print("Triangle perimeter: => " + str(trianglePerimeter))
+    print("--------------------------------------------------------------")
+    print("Triangle area: => " + str(triangleArea))
     print("--------------------------------------------------------------")
     print()
 
