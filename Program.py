@@ -103,7 +103,7 @@ print('***************************************************************')
 print('')
 
 # vytvorime behove promenne
-appLoop = False
+appLoop = True
 state = Enums.States.MENU
 action = Enums.Actions.UNKNOWN
 
@@ -122,7 +122,8 @@ while(appLoop):
         # akce zadana uzivatelem
         action = Enums.Actions.UNKNOWN
         while (action == Enums.Actions.UNKNOWN):
-            c = input('Zvolena akce: ')
+            #c = input('Zvolena akce: ')
+            c = "Z"
             action = parseAction(c)
             if (action == Enums.Actions.UNKNOWN):
                 print(formateError('Chybne zvolena akce. Zvolte prosim akci' +
@@ -136,13 +137,15 @@ while(appLoop):
             print('**************************************************' +
                   '*************')
             if (action == Enums.Actions.ENCODE):
-                txt = input('Vepiste text k zakodovani ohraniceny uvozovkami' +
-                            ' a bez diakritiky.\n')
+                '''txt = input('Vepiste text k zakodovani ohraniceny uvozovkami' +
+                            ' a bez diakritiky.\n')'''
+                txt = 'test'
                 if (not checkUserInputText(txt)):
                     print(formateError('Neni zadan text, nebo neni ' +
                                        'ohranicen uvozovkami.'))
                 else:
                     print(encodeText(txt[1:len(txt) - 1]))
+                appLoop = False
             else:
                 txt = input('Vepiste text k dekodovani ohraniceny ' +
                             'uvozovkami. Kazdy znak musi byt oddelen od ' +
