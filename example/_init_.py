@@ -77,6 +77,10 @@ def encrypt(zprava):
     Returns:
     sifra - text přeložený do morseovy soustavy
     """
+    
+    if not isinstance(zprava, str):
+      return "parameter musí být str" 
+    
     zprava = zprava.upper()
     sifra = ''
 
@@ -99,6 +103,10 @@ def decrypt(zprava):
     Returns:
     vystup - morseova soustava přeložená do textu
     """
+    
+    if not isinstance(zprava, str):
+        return "parameter musí být (str)" 
+    
     zprava += ' '
     vystup = ''
     znak = ''
@@ -133,9 +141,14 @@ def choice(vyber):
     Returns:
         result - vrací hodnotu zvolené definice
     """
-
+    
+    if not isinstance(vyber, int):
+        return "parametr musí být (int)"
+    if vyber < 0:
+        return "parametr nesmí být v záporný"
+    
     if vyber == 1:
-        result = encrypt('test')
+        result = encrypt("TEST")
 
     elif vyber == 2:
         result = decrypt('- . ... -')
@@ -146,7 +159,7 @@ def choice(vyber):
 
 def main(): 
    
-    volani = choice(2)
+    volani = choice(1)
     print (volani) 
    
 if __name__ == '__main__': 
@@ -163,6 +176,10 @@ def test_decrypt():
     assert decrypt("") == "Chyba: prázdné pole"
     """Otestuje správnost převodu z morseovi abecedy do textu"""
     assert decrypt("- . ... - .---- ..--- .--.-.") == "TEST12@"
+    """Otestuje správnost zadáváného parametru (musí být str)"""
+    assert decrypt(10) == \
+    "parameter musí být (str)"
+   
     
 def test_encrypt():
     """Otestuje správnost převodu z textu do morseovi abecedy"""
@@ -173,7 +190,17 @@ def test_encrypt():
     assert encrypt("") == "Chyba: prázdné pole"
     """Otestuje správnost převodu z textu do morseovi abecedy"""
     assert encrypt("test12@") == "- . ... - .---- ..--- .--.-. "
+    """Otestuje správnost zadáváného parametru (musí být str)"""
+    assert encrypt(10) == \
+    "parameter musí být (str)"
     
 def test_choice():
     """Otestuje správnost parametru volajícho funkce pro kódování/dekódování morseovky"""
-    assert choice(0) == "špatný formát zadávání"    
+    assert choice(0) == "špatný formát zadávání"   
+    """Otestuje správnost parametru (nemsí být záporné)"""
+    assert choice(-20) == \
+    "parametr nesmí být v záporný"
+    """Otestuje správnost parametru (nesmí být str)"""
+    assert choice("TEST") == \
+    "parametr musí být (int)"
+         
