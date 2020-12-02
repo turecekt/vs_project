@@ -1,74 +1,9 @@
 """Převodník morseové soustavy."""
 
-Znaky = {
-    # Abeceda
-    'A': '.-',
-    'B': '-...',
-    'C': '-.-.',
-    'D': '-..',
-    'E': '.',
-    'F': '..-.',
-    'G': '--.',
-    'H': '....',
-    'I': '..',
-    'J': '.---',
-    'K': '-.-',
-    'L': '.-..',
-    'M': '--',
-    'N': '-.',
-    'O': '---',
-    'P': '.--.',
-    'Q': '--.-',
-    'R': '.-.',
-    'S': '...',
-    'T': '-',
-    'U': '..-',
-    'V': '...-',
-    'W': '.--',
-    'X': '-..-',
-    'Y': '-.--',
-    'Z': '--..',
-    # Čísla
-    '1': '.----',
-    '2': '..---',
-    '3': '...--',
-    '4': '....-',
-    '5': '.....',
-    '6': '-....',
-    '7': '--...',
-    '8': '---..',
-    '9': '----.',
-    '0': '-----',
-    # Speciální znaky
-    "&": ".-...",
-    "'": ".----.",
-    "@": ".--.-.",
-    ")": "-.--.-",
-    "(": "-.--.",
-    ":": "---...",
-    ",": "--..--",
-    "=": "-...-",
-    "!": "-.-.--",
-    ".": ".-.-.-",
-    "-": "-....-",
-    "+": ".-.-.",
-    '"': ".-..-.",
-    "?": "..--..",
-    "/": "-..-.",
-    "Ě": "",
-    "Š": "",
-    "Č": "",
-    "Ř": "",
-    "Ž": "",
-    "Ý": "",
-    "Á": "",
-    "Í": "",
-    "É": "",
-    "Ú": "",
-    "Ť": "",
-}
+from morse import encrypt, decrypt, choice
 
 
+<<<<<<< HEAD
 def encrypt(zprava):
     """Vrací zadanou zprávu převedenou do morseovi abecedy.
 
@@ -165,31 +100,39 @@ def main():
 if __name__ == '__main__': 
     main() 
 
+=======
+>>>>>>> 94ee9acb8fbf9d9ab4f905ae77be625152e69639
 def test_decrypt():
-    """Otestuje správnost převodu z morseovi abecedy do textu"""
+    """Otestuje správnost převodu z morseovi abecedy do textu."""
     assert decrypt("- . ... -") == "TEST"
-    """Otestuje správnost převodu z morseovi abecedy do textu"""
+    """Otestuje správnost převodu z morseovi abecedy do textu."""
     assert decrypt("..--- -----") == "20"
-    """Otestuje zda funkce překládá znaky mimo morseovu abecedu"""
-    assert decrypt("AWEGWRHGWRh") == "špatný formát zadávání"
-    """Otestuje zda funkce pracuje s prázdným parametrem"""
+    """Otestuje zda funkce překládá znaky mimo morseovu abecedu."""
+    assert decrypt("AWEGWRHGWRh") == "Špatný formát zadávání"
+    """Otestuje zda funkce pracuje s prázdným parametrem."""
     assert decrypt("") == "Chyba: prázdné pole"
-    """Otestuje správnost převodu z morseovi abecedy do textu"""
+    """Otestuje správnost převodu z morseovi abecedy do textu."""
     assert decrypt("- . ... - .---- ..--- .--.-.") == "TEST12@"
+<<<<<<< HEAD
     """Otestuje správnost zadáváného parametru (musí být str)"""
     assert decrypt(10) == \
     "parameter musí být (str)"
    
     
+=======
+
+
+>>>>>>> 94ee9acb8fbf9d9ab4f905ae77be625152e69639
 def test_encrypt():
-    """Otestuje správnost převodu z textu do morseovi abecedy"""
+    """Otestuje správnost převodu z textu do morseovi abecedy."""
     assert encrypt("test") == "- . ... - "
-    """Otestuje správnost převodu z textu do morseovi abecedy"""
+    """Otestuje správnost převodu z textu do morseovi abecedy."""
     assert encrypt("20") == "..--- ----- "
-    """Otestuje zda funkce pracuje s prázdným parametrem"""
+    """Otestuje zda funkce pracuje s prázdným parametrem."""
     assert encrypt("") == "Chyba: prázdné pole"
-    """Otestuje správnost převodu z textu do morseovi abecedy"""
+    """Otestuje správnost převodu z textu do morseovi abecedy."""
     assert encrypt("test12@") == "- . ... - .---- ..--- .--.-. "
+<<<<<<< HEAD
     """Otestuje správnost zadáváného parametru (musí být str)"""
     assert encrypt(10) == \
     "parameter musí být (str)"
@@ -204,3 +147,10 @@ def test_choice():
     assert choice("TEST") == \
     "parametr musí být (int)"
          
+=======
+
+
+def test_choice():
+    """Ověření parametru pro volání definicí."""
+    assert choice(0) == "Špatný formát zadávání"
+>>>>>>> 94ee9acb8fbf9d9ab4f905ae77be625152e69639
