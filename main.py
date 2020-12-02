@@ -337,3 +337,19 @@ def main():
 # Executes the main function
 if __name__ == '__main__':
     main()
+
+
+def test_convertRawPointDataIntoVector_1():
+    converetedVector = convertRawPointDataIntoVector("[5;5]")
+    vectorToCompare = Vector2(5, 5)
+    assert str(converetedVector) == str(vectorToCompare)
+
+
+def test_convertRawPointDataIntoVector_2():
+    assert convertRawPointDataIntoVector("{5,5}") is None
+
+
+def test_convertRawPointDataIntoVector_3():
+    converetedVector = convertRawPointDataIntoVector("[-5;5.8]")
+    vectorToCompare = Vector2(-5, 5.8)
+    assert str(converetedVector) == str(vectorToCompare)
