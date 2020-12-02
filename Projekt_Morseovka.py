@@ -1,5 +1,5 @@
 """
-This project is made for translate text to morse code and morse code to text
+This project is made for translate text to morse code and morse code to text.
 
 Author: Jan Baslar
 """
