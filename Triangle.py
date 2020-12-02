@@ -3,6 +3,7 @@
 To determinate if we can get a triangle according to inputs and if so,
 to calcul lenght of the sides,
 to calcul perimetr and area of the triangle.
+
 Unit tests:
 >>> getCoords()
 ['1', '2', '3', '4', '5', '6']
@@ -16,10 +17,14 @@ False
 False
 >>> checkLenght(['1','2','3','4','5','6'])
 True
+>>> computeSides(['1','2','3','4','5','6'])
+('2.83', '2.83', '5.66')
 >>> computeSides(['0','0','4','1','2','6'])
 ('4.12', '5.39', '6.32')
 >>> isTriangle(4.12,5.39,6.32)
 True
+>>> isTriangle(2.83,2.83,5.66)
+False
 >>> computePerimeter(4.12,5.39,6.32)
 15.83
 >>> computeArea(4.12,5.39,6.32)
@@ -116,7 +121,7 @@ def isTriangle(a, b, c):
     Returns:
         - True or False
     """
-    if a + b > c or b + c > a or a + c > b:
+    if a + b > c and b + c > a and a + c > b:
         return True
     else:
         return False
@@ -149,5 +154,26 @@ def computeArea(a, b, c):
     return totalS
 
 
+def output(a, b, c):
+    """Return the summary of the previous calculation.
+
+    Args:
+        - a,b,c lenghts of sides
+    """
+    print("Lenghts of the sides:")
+    print("Sides: a = {}, side b = {}, side c = {}".format(a, b, c))
+
+    isTheTriangle = isTriangle(a, b, c)
+    print("Is it possible to make a triangle: {}".format(isTheTriangle))
+
+    if isTheTriangle:
+        perimeter = round(computePerimeter(a, b, c), 2)
+        area = round(computeArea(a, b, c), 2)
+        print("Perimter = {}".format(perimeter))
+        print("Area = {}".format(area))
+
+
 if __name__ == '__main__':
-    getCoords()
+    coords = getCoords()
+    sides = computeSides(coords)
+    output(sides[0], sides[1], sides[2])
