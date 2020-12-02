@@ -103,7 +103,7 @@ print('***************************************************************')
 print('')
 
 # vytvorime behove promenne
-appLoop = True
+appLoop = False
 state = Enums.States.MENU
 action = Enums.Actions.UNKNOWN
 
