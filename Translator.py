@@ -1,122 +1,126 @@
 """Modul obshaujici tridu translatoru Morseovi abecedy."""
 
+abeceda = {'A': '.-',
+           'B': '-...',
+           'C': '-.-.',
+           'D': '-..',
+           'E': '.',
+           'F': '..-.',
+           'G': '--.',
+           'H': '....',
+           'I': '..',
+           'J': '.---',
+           'K': '-.-',
+           'L': '.-..',
+           'M': '--',
+           'N': '-.',
+           'O': '---',
+           'P': '.--.',
+           'Q': '--.-',
+           'R': '.-.',
+           'S': '...',
+           'T': '-',
+           'U': '..-',
+           'V': '...-',
+           'W': '.--',
+           'X': '-..-',
+           'Y': '-.--',
+           'Z': '--..',
+           '0': '-----',
+           '1': '.----',
+           '2': '..---',
+           '3': '...--',
+           '4': '....-',
+           '5': '.....',
+           '6': '-....',
+           '7': '--...',
+           '8': '---..',
+           '9': '----.',
+           '.': '.-.-.-.',
+           ',': '--..--',
+           '?': '..--..',
+           '!': '--..-',
+           ';': '-.-.-.',
+           ':': '---...',
+           '(': '--...',
+           ')': '-.--.-',
+           ' ': '.-..-.',
+           '-': '-....-',
+           '_': '..--.-',
+           '@': '.--.-.'}
 
-class Translator:
-    """Trida zverejnujici funkce pro kodovani/dekodovani Morseovi abecedy."""
+def decodeChar(enc):
+    """Metoda dekoduje znak z Morseovi abecedy do alfabeticke.
 
-    def __init__(self):
-        """Konstruktor tridy.
+    Args:
+        - enc - Zakodovany znak.
 
-        Definuje Morseovu abecedu.
-        """
-        self.abeceda = {'A': '.-',
-                        'B': '-...',
-                        'C': '-.-.',
-                        'D': '-..',
-                        'E': '-',
-                        'F': '..-.',
-                        'G': '--.',
-                        'H': '....',
-                        'I': '..',
-                        'J': '.---',
-                        'K': '-.-',
-                        'L': '.-..',
-                        'M': '--',
-                        'N': '-.',
-                        'O': '---',
-                        'P': '.--.',
-                        'Q': '--.-',
-                        'R': '.-.',
-                        'S': '...',
-                        'T': '-',
-                        'U': '..-',
-                        'V': '...-',
-                        'W': '.--',
-                        'X': '-..-',
-                        'Y': '-.--',
-                        'Z': '--..',
-                        '0': '-----',
-                        '1': '.----',
-                        '2': '..---',
-                        '3': '...--',
-                        '4': '....-',
-                        '5': '.....',
-                        '6': '-....',
-                        '7': '--...',
-                        '8': '---..',
-                        '9': '----.',
-                        '.': '.-.-.-.',
-                        ',': '--..--',
-                        '?': '..--..',
-                        '!': '--..-',
-                        ';': '-.-.-.',
-                        ':': '---...',
-                        '(': '--...',
-                        ')': '-.--.-',
-                        ' ': '.-..-.',
-                        '-': '-....-',
-                        '_': '..--.-',
-                        '@': '.--.-.'}
+    Returns:
+        - Dekodovany znak, pripadne ?, pokud se nepovede dekodovat.
 
-    def decodeChar(self, enc):
-        """Metoda dekoduje znak z Morseovi abecedy do alfabeticke.
+    >>> decodeChar('.-')
+    'A'
+    """
+    for key, value in abeceda.items():
+        if (value == enc):
+            return str(key)
+    return '?'
 
-        Args:
-            - enc - Zakodovany znak.
+def encodeChar(dec):
+    """Metoda kodujici znak z alfabeticke abecedy do Morseovi.
 
-        Returns:
-            - Dekodovany znak, pripadne ?, pokud se nepovede dekodovat.
-        """
-        for key, value in self.abeceda.items():
-            if (value == enc):
-                return str(key)
-        return '?'
+    Args:
+        - dec - Znak k zakodovani.
 
-    def encodeChar(self, dec):
-        """Metoda kodujici znak z alfabeticke abecedy do Morseovi.
+    Returns:
+        - Zakodovany znak, pripadne zakodovany ?,
+          pokud se nepovede zakodovat.
 
-        Args:
-            - dec - Znak k zakodovani.
+    >>> encodeChar('A')
+    '.-'
+    """
+    for key, value in abeceda.items():
+        if (key == dec.upper()):
+            return str(value)
+    return '..--..'
 
-        Returns:
-            - Zakodovany znak, pripadne zakodovany ?,
-              pokud se nepovede zakodovat.
-        """
-        for key, value in self.abeceda.items():
-            if (key == dec.upper()):
-                return str(value)
-        return '..--..'
+def encode(txt):
+    """Metoda kodujici string z alfabeticke abecedy do Morseovi.
 
-    def encode(self, txt):
-        """Metoda kodujici string z alfabeticke abecedy do Morseovi.
+    Args:
+        - txt - String k zakodovani.
 
-        Args:
-            - txt - String k zakodovani.
+    Returns:
+        - Zakodovany string.
 
-        Returns:
-            - Zakodovany string.
-        """
-        enc = ''
-        for i in range(0, len(txt)):
-            enc = enc + self.encodeChar(txt[i]) + ' '
-        return enc
+    >>> encode('test')
+    '- . ... -'
+    """
+    enc = ''
+    for i in range(0, len(txt)):
+        enc = enc + encodeChar(txt[i]) + ' '
+    return enc.rstrip()
 
-    def decode(self, txt):
-        """Metoda dekodujici string z Morseovi abecedy do alfabeticke.
+def decode(txt):
+    """Metoda dekodujici string z Morseovi abecedy do alfabeticke.
 
-        Args:
-            - txt - String k dekodovani.
+    Args:
+        - txt - String k dekodovani.
 
-        Returns:
-            - Dekodovany string.
-        """
-        dec = ''
-        w = ''
-        for i in range(0, len(txt)):
-            if (ord(txt[i]) == 32):
-                dec = dec + self.decodeChar(w)
-                w = ''
-            else:
-                w = w + txt[i]
-        dec = dec + self.decodeChar(w)
-        return dec
+    Returns:
+        - Dekodovany string.
+
+    >>> decode('- . ... -')
+    'TEST'
+    """
+    dec = ''
+    w = ''
+    for i in range(0, len(txt)):
+        if (ord(txt[i]) == 32):
+            dec = dec + decodeChar(w)
+            w = ''
+        else:
+            w = w + txt[i]
+    dec = dec + decodeChar(w)
+    return dec.rstrip()
+
