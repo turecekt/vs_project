@@ -1,5 +1,6 @@
 from decimal import Decimal
 import math
+from math import isclose
 
 
 class Vector2:
@@ -103,7 +104,7 @@ def getArea(sideA, sideB, sideC):
     return area
 
 
-def isRightAngled():
+def isRightAngled(sideA, sideB, sideC):
     """
     Find if triangle is rightangled.
 
@@ -111,7 +112,14 @@ def isRightAngled():
     >>> isRightAngled(???)
     ???
     """
-    return False
+    sideAPow = math.pow(sideA, 2)
+    sideBPow = math.pow(sideB, 2)
+    sideCPow = math.pow(sideC, 2)
+    return (
+        (isclose(sideAPow + sideBPow, sideCPow, abs_tol=5))
+        or (isclose(sideCPow + sideBPow, sideAPow, abs_tol=5))
+        or (isclose(sideAPow + sideCPow, sideBPow, abs_tol=5))
+    )
 
 
 def isRawPointDataStringValid(rawData):
@@ -234,9 +242,9 @@ def main():
                 print()
 
     # calculating side lenghts based of end points coordinates
-    sideA = getSideLenght(pointA, pointB)
-    sideB = getSideLenght(pointB, pointC)
-    sideC = getSideLenght(pointC, pointA)
+    sideA = getSideLenght(pointB, pointC)
+    sideB = getSideLenght(pointC, pointA)
+    sideC = getSideLenght(pointA, pointB)
 
     # calculating triangle constructability
     canBeConstructed = isConstructable(sideA, sideB, sideC)
@@ -246,6 +254,9 @@ def main():
 
     # calculating triangle area
     triangleArea = getArea(sideA, sideB, sideC)
+
+    # calculating if trianble is
+    isTriangleRightAngled = isRightAngled(sideA, sideB, sideC)
 
     # displaying result information
     print()
@@ -261,12 +272,14 @@ def main():
     print("--------------------------------------------------------------")
     print("Triangle sides lengths:")
     print("Side A lenght => " + str(sideA))
-    print("Side A lenght => " + str(sideB))
-    print("Side A lenght => " + str(sideC))
+    print("Side B lenght => " + str(sideB))
+    print("Side C lenght => " + str(sideC))
     print("--------------------------------------------------------------")
     print("Triangle perimeter: => " + str(trianglePerimeter))
     print("--------------------------------------------------------------")
     print("Triangle area: => " + str(triangleArea))
+    print("--------------------------------------------------------------")
+    print("Is triangle right angled? => " + str(isTriangleRightAngled))
     print("--------------------------------------------------------------")
     print()
 
