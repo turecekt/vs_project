@@ -116,9 +116,9 @@ def isRightAngled(sideA, sideB, sideC):
     sideBPow = math.pow(sideB, 2)
     sideCPow = math.pow(sideC, 2)
     return (
-        (isclose(sideAPow + sideBPow, sideCPow, abs_tol=5))
-        or (isclose(sideCPow + sideBPow, sideAPow, abs_tol=5))
-        or (isclose(sideAPow + sideCPow, sideBPow, abs_tol=5))
+        (isclose(sideAPow + sideBPow, sideCPow, abs_tol=0.0001))
+        or (isclose(sideCPow + sideBPow, sideAPow, abs_tol=0.0001))
+        or (isclose(sideAPow + sideCPow, sideBPow, abs_tol=0.0001))
     )
 
 
