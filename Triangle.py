@@ -20,6 +20,8 @@ True
 ('4.12', '5.39', '6.32')
 >>> isTriangle(4.12,5.39,6.32)
 True
+>>> computePerimeter(4.12,5.39,6.32)
+15.83
 """
 
 
@@ -116,6 +118,18 @@ def isTriangle(a, b, c):
         return True
     else:
         return False
+
+
+def computePerimeter(a, b, c):
+    """Get the perimeter of a triangle.
+
+    Args:
+        - a,b,c lenghts of sides
+
+    Returns:
+        - a + b + c perimeter of a triangle
+    """
+    return a + b + c
 
 
 if __name__ == '__main__':
