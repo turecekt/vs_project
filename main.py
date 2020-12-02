@@ -1,3 +1,5 @@
+from decimal import Decimal
+
 class Vector2:
     xCoordinate = 0
     yCoordinate = 0
@@ -71,16 +73,71 @@ def isRightAngled():
     return False
 
 
+def isRawPointDataStringValid(rawData):
+    """
+    Check if raw point data is valid.
+
+    Return validity boolean
+    >>> convertRawPointDataIntoVector("[5;5]")
+    return True
+    """
+    if rawData.count('[') != 1 or not rawData.startswith('['):
+        return False
+    if rawData.count(']') != 1 or not rawData.endswith(']'):
+        return False
+    if rawData.count(';') != 1:
+        return False
+    return True
+
+
 def convertRawPointDataIntoVector(rawData):
     """
     Convert raw point data into it's vector coordinates form.
 
     Return converted raw data in vector form
-    >>> convertRawPointDataIntoVector(???)
-    ???
+    >>> convertRawPointDataIntoVector("[5;5]")
+    return Vector2(5, 5)
     """
-    pointCoordinates = Vector2(0, 0)
-    return pointCoordinates
+    if not isRawPointDataStringValid(rawData):
+        return None
+    else:
+        firstCoordinate = 0
+        secondCoordinate = 0
+        isNextCoordinateNegative = False
+        tempNumberString = ""
+        for character in rawData:
+            if character == '[' or character == ' ':
+                continue
+            if character == '-':
+                isNextCoordinateNegative = True
+                continue
+            if character == ';':
+                firstCoordinate = Decimal(tempNumberString)
+                if isNextCoordinateNegative:
+                    firstCoordinate = firstCoordinate * -1
+
+                tempNumberString = ""
+                isNextCoordinateNegative = False
+                continue
+            if character == ']':
+                secondCoordinate = Decimal(tempNumberString)
+                if isNextCoordinateNegative:
+                    secondCoordinate = secondCoordinate * -1
+                continue
+            if (
+                character == '0' or character == '1'
+                or character == '2' or character == '3'
+                or character == '4' or character == '5'
+                or character == '6' or character == '7'
+                or character == '8' or character == '9'
+                or character == '.'
+               ):
+                tempNumberString += character
+                continue
+            else:
+                return None
+
+        return Vector2(firstCoordinate, secondCoordinate)
 
 
 def main():
@@ -90,9 +147,11 @@ def main():
     pointC = None
 
     # uncomment these 3 lines below to skip CLI input and use parameter values
+    """
     pointA = Vector2(0, 0)
     pointB = Vector2(5, 0)
     pointC = Vector2(0, 5)
+    """
 
     # inform user about program functionality
     print()
@@ -106,14 +165,15 @@ def main():
         print("You will be now asked to input coordinates of your triangle")
         print()
         print("Please, input each point of triangle like this => [5;6]")
+        print("You can use decimal numbers like this => [5.1;6.5]")
         print("Other input will be rejected!")
         print()
 
         # getting user input
         print("Now enter your triangle coordinates:")
-        pointARawData = float(input('Enter first point: '))
-        pointBRawData = float(input('Enter second point: '))
-        pointCRawData = float(input('Enter third point: '))
+        pointARawData = input('Enter first point: ')
+        pointBRawData = input('Enter second point: ')
+        pointCRawData = input('Enter third point: ')
 
         # converting raw data in string form into vector form
         pointA = convertRawPointDataIntoVector(pointARawData)
