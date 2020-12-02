@@ -338,29 +338,50 @@ def main():
 if __name__ == '__main__':
     main()
 
+
+def test_getPerimeter_1():
+    assert (getPerimeter(1, 2, 2) == 5) is True
+
+
+def test_getPerimeter_2():
+    assert (getPerimeter(8, 2, 2) == 12) is True
+
+
+def test_getPerimeter_3():
+    assert (getPerimeter(8, 2, 2) == 5) is False
+
+
 def test_getArea_1():
     assert isclose(getArea(2, 4, 5), 3.8, abs_tol=0.001) is True
+
 
 def test_getArea_2():
     assert isclose(getArea(2.82843, 2, 2), 5, abs_tol=0.001) is False
 
+
 def test_getArea_3():
     assert isclose(getArea(5, 1, 5), 2.4875, abs_tol=0.001) is True
+
 
 def test_isRightAngled_1():
     assert isRightAngled(2, 2, 5) is False
 
+
 def test_isRightAngled_2():
     assert isRightAngled(2.82843, 2, 2) is False
+
 
 def test_isRightAngled_3():
     assert isRightAngled(5, 1, 5) is False
 
+
 def test_isRawPointDataStringValid_1():
     assert isRawPointDataStringValid("54[fds") is False
 
+
 def test_isRawPointDataStringValid_2():
     assert isRawPointDataStringValid("[5;6]") is True
+
 
 def test_isRawPointDataStringValid_3():
     assert isRawPointDataStringValid("[5,6]") is False
