@@ -77,6 +77,10 @@ def encrypt(zprava):
     Returns:
     sifra - text přeložený do morseovy soustavy
     """
+    
+    if not isinstance(zprava, str):
+        return "parameter musí být str" 
+  
     zprava = zprava.upper()
     sifra = ''
 
@@ -99,6 +103,10 @@ def decrypt(zprava):
     Returns:
     vystup - morseova soustava přeložená do textu
     """
+    
+    if not isinstance(zprava, str):
+        return "parameter musí být (str)" 
+    
     zprava += ' '
     vystup = ''
     znak = ''
@@ -134,8 +142,14 @@ def choice(vyber):
     Returns:
         result - vrací hodnotu zvolené definice
     """
+    
+    if not isinstance(vyber, int):
+        return "parametr musí být (int)"
+    if vyber < 0:
+        return "parametr nesmí být v záporný"
+    
     if vyber == 1:
-        result = encrypt('test')
+        result = encrypt("TEST")
 
     elif vyber == 2:
         result = decrypt('- . ... -')
@@ -148,7 +162,7 @@ def choice(vyber):
 
 def main():
     """Volání definice v parametru."""
-    volani = choice(2)
+    volani = choice(1)
     print(volani)
 
 
