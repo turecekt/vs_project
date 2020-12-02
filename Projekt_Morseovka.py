@@ -193,10 +193,5 @@ def test_morse_to_alphabet() -> None:
             == '4 / (8 - 6) = 2  ')
 
 
-def test_main() -> None:
-    """Test main function."""
-    assert (main() is None)
-
-
 if __name__ == '__main__':
     main()
