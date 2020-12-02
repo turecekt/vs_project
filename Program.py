@@ -122,7 +122,7 @@ while(appLoop):
         # akce zadana uzivatelem
         action = Enums.Actions.UNKNOWN
         while (action == Enums.Actions.UNKNOWN):
-            #c = input('Zvolena akce: ')
+            '''c = input('Zvolena akce: ')'''
             c = "Z"
             action = parseAction(c)
             if (action == Enums.Actions.UNKNOWN):
