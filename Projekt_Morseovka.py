@@ -119,42 +119,46 @@ def main() -> None:
     else:
         print(alphabet_to_morse(text))
 
+    print()
     print('Press enter key to exit...')
     input()
 
 
 def test_remove_diacritics() -> None:
-    """Test remove_diacritics function.
-    """
+    """Test remove_diacritics function."""
     assert (remove_diacritics('áčďéěíňóřšťúůýž') == 'ACDEEINORSTUUYZ')
-    assert (remove_diacritics('Příliš žluťoučký kůň úpěl ďábelské ódy.') == 'PRILIS ZLUTOUCKY KUN UPEL DABELSKE ODY.')
+    assert (remove_diacritics('Příliš žluťoučký kůň úpěl ďábelské ódy.')
+            == 'PRILIS ZLUTOUCKY KUN UPEL DABELSKE ODY.')
 
 
 def test_alphabet_to_morse() -> None:
-    """Test alphabet_to_morse function.
-    """
-    assert (alphabet_to_morse('Nechť již hříšné saxofony ďáblů rozezvučí síň úděsnými tóny waltzu, tanga a quickstepu.')
-            == '-.|.|----|-||.---|..|--..||....|.-.|..|...|-.|.||...|.-|-..-|---|..-.|---|-.|-.--|'
-               '|-..|.-|-...|.-..|..-||.-.|---|--..|.|--..|...-|..-|-.-.|..||...|..|-.||..-|-..|.|...|-.|-.--|--|..|'
+    """Test alphabet_to_morse function."""
+    assert (alphabet_to_morse('Nechť již hříšné saxofony ďáblů rozezvučí síň '
+                              'úděsnými tóny waltzu, tanga a quickstepu.')
+            == '-.|.|----|-||.---|..|--..||....|.-.|..|...|-.|.|'
+               '|...|.-|-..-|---|..-.|---|-.|-.--|'
+               '|-..|.-|-...|.-..|..-||.-.|---|--..|.|--..|...-|..-|-.-.|..|'
+               '|...|..|-.||..-|-..|.|...|-.|-.--|--|..|'
                '|-|---|-.|-.--||.--|.-|.-..|-|--..|..-|--..--||-|.-|-.|--.|.-|'
                '|.-||--.-|..-|..|-.-.|-.-|...|-|.|.--.|..-|.-.-.-|')
-    assert (alphabet_to_morse('My e-mail address is: stuart_little@utb.cz, but you can call me "Steve";')
-            == '--|-.--||.|-....-|--|.-|..|.-..||.-|-..|-..|.-.|.|...|...||..|...|---...|'
-               '|...|-|..-|.-|.-.|-|..--.-|.-..|..|-|-|.-..|.|.--.-.|..-|-|-...|.-.-.-|-.-.|--..|--..--||-...|..-|-|'
-               '|-.--|---|..-||-.-.|.-|-.||-.-.|.-|.-..|.-..||--|.||.-..-.|...|-|.|...-|.|.-..-.|-.-.-.|')
+    assert (alphabet_to_morse('My e-mail address is: stuart_little@utb.cz, '
+                              'but you can call me "Steve";')
+            == '--|-.--||.|-....-|--|.-|..|.-..||.-|-..|-..|.-.|.|...|...|'
+               '|..|...|---...||...|-|..-|.-|.-.|-|..--.-|.-..|..|-|-|.-..|.|'
+               '.--.-.|..-|-|-...|.-.-.-|-.-.|--..|--..--||-...|..-|-|'
+               '|-.--|---|..-||-.-.|.-|-.||-.-.|.-|.-..|.-..||--|.|'
+               '|.-..-.|...|-|.|...-|.|.-..-.|-.-.-.|')
 
 
 def test_get_key() -> None:
-    """Test get_key function.
-    """
+    """Test get_key function."""
     assert (get_key('.---', translator) == 'J')
     assert (get_key('-....', translator) == '6')
     assert (get_key('.--.-.', translator) == '@')
 
 
 def test_is_it_morse() -> None:
-    """Test is_it_morse function.
-    """
+    """Test is_it_morse function."""
     assert (is_it_morse('-..|---|--.|.-.-.-|') is True)
     assert (is_it_morse('-.. --- --. .-.-.- ') is True)
     assert (is_it_morse('-../---/--./.-.-.-/') is True)
@@ -163,21 +167,24 @@ def test_is_it_morse() -> None:
 
 
 def test_find_splitter() -> None:
-    """Test find_splitter function.
-    """
+    """Test find_splitter function."""
     assert (find_splitter('-..|---|--.|.-.-.-|') == '|')
     assert (find_splitter('-.. --- --. .-.-.- ') == ' ')
     assert (find_splitter('-../---/--./.-.-.-/') == '/')
-    assert (find_splitter('.-.-.-') is ' ')
+    assert (find_splitter('.-.-.-') == ' ')
 
 
 def test_morse_to_alphabet() -> None:
-    """Test morse_to_alphabet function.
-    """
-    assert (morse_to_alphabet('-|....|.||--.-|..-|..|-.-.|-.-||-...|.-.|---|.--|-.||..-.|---|-..-|'
-                              '|.---|..-|--|.--.|...||---|...-|.|.-.||-|....|.||.-..|.-|--..|-.--|'
-                              '|-..|---|--.|.-.-.-|') == 'The quick brown fox jumps over the lazy dog.  ')
-    assert (morse_to_alphabet('....-||-..-.||-.--.|---..||-....-||-....|-.--.-||-...-||..---|') == '4 / (8 - 6) = 2  ')
+    """Test morse_to_alphabet function."""
+    assert (morse_to_alphabet('-|....|.||--.-|..-|..|-.-.|-.-|'
+                              '|-...|.-.|---|.--|-.||..-.|---|-..-|'
+                              '|.---|..-|--|.--.|...||---|...-|.|.-.|'
+                              '|-|....|.||.-..|.-|--..|-.--|'
+                              '|-..|---|--.|.-.-.-|')
+            == 'The quick brown fox jumps over the lazy dog.  ')
+    assert (morse_to_alphabet('....-||-..-.||-.--.|---..||-....-|'
+                              '|-....|-.--.-||-...-||..---|')
+            == '4 / (8 - 6) = 2  ')
 
 
 if __name__ == '__main__':
