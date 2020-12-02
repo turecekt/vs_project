@@ -1,4 +1,10 @@
-"""VS PROJEKT"""
+"""
+VS PROJECT
+
+This project contains methods for calculating triangle lengths,
+perimeter and area. It also tells you whether specified triangle
+can be constructed
+"""
 
 def getUserInput(message):
     inp = input(message + "\n")
