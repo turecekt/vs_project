@@ -1,10 +1,5 @@
-"""
-Import decimal value type.
-
-Returns:
-    [type]: [description]
-"""
 from decimal import Decimal
+import math
 
 
 class Vector2:
@@ -74,7 +69,10 @@ def getSideLenght(pointA, pointB):
     >>> getSideLenght(???)
     ???
     """
-    return 1
+    return (
+        math.sqrt(math.pow(pointB.xCoordinate - pointA.xCoordinate, 2)
+                  + math.pow(pointB.yCoordinate - pointA.yCoordinate, 2))
+    )
 
 
 def getPerimeter(sideA, sideB, sideC):
@@ -85,7 +83,7 @@ def getPerimeter(sideA, sideB, sideC):
     >>> getPerimeter(???)
     ???
     """
-    return 1
+    return sideA + sideB + sideC
 
 
 def getArea(sideA, sideB, sideC):
@@ -235,13 +233,16 @@ def main():
                 print("Invalid input!")
                 print()
 
-    # calculating triangle constructability
-    canBeConstructed = isConstructable()
-
     # calculating side lenghts based of end points coordinates
     sideA = getSideLenght(pointA, pointB)
     sideB = getSideLenght(pointB, pointC)
     sideC = getSideLenght(pointC, pointA)
+
+    # calculating triangle constructability
+    canBeConstructed = isConstructable(sideA, sideB, sideC)
+
+    # calculating triangle perimeter
+    trianglePerimeter = getPerimeter(sideA, sideB, sideC)
 
     # displaying result information
     print()
@@ -259,6 +260,8 @@ def main():
     print("Side A lenght => " + str(sideA))
     print("Side A lenght => " + str(sideB))
     print("Side A lenght => " + str(sideC))
+    print("--------------------------------------------------------------")
+    print("Triangle perimeter: => " + str(trianglePerimeter))
     print("--------------------------------------------------------------")
     print()
 
