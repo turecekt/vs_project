@@ -1,3 +1,9 @@
+"""
+This project is made for translate text to morse code and morse code to text
+
+Author: Jan Baslar
+"""
+
 translator = {'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..',
               'E': '.', 'F': '..-.', 'G': '--.', 'H': '....',
               'CH': '----', 'I': '..', 'J': '.---', 'K': '-.-',
