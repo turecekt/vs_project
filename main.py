@@ -51,9 +51,13 @@ def isConstructable(sideA, sideB, sideC):
     """
     Find is triangle can be constructed.
 
-    Return boolean informing about constructablity of a triangle
-    >>> isConstructable(???)
-    ???
+    Args:
+        sideA ([type]): [description]
+        sideB ([type]): [description]
+        sideC ([type]): [description]
+
+    Returns:
+        [bool]: Return boolean informing about constructablity of a triangle
     """
     return (
         sideA + sideB >= sideC
@@ -70,7 +74,7 @@ def getSideLenght(pointA, pointB):
     >>> getSideLenght(???)
     ???
     """
-    return (
+    return (Decimal)(
         math.sqrt(math.pow(pointB.xCoordinate - pointA.xCoordinate, 2)
                   + math.pow(pointB.yCoordinate - pointA.yCoordinate, 2))
     )
@@ -99,7 +103,8 @@ def getArea(sideA, sideB, sideC):
     s = (sideA + sideB + sideC) / 2
 
     # calculate the area
-    area = (s*(s-sideA)*(s-sideB)*(s-sideC)) ** 0.5
+    # √(s*(s-a)*(s-b)*(s-c))
+    area = math.sqrt(s * (s-sideA) * (s-sideB) * (s-sideC))
 
     return area
 
@@ -278,26 +283,32 @@ def main():
         print("----------------------------------------------------------")
         if canBeConstructed:
             print("Triangle sides lengths:")
-            print("Side A lenght => " + str(sideA))
-            print("Side B lenght => " + str(sideB))
-            print("Side C lenght => " + str(sideC))
+            print("Side A lenght => " + str(round(sideA, 5)))
+            print("Side B lenght => " + str(round(sideB, 5)))
+            print("Side C lenght => " + str(round(sideC, 5)))
             print("----------------------------------------------------------")
-            print("Triangle perimeter: => " + str(trianglePerimeter))
+            print("Triangle perimeter: => " + str(round(trianglePerimeter, 5)))
             print("----------------------------------------------------------")
-            print("Triangle area: => " + str(triangleArea))
+            print("Triangle area: => " + str(round(triangleArea, 5)))
             print("----------------------------------------------------------")
             print("Is triangle right angled? => " + str(isTriangleRightAngled))
             print("----------------------------------------------------------")
             print()
         else:
+            print()
             print("No other info, triangle is non constructable!")
 
+        # setting variables to default end logic loop value
         exitProgramTriggered = True
         pointA = None
         pointB = None
         pointC = None
+
+        # prints out instruction for end user input
         print("Send 'r' to calculate new triangle")
         print("Send any other key to exit program or press 'Enter'")
+
+        # handles user input at end of a logic loop
         logicEndUserInput = input("Your input: ")
         if logicEndUserInput == 'r' or logicEndUserInput == 'R':
             exitProgramTriggered = False
