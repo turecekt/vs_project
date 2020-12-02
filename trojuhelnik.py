@@ -59,7 +59,7 @@ def calculatePerimeter(a, b, c):
     Returns:
         Perimeter of specified triangle
     """
-    return a + b + c
+    return round(a + b + c, 3)
 
 def calculateArea(a, b, c):
     """
@@ -90,6 +90,24 @@ def isConstructable(a, b, c):
         If triangle can be constructed
     """
     return a + b > c and a + c > b and b + c > a
+
+def isRightAngled(a, b, c):
+    """
+    Checks if triangle is right angled using Pythagora's theorem
+    c^2 = a^2 + b^2
+
+    Args:
+        a: a side length
+        b: b side length
+        c: c side length
+
+    Returns:
+        If triangle is right angled
+    """
+    sa = sqr(a)
+    sb = sqr(b)
+    sc = sqr(c)
+    return sc == sa + sb or sb == sa + sc or sa == sb + sc
 
 def test_sqrt():
     """
@@ -133,6 +151,12 @@ def test_isConstructable():
     assert isConstructable(20, 20, 30)
     assert isConstructable(15, 15, 15)
 
+def test_isRightAngled():
+    """
+    Test for isRightAngled method
+    """
+    assert isRightAngled(12, 9, 15)
+
 def test_round():
     """
     Test for round method
@@ -166,9 +190,9 @@ if __name__ == "__main__":
         print("Triangle can be constructed")
         # Print triangle perimeter
         print("Triangle perimeter:", calculatePerimeter(al, bl, cl))
-
         # Print triangle area
         print("Triangle area:", calculateArea(al, bl, cl))
-
+        # Print if triangle is right angled
+        print("Is right angled:", isRightAngled(al, bl, cl))
     else:
         print("Triangle cannot be constructed")
