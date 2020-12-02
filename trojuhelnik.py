@@ -22,7 +22,8 @@ def calculatePerimeter(a, b, c):
     return a + b + c
 
 def calculateArea(a, b, c):
-    return a
+    s = (a + b + c) / 2
+    return sqrt(s * (s - a) * (s - b) * (s - c))
 
 def isConstructable(a, b, c):
     return a + b > c and a + c > b and b + c > a
