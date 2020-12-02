@@ -33,11 +33,15 @@ library = {'A': '.-', 'B': '-...',
 
 
 def morseencrypt(txt):
-    """Convert morse code to latin from user inserted txt."""
-    """Test for morseencrypt function
-    >>>morseencrypt('.-')
+    """Convert morse code to latin from user inserted txt.
+
+    Args:
+        txt: string
+
+    Returns: Translated user inputed string of morse code to latin
+    >>> morseencrypt('.-')
     'A'
-    True"""
+    """
     translation = ''
     lib_encrypt = dict([(v, k) for k, v in library.items()])
     for x in txt:
@@ -46,11 +50,15 @@ def morseencrypt(txt):
 
 
 def morsedecrypt(txt):
-    """Convert latin to morse code from user inserted txt."""
-    """ Test of morsedecrypt function
+    """Convert latin to morse code from user inserted txt.
+
+    Args:
+        txt: string
+
+    Returns: Translated output of user inserted string to morse code
     >>> morsedecrypt('A')
     '.-'
-    True"""
+    """
     translation = ''
     txt = txt.upper()
     for x in txt:
