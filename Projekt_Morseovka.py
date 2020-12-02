@@ -44,7 +44,8 @@ def alphabet_to_morse(text: str) -> str:
                 char = 'CH'
                 index += 1
 
-        result += translator[char] + '|'
+        if char in translator:
+            result += translator[char] + '|'
         index += 1
 
     return result
@@ -60,15 +61,40 @@ def get_key(letter: str, dictionary: dict) -> str:
             return key
 
 
+def is_it_morse(text: str) -> bool:
+    """Detect if the text is morse code.
+
+    Return True if the text is morse code.
+    """
+    valid = '.-/| '
+    for char in text:
+        if char not in valid:
+            return False
+    return True
+
+
+def find_splitter(text: str) -> str:
+    """Find splitter of the morse code.
+
+    Return '|' or ' ' or '/' as splitter.
+    """
+    valid = '| /'
+    for char in text:
+        if char in valid:
+            return char
+    return ' '
+
+
 def morse_to_alphabet(text: str) -> str:
     """Translate text from morse code.
 
     Return text translated from morse code.
     """
-    text = text.split('||')
+    splitter = find_splitter(text)
+    text = text.split(splitter + splitter)
     code = []
     for word in text:
-        code += [word.split('|')]
+        code += [word.split(splitter)]
 
     result = ''
     for word in code:
@@ -76,6 +102,25 @@ def morse_to_alphabet(text: str) -> str:
             result += get_key(letter, translator)
         result += ' '
     return result.lower().capitalize()
+
+
+def main() -> None:
+    """Get user input and translate it.
+
+    Return None.
+    """
+    print('Zadejte text k přeložení z/do morseovy abecedy:')
+    print()
+    text = input()
+    print()
+
+    if is_it_morse(text):
+        print(morse_to_alphabet(text))
+    else:
+        print(alphabet_to_morse(text))
+
+    print('Press enter key to exit...')
+    input()
 
 
 def test_remove_diacritics() -> None:
@@ -107,6 +152,33 @@ def test_get_key() -> None:
     assert (get_key('.--.-.', translator) == '@')
 
 
-test_remove_diacritics()
-test_alphabet_to_morse()
-test_get_key()
+def test_is_it_morse() -> None:
+    """Test is_it_morse function.
+    """
+    assert (is_it_morse('-..|---|--.|.-.-.-|') is True)
+    assert (is_it_morse('-.. --- --. .-.-.- ') is True)
+    assert (is_it_morse('-../---/--./.-.-.-/') is True)
+    assert (is_it_morse('dog.') is False)
+    assert (is_it_morse('-.. --- G .-.-.- ') is False)
+
+
+def test_find_splitter() -> None:
+    """Test find_splitter function.
+    """
+    assert (find_splitter('-..|---|--.|.-.-.-|') == '|')
+    assert (find_splitter('-.. --- --. .-.-.- ') == ' ')
+    assert (find_splitter('-../---/--./.-.-.-/') == '/')
+    assert (find_splitter('.-.-.-') is ' ')
+
+
+def test_morse_to_alphabet() -> None:
+    """Test morse_to_alphabet function.
+    """
+    assert (morse_to_alphabet('-|....|.||--.-|..-|..|-.-.|-.-||-...|.-.|---|.--|-.||..-.|---|-..-|'
+                              '|.---|..-|--|.--.|...||---|...-|.|.-.||-|....|.||.-..|.-|--..|-.--|'
+                              '|-..|---|--.|.-.-.-|') == 'The quick brown fox jumps over the lazy dog.  ')
+    assert (morse_to_alphabet('....-||-..-.||-.--.|---..||-....-||-....|-.--.-||-...-||..---|') == '4 / (8 - 6) = 2  ')
+
+
+if __name__ == '__main__':
+    main()
