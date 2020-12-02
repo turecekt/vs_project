@@ -52,9 +52,9 @@ def isConstructable(sideA, sideB, sideC):
     Find is triangle can be constructed.
 
     Args:
-        sideA ([type]): [description]
-        sideB ([type]): [description]
-        sideC ([type]): [description]
+        sideA ([Decimal]): Side A length
+        sideB ([Decimal]): Side B length
+        sideC ([Decimal]): Side C length
 
     Returns:
         [bool]: Return boolean informing about constructablity of a triangle
@@ -70,9 +70,12 @@ def getSideLenght(pointA, pointB):
     """
     Find length of a side.
 
-    Return side length
-    >>> getSideLenght(???)
-    ???
+    Args:
+        pointA ([Vector2]): Point A coordinates
+        pointB ([Vector2]): Point B coordinates
+
+    Returns:
+        [Decimal]: Return side length
     """
     return (Decimal)(
         math.sqrt(math.pow(pointB.xCoordinate - pointA.xCoordinate, 2)
@@ -84,9 +87,13 @@ def getPerimeter(sideA, sideB, sideC):
     """
     Find perimeter of a triangle.
 
-    Return triangle perimeter
-    >>> getPerimeter(???)
-    ???
+    Args:
+        sideA ([Decimal]): Side A length
+        sideB ([Decimal]): Side B length
+        sideC ([Decimal]): Side C length
+
+    Returns:
+        [Decimal]: Return triangle perimeter
     """
     return sideA + sideB + sideC
 
@@ -95,16 +102,20 @@ def getArea(sideA, sideB, sideC):
     """
     Find area of a triangle.
 
-    Return size of an area of a triangle
-    >>> getArea(???)
-    ???
+    Args:
+        sideA ([Decimal]): Side A length
+        sideB ([Decimal]): Side B length
+        sideC ([Decimal]): Side C length
+
+    Returns:
+        [Decimal]: Return size of an area of a triangle
     """
     # calculate the semi-perimeter
     s = (sideA + sideB + sideC) / 2
 
     # calculate the area
     # √(s*(s-a)*(s-b)*(s-c))
-    area = math.sqrt(s * (s-sideA) * (s-sideB) * (s-sideC))
+    area = (Decimal)(math.sqrt(s * (s-sideA) * (s-sideB) * (s-sideC)))
 
     return area
 
@@ -113,9 +124,13 @@ def isRightAngled(sideA, sideB, sideC):
     """
     Find if triangle is rightangled.
 
-    Return true if triangle is right angled
-    >>> isRightAngled(???)
-    ???
+    Args:
+        sideA ([Decimal]): Side A length
+        sideB ([Decimal]): Side B length
+        sideC ([Decimal]): Side C length
+
+    Returns:
+        [bool]: Return if triangle is right angled
     """
     sideAPow = math.pow(sideA, 2)
     sideBPow = math.pow(sideB, 2)
@@ -131,9 +146,11 @@ def isRawPointDataStringValid(rawData):
     """
     Check if raw point data is valid.
 
-    Return validity boolean
-    >>> convertRawPointDataIntoVector("[5;5]")
-    return True
+    Args:
+        rawData ([string]): Raw point data in string form
+
+    Returns:
+        [bool]: Return raw point data validity
     """
     if rawData.count('[') != 1 or not rawData.startswith('['):
         return False
@@ -148,9 +165,11 @@ def convertRawPointDataIntoVector(rawData):
     """
     Convert raw point data into it's vector coordinates form.
 
-    Return converted raw data in vector form
-    >>> convertRawPointDataIntoVector("[5;5]")
-    return Vector2(5, 5)
+    Args:
+        rawData ([string]): Raw point data in string form
+
+    Returns:
+        [Vector2]: return converted raw data in Vector2 form
     """
     if not isRawPointDataStringValid(rawData):
         return None
