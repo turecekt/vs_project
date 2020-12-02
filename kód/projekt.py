@@ -13,10 +13,12 @@ c = math.sqrt(((int(C[0])-int(B[0]))**2)+((int(C[1])-int(B[1]))**2))
 
 print('Strana AB ma dlzku:',round(a,4),'\nStrana AC ma dlzku:',round(b,4),'\nStrana BC ma dlzku:',round(c,4))
 #---------------------
-if (a + b > c and a + c > b and b + c > a):
-    print('Da sa zostrojit')
-else:
-    print('neda sa zostrojit')
+def zostrojenost(a,b,c):
+    if (a + b > c and a + c > b and b + c > a):
+        print('Da sa zostrojit')
+    else:
+        print('neda sa zostrojit')
+zostrojenost(a,b,c)
 #---------------------
 print('Obvod = ',round(a+b+c,4),'Obsah = ',round(a*(b*math.sin(math.acos((a**2 + b**2 - c**2)/(2*a*b))))/2,4))
 #---------------------
