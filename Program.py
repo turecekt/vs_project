@@ -19,7 +19,7 @@ def formateError(err):
 
     >>> formateError('test')
     '!!! test !!!'
-    """    
+    """
     return '!!! ' + err + ' !!!'
 
 
@@ -70,7 +70,7 @@ def encodeText(txt):
 
     >>> encodeText('test')
     '- . ... -'
-    """    
+    """
     return Translator.encode(txt)
 
 
@@ -84,7 +84,7 @@ def decodeText(txt):
 
     >>> decodeText('- . ... -')
     'TEST'
-    """    
+    """
     return Translator.decode(txt)
 
 
@@ -112,7 +112,8 @@ while(appLoop):
     if (state == Enums.States.MENU):
         # menu
         print('MENU')
-        print('***************************************************************')
+        print('*****************************************************'+
+              '**********')
         print('Z - Zakodovat text do Morseovi abecedy')
         print('D - Dekodovat text z Morseovi abecedy')
         print('K - Konec')
@@ -124,27 +125,32 @@ while(appLoop):
             c = input('Zvolena akce: ')
             action = parseAction(c)
             if (action == Enums.Actions.UNKNOWN):
-                print(formateError('Chybne zvolena akce. Zvolte prosim akci dle menu.'))                    
+                print(formateError('Chybne zvolena akce. Zvolte prosim akci'+
+                                   ' dle menu.'))
         state = Enums.States.PROCCESS
     elif (state == Enums.States.PROCCESS):
         if (action == Enums.Actions.END):
             appLoop = False
         else:
             print('PREVOD')
-            print('***************************************************************')
+            print('**************************************************' +
+                  '*************')
             if (action == Enums.Actions.ENCODE):
                 txt = input('Vepiste text k zakodovani ohraniceny uvozovkami' +
                             ' a bez diakritiky.\n')
                 if (not checkUserInputText(txt)):
-                    print(formateError('Neni zadan text, nebo neni ohranicen uvozovkami.'))
+                    print(formateError('Neni zadan text, nebo neni ' +
+                                       'ohranicen uvozovkami.'))
                 else:
                     print(encodeText(txt[1:len(txt) - 1]))
             else:
                 txt = input('Vepiste text k dekodovani ohraniceny uvozovkami.' +
-                            ' Kazdy znak musi byt oddelen od predchoziho mezerou.' +
-                            ' Provolene znaky jsou pouze "." a "-".\n')
+                            ' Kazdy znak musi byt oddelen od predchoziho ' +
+                            ' mezerou. Provolene znaky jsou pouze ' +
+                            '"." a "-".\n')
                 if (not checkUserInputText(txt)):
-                    print(formateError('Neni zadan text, nebo neni ohranicen uvozovkami.'))
+                    print(formateError('Neni zadan text, nebo neni ' +
+                                       'ohranicen uvozovkami.'))
                 else:
                     print(decodeText(txt[1:len(txt) - 1]))
             state = Enums.States.MENU

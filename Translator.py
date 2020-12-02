@@ -49,6 +49,7 @@ abeceda = {'A': '.-',
            '_': '..--.-',
            '@': '.--.-.'}
 
+
 def decodeChar(enc):
     """Metoda dekoduje znak z Morseovi abecedy do alfabeticke.
 
@@ -65,6 +66,7 @@ def decodeChar(enc):
         if (value == enc):
             return str(key)
     return '?'
+
 
 def encodeChar(dec):
     """Metoda kodujici znak z alfabeticke abecedy do Morseovi.
@@ -84,6 +86,7 @@ def encodeChar(dec):
             return str(value)
     return '..--..'
 
+
 def encode(txt):
     """Metoda kodujici string z alfabeticke abecedy do Morseovi.
 
@@ -100,6 +103,7 @@ def encode(txt):
     for i in range(0, len(txt)):
         enc = enc + encodeChar(txt[i]) + ' '
     return enc.rstrip()
+
 
 def decode(txt):
     """Metoda dekodujici string z Morseovi abecedy do alfabeticke.
@@ -123,4 +127,3 @@ def decode(txt):
             w = w + txt[i]
     dec = dec + decodeChar(w)
     return dec.rstrip()
-
