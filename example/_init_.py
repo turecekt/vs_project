@@ -16,7 +16,7 @@ def test_decrypt():
     assert decrypt("- . ... - .---- ..--- .--.-.") == "TEST12@"
     """Otestuje správnost zadáváného parametru (musí být str)"""
     assert decrypt(10) == \
-    "parameter musí být (str)"
+    "Parameter musí být (str)"
 
 
 def test_encrypt():
@@ -30,15 +30,15 @@ def test_encrypt():
     assert encrypt("test12@") == "- . ... - .---- ..--- .--.-. "
     """Otestuje správnost zadáváného parametru (musí být str)"""
     assert encrypt(10) == \
-    "parameter musí být (str)"
+    "Parameter musí být (str)"
 
 
 def test_choice():
     """Otestuje správnost parametru volajícho funkce pro kódování/dekódování morseovky."""
-    assert choice(0) == "špatný formát zadávání"   
+    assert choice(0) == "Špatný formát zadávání"   
     """Otestuje správnost parametru (nesmí být záporný)."""
     assert choice(-20) == \
-    "parametr nesmí být záporný"
+    "Parametr nesmí být záporný"
     """Otestuje správnost parametru (nesmí být str)."""
     assert choice("TEST") == \
-    "parametr musí být (int)"
+    "Parametr musí být (int)"

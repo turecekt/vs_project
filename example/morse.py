@@ -79,7 +79,7 @@ def encrypt(zprava):
     """
     
     if not isinstance(zprava, str):
-        return "parameter musí být str" 
+        return "Parameter musí být (str(" 
   
     zprava = zprava.upper()
     sifra = ''
@@ -105,7 +105,7 @@ def decrypt(zprava):
     """
     
     if not isinstance(zprava, str):
-        return "parameter musí být (str)" 
+        return "Parameter musí být (str)" 
     
     zprava += ' '
     vystup = ''
@@ -144,9 +144,9 @@ def choice(vyber):
     """
     
     if not isinstance(vyber, int):
-        return "parametr musí být (int)"
+        return "Parametr musí být (int)"
     if vyber < 0:
-        return "parametr nesmí být v záporný"
+        return "Parametr nesmí být v záporný"
     
     if vyber == 1:
         result = encrypt("TEST")
