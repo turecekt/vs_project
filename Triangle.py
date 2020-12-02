@@ -1,4 +1,5 @@
 """This is a project with four functions to calculate details about triangle.
+
 To determinate if we can get a triangle according to inputs and if so,
 to calcul lenght of the sides,
 to calcul perimetr and area of the triangle.
@@ -19,7 +20,8 @@ True
 
 
 def getCoords():
-    """ Check user input.
+    """Check user input.
+
     Keep asking user until the right numbers are entered.
     Returns:
         - array of coordinates
@@ -40,6 +42,7 @@ def getCoords():
 
 def checkNumbers(coords):
     """Check if all inputs are a numbers.
+
     Args:
         - coords
     Returns:
@@ -54,6 +57,7 @@ def checkNumbers(coords):
 
 def checkLenght(coords):
     """Check if input includes exactly six numbers.
+
     Args:
         - coords
     Returns:
