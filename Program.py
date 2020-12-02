@@ -112,7 +112,7 @@ while(appLoop):
     if (state == Enums.States.MENU):
         # menu
         print('MENU')
-        print('*****************************************************'+
+        print('*****************************************************' +
               '**********')
         print('Z - Zakodovat text do Morseovi abecedy')
         print('D - Dekodovat text z Morseovi abecedy')
@@ -125,7 +125,7 @@ while(appLoop):
             c = input('Zvolena akce: ')
             action = parseAction(c)
             if (action == Enums.Actions.UNKNOWN):
-                print(formateError('Chybne zvolena akce. Zvolte prosim akci'+
+                print(formateError('Chybne zvolena akce. Zvolte prosim akci' +
                                    ' dle menu.'))
         state = Enums.States.PROCCESS
     elif (state == Enums.States.PROCCESS):
@@ -144,10 +144,10 @@ while(appLoop):
                 else:
                     print(encodeText(txt[1:len(txt) - 1]))
             else:
-                txt = input('Vepiste text k dekodovani ohraniceny uvozovkami.' +
-                            ' Kazdy znak musi byt oddelen od predchoziho ' +
-                            ' mezerou. Provolene znaky jsou pouze ' +
-                            '"." a "-".\n')
+                txt = input('Vepiste text k dekodovani ohraniceny ' +
+                            'uvozovkami. Kazdy znak musi byt oddelen od ' +
+                            'predchoziho  mezerou. Provolene znaky jsou ' +
+                            'pouze "." a "-".\n')
                 if (not checkUserInputText(txt)):
                     print(formateError('Neni zadan text, nebo neni ' +
                                        'ohranicen uvozovkami.'))
