@@ -18,6 +18,8 @@ False
 True
 >>> computeSides(['0','0','4','1','2','6'])
 ('4.12', '5.39', '6.32')
+>>> isTriangle(4.12,5.39,6.32)
+True
 """
 
 
@@ -96,6 +98,24 @@ def computeSides(coords):
     c = str(round(c, 2))
 
     return (a, b, c)
+
+
+def isTriangle(a, b, c):
+    """Check if is it possible to make a triangle from the sides.
+
+    Function takes lenghts of three sides like parameter.
+    and compute returns wheter those sides can make a triangle or not.
+
+    Args:
+        - a,b,c lenghts of sides
+
+    Returns:
+        - True or False
+    """
+    if a + b > c or b + c > a or a + c > b:
+        return True
+    else:
+        return False
 
 
 if __name__ == '__main__':
