@@ -19,6 +19,8 @@ def compute(x):
     return x * x - 2 * x
 
 
+
+
 soubor = open('basnicka.txt', encoding='utf-8')
 obsah = soubor.read()
 soubor.close()
@@ -48,6 +50,7 @@ for x in str:
          
     else:
         count[x] = 1
+
 print(count)
 
 for x in count.keys ():
@@ -58,11 +61,22 @@ print("Počet různých znaků: ",len(count))
 MaxDictVal = max(count, key=count.get)
 print("Nejčetnější znak:",MaxDictVal)
 
-MinDictVal = min(count, key=count.get)
-print("Nejméně četný znak:",MinDictVal)
+"""MinDictVal = min(count, key=count.get)"""
+"""print("Nejméně četný znak:",MinDictVal)"""
 
 
 
+def nejmeneCetnyZnak(poctyZnaku):
+
+    MinDictVal = min(poctyZnaku, key=poctyZnaku.get)
+    return MinDictVal
+
+def kolikZnakuJeVtextu(obsah,nejmeneCetnyZnak):
+    return obsah.count(nejmeneCetnyZnak(poctyZnaku)
+                       
+
+    
+print("Nejméně četný znak FUNKCE:",nejmeneCetnyZnak(count))
 
 for x in count.keys ():
     if count[x] == 2:
