@@ -119,6 +119,88 @@ def isRightAngled(a, b, c):
     return sc == sa + sb or sb == sa + sc or sa == sb + sc
 
 
+def convertToIntCoordinates(inp):
+    """
+    Convert string array into int array.
+
+    Args:
+        inp: string array to be converted
+
+    Returns:
+        Int array from input
+    """
+    return [int(inp[0]), int(inp[1])]
+
+
+def computeLength(m, n):
+    """
+    Compute length between two coordinate arrays.
+
+    Args:
+        m: 1st coordinate array
+        n: 2nd coordinate array
+
+    Returns:
+        Distance between 2 coordinates in 2D grid
+    """
+    return sqrt(sqr(m[0] - n[0]) + sqr(m[1] - n[1]))
+
+
+def run(a, b, c):
+    """
+    Run program with user input.
+
+    Args:
+        a: A coordinate
+        b: B coordinate
+        c: C coordinate
+
+    Returns:
+        If triangle can be constructed, for tests
+    """
+    # Convert to int coordinate array
+    a_coord = convertToIntCoordinates(a)
+    b_coord = convertToIntCoordinates(b)
+    c_coord = convertToIntCoordinates(c)
+
+    # Calculate lengths
+    # a - BC
+    # b - AC
+    # c - AB
+    al = computeLength(b_coord, c_coord)
+    bl = computeLength(a_coord, c_coord)
+    cl = computeLength(a_coord, b_coord)
+    print("Lengths: a =", al, ", b =", bl, ", c =", cl)
+
+    if isConstructable(al, bl, cl):
+        print("Triangle can be constructed")
+        # Print triangle perimeter
+        print("Triangle perimeter:", calculatePerimeter(al, bl, cl))
+        # Print triangle area
+        print("Triangle area:", calculateArea(al, bl, cl))
+        # Print if triangle is right angled
+        print("Is right angled:", isRightAngled(al, bl, cl))
+        return True
+    else:
+        print("Triangle cannot be constructed")
+        return False
+
+
+def test_run():
+    """Test for run method."""
+    assert run(['0', '0'], ['15', '0'], ['0', '15'])
+
+
+def test_computeLength():
+    """Test for computeLength method."""
+    assert computeLength([0, 4], [15, 4]) == 15
+
+
+def test_convertToIntCoordinates():
+    """Test for convertToIntCoordinates method."""
+    assert [10, 15] == convertToIntCoordinates(['10', '15'])
+
+
 def test_sqrt():
     """Test for sqrt method."""
     assert sqrt(81) == 9
@@ -175,27 +257,5 @@ if __name__ == "__main__":
     b = getUserInput("Enter B coordinate in 2D grid")
     c = getUserInput("Enter C coordinate in 2D grid")
 
-    # Convert to int coordinate array
-    aCoord = [int(a[0]), int(a[1])]
-    bCoord = [int(b[0]), int(b[1])]
-    cCoord = [int(c[0]), int(c[1])]
-
-    # Calculate lengths
-    # a - BC
-    # b - AC
-    # c - AB
-    al = sqrt(sqr(bCoord[0] - cCoord[0]) + sqr(bCoord[1] - cCoord[1]))
-    bl = sqrt(sqr(aCoord[0] - cCoord[0]) + sqr(aCoord[1] - cCoord[1]))
-    cl = sqrt(sqr(aCoord[0] - bCoord[0]) + sqr(aCoord[1] - bCoord[1]))
-    print("Lengths: a =", al, ", b =", bl, ", c =", cl)
-
-    if isConstructable(al, bl, cl):
-        print("Triangle can be constructed")
-        # Print triangle perimeter
-        print("Triangle perimeter:", calculatePerimeter(al, bl, cl))
-        # Print triangle area
-        print("Triangle area:", calculateArea(al, bl, cl))
-        # Print if triangle is right angled
-        print("Is right angled:", isRightAngled(al, bl, cl))
-    else:
-        print("Triangle cannot be constructed")
+    # Execute program
+    run(a, b, c)
