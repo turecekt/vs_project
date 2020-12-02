@@ -37,6 +37,9 @@ def test_sqr():
 def test_calculatePerimeter():
     assert calculatePerimeter(15, 20, 25) == 60
 
+def test_calculateArea():
+    assert calculateArea(15, 20, 25) == 150
+
 if __name__ == "__main__":
     """
     Main function
