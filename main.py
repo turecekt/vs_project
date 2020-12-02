@@ -51,7 +51,7 @@ class Vector2:
         return f"[{self.xCoordinate}; {self.yCoordinate}]"
 
 
-def isConstructable():
+def isConstructable(sideA, sideB, sideC):
     """
     Find is triangle can be constructed.
 
@@ -59,7 +59,11 @@ def isConstructable():
     >>> isConstructable(???)
     ???
     """
-    return False
+    return (
+        sideA + sideB >= sideC
+        and sideB + sideC > sideA
+        and sideC + sideA > sideB
+    )
 
 
 def getSideLenght(pointA, pointB):
@@ -187,11 +191,9 @@ def main():
     pointC = None
 
     # uncomment these 3 lines below to skip CLI input and use parameter values
-    """
     pointA = Vector2(0, 0)
     pointB = Vector2(5, 0)
     pointC = Vector2(0, 5)
-    """
 
     # inform user about program functionality
     print()
@@ -233,6 +235,9 @@ def main():
                 print("Invalid input!")
                 print()
 
+    # calculating triangle constructability
+    canBeConstructed = isConstructable()
+
     # calculating side lenghts based of end points coordinates
     sideA = getSideLenght(pointA, pointB)
     sideB = getSideLenght(pointB, pointC)
@@ -248,10 +253,13 @@ def main():
     print("Point B coordinates => " + str(pointB))
     print("Point C coordinates => " + str(pointC))
     print("--------------------------------------------------------------")
+    print("Is triangle constructable? => " + str(canBeConstructed))
+    print("--------------------------------------------------------------")
     print("Triangle sides lengths:")
     print("Side A lenght => " + str(sideA))
     print("Side A lenght => " + str(sideB))
     print("Side A lenght => " + str(sideC))
+    print("--------------------------------------------------------------")
     print()
 
 
