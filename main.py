@@ -338,6 +338,15 @@ def main():
 if __name__ == '__main__':
     main()
 
+def test_isRawPointDataStringValid_1():
+    assert isRawPointDataStringValid("54[fds") is False
+
+def test_isRawPointDataStringValid_2():
+    assert isRawPointDataStringValid("[5;6]") is True
+
+def test_isRawPointDataStringValid_3():
+    assert isRawPointDataStringValid("[5,6]") is False
+
 
 def test_convertRawPointDataIntoVector_1():
     converetedVector = convertRawPointDataIntoVector("[5;5]")
