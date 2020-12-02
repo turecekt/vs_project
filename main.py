@@ -9,7 +9,7 @@ class Vector2:
         self.yCoordinate = yCoordinate
 
     def __str__(self):
-        return f"[{self.xCoordinate}, {self.yCoordinate}]"
+        return f"[{self.xCoordinate}; {self.yCoordinate}]"
 
 
 def isConstructable():
@@ -170,15 +170,28 @@ def main():
         print()
 
         # getting user input
+        # and converting raw data in string form into vector form
         print("Now enter your triangle coordinates:")
-        pointARawData = input('Enter first point: ')
-        pointBRawData = input('Enter second point: ')
-        pointCRawData = input('Enter third point: ')
+        while pointA is None:
+            pointARawData = input('Enter first point: ')
+            pointA = convertRawPointDataIntoVector(pointARawData)
+            if pointA is None:
+                print("Invalid input!")
+                print()
 
-        # converting raw data in string form into vector form
-        pointA = convertRawPointDataIntoVector(pointARawData)
-        pointB = convertRawPointDataIntoVector(pointBRawData)
-        pointC = convertRawPointDataIntoVector(pointCRawData)
+        while pointB is None:
+            pointBRawData = input('Enter second point: ')
+            pointB = convertRawPointDataIntoVector(pointBRawData)
+            if pointB is None:
+                print("Invalid input!")
+                print()
+
+        while pointC is None:
+            pointCRawData = input('Enter third point: ')
+            pointC = convertRawPointDataIntoVector(pointCRawData)
+            if pointC is None:
+                print("Invalid input!")
+                print()
 
     # calculating side lenghts based of end points coordinates
     sideA = getSideLenght(pointA, pointB)
