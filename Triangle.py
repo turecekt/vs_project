@@ -22,6 +22,8 @@ True
 True
 >>> computePerimeter(4.12,5.39,6.32)
 15.83
+>>> computeArea(4.12,5.39,6.32)
+11.0
 """
 
 
@@ -130,6 +132,21 @@ def computePerimeter(a, b, c):
         - a + b + c perimeter of a triangle
     """
     return a + b + c
+
+
+def computeArea(a, b, c):
+    """Get the area of a triangle.
+
+    Args:
+        - a,b,c lenghts of sides
+
+    Returns:
+        - totals area of a traingle
+    """
+    s = (a + b + c) / 2
+    totalS = round(sqrt(s*(s - a)*(s - b)*(s - c)), 2)
+
+    return totalS
 
 
 if __name__ == '__main__':
