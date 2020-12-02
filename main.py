@@ -197,9 +197,11 @@ def main():
     pointC = None
 
     # uncomment these 3 lines below to skip CLI input and use parameter values
+    """
     pointA = Vector2(0, 0)
     pointB = Vector2(5, 0)
     pointC = Vector2(0, 5)
+    """
 
     # inform user about program functionality
     print()
@@ -209,79 +211,96 @@ def main():
     print()
     print("This program gives you basic information about your triangle.")
 
-    if pointA is None and pointB is None and pointC is None:
-        print("You will be now asked to input coordinates of your triangle")
+    exitProgramTriggered = False
+    while not exitProgramTriggered:
+        if pointA is None and pointB is None and pointC is None:
+            print()
+            print("===================================================")
+            print("You will be now asked to input triangle coordinates")
+            print()
+            print("Please, input each point of triangle like this => [5;6]")
+            print("You can use decimal numbers like this => [5.1;6.5]")
+            print("Other input will be rejected!")
+            print()
+
+            # getting user input
+            # and converting raw data in string form into vector form
+            print("Now enter your triangle coordinates:")
+            while pointA is None:
+                pointARawData = input('Enter first point: ')
+                pointA = convertRawPointDataIntoVector(pointARawData)
+                if pointA is None:
+                    print("Invalid input!")
+                    print()
+
+            while pointB is None:
+                pointBRawData = input('Enter second point: ')
+                pointB = convertRawPointDataIntoVector(pointBRawData)
+                if pointB is None:
+                    print("Invalid input!")
+                    print()
+
+            while pointC is None:
+                pointCRawData = input('Enter third point: ')
+                pointC = convertRawPointDataIntoVector(pointCRawData)
+                if pointC is None:
+                    print("Invalid input!")
+                    print()
+
+        # calculating side lenghts based of end points coordinates
+        sideA = getSideLenght(pointB, pointC)
+        sideB = getSideLenght(pointC, pointA)
+        sideC = getSideLenght(pointA, pointB)
+
+        # calculating triangle constructability
+        canBeConstructed = isConstructable(sideA, sideB, sideC)
+
+        # calculating triangle perimeter
+        trianglePerimeter = getPerimeter(sideA, sideB, sideC)
+
+        # calculating triangle area
+        triangleArea = getArea(sideA, sideB, sideC)
+
+        # calculating if trianble is
+        isTriangleRightAngled = isRightAngled(sideA, sideB, sideC)
+
+        # displaying result information
         print()
-        print("Please, input each point of triangle like this => [5;6]")
-        print("You can use decimal numbers like this => [5.1;6.5]")
-        print("Other input will be rejected!")
-        print()
+        print("============================================================")
+        print("====================TRIANGLE INFORMATION====================")
+        print("============================================================")
+        print("Data used for calculations:")
+        print("Point A coordinates => " + str(pointA))
+        print("Point B coordinates => " + str(pointB))
+        print("Point C coordinates => " + str(pointC))
+        print("----------------------------------------------------------")
+        print("Is triangle constructable? => " + str(canBeConstructed))
+        print("----------------------------------------------------------")
+        if canBeConstructed:
+            print("Triangle sides lengths:")
+            print("Side A lenght => " + str(sideA))
+            print("Side B lenght => " + str(sideB))
+            print("Side C lenght => " + str(sideC))
+            print("----------------------------------------------------------")
+            print("Triangle perimeter: => " + str(trianglePerimeter))
+            print("----------------------------------------------------------")
+            print("Triangle area: => " + str(triangleArea))
+            print("----------------------------------------------------------")
+            print("Is triangle right angled? => " + str(isTriangleRightAngled))
+            print("----------------------------------------------------------")
+            print()
+        else:
+            print("No other info, triangle is non constructable!")
 
-        # getting user input
-        # and converting raw data in string form into vector form
-        print("Now enter your triangle coordinates:")
-        while pointA is None:
-            pointARawData = input('Enter first point: ')
-            pointA = convertRawPointDataIntoVector(pointARawData)
-            if pointA is None:
-                print("Invalid input!")
-                print()
-
-        while pointB is None:
-            pointBRawData = input('Enter second point: ')
-            pointB = convertRawPointDataIntoVector(pointBRawData)
-            if pointB is None:
-                print("Invalid input!")
-                print()
-
-        while pointC is None:
-            pointCRawData = input('Enter third point: ')
-            pointC = convertRawPointDataIntoVector(pointCRawData)
-            if pointC is None:
-                print("Invalid input!")
-                print()
-
-    # calculating side lenghts based of end points coordinates
-    sideA = getSideLenght(pointB, pointC)
-    sideB = getSideLenght(pointC, pointA)
-    sideC = getSideLenght(pointA, pointB)
-
-    # calculating triangle constructability
-    canBeConstructed = isConstructable(sideA, sideB, sideC)
-
-    # calculating triangle perimeter
-    trianglePerimeter = getPerimeter(sideA, sideB, sideC)
-
-    # calculating triangle area
-    triangleArea = getArea(sideA, sideB, sideC)
-
-    # calculating if trianble is
-    isTriangleRightAngled = isRightAngled(sideA, sideB, sideC)
-
-    # displaying result information
-    print()
-    print("==============================================================")
-    print("====================TRIANGLE INFORMATION======================")
-    print("==============================================================")
-    print("Data used for calculations:")
-    print("Point A coordinates => " + str(pointA))
-    print("Point B coordinates => " + str(pointB))
-    print("Point C coordinates => " + str(pointC))
-    print("--------------------------------------------------------------")
-    print("Is triangle constructable? => " + str(canBeConstructed))
-    print("--------------------------------------------------------------")
-    print("Triangle sides lengths:")
-    print("Side A lenght => " + str(sideA))
-    print("Side B lenght => " + str(sideB))
-    print("Side C lenght => " + str(sideC))
-    print("--------------------------------------------------------------")
-    print("Triangle perimeter: => " + str(trianglePerimeter))
-    print("--------------------------------------------------------------")
-    print("Triangle area: => " + str(triangleArea))
-    print("--------------------------------------------------------------")
-    print("Is triangle right angled? => " + str(isTriangleRightAngled))
-    print("--------------------------------------------------------------")
-    print()
+        exitProgramTriggered = True
+        pointA = None
+        pointB = None
+        pointC = None
+        print("Send 'r' to calculate new triangle")
+        print("Send any other key to exit program or press 'Enter'")
+        logicEndUserInput = input("Your input: ")
+        if logicEndUserInput == 'r' or logicEndUserInput == 'R':
+            exitProgramTriggered = False
 
 
 # Executes the main function
