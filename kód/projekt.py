@@ -1,11 +1,11 @@
 import math
 
-inp = input('Zadaj body s ciarkou a body oddel medzerou: ')
-array = inp.split(' ')
+#inp = input('Zadaj body s ciarkou a body oddel medzerou: ')
 
-A = array[0].split(',')
-B = array[1].split(',')
-C = array[2].split(',')
+
+A = [7,5]
+B = [-4,10]
+C = [1,1]
 
 a = math.sqrt(((int(B[0])-int(A[0]))**2)+((int(B[1])-int(A[1]))**2))
 b = math.sqrt(((int(C[0])-int(A[0]))**2)+((int(C[1])-int(A[1]))**2))
