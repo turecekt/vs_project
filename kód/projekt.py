@@ -20,7 +20,9 @@ else:
 #---------------------
 print('Obvod = ',round(a+b+c,4),'Obsah = ',round(a*(b*math.sin(math.acos((a**2 + b**2 - c**2)/(2*a*b))))/2,4))
 #---------------------
-if(a**2 + b**2 == c**2 or a**2 + c**2 == b**2 or b**2 + c**2 == a**2):
-    print('Je pravouhly')
-else:
-    print('Neni pravouhly')
+def pravouhlost(a,b,c):
+    if(a2 + b2 == c2 or a2 + c2 == b2 or b2 + c2 == a**2):
+        print('Je pravouhly')
+    else:
+        print('Neni pravouhly')
+pravouhlost(a,b,c)
