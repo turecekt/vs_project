@@ -122,7 +122,10 @@ while(appLoop):
         # akce zadana uzivatelem
         action = Enums.Actions.UNKNOWN
         while (action == Enums.Actions.UNKNOWN):
-            '''c = input('Zvolena akce: ')'''
+            '''
+            pokud se pouziva input, nefunguje pytest na githubu
+            c = input('Zvolena akce: ')
+            '''
             c = "Z"
             action = parseAction(c)
             if (action == Enums.Actions.UNKNOWN):
@@ -137,8 +140,11 @@ while(appLoop):
             print('**************************************************' +
                   '*************')
             if (action == Enums.Actions.ENCODE):
-                '''txt = input('Vepiste text k zakodovani ohraniceny uvozovkami' +
-                            ' a bez diakritiky.\n')'''
+                '''
+                pokud se pouziva input, nefunguje pytest na githubu
+                txt = input('Vepiste text k zakodovani ohraniceny uvozovkami' +
+                            ' a bez diakritiky.\n')
+                '''
                 txt = 'test'
                 if (not checkUserInputText(txt)):
                     print(formateError('Neni zadan text, nebo neni ' +
