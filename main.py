@@ -1,14 +1,53 @@
+"""
+Import decimal value type.
+
+Returns:
+    [type]: [description]
+"""
 from decimal import Decimal
 
+
 class Vector2:
+    """
+    A class to represent a 2D plane position in form of a Vector 2D.
+
+    Attributes
+    ----------
+    xCoordinate : str
+        x coordinate position in plane
+    yCoordinate : str
+        y coordinate position in plane
+
+    Methods
+    -------
+    __init__(xCoordinate, yCoordinate):
+        Constructs new instance of the class
+
+    __str__()
+        Overrides default str() behaviour
+    """
+
     xCoordinate = 0
     yCoordinate = 0
 
     def __init__(self, xCoordinate, yCoordinate):
+        """
+        Vector2 constructor.
+
+        Args:
+            xCoordinate ([Decimal]): X coordinate as decimal
+            yCoordinate ([Decimal]): Y coordinate as decimal
+        """
         self.xCoordinate = xCoordinate
         self.yCoordinate = yCoordinate
 
     def __str__(self):
+        """
+        Override str() for Vector2 class.
+
+        Returns:
+            [string]: "vector2 class in formatted string form"
+        """
         return f"[{self.xCoordinate}; {self.yCoordinate}]"
 
 
@@ -141,6 +180,7 @@ def convertRawPointDataIntoVector(rawData):
 
 
 def main():
+    """Execute main logic flow of the program."""
     # defining star variables
     pointA = None
     pointB = None
