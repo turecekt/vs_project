@@ -339,11 +339,25 @@ if __name__ == '__main__':
     main()
 
 
+def test_isConstructable_1():
+    assert isConstructable(2, 2, 3) is True
+
+
+def test_isConstructable_1():
+    assert isConstructable(2, 8, 7) is True
+
+
+def test_isConstructable_1():
+    assert isConstructable(1, 1, 2) is False
+
+
 def test_getSideLenght_1():
     assert (getSideLenght(Vector2(0, 0), Vector2(0, 1)) == 1) is True
 
+
 def test_getSideLenght_2():
     assert (getSideLenght(Vector2(0, 0), Vector2(8, 0)) == 1) is False
+
 
 def test_getSideLenght_3():
     assert (getSideLenght(Vector2(-2, 8), Vector2(-2, 1)) == 7) is True
