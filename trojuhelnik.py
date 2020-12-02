@@ -7,7 +7,7 @@ def getUserInput(message):
     return inp.split()
 
 def sqrt(n):
-    return n ** 1/2
+    return n ** (1/2)
 
 def sqr(n):
     return n * n
