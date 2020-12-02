@@ -137,9 +137,9 @@ def isRightAngled(sideA, sideB, sideC):
     sideBPow = math.pow(sideB, 2)
     sideCPow = math.pow(sideC, 2)
     return (
-        (isclose(sideAPow + sideBPow, sideCPow, abs_tol=0.0001))
-        or (isclose(sideCPow + sideBPow, sideAPow, abs_tol=0.0001))
-        or (isclose(sideAPow + sideCPow, sideBPow, abs_tol=0.0001))
+        (isclose(sideAPow + sideBPow, sideCPow, abs_tol=0.00001))
+        or (isclose(sideCPow + sideBPow, sideAPow, abs_tol=0.00001))
+        or (isclose(sideAPow + sideCPow, sideBPow, abs_tol=0.00001))
     )
 
 
@@ -337,6 +337,15 @@ def main():
 # Executes the main function
 if __name__ == '__main__':
     main()
+
+def test_isRightAngled_1():
+    assert isRightAngled(2, 2, 5) is False
+
+def test_isRightAngled_2():
+    assert isRightAngled(2.82843, 2, 2) is False
+
+def test_isRightAngled_3():
+    assert isRightAngled(5, 1, 5) is False
 
 def test_isRawPointDataStringValid_1():
     assert isRawPointDataStringValid("54[fds") is False
