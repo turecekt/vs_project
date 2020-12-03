@@ -27,7 +27,7 @@ class Vector2:
     xCoordinate = 0
     yCoordinate = 0
 
-    def __init__(self, xCoordinate, yCoordinate):
+    def __init__(self, xCoordinate, yCoordinate):  # pragma: no cover
         """
         Vector2 constructor.
 
@@ -38,7 +38,7 @@ class Vector2:
         self.xCoordinate = xCoordinate
         self.yCoordinate = yCoordinate
 
-    def __str__(self):
+    def __str__(self):  # pragma: no cover
         """
         Override str() for Vector2 class.
 
@@ -214,7 +214,7 @@ def convertRawPointDataIntoVector(rawData):
         return Vector2(firstCoordinate, secondCoordinate)
 
 
-def main():
+def main():  # pragma: no cover
     """Execute main logic flow of the program."""
     # defining star variables
     pointA = None
@@ -337,7 +337,6 @@ def main():
 # Executes the main function
 if __name__ == '__main__':
     main()
-
 
 def test_isConstructable_1():
     assert isConstructable(2, 2, 3) is True
