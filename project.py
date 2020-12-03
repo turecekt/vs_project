@@ -103,6 +103,7 @@ def menuVyber(vyber):
     False
     >>> menuVyber('1')
     Zadejte morseovku/text který chcete přeložit
+    '1'
     """
     if vyber == '':
         return False
