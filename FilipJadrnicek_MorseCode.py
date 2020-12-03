@@ -1,5 +1,6 @@
 # Last changes 23.11.2020
 # Morse code coder and decoder
+# Creator - Filip Jadrnicek
 
 letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I",
            "J", "K", "L", "M", "N", "O", "P", "Q", "R",
@@ -61,8 +62,10 @@ def unit_test():
 
     checks = 0
     stringCheck = "abcdefghijklmnopqrstuvwxyz0123456789"
-    morseCodeCheck = ".-|-...|-.-.|-..|.|...-.|--.|....|..|.---|-.-|.-..|--|-.|---|.--.|--.-|.-.|" \
-                     "...|-|..-|...-|.--|-..-|-.--|--..|-----|.----|..---|...--|....-|.....|-....|--...|---..|----.|"
+    morseCodeCheck = ".-|-...|-.-.|-..|.|...-.|--.|....|..|.---|-.-" \
+                     "|.-..|--|-.|---|.--.|--.-|.-.|" \
+                     "...|-|..-|...-|.--|-..-|-.--|--..|-----|.----" \
+                     "|..---|...--|....-|.....|-....|--...|---..|----.|"
     checkMorse = []
 
     morseCodeCheckFinal = convert_to_letter(morseCodeCheck)
@@ -90,7 +93,8 @@ if unit_test():
 
     code = input("Enter morse code or sentence: ")
 
-    # Checking what is first char in input, if it is . or - it will use convert to letter function
+    # Checking what is first char in input, if it is . or -
+    # it will use convert to letter function
     if is_code(code[0]):
         final = convert_to_letter(code)
         if final == -1 or final == '':
