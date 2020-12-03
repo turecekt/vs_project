@@ -40,8 +40,12 @@ def pravouhlost(a,b,c):
     else:
         return False
 
-print(obvod(dlzkastrany(Ax,Ay,Bx,By),dlzkastrany(Bx,By,Cx,Cy),dlzkastrany(Ax,Ay,Cx,Cy)))
-print(obsah(dlzkastrany(Ax,Ay,Bx,By),dlzkastrany(Bx,By,Cx,Cy),dlzkastrany(Ax,Ay,Cx,Cy)))
+print('Obvod trojuholnika ABC je',obvod(dlzkastrany(Ax,Ay,Bx,By),dlzkastrany(Bx,By,Cx,Cy),dlzkastrany(Ax,Ay,Cx,Cy)))
+print('Obsah trojuholnika ABC je',obsah(dlzkastrany(Ax,Ay,Bx,By),dlzkastrany(Bx,By,Cx,Cy),dlzkastrany(Ax,Ay,Cx,Cy)))
+if(zostrojenost(dlzkastrany(Ax, Ay, Bx, By),dlzkastrany(Ax, Ay, Cx, Cy),dlzkastrany(Bx, By, Cx, Cy))==True):
+    print('Trojuholník ABC sa dá zostrojiť')
+else:
+    print('Trojuholník sa nedá zostrojiť')
 
 #--------unit testy--------
 def dlzkastrany_test():
