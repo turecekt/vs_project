@@ -7,25 +7,25 @@ Authors: Filip Jadrnicek <https://github.com/gearszero>
 
 ---------------------------------------------------
 
-THIS PROJECT CODES AND DECODES MORSE CODE IN PYTHON
-PROJECT WAS MADE SINGLE-HANDEDLY BY FILIP JADRNICEK
+THIS PROJECT CODES AND DECODES MORSE CODE IN PYTHON.
+PROJECT WAS MADE SINGLE-HANDEDLY BY FILIP JADRNICEK.
 
 ---------------------------------------------------
 
 ---------------------------------------------------
 
 HOW TO USE:
-    INPUT EXAMPLE: abcd or AaBbCc or AaBbCc123654
-    Please don't use anything else then alphabet or numbers
+    INPUT EXAMPLE: abcd or AaBbCc or AaBbCc123654.
+    Please don't use anything else then alphabet or numbers.
 
     INPUT EXAMPLE:.-|-...|-.-.|
-    This input will decode morse code
+    This input will decode morse code.
 
     !PLEASE DON'T COMBINE MORSE CODE AND ALPHABET!
 
 ---------------------------------------------------
 
-This document owns University of Thomas Bata in Zlin (UTB FAI)
+This document owns University of Thomas Bata in Zlin (UTB FAI).
 
 """
 letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I",
@@ -43,8 +43,7 @@ morseCode = [".-|", "-...|", "-.-.|", "-..|", ".|", "...-.|",
 
 
 def is_code(letter):
-    """Checking if input is morse code or not"""
-
+    """Checking if input is morse code or not."""
     if letter == "." or letter == "-":
         return True
 
@@ -53,8 +52,7 @@ def is_code(letter):
 
 
 def convert_to_code(letter):
-    """Converting input in letters to morse code"""
-
+    """Converting input in letters to morse code."""
     global letters
 
     if letter not in letters:
@@ -65,7 +63,7 @@ def convert_to_code(letter):
 
 
 def convert_to_letter(code):
-    """Converting morse code input to letters"""
+    """Converting morse code input to letters."""
     global morseCode
 
     tmp = code.split("|")
@@ -83,8 +81,7 @@ def convert_to_letter(code):
 
 
 def unit_test():
-    """Unit testing"""
-
+    """Unit testing."""
     checks = 0
     stringCheck = "abcdefghijklmnopqrstuvwxyz0123456789"
     morseCodeCheck = ".-|-...|-.-.|-..|.|...-.|--.|....|..|.---|-.-" \
@@ -114,8 +111,7 @@ def unit_test():
 
 
 if unit_test():
-    """Checking if unit test return true"""
-
+    """Checking if unit test return true."""
     code = input("Enter morse code or sentence: ")
 
     # Checking what is first char in input, if it is . or -
