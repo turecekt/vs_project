@@ -406,7 +406,7 @@ def test_isRightAngled_1():
 
 def test_isRightAngled_2():
     """Unit test for IsRightAngled."""
-    assert isRightAngled(2.82843, 2, 2) is False
+    assert isRightAngled(2.82843, 2, 2) is True
 
 
 def test_isRightAngled_3():
