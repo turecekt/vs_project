@@ -73,19 +73,28 @@ def MetodaPravidelDelitelnosti():
     pass
 
 def DeterministickaMetoda():
-    #Funkce zkouší zjistit prvočíslo Deterministickou metodou
+    # Funkce zkouší zjistit prvočíslo Deterministickou metodou
 
     pass
 
-def HeurestickaMetoda():
-    #Funkce zkouší zjistit prvočíslo Heurestickou metodou
 
+def HeurestickaMetoda(o):
+    """Funkce zkouší zjistit prvočíslo Heurestickou metodou ((n-1)!+1)%n."""
+    k = 1
+    factorial = 1
+    for k in range(1, int(o)):
+        factorial = factorial * k
+    number = factorial + 1
+    if int(number) % int(o) == 0:
+        return print("Je prvocislo")
+    else:
+        return print("Nie je prvocislo")
     pass
 
-#FUNKCE MAIN >>
-moznePrvocislo = Vstup()            # Získá vstup od uživatele
+# FUNKCE MAIN >>
+moznePrvocislo = input("Zadajte cislo: ")            # Získá vstup od uživatele
 
-if(moznePrvocislo > 0):             # Otestuje chybový vstup
+if(moznePrvocislo > 1):             # Otestuje chybový vstup
     Vystup(Metody(moznePrvocislo))  # Vystup s řešením
 else:
-    Vystup()                        # Vystup s chybovou hláškou
+    print("-1")                        # Vystup s chybovou hláškou
