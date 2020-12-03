@@ -44,7 +44,21 @@ for i in text.lower():
         all_freq[i] = 1
 least = min(all_freq, key = all_freq.get)
 print("Nejménně použitý znak je ", least)
-    
 
+for prumer in text:
+    data = []
+    with open(soubor) as f:
+        for slovo in f:
+            fields = slovo.split()
+            radky = map(str, fields)
+            data.extend(radky)
+#print([char for char in text])  
+print('Počet znaků v textu')
+c = collections.Counter(text.lower())
+for CislaPrumeros in 'abcdefghijklmnopqrstuvwxyz 1234567890':   
+    print(CislaPrumeros,':' ,c[CislaPrumeros], ', ', sep='', end='', flush=True)
+for i in c:
+       c.pop(CislaPrumeros)
 
+print('')
 input("\nKlávesou ENTER ukončíte program...")
