@@ -338,89 +338,111 @@ def main():  # pragma: no cover
 if __name__ == '__main__':
     main()
 
+
 def test_isConstructable_1():
+    """Unit test for IsConstructable."""
     assert isConstructable(2, 2, 3) is True
 
 
 def test_isConstructable_2():
+    """Unit test for IsConstructable."""
     assert isConstructable(2, 8, 7) is True
 
 
 def test_isConstructable_3():
+    """Unit test for IsConstructable."""
     assert isConstructable(1, 1, 2) is False
 
 
 def test_getSideLenght_1():
+    """Unit test for GetSideLenght."""
     assert (getSideLenght(Vector2(0, 0), Vector2(0, 1)) == 1) is True
 
 
 def test_getSideLenght_2():
+    """Unit test for GetSideLenght."""
     assert (getSideLenght(Vector2(0, 0), Vector2(8, 0)) == 1) is False
 
 
 def test_getSideLenght_3():
+    """Unit test for GetSideLenght."""
     assert (getSideLenght(Vector2(-2, 8), Vector2(-2, 1)) == 7) is True
 
 
 def test_getPerimeter_1():
+    """Unit test for GetPerimeter."""
     assert (getPerimeter(1, 2, 2) == 5) is True
 
 
 def test_getPerimeter_2():
+    """Unit test for GetPerimeter."""
     assert (getPerimeter(8, 2, 2) == 12) is True
 
 
 def test_getPerimeter_3():
+    """Unit test for GetPerimeter."""
     assert (getPerimeter(8, 2, 2) == 5) is False
 
 
 def test_getArea_1():
+    """Unit test for GetArea."""
     assert isclose(getArea(2, 4, 5), 3.8, abs_tol=0.001) is True
 
 
 def test_getArea_2():
+    """Unit test for GetArea."""
     assert isclose(getArea(2.82843, 2, 2), 5, abs_tol=0.001) is False
 
 
 def test_getArea_3():
+    """Unit test for GetArea."""
     assert isclose(getArea(5, 1, 5), 2.4875, abs_tol=0.001) is True
 
 
 def test_isRightAngled_1():
+    """Unit test for IsRightAngled."""
     assert isRightAngled(2, 2, 5) is False
 
 
 def test_isRightAngled_2():
+    """Unit test for IsRightAngled."""
     assert isRightAngled(2.82843, 2, 2) is False
 
 
 def test_isRightAngled_3():
+    """Unit test for IsRightAngled."""
     assert isRightAngled(5, 1, 5) is False
 
 
 def test_isRawPointDataStringValid_1():
+    """Unit test for IsRawPointDataStringValid."""
     assert isRawPointDataStringValid("54[fds") is False
 
 
 def test_isRawPointDataStringValid_2():
+    """Unit test for IsRawPointDataStringValid."""
     assert isRawPointDataStringValid("[5;6]") is True
 
 
 def test_isRawPointDataStringValid_3():
+    """Unit test for IsRawPointDataStringValid."""
     assert isRawPointDataStringValid("[5,6]") is False
 
 
 def test_convertRawPointDataIntoVector_1():
+    """Unit test for ConvertRawPointDataIntoVector."""
     converetedVector = convertRawPointDataIntoVector("[5;5]")
     vectorToCompare = Vector2(5, 5)
     assert str(converetedVector) == str(vectorToCompare)
 
 
 def test_convertRawPointDataIntoVector_2():
+    """Unit test for ConvertRawPointDataIntoVector."""
     assert convertRawPointDataIntoVector("{5,5}") is None
 
 
 def test_convertRawPointDataIntoVector_3():
+    """Unit test for ConvertRawPointDataIntoVector."""
     converetedVector = convertRawPointDataIntoVector("[-5;5.8]")
     vectorToCompare = Vector2(-5, 5.8)
     assert str(converetedVector) == str(vectorToCompare)
