@@ -71,7 +71,7 @@ def morsedecrypt(txt):
 
 
 def startMenu(parametr):
-    """Generate output of translation
+    """Generate output of translation.
 
     Args:
         parametr: Get info from user
@@ -93,7 +93,7 @@ def startMenu(parametr):
 
 
 def menuVyber(vyber):
-    """Check if valid input is inserted
+    """Check if valid input is inserted.
 
     Args:
         vyber: Get string from user
@@ -104,26 +104,25 @@ def menuVyber(vyber):
     >>> menuVyber('1')
     Zadejte morseovku/text který chcete přeložit
     """
-
     if vyber == '':
         return False
     else:
         print("Zadejte morseovku/text který chcete přeložit")
+        return vyber
 
 
 def vypisText(text, menuVyber):
-    """
+    """Show translated user text.
 
     Args:
         text: Get user inputed text that will  be translated
         menuVyber: Get choice from before that is needed in translation
 
-    Returns:
+    Returns: String of translated user input
     >>> vypisText('A', '2')
     .-
     >>> vypisText('A', '')
     False
-
     """
     if menuVyber == '1':
         print(morseencrypt(text))
@@ -133,7 +132,6 @@ def vypisText(text, menuVyber):
         return False
 
 
-
 arg = sys.argv
 if 'menu' not in arg:
     print('Překlad slova Ahoj do morseovky:')
@@ -141,5 +139,6 @@ if 'menu' not in arg:
     print(morsedecrypt(text))
 else:
     startMenu('start')
-    menuVyber(input(':'))
-    vypisText(input(':'), menuVyber)
+    vyber = (input(':'))
+    menuVyber(vyber)
+    vypisText(input(':'), menuVyber(vyber))
