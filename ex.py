@@ -1,3 +1,4 @@
+"""Example file to test decryption & encryption."""
 from morse import MorseTranslator
 
 translator = MorseTranslator()
