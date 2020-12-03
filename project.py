@@ -79,15 +79,15 @@ def startMenu(parametr):
     Returns: Translation of user or static string
     >>> startMenu('text')
     False
+    >>> startMenu('start')
+    Menu: (Zadejte číslo, popřípadě zmáčkněte enter)
+    1: Překlad z morseovky do abecedy
+    2: Překlad z abecedy do morseovky
     """
     if parametr == 'start':
         print("Menu: (Zadejte číslo, popřípadě zmáčkněte enter)")
         print("1: Překlad z morseovky do abecedy")
         print("2: Překlad z abecedy do morseovky")
-        print("Pro ukončení programu zmáčkněte ENTER")
-        print("********************************")
-        print("Vyberte jednu z možností výše")
-
     else:
         return False
 
@@ -124,6 +124,8 @@ def vypisText(text, menuVyber):
     .-
     >>> vypisText('A', '')
     False
+    >>> vypisText('.-', '1')
+    A
     """
     if menuVyber == '1':
         print(morseencrypt(text))
