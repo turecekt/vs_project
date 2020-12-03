@@ -80,7 +80,7 @@ class MorseCodeTranslator:
 
         if "    " in morse:
             if strict:
-                return "Unable to translate morse code (4 spaces)."
+                return "Unable to translate morse code."
             else:
                 morse.replace("    ", "   ")
 
