@@ -14,6 +14,7 @@ This program is free to use....
 Morse code encryptor to and from morse code
 
 """
+import sys
 
 library = {'A': '.-', 'B': '-...',
            'C': '-.-.', 'D': '-..', 'E': '.',
@@ -32,6 +33,7 @@ library = {'A': '.-', 'B': '-...',
            '(': '-.--.', ')': '-.--.-', ' ': '.....'}
 
 
+
 def morseencrypt(txt):
     """Convert morse code to latin from user inserted txt.
 
@@ -44,6 +46,7 @@ def morseencrypt(txt):
     """
     translation = ''
     lib_encrypt = dict([(v, k) for k, v in library.items()])
+    txt = txt.split(' ')
     for x in txt:
         translation += lib_encrypt.get(x)
     return translation.strip()
@@ -66,38 +69,42 @@ def morsedecrypt(txt):
     return translation.strip()
 
 
-"""Menu section."""
-pokracuj = True
-while pokracuj:
-    print("Menu: (Zadejte číslo, popřípadě zmáčkněte enter)")
-    print("1: Překlad z morseovky do abecedy")
-    print("2: Překlad z abecedy do morseovky")
-    print("Pro ukončení programu zmáčkněte ENTER")
-    print("********************************")
-    print("Vyberte jednu z možností výše")
-    vyber = input(":")
-    if vyber == "":
-        exit()
-    else:
-        print("Zadejte morseovku/text který chcete přeložit")
-        text = input(":")
-        if vyber == "1":
-            print(morseencrypt(text))
-            print("Chcete zpátky do menu a opakovat program? y/n")
-            pokracuj = input().upper()
-            if pokracuj == "N":
-                pokracuj = False
-            else:
-                pokracuj = True
-        elif vyber == "2":
-            print(morsedecrypt(text))
-            print("Chcete zpátky do menu a opakovat program? y/n")
-            pokracuj = input().upper()
-            if pokracuj == "N":
-                pokracuj = False
-            else:
-                pokracuj = True
-        else:
-            exit()
+if len(sys.argv) < 5:
+    print('Překlad slova Ahoj do morseovky:')
+    text = 'Ahoj'
+    print(morsedecrypt(text))
 else:
-    exit()
+    pokracuj = True
+    while pokracuj:
+        print("Menu: (Zadejte číslo, popřípadě zmáčkněte enter)")
+        print("1: Překlad z morseovky do abecedy")
+        print("2: Překlad z abecedy do morseovky")
+        print("Pro ukončení programu zmáčkněte ENTER")
+        print("********************************")
+        print("Vyberte jednu z možností výše")
+        vyber = input(":")
+        if vyber == "":
+            exit()
+        else:
+            print("Zadejte morseovku/text který chcete přeložit")
+            text = input(":")
+            if vyber == "1":
+                print(morseencrypt(text))
+                print("Chcete zpátky do menu a opakovat program? y/n")
+                pokracuj = input().upper()
+                if pokracuj == "N":
+                    pokracuj = False
+                else:
+                    pokracuj = True
+            elif vyber == "2":
+                print(morsedecrypt(text))
+                print("Chcete zpátky do menu a opakovat program? y/n")
+                pokracuj = input().upper()
+                if pokracuj == "N":
+                    pokracuj = False
+                else:
+                    pokracuj = True
+            else:
+                exit()
+    else:
+        exit()
