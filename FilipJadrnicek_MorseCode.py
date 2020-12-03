@@ -157,7 +157,7 @@ def launch(zprava):
 
 def test_is_code():
     """Use this function for testing code."""
-    assert is_code(".")
+    assert is_code(".") == True
 
 
 def test_convert_to_letter():
