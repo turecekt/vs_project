@@ -5,30 +5,41 @@ to calcul lenght of the sides,
 to calcul perimetr and area of the triangle.
 
 Unit tests:
->>> getCoords()
-['1', '2', '3', '4', '5', '6']
+
 >>> checkNumbers(['1','x','3','y','5','6'])
 False
 >>> checkNumbers(['1','2','3','4','5','6'])
 True
+
 >>> checkLenght(['1','2','3','4'])
 False
 >>> checkLenght(['1','2','3','4','5','6','7','8'])
 False
 >>> checkLenght(['1','2','3','4','5','6'])
 True
+
 >>> computeSides(['1','2','3','4','5','6'])
 ('2.83', '2.83', '5.66')
 >>> computeSides(['0','0','4','1','2','6'])
 ('4.12', '5.39', '6.32')
+
 >>> isTriangle(4.12,5.39,6.32)
 True
 >>> isTriangle(2.83,2.83,5.66)
 False
+
 >>> computePerimeter(4.12,5.39,6.32)
 15.83
+
 >>> computeArea(4.12,5.39,6.32)
 11.0
+
+>>> output(4.12, 5.39, 6.32)
+Lenghts of the sides:
+Sides: a = 4.12, side b = 5.39, side c = 6.32
+Is it possible to make a triangle: True
+Perimter = 15.83
+Area = 11.0
 """
 
 
@@ -42,15 +53,15 @@ def getCoords():
     Returns:
         - array of coordinates
     """
-    # coords = input("Enter numbers x1,y1,x2,y2,x3,y3 seperated by coma:")
-    coords = "1,2,3,4,5"
+    coords = input("Enter numbers x1,y1,x2,y2,x3,y3 seperated by coma:")
+    # coords = "1,2,3,4,5"
     coords = coords.split(",")
 
     while (True):
         if(checkNumbers(coords) and checkLenght(coords)):
             break
-        # coords = input("Incorrect input. Please try again:")
-        coords = "1,2,3,4,5,6"
+        coords = input("Incorrect input. Please try again:")
+        # coords = "1,2,3,4,5,6"
         coords = coords.split(",")
 
     return coords
@@ -176,4 +187,7 @@ def output(a, b, c):
 if __name__ == '__main__':
     coords = getCoords()
     sides = computeSides(coords)
-    output(sides[0], sides[1], sides[2])
+    a = float(sides[0])
+    b = float(sides[1])
+    c = float(sides[2])
+    output(a, b, c)
