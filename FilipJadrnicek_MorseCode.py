@@ -1,7 +1,33 @@
-# Last changes 23.11.2020
-# Morse code coder and decoder
-# Creator - Filip Jadrnicek
+"""
+FilipJadrnicek_MorseCode.py
 
+version:    10
+
+Authors: Filip Jadrnicek <https://github.com/gearszero>
+
+---------------------------------------------------
+
+THIS PROJECT CODES AND DECODES MORSE CODE IN PYTHON
+PROJECT WAS MADE SINGLE-HANDEDLY BY FILIP JADRNICEK
+
+---------------------------------------------------
+
+---------------------------------------------------
+
+HOW TO USE:
+    INPUT EXAMPLE: abcd or AaBbCc or AaBbCc123654
+    Please don't use anything else then alphabet or numbers
+
+    INPUT EXAMPLE:.-|-...|-.-.|
+    This input will decode morse code
+
+    !PLEASE DON'T COMBINE MORSE CODE AND ALPHABET!
+
+---------------------------------------------------
+
+This document owns University of Thomas Bata in Zlin (UTB FAI)
+
+"""
 letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I",
            "J", "K", "L", "M", "N", "O", "P", "Q", "R",
            "S", "T", "U", "V", "W", "X", "Y", "Z", "0", "1",
