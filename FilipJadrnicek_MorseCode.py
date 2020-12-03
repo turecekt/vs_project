@@ -42,8 +42,8 @@ morseCode = [".-|", "-...|", "-.-.|", "-..|", ".|", "...-.|",
              "---..|", "----.|", " "]
 
 
-# Checking if input is morse code or not
 def is_code(letter):
+    """Checking if input is morse code or not"""
 
     if letter == "." or letter == "-":
         return True
@@ -52,8 +52,8 @@ def is_code(letter):
         return False
 
 
-# Converting input in letters to morse code
 def convert_to_code(letter):
+    """Converting input in letters to morse code"""
 
     global letters
 
@@ -64,9 +64,8 @@ def convert_to_code(letter):
     return morseCode[i]
 
 
-# Converting morse code input to letters
 def convert_to_letter(code):
-
+    """Converting morse code input to letters"""
     global morseCode
 
     tmp = code.split("|")
@@ -83,8 +82,8 @@ def convert_to_letter(code):
     return tmp
 
 
-# Unit testing
 def unit_test():
+    """Unit testing"""
 
     checks = 0
     stringCheck = "abcdefghijklmnopqrstuvwxyz0123456789"
@@ -114,8 +113,8 @@ def unit_test():
         return False
 
 
-# Checking if unit test return true
 if unit_test():
+    """Checking if unit test return true"""
 
     code = input("Enter morse code or sentence: ")
 
