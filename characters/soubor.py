@@ -49,16 +49,20 @@ for prumer in text:
     data = []
     with open(soubor) as f:
         for slovo in f:
-            fields = slovo.split()
-            radky = map(str, fields)
+            pole = slovo.split()
+            radky = map(str, pole)
             data.extend(radky)
 #print([char for char in text])  
 print('Počet znaků v textu')
 c = collections.Counter(text.lower())
-for CislaPrumeros in 'abcdefghijklmnopqrstuvwxyz 1234567890':   
-    print(CislaPrumeros,':' ,c[CislaPrumeros], ', ', sep='', end='', flush=True)
-for i in c:
-       c.pop(CislaPrumeros)
-
-print('')
+abeceda = 'abcdefghijklmnopqrstuvwxyz 1234567890'
+xy = 0
+for CislaPrumeros in abeceda:
+    if CislaPrumeros == ' ':
+        print("''", end='', flush=True)
+    else:
+        print(CislaPrumeros, end='', flush=True)
+    print(': ' ,c[CislaPrumeros], 'x, ', sep='', end='', flush=True)
+    xy = xy + int(c[CislaPrumeros])
+print('\nPrůměrná četnost: ' , xy/37)
 input("\nKlávesou ENTER ukončíte program...")
