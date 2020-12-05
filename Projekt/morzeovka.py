@@ -1,5 +1,6 @@
 """Modul pro prekladani textu z morzeovky do abecedy a opacne."""
 
+
 abeceda = {'1': '.----', '2': '..---', '3': '...--', '4': '....-',
            '5': '.....', '6': '-....', '7': '--...', '8': '---..',
            '9': '----.', '0': '-----', 'a': '.-', 'b': '-...',
@@ -75,16 +76,37 @@ def mor2ab(zprava):
     return vystup
 
 
+if __name__ == "__main__":
+    print("Vyberte moznost: \n1. Prelozeni z morzeovky",
+          "\n2. Prelozeni do morzeovky")
+    user_input = input(": ")
+    if user_input == "1":
+        print("Zadejte zpravu v morzeovce")
+        text_input = input(": ")
+        print("Prelozena zprava:", mor2ab(text_input))
+    elif user_input == "2":
+        print("Zadejte zpravu pro prelozeni do morzeovky")
+        text_input = input(": ")
+        print("Prelozena zprava:", ab2mor(text_input))
+    else:
+        print("Neplatny vyber")
+
+
 def test_ab2mor():
-    """Testy prelozeni z abecedy do morzeovky."""
-    assert(ab2mor("1a")) == ".---- .- "
+    """Testy prelozeni do morzeovky jenom pismena."""
+    assert(ab2mor("abcd")) == ".- -... -.-. -.. "
 
 
 def test_mor2ab():
-    """Testy prelozeni z morzeovky do abecedy."""
+    """Testy prelozeni z morzeovky jenom cisla."""
     assert(mor2ab("....- --...")) == "47"
 
 
-if __name__ == "__main__":
-    test_ab2mor()
-    test_mor2ab()
+def test_ab2mor_no_input():
+    """Testy prelozeni bez inputu."""
+    assert(ab2mor("")) == ""
+
+
+def test_ab2mor_numbers():
+    """Testy prelozeni do morzeovky jenom cisla."""
+    assert(ab2mor("123")) == ".---- ..--- ...-- "
