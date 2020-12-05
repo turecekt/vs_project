@@ -32,9 +32,3 @@ jobs:
     - name: Test with pytest
       run: |
         pytest
-  tests:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Test with pytest
-        run: |
-          pytest
