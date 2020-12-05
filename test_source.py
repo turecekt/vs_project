@@ -44,3 +44,14 @@ conn = connector.Connector(url)
 def test_init():
     """Test for store URL address into a class variable URL."""
     assert (conn.url == "http://example.com")
+
+
+def test_getWebData():
+    """Test for proper output from the example."""
+    fd = open("index.html", "r")
+    if fd is None:  # pragma: no cover
+        print("File index.html not found")
+        exit(-1)
+    else:
+        htmlData = fd.read()
+        assert(conn.getWebData() == htmlData.lower())
