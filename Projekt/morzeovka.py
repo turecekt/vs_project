@@ -81,7 +81,7 @@ def test_ab2mor():
 
 
 def test_mor2ab():
-    """Testy prelozeni z morzeovky do abecedy.""" #ahoj test
+    """Testy prelozeni z morzeovky do abecedy."""
     assert(mor2ab("....- --...")) == "47"
 
 
