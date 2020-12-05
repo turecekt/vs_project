@@ -1,6 +1,5 @@
 """Modul pro prekladani textu z morzeovky do abecedy a opacne."""
 
-
 abeceda = {'1': '.----', '2': '..---', '3': '...--', '4': '....-',
            '5': '.....', '6': '-....', '7': '--...', '8': '---..',
            '9': '----.', '0': '-----', 'a': '.-', 'b': '-...',
@@ -110,3 +109,23 @@ def test_ab2mor_no_input():
 def test_ab2mor_numbers():
     """Testy prelozeni do morzeovky jenom cisla."""
     assert(ab2mor("123")) == ".---- ..--- ...-- "
+
+
+def test_ab2mor_bad_input():
+    """Testy prelozeni se spatnym inputem."""
+    assert(ab2mor("!!!")) == ""
+
+
+def test_mor2ab_bad_input():
+    """Testy prelozeni se spatnym inputem."""
+    assert(mor2ab("!!!")) == ""
+
+
+def test_mor2ab_bad_input2():
+    """Testy prelozeni se spatnym inputem."""
+    assert(mor2ab(".-.. -.....")) == "l"
+
+
+def test_mor2ab_bad_input3():
+    """Testy prelozeni se spatnym inputem."""
+    assert(mor2ab(".-.... .-...")) == ""
