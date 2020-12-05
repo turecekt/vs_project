@@ -31,7 +31,7 @@ class Connector:
         """Get data from a web server.
 
         Args:
-            none
+            - none
 
         Returns:
             - output - text with HTML code converted into lowercase

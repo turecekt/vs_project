@@ -20,6 +20,8 @@ import getopt  # for parse input args
 import links
 import connector
 
+# TODO move to separate class in future
+
 
 def coreParser(url):
     """Parse html code for links.
