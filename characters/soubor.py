@@ -48,7 +48,7 @@ print("Nejménně použitý znak je ", least)
 
 #counting each char in text
 vsechny = {}
-for i in text:
+for i in text.lower():
     if i in vsechny:
         vsechny[i] += 1
     else:
