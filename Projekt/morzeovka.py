@@ -81,10 +81,10 @@ def test_ab2mor():
 
 
 def test_mor2ab():
-    """Testy prelozeni z morzeovky do abecedy."""
+    """Testy prelozeni z morzeovky do abecedy.""" #ahoj test
     assert(mor2ab("....- --...")) == "47"
 
 
-if __name__ == "__main__":
+if __name__ == "__main__": 
     test_ab2mor()
     test_mor2ab()
