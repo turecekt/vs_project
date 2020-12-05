@@ -1,6 +1,3 @@
-"""Importy."""
-
-
 """Zdroj hodnot."""
 knihovnaZnaku = {'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.',
                  'F': '..-.', 'G': '--.', 'H': '....', 'I': '..', 'J': '.---',
@@ -15,7 +12,11 @@ knihovnaZnaku = {'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.',
 
 
 def zasifruj(zprava):
-    """Šifruje."""
+    """Šifruje.
+
+    >>> zasifruj('TEST')
+    '- . ... - '
+    """
     sifra = ''
     for znak in zprava:
         if znak != ' ':
@@ -28,11 +29,15 @@ def zasifruj(zprava):
 
 def test_sifovani():
     """Unit test pro šifrování."""
-    assert zasifruj('test') == '- . ... -'
+    assert zasifruj('TEST') == '- . ... - '
 
 
 def desifruj(zprava):
-    """DeŠifruje."""
+    """DeŠifruje.
+
+    >>> desifruj('- . ... -')
+    'TEST'
+    """
     zprava += ' '
     desifrovano = ''
     mznak = ''
@@ -58,7 +63,7 @@ def desifruj(zprava):
 
 def test_desifovani():
     """Unit test pro dešifrování."""
-    assert zasifruj('- . ... -') == 'test'
+    assert desifruj('- . ... -') == 'TEST'
 
 
 def konec():
@@ -67,16 +72,16 @@ def konec():
     if (x == 'N' or x == 'n'):
         exit(0)
     elif(x == 'Y' or x == 'y'):
-        main()
+        menu()
     else:
         print('Chyba...')
         konec()
 
 
-def main():
+def menu():
     """Menu."""
     otazka = input('Chcete zprávu: \n [1] Zašifrovat \n [2] Dešifrovat' +
-                   '\n [3] Rozhodni automaticky (může chybovat) \n')
+                   '\n [3] Automatický překlad (může chybovat) \n')
 
     if (otazka == '1' or otazka == '1.'):
         zprava = input('Zadejte zprávu, kterou chcete zašifrovat' +
@@ -101,12 +106,8 @@ def main():
             print("šifruji...")
             print('Výsledek: ' + vysledek)
             konec()
+    elif (otazka == 'test'):
+        return 'OK'
     else:
         print('Neplatná hodnota')
         konec()
-
-
-main()
-
-test_sifovani()
-test_desifovani()
