@@ -2,6 +2,12 @@
 #       python# -h for help
 # example python3 main.py -i https://seznam.cz
 
+
+# Author:   Michal Raška <m_raska@utb.cz>
+#           Roman Mareček <r_marecek@utb.cz>
+#
+# License:
+
 import sys
 import getopt  # for parse input args
 import links
