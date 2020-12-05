@@ -20,6 +20,14 @@ def test_findAnchor():
 
 def test_findTargetURL():
     """Test to find the target URL."""
-    testText = "Totoje proste test"
-    assert (link.findTargetURL(0, testText))
-    assert (link.findTargetURL(-1, testText) == -1)
+    testTextNoLink = "Totoje proste test"
+    testTextWithLink = "Totoje proste test <a href=\"http://example.com\">  " \
+                       "example.com </a>"
+    # test for index after url
+    assert (link.findTargetURL(0, testTextWithLink) == 46)
+    # test for found link
+    assert (link.links[0] == "http://example.com")
+    # test there are only one link
+    assert (len(link.links) == 1)
+    # there are not a link
+    assert (link.findTargetURL(-1, testTextNoLink) == -1)

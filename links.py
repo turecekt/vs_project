@@ -43,7 +43,7 @@ class Links:
             - data - HTML data
 
         Returns:
-            - output - Index first character of the URL
+            - output - Index first character after found the URL link
         """
         if offset < 0:
             return -1
