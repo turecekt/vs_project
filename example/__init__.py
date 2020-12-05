@@ -45,9 +45,14 @@ def Vstup():
     # Funkce na ošetření vstupu, vrátí hodnotu čísla, popřípadě vrátí hodnotu 0 pokud
     # vstup neodpovídá číslu na ověření
     
-    #    >> TADY BY MĚL BYT KOD CO UDĚLÁ RADIM II <<
-    vstupniCislo = 0
-
+    NapsanaRadka = input()
+ 
+    for znak in NapsanaRadka:
+        if not(znak in "0123456789"):
+            return 0
+ 
+    vstupniCislo = int(NapsanaRadka)
+ 
     return vstupniCislo
 
 def Vystup(pouzitaMetoda = 0):
