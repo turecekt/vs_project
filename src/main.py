@@ -123,12 +123,13 @@ def mainLoop(isRepeat):
     print("Translation:")
     print(translation(text, isAlphabet))
 
-isRepeat = False
-exitCode = 'n'
-    
-# Spuštění hlavní smyčky
-while exitCode != 'y':
-    mainLoop(isRepeat)
-    exitCode = input("\nDo you want exit program (y/n): ").lower()
-    print()
-    isRepeat = True
+def run():
+    isRepeat = False
+    exitCode = 'n'
+        
+    # Spuštění hlavní smyčky
+    while exitCode != 'y':
+        mainLoop(isRepeat)
+        exitCode = input("\nDo you want exit program (y/n): ").lower()
+        print()
+        isRepeat = True
