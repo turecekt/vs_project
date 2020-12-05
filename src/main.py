@@ -61,7 +61,9 @@ morseAlphabet = {
 }
 
 # Mezera
-space = " ";
+space = " "
+# Oddělovač znaků Morseovy abecedy
+charSeparator = "|"
 
 # Funkce, která zajišťuje správný výběr překladu
 def isAlphabetTranslation():
@@ -82,15 +84,26 @@ def isAlphabetTranslation():
         else:
             continue
 
+# Funkce překládá z abecedy do Morseovy abecedy
 def alphabetTranslation(text):
     result = ""
     for char in text.lower():
         if char in alphabetMorse:
             result += alphabetMorse[char]
+        elif char == space:
+            result += space
     return result
 
+# Funkce překládá z Morseovy abecedy do abecedy
 def morseCodeTranslation(text):
-    return "MORSE CODE"
+    result = ""
+    chars = text[1:-1].split(charSeparator)
+    for char in chars:
+        if char in morseAlphabet:
+            result += morseAlphabet[char]
+        elif char == space:
+            result += space
+    return result
 
 def translation(text, isAlphabet):
     return alphabetTranslation(text) if isAlphabet else morseCodeTranslation(text)
@@ -102,6 +115,8 @@ def mainLoop(isRepeat):
     isAlphabet = isAlphabetTranslation()
     print()
 
+    if not isAlphabet:
+        print("Character separator \"|\".")
     text = input("Enter text between \"\": ")
     print()
     
