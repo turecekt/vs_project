@@ -8,6 +8,18 @@ import links
 import connector
 
 
+
+
+def coreParser(url):
+
+    connect = connector.Connector(url)
+    dataDirty = connect.getWebData()
+
+    link = links.Links()
+    link.findLinks(dataDirty)
+    return link
+
+
 def main(argv):
     url = ""
 
@@ -24,14 +36,8 @@ def main(argv):
         elif opt in ("-i", "--iurl"):
             url = arg
 
-    connect = connector.Connector(url)
-    dataDirty = connect.getWebData()
+    link = coreParser(url)
 
-    link = links.Links()
-    link.findLinks(dataDirty)
-
-    # print(dataDirty)
-    print(len(dataDirty))
     print(link.links)
     print(link.linksCount)
 
