@@ -45,7 +45,22 @@ for i in text.lower():
 least = min(all_freq, key = all_freq.get)
 print("Nejménně použitý znak je ", least)
 
-for prumer in text:
+
+#counting each char in text
+vsechny = {}
+for i in text:
+    if i in vsechny:
+        vsechny[i] += 1
+    else:
+        vsechny[i] = 1
+print(vsechny)
+
+
+pocetElements = len(vsechny)
+print("Pruměrná četnost je ", celkem/pocetElements)
+
+
+"""for prumer in text:
     data = []
     with open(soubor) as f:
         for slovo in f:
@@ -64,5 +79,7 @@ for CislaPrumeros in abeceda:
         print(CislaPrumeros, end='', flush=True)
     print(': ' ,c[CislaPrumeros], 'x, ', sep='', end='', flush=True)
     cetnost += int(c[CislaPrumeros])
-print('\nPrůměrná četnost: ' , int(float(cetnost))/37)
+print('\nPrůměrná četnost: ' , int(float(cetnost))/37)"""
+
+
 input("\nKlávesou ENTER ukončíte program...")
