@@ -18,7 +18,15 @@ class Links:
     linksCount = 0
 
     def findAnchor(self, data, offset):
+        """Search beginning of the HTML anchor.
 
+        Args:
+            - data - HTML data
+            - offset - Offset in data
+
+        Returns:
+            - output - Index to the HTML anchor
+        """
         # high speed, but dumb way
         lenght = len(data)
 
@@ -26,7 +34,17 @@ class Links:
         return index
 
     def findTargetURL(self, offset, data):
+        """Search a single link in the text.
 
+        Founds link store into array "links".
+
+        Args:
+            - offset - Offset in data
+            - data - HTML data
+
+        Returns:
+            - output - Index first character of the URL
+        """
         if offset < 0:
             return -1
 
@@ -81,6 +99,14 @@ class Links:
         return i
 
     def findLinks(self, data):
+        """Scan the entire file, and store finds into links.
+
+        Args:
+            - data - HTML data
+
+        Returns:
+            - output - None
+        """
         lenght = len(data)
         i = 0
         while i < lenght and i != -1:
