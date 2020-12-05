@@ -18,6 +18,7 @@ def compute(x):
     """
     return x * x - 2 * x
 
+nazev_souboru = 'basnicka.txt'
 
 def nacti_text(nazev_souboru):
 
@@ -34,23 +35,32 @@ def nacti_text(nazev_souboru):
         obsah = obsah[0:ukoncovaciZnak]
 
     return obsah
-    
+
+def test_nacti_text():
+    assert (nazev_souboru) == 'Ahoj'  
+
+def secti(a, b):
+    return a + b
+
+def test_secti():
+    assert secti(1, 2) == 5
     
 
 # print ("ukončovací znak: ",ukoncovaciZnak)
-print(nacti_text('basnicka.txt'))
+print("základní text: ",nacti_text(nazev_souboru))
 
-"""str = input ("Enter a string")"""
-str = nacti_text('basnicka.txt')
-print ("String is ",str)
-str = str.lower()
-str = str.replace(" ","")
-print ("String is ",str)
+def uprav_text(text):
+    str = text.lower()
+    str = str.replace(" ","")
+    return str
+print("upravený text: ",uprav_text(nacti_text(nazev_souboru)))
+
+pripraveny_text = uprav_text(nacti_text(nazev_souboru))
 count = {}
-for x in str:
+for x in pripraveny_text:
     if x in count.keys():
         count[x] +=1
-         
+        
     else:
         count[x] = 1
 
@@ -64,13 +74,13 @@ print("Počet různých znaků: ",len(count))
 MaxDictVal = max(count, key=count.get)
 print("Nejčetnější znak:",MaxDictVal)
 
-MinDictVal = min(count, key=count.get)
-print("Nejméně četný znak:",MinDictVal)
+# MinDictVal = min(count, key=count.get)
+# print("Nejméně četný znak:",MinDictVal)
 
 
-def nejmeneCetnyZnak(poctyZnaku):
-    MinDictVal = min(poctyZnaku, key=poctyZnaku.get)
-    return MinDictVal
+# def nejmeneCetnyZnak(poctyZnaku):
+#     MinDictVal = min(poctyZnaku, key=poctyZnaku.get)
+#     return MinDictVal
 
 # def kolikZnakuJeVtextu(obsah,nejmeneCetnyZnak):
 #     return obsah.count(nejmeneCetnyZnak(poctyZnaku)
@@ -93,3 +103,14 @@ def nejmeneCetnyZnak(poctyZnaku):
 #         jen ty nejméně četné
 #     - když text nebude obsahovat #, tak neodečítat -1    --- hotovo
 #     - průměrná četnost
+
+# VSTUP
+# • Textový soubor (obsahující text bez diakritiky) jako parametr programu
+# • V případě spuštění bez parametru musí program umět zpracovat text ze
+# standardního vstupu až po řádek obsahující ukončovací symbol #
+# VÝSTUP
+# • Informace o celkovém počtu znaků
+# • Informace o nejčastějším znaku
+# • Informace o nejméně častém znaku
+# • Informace o průměrné četnosti
+# • Informace o četnosti jednotlivých znaků abecedy (bez diakritiky)
