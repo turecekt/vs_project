@@ -49,7 +49,7 @@ def test_init():
 def test_getWebData():
     """Test for proper output from the example."""
     fd = open("index.html", "r")
-    if fd is None:  # pragma: no cover
+    if fd is None:
         print("File index.html not found")
         exit(-1)
     else:
