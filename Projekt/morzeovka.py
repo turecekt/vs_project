@@ -26,7 +26,7 @@ def ab2mor(zprava):
 
     Vrati zadany text v morzeovce
     >>> ab2mor("a1")
-    .- .----
+    '.- .---- '
     """
     c = ""
     for i in str(zprava.lower()):
@@ -44,7 +44,7 @@ def mor2ab(zprava):
 
     Vrati zadany text v abecede
     >>> mor2ab("....- ....")
-    4h
+    '4h'
     """
     znak = ""
     vystup = ""
