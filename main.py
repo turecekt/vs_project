@@ -31,7 +31,6 @@ def coreParser(url):
         - output - Reference at link object which
                    has an array with links.
     """
-
     connect = connector.Connector(url)
     dataDirty = connect.getWebData()
 
