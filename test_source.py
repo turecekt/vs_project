@@ -34,6 +34,46 @@ def test_findTargetURL():
     assert (link.findTargetURL(-1, testTextNoLink) == -1)
 
 
+# required new instance for next test
+link1 = links.Links()
+
+
+def test_clearStoredLinks():
+    """Test clearing stored links."""
+    testTextWithLink = "Totoje proste test <a href=\"http://example.com\">  " \
+                       "</a>"
+
+    link1.findLinks(testTextWithLink)
+    link1.clearStoredLinks()
+    assert (link1.linksCount == 0)
+    assert (len(link1.links) == 0)
+
+
+def test_findLinks():
+    """Test to find the target URL."""
+    testText = "Totoje proste test"
+    link1.findLinks(testText)
+    assert (link1.linksCount == 0)
+
+    # Testfor onelink
+    link1.clearStoredLinks()
+    testTextWithLink = "Totoje proste test <a href=\"http://example.com\">  " \
+                       "example.com </a>"
+    link1.findLinks(testTextWithLink)
+    assert (link1.linksCount == 1)
+    link1.clearStoredLinks()
+
+    # Test for two links
+    testTextTwoLink = "Totoje proste test <a href=\"http://example.com\"> " \
+                      "example.com </a> <a href=\"https://seznam.cz\">  " \
+                      "seznam.cz </a> that's all."
+    link1.findLinks(testTextTwoLink)
+    assert (link1.linksCount == 2)
+    assert (link.links[0] == "http://example.com")
+    assert (link.links[1] == "https://seznam.cz")
+    assert (len(link.links) == 2)
+
+
 # *********** Modul connector  ***********
 
 
@@ -54,4 +94,4 @@ def test_getWebData():
         exit(-1)
     else:
         htmlData = fd.read()
-        assert(conn.getWebData() == htmlData.lower())
+        assert (conn.getWebData() == htmlData.lower())

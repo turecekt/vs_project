@@ -94,7 +94,7 @@ class Links:
                 or url.find('https://') != -1 \
                 or url.find('/', 0, 1) != -1:
             self.links.append(url)
-            self.linksCount = self.linksCount + 1
+            self.linksCount = len(self.links)
 
         return i
 
@@ -111,3 +111,8 @@ class Links:
         i = 0
         while i < lenght and i != -1:
             i = self.findTargetURL(self.findAnchor(data, i), data)
+
+    def clearStoredLinks(self):
+        """Delete all stored links and set counter to zero."""
+        del self.links[:]
+        self.linksCount = len(self.links)
