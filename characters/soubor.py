@@ -56,13 +56,13 @@ for prumer in text:
 print('Počet znaků v textu')
 c = collections.Counter(text.lower())
 abeceda = 'abcdefghijklmnopqrstuvwxyz 1234567890'
-xy = 0
+cetnost = 0
 for CislaPrumeros in abeceda:
     if CislaPrumeros == ' ':
         print("''", end='', flush=True)
     else:
         print(CislaPrumeros, end='', flush=True)
     print(': ' ,c[CislaPrumeros], 'x, ', sep='', end='', flush=True)
-    xy = xy + int(c[CislaPrumeros])
-print('\nPrůměrná četnost: ' , xy/37)
+    cetnost += int(c[CislaPrumeros])
+print('\nPrůměrná četnost: ' , int(float(cetnost))/37)
 input("\nKlávesou ENTER ukončíte program...")
