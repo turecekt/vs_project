@@ -86,8 +86,9 @@ def test_init():
     """Test for store URL address into a class variable URL."""
     assert (conn.url == "http://example.com")
 
-# We have to comment this test because pytest in gitHub is testing all files and we
-# need for this test index.html which keeps failing tests
+# We have to comment this test because pytest in gitHub is testing
+# all files and we# need for this test index.html which
+# keeps failing tests
 #
 # def test_getWebData():
 #    """Test for proper output from the example."""
