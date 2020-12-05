@@ -6,6 +6,7 @@
 # License:
 
 import links
+import connector
 
 # *********** Modul links  ***********
 
@@ -23,3 +24,14 @@ def test_findTargetURL():
     testText = "Totoje proste test"
     assert (link.findTargetURL(0, testText))
     assert (link.findTargetURL(-1, testText) == -1)
+
+# *********** Modul connector  ***********
+
+
+url = "http://example.com"
+conn = connector.Connector(url)
+
+
+def test_init():
+    """Test for store URL address into a class variable URL."""
+    assert (conn.url == "http://example.com")
