@@ -7,6 +7,7 @@
 
 import links
 import connector
+import main
 
 # *********** Modul links  ***********
 
@@ -95,3 +96,15 @@ def test_getWebData():
     else:
         htmlData = fd.read()
         assert (conn.getWebData() == htmlData.lower())
+
+
+# *********** Main  ***********
+
+
+def test_main():
+    """Test for proper output from the example."""
+    link = main.coreParser(url)
+    linkCount = len(link.links)
+
+    assert (linkCount == 3)
+    assert (link.links[2] == "https://www.iana.org/domains/example")
