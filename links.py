@@ -1,4 +1,18 @@
+"""module links.
+
+The module is used for working with an HTML link
+"""
+
+
+# Author:   Michal Raška <m_raska@utb.cz>
+#           Roman Mareček <r_marecek@utb.cz>
+#
+# License:
+
+
 class Links:
+    """Class for searching links from the HTML code."""
+
     url = ''
     links = []
     linksCount = 0
