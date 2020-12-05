@@ -53,17 +53,17 @@ def main(argv):
     """
     url = ""
 
-    try:
+    try:  # pragma no cover
         opts, args = getopt.getopt(argv, "hi:", ["iurl="])
-    except getopt.GetoptError:
+    except getopt.GetoptError:  # pragma no cover
         print('main.py -i <startURL>')
         sys.exit(2)
 
-    for opt, arg in opts:
-        if opt == '-h':
+    for opt, arg in opts:  # pragma no cover
+        if opt == '-h':  # pragma no cover
             print('main.py -i <starturl>')
             sys.exit()
-        elif opt in ("-i", "--iurl"):
+        elif opt in ("-i", "--iurl"):  # pragma no cover
             url = arg
 
     link = coreParser(url)
@@ -72,5 +72,5 @@ def main(argv):
     print(link.linksCount)
 
 
-if __name__ == '__main__':
+if __name__ == '__main__':  # pragma no cover
     sys.exit(main(sys.argv[1:]))
