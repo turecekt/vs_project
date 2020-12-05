@@ -11,9 +11,7 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python 3.8
@@ -34,3 +32,9 @@ jobs:
     - name: Test with pytest
       run: |
         pytest
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test with pytest
+        run: |
+          pytest
