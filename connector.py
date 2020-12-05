@@ -1,6 +1,5 @@
 import requests
 
-
 class Connector:
     url = ''
 

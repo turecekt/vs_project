@@ -6,7 +6,6 @@ import sys
 import getopt  # for parse input args
 import links
 import connector
-import sqlite3
 
 
 def main(argv):
@@ -30,10 +29,6 @@ def main(argv):
 
     link = links.Links()
     link.findLinks(dataDirty)
-
-    # TODO store urls into SQLITe DB.
-    conn = sqlite3.connect('crawler.db')
-    c = conn.cursor()
 
     # print(dataDirty)
     print(len(dataDirty))
