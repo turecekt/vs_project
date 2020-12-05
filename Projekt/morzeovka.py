@@ -85,6 +85,6 @@ def test_mor2ab():
     assert(mor2ab("....- --...")) == "47"
 
 
-if __name__ == "__main__": 
+if __name__ == "__main__":
     test_ab2mor()
     test_mor2ab()
