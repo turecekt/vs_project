@@ -1,6 +1,8 @@
 """ Module prime number checker.
 This module is use for checking the input
 """
+
+
 # Author:   Barbana Klimekova <b_klimekova@utb.cz>
 #           Lucia Kubaskova <l_kubaskova@utb.cz>
 #           Tomas_Prikasky <t_prikasky@utb.cz>
@@ -11,24 +13,28 @@ This module is use for checking the input
 class PrimeNumber:
     """Class for o evaluate whether the entered number is a prime number."""
 
+
 number = input("Vlož číslo: ")
+counter = int
+
 if number.isdigit() and int(number) > 0:
     number = int(number)
     divisors = []
-    count = 0
+else:
+    print("Nebylo zadáno kladné číslo")
 
+
+def isPrimeNumber():
+    counter = 0
     for divisor in range(1, number + 1):
         if number % divisor == 0:
             divisors.append(divisor)
-            count += 1
-            if count > 2:
+            counter += 1
+            if counter > 2:
                 break
-    if count == 2:
-        print(f"delitelia: {divisors}")
+    if counter == 2:
         print(f"Číslo {number} je prvočíslo")
     else:
-        print(f"delitelia: {divisors}")
         print(f"Číslo {number} není prvočíslo")
 
-else:
-    print("Nebylo zadáno kladné číslo")
+isPrimeNumber()
