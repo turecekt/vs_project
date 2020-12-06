@@ -7,9 +7,9 @@ if number.isdigit() and int(number) > 0:
     divisors = []
     count = 0
 
-    for i in range(1, number + 1):
-        if number % i == 0:
-            divisors.append(i)
+    for divisor in range(1, number + 1):
+        if number % divisor == 0:
+            divisors.append(divisor)
             count += 1
             if count > 2:
                 break
