@@ -47,33 +47,47 @@ def uprav_text(text):
 print("upravený text: ",uprav_text(nacti_text(nazev_souboru)))
 
 
+def zjisti_cetnosti (text):
+    pripraveny_text = uprav_text(nacti_text(text))
+    count = {}
+    for x in pripraveny_text:
+        if x in count.keys():
+            count[x] +=1
+            
+        else:
+            count[x] = 1    
+    return(count)
 
-pripraveny_text = uprav_text(nacti_text(nazev_souboru))
-count = {}
-for x in pripraveny_text:
-    if x in count.keys():
-        count[x] +=1
-        
-    else:
-        count[x] = 1
+print(zjisti_cetnosti(nazev_souboru))
 
-print(count)
+# for x in count.keys ():
+#     print("znak",x ,"se v textu vyskytuje: ",count[x])
 
-for x in count.keys ():
-    print("znak",x ,"se v textu vyskytuje: ",count[x])
 
-print("Počet různých znaků: ",len(count))
+def pocet_ruznych_znaku(slovnik):
+    pocty = len(slovnik)
+    return pocty
 
-MaxDictVal = max(count, key=count.get)
-print("Nejčetnější znak:",MaxDictVal)
+print ("z metody počet různých znaků: ",pocet_ruznych_znaku(zjisti_cetnosti(nazev_souboru)))
+    
+def nejcetnejsi_znaky(slovnik):
+    MaxDictVal = max(zjisti_cetnosti(nazev_souboru), key=zjisti_cetnosti(nazev_souboru).get)
+    return MaxDictVal
+print("Nejčetnější znaky z metody: ", nejcetnejsi_znaky(zjisti_cetnosti(nazev_souboru)))
+
+def nejmenecetne_znaky(slovnik):
+    MinDictVal = min(zjisti_cetnosti(nazev_souboru), key=zjisti_cetnosti(nazev_souboru).get)
+    return MinDictVal
+print("Nejméně četné znaky z metody: ", nejmenecetne_znaky(zjisti_cetnosti(nazev_souboru)))
+
+# MaxDictVal = max(count, key=count.get)
+# print("Nejčetnější znak:",MaxDictVal)
 
 # MinDictVal = min(count, key=count.get)
 # print("Nejméně četný znak:",MinDictVal)
 
 
-# def nejmeneCetnyZnak(poctyZnaku):
-#     MinDictVal = min(poctyZnaku, key=poctyZnaku.get)
-#     return MinDictVal
+
 
 # def kolikZnakuJeVtextu(obsah,nejmeneCetnyZnak):
 #     return obsah.count(nejmeneCetnyZnak(poctyZnaku)

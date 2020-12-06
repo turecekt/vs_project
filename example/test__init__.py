@@ -11,4 +11,10 @@ def test_nacti_text_znakNaZacatku():
     assert __init__.nacti_text('basnicka_nazacatku.txt') == None
     
 def test_uprav_text():
-    assert __init__.uprav_text('Toto je básnička') == 'totojebásnička'
+    assert __init__.uprav_text('Toto je   básnička.') == 'totojebásnička.'
+
+def test_zjisti_cetnosti():
+    assert __init__.zjisti_cetnosti('basnicka_ha.txt') == {'h': 3, 'a': 3}
+
+def test_pocet_ruznych_znaku():
+    assert __init__.pocet_ruznych_znaku([('a', 5), ('b', 3), ('c', 1)]) == 3
