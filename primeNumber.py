@@ -11,7 +11,7 @@ This module is use for checking the input
 #               Prime numbers have exactly two divisors, are divisible by only 1 and by themselves.
 
 class PrimeNumber:
-    """Class for o evaluate whether the entered number is a prime number."""
+    """Class for evaluating whether the entered number is a prime number."""
 
 
 number = input("Vlož číslo: ")
@@ -25,17 +25,16 @@ else:
 
 
 def isPrimeNumber():
-    counter = 0
-    for divisor in range(1, number + 1):
+    isPrimeNumber = True
+    for divisor in range(2, number):
         if number % divisor == 0:
-            divisors.append(divisor)
-            counter += 1
-            if counter > 2:
-                break
-    if counter == 2:
+            isPrimeNumber = False
+            break
+    if isPrimeNumber and number > 1:
         print(f"Číslo {number} je prvočíslo")
     else:
         print(f"Číslo {number} není prvočíslo")
+
 
 def printDivisors():
     counter = 0
@@ -46,6 +45,7 @@ def printDivisors():
             print(divisor, end=' ')
     print()
     print('počet deliteľov:', counter)
+
 
 isPrimeNumber()
 printDivisors()
