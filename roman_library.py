@@ -14,7 +14,7 @@ class roman_lib:
     """
 
     def toRoman(iArabicNum):
-        """Converts Arabic Numbers to Roman Numerals.
+        """This function converts Arabic Numbers to Roman Numerals.
 
         Args:
             iArabicNum (int): an integer
