@@ -1,3 +1,10 @@
+# Author:   Barbana Klimekova <b_klimekova@utb.cz>
+#           Lucia Kubaskova <l_kubaskova@utb.cz>
+#           Tomas_Prikasky <t_prikasky@utb.cz>
+#
+# Description:  Create a program to evaluate whether the entered number is a prime number.
+#               Prime numbers have exactly two divisors, are divisible by only 1 and by themselves.
+
 class PrimeNumber:
     """Class for o evaluate whether the entered number is a prime number."""
 
