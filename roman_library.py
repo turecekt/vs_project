@@ -8,9 +8,13 @@ X
 
 
 class roman_lib:
+    """The main class for converting between Arabic Numbers and Roman Numerals.
+
+    It can be upgraded in the future
+    """
 
     def toRoman(self, iArabicNum):
-        """Function comverts Arabic Number to Roman Numerals.
+        """Function converts Arabic Numbers to Roman Numerals.
 
         Args:
 
@@ -18,10 +22,14 @@ class roman_lib:
 
         Returns:
 
-            str: A string of Roman Numerals
+            str: a string of Roman Numerals
         """
-        value = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
-        symbol = ["M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"]
+        value = [1000, 900, 500, 400,
+                 100, 90, 50, 40, 10,
+                 9, 5, 4, 1]
+        symbol = ["M", "CM", "D", "CD",
+                  "C", "XC", "L", "XL", "X",
+                  "IX", "V", "IV", "I"]
         sRomanNum = ''
         i = 0
         while iArabicNum > 0:
