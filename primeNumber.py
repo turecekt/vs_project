@@ -1,3 +1,6 @@
+class PrimeNumber:
+    """Class for o evaluate whether the entered number is a prime number."""
+
 number = input("Vlož číslo: ")
 if number.isdigit() and int(number) > 0:
     number = int(number)
