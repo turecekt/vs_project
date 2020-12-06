@@ -37,4 +37,15 @@ def isPrimeNumber():
     else:
         print(f"Číslo {number} není prvočíslo")
 
+def printDivisors():
+    counter = 0
+    print('delitele:', end=' ')
+    for divisor in range(1, number + 1):
+        if number % divisor == 0:  # mohli by sme zapísať aj  if not cislo % delitel:
+            counter += 1
+            print(divisor, end=' ')
+    print()
+    print('počet deliteľov:', counter)
+
 isPrimeNumber()
+printDivisors()
