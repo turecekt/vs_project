@@ -31,6 +31,13 @@ class Rectangle:
         else:
             return False
 
+    def perimeter(self):
+        return round(self.a + self.b + self.c)
+
+    def area(self):
+        s = self.perimeter() / 2
+        return round(math.sqrt(s * (s - self.a)*(s - self.b)*(s - self.c)))
+
 
 def input_values(point_name):
     point = str_list_to_int(input(f"Zadejte souřadnice bodu ${point_name}: ").split(","))
@@ -50,7 +57,12 @@ def str_list_to_int(list_to_convert):
 
 if __name__ == '__main__':
     rectangle = Rectangle()
-    print(f"Strana a: {rectangle.a}\nStrana b: {rectangle.b}\nStrana c: {rectangle.c}")
+    if rectangle.is_able():
+        print("Trojuholník je zostrojiteľný")
+        print(f"Strana a: {rectangle.a}\nStrana b: {rectangle.b}\nStrana c: {rectangle.c}")
+        print(f"Obvod trojúhelníku je: {rectangle.perimeter()}")
+        print(f"Obsah trojúhelníku je: {rectangle.area()}")
+        print("Je pravouhlý" if rectangle.is_rectangular() else "Není pravouhlý")
+    else:
+        print("Trojuholník nie je zostrojiteľný")
 
-    print("Je pravouhlý" if rectangle.is_rectangular() else "Není pravouhlý")
-    print("Trojuholník je zostrojiteľný" if rectangle.is_able() else "Trojuholník nie je zostrojiteľný")
