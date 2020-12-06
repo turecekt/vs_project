@@ -2,7 +2,7 @@
 
 The module supplies one function: toRoman(self, iArabicNum). For example,
 
->>> toRoman(self, 10)
+>>> toRoman(10)
 X
 """
 
@@ -13,13 +13,13 @@ class roman_lib:
     It can be upgraded in the future
     """
 
-    def toRoman(self, iArabicNum):
-
+    def toRoman(iArabicNum):
         """Converts Arabic Numbers to Roman Numerals.
+
         Args:
             iArabicNum (int): an integer
         Returns:
-            str: a string of Roman Numerals
+            sRomanNum (str): a string of Roman Numerals
         """
         value = [1000, 900, 500, 400,
                  100, 90, 50, 40, 10,

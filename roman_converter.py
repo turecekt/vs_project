@@ -10,4 +10,4 @@ from roman_library import roman_lib
 
 print("Převodník na římská čísla V1.0")
 vstup = int(input("Zadej celé číslo: "))
-print(roman_lib().toRoman(vstup))
+print(roman_lib.toRoman(vstup))
