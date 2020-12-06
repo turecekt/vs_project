@@ -14,14 +14,10 @@ class roman_lib:
     """
 
     def toRoman(self, iArabicNum):
-        """Function converts Arabic Numbers to Roman Numerals.
-
+        """converts Arabic Numbers to Roman Numerals.
         Args:
-
             iArabicNum (int): an integer
-
         Returns:
-
             str: a string of Roman Numerals
         """
         value = [1000, 900, 500, 400,
@@ -38,17 +34,3 @@ class roman_lib:
                 iArabicNum -= value[i]
             i += 1
         return sRomanNum
-
-    def test_toRoman():
-        """Function tests comvertion of Arabic Numbers to Roman Numerals.
-
-        Args:
-
-            None
-
-        Returns:
-
-            None
-        """
-        # all basic symbols are used exactly once
-        assert (toRoman(0, 1444) == "MCDXLIV")
