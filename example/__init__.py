@@ -27,26 +27,17 @@ def nacti_text(nazev_souboru):
     soubor.close()
     print("kolikátý je to znak: ",obsah.find("#"))
     ukoncovaciZnak = obsah.find("#")
-    if ukoncovaciZnak == 0:
-        obsah = ""
-    elif ukoncovaciZnak < 0:
+    if ukoncovaciZnak < 0:
         obsah = obsah
-    else:
+        return obsah
+    elif ukoncovaciZnak > 0:
         obsah = obsah[0:ukoncovaciZnak]
+        return obsah
+    else: 
+        print ("v souboru je ukončovací znak hned na začátku")
 
-    return obsah
 
-def test_nacti_text():
-    assert (nazev_souboru) == 'Ahoj'  
 
-def secti(a, b):
-    return a + b
-
-def test_secti():
-    assert secti(1, 2) == 5
-    
-
-# print ("ukončovací znak: ",ukoncovaciZnak)
 print("základní text: ",nacti_text(nazev_souboru))
 
 def uprav_text(text):
@@ -54,6 +45,8 @@ def uprav_text(text):
     str = str.replace(" ","")
     return str
 print("upravený text: ",uprav_text(nacti_text(nazev_souboru)))
+
+
 
 pripraveny_text = uprav_text(nacti_text(nazev_souboru))
 count = {}
