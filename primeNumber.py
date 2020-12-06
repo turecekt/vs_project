@@ -1,3 +1,6 @@
+""" Module prime number checker.
+This module is use for checking the input
+"""
 # Author:   Barbana Klimekova <b_klimekova@utb.cz>
 #           Lucia Kubaskova <l_kubaskova@utb.cz>
 #           Tomas_Prikasky <t_prikasky@utb.cz>
