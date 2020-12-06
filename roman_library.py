@@ -35,3 +35,14 @@ class roman_lib:
                 iArabicNum -= value[i]
             i += 1
         return sRomanNum
+
+    def test_toRoman():
+        """Test convertion of Arabic Numbers to Roman Numerals.
+
+        Args:
+            None
+        Returns:
+            None
+        """
+        # all basic symbols are used exactly once
+        assert toRoman(1444) == "MCDXLIV"
