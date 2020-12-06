@@ -45,4 +45,4 @@ class roman_lib:
             None
         """
         # all basic symbols are used exactly once
-        assert toRoman(1444) == "MCDXLIV"
+        assert (roman_lib.toRoman(1444) == "MCDXLIV")
