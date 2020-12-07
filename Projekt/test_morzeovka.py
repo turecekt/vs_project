@@ -1,4 +1,4 @@
-"""Modul pro prekladani textu z morzeovky do abecedy a opacne."""
+"""Prekladac textu z morzeovky do abecedy a opacne."""
 
 abeceda = {'1': '.----', '2': '..---', '3': '...--', '4': '....-',
            '5': '.....', '6': '-....', '7': '--...', '8': '---..',
