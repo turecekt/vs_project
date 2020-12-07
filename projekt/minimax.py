@@ -18,14 +18,23 @@ def minmax():
     print("Největší číslo: " + str(max) + " a jeho index: " + str(indexMax))
     print("Největší číslo: " + str(min) + " a jeho index: " + str(indexMin))
 
-def bubblesort(list):
-
-    for x in range(len(pole)-1):
-        for k in range(len(pole) - x - 1):
+def bubblesort(_list):
+    for x in range(len(_list)-1):
+        for k in range(len(_list) - x - 1):
             if pole[k+1] < pole[k]:
                 pomocne = pole[k+1]
                 pole[k+1] = pole[k]
                 pole[k] = pomocne
+
+def insertion_sort(_list):
+    for x in range(1, len(_list)):
+        j = x-1
+        dalsiCislo = _list[x]
+        
+        while (_list[j] > dalsiCislo) and (j >= 0):
+            _list[j+1] = _list[j]
+            j=j-1
+        _list[j+1] = dalsiCislo
 
 
 pole = []
@@ -55,7 +64,7 @@ else:
     pole = [random.randint(1,100) for _ in range(10)]
 
 minmax()
-bubblesort(pole)
+insertion_sort(pole)
 print(pole)
 
 
