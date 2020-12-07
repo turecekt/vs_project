@@ -1,13 +1,16 @@
+"""Calculate triangle"""
 import math
 
 
-class Rectangle:
+class Triangle:
     """
-        Class of the rectangle
+    Class of the triangle.
 
-        :ivar
-            point_a, point_b, point_c: used for storing the points inserted by user
-            a, b, c: used for storing the calculated sides
+    :ivar
+        point_a, point_b, point_c:
+            used for storing the points inserted by user
+        a, b, c:
+            used for storing the calculated sides
     """
 
     def __init__(self):
@@ -19,7 +22,7 @@ class Rectangle:
 
     def side_lenght(self) -> list:
         """
-        Take inserted points and calculate sides
+        Take inserted points and calculate sides.
 
         :return: [float, float, float] -> list
         """
@@ -33,7 +36,7 @@ class Rectangle:
 
     def is_able(self) -> bool:
         """
-        Check if the triangle is able to construct
+        Check if the triangle is able to construct.
 
         :return: True | False
         """
@@ -46,7 +49,7 @@ class Rectangle:
 
     def is_rectangular(self) -> bool:
         """
-        Check if there is 90 degrees corner in the triangle
+        Check if there is 90 degrees corner in the triangle.
 
         :return: True | False
         """
@@ -61,7 +64,7 @@ class Rectangle:
 
     def perimeter(self) -> float:
         """
-        Calculate the other contour of the triangle
+        Calculate the other contour of the triangle.
 
         :return: perimeter of the triangle (float)
         """
@@ -69,7 +72,7 @@ class Rectangle:
 
     def area(self) -> float:
         """
-        Calculate the inner area of the triangle
+        Calculate the inner area of the triangle.
 
         :return: Area of the triangle (float)
         """
@@ -110,17 +113,17 @@ def str_list_to_int(list_to_convert) -> list or bool:
 
 
 if __name__ == '__main__':
-    rectangle = Rectangle()
-    if rectangle.is_able():
+    triangle = Triangle()
+    if triangle.is_able():
         print("Trojuholník je zostrojiteľný")
         print(
-            f"Strana a: {round(rectangle.a, 2)}\n"
-            f"Strana b: {round(rectangle.b, 2)}\n"
-            f"Strana c: {round(rectangle.c, 2)}"
+            f"Strana a: {round(triangle.a, 2)}\n"
+            f"Strana b: {round(triangle.b, 2)}\n"
+            f"Strana c: {round(triangle.c, 2)}"
         )
-        print(f"Obvod trojúhelníku je: {round(rectangle.perimeter(), 2)}")
-        print(f"Obsah trojúhelníku je: {round(rectangle.area(), 2)}")
+        print(f"Obvod trojúhelníku je: {round(triangle.perimeter(), 2)}")
+        print(f"Obsah trojúhelníku je: {round(triangle.area(), 2)}")
         print(
-            "Je pravouhlý" if rectangle.is_rectangular() else "Není pravouhlý")
+            "Je pravouhlý" if triangle.is_rectangular() else "Není pravouhlý")
     else:
         print("Trojuholník nie je zostrojiteľný")
