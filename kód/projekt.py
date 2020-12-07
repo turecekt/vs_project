@@ -5,7 +5,7 @@ xarray = []
 yarray = []
 for i in range(3):
     xarray.append(input('Zadaj x suradnicu bodu '))
-    yarray.append(input('Zadaj x suradnicu bodu '))
+    yarray.append(input('Zadaj y suradnicu bodu '))
 
 Ax = xarray[0]
 Ay = yarray[0]
