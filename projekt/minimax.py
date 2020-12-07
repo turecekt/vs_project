@@ -3,6 +3,22 @@ import os.path
 from os import path
 import random
 
+def minmax():
+    max = pole[0]
+    indexMax = 0
+    min = pole[0]
+    indexMin = 0
+    for index, item in enumerate(pole):
+        if item > max:
+            max = item
+            indexMax = index
+        if item < min:
+            min = item
+            indexMin = index
+    print("Největší číslo: " + str(max) + " a jeho index: " + str(indexMax))
+    print("Největší číslo: " + str(min) + " a jeho index: " + str(indexMin))
+
+
 pole = []
 if len(sys.argv) > 1:
     sys.argv.pop(0)
@@ -29,4 +45,7 @@ if len(sys.argv) > 1:
 else:
     pole = [random.randint(1,100) for _ in range(10)]
 
-print(pole)
+minmax()
+
+
+
