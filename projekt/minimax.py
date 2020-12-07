@@ -1,6 +1,7 @@
 import sys
 
 pole = []
+sys.argv.pop(0)
 for x in sys.argv:
     try:
         TryParse = int(x)
