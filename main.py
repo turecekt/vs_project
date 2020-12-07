@@ -1,13 +1,12 @@
 def morse(text):
 
     morseovka = {'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.',
-         'F': '..-.', 'G': '--.', 'H': '....', 'I': '..', 'J': '.---',
-         'K': '-.-', 'L': '.-..', 'M': '--', 'N': '-.', 'O': '---',
-         'P': '.--.', 'Q': '--.-', 'R': '.-.', 'S': '...', 'T': '-',
-         'U': '..-', 'V': '...-', 'W': '.--', 'X': '-..-', 'Y': '-.--',
-         'Z': '--..', ' ': '.....'}
+                 'F': '..-.', 'G': '--.', 'H': '....', 'I': '..', 'J': '.---',
+                 'K': '-.-', 'L': '.-..', 'M': '--', 'N': '-.', 'O': '---',
+                 'P': '.--.', 'Q': '--.-', 'R': '.-.', 'S': '...', 'T': '-',
+                 'U': '..-', 'V': '...-', 'W': '.--', 'X': '-..-', 'Y': '-.--',
+                 'Z': '--..', ' ': '.....'}
     preklad = ''
-
 
     if text.startswith('.') or text.startswith('−'):
         morseovka_preklad = dict([(v, k) for k, v in morseovka.items()])
@@ -21,7 +20,8 @@ def morse(text):
             preklad += morseovka.get(x) + ' '
     return preklad.strip()
 
-print ("Zadejte textovy retezec:")
+
+print("Zadejte textovy retezec:")
 inputstr = str(input())
 
 print(morse(inputstr))
