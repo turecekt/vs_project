@@ -115,7 +115,7 @@ def translation(text, isAlphabet):
 
     # Odstranění uvozovek na začátku a konci
     modifyText = text[1:-1]
-    return alphabetTranslation(modifyText) if isAlphabet else morseCodeTranslation(modifyText)
+    return morseCodeTranslation(modifyText) if not isAlphabet else alphabetTranslation(modifyText)
 
 
 # Funkce s logikou hlavní smyčky programu
