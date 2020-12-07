@@ -1,3 +1,4 @@
+"""Program pro nalezeni min a max z pole a nasledne serazeni pole."""
 import sys
 from os import path
 import random
@@ -6,7 +7,7 @@ import pytest
 
 # Funkce pro nalezení největšího a nejmenšího čísla a jejich indexů
 def minmax(_list):
-
+    """Najde min a max z pole + jejich indexy."""
     max = _list[0]
     indexMax = 0
     min = _list[0]
@@ -23,7 +24,7 @@ def minmax(_list):
 
 # Implementace bubblesortu
 def bubblesort(_list):
-
+    """Bubblesort funkce."""
     for x in range(len(_list)-1):
         for k in range(len(_list) - x - 1):
             if _list[k+1] < _list[k]:
@@ -34,7 +35,7 @@ def bubblesort(_list):
 
 # Implementace insertion sortu
 def insertion_sort(_list):
-
+    """Insertionsort funkce."""
     for x in range(1, len(_list)):
         j = x-1
         dalsiCislo = _list[x]
@@ -47,7 +48,7 @@ def insertion_sort(_list):
 
 # Implementace selection sortu
 def selection_sort(_list):
-
+    """Selectionsort funkce."""
     for x in range(len(_list)):
         minIndex = x
         for j in range(x + 1, len(_list)):
@@ -58,7 +59,7 @@ def selection_sort(_list):
 
 
 def testMinMax():
-
+    """Pytest test."""
     with pytest.raises(ValueError):
         poleProTest = [1, 2, 3]
         assert minmax(poleProTest) == ["3", "1", "2", "0"]
