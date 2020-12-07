@@ -26,8 +26,13 @@ class TestPrimeNumber(unittest.TestCase):
             print("\n")
         self.assertEqual(vypis, 'Číslo 5 je prvočíslo')
 
-
     def test_tenIsNotPrimeNumber(self, ):
+        """Function validates that entered number 10 is not prime number
+                            Args:
+                                number 10
+                            Returns:
+                                - output - print String
+                            """
         number = 10
         number_is_prime_number = True
         for divisor in range(2, number):
