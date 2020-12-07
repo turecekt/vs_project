@@ -14,16 +14,15 @@ class Triangle:
     """
 
     def __init__(self):
-        """
-        Constructor that defines points and sides of the triangle
-        """
+        """Define points and sides of the triangle."""
+
         print("Souřadnice zadávejte ve formátu: x,y\nNapříklad: 1,1")
-        t, self.point_a = input_values(point_name="A")
-        t, self.point_b = input_values(point_name="B")
-        t, self.point_c = input_values(point_name="C")
+        self.point_a = input_values(point_name="A")[1]
+        self.point_b = input_values(point_name="B")[1]
+        self.point_c = input_values(point_name="C")[1]
         self.a, self.b, self.c = self.side_lenght()
 
-    def side_lenght(self) -> list:
+    def side_lenght(self):
         """
         Take inserted points and calculate sides.
 
@@ -37,7 +36,7 @@ class Triangle:
             math.sqrt(pow(i[0][0] - i[1][0], 2) + pow(i[0][1] - i[1][1], 2))
             for i in sides]
 
-    def is_able(self) -> bool:
+    def is_able(self):
         """
         Check if the triangle is able to construct.
 
@@ -50,7 +49,7 @@ class Triangle:
         else:
             return False
 
-    def is_rectangular(self) -> bool:
+    def is_rectangular(self):
         """
         Check if there is 90 degrees corner in the triangle.
 
@@ -65,7 +64,7 @@ class Triangle:
         else:
             return False
 
-    def perimeter(self) -> float:
+    def perimeter(self):
         """
         Calculate the other contour of the triangle.
 
@@ -85,10 +84,9 @@ class Triangle:
 
 def input_values(point_name):
     """
-    User input method.
-    Split user input into list.
+    User input method. Split user input into list.
 
-    :param point_name:
+    :param point_name: name of the point (char)
     :return: True, user input (list[int, int]) -> (tuple) | False
     """
     point = str_list_to_int(
@@ -100,7 +98,7 @@ def input_values(point_name):
         return input_values(point_name)
 
 
-def str_list_to_int(list_to_convert) -> list or bool:
+def str_list_to_int(list_to_convert):
     """
     Check if user input is in the right format.
 
@@ -108,9 +106,7 @@ def str_list_to_int(list_to_convert) -> list or bool:
     :return: True & User input converted to (int) -> (tuple) | False
     """
     try:
-        t = list_to_convert[0]
-        t = list_to_convert[1]
-        return True, [int(i) for i in list_to_convert]
+        return True, (int(list_to_convert[0]), int(list_to_convert[1]))
     except ValueError or NameError:
         return False
 
