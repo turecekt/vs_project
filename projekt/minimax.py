@@ -1,10 +1,28 @@
 import sys
+import os.path
+from os import path
 
 pole = []
 sys.argv.pop(0)
-for x in sys.argv:
-    try:
-        TryParse = int(x)
-        pole.append(TryParse)
-    except ValueError:
-        sys.exit("Všechny vstupy musí být typu int!")
+if(path.exists(sys.argv[0])):
+    file = open(sys.argv[0], "r")
+    words = file.read().splitlines()
+    file.close()
+    data = []
+    for x in words:
+        data = x.split()
+        for k in data:
+            try:
+                TryParse = int(k)
+                pole.append(TryParse)
+            except ValueError:
+                sys.exit("Všechny vstupy musí být typu int!")
+else:
+    for x in sys.argv:
+        try:
+            TryParse = int(x)
+            pole.append(TryParse)
+        except ValueError:
+            sys.exit("Všechny vstupy musí být typu int!")
+
+print(pole)
