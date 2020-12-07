@@ -101,8 +101,8 @@ print("Největší číslo: " + vysledek[0] + " a jeho index: " + vysledek[2])
 print("Největší číslo: " + vysledek[1] + " a jeho index: " + vysledek[3])
 
 # Volba řadících funkcí uživatelem
-a = input("Zvolte, jakou řadící funkcí chcete vaše pole seřadit: \
-    (1 = Bubblesort, 2 = Insertion sort, 3 = Selection sort)\n")
+# a = input("Zvolte, jakou řadící funkcí chcete vaše pole seřadit: \
+#    (1 = Bubblesort, 2 = Insertion sort, 3 = Selection sort)\n")
 
 # "Switch" pro volbu uživatele, vypnutý pro github pytest
 # if a == "1":
