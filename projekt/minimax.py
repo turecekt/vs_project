@@ -87,7 +87,7 @@ if len(sys.argv) > 1:
                 TryParse = int(x)
                 pole.append(TryParse)
             except ValueError:
-                sys.exit("Všechny vstupy musí být typu int!")
+                obsahujeChybu = True
 else:
     pole = [random.randint(1, 100) for _ in range(10)]
 
