@@ -7,10 +7,11 @@ import random
 # Funkce pro nalezení největšího a nejmenšího čísla a jejich indexů
 def minmax(_list):
     """Najde min a max z pole + jejich indexy."""
-    max = _list[0]
-    indexMax = 0
-    min = _list[0]
-    indexMin = 0
+    if(len(_list) > 0):
+        max = _list[0]
+        indexMax = 0
+        min = _list[0]
+        indexMin = 0
     for index, item in enumerate(_list):
         if item > max:
             max = item
