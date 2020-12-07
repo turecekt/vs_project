@@ -60,13 +60,13 @@ def selection_sort(_list):
 
 def testMinMax():
     """Pytest test."""
-    with pytest.raises(ValueError):
-        poleProTest = [1, 2, 3]
-        assert minmax(poleProTest) == ["3", "1", "2", "0"]
+    poleProTest = [1, 2, 3]
+    assert minmax(poleProTest) == ("3", "1", "2", "0")
 
 
 # Řešení pro vstupní paramatery:
 pole = []
+obsahujeChybu = False
 if len(sys.argv) > 1:
     sys.argv.pop(0)
     if(path.exists(sys.argv[0])):
@@ -81,7 +81,7 @@ if len(sys.argv) > 1:
                     TryParse = int(k)
                     pole.append(TryParse)
                 except ValueError:
-                    sys.exit("Všechny vstupy musí být typu int!")
+                    obsahujeChybu = True
     else:
         for x in sys.argv:
             try:
