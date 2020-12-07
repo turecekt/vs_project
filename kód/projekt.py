@@ -1,11 +1,11 @@
 """Proste projekt."""
 
 import math
-xarray = [1, 2, 3]
-yarray = [1, 2, 3]
-'''for i in range(3):
+xarray = []
+yarray = []
+for i in range(3):
     xarray.append(input('Zadaj x suradnicu bodu '))
-    yarray.append(input('Zadaj x suradnicu bodu '))'''
+    yarray.append(input('Zadaj x suradnicu bodu '))
 
 Ax = xarray[0]
 Ay = yarray[0]
