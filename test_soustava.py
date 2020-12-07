@@ -22,7 +22,7 @@ def test_soustava2():
     assert prevod(405, 2) == '110010101'
     assert prevod(58, 2) == '111010'
     assert prevod(1025, 2) == '10000000001'
-    assert prevod(1100, 2) == '10'
+    assert prevod(1100, 2) == '10001001100'
     assert prevod(2250, 2) == '100011001010'
     assert prevod(435, 2) == '110110011'
     assert prevod(35, 2) == '100011'
