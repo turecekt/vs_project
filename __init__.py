@@ -15,7 +15,6 @@ class Triangle:
 
     def __init__(self):
         """Define points and sides of the triangle."""
-
         print("Souřadnice zadávejte ve formátu: x,y\nNapříklad: 1,1")
         self.point_a = input_values(point_name="A")[1]
         self.point_b = input_values(point_name="B")[1]
