@@ -115,14 +115,15 @@ def test_unit():
         return False
 
 
-def launch(zprava):
+def launch(message):
+    """Use this message for lunch"""
     if test_unit():
-        if zprava == "":
+        if message == "":
             # Checking if unit test return true.
             code = input("Enter morse code or sentence: ")
         else:
             # Checking if unit test return true.
-            code = zprava
+            code = message
 
         # Checking what is first char in input, if it is . or -
         # it will use convert to letter function
@@ -157,7 +158,7 @@ def launch(zprava):
 
 def test_is_code():
     """Use this function for testing code."""
-    assert is_code(".") == True
+    assert is_code(".")
 
 
 def test_convert_to_letter():
