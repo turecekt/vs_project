@@ -24,7 +24,7 @@ def prevod(c, s):
         # ukládání zbytku po dělení do proměnné "zbytek"
         zbytek = c % s
         # podmínka pro odlišné ukládání zbytku pro 16-ovou soustavu
-        if zbytek <= 10:
+        if zbytek < 10:
             vysledek = vysledek + str(zbytek)
         elif s == 16 and zbytek == 10:
             vysledek = vysledek + "A"
@@ -51,6 +51,9 @@ def test_soustava():
     assert prevod(405, 8) == '625'
     assert prevod(793, 8) == '1431'
     assert prevod(25, 8) == '31'
+    assert prevod(6320, 8) == '14260'
+    assert prevod(78, 8) == '116'
+    assert prevod(156, 8) == '234'
     assert prevod(405, 2) == '110010101'
     assert prevod(58, 2) == '111010'
     assert prevod(1025, 2) == '10000000001'
