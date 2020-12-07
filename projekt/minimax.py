@@ -105,13 +105,13 @@ a = input("Zvolte, jakou řadící funkcí chcete vaše pole seřadit: \
     (1 = Bubblesort, 2 = Insertion sort, 3 = Selection sort)\n")
 
 # "Switch" pro volbu uživatele, vypnutý pro github pytest
-#if a == "1":
+# if a == "1":
 #    bubblesort(pole)
-#elif a == "2":
+# elif a == "2":
 #    insertion_sort(pole)
-#elif a == "3":
+# elif a == "3":
 #    selection_sort(pole)
-#else:
+# else:
 #    print("Nezadali jste správnou volbu!")
 
 bubblesort(pole)
