@@ -21,20 +21,31 @@ def minmax():
 def bubblesort(_list):
     for x in range(len(_list)-1):
         for k in range(len(_list) - x - 1):
-            if pole[k+1] < pole[k]:
-                pomocne = pole[k+1]
-                pole[k+1] = pole[k]
-                pole[k] = pomocne
+            if _list[k+1] < _list[k]:
+                pomocne = _list[k+1]
+                _list[k+1] = _list[k]
+                _list[k] = pomocne
 
 def insertion_sort(_list):
     for x in range(1, len(_list)):
         j = x-1
         dalsiCislo = _list[x]
-        
+
         while (_list[j] > dalsiCislo) and (j >= 0):
             _list[j+1] = _list[j]
             j=j-1
         _list[j+1] = dalsiCislo
+
+def selection_sort(_list):
+
+    for x in range(len(_list)):
+        minIndex = x
+        for j in range( x + 1, len(_list)):
+            if _list[minIndex] > _list[j]:
+                minIndex = j
+# Swap the minimum value with the compared value
+
+        _list[x], _list[minIndex] = _list[minIndex], _list[x]
 
 
 pole = []
@@ -64,7 +75,7 @@ else:
     pole = [random.randint(1,100) for _ in range(10)]
 
 minmax()
-insertion_sort(pole)
+selection_sort(pole)
 print(pole)
 
 
