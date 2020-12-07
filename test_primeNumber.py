@@ -3,8 +3,13 @@ import unittest
 
 class TestPrimeNumber(unittest.TestCase):
 
-
     def test_fiveIsPrimeNumber(self, ):
+        """Function validates that entered number 5 is prime number
+                    Args:
+                        number 5
+                    Returns:
+                        - output - print String
+                    """
         number = 5
         number_is_prime_number = True
         for divisor in range(2, number):
