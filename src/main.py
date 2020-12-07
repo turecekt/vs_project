@@ -121,7 +121,7 @@ def translation(text, isAlphabet):
 # Funkce s logikou hlavní smyčky programu
 def mainLoop(isRepeat):
     # Menu (základní nastavení pro kódování a dekódování)
-    print("Welcome to the Translator!\n") if isRepeat == False else print("Translator\n")
+    print("Welcome to the Translator!\n") if not isRepeat else print("Translator\n")
     isAlphabet = isAlphabetTranslation()
     print()
 
