@@ -8,6 +8,7 @@ def morse(text):
          'Z': '--..', ' ': '.....'}
     preklad = ''
 
+
     if text.startswith('.') or text.startswith('−'):
         morseovka_preklad = dict([(v, k) for k, v in morseovka.items()])
         text = text.split(' ')
@@ -20,4 +21,7 @@ def morse(text):
             preklad += morseovka.get(x) + ' '
     return preklad.strip()
 
-print(morse('test'))
+print ("Zadejte textovy retezec:")
+inputstr = str(input())
+
+print(morse(inputstr))
