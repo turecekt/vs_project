@@ -10,6 +10,8 @@ def morse(text):
 
     if text.startswith('"') and text.endswith('"'):
         text = text[1:-1]
+    else:
+        return 'Vstupni retezec neni napsan v uvozovkach'
 
     if text.startswith('.') or text.startswith('−'):
         morseovka_preklad = dict([(v, k) for k, v in morseovka.items()])
