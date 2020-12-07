@@ -21,7 +21,14 @@ def compute(x):
 nazev_souboru = 'basnicka.txt'
 
 def nacti_text(nazev_souboru):
+    """Funkce načte text ze souboru. Pokud je přítomen znak "#", načte text jen po tento znak. Soubor zavře.
 
+    Args:
+        - nazev_souboru - Soubor formátu .txt, který chceme načítst
+
+    Returns:
+        - obsah - Vrací string """
+    
     soubor = open(nazev_souboru, encoding='utf-8')
     obsah = soubor.read()
     soubor.close()
@@ -37,13 +44,21 @@ def nacti_text(nazev_souboru):
         print ("v souboru je ukončovací znak hned na začátku")
 
 
-
 print("základní text: ",nacti_text(nazev_souboru))
 
 def uprav_text(text):
+    """ Funkce upravuje text: převede všechna písmena na málá a odstraní mezery mezi slovy.
+
+        Args:
+            - text - Vstup je string, který chceme upravit
+        
+        Returns
+            - text - Vrací upravený string """
+
     str = text.lower()
     str = str.replace(" ","")
     return str
+
 print("upravený text: ",uprav_text(nacti_text(nazev_souboru)))
 
 
