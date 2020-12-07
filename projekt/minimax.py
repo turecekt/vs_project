@@ -18,6 +18,15 @@ def minmax():
     print("Největší číslo: " + str(max) + " a jeho index: " + str(indexMax))
     print("Největší číslo: " + str(min) + " a jeho index: " + str(indexMin))
 
+def bubblesort(list):
+
+    for x in range(len(pole)-1):
+        for k in range(len(pole) - x - 1):
+            if pole[k+1] < pole[k]:
+                pomocne = pole[k+1]
+                pole[k+1] = pole[k]
+                pole[k] = pomocne
+
 
 pole = []
 if len(sys.argv) > 1:
@@ -46,6 +55,8 @@ else:
     pole = [random.randint(1,100) for _ in range(10)]
 
 minmax()
+bubblesort(pole)
+print(pole)
 
 
 
