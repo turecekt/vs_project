@@ -33,10 +33,11 @@ def bubblesort(_list):
                 pomocne = _list[k+1]
                 _list[k+1] = _list[k]
                 _list[k] = pomocne
+    return _list
 
 
 # Implementace insertion sortu
-def insertion_sort(_list):
+def insertionSort(_list):
     """Insertionsort funkce."""
     for x in range(1, len(_list)):
         j = x-1
@@ -46,10 +47,11 @@ def insertion_sort(_list):
             _list[j+1] = _list[j]
             j = j-1
         _list[j+1] = dalsiCislo
+    return _list
 
 
 # Implementace selection sortu
-def selection_sort(_list):
+def selectionSort(_list):
     """Selectionsort funkce."""
     for x in range(len(_list)):
         minIndex = x
@@ -58,12 +60,31 @@ def selection_sort(_list):
                 minIndex = j
 
         _list[x], _list[minIndex] = _list[minIndex], _list[x]
+    return _list
 
 
 def testMinMax():
     """Pytest test."""
     poleProTest = [1, 2, 3]
     assert minmax(poleProTest) == ("3", "1", "2", "0")
+
+
+def testBubblesort():
+    """Bubblesort test."""
+    poleProTest = [5, 3, 10]
+    assert bubblesort(poleProTest) == [3, 5, 10]
+
+
+def testInsertionsort():
+    """Insertionsort test."""
+    poleProTest = [5, 3, 10]
+    assert insertionSort(poleProTest) == [3, 5, 10]
+
+
+def testSelectionSort():
+    """Selectionsort test."""
+    poleProTest = [5, 3, 10]
+    assert selectionSort(poleProTest) == [3, 5, 10]
 
 
 # Řešení pro vstupní paramatery:
@@ -106,15 +127,15 @@ print("Největší číslo: " + vysledek[1] + " a jeho index: " + vysledek[3])
 
 # "Switch" pro volbu uživatele, vypnutý pro github pytest
 # if a == "1":
-#    bubblesort(pole)
+#    pole = bubblesort(pole)
 # elif a == "2":
-#    insertion_sort(pole)
+#    pole = insertionSort(pole)
 # elif a == "3":
-#    selection_sort(pole)
+#    pole = selectionSort(pole)
 # else:
 #    print("Nezadali jste správnou volbu!")
 
-bubblesort(pole)
+pole = bubblesort(pole)
 
 # Vypsání pole, vypíše se i při nesprávném zadání řadícího algoritmu
 print(pole)
