@@ -75,7 +75,19 @@ else:
     pole = [random.randint(1,100) for _ in range(10)]
 
 minmax()
-selection_sort(pole)
+
+a = input("Zvolte, jakou řadící funkcí chcete vaše pole seřadit: (1 = Bubblesort, 2 = Insertion sort, 3 = Selection sort)\n")
+
+if a == "1":
+    bubblesort(pole)
+elif a == "2":
+    insertion_sort(pole)
+elif a == "3":
+    selection_sort(pole)
+else:
+    print("Nezadali jste správnou volbu!")
+
+
 print(pole)
 
 
