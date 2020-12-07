@@ -97,7 +97,7 @@ def alphabetTranslation(text):
 # Funkce překládá z Morseovy abecedy do abecedy
 def morseCodeTranslation(text):
     result = ""
-    chars = text[1:-1].split(charSeparator)
+    chars = text.split(charSeparator)
     for char in chars:
         if char in morseAlphabet:
             result += morseAlphabet[char]
@@ -106,7 +106,13 @@ def morseCodeTranslation(text):
     return result
 
 def translation(text, isAlphabet):
-    return alphabetTranslation(text) if isAlphabet else morseCodeTranslation(text)
+    if text is None:
+        return ""
+
+    # Odstranění uvozovek na začátku a konci
+    modifyText = text[1:-1]
+    
+    return alphabetTranslation(modifyText) if isAlphabet else morseCodeTranslation(modifyText)
 
 # Funkce s logikou hlavní smyčky programu    
 def mainLoop(isRepeat):
