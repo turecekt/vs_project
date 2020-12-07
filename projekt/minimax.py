@@ -12,14 +12,16 @@ def minmax(_list):
         indexMax = 0
         min = _list[0]
         indexMin = 0
-    for index, item in enumerate(_list):
-        if item > max:
-            max = item
-            indexMax = index
-        if item < min:
-            min = item
-            indexMin = index
-    return str(max), str(min), str(indexMax), str(indexMin)
+        for index, item in enumerate(_list):
+            if item > max:
+                max = item
+                indexMax = index
+            if item < min:
+                min = item
+                indexMin = index
+        return str(max), str(min), str(indexMax), str(indexMin)
+    else:
+        return "0", "0", "0", "0"
 
 
 # Implementace bubblesortu
