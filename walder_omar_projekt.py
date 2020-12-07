@@ -1,6 +1,6 @@
 """Number to Rome Numeral converter.
 
-This is a Python converter for numbers, it converts its input (form of a number)
+This is a Python converter for numbers, it converts it's input (form of a number)
 and returns an output in the form of a Roman Numeral
 """
 
@@ -15,7 +15,7 @@ class Converter():
             - num - Input of the function
 
         Returns:
-            - output - Output of the function
+            - roman - The converter number
         """
         #Vytvoříme pole pro obyčejné čísla
         numbers = [
@@ -49,12 +49,38 @@ class Converter():
         #Vrátí Římskou číslici
         return roman
 
+
+    def test_convert(self):
+        """Function test_convert tests, if the method converts correctly.
+
+        Prints a message depending on the result of the test
+        """
+        num1 = 1
+        num2 = 586
+        result1 = 'I'
+        result2 = 'DLXXXVI'
+        num1_test = Converter().convert(num1)
+        num2_test = Converter().convert(num2)
+        if result1 == num1_test and result2 == num2_test:
+            print("Metoda convert pracuje.")
+        else:
+            print("Metoda convert nepracuje!")
+
+
+    def test_convertInput()
+        """Function test_convertInput tests, if the input for the method convert is a number and isn't blank
+
+        Prints a message depending on the result of the test
+        """
+
 if __name__ == '__main__':
     print('Running')
 
+Converter().test_convert()
 #Vložíme do konzole otázku pro uživatele, aby zadal číslici pro převod
 print('Zadejte hodnotu pro převod:')
 #Nastaví výsledek (vloženou hodnotu) jako promměnou, aby jsme s ní mohli pracovat
-numIn = int(input())
+#numIn = int(input())
+numIn = input()
 #Vloženou hodnotu vložíme do metody convert, aby ji převedla
 print(Converter().convert(numIn))
