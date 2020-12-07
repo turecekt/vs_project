@@ -21,9 +21,7 @@ elif len(sys.argv) == 2:
         cisla = list(map(int, cislaString))
     except ValueError:
         platnyVStup = False
-        print(
-            "Nespravny format souboru - musi obsahovat pouze cela cisla oddelena mezerou.")
-
+        print("Soubor musi obsahovat pouze cela cisla oddelena mezerou.")
     soubor.close()
 
 # vstupni argumenty cisla
