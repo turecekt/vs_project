@@ -9,9 +9,11 @@ from random import randint
 def inicializer(option=0):
     """Inicializing array via random generator / text file / user input."""
     array = []
+    # Array is randomly generated.
     if len(sys.argv) == 1 or option == 1:
         for i in range(20):
             array.append(randint(-100, 100))
+    # Inicialization from text file
     elif (len(sys.argv) == 2 and
           sys.argv[1].isdigit() is False) or option == 2:
         with open(sys.argv[1], 'rt') as f:
@@ -22,6 +24,7 @@ def inicializer(option=0):
                     array.append(int(word))
         except ValueError as exception:
             print('String contained in the file must be digits!' + exception)
+    # Inicialization from user input.
     elif (len(sys.argv) >= 2 and sys.argv[1].isdigit() is True) or option == 3:
         try:
             for i in range(1, len(sys.argv)):
@@ -97,7 +100,9 @@ def choose_sorting_method(array, choice=0):
 
 def test_inicializer():
     """Test iniciliazer of array."""
+    # Check random generated array.
     assert len(inicializer(1)) == 20
+    # Check if inicialization from file works correctly.
     sys.argv[0] = 'minimax'
     if len(sys.argv) == 2:
         sys.argv[1] = 'test_text.txt'
@@ -105,6 +110,7 @@ def test_inicializer():
     elif len(sys.argv) == 1:
         sys.argv.append('test_text.txt')
         assert len(inicializer(2)) == 9
+    # Check if array is inicialized via user input correctly.
     if len(sys.argv) == 2:
         sys.argv.pop()
         for i in range(1, 10):
@@ -145,6 +151,8 @@ def test_printer():
     printer([-8, -8, 0, 1, 5, 9, 12, 15])
     sys.stdout = sys.__stdout__
     string = printer_output.getvalue()
+    # Check if printer works properly.
+    # Check format of methods output.
     assert string.find('Min: -8') != -1
     assert string.find('Max: 15') != -1
     assert string.find('[-8, -8, 0, 1, 5, 9, 12, 15]') != -1
@@ -152,6 +160,7 @@ def test_printer():
 
 def test_choose_sorting_method():
     """Test choice-maker for sorting systems."""
+    # Test funcionality if choice equals 1 (Bubble sort)
     printer_output = io.StringIO()
     sys.stdout = printer_output
     choose_sorting_method([9, 8, 7, 6, 5, 4, 3, 2, 1], 1)
@@ -159,12 +168,14 @@ def test_choose_sorting_method():
     sys.stdout = sys.__stdout__
     string = printer_output.getvalue()
     assert string.find('[9, 8, 7, 6, 5, 4, 3, 2, 1]') != -1
+    # Test funcionality if choice equals 2 (Insertion sort)
     sys.stdout = printer_output
     choose_sorting_method([9, 8, 7, 6, 5, 4, 3, 2, 1], 2)
     printer([9, 8, 7, 6, 5, 4, 3, 2, 1])
     sys.stdout = sys.__stdout__
     string = printer_output.getvalue()
     assert string.find('[9, 8, 7, 6, 5, 4, 3, 2, 1]') != -1
+    # Test funcionality if choice equals 1 (Quick sort)
     sys.stdout = printer_output
     choose_sorting_method([9, 8, 7, 6, 5, 4, 3, 2, 1], 3)
     printer([9, 8, 7, 6, 5, 4, 3, 2, 1])
@@ -179,5 +190,6 @@ test_insertion_sort()
 test_quick_sort()
 test_printer()
 test_choose_sorting_method()
-# code calling methods with additional argument
+# Code calling methods with additional arguments.
+# Un-comment following code if you want to run this programm.
 # choose_sorting_method(inicializer())
