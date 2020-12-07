@@ -2,7 +2,6 @@
 import sys
 from os import path
 import random
-import pytest
 
 
 # Funkce pro nalezení největšího a nejmenšího čísla a jejich indexů
