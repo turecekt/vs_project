@@ -51,9 +51,9 @@ def pravouhlost(a, b, c):
         return 0
 
 
-s1 = dlzkastrany((Ax, Ay, Bx, By), 4)
-s2 = dlzkastrany((Ax, Ay, Cx, Cy), 4)
-s3 = dlzkastrany((Bx, By, Cx, Cy), 4)
+s1 = dlzkastrany(Ax, Ay, Bx, By)
+s2 = dlzkastrany(Ax, Ay, Cx, Cy)
+s3 = dlzkastrany(Bx, By, Cx, Cy)
 o = obvod(s1, s2, s3)
 S = obsah(s1, s2, s3)
 print(o)
