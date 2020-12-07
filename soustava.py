@@ -60,3 +60,8 @@ def test_soustava():
     assert prevod(435, 16) == '1B3'
     assert prevod(35, 16) == '23'
     assert prevod(932, 16) == '3A4'
+    assert prevod(2250, 3) == '10002100'
+    assert prevod(435, 3) == '121010'
+    assert prevod(35, 3) == '1022'
+    assert prevod(932, 3) == '1021112'
+    
