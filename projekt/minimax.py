@@ -1,11 +1,12 @@
 import sys
-import os.path
 from os import path
 import random
-import unittest
+import pytest
 
-#Funkce pro nalezení největšího a nejmenšího čísla a jejich indexů
+
+# Funkce pro nalezení největšího a nejmenšího čísla a jejich indexů
 def minmax(_list):
+
     max = _list[0]
     indexMax = 0
     min = _list[0]
@@ -19,8 +20,10 @@ def minmax(_list):
             indexMin = index
     return str(max), str(min), str(indexMax), str(indexMin)
 
-#Implementace bubblesortu
+
+# Implementace bubblesortu
 def bubblesort(_list):
+
     for x in range(len(_list)-1):
         for k in range(len(_list) - x - 1):
             if _list[k+1] < _list[k]:
@@ -28,39 +31,45 @@ def bubblesort(_list):
                 _list[k+1] = _list[k]
                 _list[k] = pomocne
 
-#Implementace insertion sortu
+
+# Implementace insertion sortu
 def insertion_sort(_list):
+
     for x in range(1, len(_list)):
         j = x-1
         dalsiCislo = _list[x]
 
         while (_list[j] > dalsiCislo) and (j >= 0):
             _list[j+1] = _list[j]
-            j=j-1
+            j = j-1
         _list[j+1] = dalsiCislo
 
-#Implementace selection sortu
+
+# Implementace selection sortu
 def selection_sort(_list):
 
     for x in range(len(_list)):
         minIndex = x
-        for j in range( x + 1, len(_list)):
+        for j in range(x + 1, len(_list)):
             if _list[minIndex] > _list[j]:
                 minIndex = j
 
         _list[x], _list[minIndex] = _list[minIndex], _list[x]
 
+
 def testMinMax():
-    poleProTest = [1, 2, 3]
-    assert minmax(poleProTest) == ["3", "1", "2", "0"]
+
+    with pytest.raises(ValueError):
+        poleProTest = [1, 2, 3]
+        assert minmax(poleProTest) == ["3", "1", "2", "0"]
 
 
-#Řešení pro vstupní paramatery:
+# Řešení pro vstupní paramatery:
 pole = []
 if len(sys.argv) > 1:
     sys.argv.pop(0)
     if(path.exists(sys.argv[0])):
-        file = open(sys.argv[0],encoding='utf8')
+        file = open(sys.argv[0], encoding='utf8')
         words = file.read().splitlines()
         file.close()
         data = []
@@ -80,18 +89,19 @@ if len(sys.argv) > 1:
             except ValueError:
                 sys.exit("Všechny vstupy musí být typu int!")
 else:
-    pole = [random.randint(1,100) for _ in range(10)]
+    pole = [random.randint(1, 100) for _ in range(10)]
 
-#Zavolání funkce
+# Zavolání funkce
 vysledek = minmax(pole)
 
 print("Největší číslo: " + vysledek[0] + " a jeho index: " + vysledek[2])
 print("Největší číslo: " + vysledek[1] + " a jeho index: " + vysledek[3])
 
-#Volba řadících funkcí uživatelem
-a = input("Zvolte, jakou řadící funkcí chcete vaše pole seřadit: (1 = Bubblesort, 2 = Insertion sort, 3 = Selection sort)\n")
+# Volba řadících funkcí uživatelem
+a = input("Zvolte, jakou řadící funkcí chcete vaše pole seřadit: \
+    (1 = Bubblesort, 2 = Insertion sort, 3 = Selection sort)\n")
 
-#"Switch" pro volbu uživatele
+# "Switch" pro volbu uživatele
 if a == "1":
     bubblesort(pole)
 elif a == "2":
@@ -101,8 +111,5 @@ elif a == "3":
 else:
     print("Nezadali jste správnou volbu!")
 
-#Vypsání pole, vypíše se i při nesprávném zadání řadícího algoritmu
+# Vypsání pole, vypíše se i při nesprávném zadání řadícího algoritmu
 print(pole)
-
-
-
