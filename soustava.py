@@ -49,6 +49,14 @@ def prevod(c, s):
 def test_soustava():
     """Funkce pro otestování programu."""
     assert prevod(405, 8) == '625'
+    assert prevod(793, 8) == '1431'
+    assert prevod(25, 8) == '31'
     assert prevod(405, 2) == '110010101'
+    assert prevod(58, 2) == '111010'
+    assert prevod(1025, 2) == '10000000001'
     assert prevod(405, 12) == '299'
+    assert prevod(12, 12) == '10'
+    assert prevod(2250, 12) == '1376'
     assert prevod(435, 16) == '1B3'
+    assert prevod(35, 16) == '23'
+    assert prevod(932, 16) == '3A4'
