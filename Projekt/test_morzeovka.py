@@ -9,16 +9,6 @@ abeceda = {'1': '.----', '2': '..---', '3': '...--', '4': '....-',
            'q': '--.-', 'r': '.-.', 's': '...', 't': '-', 'u': '..-', ' ': '',
            'v': '...-', 'w': '.--', 'x': '-..-', 'y': '-.--', 'z': '--..'}
 
-morzeovka = {'.----': '1', '..---': '2', '...--': '3', '....-': '4',
-             '.....': '5', '-....': '6', '--...': '7', '---..': '8',
-             '----.': '9', '-----': '0',  '.-': 'a', '-...': 'b',
-             '-.-.': 'c', '-..': 'd', '.': 'e', '..-.': 'f', '--.': 'g',
-             '....': 'h', '----': 'ch', '..': 'i', '.---': 'j',
-             '-.-': 'k', '.-..': 'l', '--': 'm', '-.': 'n', '---': 'o',
-             '.--.': 'p', '--.-': 'q', '.-.': 'r', '...': 's', '-': 't',
-             '..-': 'u', '...-': 'v',  '.--': 'w', '-..-': 'x', '-.--': 'y',
-             '--..': 'z', ' ': ''}
-
 
 def ab2mor(zprava):
     """
@@ -50,18 +40,24 @@ def mor2ab(zprava):
     vystup = ""
     x = 1
     for i in str(zprava):
-        if x == len(zprava):
+        if x == len(zprava):  # konce zpravy
             znak += str(i)
-            try:
-                vystup += morzeovka[znak]
-            except KeyError:
+            if znak in abeceda.values():  # kontrola jestli je znak v abecede
+                for key, value in abeceda.items():  # vypis klice podle value
+                    if value == znak:
+                        vystup += key
+                        break
+            else:
                 print("Text neni validni")
                 break
             break
-        elif i == " ":
-            try:
-                vystup += morzeovka[znak]
-            except KeyError:
+        elif i == " ":  # konec jednoho znaku
+            if znak in abeceda.values():  # kontrola jestli je znak v abecede
+                for key, value in abeceda.items():  # vypis klice podle value
+                    if value == znak:
+                        vystup += key
+                        break
+            else:
                 print("Text neni validni")
                 break
             znak = ""
