@@ -34,12 +34,30 @@ False
 >>> computeArea(4.12,5.39,6.32)
 11.0
 
+>>> isRightAngle(4, 2, 2)
+False
+
+>>> isRightAngle(3, 5, 3)
+False
+
+>>> isRightAngle(3, 4, 5)
+True
+
 >>> output(4.12, 5.39, 6.32)
 Lenghts of the sides:
 Sides: a = 4.12, side b = 5.39, side c = 6.32
 Is it possible to make a triangle: True
 Perimter = 15.83
 Area = 11.0
+Is right angle: False
+
+>>> output(3, 4, 5)
+Lenghts of the sides:
+Sides: a = 3, side b = 4, side c = 5
+Is it possible to make a triangle: True
+Perimter = 12
+Area = 6.0
+Is right angle: True
 """
 
 
@@ -165,6 +183,34 @@ def computeArea(a, b, c):
     return totalS
 
 
+def isRightAngle(a, b, c):
+    """Check if the triangle is right angle or not.
+
+    Function takes lenghts of three sides like parameter.
+    Finds the longest one and check right angle by Pythagoras Theorem.
+
+    Args:
+        - a,b,c lenghts of sides
+
+    Returns:
+        - True or False
+    """
+    if(a > b and a > c):
+        hypotenuse = a
+        shorterSide1 = b
+        shorterSide2 = c
+    elif(b > a and b > c):
+        shorterSide1 = a
+        hypotenuse = b
+        shorterSide2 = c
+    else:
+        shorterSide1 = a
+        shorterSide2 = b
+        hypotenuse = c
+
+    return shorterSide1**2 + shorterSide2**2 == hypotenuse**2
+
+
 def output(a, b, c):
     """Return the summary of the previous calculation.
 
@@ -180,8 +226,10 @@ def output(a, b, c):
     if isTheTriangle:
         perimeter = round(computePerimeter(a, b, c), 2)
         area = round(computeArea(a, b, c), 2)
+        isRightAng = isRightAngle(a, b, c)
         print("Perimter = {}".format(perimeter))
         print("Area = {}".format(area))
+        print("Is right angle: {}".format(isRightAng))
 
 
 if __name__ == '__main__':
