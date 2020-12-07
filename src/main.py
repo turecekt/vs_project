@@ -114,11 +114,11 @@ def translation(text, isAlphabet):
         return ""
 
     # Odstranění uvozovek na začátku a konci
-    modifyText = text[1:-1]   
+    modifyText = text[1:-1]
     return alphabetTranslation(modifyText) if isAlphabet else morseCodeTranslation(modifyText)
 
 
-# Funkce s logikou hlavní smyčky programu   
+# Funkce s logikou hlavní smyčky programu
 def mainLoop(isRepeat):
     # Menu (základní nastavení pro kódování a dekódování)
     print("Welcome to the Translator!\n") if isRepeat == False else print("Translator\n")
