@@ -116,7 +116,7 @@ def test_unit():
 
 
 def launch(message):
-    """Use this message for lunch"""
+    """Use this message for lunch."""
     if test_unit():
         if message == "":
             # Checking if unit test return true.
