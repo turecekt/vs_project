@@ -104,15 +104,17 @@ print("Největší číslo: " + vysledek[1] + " a jeho index: " + vysledek[3])
 a = input("Zvolte, jakou řadící funkcí chcete vaše pole seřadit: \
     (1 = Bubblesort, 2 = Insertion sort, 3 = Selection sort)\n")
 
-# "Switch" pro volbu uživatele
-if a == "1":
-    bubblesort(pole)
-elif a == "2":
-    insertion_sort(pole)
-elif a == "3":
-    selection_sort(pole)
-else:
-    print("Nezadali jste správnou volbu!")
+# "Switch" pro volbu uživatele, vypnutý pro github pytest
+#if a == "1":
+#    bubblesort(pole)
+#elif a == "2":
+#    insertion_sort(pole)
+#elif a == "3":
+#    selection_sort(pole)
+#else:
+#    print("Nezadali jste správnou volbu!")
+
+bubblesort(pole)
 
 # Vypsání pole, vypíše se i při nesprávném zadání řadícího algoritmu
 print(pole)
