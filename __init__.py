@@ -1,4 +1,4 @@
-"""Calculate triangle"""
+"""Calculate triangle."""
 import math
 
 
@@ -14,6 +14,9 @@ class Triangle:
     """
 
     def __init__(self):
+        """
+        Constructor that defines points and sides of the triangle
+        """
         print("Souřadnice zadávejte ve formátu: x,y\nNapříklad: 1,1")
         t, self.point_a = input_values(point_name="A")
         t, self.point_b = input_values(point_name="B")
@@ -82,8 +85,8 @@ class Triangle:
 
 def input_values(point_name):
     """
-    User input method
-    Split user input into list
+    User input method.
+    Split user input into list.
 
     :param point_name:
     :return: True, user input (list[int, int]) -> (tuple) | False
@@ -99,7 +102,7 @@ def input_values(point_name):
 
 def str_list_to_int(list_to_convert) -> list or bool:
     """
-    Check if user input is in the right format
+    Check if user input is in the right format.
 
     :param list_to_convert: user input converted to list (list[str])
     :return: True & User input converted to (int) -> (tuple) | False
