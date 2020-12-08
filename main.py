@@ -32,5 +32,5 @@ def prevod(cislo):
 #try/except je zde kvuli moznosti nezadani cisla
 try:
     print("Rimska cislice: ", prevod(int(input("Zadej cislo: "))))
-except:
+except Exception:
     print("Spatne zadana hodnota! Hodnota musi byt cislo!")
