@@ -7,6 +7,43 @@ import sys
 import pytest
 
 
+def program_start(cmd_arg):
+    """Function creates an array of integers after starting the script.
+
+    Values of an array are based on paramaters given by user.
+
+    Returns:
+        - array - an unsorted array of integers
+    """
+    array = []
+    n = len(cmd_arg)
+    if n == 1:
+        array = array_insert()
+        return array
+    elif n == 2:
+        try:
+            int(cmd_arg[1])
+            raise SystemExit('You must enter more than one number')
+        except ValueError:
+            try:
+                with open(cmd_arg[1], "r") as file:
+                    for line in file:
+                        array = line.split()
+                file.close()
+                array = convert_to_int(array)
+                return array
+            except IOError:
+                raise SystemExit('Error: File does not appear to exist.')
+    elif n > 2:
+        del cmd_arg[0]
+        for x in range(len(cmd_arg)):
+            try:
+                array.append(int(cmd_arg[x]))
+            except ValueError:
+                raise SystemExit('You must enter numbers or name of a file')
+        return array
+
+
 def array_insert():
     """Function returns an array with randomly generated numbers.
 
