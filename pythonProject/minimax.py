@@ -148,3 +148,16 @@ def bubble_sort(array):
                 array[k] = array[k-1]
                 array[k-1] = temp
     return array
+
+
+def insertion_sort(array):
+    """Insertion sort algorithm."""
+    n = len(array)
+    for i in range(0, n-1):
+        j = i+1
+        number = array[j]
+        while j > 0 and number < array[j-1]:
+            array[j] = array[j-1]
+            j = j-1
+        array[j] = number
+    return array
