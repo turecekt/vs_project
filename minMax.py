@@ -64,7 +64,7 @@ def selectionsort(pole):
 
 
 def vstup():
-    """Funkce se vyreseni vstupu."""
+    """Funkce se vyresenim vstupu."""
     cisla = []
     platnyVStup = True
     # zadny vstupni argument - nahodna cisla
