@@ -89,3 +89,8 @@ def printDivisors():
 
 isPrimeNumber()
 printDivisors()
+
+# print documentation using pydoc.
+print(PrimeNumber.__doc__)  # print documentation for class
+print(isPrimeNumber.__doc__)  # print documentation for function isPrimeNumber
+print(printDivisors.__doc__)  # print documentation for function printDivisors
