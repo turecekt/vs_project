@@ -282,3 +282,13 @@ def test_program_start_3():
         if -1000 < arr[i] < 1000:
             tmp[i] = 1
         assert tmp[i] == 1
+
+
+def test_program_start_exception1():
+    """Unit test for raising an excepiton with incorrect parameters.
+
+    When user enters as a parameter an array of integers and string.
+    """
+    cmd_arg2 = ['minimax.py', '-15', '3', '-6', '-7', '0', 'number']
+    with pytest.raises(SystemExit):
+        assert program_start(cmd_arg2)
