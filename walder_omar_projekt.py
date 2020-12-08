@@ -65,8 +65,6 @@ def userProces(inputNum):
         - convert(inputNum) - The converted number
         - "" - An empty string for the test method
     """
-    # Vytvoříme promměnou opakovani, která bude 0
-    # dokud uživatel nezadá správnou hodnotu
     try:
         inputNum = int(inputNum)
         # Nastaví výsledek (vloženou hodnotu) jako argument
