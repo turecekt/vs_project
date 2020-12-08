@@ -14,7 +14,7 @@ This module is use for checking the input
 
 
 class PrimeNumber:
-        """
+    """
            Class PrimeNumber for evaluating whether the entered number
            is a prime number.
            A class to represent logic how to validate any number and
@@ -36,6 +36,7 @@ class PrimeNumber:
                 Function prints number of dividers and their values
            """
 
+
 # define input from console and global variables
 number = input("Vlož číslo: ")
 counter = int
@@ -56,8 +57,8 @@ def isPrimeNumber():
             Parameters:
                 number (int): Number is input from console
             Returns:
-                output (str): String printed into console, statement if number is
-                prime number
+                output (str): String printed into console,
+                statement if number is prime number
             """
     # logic of prime number evaluation
     isPrimeNumber = True
@@ -82,19 +83,23 @@ def printDivisors():
                 """
     # inicialize and define number of divisers as 0 at the beginning
     counter = 0
-    print('delitele:', end=' ')
+    print('Delitele:', end=' ')
     for divisor in range(1, number + 1):
         if number % divisor == 0:
             counter += 1
             print(divisor, end=' ')
     print()
-    print('počet deliteľov:', counter)
+    print('Počet deliteľov:', counter)
 
 
 isPrimeNumber()
 printDivisors()
 
 # print documentation using pydoc.
-print(PrimeNumber.__doc__)  # print documentation for class
-print(isPrimeNumber.__doc__)  # print documentation for function isPrimeNumber
-print(printDivisors.__doc__)  # print documentation for function printDivisors
+
+# print documentation for class
+# print(PrimeNumber.__doc__)
+# print documentation for function isPrimeNumber
+# print(isPrimeNumber.__doc__)
+# print documentation for function printDivisors
+# print(printDivisors.__doc__)

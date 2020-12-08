@@ -32,7 +32,7 @@ class TestPrimeNumber(unittest.TestCase):
                test_fiveIsPrimeNumber(self, ):
                    Function validates that entered number 5 is prime number
                test_tenIsNotPrimeNumber(self, ):
-                   Function validates that entered number 10 is non-prime number
+                   Function validates that number 10 is non-prime number
                """
 
     def test_fiveIsPrimeNumber(self, ):
@@ -107,7 +107,6 @@ class TestPrintedValues(unittest.TestCase):
                    divisors are printed into console
                """
 
-
     def test_numberOfDivisors(self, ):
         """Function validates the number of dividers
                         Parameters:
@@ -127,7 +126,6 @@ class TestPrintedValues(unittest.TestCase):
         print()
         print('počet deliteľov:', counter)
         self.assertEqual(counter, 2)
-
 
     def test_printedValues(self, ):
         """Function validates if after evaluation the divisors are printed into console
