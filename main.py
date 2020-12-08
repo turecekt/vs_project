@@ -9,7 +9,7 @@ platnyVStup = True
 
 # zadny vstupni argument - nahodna cisla
 if len(sys.argv) == 1:
-    cisla = [random.randint(0, 100) for i in range(20)]
+    cisla = [random.randint(0, 1000) for i in range(20)]
 
 # vstupni argument nazev souboru
 elif len(sys.argv) == 2:
