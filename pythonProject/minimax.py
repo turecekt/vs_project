@@ -131,3 +131,20 @@ def merge_sort(inp_arr):
             q += 1
             r += 1
     return inp_arr
+
+
+def bubble_sort(array):
+    """Bubble sort algorithm."""
+    n = len(array)
+    for i in range(0, n):
+        for j in range(i, n-1-i):
+            if array[j] > array[j+1]:
+                temp = array[j]
+                array[j] = array[j+1]
+                array[j+1] = temp
+        for k in range(n-i, i):
+            if array[k] < array[k-1]:
+                temp = array[k]
+                array[k] = array[k-1]
+                array[k-1] = temp
+    return array
