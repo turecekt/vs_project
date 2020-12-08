@@ -6,7 +6,7 @@ and returns an output in the form of a Roman Numeral
 """
 
 
-def convert(self, num):
+def convert(num):
     """Convert a normal number into a Roman numeral.
 
     This method convert its input (a number) and based on it
@@ -51,7 +51,7 @@ def convert(self, num):
     return roman
 
 
-def test_convert(self):
+def test_convert():
     """Function tests, if the method converts correctly.
 
     Prints a message depending on the result of the test
