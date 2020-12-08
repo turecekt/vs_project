@@ -13,12 +13,18 @@ class Triangle:
             used for storing the calculated sides
     """
 
-    def __init__(self):
-        """Define points and sides of the triangle."""
+    def __init__(self, point_a, point_b, point_c):
+        """
+        Define points and sides of the triangle.
+
+        :param
+            point_a, point_b, point_c:
+                used for transfer points to self.points
+        """
         print("Souřadnice zadávejte ve formátu: x,y\nNapříklad: 1,1")
-        self.point_a = input_values(point_name="A")[1]
-        self.point_b = input_values(point_name="B")[1]
-        self.point_c = input_values(point_name="C")[1]
+        self.point_a = point_a
+        self.point_b = point_b
+        self.point_c = point_c
         self.a, self.b, self.c = self.side_lenght()
 
     def side_lenght(self):
@@ -111,7 +117,9 @@ def str_list_to_int(list_to_convert):
 
 
 if __name__ == '__main__':
-    triangle = Triangle()
+    triangle = Triangle(input_values(point_name="A")[1],
+                        input_values(point_name="B")[1],
+                        input_values(point_name="C")[1])
     if triangle.is_able():
         print("Trojuholník je zostrojiteľný")
         print(
