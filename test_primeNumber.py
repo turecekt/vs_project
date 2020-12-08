@@ -49,6 +49,27 @@ class TestPrimeNumber(unittest.TestCase):
             print("\n")
         self.assertEqual(vypis, 'Číslo 10 není prvočíslo')
 
+class PrintedValues(unittest.TestCase):
+    def test_numberOfDivisors(self, ):
+        """Function validates if after evaluation the divisors are printed into console
+
+                Args:
+                    number
+
+                Returns:
+                    - output - print []
+                """
+        number = 5
+        counter = 0
+        print('delitele:', end=' ')
+        for divisor in range(1, number + 1):
+            if number % divisor == 0:
+                counter += 1
+                print(divisor, end=' ')
+        print()
+        print('\npočet deliteľov:', counter)
+        print("\n")
+        self.assertEqual(counter, 2)
 
 if __name__ == '__main__':
     unittest.main()
