@@ -1,5 +1,44 @@
 """Převodník numerických soustav."""
 
+import sys
+
+
+def main(argv):
+    """Funkce která spustí UI programu.
+
+    Podle zadaných parametrů provádí převod
+    """
+
+    if len(argv) > 2:
+        return "Too much arguments"
+
+    elif len(argv) < 2:
+        return "Too few arguments"
+
+    userDimensionChoice = argv[0]
+    userValueToConvert = argv[1]
+
+    if userDimensionChoice == "1":
+        try:
+            return convertToBinary(int(userValueToConvert))
+        except ValueError:
+            return "You must type in round number"
+
+    elif userDimensionChoice == "2":
+        try:
+            return convertToOctal(int(userValueToConvert))
+        except ValueError:
+            return "You must type in round number"
+
+    elif userDimensionChoice == "3":
+        try:
+            return convertToHexadecimal(int(userValueToConvert))
+        except ValueError:
+            return "You must type in round number"
+
+    else:
+        return "Wrong dimension choice"
+
 
 def convertToBinary(number):
     """Vrací zadané číslo převedené do dvojkové soustavy.
@@ -114,3 +153,7 @@ def convertToHexadecimal(number):
         remainder = int(remainder / 16)
 
     return convertedNumber
+
+
+if __name__ == "__main__":
+    print(main(sys.argv[1:]))

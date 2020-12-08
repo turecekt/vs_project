@@ -1,5 +1,17 @@
 """Testy převodník numerických soustav."""
-from numsys import convertToBinary, convertToOctal, convertToHexadecimal
+from numsys import convertToBinary, convertToOctal, convertToHexadecimal, main
+
+def test_main():
+    """Otestuje zda-li funkce nepřijímá moc argumentů."""
+    assert main("aaa") == "Too much arguments"
+    """Otestuje zda-li funkce nepřijímá málo argumentů."""
+    assert main("a") == "Too few arguments"
+    """Otestuje zdali je volba převodu ve správném tvaru"""
+    assert main("aa") == "Wrong dimension choice"
+    """Otestuje zdali je vstup čísla k převodu ve správném tvaru"""
+    assert main("1a") == "You must type in round number"
+    """Otestuje zdali je vstup čísla k převodu ve správném tvaru"""
+    assert main("11") == "1"
 
 
 def test_convertToBinary():
