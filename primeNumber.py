@@ -7,8 +7,10 @@ This module is use for checking the input
 #           Lucia Kubaskova <l_kubaskova@utb.cz>
 #           Tomas_Prikasky <t_prikasky@utb.cz>
 #
-# Description:  Create a program to evaluate whether the entered number is a prime number.
-#               Prime numbers have exactly two divisors, are divisible by only 1 and by themselves.
+# Description:  Create a program to evaluate whether the entered number
+#               is a prime number.
+#               Prime numbers have exactly two divisors, are divisible
+#               by only 1 and by themselves.
 
 class PrimeNumber:
     """Class for evaluating whether the entered number is a prime number."""
@@ -25,7 +27,8 @@ else:
 
 
 def isPrimeNumber():
-    """Functon validates the entered number is prime number according to divisors and modulos
+    """Function validates the entered number is prime number
+       according to divisors and modulos
 
         Args:
             -
@@ -45,18 +48,17 @@ def isPrimeNumber():
 
 
 def printDivisors():
-    """Functon counts number of dividors and print them
-
+    """Function counts number of dividors and print them
             Args:
                 -
-
             Returns:
-                - output - number of dividors (counter) and printed list of dividors
+                - output - number of dividors (counter) and
+                  printed list of dividors
             """
     counter = 0
     print('delitele:', end=' ')
     for divisor in range(1, number + 1):
-        if number % divisor == 0:  # mohli by sme zapísať aj  if not cislo % delitel:
+        if number % divisor == 0:
             counter += 1
             print(divisor, end=' ')
     print()

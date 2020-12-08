@@ -86,7 +86,8 @@ class PrintedValues(unittest.TestCase):
                         """
         out = StringIO()
         with redirect_stdout(out):
-            # any calls to print (either here or in a called method) get caught while in this scope
+            # any calls to print (either here or in a called method)
+            # get caught while in this scope
             number = 44
             counter = 0
             print('delitele:', end=' ')
@@ -98,7 +99,8 @@ class PrintedValues(unittest.TestCase):
             print('počet deliteľov:', counter)
             print("\n")
 
-        self.assertEqual('delitele: 1 2 4 11 22 44 \npočet deliteľov: 6\n\n\n', out.getvalue())
+        self.assertEqual('delitele: 1 2 4 11 22 44 \npočet deliteľov: 6\n\n\n',
+                         out.getvalue())
 
 
 if __name__ == '__main__':
