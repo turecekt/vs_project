@@ -45,21 +45,9 @@ def test_selectionsort():
 def test_vstup():
     """Test pro funkcni vstup."""
     if len(sys.argv) == 2:
-        nazevSouboru = sys.argv[1]
-        soubor = open(nazevSouboru, "r")
-        obsah = soubor.read()
-        cislaString = obsah.split(" ")
-
-        try:
-            cisla = list(map(int, cislaString))
-        except ValueError:
-            assert test_vstup() == print(
-                "Soubor musi obsahovat pouze cela cisla oddelena mezerou.")
-        soubor.close()
-
         assert vstup() == (True, [5, 2, 6, 6, 1, 65,
                                   2, 5, 65, 2, 6, 6, 2, 68, 45, 6, 3])
-    else:
+    else if len(sys.argv) > 2:
         cisla = []
         for i in range(1, len(sys.argv)):
             try:
