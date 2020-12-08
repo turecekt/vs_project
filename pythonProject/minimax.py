@@ -94,6 +94,43 @@ def array_min_value(array):
     return min, index
 
 
+def user_input_choice():
+    """Function for choosing a sorting algorithm.
+
+    User can choose from 3 sorting algorithms.
+
+    Returns:
+        - n - number of sorting algorithm
+    """
+    while True:
+        try:
+            n = int(input('Choose an algorithm: \n'
+                          '[1] Bubble sort \n'
+                          '[2] Insertion sort \n'
+                          '[3] Merge sort \n'))
+            if n < 1 or n > 3:
+                print('You can choose only 1,2 or 3')
+            else:
+                return n
+        except ValueError:
+            print('You can enter only number')
+
+
+def algorithm_choice(array, n):
+    """Function that sorts given array.
+
+    Returns:
+        - array - sorted array
+    """
+    if n == 1:
+        bubble_sort(array)
+    elif n == 2:
+        insertion_sort(array)
+    elif n == 3:
+        merge_sort(array)
+    return array
+
+
 def merge_sort(inp_arr):
     """Merge sort algorithm."""
     size = len(inp_arr)
