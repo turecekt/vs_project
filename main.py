@@ -1,11 +1,21 @@
-"""Prevod arabskeho cisla na rimske. VS_Project."""
+"""This is the module for transfering arabic numbers to roman.
+
+The module supplies one function: prevod(cislo). For example,
+
+>>> prevod(3)
+3
+"""
 import unittest
 
 
 # funkce pro prevod arabskeho cisla na rimska
 def prevod(cislo):
-    """Prevede cislo na rimsky string."""
-    # rimska cisla
+    """Function that convert argument cislo to roman string.
+       Args:
+           - cislo - Input of the function
+       Returns:
+           - output - Output of the function
+    """
     rimska = [
         "M", "CM", "D", "CD",
         "C", "XC", "L", "XL",
@@ -42,10 +52,17 @@ except Exception:
 
 
 class Test(unittest.TestCase):
-    """Jednoduchy unit test."""
+    """Testing function.
+
+        Returns:
+        - nothing
+    """
 
     def doTest(self):
         """Provede unit test."""
         self.assertEqual(prevod(1), "I")
         self.assertEqual(prevod(10), "X")
         self.assertEqual(prevod(24), "XXIV")
+        self.assertEqual(prevod(24998), "XXIVCMXCVIII")
+        self.assertEqual(prevod(19), "XIX")
+        self.assertNotEqual(prevod(19), "XI")
