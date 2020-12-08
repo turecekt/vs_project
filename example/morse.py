@@ -142,6 +142,7 @@ def choice(vyber):
     """
     if not isinstance(vyber, int):
         return "Parametr musí být (int)"
+
     if vyber < 0:
         return "Parametr nesmí být záporný"
 
@@ -168,6 +169,7 @@ def main():
         print(volani)
     except ValueError:
         print("Text musí být int")
+
 
 if __name__ == '__main__':
     main()
