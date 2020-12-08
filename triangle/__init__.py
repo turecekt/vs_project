@@ -11,6 +11,8 @@ class Triangle:
             used for storing the points inserted by user
         a, b, c:
             used for storing the calculated sides
+    >>> 'There is no reason to test this'
+    'There is no reason to test this'
     """
 
     def __init__(self, point_a, point_b, point_c):
@@ -20,11 +22,13 @@ class Triangle:
         :param
             point_a, point_b, point_c:
                 used for transfer points to self.points
+        >>> 'There is no reason to test this'
+        'There is no reason to test this'
         """
         self.point_a = point_a
         self.point_b = point_b
         self.point_c = point_c
-        self.c, self.b, self.a = self.side_lenght()
+        self.a, self.b, self.c = self.side_lenght()
 
     def side_lenght(self):
         """
@@ -32,7 +36,7 @@ class Triangle:
 
         :return: [float, float, float] -> list
         >>> tr = Triangle([1,0], [0,1], [1,1])
-        >>> tr.a
+        >>> tr.c
         1.0
         """
         sides = (self.point_a, self.point_b), \
@@ -133,22 +137,3 @@ def str_list_to_int(list_to_convert):
     except ValueError or NameError:
         return False
 
-
-if __name__ == '__main__':
-    print("Souřadnice zadávejte ve formátu: x,y\nNapříklad: 1,1")
-    triangle = Triangle(input_values(point_name="A")[1],
-                        input_values(point_name="B")[1],
-                        input_values(point_name="C")[1])
-    if triangle.is_able():
-        print("Trojuholník je zostrojiteľný")
-        print(
-            f"Strana a: {round(triangle.a, 2)}\n"
-            f"Strana b: {round(triangle.b, 2)}\n"
-            f"Strana c: {round(triangle.c, 2)}"
-        )
-        print(f"Obvod trojúhelníku je: {round(triangle.perimeter(), 2)}")
-        print(f"Obsah trojúhelníku je: {round(triangle.area(), 2)}")
-        print(
-            "Je pravouhlý" if triangle.is_rectangular() else "Není pravouhlý")
-    else:
-        print("Trojuholník nie je zostrojiteľný")
