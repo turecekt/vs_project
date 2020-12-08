@@ -64,6 +64,9 @@ class Triangle:
         Check if there is 90 degrees corner in the triangle.
 
         :return: True | False
+        >>> tr = Triangle([1,0], [0,1], [1,1])
+        >>> tr.is_rectangular()
+        True
         """
         sides: list[float] = [self.a, self.b, self.c]
         sides.sort(reverse=True)
@@ -79,6 +82,9 @@ class Triangle:
         Calculate the other contour of the triangle.
 
         :return: perimeter of the triangle (float)
+        >>> tr = Triangle([1,0], [0,1], [1,1])
+        >>> round(tr.perimeter(), 2)
+        3.41
         """
         return self.a + self.b + self.c
 
@@ -87,6 +93,9 @@ class Triangle:
         Calculate the inner area of the triangle.
 
         :return: Area of the triangle (float)
+        >>> tr = Triangle([1,0], [0,1], [1,1])
+        >>> round(tr.area(), 2)
+        0.5
         """
         s = self.perimeter() / 2
         return math.sqrt(s * (s - self.a) * (s - self.b) * (s - self.c))
