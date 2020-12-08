@@ -1,7 +1,8 @@
+"""Main."""
 import sys
 import random
-from minMax import *
-from sortingAlgoritms import *
+from minMax import minMax
+from sortingAlgoritms import bubblesort, insertionsort, selectionsort
 
 cisla = []
 platnyVStup = True
@@ -34,6 +35,7 @@ else:
             print("Vstupni argumenty musi byt cela cisla!")
             break
 
+# vstup je platny, mame pole cisel
 if platnyVStup:
     print("Vstup:", cisla)
     print()

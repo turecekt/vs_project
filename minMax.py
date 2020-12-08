@@ -1,5 +1,8 @@
-def minMax(pole):
+"""Soubor s funkci pro maximum a minimum v poli."""
 
+
+def minMax(pole):
+    """Funkce pro minimum a maximum v poli."""
     min = pole[0]
     minIndex = 0
     max = pole[0]
