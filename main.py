@@ -3,7 +3,7 @@
 The module supplies one function: prevod(cislo). For example,
 
 >>> prevod(3)
-3
+III
 """
 import unittest
 
