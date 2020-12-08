@@ -48,15 +48,15 @@ else:
 
 
 def isPrimeNumber():
-    """Function validates the entered number is prime number
-       according to divisors and modulos
-
-        Args:
-            -
-
-        Returns:
-            - output - true, false if number is prime number
-        """
+    """
+        Function validates the entered number is prime number
+           according to divisors and modulos
+            Parameters:
+                number (int): Number is input from console
+            Returns:
+                output (str): String printed into console, statement if number is
+                prime number
+            """
     isPrimeNumber = True
     for divisor in range(2, number):
         if number % divisor == 0:
@@ -69,13 +69,14 @@ def isPrimeNumber():
 
 
 def printDivisors():
-    """Function counts number of dividors and print them
-            Args:
-                -
-            Returns:
-                - output - number of dividors (counter) and
-                  printed list of dividors
-            """
+    """Function counts number of dividers and print them
+                Parameters:
+                    dividers (int[]): List of integers - dividers
+                    counter (int): number of dividers
+                Returns:
+                    output (int): number of dividors (counter) and
+                    printed list of dividors
+                """
     counter = 0
     print('delitele:', end=' ')
     for divisor in range(1, number + 1):
