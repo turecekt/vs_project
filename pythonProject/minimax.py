@@ -40,7 +40,7 @@ def program_start(cmd_arg):
             try:
                 array.append(int(cmd_arg[x]))
             except ValueError:
-                raise SystemExit('You must enter numbers or name of a file')
+                raise SystemExit('You must enter only numbers or name of a file')
         return array
 
 
