@@ -175,3 +175,10 @@ def test_insertion_sort():
     test_array = [125, -15, 30, -19, 160]
     sorted_array = [-19, -15, 30, 125, 160]
     assert insertion_sort(test_array) == sorted_array
+
+
+def test_merge_sort():
+    """Unit test for merge sort algorithm."""
+    test_array = [813, -21, 5, -9, -16]
+    sorted_array = [-21, -16, -9, 5, 813]
+    assert merge_sort(test_array) == sorted_array
