@@ -313,3 +313,13 @@ def test_program_start_exception3():
     cmd_arg = ['minimax.py', '1']
     with pytest.raises(SystemExit):
         assert program_start(cmd_arg)
+
+
+def test_array_insert():
+    """Unit test for correctly generated array with 20 elements."""
+    arr = array_insert()
+    tmp = [0]*20
+    for i in range(0, 20):
+        if -1000 < arr[i] < 1000:
+            tmp[i] = 1
+        assert tmp[i] == 1
