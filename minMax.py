@@ -100,26 +100,26 @@ def vstup():
 
 # vstup je platny, mame pole cisel
 if vstup()[0]:
-    print("Vstup:", vstup()[1])
+    cisla = vstup()[1]
+    print("Vstup:", cisla)
     print()
-    GetMinMax(vstup()[1])
+    GetMinMax(cisla)
     print()
     print("Ktery tridici algoritmus chcete pouzit?")
-    sortingAlgo = input(
+    vyber = input(
         "Bubblesort(b) / InsertionSort(i) / SelectionSort(s) ").lower()
     print()
-
     # bubblesort
-    if sortingAlgo == "b":
-        bubblesort(vstup()[1])
+    if vyber == "b":
+        bubblesort(cisla)
 
     # insertion sort
-    elif sortingAlgo == "i":
-        insertionsort(vstup()[1])
+    elif vyber == "i":
+        insertionsort(cisla)
 
     # selection sort
-    elif sortingAlgo == "s":
-        selectionsort(vstup()[1])
+    elif vyber == "s":
+        selectionsort(cisla)
 
     # neplatny algoritmus
     else:
