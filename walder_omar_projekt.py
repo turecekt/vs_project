@@ -72,7 +72,6 @@ if __name__ == '__main__':
         # Vložíme do konzole otázku pro uživatele
         # aby zadal číslici pro převod
         numIn = int(input('Zadejte hodnotu pro převod: '))
-        test_convertInput(numIn)
         # Nastaví výsledek (vloženou hodnotu) jako argument
         # pro metodu convert, výsledek vložíme na konzoli
         print(convert(numIn))
