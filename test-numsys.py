@@ -1,6 +1,7 @@
 """Testy převodník numerických soustav."""
 from numsys import convertToBinary, convertToOctal, convertToHexadecimal, main
 
+
 def test_main():
     """Otestuje zda-li funkce nepřijímá moc argumentů."""
     assert main("aaa") == "Too much arguments"

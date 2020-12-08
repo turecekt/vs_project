@@ -8,7 +8,6 @@ def main(argv):
 
     Podle zadaných parametrů provádí převod
     """
-
     if len(argv) > 2:
         return "Too much arguments"
 
