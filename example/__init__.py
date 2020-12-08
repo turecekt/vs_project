@@ -1,25 +1,5 @@
-"""This is the "example" module.
 
-The example module supplies one function, compute().  For example,
-
->>> compute(3)
-3
-"""
-
-
-def compute(x):
-    """Functon compute returns evaluation of expression using argument x.
-
-    Args:
-        - x - Input of the function
-
-    Returns:
-        - output - Output of the function
-    """
-    return x * x - 2 * x
-
-
-nazev_souboru = 'basnicka.txt'
+nazev_souboru = 'povidka.txt'
 
 
 def nacti_text(nazev_souboru):
@@ -64,7 +44,7 @@ def uprav_text(text):
 
 
 # print("Upravený text: ", uprav_text(nacti_text(nazev_souboru)))
-print("Celkový počet znaků (bez mezer): ", len(uprav_text(nacti_text(nazev_souboru))))
+print("Celkový počet znaků (bez mezer): ", len(uprav_text(nacti_text(nazev_souboru))))  # noqa
 
 
 def zjisti_cetnosti(text):
@@ -84,10 +64,11 @@ def zjisti_cetnosti(text):
 
         else:
             count[x] = 1
+
     return(count)
 
 
-print(zjisti_cetnosti(nazev_souboru))
+print("Četnosti jednotlivých znaků: ", zjisti_cetnosti(nazev_souboru))
 
 
 def pocet_ruznych_znaku(slovnik):
@@ -103,7 +84,7 @@ def pocet_ruznych_znaku(slovnik):
     return pocty
 
 
-print("Počet různých znaků: ", pocet_ruznych_znaku(zjisti_cetnosti(nazev_souboru)))
+print("Počet různých znaků: ", pocet_ruznych_znaku(zjisti_cetnosti(nazev_souboru))) # noqa
 
 
 def nejcetnejsi_znaky(slovnik):
@@ -115,7 +96,7 @@ def nejcetnejsi_znaky(slovnik):
         Returns:
             - MaxDictVal - nejčetnější znak (string)"""
 
-    MaxDictVal = max(zjisti_cetnosti(nazev_souboru), key=zjisti_cetnosti(nazev_souboru).get)
+    MaxDictVal = max(slovnik, key=slovnik.get)
     return MaxDictVal
 
 
@@ -131,49 +112,8 @@ def nejmenecetne_znaky(slovnik):
         Returns:
             - MinDictVal - nejméně četný znak (string)"""
 
-    MinDictVal = min(zjisti_cetnosti(nazev_souboru), key=zjisti_cetnosti(nazev_souboru).get)
+    MinDictVal = min(slovnik, key=slovnik.get)
     return MinDictVal
 
 
-print("Nejméně četný znak: ", nejmenecetne_znaky(zjisti_cetnosti(nazev_souboru)))
-
-
-# MaxDictVal = max(count, key=count.get)
-# print("Nejčetnější znak:",MaxDictVal)
-
-# MinDictVal = min(count, key=count.get)
-# print("Nejméně četný znak:",MinDictVal)
-
-
-
-
-# def kolikZnakuJeVtextu(obsah,nejmeneCetnyZnak):
-#     return obsah.count(nejmeneCetnyZnak(poctyZnaku)
-                       
-
-    
-# print("Nejméně četný znak FUNKCE:",nejmeneCetnyZnak(count))
-
-#  for x in count.keys ():
-#     if count[x] == 2:
-#         print("jen písmena",x)
-#     else:
-#         print("nefunguje") 
-
-# Ještě pořešit:
-#     - jak vypsat všechny nejméně četné znaky
-#         ještě získat hodnotu nejméně četného znaku a potom vypsat
-#         jen ty nejméně četné
-#     - když text nebude obsahovat #, tak neodečítat -1    --- hotovo
-#     - průměrná četnost
-
-# VSTUP
-# • Textový soubor (obsahující text bez diakritiky) jako parametr programu
-# • V případě spuštění bez parametru musí program umět zpracovat text ze
-# standardního vstupu až po řádek obsahující ukončovací symbol #
-# VÝSTUP
-# • Informace o celkovém počtu znaků
-# • Informace o nejčastějším znaku
-# • Informace o nejméně častém znaku
-# • Informace o průměrné četnosti
-# • Informace o četnosti jednotlivých znaků abecedy (bez diakritiky)
+print("Nejméně četný znak: ", nejmenecetne_znaky(zjisti_cetnosti(nazev_souboru)))   # noqa
