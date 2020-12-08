@@ -1,5 +1,6 @@
 """
 Calculate triangle.
+
 >>> 1
 1
 """
