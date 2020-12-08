@@ -1,5 +1,9 @@
-"""Calculate triangle."""
-import math
+"""
+Calculate triangle.
+>>> 1
+1
+"""
+from math import sqrt, pow
 
 
 class Triangle:
@@ -44,7 +48,7 @@ class Triangle:
                 (self.point_b, self.point_c)
 
         return [
-            math.sqrt(pow(i[0][0] - i[1][0], 2) + pow(i[0][1] - i[1][1], 2))
+            sqrt(pow(i[0][0] - i[1][0], 2) + pow(i[0][1] - i[1][1], 2))
             for i in sides]
 
     def is_able(self):
@@ -102,7 +106,7 @@ class Triangle:
         0.5
         """
         s = self.perimeter() / 2
-        return math.sqrt(s * (s - self.a) * (s - self.b) * (s - self.c))
+        return sqrt(s * (s - self.a) * (s - self.b) * (s - self.c))
 
 
 def input_values(point_name):
