@@ -194,3 +194,10 @@ def test_max_value():
     """Unit test for function that determines max value of an array."""
     test_array = [81, 21, -5, -9, -16, 31, 0, 147, -4]
     assert array_max_value(test_array) == (147, 7)
+
+
+def test_convert_to_int():
+    """Unit test for function converting string array to int array."""
+    test_array = ['1', '-19', '10', '-50', '34']
+    int_array = [1, -19, 10, -50, 34]
+    assert convert_to_int(test_array) == int_array
