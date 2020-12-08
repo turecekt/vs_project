@@ -13,7 +13,7 @@ def inicializer(option=0):
     if len(sys.argv) == 1 or option == 1:
         for i in range(20):
             array.append(randint(-100, 100))
-    # Inicialization from text file
+    # Inicialization from text file.
     elif (len(sys.argv) == 2 and
           sys.argv[1].isdigit() is False) or option == 2:
         with open(sys.argv[1], 'rt') as f:
@@ -83,6 +83,7 @@ def printer(array):
 def choose_sorting_method(array, choice=0):
     """UI to choose sorting system."""
     if choice == 0:
+        # Let user make choices until he is succesful.
         while choice not in [1, 2, 3]:
             try:
                 choice = int(input('1: Bubble sort. \
@@ -152,7 +153,7 @@ def test_printer():
     sys.stdout = sys.__stdout__
     string = printer_output.getvalue()
     # Check if printer works properly.
-    # Check format of methods output.
+    # Searches for parts of printer output.
     assert string.find('Min: -8') != -1
     assert string.find('Max: 15') != -1
     assert string.find('[-8, -8, 0, 1, 5, 9, 12, 15]') != -1
@@ -160,7 +161,7 @@ def test_printer():
 
 def test_choose_sorting_method():
     """Test choice-maker for sorting systems."""
-    # Test funcionality if choice equals 1 (Bubble sort)
+    # Test funcionality if choice equals 1 (Bubble sort).
     printer_output = io.StringIO()
     sys.stdout = printer_output
     choose_sorting_method([9, 8, 7, 6, 5, 4, 3, 2, 1], 1)
@@ -168,14 +169,14 @@ def test_choose_sorting_method():
     sys.stdout = sys.__stdout__
     string = printer_output.getvalue()
     assert string.find('[9, 8, 7, 6, 5, 4, 3, 2, 1]') != -1
-    # Test funcionality if choice equals 2 (Insertion sort)
+    # Test funcionality if choice equals 2 (Insertion sort).
     sys.stdout = printer_output
     choose_sorting_method([9, 8, 7, 6, 5, 4, 3, 2, 1], 2)
     printer([9, 8, 7, 6, 5, 4, 3, 2, 1])
     sys.stdout = sys.__stdout__
     string = printer_output.getvalue()
     assert string.find('[9, 8, 7, 6, 5, 4, 3, 2, 1]') != -1
-    # Test funcionality if choice equals 1 (Quick sort)
+    # Test funcionality if choice equals 1 (Quick sort).
     sys.stdout = printer_output
     choose_sorting_method([9, 8, 7, 6, 5, 4, 3, 2, 1], 3)
     printer([9, 8, 7, 6, 5, 4, 3, 2, 1])
