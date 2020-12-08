@@ -56,6 +56,7 @@ def test_convert():
     assert convert(1) == "I"
     assert convert(586) == "DLXXXVI"
 
+
 def test_convertInput(num):
     """Function tests, if the input for convert is correct."""
     assert num != ""
@@ -67,11 +68,11 @@ if __name__ == '__main__':
     # dokud uživatel nezadá správnou hodnotu
     opakovani = 0
     while opakovani == 0:
-            # Vložíme do konzole otázku pro uživatele
-            # aby zadal číslici pro převod
-            numIn = int(input('Zadejte hodnotu pro převod: '))
-            # Nastaví výsledek (vloženou hodnotu) jako argument
-            # pro metodu convert, výsledek vložíme na konzoli
-            print(convert(numIn))
-            # Opakování ukončíme
-            opakovani += 1
+        # Vložíme do konzole otázku pro uživatele
+        # aby zadal číslici pro převod
+        numIn = int(input('Zadejte hodnotu pro převod: '))
+        # Nastaví výsledek (vloženou hodnotu) jako argument
+        # pro metodu convert, výsledek vložíme na konzoli
+        print(convert(numIn))
+        # Opakování ukončíme
+        opakovani += 1
