@@ -16,7 +16,7 @@ def convert(num):
         - num - Input of the function
 
     Returns:
-        - roman - The converter number
+        - roman - The converted number
     """
     # Vytvoříme pole pro obyčejné čísla
     numbers = [
@@ -51,6 +51,41 @@ def convert(num):
     return roman
 
 
+def userProces(inputNum):
+    """Convert input and return feedback.
+
+    This method uses its input for the convert method and upon
+    examination returns the proper response for the
+    user input
+
+    Args:
+        - inputNum - Input of the function
+
+    Returns:
+        - convert(inputNum) - The converted number
+        - "" - An empty string for the test method
+    """
+    # Vytvoříme promměnou opakovani, která bude 0
+    # dokud uživatel nezadá správnou hodnotu
+    try:
+        inputNum = int(inputNum)
+        # Nastaví výsledek (vloženou hodnotu) jako argument
+        # pro metodu convert, výsledek vložíme na konzoli
+        print(convert(inputNum))
+        # Opakování ukončíme
+        return (convert(inputNum))
+    except NameError:
+        # Když uživatel zadá špatně (string nebo prázdné) input
+        # konzole vypíše že je to napsané špatně
+        # a celý proces opakuje
+        print('Hodnota byla zadána ve špatném tvaru')
+        return ""
+    except ValueError:
+        # Stejné jako NameError expect
+        print('Hodnota byla zadána ve špatném tvaru')
+        return ""
+
+
 def test_convert():
     """Function tests, if the method converts correctly."""
     assert convert(1) == "I"
@@ -66,25 +101,17 @@ def test_convertInput():
     assert isinstance(num, int)
 
 
+def test_userProces():
+    """Function tests, if the method userProces is correct."""
+    assert userProces(1) == "I"
+    assert userProces("sads") == ""
+    assert userProces("") == ""
+
+
 if __name__ == '__main__':
-    # Vytvoříme promměnou opakovani, která bude 0
-    # dokud uživatel nezadá správnou hodnotu
-    opakovani = 0
-    while opakovani == 0:
-        try:
-            # Vložíme do konzole otázku pro uživatele
-            # aby zadal číslici pro převod
-            numIn = int(input('Zadejte hodnotu pro převod: '))
-            # Nastaví výsledek (vloženou hodnotu) jako argument
-            # pro metodu convert, výsledek vložíme na konzoli
-            print(convert(numIn))
-            # Opakování ukončíme
-            opakovani += 1
-        except NameError:
-            # Když uživatel zadá špatně (string nebo prázdné) input
-            # konzole vypíše že je to napsané špatně
-            # a celý proces opakuje
-            print('Hodnota byla zadána ve špatném tvaru')
-        except ValueError:
-            # Stejné jako NameError expect
-            print('Hodnota byla zadána ve špatném tvaru')
+    # Vložíme do konzole otázku pro uživatele
+    # aby zadal číslici pro převod
+    numIn = input('Zadejte hodnotu pro převod: ')
+    # Použijeme metodu userProces, která vrátí
+    # výsledek proměněného čísla
+    userProces(numIn)
