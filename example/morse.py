@@ -146,11 +146,12 @@ def choice(vyber):
         return "Parametr nesmí být záporný"
 
     if vyber == 1:
-        result = encrypt("TEST")
+        vstupUzivatele = input("Zadej text k přeložení do Morseovky: ")
+        result = encrypt(vstupUzivatele)
 
     elif vyber == 2:
-        result = decrypt('- . ... -')
-
+        vstupUzivatele2 = input("Zadej morseovku k přeložení do textu: ")
+        result = decrypt(vstupUzivatele2)
     else:
         result = 'Špatný formát zadávání'
 
@@ -159,9 +160,14 @@ def choice(vyber):
 
 def main():
     """Volání definice v parametru."""
-    volani = choice(1)
-    print(volani)
-
+    try:
+        print("Vyberte: 1 - překlad z textu do morseovky")
+        print("Vyberte: 2 - překlad z morseovky do textu")
+        a = int(input())
+        volani = choice(a)
+        print(volani)
+    except ValueError:
+        print("Text musí být int")
 
 if __name__ == '__main__':
     main()
