@@ -23,3 +23,19 @@ def convert_to_int(array):
     for x in range(len(array)):
         array[x] = int(array[x])
     return array
+
+
+def array_max_value(array):
+    """Determines a max value and its position in array.
+
+    Returns:
+        - max - max value of an array
+        - index - position of max value in given array
+    """
+    max = array[0]
+    index = 0
+    for x in range(len(array)-1):
+        if max < array[x+1]:
+            max = array[x+1]
+            index = x+1
+    return max, index
