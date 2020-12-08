@@ -185,6 +185,12 @@ def test_merge_sort():
     
 
 def test_min_value():
-    """Unit test for function that determines max value of an array."""
+    """Unit test for function that determines min value of an array."""
     test_array = [81, 21, -5, -9, -16, 31, 0, 147, -4]
     assert array_min_value(test_array) == (-16, 4)
+
+
+def test_max_value():
+    """Unit test for function that determines max value of an array."""
+    test_array = [81, 21, -5, -9, -16, 31, 0, 147, -4]
+    assert array_max_value(test_array) == (147, 7)
