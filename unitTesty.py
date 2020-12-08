@@ -47,7 +47,7 @@ def test_vstup():
     if len(sys.argv) == 2:
         assert vstup() == (True, [5, 2, 6, 6, 1, 65,
                                   2, 5, 65, 2, 6, 6, 2, 68, 45, 6, 3])
-    else if len(sys.argv) > 2:
+    elif len(sys.argv) > 2:
         cisla = []
         for i in range(1, len(sys.argv)):
             try:
