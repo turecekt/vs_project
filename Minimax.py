@@ -33,9 +33,9 @@ def readfile():  # funkce precte soubor a rozdeli skupiny znaku do listu
     return output
 
 def randomnumbers(): # funkce vygenereuje 20 nahodnich cisel
-    array = []
-    for x in range(20):
-        array.append(random.randint(0, 200))
+    array = [] # vytvori pole
+    for x in range(20): # Cyklus ktorý sa bude opakovať 20 krát
+        array.append(random.randint(0, 200)) # Pridanie cisla do pola
     return array
 
 
