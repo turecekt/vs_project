@@ -1,5 +1,9 @@
+"""Prevod arabskeho cisla na rimske. VS_Project"""
+
 # funkce pro prevod arabskeho cisla na rimska
 def prevod(cislo):
+    """Prevede cislo na rimsky string"""
+    
     # rimska cisla
     rimska = [
         "M", "CM", "D", "CD",
