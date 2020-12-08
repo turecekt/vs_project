@@ -247,3 +247,12 @@ def test_algorithm_choice():
     assert algorithm_choice(test_array, 1) == sorted_array
     assert algorithm_choice(test_array, 2) == sorted_array
     assert algorithm_choice(test_array, 3) == sorted_array
+
+
+def test_program_start1():
+    """Unit test for creating an array from user's parameters.
+
+    When user enters as parameter an array of integers.
+    """
+    cmd_arg = ['minimax.py', '-15', '3', '-6', '-7', '0', '1']
+    assert program_start(cmd_arg) == [-15, 3, -6, -7, 0, 1]
