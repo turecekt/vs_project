@@ -8,7 +8,7 @@ import pytest
 
 
 def program_start(cmd_arg):
-    """Function creates an array of integers after starting the script.
+    """Create an array of integers.
 
     Values of an array are based on paramaters given by user.
 
@@ -45,7 +45,7 @@ def program_start(cmd_arg):
 
 
 def array_insert():
-    """Function returns an array with randomly generated numbers.
+    """Return an array with randomly generated numbers.
 
     Array has 20 elements with values between -1000 and 1000.
     """
@@ -56,14 +56,14 @@ def array_insert():
 
 
 def convert_to_int(array):
-    """Converts a string array to an array of integers."""
+    """Convert a string array to an array of integers."""
     for x in range(len(array)):
         array[x] = int(array[x])
     return array
 
 
 def array_max_value(array):
-    """Determines a max value and its position in array.
+    """Determine a max value and its position in array.
 
     Returns:
         - max - max value of an array
@@ -79,7 +79,7 @@ def array_max_value(array):
 
 
 def array_min_value(array):
-    """Determines a min value and its position in array.
+    """Determine a min value and its position in array.
 
     Returns:
         - min - min value of an array
@@ -95,7 +95,7 @@ def array_min_value(array):
 
 
 def user_input_choice():
-    """Function for choosing a sorting algorithm.
+    """Choose a sorting algorithm.
 
     User can choose from 3 sorting algorithms.
 
@@ -117,7 +117,7 @@ def user_input_choice():
 
 
 def algorithm_choice(array, n):
-    """Function that sorts given array.
+    """Sort given array.
 
     Returns:
         - array - sorted array
@@ -188,7 +188,7 @@ def bubble_sort(array):
 
 
 def insertion_sort(array):
-    """Insertion sort algorithm."""
+    """Insertionsort algorithm."""
     n = len(array)
     for i in range(0, n-1):
         j = i+1
@@ -219,7 +219,7 @@ def test_merge_sort():
     test_array = [813, -21, 5, -9, -16]
     sorted_array = [-21, -16, -9, 5, 813]
     assert merge_sort(test_array) == sorted_array
-    
+
 
 def test_min_value():
     """Unit test for function that determines min value of an array."""
@@ -270,8 +270,8 @@ def test_program_start2():
 
 def test_program_start_3():
     """Unit test for creating an array from user's parameters.
-    
-    When user enters as a parameter only the name of a script. 
+
+    When user enters as a parameter only the name of a script.
     Checking correctly generated array with 20 elements.
     """
     cmd_arg = ['minimax.py']
