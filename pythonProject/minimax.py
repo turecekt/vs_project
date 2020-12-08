@@ -161,3 +161,10 @@ def insertion_sort(array):
             j = j-1
         array[j] = number
     return array
+
+
+def test_bubble_sort():
+    """Unit test for bubble sort algorithm."""
+    test_array = [12, -150, 0, -9, 16]
+    sorted_array = [-150, -9, 0, 12, 16]
+    assert bubble_sort(test_array) == sorted_array
