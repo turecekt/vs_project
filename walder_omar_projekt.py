@@ -57,9 +57,10 @@ def test_convert():
     assert convert(586) == "DLXXXVI"
 
 
-def test_convertInput(num):
+def test_convertInput():
     """Function tests, if the input for convert is correct."""
-    assert num != ""
+    num = 250
+    assert (num) != ""
     assert isinstance(num, int)
 
 
@@ -71,6 +72,7 @@ if __name__ == '__main__':
         # Vložíme do konzole otázku pro uživatele
         # aby zadal číslici pro převod
         numIn = int(input('Zadejte hodnotu pro převod: '))
+        test_convertInput(numIn)
         # Nastaví výsledek (vloženou hodnotu) jako argument
         # pro metodu convert, výsledek vložíme na konzoli
         print(convert(numIn))
