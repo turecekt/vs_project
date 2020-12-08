@@ -21,17 +21,19 @@ class Triangle:
             point_a, point_b, point_c:
                 used for transfer points to self.points
         """
-        print("Souřadnice zadávejte ve formátu: x,y\nNapříklad: 1,1")
         self.point_a = point_a
         self.point_b = point_b
         self.point_c = point_c
-        self.a, self.b, self.c = self.side_lenght()
+        self.c, self.b, self.a = self.side_lenght()
 
     def side_lenght(self):
         """
         Take inserted points and calculate sides.
 
         :return: [float, float, float] -> list
+        >>> tr = Triangle([1,0], [0,1], [1,1])
+        >>> tr.a
+        1.0
         """
         sides = (self.point_a, self.point_b), \
                 (self.point_a, self.point_c), \
@@ -46,6 +48,9 @@ class Triangle:
         Check if the triangle is able to construct.
 
         :return: True | False
+        >>> tr = Triangle([1,0], [0,1], [1,1])
+        >>> tr.is_able()
+        True
         """
         a, b, c = self.a, self.b, self.c
 
@@ -117,6 +122,7 @@ def str_list_to_int(list_to_convert):
 
 
 if __name__ == '__main__':
+    print("Souřadnice zadávejte ve formátu: x,y\nNapříklad: 1,1")
     triangle = Triangle(input_values(point_name="A")[1],
                         input_values(point_name="B")[1],
                         input_values(point_name="C")[1])
