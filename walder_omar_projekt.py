@@ -77,10 +77,6 @@ def test_convert():
 
 
 if __name__ == '__main__':
-    print('Running')
-    # Zavoláme metodu pro testování funkčnosti metody convert
-    test_convert()
-    print('')
     # Vytvoříme promměnou opakovani, která bude 0
     # dokud uživatel nezadá správnou hodnotu
     opakovani = 0
@@ -95,14 +91,10 @@ if __name__ == '__main__':
             # Opakování ukončíme
             opakovani += 1
         except NameError:
-            print('')
             # Když uživatel zadá špatně (string nebo prázdné) input
             # konzole vypíše že je to napsané špatně
             # a celý proces opakuje
             print('Hodnota byla zadána ve špatném tvaru')
-            print('')
         except ValueError:
             # Stejné jako NameError expect
-            print('')
             print('Hodnota byla zadána ve špatném tvaru')
-            print('')
