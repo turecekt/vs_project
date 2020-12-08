@@ -1,9 +1,13 @@
+""" Module unit tests .
+This module is use for do unit test to each function from primeNumber.py
+"""
 import unittest
 from contextlib import redirect_stdout
 from io import StringIO
 
 
 class TestPrimeNumber(unittest.TestCase):
+    """Class for TestingPrimeNumber function primeNumber()"""
 
     def test_fiveIsPrimeNumber(self, ):
         """Function validates that entered number 5 is prime number
@@ -52,13 +56,13 @@ class TestPrimeNumber(unittest.TestCase):
 
 class PrintedValues(unittest.TestCase):
     def test_numberOfDivisors(self, ):
-        """Function validates if after evaluation the divisors are printed into console
+        """Function validates the number of dividers
 
                 Args:
                     number
 
                 Returns:
-                    - output - print []
+                    - output - number of dividers
                 """
         number = 5
         counter = 0
@@ -72,6 +76,14 @@ class PrintedValues(unittest.TestCase):
         self.assertEqual(counter, 2)
 
     def test_printedValues(self, ):
+        """Function validates if after evaluation the divisors are printed into console
+
+                        Args:
+                            number
+
+                        Returns:
+                            - output - print []
+                        """
         out = StringIO()
         with redirect_stdout(out):
             # any calls to print (either here or in a called method) get caught while in this scope
