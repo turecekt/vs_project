@@ -256,3 +256,13 @@ def test_program_start1():
     """
     cmd_arg = ['minimax.py', '-15', '3', '-6', '-7', '0', '1']
     assert program_start(cmd_arg) == [-15, 3, -6, -7, 0, 1]
+
+
+def test_program_start2():
+    """Unit test for creating an array from user's parameters.
+
+    When user enters as a parameter a file name.
+    File must contain an array of integers.
+    """
+    cmd_arg2 = ['minimax.py', 'numbers.txt']
+    assert program_start(cmd_arg2) == [32, 1, -50, 100, 579, 841, 0]
