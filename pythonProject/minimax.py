@@ -39,3 +39,19 @@ def array_max_value(array):
             max = array[x+1]
             index = x+1
     return max, index
+
+
+def array_min_value(array):
+    """Determines a min value and its position in array.
+
+    Returns:
+        - min - min value of an array
+        - index - position of min value in given array
+    """
+    min = array[0]
+    index = 0
+    for x in range(len(array) - 1):
+        if min > array[x + 1]:
+            min = array[x + 1]
+            index = x+1
+    return min, index
