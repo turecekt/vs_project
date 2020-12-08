@@ -299,6 +299,17 @@ def test_program_start_exception2():
 
     When user enters as a parameter a name of non existing file.
     """
-    cmd_arg2 = ['minimax.py', 'hello']
+    cmd_arg = ['minimax.py', 'hello']
     with pytest.raises(SystemExit):
-        assert program_start(cmd_arg2)
+        assert program_start(cmd_arg)
+
+
+def test_program_start_exception3():
+    """Unit test for raising an excepiton with incorrect parameters.
+
+    When user enters as a parameter only one number.
+    In this case there is no reason for finding min and max value.
+    """
+    cmd_arg = ['minimax.py', '1']
+    with pytest.raises(SystemExit):
+        assert program_start(cmd_arg)
