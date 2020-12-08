@@ -7,7 +7,7 @@ def main():
     for x in sys.argv:  # nacte vsechny arumenty do listu input
         input.append(x)
 
-    if len(input) == 0:  # tady se prida funkce na nahodne generovain cisel
+    if len(input) == 1:  # tady se prida funkce na nahodne generovain cisel
         input = ''
 
     elif input[1] == "soubor-s-cisly.txt":  # funkce pro cteni ze souboru
