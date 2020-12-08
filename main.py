@@ -43,6 +43,7 @@ except Exception:
 
 class Test(unittest.TestCase):
     """Jednoduchy unit test."""
+    
     def doTest(self):
         """Provede unit test."""
         self.assertEqual(prevod(1), "I")
