@@ -323,3 +323,16 @@ def test_array_insert():
         if -1000 < arr[i] < 1000:
             tmp[i] = 1
         assert tmp[i] == 1
+
+
+#   PROGRAM MAIN
+if __name__ == '__main__':
+    user_array = program_start(sys.argv)
+    print('Your array \n', user_array)
+    print('Max value of an array is: ', array_max_value(user_array)[0])
+    print('With index: ', array_max_value(user_array)[1])
+    print('Min value of an array is: ', array_min_value(user_array)[0])
+    print('With index: ', array_min_value(user_array)[1])
+    num = user_input_choice()
+    print('Sorted array:')
+    print(algorithm_choice(user_array, num))
