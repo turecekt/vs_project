@@ -1,6 +1,5 @@
-import unittest
-
 """Prevod arabskeho cisla na rimske. VS_Project."""
+import unittest
 
 
 # funkce pro prevod arabskeho cisla na rimska
@@ -38,12 +37,14 @@ def prevod(cislo):
 # try/except je zde kvuli moznosti nezadani cisla
 try:
     print("Rimska cislice: ", prevod(int(input("Zadej cislo: "))))
-except Exception as ex:
+except Exception:
     print("Spatne zadana hodnota! Hodnota musi byt cislo!")
 
 
 class Test(unittest.TestCase):
+    """Jednoduchy unit test."""
     def doTest(self):
+        """Provede unit test."""
         self.assertEqual(prevod(1), "I")
         self.assertEqual(prevod(10), "X")
         self.assertEqual(prevod(24), "XXIV")
