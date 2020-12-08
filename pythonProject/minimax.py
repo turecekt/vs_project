@@ -266,3 +266,19 @@ def test_program_start2():
     """
     cmd_arg2 = ['minimax.py', 'numbers.txt']
     assert program_start(cmd_arg2) == [32, 1, -50, 100, 579, 841, 0]
+
+
+def test_program_start_3():
+    """Unit test for creating an array from user's parameters.
+    
+    When user enters as a parameter only the name of a script. 
+    Checking correctly generated array with 20 elements.
+    """
+    cmd_arg = ['minimax.py']
+    arr = program_start(cmd_arg)
+    print(arr)
+    tmp = [0] * 20
+    for i in range(0, 20):
+        if -1000 < arr[i] < 1000:
+            tmp[i] = 1
+        assert tmp[i] == 1
