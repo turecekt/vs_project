@@ -39,13 +39,13 @@ def randomnumbers(): # funkce vygenereuje 20 nahodnich cisel
         array.append(random.randint(0, 200)) # Pridanie cisla do pola
 
 
-def bubble_sort(pomocna):
-    for i in range(0, len(pomocna)-1):
-        for j in range(0, len(pomocna)-1):
-            if int(pomocna[j]) > int(pomocna[j+1]):
-                a = pomocna[j]
-                pomocna[j] = pomocna[j+1]
-                pomocna[j+1] = a
+def bubble_sort(pomocna):  # funkce bubble sort
+    for i in range(0, len(pomocna)-1):  # Cyklus ktorý sa bude opakovat pre každý prvek
+        for j in range(0, len(pomocna)-1): # Cyklus ktorý sa bude opakovat pre každý prvek
+            if int(pomocna[j]) > int(pomocna[j+1]): # Porovnani sučasného čisla s nasledujúcim čislem
+                a = pomocna[j]  # Priradenie sučasneho čisla do pomocnej
+                pomocna[j] = pomocna[j+1] # Priradenie sučasneho čísla na nasledujúce čislo
+                pomocna[j+1] = a # Priradenie nasledujúceho čisla na promenu
     for y in pomocna:  # docasne, vypise cisla
         print(y)
 
