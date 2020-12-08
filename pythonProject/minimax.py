@@ -1,6 +1,6 @@
 """MinMax Projekt AP1VS.
 
-Závìreènı zápoètovı projekt MinMax v Pythonu Tomáš Uhøík
+ZÃ¡vÄ›reÄnÃ½ zÃ¡poÄtovÃ½ projekt MinMax v Pythonu TomÃ¡Å¡ UhÅ™Ã­k
 """
 import random
 import sys
