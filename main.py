@@ -11,10 +11,9 @@ import unittest
 # funkce pro prevod arabskeho cisla na rimska
 def prevod(cislo):
     """
-    =====================================================
     Method that converts argument cislo to roman string.
-    =====================================================
     """
+
     rimska = [
         "M", "CM", "D", "CD",
         "C", "XC", "L", "XL",
@@ -52,9 +51,7 @@ except Exception:
 
 class Test(unittest.TestCase):
     """
-    =====================================================
     Class for testing this program.
-    =====================================================
     """
 
     def doTest(self):
