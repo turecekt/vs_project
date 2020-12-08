@@ -10,7 +10,7 @@ import unittest
 
 # funkce pro prevod arabskeho cisla na rimska
 def prevod(cislo):
-    """Method that converts argument cislo to roman string."""
+    """Method for converting arabic number to roman."""
     rimska = [
         "M", "CM", "D", "CD",
         "C", "XC", "L", "XL",
@@ -48,7 +48,7 @@ except Exception:
 
 class Test(unittest.TestCase):
     """Class for testing this program."""
-    
+
     def doTest(self):
         """Provede unit test."""
         self.assertEqual(prevod(1), "I")
