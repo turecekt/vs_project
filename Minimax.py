@@ -1,14 +1,13 @@
 import sys
-
+import random
 
 def main():
     input = []  # vytvori list input
 
     for x in sys.argv:  # nacte vsechny arumenty do listu input
         input.append(x)
-
     if len(input) == 1:  # tady se prida funkce na nahodne generovain cisel
-        input = ''
+        input = randomnumbers()
 
     elif input[1] == "soubor-s-cisly.txt":  # funkce pro cteni ze souboru
         input = readfile()
@@ -32,6 +31,13 @@ def readfile():  # funkce precte soubor a rozdeli skupiny znaku do listu
         output.append(i)
 
     return output
+
+def randomnumbers(): # funkce vygenereuje 20 nahodnich cisel
+    array = []
+    for x in range(20):
+        array.append(random.randint(0, 200))
+    return array
+
 
 
 if __name__ == '__main__':  # umoznuje psani funkci pod main
