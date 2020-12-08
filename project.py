@@ -1,6 +1,10 @@
+userInp = input('Zadejte cele cislo na preklad :')
+userInp = int(userInp)
+
 class romanNum:
 
-    def intToRom(self, num):
+    def intToRom(self, userInp):
+
         val = [
             1000, 900, 500, 400,
             100, 90, 50, 40,
@@ -15,13 +19,12 @@ class romanNum:
             ]
         transNum = ''
         i = 0
-        while  num > 0:
-            for _ in range(num // val[i]):
+        while  userInp > 0:
+            for _ in range(userInp // val[i]):
                 transNum += syb[i]
-                num -= val[i]
+                userInp -= val[i]
             i += 1
         return transNum
 
 
-print(romanNum().intToRom(1))
-print(romanNum().intToRom(4021)) 
+print(romanNum().intToRom(userInp))
