@@ -56,24 +56,8 @@ def test_convert():
 
     Prints a message depending on the result of the test
     """
-    # Nastavíme si dvě testovací čísla
-    num1 = 1
-    num2 = 586
-    # Nastavíme si jaký by měl vyjít výsledek
-    result1 = 'I'
-    result2 = 'DLXXXVI'
-    # Otestujeme, jestli se hodnoty shodují s tím, jak mají vyjít
-    num1_test = convert(num1)
-    num2_test = convert(num2)
-    # Nastavíme if, pro obě situace
-    if result1 == num1_test and result2 == num2_test:
-        # Jestli se hodnoty rovnají, napíše na konzoli, že metoda pracuje
-        print("Metoda convert pracuje.")
-    else:
-        # Jestli se hodnoty nerovanjí, napíše na konzoli
-        # že metoda nepracuje
-        print("Metoda convert nepracuje!")
-        exit()
+    assert convert(1) == "I"
+    assert convert(586) == "DLXXXVI"
 
 
 if __name__ == '__main__':
