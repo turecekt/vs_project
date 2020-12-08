@@ -36,12 +36,14 @@ class PrimeNumber:
                 Function prints number of dividers and their values
            """
 
-
+# define input from console and global variables
 number = input("Vlož číslo: ")
 counter = int
 
+# validation of console inputs
 if number.isdigit() and int(number) > 0:
     number = int(number)
+    # if input is valid, create variable dividors - list of int
     divisors = []
 else:
     print("Nebylo zadáno kladné číslo")
@@ -57,6 +59,7 @@ def isPrimeNumber():
                 output (str): String printed into console, statement if number is
                 prime number
             """
+    # logic of prime number evaluation
     isPrimeNumber = True
     for divisor in range(2, number):
         if number % divisor == 0:
@@ -77,6 +80,7 @@ def printDivisors():
                     output (int): number of dividors (counter) and
                     printed list of dividors
                 """
+    # inicialize and define number of divisers as 0 at the beginning
     counter = 0
     print('delitele:', end=' ')
     for divisor in range(1, number + 1):
