@@ -107,6 +107,8 @@ def input_values(point_name):
 
     :param point_name: name of the point (char)
     :return: True, user input (list[int, int]) -> (tuple) | False
+    >>> 'There is no way of testing this'
+    'There is no way of testing this'
     """
     point = str_list_to_int(
         input(f"Zadejte souřadnice bodu {point_name}: ").split(","))
@@ -123,6 +125,8 @@ def str_list_to_int(list_to_convert):
 
     :param list_to_convert: user input converted to list (list[str])
     :return: True & User input converted to (int) -> (tuple) | False
+    >>> str_list_to_int(["1", "1"])[1]
+    (1, 1)
     """
     try:
         return True, (int(list_to_convert[0]), int(list_to_convert[1]))
