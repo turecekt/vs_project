@@ -16,3 +16,10 @@ def array_insert():
     for x in range(20):
         array.append(random.randint(-1000, 1000))
     return array
+
+
+def convert_to_int(array):
+    """Converts a string array to an array of integers."""
+    for x in range(len(array)):
+        array[x] = int(array[x])
+    return array
