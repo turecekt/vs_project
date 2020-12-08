@@ -12,8 +12,29 @@ This module is use for checking the input
 #               Prime numbers have exactly two divisors, are divisible
 #               by only 1 and by themselves.
 
+
 class PrimeNumber:
-    """Class for evaluating whether the entered number is a prime number."""
+        """
+           Class PrimeNumber for evaluating whether the entered number
+           is a prime number.
+           A class to represent logic how to validate any number and
+           print the results.
+           ...
+           Attributes
+           ----------
+           number : int
+               input from console
+           counter : int
+               counter of dividors
+           dividors : int[]
+               list of dividors
+           Methods
+           -------
+           isPrimeNumber():
+               Function validates the entered number is prime number
+           printDivisors():
+                Function prints number of dividers and their values
+           """
 
 
 number = input("Vlož číslo: ")
