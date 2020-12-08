@@ -1,4 +1,6 @@
 import unittest
+from contextlib import redirect_stdout
+from io import StringIO
 
 
 class TestPrimeNumber(unittest.TestCase):
@@ -18,12 +20,11 @@ class TestPrimeNumber(unittest.TestCase):
                 break
         if number_is_prime_number and number > 1:
             vypis = "Číslo 5 je prvočíslo"
-            print(f"{vypis}")
-            print("\n")
+            print(f"\n{vypis}")
         else:
             vypis = "Číslo 5 není prvočíslo"
-            print(f"{vypis} ")
-            print("\n")
+            print(f"\n{vypis} ")
+
         self.assertEqual(vypis, 'Číslo 5 je prvočíslo')
 
     def test_tenIsNotPrimeNumber(self, ):
@@ -41,13 +42,13 @@ class TestPrimeNumber(unittest.TestCase):
                 break
         if number_is_prime_number and number > 1:
             vypis = "Číslo 10 je prvočíslo"
-            print(f"{vypis}")
-            print("\n")
+            print(f"\n{vypis}")
+
         else:
             vypis = "Číslo 10 není prvočíslo"
-            print(f"{vypis} ")
-            print("\n")
+            print(f"\n{vypis} ")
         self.assertEqual(vypis, 'Číslo 10 není prvočíslo')
+
 
 class PrintedValues(unittest.TestCase):
     def test_numberOfDivisors(self, ):
@@ -61,15 +62,32 @@ class PrintedValues(unittest.TestCase):
                 """
         number = 5
         counter = 0
-        print('delitele:', end=' ')
+
         for divisor in range(1, number + 1):
             if number % divisor == 0:
                 counter += 1
-                print(divisor, end=' ')
+
         print()
-        print('\npočet deliteľov:', counter)
-        print("\n")
+        print('počet deliteľov:', counter)
         self.assertEqual(counter, 2)
+
+    def test_printedValues(self, ):
+        out = StringIO()
+        with redirect_stdout(out):
+            # any calls to print (either here or in a called method) get caught while in this scope
+            number = 44
+            counter = 0
+            print('delitele:', end=' ')
+            for divisor in range(1, number + 1):
+                if number % divisor == 0:
+                    counter += 1
+                    print(divisor, end=' ')
+            print()
+            print('počet deliteľov:', counter)
+            print("\n")
+
+        self.assertEqual('delitele: 1 2 4 11 22 44 \npočet deliteľov: 6\n\n\n', out.getvalue())
+
 
 if __name__ == '__main__':
     unittest.main()
