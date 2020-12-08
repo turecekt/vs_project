@@ -140,4 +140,3 @@ def str_list_to_int(list_to_convert):
         return True, (int(list_to_convert[0]), int(list_to_convert[1]))
     except ValueError or NameError:
         return False
-
