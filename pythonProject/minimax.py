@@ -168,3 +168,10 @@ def test_bubble_sort():
     test_array = [12, -150, 0, -9, 16]
     sorted_array = [-150, -9, 0, 12, 16]
     assert bubble_sort(test_array) == sorted_array
+
+
+def test_insertion_sort():
+    """Unit test for insertion sort algorithm."""
+    test_array = [125, -15, 30, -19, 160]
+    sorted_array = [-19, -15, 30, 125, 160]
+    assert insertion_sort(test_array) == sorted_array
