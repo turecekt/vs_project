@@ -52,12 +52,14 @@ def convert(num):
 
 
 def test_convert():
-    """Function tests, if the method converts correctly.
-
-    Prints a message depending on the result of the test
-    """
+    """Function tests, if the method converts correctly."""
     assert convert(1) == "I"
     assert convert(586) == "DLXXXVI"
+
+def test_convertInput(num):
+    """Function tests, if the input for convert is correct."""
+    assert num != ""
+    assert isinstance(num, int)
 
 
 if __name__ == '__main__':
@@ -65,7 +67,6 @@ if __name__ == '__main__':
     # dokud uživatel nezadá správnou hodnotu
     opakovani = 0
     while opakovani == 0:
-        try:
             # Vložíme do konzole otázku pro uživatele
             # aby zadal číslici pro převod
             numIn = int(input('Zadejte hodnotu pro převod: '))
@@ -74,11 +75,3 @@ if __name__ == '__main__':
             print(convert(numIn))
             # Opakování ukončíme
             opakovani += 1
-        except NameError:
-            # Když uživatel zadá špatně (string nebo prázdné) input
-            # konzole vypíše že je to napsané špatně
-            # a celý proces opakuje
-            print('Hodnota byla zadána ve špatném tvaru')
-        except ValueError:
-            # Stejné jako NameError expect
-            print('Hodnota byla zadána ve špatném tvaru')
