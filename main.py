@@ -10,7 +10,7 @@ import unittest
 
 # funkce pro prevod arabskeho cisla na rimska
 def prevod(cislo):
-    """Method for converting arabic number to roman."""
+    """Method that converts arabic number to roman."""
     rimska = [
         "M", "CM", "D", "CD",
         "C", "XC", "L", "XL",
