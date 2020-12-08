@@ -86,10 +86,11 @@ if __name__ == '__main__':
     opakovani = 0
     while opakovani == 0:
         try:
-            # Vložíme do konzole otázku pro uživatele, aby zadal číslici pro převod
+            # Vložíme do konzole otázku pro uživatele
+            # aby zadal číslici pro převod
             numIn = int(input('Zadejte hodnotu pro převod: '))
-            # Nastaví výsledek (vloženou hodnotu) jako argument pro metodu convert
-            # výsledek vložíme na konzoli
+            # Nastaví výsledek (vloženou hodnotu) jako argument
+            # pro metodu convert, výsledek vložíme na konzoli
             print(convert(numIn))
             # Opakování ukončíme
             opakovani += 1
