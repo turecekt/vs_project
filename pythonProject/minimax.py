@@ -238,3 +238,12 @@ def test_convert_to_int():
     test_array = ['1', '-19', '10', '-50', '34']
     int_array = [1, -19, 10, -50, 34]
     assert convert_to_int(test_array) == int_array
+
+
+def test_algorithm_choice():
+    """Unit test for correct sorting of an array."""
+    test_array = [81, 21, -5, -9, -16, 31, 0, 147, -4]
+    sorted_array = [-16, -9, -5, -4, 0, 21, 31, 81, 147]
+    assert algorithm_choice(test_array, 1) == sorted_array
+    assert algorithm_choice(test_array, 2) == sorted_array
+    assert algorithm_choice(test_array, 3) == sorted_array
