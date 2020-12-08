@@ -1,59 +1,45 @@
-"""Skript pro provod rim. c. na num.
+"""Finalni uprava na num. c.
 
-Tento skript bude prilozen pozdeji do celeho projektu
+Tento skript bude dan pozdeji do celeho projektu
 """
 
 
-def test_suma2():
-    """Testy pro prevod.
+def test_decode2_doctest():
+    """Funkce pro kontrolu decode finální úprava cast pomocí doctestu.
 
-    Otestuje převod
-    >>> suma("IM")
-    999
-    >>> suma("I")
-    1
-    >>> encodetorim("IM")
-    999
-    >>> encodetorim("I")
-    1
-    >>> encodetorim("III")
-    3
+    Testovaci funkce na finalni upravu pomoci doctestu
+    >>> finalupdate(0,1,['IV', 'X', ''])
+    ('IV', 'X')
+    >>> finalupdate(0,1,['I', 'X', ''])
+    ('I', 'X')
+    >>> finalupdate(0,1,['VII', 'XC', ''])
+    ('II', 'VC')
+    >>> finalupdate(0,1,['IX', 'XC', ''])
+    ('', 'IC')
     """
 
 
-def suma(value):
-    """Funkce pro prepocet.
+def finalupdate(firstint, secondint, listofrome):
+    """Funkce pro minimalizaci rimska cisla z 1. cast.
 
-    Vstup sting vystup int
+    Vstup 2x číslo které je z předchozí funkce, výstup je co zbylo
     """
     cisla = ["I", "V", "X", "L", "C", "D", "M"]
-    cislaar = [1, 5, 10, 50, 100, 500, 1000]
-    x = 0
-    if len(value) > 1:
-        x = x-cislaar[cisla.index(value[0])]
-        x = x+cislaar[cisla.index(value[1])]
+    x = ""
+    y = ""
+    pok1 = False
+    pok2 = len(listofrome[secondint]) == 2
+    if pok2:
+        pok1 = listofrome[secondint][0] != listofrome[secondint][1]
+    q = cisla.index(listofrome[firstint][0])
+    pok3 = q - cisla.index(listofrome[secondint][0]) == -1
+    pok4 = listofrome[firstint][-1] == listofrome[secondint][0]
+    if pok4 and len(listofrome[firstint]) == 2 and pok2 and pok1:
+        y += listofrome[firstint][0] + listofrome[secondint][1:]
+    elif pok3 and pok2 and pok1:
+        y += listofrome[firstint][0] + listofrome[secondint][1:]
+        x += listofrome[firstint][1:]
     else:
-        x = x+cislaar[cisla.index(value[0])]
-    return x
-
-
-def encodetorim(cislo):
-    """Funkce pro prepocet.
-
-    Vstup sting vystup int
-    """
-    number = cislo
-    cisl = ["I", "V", "X", "L", "C", "D", "M"]
-    position = 0
-    hodnota = 0
-    while position < len(number):
-        if position+1 < len(number):
-            if cisl.index(number[position]) < cisl.index(number[position+1]):
-                hodnota = hodnota+suma(number[position]+number[position+1])
-                position = 1+position
-            else:
-                hodnota = hodnota+suma(number[position])
-        else:
-            hodnota = hodnota+suma(number[position])
-        position = 1+position
-    return hodnota
+        x += listofrome[firstint]
+        y += listofrome[secondint]
+    return x, y
