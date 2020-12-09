@@ -7,8 +7,10 @@ import unittest
 
 
 class TestStringMethods(unittest.TestCase):
-"""vytvoření třídy pro testování"""
 
+
+    """vytvoření třídy pro testování"""
+ 
     def test_upper(self):
         self.assertEqual("abc".upper(), "ABC")
         """testování fce zvětšení písmena"""
