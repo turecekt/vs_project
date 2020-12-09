@@ -23,7 +23,7 @@ SLOVNIK_MORSEOVKA = {' ': '/', 'A': '.-',
                      ',': '--..--', '.': '.-.-.-',
                      '?': '..--..', '/': '-..-.', '-': '-....-',
                      '(': '-.--.', ')': '-.--.-'}
-             
+
 
 # Dále definujeme první funkci
 # Jako první věc definujeme trext, ke kterému máme doplnit text pro kodovani
@@ -32,20 +32,22 @@ SLOVNIK_MORSEOVKA = {' ': '/', 'A': '.-',
 # A string necháme přečíst
 
 def Text_To_Code():
-        text = input("Napište text, který hcete kodovat: ")
-        code = [SLOVNIK_MORSEOVKA
-                [i.upper()] + " " for i in text if i.upper() in SLOVNIK_MORSEOVKA.keys()]
-        morseovka="".join(code)
+        text2 = input("Napište text, který hcete kodovat: ")
+        code2 = [SLOVNIK_MORSEOVKA
+                [i.upper()] + " " 
+                 for i in text2 if i.upper() in SLOVNIK_MORSEOVKA.keys()]
+        morseovka ="".join(code2)
         print(morseovka)
-                
+
 # Stejný způsob použijeme i zde u dekodovani námi zadaného textu
 # Vytvoříme zde to, že námi zadaný kod program rozloží na jednotky
-# Opet nechame udělat string z code a necháme ho vypsat 
+# Opet nechame udělat string z code a necháme ho vypsat
 
-def Code_To_Text():
+def Code__To__Text():
         text1 = input("Napište kod, který chcete dekodovat: ")
-        code = [k for i in text1.split() for k, v in SLOVNIK_MORSEOVKA.items() if i==v]
-        novytext = "".join(code)
+        code1 = [k for i in text1.split() for k,
+                 v in SLOVNIK_MORSEOVKA.items() if i==v]
+        novytext = "".join(code1)
         print(novytext)
 
 
@@ -64,7 +66,7 @@ while True:
                         break
                 
                 elif vyber == 2:
-                        print(Code_To_Text())
+                        print(Code__To__Text())
                         break
                         
                 elif vyber == 3:
