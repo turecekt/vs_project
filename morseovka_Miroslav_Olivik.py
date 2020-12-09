@@ -1,4 +1,4 @@
-# !usr/bin/env python3
+
 
 # Jako první věc si msíme definovat abecedu
 
@@ -32,10 +32,10 @@ SLOVNIK_MORSEOVKA = {' ': '/', 'A': '.-',
 # A string necháme přečíst
 
 def Text_To_Code():
-        text2 = input("Napište text, který hcete kodovat: ")
+        text2 = input("Napište slova, která chcete kodovat: ")
         code2 = [SLOVNIK_MORSEOVKA
                  [i.upper()] + " "
-                  for i in text2 if i.upper() in SLOVNIK_MORSEOVKA.keys()]
+                 for i in text2 if i.upper() in SLOVNIK_MORSEOVKA.keys()]
         morseovka = "".join(code2)
         print(morseovka)
 
@@ -43,7 +43,7 @@ def Text_To_Code():
 # Vytvoříme zde to, že námi zadaný kod program rozloží na jednotky
 # Opet nechame udělat string z code a necháme ho vypsat
 
-def Code_To_Text():
+def  Code_To_Text():
         text1 = input("Napište kod, který chcete dekodovat: ")
         code1 = [k for i in text1.split() for k,
                  v in SLOVNIK_MORSEOVKA.items() if i == v]
@@ -62,19 +62,19 @@ while True:
 
                 vyber = int(input("TVŮJ VÝBĚR: "))
                 if vyber == 1:
-                        print(Text_To_Code())
+                        print1(Text_To_Code())
                         break
 
                 elif vyber == 2:
-                        print(Code__To__Text())
+                        print2(Code_To_Text())
                         break
 
                 elif vyber == 3:
-                        print("UKONČUJI")
+                        print3("UKONČUJI")
                         exit()
 
                 else:
-                        print("NESPRÁVNÁ VOLBA, ZVOLTE ZNOVU")
+                        print4("NESPRÁVNÁ VOLBA, ZVOLTE ZNOVU")
         exception:
                 print("NESPRÁVNÁ VOLBA, ZVOLTE ZNOVU")
 
