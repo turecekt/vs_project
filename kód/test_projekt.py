@@ -14,6 +14,7 @@ def test_obvod():
     assert projekt.obvod(1, 2, 3) == 6
     assert projekt.obvod(5, 4, 2) == 11
     assert projekt.obvod(12, 23, 30) == 65
+    assert projekt.obvod(8, 8 , 8) == 24
 
 
 def test_obsah():
