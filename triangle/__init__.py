@@ -89,36 +89,3 @@ class Triangle:
         """
         s = self.perimeter() / 2
         return sqrt(s * (s - self.a) * (s - self.b) * (s - self.c))
-
-
-def input_values(point_name):
-    """
-    User input method. Split user input into list.
-
-    :param point_name: name of the point (char)
-    :return: True, user input (list[int, int]) -> (tuple) | False
-    >>> 'There is no way of testing this'
-    'There is no way of testing this'
-    """
-    point = str_list_to_int(
-        input(f"Zadejte souřadnice bodu {point_name}: ").split(","))
-    if point:
-        return point
-    else:
-        print("Zadejte souřadnice ve správném formátu! například: 1,1")
-        return input_values(point_name)
-
-
-def str_list_to_int(list_to_convert):
-    """
-    Check if user input is in the right format.
-
-    :param list_to_convert: user input converted to list (list[str])
-    :return: True & User input converted to (int) -> (tuple) | False
-    >>> str_list_to_int(["1", "1"])[1]
-    (1, 1)
-    """
-    try:
-        return True, (int(list_to_convert[0]), int(list_to_convert[1]))
-    except ValueError or NameError:
-        return False
