@@ -1,19 +1,18 @@
-# !/usr/bin/en v python3
+# !usr/bin/env python3
 
+# Jako první věc si msíme definovat abecedu
 
-# Jako první věc si msíme definovat abecedu, ke každému písmenu deklarujeme morseovo písmeno
-
-SLOVNIK_MORSEOVKA = {' ': '/','A': '.-','B': '-...','C': '-.-.','D': '-..','E': '.','F': '..-.','G': '--.','H': '....',
-                    'I': '..','J': '.---','K': '-.-','L': '.-..','M': '--','N': '-.','O': '---','P': '.--.','Q': '--.-',
-                    'R': '.-.','S': '...','T': '-','U': '..-','V': '...-','W': '.--','X': '-..-','Y': '-.--','Z': '--..',
-                    '1': '.----','2': '..---','3': '...--','4': '....-','5': '.....','6': '-....','7': '--...','8': '---..','9': '----.',
-
-                    '0': '-----',',': '--..--','.': '.-.-.-','?': '..--..','/': '-..-.','-': '-....-','(': '-.--.',')': '-.--.-'
+SLOVNIK_MORSEOVKA = {' ': '/', 'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.', 'F': '..-.', 'G': '--.', 'H': '....', 
+                    'I': '..', 'J': '.---', 'K': '-.-', 'L': '.-..', 'M': '--', 'N': '-.', 'O': '---', 'P': '.--.', 'Q': '--.-', 
+                    'R': '.-.', 'S': '...', 'T': '-', 'U': '..-', 'V': '...-', 'W': '.--', 'X': '-..-', 'Y': '-.--', 'Z': '--..', 
+                    '1': '.----', '2': '..---', '3': '...--', '4': '....-', '5': '.....', '6': '-....', '7': '--...', 
+                    '8': '---..', '9': '----.', '0': '-----', ',': '--..--', '.': '.-.-.-', '?': '..--..', 
+                    '/': '-..-.','-': '-....-','(': '-.--.',')': '-.--.-'
                     }
 
-# Dále definujeme první funkci - a to tedy funkci pro zakodovani textu díky prikazu def
+# Dále definujeme první funkci 
 # Jako první věc definujeme trext, ke kterému máme doplnit text pro kodovani
-# Dále vytvoříme code, který nám říká, že text námi zadaný se automaticky převde na velké písmeno a to má ekvivalent i v morseove abecede a jejich znacich
+# Dále vytvoříme převodový text na kod
 # Vytvoříme string k danemu code
 # A string necháme přečíst
 
@@ -24,7 +23,7 @@ def text_to_code():
         print(morseovka)
                 
 # Stejný způsob použijeme i zde u dekodovani námi zadaného textu
-# Vytvoříme zde to, že námi zadaný kod rozloží program na jednotlivé znaky morseovy abecedy a ty rozdělí a potom k těmto znakum přiřadi i písmena
+# Vytvoříme zde to, že námi zadaný kod program rozloží na jednotky
 # Opet nechame udělat string z code a necháme ho vypsat 
 
 def code_to_text():
@@ -49,7 +48,7 @@ while True:
                         break
                 
                 elif vyber == 2:
-                        print (code_to_text())
+                        print(code_to_text())
                         break
                         
                 elif vyber == 3:
@@ -58,7 +57,7 @@ while True:
                       
                 else:
                         print("NESPRÁVNÁ VOLBA, ZVOLTE ZNOVU")
-        except:
+        exception:
                 print("NESPRÁVNÁ VOLBA, ZVOLTE ZNOVU")
 
                 
