@@ -13,8 +13,8 @@ This module is use for do unit test to each function from primeNumber.py
 #                          3. dividors validation
 #                          4. printed outputs validation
 import unittest
-from contextlib import redirect_stdout
-from io import StringIO
+import builtins
+
 from primeNumber import isPrimeNumber
 from primeNumber import printDivisors
 
@@ -38,7 +38,7 @@ class TestPrimeNumber(unittest.TestCase):
                 - Function validates that number 10 is non-prime number
     """
 
-    def test_fiveIsPrimeNumber(self,):
+    def test_is_prime():
         """Function test for isPrimeNumber.
 
         Parameters:
@@ -47,79 +47,36 @@ class TestPrimeNumber(unittest.TestCase):
             - output (str): String printed into console,
             statement if number is prime number
         """
-        out = StringIO()
-        with redirect_stdout(out):
-            isPrimeNumber(5)
-        self.assertEqual('Číslo 5 je prvočíslo\n',
-                         out.getvalue())
+        assert isPrimeNumber(5) == True
+        assert isPrimeNumber(6) == False
+        assert isPrimeNumber(8) == False
 
-    def test_tenIsNotPrimeNumber(self,):
-        """Function test function isPrimeNumber.
+    def test_main():
+        """Function test for isPrimeNumber.
 
         Parameters:
-            - number (int): tested number 10
+             - number (int): tested number 5
         Returns:
             - output (str): String printed into console,
             statement if number is prime number
         """
-        out = StringIO()
-        with redirect_stdout(out):
-            isPrimeNumber(10)
-        self.assertEqual('Číslo 10 není prvočíslo\n',
-                         out.getvalue())
+        print_values = []
+        builtins.print = lambda s: print_values.append(s)
+        main()
+        assert print_values == ["Vstup musi byt cislo!"]
 
 
-class TestPrintedValues(unittest.TestCase):
-    """Class TestPrintedValues for testing function printDivisors().
 
-    ...
-    Attributes
-    ----------
-            - number : int
-                - We are testing numbers 5 and 44, 5 for evaluating
-                number of divisors and 44 for evaluating values of divisors
-            - dividers: int[]
-                - List of integers - dividers
-            - counter: int
-                - Number of dividers
 
-    Methods
-    -------
-            test_numberOfDivisors(self, ):
-                - Function validates the number of dividers
-            test_printedValues(self, ):
-                - Function validates if after evaluation the
-                divisors are printed into console
-    """
-
-    def test_numberOfDivisors(self,):
-        """Function validates the number of dividers.
-
-        Parameters:
-            - number (int): tested number 5
-            - counter (int): number of dividers
-        Returns:
-            - output (int): number of dividers, printed
-            statement into console
-        """
-        out = StringIO()
-        with redirect_stdout(out):
-            isPrimeNumber(44)
-            printDivisors(44)
-        self.assertEqual('Číslo 44 není prvočíslo\nDelitele: 1 2 4 11 22 44 '
-                         '\nPočet deliteľov: 6\n',
-                         out.getvalue())
-
-    def test_printedValues(self,):
-        """Function validates if the divisors are printed into console.
-
-        Parameters:
-            - out: output from function catch into method scope
-            - number (int): tested number 5
-            - counter (int): number of dividers
-        Returns:
-            - output ():  none, function just asserts values
-        """
+    def main():
+        try:
+            cislo = int(input("Zadej cislo: "))
+            if isPrimeNumber(cislo):
+                print(f"Číslo {cislo} je prvočíslo")
+            else:
+                print(f"Číslo {cislo}  nie je prvočíslo")
+        except Exception:
+            print("Vstup musi byt cislo!")
 
 
 if __name__ == '__main__':
