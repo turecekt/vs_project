@@ -8,11 +8,9 @@ def test_dlzkystran():
     assert projekt.dlzkastrany(1, 1, 4, 5) == 5.0
 
 
-
 def test_obvod():
     """Test pre funkciu obvod."""
     assert projekt.obvod(1, 2, 3) == 6
-
 
 
 def test_obsah():
@@ -26,8 +24,6 @@ def test_zostrojenost():
     assert projekt.zostrojenost(3, 4, 5) == 1
 
 
-
 def test_pravouhlost():
     """Test pre funkciu pravouhlost."""
     assert projekt.pravouhlost(3, 4, 5) == 1
-
