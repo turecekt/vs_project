@@ -30,6 +30,7 @@ SLOVNIK_MORSEOVKA = {' ': '/', 'A': '.-',
 # Vytvoříme string k danemu code
 # A string necháme přečíst
 
+
 def Text_To_Code():
     text2 = input("Napište slova, která chcete kodovat: ")
     code2 = [SLOVNIK_MORSEOVKA
