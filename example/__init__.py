@@ -1,9 +1,9 @@
 """This is the "example" module.
 
-The example module supplies one function, compute().  For example,
+The example module supplies one function: compute(). For example,
 
 >>> compute(3)
-6
+3
 """
 
 
@@ -16,4 +16,4 @@ def compute(x):
     Returns:
         - output - Output of the function
     """
-    return x * x - x
+    return x * x - 2 * x
