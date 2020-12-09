@@ -106,7 +106,8 @@ class TestPrintedValues(unittest.TestCase):
         with redirect_stdout(out):
             isPrimeNumber(44)
             printDivisors(44)
-        self.assertEqual('Číslo 44 není prvočíslo\nDelitele: 1 2 4 11 22 44 \nPočet deliteľov: 6\n',
+        self.assertEqual('Číslo 44 není prvočíslo\nDelitele: 1 2 4 11 22 44 '
+                         '\nPočet deliteľov: 6\n',
                          out.getvalue())
 
     def test_printedValues(self,):
