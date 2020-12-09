@@ -57,7 +57,7 @@ def bubble_sort(pomocna):  # funkce bubble sort
 def selection_sort(pole): # funkce selection sort
     for i in range (0, len(pole)-1): # Cyklus, který se bude opakovat pro každý prvek.
         mezivypocet = i # Přiřazení prvního nezařazeného prvku jako mezivýpočet
-        for j in range (i, len(pole)-1): # Cyklus, který se bude opakovat pro každý nezařazený prvek.
+        for j in range (i, len(pole)): # Cyklus, který se bude opakovat pro každý nezařazený prvek.
             if pole[mezivypocet] > pole[j]:
                 mezivypocet = j # Pokud je současný prvek vyšší než mezivýpočet, tak se prvek stává mezivýpočtem
         mezivypocet2 = pole[i]
