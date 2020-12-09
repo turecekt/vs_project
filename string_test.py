@@ -1,4 +1,4 @@
-import docstring
+#unittestování k morseove abecede
 import unittest
 
 # unit testy pro morseovku a jeji stringove fce
@@ -6,7 +6,6 @@ import unittest
 
 
 class TestStringMethods(unittest.TestCase):
-
 
     # test pro spravnou funkci na zvětšení písmena
 
@@ -27,5 +26,6 @@ class TestStringMethods(unittest.TestCase):
         with self.assertRaises(TypeError):
             s.split(2)
  
+
 if __name__ == "__main__":
     unittest.main()
