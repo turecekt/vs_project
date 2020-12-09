@@ -25,7 +25,7 @@ SLOVNIK_MORSEOVKA = {' ': '/', 'A': '.-',
                      '(': '-.--.', ')': '-.--.-'}
 
 """ Dále definujeme první funkci"""
-""" Jako první věc definujeme trext, ke kterému máme doplnit text pro kodovani"""
+""" Jako první věc definujeme text, kterému máme doplnit text pro kodovani"""
 """ Dále vytvoříme převodový text na kod"""
 """ Vytvoříme string k danemu code"""
 """ A string necháme přečíst"""
@@ -44,6 +44,7 @@ def Text_To_Code():
 """ Vytvoříme zde to, že námi zadaný kod program rozloží na jednotky"""
 """ Opet nechame udělat string z code a necháme ho vypsat"""
 
+
 def Code_To_Text():
     text1 = input("Napište kod, který chcete dekodovat: ")
     code1 = [k for i in text1.split() for k,
@@ -54,7 +55,7 @@ def Code_To_Text():
 
 """ Vypiseme menu pro vyber, co hceme aby program delal"""
 """ Na zaver vypisime cyklus, ktery nám k menu ve stringu priradi i funkce"""
-""" Zvolili jsme i fci else, která nám pokryje jakoukoliv jinou možnost než 1-3"""
+""" Zvolili jsme fci else, která nám pokryje jinou možnost než-li 1-3"""
 
 
 print("""\n1 - TEXT KE KODOVÁNÍ \n2 - KÓD K ROZKÓDOVÁNÍ\n3 - KONEC\n""")
