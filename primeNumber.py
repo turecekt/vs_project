@@ -37,19 +37,6 @@ class PrimeNumber:
     """
 
 
-# define input from console and global variables
-number = input("Vlož číslo: ")
-counter = int
-
-# validation of console inputs
-if number.isdigit() and int(number) > 0:
-    number = int(number)
-    # if input is valid, create variable dividors - list of int
-    divisors = []
-else:
-    print("Nebylo zadáno kladné číslo")
-
-
 def isPrimeNumber(number):
     """Count number of dividers and print them.
 
@@ -88,8 +75,33 @@ def getDivisors(number):
     return divisors
 
 
-isPrimeNumber(number)
-printDivisors(number)
+def main():
+    """Execute all functions.
+
+    Parameters:
+        - number - input from console
+    Returns:
+        - output (int): print statements into console
+    """
+    try:
+        number = int(input("Vlož číslo: "))
+        if number < 0:
+            print("Nebylo zadáno kladne číslo")
+            return 1
+        if isPrimeNumber(number):
+            print(f"Číslo {number} je prvočíslo")
+        else:
+            print(f"Číslo {number}  nie je prvočíslo")
+        divisors = getDivisors(number)
+        print("Delitele: ", end="")
+        print(*divisors, sep=", ")
+        print('Počet deliteľov:', len(divisors))
+    except Exception:
+        print("Nebylo zadáno číslo")
+
+
+if __name__ == "__main__":
+    main()
 
 # print documentation using pydoc.
 
