@@ -1,5 +1,8 @@
-""" Module prime number checker.
-This module is use for checking the input
+"""Module prime number checker.
+
+This module is use for checking the input, supplies  functions:
+isPrimeNumber(), printDivisors()
+
 """
 
 
@@ -14,27 +17,24 @@ This module is use for checking the input
 
 
 class PrimeNumber:
-    """
-           Class PrimeNumber for evaluating whether the entered number
-           is a prime number.
-           A class to represent logic how to validate any number and
-           print the results.
-           ...
-           Attributes
-           ----------
-           number : int
-               input from console
-           counter : int
+    """Class represents logic how to validate number and print the results.
+
+    ...
+    Attributes
+    ----------
+           - number : int
+               - input from console
+           - counter : int
                counter of dividors
-           dividors : int[]
-               list of dividors
-           Methods
-           -------
+           - dividors : int[]
+               - list of dividors
+    Methods
+    -------
            isPrimeNumber():
-               Function validates the entered number is prime number
+               - Function validates the entered number is prime number
            printDivisors():
-                Function prints number of dividers and their values
-           """
+                - Function prints number of dividers and their values
+    """
 
 
 # define input from console and global variables
@@ -51,15 +51,15 @@ else:
 
 
 def isPrimeNumber():
+    """Count number of dividers and print them.
+
+    Parameters:
+        - dividers (int[]): List of integers - dividers
+        - counter (int): number of dividers
+    Returns:
+        - output (int): number of dividors (counter) and
+        printed list of dividors
     """
-        Function validates the entered number is prime number
-           according to divisors and modulos
-            Parameters:
-                number (int): Number is input from console
-            Returns:
-                output (str): String printed into console,
-                statement if number is prime number
-            """
     # logic of prime number evaluation
     isPrimeNumber = True
     for divisor in range(2, number):
@@ -73,14 +73,15 @@ def isPrimeNumber():
 
 
 def printDivisors():
-    """Function counts number of dividers and print them
-                Parameters:
-                    dividers (int[]): List of integers - dividers
-                    counter (int): number of dividers
-                Returns:
-                    output (int): number of dividors (counter) and
-                    printed list of dividors
-                """
+    """Count number of dividers and print them.
+
+    Parameters:
+        - dividers (int[]): List of integers - dividers
+        - counter (int): number of dividers
+    Returns:
+        - output (int): number of dividors (counter) and
+        printed list of dividors
+    """
     # inicialize and define number of divisers as 0 at the beginning
     counter = 0
     print('Delitele:', end=' ')

@@ -1,4 +1,5 @@
-""" Module unit tests .
+"""Module unit tests.
+
 This module is use for do unit test to each function from primeNumber.py
 """
 # Author:   Barbana Klimekova <b_klimekova@utb.cz>
@@ -17,33 +18,33 @@ from io import StringIO
 
 
 class TestPrimeNumber(unittest.TestCase):
+    """Class TestPrimeNumber for testing function primeNumber().
+
+    ...
+    Attributes
+    ----------
+            - number : int
+                - we are testing numbers 5 and 10, 5 as prime number,
+                10 as non-prime number
+            - vypis: str
+                - the string value that is printed as a result into console
+    Methods
+    -------
+            test_fiveIsPrimeNumber(self, ):
+                - Function validates that entered number 5 is prime number
+            test_tenIsNotPrimeNumber(self, ):
+                - Function validates that number 10 is non-prime number
     """
-                Class TestPrimeNumber for testing function primeNumber()
-               ...
-               Attributes
-               ----------
-               number : int
-                   we are testing numbers 5 and 10, 5 as prime number,
-                   10 as non-prime number
-               vypis: str
-                   the string value that is printed as a result into console
-               Methods
-               -------
-               test_fiveIsPrimeNumber(self, ):
-                   Function validates that entered number 5 is prime number
-               test_tenIsNotPrimeNumber(self, ):
-                   Function validates that number 10 is non-prime number
-               """
 
     def test_fiveIsPrimeNumber(self, ):
-        """Function test function isPrimeNumber
-                        Parameters:
-                            number (int): tested number 5
-                        Returns:
-                            output (str): String printed into console,
-                            statement if number is
-                            prime number
-                        """
+        """Function test for isPrimeNumber.
+
+        Parameters:
+            - number (int): tested number 5
+        Returns:
+            - output (str): String printed into console,
+            statement if number is prime number
+        """
         number = 5
         number_is_prime_number = True
         for divisor in range(2, number):
@@ -60,14 +61,14 @@ class TestPrimeNumber(unittest.TestCase):
         self.assertEqual(vypis, 'Číslo 5 je prvočíslo')
 
     def test_tenIsNotPrimeNumber(self, ):
-        """Function test function isPrimeNumber
-                       Parameters:
-                           number (int): tested number 10
-                       Returns:
-                           output (str): String printed into console,
-                           statement if number is
-                           prime number
-                       """
+        """Function test function isPrimeNumber.
+
+        Parameters:
+            - number (int): tested number 10
+        Returns:
+            - output (str): String printed into console,
+            statement if number is prime number
+        """
         number = 10
         number_is_prime_number = True
         for divisor in range(2, number):
@@ -85,37 +86,38 @@ class TestPrimeNumber(unittest.TestCase):
 
 
 class TestPrintedValues(unittest.TestCase):
-    """
-                Class TestPrintedValues for testing function printDivisors()
-               ...
-               Attributes
-               ----------
-               number : int
-                   We are testing numbers 5 and 44, 5 for evaluating
-                   number of divisors and 44 for evaluating values of divisors
-               dividers: int[]
-                    List of integers - dividers
-               counter: int
-                    Number of dividers
+    """Class TestPrintedValues for testing function printDivisors().
 
-               Methods
-               -------
-               test_numberOfDivisors(self, ):
-                   Function validates the number of dividers
-               test_printedValues(self, ):
-                   Function validates if after evaluation the
-                   divisors are printed into console
-               """
+    ...
+    Attributes
+    ----------
+            - number : int
+                - We are testing numbers 5 and 44, 5 for evaluating
+                number of divisors and 44 for evaluating values of divisors
+            - dividers: int[]
+                - List of integers - dividers
+            - counter: int
+                - Number of dividers
+
+    Methods
+    -------
+            test_numberOfDivisors(self, ):
+                - Function validates the number of dividers
+            test_printedValues(self, ):
+                - Function validates if after evaluation the
+                divisors are printed into console
+    """
 
     def test_numberOfDivisors(self, ):
-        """Function validates the number of dividers
-                        Parameters:
-                            number (int): tested number 5
-                            counter (int): number of dividers
-                        Returns:
-                            output (int): number of dividers, printed
-                            statement into console
-                        """
+        """Function validates the number of dividers.
+
+        Parameters:
+            - number (int): tested number 5
+            - counter (int): number of dividers
+        Returns:
+            - output (int): number of dividers, printed
+            statement into console
+        """
         number = 5
         counter = 0
 
@@ -128,14 +130,15 @@ class TestPrintedValues(unittest.TestCase):
         self.assertEqual(counter, 2)
 
     def test_printedValues(self, ):
-        """Function validates if after evaluation the divisors are printed into console
-                        Parameters:
-                            out: output from function catch into method scope
-                            number (int): tested number 5
-                            counter (int): number of dividers
-                        Returns:
-                            output ():  none, function just asserts values
-                        """
+        """Function validates if the divisors are printed into console.
+
+        Parameters:
+            - out: output from function catch into method scope
+            - number (int): tested number 5
+            - counter (int): number of dividers
+        Returns:
+            - output ():  none, function just asserts values
+        """
         out = StringIO()
         with redirect_stdout(out):
             # any calls to print (either here or in a called method)
