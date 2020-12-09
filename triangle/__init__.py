@@ -16,8 +16,6 @@ class Triangle:
             used for storing the points inserted by user
         a, b, c:
             used for storing the calculated sides
-    >>> 'There is no reason to test this'
-    'There is no reason to test this'
     """
 
     def __init__(self, point_a, point_b, point_c):
@@ -27,8 +25,6 @@ class Triangle:
         :param
             point_a, point_b, point_c:
                 used for transfer points to self.points
-        >>> 'There is no reason to test this'
-        'There is no reason to test this'
         """
         self.point_a = point_a
         self.point_b = point_b
@@ -40,9 +36,6 @@ class Triangle:
         Take inserted points and calculate sides.
 
         :return: [float, float, float] -> list
-        >>> tr = Triangle([1,0], [0,1], [1,1])
-        >>> tr.c
-        1.0
         """
         sides = (self.point_a, self.point_b), \
                 (self.point_a, self.point_c), \
@@ -57,9 +50,6 @@ class Triangle:
         Check if the triangle is able to construct.
 
         :return: True | False
-        >>> tr = Triangle([1,0], [0,1], [1,1])
-        >>> tr.is_able()
-        True
         """
         a, b, c = self.a, self.b, self.c
 
@@ -73,9 +63,6 @@ class Triangle:
         Check if there is 90 degrees corner in the triangle.
 
         :return: True | False
-        >>> tr = Triangle([1,0], [0,1], [1,1])
-        >>> tr.is_rectangular()
-        True
         """
         sides: list[float] = [self.a, self.b, self.c]
         sides.sort(reverse=True)
@@ -91,9 +78,6 @@ class Triangle:
         Calculate the other contour of the triangle.
 
         :return: perimeter of the triangle (float)
-        >>> tr = Triangle([1,0], [0,1], [1,1])
-        >>> round(tr.perimeter(), 2)
-        3.41
         """
         return self.a + self.b + self.c
 
@@ -102,9 +86,6 @@ class Triangle:
         Calculate the inner area of the triangle.
 
         :return: Area of the triangle (float)
-        >>> tr = Triangle([1,0], [0,1], [1,1])
-        >>> round(tr.area(), 2)
-        0.5
         """
         s = self.perimeter() / 2
         return sqrt(s * (s - self.a) * (s - self.b) * (s - self.c))

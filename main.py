@@ -1,9 +1,4 @@
-"""
-main file for our project.
-
->>> 1
-1
-"""
+"""Main file for our project."""
 import triangle as tr
 
 if __name__ == '__main__':
