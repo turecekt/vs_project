@@ -39,6 +39,7 @@ def Text_To_Code():
     morseovka = "".join(code2)
     print(morseovka)
 
+    
 # Stejný způsob použijeme i zde u dekodovani námi zadaného textu
 # Vytvoříme zde to, že námi zadaný kod program rozloží na jednotky
 # Opet nechame udělat string z code a necháme ho vypsat
@@ -51,9 +52,11 @@ def Code_To_Text():
     novytext = "".join(code1)
     print(novytext)
 
+    
 # Vypiseme menu pro vyber, co hceme aby program delal
 # Na zaver vypisime cyklus, ktery nám k menu ve stringu priradi i funkce
 # Zvolili jsme i fci else, která nám pokryje jakoukoliv jinou možnost než 1-3
+
 
 print("""\n1 - TEXT KE KODOVÁNÍ \n2 - KÓD K ROZKÓDOVÁNÍ\n3 - KONEC\n""")
 
