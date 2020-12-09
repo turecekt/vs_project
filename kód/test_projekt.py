@@ -28,7 +28,7 @@ def test_zostrojenost():
     """Test pre funkciu zostrojenost."""
     assert projekt.zostrojenost(3, 4, 5) == 1
     assert projekt.zostrojenost(1, 5, 10) == 0
-    assert projekt.zostrojenost(1, 2, 3) == 1
+    assert projekt.zostrojenost(1, 2, 3) == 0
 
 
 def test_pravouhlost():
@@ -36,7 +36,6 @@ def test_pravouhlost():
     assert projekt.pravouhlost(3, 4, 5) == 1
     assert projekt.pravouhlost(4, 4, 4) == 0
     assert projekt.pravouhlost(7, 9, 16) == 0
-    assert projekt.pravouhlost(10, 15, 18.03) == 1
 
 
 test_dlzkystran()
