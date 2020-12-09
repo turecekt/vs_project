@@ -38,6 +38,7 @@ def test_pravouhlost():
     assert projekt.pravouhlost(7, 9, 16) == 0
     assert projekt.pravouhlost(10, 15, 18.03) == 1
 
+
 test_dlzkystran()
 test_obvod()
 test_obsah()
