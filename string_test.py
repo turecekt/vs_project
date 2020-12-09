@@ -11,16 +11,24 @@ class TestStringMethods(unittest.TestCase):
 
 
 """testování fce zvětšení písmena"""
-def test_upper(self):
+
+
+    def test_upper(self):
     self.assertEqual("abc".upper(), "ABC")
 
-"""testování fce zvětšení písmena"""
-def test_isupper(self):
+
+    """testování fce zvětšení písmena"""
+
+    
+    def test_isupper(self):
     self.assertTrue("ABC".isupper())
     self.assertFalse("Abc".isupper())
 
-"""testování fce split"""
-def test_split(self):
+
+    """testování fce split"""
+
+    
+    def test_split(self):
     s = "miroslav olivik"
     self.assertEqual(s.split(), ["miroslav", "olivik"])
     with self.assertRaises(TypeError):
