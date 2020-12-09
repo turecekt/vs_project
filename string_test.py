@@ -1,4 +1,4 @@
-#unittestování k morseove abecede
+# unittestování k morseove abecede
 import unittest
 
 # unit testy pro morseovku a jeji stringove fce
@@ -25,7 +25,7 @@ class TestStringMethods(unittest.TestCase):
         self.assertEqual(s.split(), ["miroslav", "olivik"])
         with self.assertRaises(TypeError):
             s.split(2)
- 
+
 
 if __name__ == "__main__":
     unittest.main()
