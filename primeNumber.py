@@ -50,7 +50,7 @@ else:
     print("Nebylo zadáno kladné číslo")
 
 
-def isPrimeNumber():
+def isPrimeNumber(number):
     """Count number of dividers and print them.
 
     Parameters:
@@ -72,7 +72,7 @@ def isPrimeNumber():
         print(f"Číslo {number} není prvočíslo")
 
 
-def printDivisors():
+def printDivisors(number):
     """Count number of dividers and print them.
 
     Parameters:
@@ -93,8 +93,8 @@ def printDivisors():
     print('Počet deliteľov:', counter)
 
 
-isPrimeNumber()
-printDivisors()
+isPrimeNumber(number)
+printDivisors(number)
 
 # print documentation using pydoc.
 

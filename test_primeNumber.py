@@ -15,6 +15,8 @@ This module is use for do unit test to each function from primeNumber.py
 import unittest
 from contextlib import redirect_stdout
 from io import StringIO
+from primeNumber import isPrimeNumber
+from primeNumber import printDivisors
 
 
 class TestPrimeNumber(unittest.TestCase):
@@ -36,7 +38,7 @@ class TestPrimeNumber(unittest.TestCase):
                 - Function validates that number 10 is non-prime number
     """
 
-    def test_fiveIsPrimeNumber(self, ):
+    def test_fiveIsPrimeNumber(self,):
         """Function test for isPrimeNumber.
 
         Parameters:
@@ -45,22 +47,13 @@ class TestPrimeNumber(unittest.TestCase):
             - output (str): String printed into console,
             statement if number is prime number
         """
-        number = 5
-        number_is_prime_number = True
-        for divisor in range(2, number):
-            if number % divisor == 0:
-                number_is_prime_number = False
-                break
-        if number_is_prime_number and number > 1:
-            vypis = "Číslo 5 je prvočíslo"
-            print(f"\n{vypis}")
-        else:
-            vypis = "Číslo 5 není prvočíslo"
-            print(f"\n{vypis} ")
+        out = StringIO()
+        with redirect_stdout(out):
+            isPrimeNumber(5)
+        self.assertEqual('Číslo 5 je prvočíslo\n',
+                         out.getvalue())
 
-        self.assertEqual(vypis, 'Číslo 5 je prvočíslo')
-
-    def test_tenIsNotPrimeNumber(self, ):
+    def test_tenIsNotPrimeNumber(self,):
         """Function test function isPrimeNumber.
 
         Parameters:
@@ -69,20 +62,11 @@ class TestPrimeNumber(unittest.TestCase):
             - output (str): String printed into console,
             statement if number is prime number
         """
-        number = 10
-        number_is_prime_number = True
-        for divisor in range(2, number):
-            if number % divisor == 0:
-                number_is_prime_number = False
-                break
-        if number_is_prime_number and number > 1:
-            vypis = "Číslo 10 je prvočíslo"
-            print(f"\n{vypis}")
-
-        else:
-            vypis = "Číslo 10 není prvočíslo"
-            print(f"\n{vypis} ")
-        self.assertEqual(vypis, 'Číslo 10 není prvočíslo')
+        out = StringIO()
+        with redirect_stdout(out):
+            isPrimeNumber(10)
+        self.assertEqual('Číslo 10 není prvočíslo\n',
+                         out.getvalue())
 
 
 class TestPrintedValues(unittest.TestCase):
@@ -108,7 +92,7 @@ class TestPrintedValues(unittest.TestCase):
                 divisors are printed into console
     """
 
-    def test_numberOfDivisors(self, ):
+    def test_numberOfDivisors(self,):
         """Function validates the number of dividers.
 
         Parameters:
@@ -118,18 +102,14 @@ class TestPrintedValues(unittest.TestCase):
             - output (int): number of dividers, printed
             statement into console
         """
-        number = 5
-        counter = 0
+        out = StringIO()
+        with redirect_stdout(out):
+            isPrimeNumber(44)
+            printDivisors(44)
+        self.assertEqual('Číslo 44 není prvočíslo\nDelitele: 1 2 4 11 22 44 \nPočet deliteľov: 6\n',
+                         out.getvalue())
 
-        for divisor in range(1, number + 1):
-            if number % divisor == 0:
-                counter += 1
-
-        print()
-        print('počet deliteľov:', counter)
-        self.assertEqual(counter, 2)
-
-    def test_printedValues(self, ):
+    def test_printedValues(self,):
         """Function validates if the divisors are printed into console.
 
         Parameters:
@@ -139,26 +119,11 @@ class TestPrintedValues(unittest.TestCase):
         Returns:
             - output ():  none, function just asserts values
         """
-        out = StringIO()
-        with redirect_stdout(out):
-            # any calls to print (either here or in a called method)
-            # get caught while in this scope
-            number = 44
-            counter = 0
-            print('delitele:', end=' ')
-            for divisor in range(1, number + 1):
-                if number % divisor == 0:
-                    counter += 1
-                    print(divisor, end=' ')
-            print()
-            print('počet deliteľov:', counter)
-            print("\n")
-        self.assertEqual('delitele: 1 2 4 11 22 44 \npočet deliteľov: 6\n\n\n',
-                         out.getvalue())
 
 
 if __name__ == '__main__':
     unittest.main()
+
 # print documentation using pydoc.
 # print documentation for class
 """print(TestPrimeNumber.__doc__)"""
