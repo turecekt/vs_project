@@ -16,29 +16,8 @@ isPrimeNumber(), printDivisors()
 #               by only 1 and by themselves.
 
 
-class PrimeNumber:
-    """Class represents logic how to validate number and print the results.
-
-    ...
-    Attributes
-    ----------
-           - number : int
-               - input from console
-           - counter : int
-               counter of dividors
-           - dividors : int[]
-               - list of dividors
-    Methods
-    -------
-           isPrimeNumber():
-               - Function validates the entered number is prime number
-           printDivisors():
-                - Function prints number of dividers and their values
-    """
-
-
 def isPrimeNumber(number):
-    """Count number of dividers and print them.
+    """Count number of dividers.
 
     Parameters:
         - dividers (int[]): List of integers - dividers

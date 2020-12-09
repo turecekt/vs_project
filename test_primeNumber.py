@@ -12,11 +12,10 @@ This module is use for do unit test to each function from primeNumber.py
 #                          2. non-prime number validation
 #                          3. dividors validation
 #                          4. printed outputs validation
-import unittest
 import builtins
-
-from primeNumber import isPrimeNumber
-from primeNumber import printDivisors
+from primeNumber import isPrimeNumber, getDivisors, main
+import unittest
+from unittest.mock import patch
 
 
 class TestPrimeNumber(unittest.TestCase):
@@ -38,50 +37,69 @@ class TestPrimeNumber(unittest.TestCase):
                 - Function validates that number 10 is non-prime number
     """
 
-    def test_is_prime():
+    def test_isPrime(self, ):
         """Function test for isPrimeNumber.
 
         Parameters:
             - number (int): tested number 5
         Returns:
             - output (str): String printed into console,
-            statement if number is prime number
+        statement if number is prime number
         """
-        assert isPrimeNumber(5) == True
-        assert isPrimeNumber(6) == False
-        assert isPrimeNumber(8) == False
+        self.assertEqual(isPrimeNumber(5), True)
+        self.assertEqual(isPrimeNumber(6), False)
+        self.assertEqual(isPrimeNumber(8), False)
 
-    def test_main():
+    def test_getDivisors(self, ):
         """Function test for isPrimeNumber.
 
         Parameters:
-             - number (int): tested number 5
+                - number (int): tested number 5
         Returns:
-            - output (str): String printed into console,
-            statement if number is prime number
+                - output (str): String printed into console,
+                statement if number is prime number
         """
+        self.assertEqual(getDivisors(5), [1, 5])
+        self.assertEqual(getDivisors(6), [1, 2, 3, 6])
+
+
+class TestPrintedValues(unittest.TestCase):
+    """Class TestPrintedValues for testing function printDivisors().
+
+    ...
+    Attributes
+    ----------
+            - number : int
+                - We are testing numbers 5 and 44, 5 for evaluating
+                number of divisors and 44 for evaluating values of divisors
+            - dividers: int[]
+                - List of integers - dividers
+            - counter: int
+                - Number of dividers
+    Methods
+    -------
+            test_numberOfDivisors(self, ):
+                - Function validates the number of dividers
+            test_printedValues(self, ):
+                - Function validates if after evaluation the
+                divisors are printed into console
+    """
+
+    @patch('builtins.input', side_effect=['-1'])
+    def test_main_negative(self, _):
+        """Function for negative main test usecase."""
         print_values = []
         builtins.print = lambda s: print_values.append(s)
         main()
-        assert print_values == ["Vstup musi byt cislo!"]
+        assert print_values == ["Nebylo zadáno kladne číslo"]
 
-
-
-
-    def main():
-        try:
-            cislo = int(input("Zadej cislo: "))
-            if isPrimeNumber(cislo):
-                print(f"Číslo {cislo} je prvočíslo")
-            else:
-                print(f"Číslo {cislo}  nie je prvočíslo")
-        except Exception:
-            print("Vstup musi byt cislo!")
-
-
-if __name__ == '__main__':
-    unittest.main()
+    @patch('builtins.input', side_effect=['foo'])
+    def test_main_string(self, _):
+        """Function for string test usecase."""
+        print_values = []
+        builtins.print = lambda s: print_values.append(s)
+        main()
+        assert print_values == ["Nebylo zadáno číslo"]
 
 # print documentation using pydoc.
 # print documentation for class
-"""print(TestPrimeNumber.__doc__)"""
