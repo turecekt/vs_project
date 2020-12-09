@@ -32,12 +32,12 @@ SLOVNIK_MORSEOVKA = {' ': '/', 'A': '.-',
 # A string necháme přečíst
 
 def Text_To_Code():
-   text2 = input("Napište slova, která chcete kodovat: ")
-   code2 = [SLOVNIK_MORSEOVKA
-           [i.upper()] + " "
-           for i in text2 if i.upper() in SLOVNIK_MORSEOVKA.keys()]
-   morseovka = "".join(code2)
-   print(morseovka)
+    text2 = input("Napište slova, která chcete kodovat: ")
+    code2 = [SLOVNIK_MORSEOVKA
+            [i.upper()] + " "
+            for i in text2 if i.upper() in SLOVNIK_MORSEOVKA.keys()]
+    morseovka = "".join(code2)
+    print(morseovka)
 
 # Stejný způsob použijeme i zde u dekodovani námi zadaného textu
 # Vytvoříme zde to, že námi zadaný kod program rozloží na jednotky
@@ -45,11 +45,11 @@ def Text_To_Code():
 
 
 def Code_To_Text():
-   text1 = input("Napište kod, který chcete dekodovat: ")
-   code1 = [k for i in text1.split() for k,
-            v in SLOVNIK_MORSEOVKA.items() if i == v]
-   novytext = "".join(code1)
-   print(novytext)
+    text1 = input("Napište kod, který chcete dekodovat: ")
+    code1 = [k for i in text1.split() for k,
+             v in SLOVNIK_MORSEOVKA.items() if i == v]
+    novytext = "".join(code1)
+    print(novytext)
 
 
 # Vypiseme menu pro vyber, co hceme aby program delal
@@ -61,23 +61,23 @@ print("""\n1 - TEXT KE KODOVÁNÍ \n2 - KÓD K ROZKÓDOVÁNÍ\n3 - KONEC\n""")
 
 while True:
 
-   vyber = int(input("TVŮJ VÝBĚR: "))
+    vyber = int(input("TVŮJ VÝBĚR: "))
 
-   if vyber == 1:
+    if vyber == 1:
      print(Text_To_Code())
      break
 
-   elif vyber == 2:
+    elif vyber == 2:
      print(Code_To_Text())
      break
 
-   elif vyber == 3:
+    elif vyber == 3:
      print("UKONČUJI")
      exit()
 
 
 
-   else:
+    else:
 
      print("NESPRÁVNÁ VOLBA, ZVOLTE ZNOVU")
 
