@@ -66,13 +66,10 @@ def isPrimeNumber(number):
         if number % divisor == 0:
             isPrimeNumber = False
             break
-    if isPrimeNumber and number > 1:
-        print(f"Číslo {number} je prvočíslo")
-    else:
-        print(f"Číslo {number} není prvočíslo")
+    return isPrimeNumber
 
 
-def printDivisors(number):
+def getDivisors(number):
     """Count number of dividers and print them.
 
     Parameters:
@@ -83,14 +80,12 @@ def printDivisors(number):
         printed list of dividors
     """
     # inicialize and define number of divisers as 0 at the beginning
-    counter = 0
-    print('Delitele:', end=' ')
+
+    divisors = []
     for divisor in range(1, number + 1):
         if number % divisor == 0:
-            counter += 1
-            print(divisor, end=' ')
-    print()
-    print('Počet deliteľov:', counter)
+            divisors.append(divisor)
+    return divisors
 
 
 isPrimeNumber(number)
