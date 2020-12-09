@@ -1,4 +1,4 @@
-# !/usr/bin/env python 3
+#!/usr/bin/env python 3
 
 # Jako první věc si msíme definovat abecedu
 
@@ -30,7 +30,6 @@ SLOVNIK_MORSEOVKA = {' ': '/', 'A': '.-',
 # Vytvoříme string k danemu code
 # A string necháme přečíst
 
-
 def Text_To_Code():
     text2 = input("Napište slova, která chcete kodovat: ")
     code2 = [SLOVNIK_MORSEOVKA
@@ -39,11 +38,10 @@ def Text_To_Code():
     morseovka = "".join(code2)
     print(morseovka)
 
-    
+
 # Stejný způsob použijeme i zde u dekodovani námi zadaného textu
 # Vytvoříme zde to, že námi zadaný kod program rozloží na jednotky
 # Opet nechame udělat string z code a necháme ho vypsat
-
 
 def Code_To_Text():
     text1 = input("Napište kod, který chcete dekodovat: ")
@@ -52,7 +50,7 @@ def Code_To_Text():
     novytext = "".join(code1)
     print(novytext)
 
-    
+
 # Vypiseme menu pro vyber, co hceme aby program delal
 # Na zaver vypisime cyklus, ktery nám k menu ve stringu priradi i funkce
 # Zvolili jsme i fci else, která nám pokryje jakoukoliv jinou možnost než 1-3
