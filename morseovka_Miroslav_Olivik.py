@@ -1,4 +1,4 @@
-# !/usr/bin/env python3
+# !/usr/bin/env python 3
 
 # Jako první věc si msíme definovat abecedu
 
@@ -24,12 +24,12 @@ SLOVNIK_MORSEOVKA = {' ': '/', 'A': '.-',
                      '?': '..--..', '/': '-..-.', '-': '-....-',
                      '(': '-.--.', ')': '-.--.-'}
 
-
 # Dále definujeme první funkci
 # Jako první věc definujeme trext, ke kterému máme doplnit text pro kodovani
 # Dále vytvoříme převodový text na kod
 # Vytvoříme string k danemu code
 # A string necháme přečíst
+
 
 def Text_To_Code():
     text2 = input("Napište slova, která chcete kodovat: ")
@@ -50,7 +50,6 @@ def Code_To_Text():
              v in SLOVNIK_MORSEOVKA.items() if i == v]
     novytext = "".join(code1)
     print(novytext)
-
 
 # Vypiseme menu pro vyber, co hceme aby program delal
 # Na zaver vypisime cyklus, ktery nám k menu ve stringu priradi i funkce
