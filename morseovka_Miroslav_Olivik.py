@@ -63,9 +63,9 @@ while True:
 
     vyber = int(input("TVŮJ VÝBĚR: "))
 
-        if vyber == 1:
-            print(Text_To_Code())
-            break
+       if vyber == 1:
+           print(Text_To_Code())
+           break
 
         elif vyber == 2:
             print(Code_To_Text())
