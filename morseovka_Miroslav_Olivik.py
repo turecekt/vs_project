@@ -64,7 +64,8 @@ while True:
                         break
                 elif vyber == 3:
                         print("UKONČUJI")
-                        exit()
+                        break
+                     
 
                 #Zvolili jsme i fci else, která nám pokryje jakoukoliv jinou možnost než 1-3
                 else:
