@@ -34,19 +34,19 @@ SLOVNIK_MORSEOVKA = {' ': '/', 'A': '.-',
 def Text_To_Code():
         text2 = input("Napište text, který hcete kodovat: ")
         code2 = [SLOVNIK_MORSEOVKA
-                [i.upper()] + " " 
-                 for i in text2 if i.upper() in SLOVNIK_MORSEOVKA.keys()]
-        morseovka ="".join(code2)
+                 [i.upper()] + " "
+                  for i in text2 if i.upper() in SLOVNIK_MORSEOVKA.keys()]
+        morseovka = "".join(code2)
         print(morseovka)
 
 # Stejný způsob použijeme i zde u dekodovani námi zadaného textu
 # Vytvoříme zde to, že námi zadaný kod program rozloží na jednotky
 # Opet nechame udělat string z code a necháme ho vypsat
 
-def Code__To__Text():
+def Code_To_Text():
         text1 = input("Napište kod, který chcete dekodovat: ")
         code1 = [k for i in text1.split() for k,
-                 v in SLOVNIK_MORSEOVKA.items() if i==v]
+                 v in SLOVNIK_MORSEOVKA.items() if i == v]
         novytext = "".join(code1)
         print(novytext)
 
@@ -59,23 +59,23 @@ print("""\n1 - TEXT KE KODOVÁNÍ \n2 - KÓD K ROZKÓDOVÁNÍ\n3 - KONEC\n""")
 
 
 while True:
-        try:
+
                 vyber = int(input("TVŮJ VÝBĚR: "))
                 if vyber == 1:
                         print(Text_To_Code())
                         break
-                
+
                 elif vyber == 2:
                         print(Code__To__Text())
                         break
-                        
+
                 elif vyber == 3:
                         print("UKONČUJI")
                         exit()
-                      
+
                 else:
                         print("NESPRÁVNÁ VOLBA, ZVOLTE ZNOVU")
         exception:
                 print("NESPRÁVNÁ VOLBA, ZVOLTE ZNOVU")
 
-                
+
