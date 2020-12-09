@@ -65,18 +65,18 @@ def selection_sort(pole): # funkce selection sort
         print(y)
     return pole
 
-def MoznostiZoradenia(cislo):
-    print('Moznosti zoradenia:\n 1 - Zoradenie pomocou bubble sort\n 2 - Zoradenie pomocou selection sort\n 3 - Zoradenie pomocou ')
-    klavesa = input('Prosim zadaj moznost zoradenia :\n ')
-    klavesa = int(klavesa)
-    if klavesa == 1:
-        bubble_sort(cislo)
-    elif klavesa == 2:
-        selection_sort(cislo)
-    elif klavesa == 3:
+def MoznostiZoradenia(cislo): # funkce moznosti zoradenia
+    print('Moznosti zoradenia:\n 1 - Zoradenie pomocou bubble sort\n 2 - Zoradenie pomocou selection sort\n 3 - Zoradenie pomocou ') # Vypis moznosti zoradenia
+    klavesa = input('Prosim zadaj moznost zoradenia :\n ') # Žadosť o zadanie možnosti zoradenia
+    klavesa = int(klavesa) # Načítanie klávesy
+    if klavesa == 1: # Načitanie čisla
+        bubble_sort(cislo) # Odkazovanie na funkciu bubble sort
+    elif klavesa == 2: # Načitanie čisla
+        selection_sort(cislo) # Odkazovanie na funkciu selection sort
+    elif klavesa == 3: # Načitanie čisla
         print('')
-    else:
-        print('Zadali ste spatnu hodnotu')
+    else: # Ak zadané čislo sa nenachádza v možnostiach
+        print('Zadali ste spatnu hodnotu') # Vypis chybného hlášenia
 
 
 if __name__ == '__main__':  # umoznuje psani funkci pod main
