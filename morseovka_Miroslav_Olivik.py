@@ -1,6 +1,7 @@
 #!/usr/bin/env python 3
 
-""" Jako první věc si msíme definovat abecedu"""
+"""Jako první věc si msíme definovat abecedu"""
+
 
 SLOVNIK_MORSEOVKA = {' ': '/', 'A': '.-',
                      'B': '-...', 'C': '-.-.',
@@ -24,11 +25,11 @@ SLOVNIK_MORSEOVKA = {' ': '/', 'A': '.-',
                      '?': '..--..', '/': '-..-.', '-': '-....-',
                      '(': '-.--.', ')': '-.--.-'}
 
-""" Dále definujeme první funkci"""
-""" Jako první věc definujeme text, kterému máme doplnit text pro kodovani"""
-""" Dále vytvoříme převodový text na kod"""
-""" Vytvoříme string k danemu code"""
-""" A string necháme přečíst"""
+"""Dále definujeme první funkci"""
+"""Jako první věc definujeme text, kterému máme doplnit text pro kodovani"""
+"""Dále vytvoříme převodový text na kod"""
+"""Vytvoříme string k danemu code"""
+"""A string necháme přečíst"""
 
 
 def Text_To_Code():
@@ -40,9 +41,9 @@ def Text_To_Code():
     print(morseovka)
 
 
-""" Stejný způsob použijeme i zde u dekodovani námi zadaného textu"""
-""" Vytvoříme zde to, že námi zadaný kod program rozloží na jednotky"""
-""" Opet nechame udělat string z code a necháme ho vypsat"""
+"""Stejný způsob použijeme i zde u dekodovani námi zadaného textu"""
+"""Vytvoříme zde to, že námi zadaný kod program rozloží na jednotky"""
+"""Opet nechame udělat string z code a necháme ho vypsat"""
 
 
 def Code_To_Text():
@@ -53,9 +54,9 @@ def Code_To_Text():
     print(novytext)
 
 
-""" Vypiseme menu pro vyber, co hceme aby program delal"""
-""" Na zaver vypisime cyklus, ktery nám k menu ve stringu priradi i funkce"""
-""" Zvolili jsme fci else, která nám pokryje jinou možnost než-li 1-3"""
+"""Vypiseme menu pro vyber, co hceme aby program delal"""
+"""Na zaver vypisime cyklus, ktery nám k menu ve stringu priradi i funkce"""
+"""Zvolili jsme fci else, která nám pokryje jinou možnost než-li 1-3"""
 
 
 print("""\n1 - TEXT KE KODOVÁNÍ \n2 - KÓD K ROZKÓDOVÁNÍ\n3 - KONEC\n""")
