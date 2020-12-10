@@ -90,3 +90,26 @@ def encode(text):
     # smaze posledni znak ktery je "|"
     translated_text = translated_text[0: len(translated_text) - 1]
     return translated_text
+
+def decode(text):
+    translated_text = ""
+    buffer = ""
+    for i in text:
+        if i == '-' or i == '.':
+            buffer += i
+        # pokud to je konec slova
+        elif i == '|':
+            key = get_letter_by_value(buffer)
+            if key:
+                translated_text += key
+                buffer = ""
+            else:
+                print("Text neni validni")
+                valid = False
+                break
+        else:
+            print("Text neni validni")
+            valid = False
+            break
+    translated_text += get_letter_by_value(buffer)
+    return translated_text
