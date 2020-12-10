@@ -37,3 +37,9 @@ morseovka = {'1': '.----',
     'Z': '--..',
     ' ': ' '}
     
+# Vytvoření vstupu a následovné převedení vstupu na pole znaků
+vstup = input('Zadejte text pro převod do Morseovky: ').upper()
+
+rozdVstup = list(vstup)
+
+ 
