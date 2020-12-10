@@ -2,6 +2,7 @@
 
 import math
 
+
 def zostrojenost(a, b, c):
     """Funkcia ktora zisti ci sa da trojuholnik zostrojit."""
     if (a + b > c and a + c > b and b + c > a):
@@ -26,6 +27,7 @@ def pravouhlost(a, b, c):
         return 1
     else:
         return 0
+
 
 def dlzkastrany(ax, ay, bx, by):
     """Funkcia pre vypocet dlzky strany trojuholnika."""
