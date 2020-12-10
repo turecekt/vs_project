@@ -9,7 +9,6 @@
 import pytest
 import collections
 
-
 """Zdroj hodnot."""
 knihovnaZnaku = {'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.',
                  'F': '..-.', 'G': '--.', 'H': '....', 'I': '..', 'J': '.---',
@@ -259,15 +258,15 @@ def odpoved(dotaz):
     """
     # if ... pro vybrání akce
     if (dotaz == '1' or dotaz == '1.'):
-        zprava = input('Zadejte zprávu, kterou chcete zašifrovat' +
-                       '(bez diakritiky): \n')
+        zprava = GetInput('Zadejte zprávu, kterou chcete zašifrovat' +
+                          '(bez diakritiky): \n')
         spustenisifrovani(zprava)
     elif (dotaz == '2' or dotaz == '2.'):
-        zprava = input('Zadejte zašifrovanou zprávu: \n')
+        zprava = GetInput('Zadejte zašifrovanou zprávu: \n')
         zprava += ' '
         spustenidesifrovani(zprava)
     elif (dotaz == '3' or dotaz == '3.'):
-        zprava = input('Zadejte zprávu: \n')
+        zprava = GetInput('Zadejte zprávu: \n')
         # rozhoduje zda je zpráva zašifrovaná
         if (zprava.startswith('.') or zprava.startswith('-')):
             zprava += ' '
@@ -278,6 +277,24 @@ def odpoved(dotaz):
         vypisknihovny()
     else:
         print('Neplatná hodnota')
+
+
+# Unit testy metody dotaz()
+@pytest.mark.parametrize("test_dotaz_input, test_zprava, test_dotaz_output",
+                         [('1', 'TEST', '- . ... - '),
+                          ('2', '- . ... - ', 'TEST'),
+                          ('3', '- . ... - ', 'TEST'),
+                          ('3', 'TEST', '- . ... - ')])
+def test_dotaz(test_dotaz_input, test_zprava, test_dotaz_output):
+    """Unit test pro dotaz."""
+    dotaz(test_dotaz_input)
+    zprava = test_zprava
+    assert spustenisifrovani(zprava) == test_dotaz_output
+
+
+def GetInput(text):
+    """Geting input."""
+    return input(text)
 
 
 def konec(x):
@@ -298,9 +315,9 @@ def konec(x):
 def main():
     """Spuštění."""
     dotaz('start')
-    Dotaz = input('')
+    Dotaz = GetInput('')
     odpoved(Dotaz)
-    x = input('Chcete pokračovat? [Y]/[N] \n')
+    x = GetInput('Chcete pokračovat? [Y]/[N] \n')
     konec(x)
 
 
