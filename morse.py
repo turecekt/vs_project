@@ -1,3 +1,6 @@
+"""Morse encoder/decoder."""
+
+
 def morse_code(var_inp):
     """
     Morse encoder.
