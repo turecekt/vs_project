@@ -1,2 +1,2 @@
-# vs_project
+# Morse encoder/decoder (vs_project)
 Python test status: 
