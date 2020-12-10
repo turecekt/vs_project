@@ -142,6 +142,7 @@ def morse_code(var_inp):
     for tmp in charInp:
         strInpMorse += tmp
 
+    strInpMorse = strInpMorse[:-1]
     return strInpMorse
 
 
@@ -151,6 +152,7 @@ def morse_decode(var_inp2):
 
     Returns decoded string
     """
+    var_inp2 = var_inp2 + " "
     cnt = 0
     for spc in var_inp2:
         if spc.isspace():
@@ -159,6 +161,26 @@ def morse_decode(var_inp2):
     for i in range(cnt):
         if '"' in var_inp2:
             var_inp2 = var_inp2.replace('"', ' ')
+        elif ".---- " in var_inp2:
+            var_inp2 = var_inp2.replace(".---- ", '1')
+        elif "..--- " in var_inp2:
+            var_inp2 = var_inp2.replace("..--- ", '2')
+        elif "...-- " in var_inp2:
+            var_inp2 = var_inp2.replace("...-- ", '3')
+        elif "....- " in var_inp2:
+            var_inp2 = var_inp2.replace("....- ", '4')
+        elif "..... " in var_inp2:
+            var_inp2 = var_inp2.replace("..... ", '5')
+        elif "-.... " in var_inp2:
+            var_inp2 = var_inp2.replace("-.... ", '6')
+        elif "--... " in var_inp2:
+            var_inp2 = var_inp2.replace("--... ", '7')
+        elif "---.. " in var_inp2:
+            var_inp2 = var_inp2.replace("---.. ", '8')
+        elif "----. " in var_inp2:
+            var_inp2 = var_inp2.replace("----. ", '9')
+        elif "----- " in var_inp2:
+            var_inp2 = var_inp2.replace("----- ", '0')
         elif "-.-- " in var_inp2:
             var_inp2 = var_inp2.replace("-.-- ", 'y')
         elif ".-.-.- " in var_inp2:
@@ -229,27 +251,7 @@ def morse_decode(var_inp2):
             var_inp2 = var_inp2.replace("- ", 't')
         elif "/ " in var_inp2:
             var_inp2 = var_inp2.replace("/ ", ' ')
-        elif ".---- " in var_inp2:
-            var_inp2 = var_inp2.replace(".---- ", '1')
-        elif "..--- " in var_inp2:
-            var_inp2 = var_inp2.replace("..--- ", '2')
-        elif "...-- " in var_inp2:
-            var_inp2 = var_inp2.replace("...-- ", '3')
-        elif "....- " in var_inp2:
-            var_inp2 = var_inp2.replace("....- ", '4')
-        elif "..... " in var_inp2:
-            var_inp2 = var_inp2.replace("..... ", '5')
-        elif "-.... " in var_inp2:
-            var_inp2 = var_inp2.replace("-.... ", '6')
-        elif "--... " in var_inp2:
-            var_inp2 = var_inp2.replace("--... ", '7')
-        elif "---.. " in var_inp2:
-            var_inp2 = var_inp2.replace("---.. ", '8')
-        elif "----. " in var_inp2:
-            var_inp2 = var_inp2.replace("----. ", '9')
-        elif "----- " in var_inp2:
-            var_inp2 = var_inp2.replace("----- ", '0')
-    var_inp2 = var_inp2[1:]  # Remove space before text
+
     return var_inp2
 
 
@@ -274,3 +276,44 @@ if __name__ == '__main__':
     else:
         print('Wrong choice...')
         print('Exiting...')
+
+
+def test_morse_enc0():
+    assert morse_code("Ahoj") == ".- .... --- .---"
+
+
+def test_morse_enc1():
+    assert morse_code("Jak se mas?") == ".--- .- -.- / ... . / -- .- ... ..--.."
+
+
+def test_morse_enc2():
+    assert morse_code(
+        "Prilis zlutoucky kun upel dabelske ody.") == ".--. .-. .. .-.. .. ... / --.. .-.. ..- - --- ..- -.-. -.- -.-- / -.- ..- -. / ..- .--. . .-.. / -.. .- -... . .-.. ... -.- . / --- -.. -.-- .-.-.-"
+
+
+def test_morse_enc3():
+    assert morse_code(
+        "0 1 2 3 4 5 6 7 8 9") == "----- / .---- / ..--- / ...-- / ....- / ..... / -.... / --... / ---.. / ----."
+
+
+def test_morse_enc4():
+    assert morse_code(
+        "Příliš žluťoučký kůň úpěl ďábelské ódy.") == ".--. .-. .. .-.. .. ... / --.. .-.. ..- - --- ..- -.-. -.- -.-- / -.- ..- -. / ..- .--. . .-.. / -.. .- -... . .-.. ... -.- . / --- -.. -.-- .-.-.-"
+
+
+def test_morse_dec0():
+    assert morse_decode(".- .... --- .---") == "ahoj"
+
+
+def test_morse_dec1():
+    assert morse_decode(".--- .- -.- / ... . / -- .- ... ..--..") == "jak se mas?"
+
+
+def test_morse_dec2():
+    assert morse_decode(
+        ".--. .-. .. .-.. .. ... / --.. .-.. ..- - --- ..- -.-. -.- -.-- / -.- ..- -. / ..- .--. . .-.. / -.. .- -... . .-.. ... -.- . / --- -.. -.-- .-.-.-") == "prilis zlutoucky kun upel dabelske ody."
+
+
+def test_morse_dec3():
+    assert morse_decode(
+        "----- / .---- / ..--- / ...-- / ....- / ..... / -.... / --... / ---.. / ----.") == "0 1 2 3 4 5 6 7 8 9"
