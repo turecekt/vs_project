@@ -68,3 +68,11 @@ def get_letter_by_value(search_value):
 
 text = input("Zadejte text: ").lower()
 valid = True
+
+# pokud prvni index je znak abecedy
+is_alphabet = True
+try:
+    list(table.keys()).index(text[0])
+except ValueError:
+    is_alphabet = False
+
