@@ -127,3 +127,18 @@ if valid:
     print("Prelozeny text: ")
     print(translated_text)
 
+# unit testy
+def test_get_letter_by_value():
+    assert get_letter_by_value('u') == '..-'
+
+
+def test_encode():
+    #assert encode("ahoj") == '.-|....|---|.---'
+    assert encode("sos") == '...|---|...'
+    #assert encode("Wikipedia is a free online encyclopedia") == '.--|..|-.-|..|.--.|.|-..|..|.-||..|...||.-||..-.|.-.|.|.||---|-.|.-..|..|-.|.||.|-.|-.-.|-.--|-.-.|.-..|---|.--.|.|-..|..|.-'
+
+
+def test_decode():
+    #assert decode('.-|....|---|.---') == "ahoj"
+    assert decode('...|---|...') == "sos"
+    #assert decode('.--|..|-.-|..|.--.|.|-..|..|.-||..|...||.-||..-.|.-.|.|.||---|-.|.-..|..|-.|.||.|-.|-.-.|-.--|-.-.|.-..|---|.--.|.|-..|..|.-') == "Wikipedia is a free online encyclopedia"
