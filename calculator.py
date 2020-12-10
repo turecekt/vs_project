@@ -64,23 +64,23 @@ while True:
     choice = int(input("Insert your choice |1|2|3|4| > "))
     """Take input from the user.
 
-    Input are four numbers: 1,2,3,4. Each representing a single mathematical operation.
+    Input are four number, representing a single mathematical operation.
     """
     if choice in (1, 2, 3, 4):
-        first_number = float(input("Insert your first number > "))
-        second_number = float(input("Insert your second number > "))
+        number1 = float(input("Insert your first number > "))
+        number2 = float(input("Insert your second number > "))
 
         if choice == 1:
-            print(first_number, "+", second_number, "=", add(first_number, second_number))
+            print(number1, "+", number2, "=", add(number1, number2))
 
         elif choice == 2:
-            print(first_number, "-",second_number, "=", subtract(first_number, second_number))
+            print(number1, "-", number2, "=", subtract(number1, number2))
 
         elif choice == 3:
-            print(first_number, "*", second_number, "=", multiply(first_number, second_number))
+            print(number1, "*", number2, "=", multiply(number1, number2))
 
         elif choice == 4:
-            print(first_number, "/", second_number, "=", divide(first_number,second_number))
+            print(number1, "/", number2, "=", divide(number1, number2))
         break
     else:
         print("Invalid Input! Input must be one of these numbers: 1,2,3,4.")
