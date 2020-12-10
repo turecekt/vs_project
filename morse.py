@@ -1,4 +1,9 @@
 def morse_code(var_inp):
+    """
+    Morse encoder.
+
+    Returns encoded string
+    """
     var_inp = var_inp.lower()
 
     charInp = list(var_inp)
@@ -138,6 +143,11 @@ def morse_code(var_inp):
 
 
 def morse_decode(var_inp2):
+    """
+    Morse decoder.
+
+    Returns decoded string
+    """
     cnt = 0
     for spc in var_inp2:
         if spc.isspace():
@@ -236,7 +246,7 @@ def morse_decode(var_inp2):
             var_inp2 = var_inp2.replace("----. ", '9')
         elif "----- " in var_inp2:
             var_inp2 = var_inp2.replace("----- ", '0')
-    var_inp2 = var_inp2[1:]     # Remove space before text
+    var_inp2 = var_inp2[1:]  # Remove space before text
     return var_inp2
 
 
