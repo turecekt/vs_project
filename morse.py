@@ -59,7 +59,7 @@ def morse_code(var_inp):
         elif charInp[x] == 'e':
             charInp[x] = ". "
         elif charInp[x] == 'f':
-            charInp[x] = "..- "
+            charInp[x] = "..-. "
         elif charInp[x] == 'g':
             charInp[x] = "--. "
         elif charInp[x] == 'h':
@@ -225,8 +225,8 @@ def morse_decode(var_inp2):
             var_inp2 = var_inp2.replace("..- ", 'u')
         elif "-.. " in var_inp2:
             var_inp2 = var_inp2.replace("-.. ", 'd')
-        elif "..- " in var_inp2:
-            var_inp2 = var_inp2.replace("..- ", 'f')
+        elif "..-. " in var_inp2:
+            var_inp2 = var_inp2.replace("..-. ", 'f')
         elif "--. " in var_inp2:
             var_inp2 = var_inp2.replace("--. ", 'g')
         elif "-.- " in var_inp2:
@@ -277,6 +277,7 @@ if __name__ == '__main__':
         print('Wrong choice...')
         print('Exiting...')
 
+
 def test_morse_enc0():
     """
     Encoding test 0.
@@ -284,7 +285,7 @@ def test_morse_enc0():
     Input: "Ahoj"
     Output: ".- .... --- .---"
     """
-    assert main.morse_code("Ahoj") == ".- .... --- .---"
+    assert morse_code("Ahoj") == ".- .... --- .---"
 
 
 def test_morse_enc1():
@@ -294,29 +295,27 @@ def test_morse_enc1():
     Input: "Jak se mas?"
     Output: ".--- .- -.- / ... . / -- .- ... ..--.."
     """
-    assert main.morse_code("Jak se mas?") == ".--- .- -.- / ... . / -- .- ... ..--.."
+    assert morse_code("Jak se mas?") == ".--- .- -.- / ... . / -- .- ... ..--.."
 
 
 def test_morse_enc2():
     """
     Encoding test 2.
 
-    Input: "Prilis zlutoucky kun."
-    Output: ".--. .-. .. .-.. .. ... / --.. .-.. ..- - --- ..- -.-. -.- -.-- / -.- ..- -. .-.-.-"
+    Input: "abcdefgh"
+    Output: ".- -... -.-. -.. . ..-. --. ...."
     """
-    assert main.morse_code(
-        "Prilis zlutoucky kun.") == ".--. .-. .. .-.. .. ... / --.. .-.. ..- - --- ..- -.-. -.- -.-- / -.- ..- -. .-.-.-"
+    assert morse_code("abcdefgh") == ".- -... -.-. -.. . ..-. --. ...."
 
 
 def test_morse_enc3():
     """
     Encoding test 3.
 
-    Input: "Upel dabelske ody."
-    Output: "..- .--. . .-.. / -.. .- -... . .-.. ... -.- . / --- -.. -.-- .-.-.-"
+    Input: "opqrstuv"
+    Output: "--- .--. --.- .-. ... - ..- ...-"
     """
-    assert main.morse_code(
-        "Upel dabelske ody.") == "..- .--. . .-.. / -.. .- -... . .-.. ... -.- . / --- -.. -.-- .-.-.-"
+    assert morse_code("opqrstuv") == "--- .--. --.- .-. ... - ..- ...-"
 
 
 def test_morse_enc4():
@@ -326,7 +325,7 @@ def test_morse_enc4():
     Input: "0 1 2 3 4"
     Output: "----- / .---- / ..--- / ...-- / ....-"
     """
-    assert main.morse_code("0 1 2 3 4") == "----- / .---- / ..--- / ...-- / ....-"
+    assert morse_code("0 1 2 3 4") == "----- / .---- / ..--- / ...-- / ....-"
 
 
 def test_morse_enc5():
@@ -336,29 +335,27 @@ def test_morse_enc5():
     Input: "5 6 7 8 9"
     Output: "..... / -.... / --... / ---.. / ----."
     """
-    assert main.morse_code("5 6 7 8 9") == "..... / -.... / --... / ---.. / ----."
+    assert morse_code("5 6 7 8 9") == "..... / -.... / --... / ---.. / ----."
 
 
 def test_morse_enc6():
     """
     Encoding test 6.
 
-    Input: "Příliš žluťoučký kůň."
-    Output: ".--. .-. .. .-.. .. ... / --.. .-.. ..- - --- ..- -.-. -.- -.-- / -.- ..- -. .-.-.-"
+    Input: "ěščřžý.,"
+    Output: "escrzy.,"
     """
-    assert main.morse_code(
-        "Příliš žluťoučký kůň.") == ".--. .-. .. .-.. .. ... / --.. .-.. ..- - --- ..- -.-. -.- -.-- / -.- ..- -. .-.-.-"
+    assert morse_code("ěščřžý.,") == ". ... -.-. .-. --.. -.-- .-.-.- --..--"
 
 
 def test_morse_enc7():
     """
     Encoding test 7.
 
-    Input: "Úpěl ďábelské ódy."
-    Output: "..- .--. . .-.. / -.. .- -... . .-.. ... -.- . / --- -.. -.-- .-.-.-"
+    Input: "áíéúů=?"
+    Output: ".- .. . ..- ..- -...- ..--.."
     """
-    assert main.morse_code(
-        "Úpěl ďábelské ódy.") == "..- .--. . .-.. / -.. .- -... . .-.. ... -.- . / --- -.. -.-- .-.-.-"
+    assert morse_code("áíéúů=?") == ".- .. . ..- ..- -...- ..--.."
 
 
 def test_morse_dec0():
@@ -368,7 +365,7 @@ def test_morse_dec0():
     Input: ".- .... --- .---"
     Output: "ahoj"
     """
-    assert main.morse_decode(".- .... --- .---") == "ahoj"
+    assert morse_decode(".- .... --- .---") == "ahoj"
 
 
 def test_morse_dec1():
@@ -378,29 +375,27 @@ def test_morse_dec1():
     Input: ".--- .- -.- / ... . / -- .- ... ..--.."
     Output: "jak se mas?"
     """
-    assert main.morse_decode(".--- .- -.- / ... . / -- .- ... ..--..") == "jak se mas?"
+    assert morse_decode(".--- .- -.- / ... . / -- .- ... ..--..") == "jak se mas?"
 
 
 def test_morse_dec2():
     """
     Decoding test 2.
 
-    Input: ".--. .-. .. .-.. .. ... / --.. .-.. ..- - --- ..- -.-. -.- -.-- / -.- ..- -. .-.-.-"
-    Output: "Prilis zlutoucky kun."
+    Input: ".- -... -.-. -.. . ..-. --. ...."
+    Output: "abcdefgh"
     """
-    assert main.morse_decode(
-        ".--. .-. .. .-.. .. ... / --.. .-.. ..- - --- ..- -.-. -.- -.-- / -.- ..- -. .-.-.-") == "Prilis zlutoucky kun."
+    assert morse_decode(".- -... -.-. -.. . ..-. --. ....") == "abcdefgh"
 
 
 def test_morse_dec3():
     """
     Decoding test 3.
 
-    Input: "..- .--. . .-.. / -.. .- -... . .-.. ... -.- . / --- -.. -.-- .-.-.-"
-    Output: "Upel dabelske ody."
+    Input: "--- .--. --.- .-. ... - ..- ...-"
+    Output: "opqrstuv"
     """
-    assert main.morse_decode(
-        "..- .--. . .-.. / -.. .- -... . .-.. ... -.- . / --- -.. -.-- .-.-.-") == "Upel dabelske ody."
+    assert morse_decode("--- .--. --.- .-. ... - ..- ...-") == "opqrstuv"
 
 
 def test_morse_dec4():
@@ -410,7 +405,7 @@ def test_morse_dec4():
     Input: "----- / .---- / ..--- / ...-- / ....-"
     Output: "0 1 2 3 4"
     """
-    assert main.morse_decode("----- / .---- / ..--- / ...-- / ....-") == "0 1 2 3 4"
+    assert morse_decode("----- / .---- / ..--- / ...-- / ....-") == "0 1 2 3 4"
 
 
 def test_morse_dec5():
@@ -420,4 +415,4 @@ def test_morse_dec5():
     Input: "..... / -.... / --... / ---.. / ----."
     Output: "5 6 7 8 9"
     """
-    assert main.morse_decode("..... / -.... / --... / ---.. / ----.") == "5 6 7 8 9"
+    assert morse_decode("..... / -.... / --... / ---.. / ----.") == "5 6 7 8 9"
