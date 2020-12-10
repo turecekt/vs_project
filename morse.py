@@ -278,42 +278,45 @@ if __name__ == '__main__':
         print('Exiting...')
 
 
+import main
+
+
 def test_morse_enc0():
-    assert morse_code("Ahoj") == ".- .... --- .---"
+    assert main.morse_code("Ahoj") == ".- .... --- .---"
 
 
 def test_morse_enc1():
-    assert morse_code("Jak se mas?") == ".--- .- -.- / ... . / -- .- ... ..--.."
+    assert main.morse_code("Jak se mas?") == ".--- .- -.- / ... . / -- .- ... ..--.."
 
 
 def test_morse_enc2():
-    assert morse_code(
+    assert main.morse_code(
         "Prilis zlutoucky kun upel dabelske ody.") == ".--. .-. .. .-.. .. ... / --.. .-.. ..- - --- ..- -.-. -.- -.-- / -.- ..- -. / ..- .--. . .-.. / -.. .- -... . .-.. ... -.- . / --- -.. -.-- .-.-.-"
 
 
 def test_morse_enc3():
-    assert morse_code(
+    assert main.morse_code(
         "0 1 2 3 4 5 6 7 8 9") == "----- / .---- / ..--- / ...-- / ....- / ..... / -.... / --... / ---.. / ----."
 
 
 def test_morse_enc4():
-    assert morse_code(
+    assert main.morse_code(
         "Příliš žluťoučký kůň úpěl ďábelské ódy.") == ".--. .-. .. .-.. .. ... / --.. .-.. ..- - --- ..- -.-. -.- -.-- / -.- ..- -. / ..- .--. . .-.. / -.. .- -... . .-.. ... -.- . / --- -.. -.-- .-.-.-"
 
 
 def test_morse_dec0():
-    assert morse_decode(".- .... --- .---") == "ahoj"
+    assert main.morse_decode(".- .... --- .---") == "ahoj"
 
 
 def test_morse_dec1():
-    assert morse_decode(".--- .- -.- / ... . / -- .- ... ..--..") == "jak se mas?"
+    assert main.morse_decode(".--- .- -.- / ... . / -- .- ... ..--..") == "jak se mas?"
 
 
 def test_morse_dec2():
-    assert morse_decode(
+    assert main.morse_decode(
         ".--. .-. .. .-.. .. ... / --.. .-.. ..- - --- ..- -.-. -.- -.-- / -.- ..- -. / ..- .--. . .-.. / -.. .- -... . .-.. ... -.- . / --- -.. -.-- .-.-.-") == "prilis zlutoucky kun upel dabelske ody."
 
 
 def test_morse_dec3():
-    assert morse_decode(
-        "----- / .---- / ..--- / ...-- / ....- / ..... / -.... / --... / ---.. / ----.") == "0 1 2 3 4 5 6 7 8 9"
+    assert main.morse_decode(
+        "----- / .---- / ..--- / ...-- / ....- / ..... / -.... / --... / ---.. / ----.") == "0 1 2 3 4 5 6 7 8 9"        
