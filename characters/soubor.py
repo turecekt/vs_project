@@ -3,11 +3,10 @@
 from os import path
 import collections
 
-print("Zadejte název dokumentu:")
-soubor = input("Pokud soubor neexistuje, vytvoří se nový: \n")
+soubor = input("Zadejte název dokumentu.\nPokud soubor neexistuje, vytvoří se nový:\n")
+soubor = "ahoj.txt"
 
-
-def fileExists():
+def fileExists(soubor):
     """Work With File."""
     if(path.exists(soubor)):
         x = open(soubor, "r")
@@ -16,12 +15,13 @@ def fileExists():
         x = open(soubor, "w")
         x.write(input("Napište text, který chcete mít v novém souboru:\n\n"))
         x.close()
+    return x
 
 
-fileExists()
+fileExists(soubor)
 
 
-def textIntoVar():
+def textIntoVar(soubor):
     """Insert Text Into Variable."""
     with open(soubor, "r") as file:
         text = file.read().replace("\n", "")
@@ -29,10 +29,10 @@ def textIntoVar():
 
 
 # var with text
-var = textIntoVar()
+var = textIntoVar(soubor)
 
 
-def charNum():
+def charNum(var):
     """Num Of Characters."""
     celkem = 0
     for i in var:
@@ -40,13 +40,13 @@ def charNum():
     return celkem
 
 
-def mostFreq():
+def mostFreq(var):
     """Look For Most Used Character."""
     most = collections.Counter(var.lower()).most_common(1)[0]
     return most
 
 
-def leastFreq():
+def leastFreq(var):
     """Look For Least Used Characters."""
     all_freq = {}
     for i in var.lower():
@@ -58,7 +58,7 @@ def leastFreq():
     return least
 
 
-def numOfEachChar():
+def numOfEachChar(var):
     """Num Of Each Characters In Text."""
     eachChar = {}
     for i in var.lower():
@@ -70,32 +70,32 @@ def numOfEachChar():
 
 
 # var of numEachChar
-each = numOfEachChar()
+each = numOfEachChar(var)
 
 
-def average():
+def average(each):
     """Average."""
     pocetElements = len(each)
     return pocetElements
 
 
-prumer = charNum()/average()
+prumer = charNum(var)/average(each)
 
 
 # method calling
-charNum()
-mostFreq()
-leastFreq()
-numOfEachChar()
-average()
+charNum(var)
+mostFreq(var)
+leastFreq(var)
+numOfEachChar(var)
+average(each)
 
 
 print(".............................................")
-print("Počet znaků je ", charNum())
-print("Nejpoužívanější znak je ", mostFreq())
-print("Nejménně použitý znak je ", leastFreq())
+print("Počet znaků je ", charNum(var))
+print("Nejpoužívanější znak je ", mostFreq(var))
+print("Nejménně použitý znak je ", leastFreq(var))
 print("Počet každého obsaženého znaku v textu je ")
-print(numOfEachChar())
+print(numOfEachChar(var))
 print("Pruměrná četnost je ", round(prumer, 2))
 
 
