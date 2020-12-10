@@ -41,5 +41,17 @@ morseovka = {'1': '.----',
 vstup = input('Zadejte text pro převod do Morseovky: ').upper()
 
 rozdVstup = list(vstup)
+# Vytvoření cyklu for pro převod zadaných znaků do morseovky
+g = ""    
+for prvek in rozdVstup:
+    if prvek not in morseovka:
+            print('Zadávané znaky můžou být jen písmena bez diakritiky a číslice') # Ošetření podmínek
+            exit()
+    for i in morseovka:
+        if prvek == i:
+            g = g + morseovka[i] + ' '
+        
+
+print(g) # Výstup      
 
  
