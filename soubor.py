@@ -8,7 +8,6 @@ def fileExists(soubor):
     """Work With File."""
     if(path.exists(soubor)):
         x = open(soubor, "r")
-        print(x.read())
     else:
         x = open(soubor, "w")
         x.write(input("Napište text, který chcete mít v novém souboru:\n\n"))
@@ -70,6 +69,8 @@ if __name__ == '__main__':
     soubor = input("""Zadejte název dokumentu.\n
                Pokud soubor neexistuje, vytvoří se nový:\n""")
     fileExists(soubor)
+    # var with text in soubor
+    x = fileExists(soubor)
     # var with text
     var = textIntoVar(soubor)
     # var of numEachChar
@@ -81,6 +82,7 @@ if __name__ == '__main__':
     leastFreq(var)
     numOfEachChar(var)
     average(each)
+    print(x.read())
     print(".............................................")
     print("Počet znaků je ", charNum(var))
     print("Nejpoužívanější znak je ", mostFreq(var))
