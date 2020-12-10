@@ -6,7 +6,7 @@ import random
 # […]
 
 __author__ = 'Daniel Jurča'
-__version__ = '0.2.0'
+__version__ = '0.3.0'
 __email__ = 'd_jurca@utb.cz'
 __status__ = 'Work in progress'
 
@@ -135,7 +135,7 @@ def VypisPrvocisel(cislo):
 
 
 def ProvedAkci(typAkce):
-    """Provede akci."""
+    """Provede zvolenou akci."""
     if typAkce == 1:
         UrciPrvocislo(cislo)
     elif typAkce == 2:
