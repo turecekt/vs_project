@@ -236,7 +236,7 @@ def morse_decode(var_inp2):
             var_inp2 = var_inp2.replace("----. ", '9')
         elif "----- " in var_inp2:
             var_inp2 = var_inp2.replace("----- ", '0')
-    var_inp2 = var_inp2[1:]  # Remove space before text
+    var_inp2 = var_inp2[1:]     # Remove space before text
     return var_inp2
 
 
