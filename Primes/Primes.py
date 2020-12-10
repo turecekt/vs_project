@@ -5,7 +5,7 @@ import math
 import random
 
 __author__ = 'Daniel Jurča'
-__version__ = '0.5.0'
+__version__ = '1.0.0'
 __email__ = 'd_jurca@utb.cz'
 __status__ = 'Work in progress'
 
@@ -95,29 +95,32 @@ def UrciPrvocislo(cislo):
 
     Unittest:
     >>> UrciPrvocislo(421)
-    Je prvočíslo
+    421 je prvočíslo
     Metoda: determinační
+
     >>> UrciPrvocislo(8)
-    Není prvočíslo
+    8 není prvočíslo
     Metoda: determinační
+
     >>> UrciPrvocislo(1010)
-    Není prvočíslo
+    1010 není prvočíslo
     Metoda: Statistická - Fermatova
+
     >>> UrciPrvocislo(1033)
-    Je prvočíslo
+    1033 je prvočíslo
     Metoda: Statistická - Fermatova
     """
     if cislo < 1000:
         if Determinacni(cislo) is True:
-            print("Je prvočíslo")
+            print(str(cislo) + " je prvočíslo")
         else:
-            print("Není prvočíslo")
+            print(str(cislo) + " není prvočíslo")
         print("Metoda: determinační")
     elif cislo >= 1000:
         if Fermat(cislo) is True:
-            print("Je prvočíslo")
+            print(str(cislo) + " je prvočíslo")
         else:
-            print("Není prvočíslo")
+            print(str(cislo) + " není prvočíslo")
         print("Metoda: Statistická - Fermatova")
 
 
@@ -128,9 +131,11 @@ def VypisPrvocisel(cislo):
     >>> VypisPrvocisel(10)
     Prvočísla:
     2 3 5 7
+
     >>> VypisPrvocisel(100)
     Prvočísla:
     2 3 5 7 11 13 17 19 23 29 31 37 41 43 47 53 59 61 67 71 73 79 83 89 97
+
     >>> VypisPrvocisel(1)
     Prvočísla:
     <BLANKLINE>
@@ -150,11 +155,13 @@ def ProvedAkci(typAkce, cislo):
     Unittest:
     >>> ProvedAkci(3, 0)
     Chyba u volby akce
+
     >>> ProvedAkci(2, 10)
     Prvočísla:
     2 3 5 7
+
     >>> ProvedAkci(1, 11)
-    Je prvočíslo
+    11 je prvočíslo
     Metoda: determinační
     """
     if typAkce == 1:
@@ -179,7 +186,7 @@ def main():
         print()
         VolbaCisla()
 
-    ProvedAkci(typAkce)
+    ProvedAkci(typAkce, cislo)
 
 
 if __name__ == "__main__":
