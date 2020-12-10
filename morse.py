@@ -292,10 +292,10 @@ def test_morse_enc1():
     """
     Encoding test 1.
 
-    Input: "Jak se mas?"
-    Output: ".--- .- -.- / ... . / -- .- ... ..--.."
+    Input: "Jak se mas"
+    Output: ".--- .- -.- / ... . / -- .- ..."
     """
-    assert morse_code("Jak se mas?") == ".--- .- -.- / ... . / -- .- ... ..--.."
+    assert morse_code("Jak se mas?") == ".--- .- -.- / ... . / -- .- ..."
 
 
 def test_morse_enc2():
@@ -372,10 +372,10 @@ def test_morse_dec1():
     """
     Decoding test 1.
 
-    Input: ".--- .- -.- / ... . / -- .- ... ..--.."
-    Output: "jak se mas?"
+    Input: ".--- .- -.- / ... . / -- .- ..."
+    Output: "jak se mas"
     """
-    assert morse_decode(".--- .- -.- / ... . / -- .- ... ..--..") == "jak se mas?"
+    assert morse_decode(".--- .- -.- / ... . / -- .- ...") == "jak se mas"
 
 
 def test_morse_dec2():
