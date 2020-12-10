@@ -38,6 +38,7 @@ def test_numOfEachChar():
                                                      'j': 1, 'e': 1, 't': 2,
                                                      'o': 1, 'a': 1, 'd': 1,
                                                      'y': 1}
+    pass
 
 
 def test_avarage():
