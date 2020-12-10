@@ -61,25 +61,25 @@ Select operation:
 """
 
 while True:
-    choice = int(input("Insert your choice |1|2|3|4| > "))
+    choice = input("Insert your choice |1|2|3|4| > ")
     """Take input from the user.
 
     Input are four number, representing a single mathematical operation.
     """
-    if choice in (1, 2, 3, 4):
+    if choice in ("1", "2", "3", "4"):
         number1 = float(input("Insert your first number > "))
         number2 = float(input("Insert your second number > "))
 
-        if choice == 1:
+        if choice == "1":
             print(number1, "+", number2, "=", add(number1, number2))
 
-        elif choice == 2:
+        elif choice == "2":
             print(number1, "-", number2, "=", subtract(number1, number2))
 
-        elif choice == 3:
+        elif choice == "3":
             print(number1, "*", number2, "=", multiply(number1, number2))
 
-        elif choice == 4:
+        elif choice == "4":
             print(number1, "/", number2, "=", divide(number1, number2))
         break
     else:
