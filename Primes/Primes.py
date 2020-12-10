@@ -3,10 +3,9 @@
 # Imports
 import math
 import random
-# […]
 
 __author__ = 'Daniel Jurča'
-__version__ = '0.3.0'
+__version__ = '0.4.0'
 __email__ = 'd_jurca@utb.cz'
 __status__ = 'Work in progress'
 
@@ -32,9 +31,6 @@ def VolbaAkce():
     return akce
 
 
-VolbaAkce()
-
-
 def OvereniHodnotyAkce(akce):
     """Ověření, zda je volba akce správná."""
     try:
@@ -48,19 +44,11 @@ def OvereniHodnotyAkce(akce):
         return False
 
 
-while OvereniHodnotyAkce(akce) is False:
-    print("Zadejte číslo 1 nebo 2")
-    VolbaAkce()
-
-
 def VolbaCisla():
     """Volba čísla n."""
     global zadaneCislo
     zadaneCislo = input("Zadejte číslo n: ")
     return zadaneCislo
-
-
-VolbaCisla()
 
 
 def OvereniHodnotyCisla(zadaneCislo):
@@ -74,12 +62,6 @@ def OvereniHodnotyCisla(zadaneCislo):
             return False
     except ValueError:
         return False
-
-
-while OvereniHodnotyCisla(zadaneCislo) is False:
-    print("n musí být celé číslo")
-    print()
-    VolbaCisla()
 
 
 def Determinacni(cislo):
@@ -144,4 +126,20 @@ def ProvedAkci(typAkce):
         print("Chyba u volby akce")
 
 
-ProvedAkci(typAkce)
+def main():
+    """Spuštění programu."""
+    VolbaAkce()
+    while OvereniHodnotyAkce(akce) is False:
+        print("Zadejte číslo 1 nebo 2")
+        print()
+        VolbaAkce()
+    VolbaCisla()
+    while OvereniHodnotyCisla(zadaneCislo) is False:
+        print("n musí být celé číslo")
+        print()
+        VolbaCisla()
+    ProvedAkci(typAkce)
+
+
+if __name__ == "__main__":
+    main()
