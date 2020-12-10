@@ -1,20 +1,40 @@
-# Program for simple mathematical operations with two numbers
+'''
+This is a program for simple mathematical operations with two numbers.
+The operations are addition, subtraction, multiplication and division.
+The input method is through the console.
+'''
 
-# Function for addition of two numbers
 def add(x, y):
+    '''
+    Returns addition of two numbers
+    Return is:
+    int
+    '''
     return x + y
 
 
-# Function for subtraction of two numbers
 def subtract(x, y):
+    '''
+    Returns subtraction of two numbers
+    Return is:
+    int
+    '''
     return x - y
 
 
-# Function for multiplication of two numbers
 def multiply(x, y):
+    '''
+    Returns multiplication of two numbers
+    Return is:
+    int
+    '''
     return x * y
 
 
-# Function for division of two numbers
 def divide(x, y):
+    '''
+    Returns division of two numbers
+    Return is:
+    int
+    '''
     return x / y
