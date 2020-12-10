@@ -1,2 +1,2 @@
 # Morse encoder/decoder (vs_project)
-Python Checker status: ![Python checker](https://github.com/lehnerp/vs_project/workflows/Python%20checker/badge.svg?branch=master)
+![Python checker](https://github.com/lehnerp/vs_project/workflows/Python%20checker/badge.svg?branch=master)
