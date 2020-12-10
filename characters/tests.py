@@ -4,7 +4,7 @@ import soubor
 
 
 def test_fileExists():
-    """FileExists unit test."""
+    """Fileexists unit test."""
     text = "ahoj"
     actual = soubor.fileExists("ahoj.txt")
     assert(actual == text)

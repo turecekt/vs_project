@@ -3,8 +3,10 @@
 from os import path
 import collections
 
-soubor = input("Zadejte název dokumentu.\nPokud soubor neexistuje, vytvoří se nový:\n")
+soubor = input("""Zadejte název dokumentu.\n
+               Pokud soubor neexistuje, vytvoří se nový:\n""")
 soubor = "ahoj.txt"
+
 
 def fileExists(soubor):
     """Work With File."""
