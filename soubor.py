@@ -27,7 +27,9 @@ def charNum(var):
     celkem = 0
     for i in var:
         celkem += 1
+    print(celkem)
     return celkem
+
 
 
 def mostFreq(var):
