@@ -18,4 +18,3 @@ def multiply(x, y):
 # Function for division of two numbers
 def divide(x, y):
     return x / y
-
