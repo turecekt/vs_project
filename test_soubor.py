@@ -39,6 +39,7 @@ def test_numOfEachChar():
                                                      'o': 1, 'a': 1, 'd': 1,
                                                      'y': 1}
 
+
 def test_avarage():
     """Average unit test."""
     each = "Nikolas"
