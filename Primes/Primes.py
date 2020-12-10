@@ -17,21 +17,29 @@ def VolbaAkce():
 
     Uživatel zvolí, jestli chce zjistit,
     zda je zadané číslo n prvočíslo,
-    nebo vypsat n prvočísel
+    nebo vypsat prvočísla po číslo n
+    >>>VolbaAkce()
+    Akce:
+    1 : Ověření, zda je zadané číslo prvočíslem
+    2 : Vypsání prvočísel po n
     """
     print("Akce:")
     print("1 : Ověření, zda je zadané číslo prvočíslem")
-    print("2 : Vypsání n prvočísel")
+    print("2 : Vypsání prvočísel po n")
+    global akce
     akce = input("Vyberte možnost (1/2): ")
     print()
     return akce
 
 
-def OvereniHodnotyAkce():
+VolbaAkce()
+
+
+def OvereniHodnotyAkce(akce):
     """Ověření, zda je volba akce správná."""
     try:
         global typAkce
-        typAkce = int(VolbaAkce())
+        typAkce = int(akce)
         if typAkce == 1 or typAkce == 2:
             return True
         else:
@@ -40,21 +48,26 @@ def OvereniHodnotyAkce():
         return False
 
 
-while OvereniHodnotyAkce() is False:
+while OvereniHodnotyAkce(akce) is False:
     print("Zadejte číslo 1 nebo 2")
+    VolbaAkce()
 
 
 def VolbaCisla():
     """Volba čísla n."""
+    global zadaneCislo
     zadaneCislo = input("Zadejte číslo n: ")
     return zadaneCislo
 
 
-def OvereniHodnotyCisla():
+VolbaCisla()
+
+
+def OvereniHodnotyCisla(zadaneCislo):
     """Ověření, zda je zadané číslo integer."""
     try:
         global cislo
-        cislo = int(VolbaCisla())
+        cislo = int(zadaneCislo)
         if cislo > 0:
             return True
         else:
@@ -63,8 +76,10 @@ def OvereniHodnotyCisla():
         return False
 
 
-while OvereniHodnotyCisla() is False:
+while OvereniHodnotyCisla(zadaneCislo) is False:
     print("n musí být celé číslo")
+    print()
+    VolbaCisla()
 
 
 def Determinacni(cislo):
@@ -113,9 +128,16 @@ def UrciPrvocislo(cislo):
         print("Metoda: Statistická - Fermatova")
 
 
+def VypisPrvocisel(cislo):
+    """Výpis prvočísel do čísla n."""
+    for num in range(2, cislo):
+        if all(num % i != 0 for i in range(2, num)):
+            print(num, end=" ")
+
+
 if typAkce == 1:
     UrciPrvocislo(cislo)
 elif typAkce == 2:
-    print("2")
+    VypisPrvocisel(cislo)
 else:
     print("bs")
