@@ -136,6 +136,110 @@ def morse_code(var_inp):
 
     return strInpMorse
 
+
+def morse_decode(var_inp2):
+    cnt = 0
+    for spc in var_inp2:
+        if spc.isspace():
+            cnt = cnt + 1
+
+    for i in range(cnt):
+        if '"' in var_inp2:
+            var_inp2 = var_inp2.replace('"', ' ')
+        elif "-.-- " in var_inp2:
+            var_inp2 = var_inp2.replace("-.-- ", 'y')
+        elif ".-.-.- " in var_inp2:
+            var_inp2 = var_inp2.replace(".-.-.- ", '.')
+        elif "--..-- " in var_inp2:
+            var_inp2 = var_inp2.replace("--..-- ", ',')
+        elif "---... " in var_inp2:
+            var_inp2 = var_inp2.replace("---... ", ':')
+        elif "..--.. " in var_inp2:
+            var_inp2 = var_inp2.replace("..--.. ", '?')
+        elif "-....- " in var_inp2:
+            var_inp2 = var_inp2.replace("-....- ", '-')
+        elif "-..-. " in var_inp2:
+            var_inp2 = var_inp2.replace("-..-. ", '/')
+        elif ".--.-. " in var_inp2:
+            var_inp2 = var_inp2.replace(".--.-. ", '@')
+        elif "-...- " in var_inp2:
+            var_inp2 = var_inp2.replace("-...- ", '=')
+        elif "-... " in var_inp2:
+            var_inp2 = var_inp2.replace("-... ", 'b')
+        elif "-.-. " in var_inp2:
+            var_inp2 = var_inp2.replace("-.-. ", 'c')
+        elif ".... " in var_inp2:
+            var_inp2 = var_inp2.replace(".... ", 'h')
+        elif ".--- " in var_inp2:
+            var_inp2 = var_inp2.replace(".--- ", 'j')
+        elif ".-.. " in var_inp2:
+            var_inp2 = var_inp2.replace(".-.. ", 'l')
+        elif ".--. " in var_inp2:
+            var_inp2 = var_inp2.replace(".--. ", 'p')
+        elif "--.- " in var_inp2:
+            var_inp2 = var_inp2.replace("--.- ", 'q')
+        elif "...- " in var_inp2:
+            var_inp2 = var_inp2.replace("...- ", 'v')
+        elif ".-- " in var_inp2:
+            var_inp2 = var_inp2.replace(".-- ", 'w')
+        elif "-..- " in var_inp2:
+            var_inp2 = var_inp2.replace("-..- ", 'x')
+        elif "--.. " in var_inp2:
+            var_inp2 = var_inp2.replace("--.. ", 'z')
+        elif "..- " in var_inp2:
+            var_inp2 = var_inp2.replace("..- ", 'u')
+        elif "-.. " in var_inp2:
+            var_inp2 = var_inp2.replace("-.. ", 'd')
+        elif "..- " in var_inp2:
+            var_inp2 = var_inp2.replace("..- ", 'f')
+        elif "--. " in var_inp2:
+            var_inp2 = var_inp2.replace("--. ", 'g')
+        elif "-.- " in var_inp2:
+            var_inp2 = var_inp2.replace("-.- ", 'k')
+        elif "--- " in var_inp2:
+            var_inp2 = var_inp2.replace("--- ", 'o')
+        elif ".-. " in var_inp2:
+            var_inp2 = var_inp2.replace(".-. ", 'r')
+        elif "... " in var_inp2:
+            var_inp2 = var_inp2.replace("... ", 's')
+        elif "-- " in var_inp2:
+            var_inp2 = var_inp2.replace("-- ", 'm')
+        elif "-. " in var_inp2:
+            var_inp2 = var_inp2.replace("-. ", 'n')
+        elif ".- " in var_inp2:
+            var_inp2 = var_inp2.replace(".- ", 'a')
+        elif ".. " in var_inp2:
+            var_inp2 = var_inp2.replace(".. ", 'i')
+        elif ". " in var_inp2:
+            var_inp2 = var_inp2.replace(". ", 'e')
+        elif "- " in var_inp2:
+            var_inp2 = var_inp2.replace("- ", 't')
+        elif "/ " in var_inp2:
+            var_inp2 = var_inp2.replace("/ ", ' ')
+        elif ".---- " in var_inp2:
+            var_inp2 = var_inp2.replace(".---- ", '1')
+        elif "..--- " in var_inp2:
+            var_inp2 = var_inp2.replace("..--- ", '2')
+        elif "...-- " in var_inp2:
+            var_inp2 = var_inp2.replace("...-- ", '3')
+        elif "....- " in var_inp2:
+            var_inp2 = var_inp2.replace("....- ", '4')
+        elif "..... " in var_inp2:
+            var_inp2 = var_inp2.replace("..... ", '5')
+        elif "-.... " in var_inp2:
+            var_inp2 = var_inp2.replace("-.... ", '6')
+        elif "--... " in var_inp2:
+            var_inp2 = var_inp2.replace("--... ", '7')
+        elif "---.. " in var_inp2:
+            var_inp2 = var_inp2.replace("---.. ", '8')
+        elif "----. " in var_inp2:
+            var_inp2 = var_inp2.replace("----. ", '9')
+        elif "----- " in var_inp2:
+            var_inp2 = var_inp2.replace("----- ", '0')
+    var_inp2 = var_inp2[1:]  # Remove space before text
+    return var_inp2
+
+
 if __name__ == '__main__':
     print('Morse Encoder/Decoder')
     print('d for decode')
@@ -147,6 +251,12 @@ if __name__ == '__main__':
         strInp = input()
         strInpOrg = strInp
         var = morse_code(strInp)
+        print(var)
+    elif strChoice == 'd':
+        print('Enter text to decode: ')
+        strInp = input()
+        strInpOrg = strInp
+        var = morse_decode(strInp)
         print(var)
     else:
         print('Wrong choice...')
