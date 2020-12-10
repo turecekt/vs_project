@@ -53,6 +53,7 @@ table = {
     '9': '----.',
 }
 
+
 def get_letter_by_value(search_value):
     """
     Vyhleda ve slovniku table odpovidajici hodnotu.
@@ -67,6 +68,7 @@ def get_letter_by_value(search_value):
 
 
 text = input("Zadejte text: ").lower()
+translated_text = ""
 valid = True
 
 # pokud prvni index je znak abecedy
@@ -78,7 +80,10 @@ except ValueError:
 
 
 def encode(text):
-    translated_text = ""
+    """Zakoduje zadany text do morseovy abecedy."""
+    global translated_text
+    global valid
+
     for i in text:
         # pokud je znak ve slovniku "table"
         if i in table:
@@ -93,8 +98,11 @@ def encode(text):
 
 
 def decode(text):
-    translated_text = ""
+    """Dekoduje (prevede) zadane znaky z morseovy abecedy na text."""
+    global translated_text
+    global valid
     buffer = ""
+
     for i in text:
         if i == '-' or i == '.':
             buffer += i
@@ -118,10 +126,10 @@ def decode(text):
 
 # prekladani
 if is_alphabet:
-    translated_text = encode(text)
+    encode(text)
 
 else:
-    translated_text = decode(text)
+    decode(text)
 
 if valid:
     print("Prelozeny text: ")
@@ -133,12 +141,12 @@ def test_get_letter_by_value():
 
 
 def test_encode():
-    #assert encode("ahoj") == '.-|....|---|.---'
-    assert encode("sos") == '...|---|...'
-    #assert encode("Wikipedia is a free online encyclopedia") == '.--|..|-.-|..|.--.|.|-..|..|.-||..|...||.-||..-.|.-.|.|.||---|-.|.-..|..|-.|.||.|-.|-.-.|-.--|-.-.|.-..|---|.--.|.|-..|..|.-'
+    #assert encode("ahoj") == ".-|....|---|.---"
+    assert encode("sos") == "...|---|..."
+    #assert encode("Wikipedia is a free online encyclopedia") == ".--|..|-.-|..|.--.|.|-..|..|.-||..|...||.-||..-.|.-.|.|.||---|-.|.-..|..|-.|.||.|-.|-.-.|-.--|-.-.|.-..|---|.--.|.|-..|..|.-"
 
 
 def test_decode():
-    #assert decode('.-|....|---|.---') == "ahoj"
-    assert decode('...|---|...') == "sos"
-    #assert decode('.--|..|-.-|..|.--.|.|-..|..|.-||..|...||.-||..-.|.-.|.|.||---|-.|.-..|..|-.|.||.|-.|-.-.|-.--|-.-.|.-..|---|.--.|.|-..|..|.-') == "Wikipedia is a free online encyclopedia"
+    #assert decode(".-|....|---|.---") == "ahoj"
+    assert decode("...|---|...") == "sos"
+    #assert decode(".--|..|-.-|..|.--.|.|-..|..|.-||..|...||.-||..-.|.-.|.|.||---|-.|.-..|..|-.|.||.|-.|-.-.|-.--|-.-.|.-..|---|.--.|.|-..|..|.-") == "Wikipedia is a free online encyclopedia"
