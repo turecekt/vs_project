@@ -7,7 +7,7 @@ The input method is through the console.
 
 
 def add(x, y):
-    """Find the addition of x,y and return the result
+    """Find the addition of x,y and return the result.
 
     Input of the funcion are two numbers.
 
