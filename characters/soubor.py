@@ -3,10 +3,6 @@
 from os import path
 import collections
 
-soubor = input("""Zadejte název dokumentu.\n
-               Pokud soubor neexistuje, vytvoří se nový:\n""")
-soubor = "ahoj.txt"
-
 
 def fileExists(soubor):
     """Work With File."""
@@ -20,18 +16,11 @@ def fileExists(soubor):
     return x
 
 
-fileExists(soubor)
-
-
 def textIntoVar(soubor):
     """Insert Text Into Variable."""
     with open(soubor, "r") as file:
         text = file.read().replace("\n", "")
     return text
-
-
-# var with text
-var = textIntoVar(soubor)
 
 
 def charNum(var):
@@ -71,34 +60,32 @@ def numOfEachChar(var):
     return eachChar
 
 
-# var of numEachChar
-each = numOfEachChar(var)
-
-
 def average(each):
     """Average."""
     pocetElements = len(each)
     return pocetElements
 
 
-prumer = charNum(var)/average(each)
-
-
-# method calling
-charNum(var)
-mostFreq(var)
-leastFreq(var)
-numOfEachChar(var)
-average(each)
-
-
-print(".............................................")
-print("Počet znaků je ", charNum(var))
-print("Nejpoužívanější znak je ", mostFreq(var))
-print("Nejménně použitý znak je ", leastFreq(var))
-print("Počet každého obsaženého znaku v textu je ")
-print(numOfEachChar(var))
-print("Pruměrná četnost je ", round(prumer, 2))
-
-
-input("\nKlávesou ENTER ukončíte program...")
+if __name__ == '__main__':
+    soubor = input("""Zadejte název dokumentu.\n
+               Pokud soubor neexistuje, vytvoří se nový:\n""")
+    fileExists(soubor)
+    # var with text
+    var = textIntoVar(soubor)
+    # var of numEachChar
+    each = numOfEachChar(var)
+    prumer = charNum(var)/average(each)
+    # method calling
+    charNum(var)
+    mostFreq(var)
+    leastFreq(var)
+    numOfEachChar(var)
+    average(each)
+    print(".............................................")
+    print("Počet znaků je ", charNum(var))
+    print("Nejpoužívanější znak je ", mostFreq(var))
+    print("Nejménně použitý znak je ", leastFreq(var))
+    print("Počet každého obsaženého znaku v textu je ")
+    print(numOfEachChar(var))
+    print("Pruměrná četnost je ", round(prumer, 2))
+    input("\nKlávesou ENTER ukončíte program...")
