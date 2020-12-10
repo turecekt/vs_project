@@ -91,6 +91,7 @@ def encode(text):
     translated_text = translated_text[0: len(translated_text) - 1]
     return translated_text
 
+
 def decode(text):
     translated_text = ""
     buffer = ""
@@ -113,3 +114,16 @@ def decode(text):
             break
     translated_text += get_letter_by_value(buffer)
     return translated_text
+
+
+# prekladani
+if is_alphabet:
+    translated_text = encode(text)
+
+else:
+    translated_text = decode(text)
+
+if valid:
+    print("Prelozeny text: ")
+    print(translated_text)
+
