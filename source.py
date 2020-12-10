@@ -76,3 +76,17 @@ try:
 except ValueError:
     is_alphabet = False
 
+
+def encode(text):
+    translated_text = ""
+    for i in text:
+        # pokud je znak ve slovniku "table"
+        if i in table:
+            translated_text += table[i] + '|'
+        else:
+            print("Text neni validni")
+            valid = False
+            break
+    # smaze posledni znak ktery je "|"
+    translated_text = translated_text[0: len(translated_text) - 1]
+    return translated_text
