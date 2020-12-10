@@ -1,85 +1,87 @@
-# Dictionary representing the morse code chart
-MORSE_CODE_DICT = {'A': '.-', 'B': '-...',
-                   'C': '-.-.', 'D': '-..', 'E': '.',
-                   'F': '..-.', 'G': '--.', 'H': '....',
-                   'I': '..', 'J': '.---', 'K': '-.-',
-                   'L': '.-..', 'M': '--', 'N': '-.',
-                   'O': '---', 'P': '.--.', 'Q': '--.-',
-                   'R': '.-.', 'S': '...', 'T': '-',
-                   'U': '..-', 'V': '...-', 'W': '.--',
-                   'X': '-..-', 'Y': '-.--', 'Z': '--..',
-                   '1': '.----', '2': '..---', '3': '...--',
-                   '4': '....-', '5': '.....', '6': '-....',
-                   '7': '--...', '8': '---..', '9': '----.',
-                   '0': '-----', ', ': '--..--', '.': '.-.-.-',
-                   '?': '..--..', '/': '-..-.', '-': '-....-',
-                   '(': '-.--.', ')': '-.--.-'}
+MORSE_CODE = {'A': '.-', 'B': '-...',
+              'C': '-.-.', 'D': '-..', 'E': '.',
+              'F': '..-.', 'G': '--.', 'H': '....',
+              'I': '..', 'J': '.---', 'K': '-.-',
+              'L': '.-..', 'M': '--', 'N': '-.',
+              'O': '---', 'P': '.--.', 'Q': '--.-',
+              'R': '.-.', 'S': '...', 'T': '-',
+              'U': '..-', 'V': '...-', 'W': '.--',
+              'X': '-..-', 'Y': '-.--', 'Z': '--..',
+              '1': '.----', '2': '..---', '3': '...--',
+              '4': '....-', '5': '.....', '6': '-....',
+              '7': '--...', '8': '---..', '9': '----.',
+              '0': '-----', ', ': '--..--', '.': '.-.-.-',
+              '?': '..--..', '/': '-..-.', '-': '-....-',
+              '(': '-.--.', ')': '-.--.-'}
 
 
+def zasifrovani(zprava):
+    sifra = ''
+    for pismeno in zprava:
+        if pismeno != ' ':
 
-def encrypt(message):
-    cipher = ''
-    for letter in message:
-        if letter != ' ':
-
-
-            cipher += MORSE_CODE_DICT[letter] + ' '
+            sifra += MORSE_CODE[pismeno] + ' '
         else:
 
-            cipher += ' '
+            sifra += ' '
 
-    return cipher
+    return sifra
 
 
+def rozsifrovani(zprava):
+    zprava += ' '
 
-def decrypt(message):
-
-    message += ' '
-
-    decipher = ''
+    text = ''
     citext = ''
-    for letter in message:
+    for pismeno in zprava:
 
-
-        if (letter != ' '):
-
+        if pismeno != ' ':
 
             i = 0
 
+            citext += pismeno
 
-            citext += letter
 
-        # in case of space
         else:
 
             i += 1
 
-
             if i == 2:
 
-
-                decipher += ' '
+                text += ' '
             else:
 
-
-                decipher += list(MORSE_CODE_DICT.keys())[list(MORSE_CODE_DICT
-                                                              .values()).index(citext)]
+                text += list(MORSE_CODE.keys())[list(MORSE_CODE.values()).index(citext)]
                 citext = ''
 
-    return decipher
-
+    return text
 
 
 def main():
-    message = "sos"
-    result = encrypt(message.upper())
+    print("Vlož text (bez diakritiky):")
+    zprava = input()
+    # zprava = "sos"
+
+    if zprava[0] in (".", "-"):
+        result = rozsifrovani(zprava)
+    else:
+        zprava = zprava.upper()
+        result = zasifrovani(zprava)
+
+    # result = zasifrovani(zprava)
     print(result)
 
-    message = "--. . . -.- ... -....- ..-. --- .-. -....- --. . . -.- ... "
-    result = decrypt(message)
-    print(result)
+
+# print(result)
+
+# zprava = "sos"
+# result = zasifrovani(zprava.upper())
+# print(result)
+
+# zprava = "--. . . -.- ... -....- ..-. --- .-. -....- --. . . -.- ... "
+# result = rozsifrovani(zprava)
+# print(result)
 
 
-# Executes the main function
 if __name__ == '__main__':
     main()
