@@ -12,6 +12,11 @@ def main():
     text = input()
     pass
 
+  if(check_prime_number(int(text))):
+    print("Je prvočíslo")
+  else:
+    print("Není prvočíslo")
+
 def print_input():
   """
   Print sentece to user
@@ -20,19 +25,37 @@ def print_input():
 
 def check_number(text: str):
   """
-  This function is checking, if the input is Integer if is just return number,
-  when is not integer, returning False
+  This function is checking, if the input is Integer return True if is not
+  return False
 
-  Return Boolean|Integer
+  Return Boolean
   """
   try:
-    value = int(text)
-    return value
+    int(text)
+    return True
   except ValueError:
     print('Zadaný vstup není celé číslo.')
     print_input()
     return False
 
+def check_prime_number(number: int):
+  """
+  Checking if number is prime number
+
+  Return Boolean
+  """
+
+  if(number <= 1):
+    return False
+
+  if(number == 2):
+    return True
+
+  for i in range(2, number):
+    if number % i == 0:
+      return False
+
+  return True
 
 if __name__ == '__main__':
   main()
