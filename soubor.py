@@ -27,7 +27,6 @@ def charNum(var):
     celkem = 0
     for i in var:
         celkem += 1
-    print(celkem)
     return celkem
 
 
@@ -68,8 +67,8 @@ def average(each):
 
 
 if __name__ == '__main__':
-    soubor = input("""Zadejte název dokumentu.\n
-               Pokud soubor neexistuje, vytvoří se nový:\n""")
+    print("Zadejte název dokumentu. Pokud soubor neexistuje, vytvoří se nový:")
+    soubor = input()
     fileExists(soubor)
     # var with text in soubor
     x = fileExists(soubor)
@@ -78,12 +77,6 @@ if __name__ == '__main__':
     # var of numEachChar
     each = numOfEachChar(var)
     prumer = charNum(var)/average(each)
-    # method calling
-    charNum(var)
-    mostFreq(var)
-    leastFreq(var)
-    numOfEachChar(var)
-    average(each)
     print(x.read())
     print(".............................................")
     print("Počet znaků je ", charNum(var))
