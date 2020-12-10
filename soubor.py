@@ -30,7 +30,6 @@ def charNum(var):
     return celkem
 
 
-
 def mostFreq(var):
     """Look For Most Used Character."""
     most = collections.Counter(var.lower()).most_common(1)[0]

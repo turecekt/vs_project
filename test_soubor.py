@@ -34,9 +34,10 @@ def test_leastFreq():
 
 def test_numOfEachChar():
     """Num_of_each_char unit test."""
-    assert soubor.numOfEachChar("Uz je to tady") == """{'u':1, 'z':1, ' ':3,
-    'j':1, 'e':1, 't':2, 'o':1, 'a':1, 'd':1, 'y':1}"""
-
+    assert soubor.numOfEachChar("Uz je to tady") == {'u': 1, 'z': 1, ' ': 3,
+                                                     'j': 1, 'e': 1, 't': 2,
+                                                     'o': 1, 'a': 1, 'd': 1,
+                                                     'y': 1}
 
 def test_avarage():
     """Average unit test."""
