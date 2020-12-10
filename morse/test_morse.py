@@ -1,3 +1,4 @@
+"""Morse encoder/decoder tests."""
 import morse
 
 
@@ -15,10 +16,10 @@ def test_morse_enc1():
     """
     Encoding test 1.
 
-    Input: "Jak se mas?"
-    Output: ".--- .- -.- / ... . / -- .- ... ..--.."
+    Input: "Jak se mas"
+    Output: ".--- .- -.- / ... . / -- .- ..."
     """
-    assert morse.morse_code("Jak se mas?") == ".--- .- -.- / ... . / -- .- ... ..--.."
+    assert morse.morse_code("Jak se mas") == ".--- .- -.- / ... . / -- .- ..."
 
 
 def test_morse_enc2():
@@ -115,10 +116,10 @@ def test_morse_dec1():
     """
     Decoding test 1.
 
-    Input: ".--- .- -.- / ... . / -- .- ... ..--.."
-    Output: "jak se mas?"
+    Input: ".--- .- -.- / ... . / -- .- ..."
+    Output: "jak se mas"
     """
-    assert morse.morse_decode(".--- .- -.- / ... . / -- .- ... ..--..") == "jak se mas?"
+    assert morse.morse_decode(".--- .- -.- / ... . / -- .- ...") == "jak se mas"
 
 
 def test_morse_dec2():
@@ -189,12 +190,3 @@ def test_morse_dec10():
     Output: "izy=.,"
     """
     assert morse.morse_decode(".. --.. -.-- -...- .-.-.- --..--") == "izy=.,"
-
-
-def test_main():
-    """
-    Main test 0.
-
-    Input: ".. --.. -.-- -...- .-.-.- --..--"
-    Output: "izy=.,"
-    """
