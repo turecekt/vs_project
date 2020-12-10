@@ -52,3 +52,19 @@ table = {
     '8': '---..',
     '9': '----.',
 }
+
+def get_letter_by_value(search_value):
+    """
+    Vyhleda ve slovniku table odpovidajici hodnotu.
+
+    :parametr search_value: je hodnota, ktera se ma vyhledat ve slovniku table.
+    :return: vraci odpovidajici klic (pismeno) ze slovniku, jinak None
+    """
+    for key, value in table.items():
+        if value == search_value:
+            return key
+    return None
+
+
+text = input("Zadejte text: ").lower()
+valid = True
