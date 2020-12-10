@@ -6,7 +6,7 @@ import random
 # […]
 
 __author__ = 'Daniel Jurča'
-__version__ = '0.1.0'
+__version__ = '0.2.0'
 __email__ = 'd_jurca@utb.cz'
 __status__ = 'Work in progress'
 
@@ -99,14 +99,12 @@ def Determinacni(cislo):
 
 
 def Fermat(cislo):
-    """Fermatovo prvočíslo, hard metoda."""
+    """Fermatovo prvočíslo, složitější metoda."""
     if (cislo > 1):
         for time in range(3):
             nahodneCislo = random.randint(2, cislo)-1
-
             if (pow(nahodneCislo, cislo-1, cislo) != 1):
                 return False
-
         return True
     else:
         return False
@@ -130,14 +128,20 @@ def UrciPrvocislo(cislo):
 
 def VypisPrvocisel(cislo):
     """Výpis prvočísel do čísla n."""
+    print("Prvočísla: ")
     for num in range(2, cislo):
         if all(num % i != 0 for i in range(2, num)):
             print(num, end=" ")
 
 
-if typAkce == 1:
-    UrciPrvocislo(cislo)
-elif typAkce == 2:
-    VypisPrvocisel(cislo)
-else:
-    print("bs")
+def ProvedAkci(typAkce):
+    """Provede akci."""
+    if typAkce == 1:
+        UrciPrvocislo(cislo)
+    elif typAkce == 2:
+        VypisPrvocisel(cislo)
+    else:
+        print("Chyba u volby akce")
+
+
+ProvedAkci(typAkce)
