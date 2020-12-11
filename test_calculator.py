@@ -1,12 +1,12 @@
-"""These are unit tests for the main functions of the "calclulator".
-"""
+"""These are unit tests for the main functions of the "calculator"."""
+
 import unittest
 import calculator
 
 
 class TestCalculator(unittest.TestCase):
-    """Class for unit testing the functions.
-    """
+    """Class for unit testing the functions."""
+    
     def test_add(self):
         """Test the add function.
 
@@ -18,7 +18,6 @@ class TestCalculator(unittest.TestCase):
         self.assertEqual(calculator.add(-40, 10), -30)
         self.assertEqual(calculator.add(-5, -5), -10)
 
-        
     def test_subtract(self):
         """Test the subtract function.
 
@@ -30,7 +29,6 @@ class TestCalculator(unittest.TestCase):
         self.assertEqual(calculator.subtract(-40, 10), -50)
         self.assertEqual(calculator.subtract(-5, -5), 0)
 
-        
     def test_multiply(self):
         """Test the multiply function.
 
@@ -42,7 +40,6 @@ class TestCalculator(unittest.TestCase):
         self.assertEqual(calculator.multiply(-40, 10), -400)
         self.assertEqual(calculator.multiply(-5, -5), 25)
 
-        
     def test_divide(self):
         """Test the divide function.
 
