@@ -1,6 +1,7 @@
 """Tohle vezme input od uzivatele."""
 userInp = input('Zadejte cele cislo na preklad :')
 # Tohle prevede input od uzivatele na int aby to program mohl zpracovat
+
 userInp = int(userInp)
 
 
@@ -42,12 +43,12 @@ class romanNum:
                 transNum += syb[i]
                 userInp -= val[i]
             i += 1
-
         # Vratim transNum
         return transNum
 
 
-# Do konzole vypisu prevedenou hodnotu userInp. V kozoli se ukaze hodnota cisla ktere zadal user v rimskych cislicih
+# Do konzole vypisu prevedenou hodnotu userInp.
+# V kozoli se ukaze hodnota cisla ktere zadal user v rimskych cislicih
 
 
 print(romanNum().intToRom(userInp))
