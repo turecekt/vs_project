@@ -7,3 +7,12 @@ slovnik = {'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.', 'F': '..-.
            '(': "-.--.", ':': "---...", ',': "--..--", '=': "-...-", '!': "-.-.--", '.': ".-.-.-", '-': "-....-",
            '+': ".-.-.", '"': ".-..-.", '?': "..--..", '/': "-..-.",
            }
+
+def sifrovani(text):
+    zasifrovany_text = ""
+    for znak in text:
+        if znak != " ":
+            zasifrovany_text = zasifrovany_text + slovnik.get(znak) + " "
+        else:
+            zasifrovany_text = zasifrovany_text + " "
+    return zasifrovany_text
