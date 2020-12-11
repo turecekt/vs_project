@@ -1,3 +1,4 @@
+"""Letters and their corresponding morse codes."""
 letters_to_morse = {
     'a': '.-', 'b': '-...', 'c': '-.-.', 'd': '-..',
     'e': '.', 'f': '..-.', 'g': '--.', 'h': '....',
