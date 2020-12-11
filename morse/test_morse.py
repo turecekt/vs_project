@@ -86,20 +86,20 @@ def test_morse_enc8():
     """
     Encoding test 8.
 
-    Input: "ďťňó:@/ý"
-    Output: "-.. - -. --- ---... .--.-. -..-. -.--"
+    Input: "ďťňó:@/"
+    Output: "-.. - -. --- ---... .--.-. -..-."
     """
-    assert morse.morse_code("ďťňó:@/ý") == "-.. - -. --- ---... .--.-. -..-. -.--"
+    assert morse.morse_code("ďťňó:@/") == "-.. - -. --- ---... .--.-. -..-."
 
 
 def test_morse_enc9():
     """
     Encoding test 9.
 
-    Input: "wxln-"
-    Output: ".-- -..- .-.. -. -....-"
+    Input: "wxln-ý"
+    Output: ".-- -..- .-.. -. -....- -.--"
     """
-    assert morse.morse_code("wxln-") == ".-- -..- .-.. -. -....-"
+    assert morse.morse_code("wxln-ý") == ".-- -..- .-.. -. -....- -.--"
 
 
 def test_morse_dec0():
