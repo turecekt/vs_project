@@ -85,7 +85,7 @@ def testToWord():
 def main():
     #zde bude nacitani vstupu a vyber zda se bude kodovat nebo dekodovat
     print('Zadej co chces prelozit do morseovky: ')
-    a = imput()
+    a = input()
     a.lower()
     d = toMorse(a)
     print(d)
