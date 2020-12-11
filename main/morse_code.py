@@ -24,7 +24,8 @@ MORSE_CODE_DICT = {'A': '.-', 'B': '-...',
                    '7': '--...', '8': '---..', '9': '----.',
                    '0': '-----', ', ': '--..--', '.': '.-.-.-',
                    '?': '..--..', '/': '-..-.', '-': '-....-',
-                   '(': '-.--.', ')': '-.--.-'}
+                   '(': '-.--.', ')': '-.--.-', '=': '-...-'
+                   , '': ''}
 
 
 def encrypt(message):
@@ -109,7 +110,7 @@ def decrypt(message):
     return decipher_message
 
 
-g = "TBU is great university"
+g = "33 -  10 = 23"
 print(encrypt(g))
 print(decrypt(encrypt(g)))
 
