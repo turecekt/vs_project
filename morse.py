@@ -1,4 +1,4 @@
-"""PrekladacMorzeovejAbeced."""
+"""PrekladacMorzeovejAbecedy."""
 
 morse = {
     'A': '.-', 'B': '-...',
