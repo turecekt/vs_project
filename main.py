@@ -1,62 +1,99 @@
-slovnik = {'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.', 'F': '..-.', 'G': '--.', 'H': '....', 'I': '..',
-           'J': '.---', 'K': '-.-', 'L': '.-..', 'M': '--', 'N': '-.', 'O': '---', 'P': '.--.', 'Q': '--.-', 'R': '.-.',
-           'S': '...', 'T': '-', 'U': '..-', 'V': '...-', 'W': '.--', 'X': '-..-', 'Y': '-.--', 'Z': '--..',
-           '1': '.----', '2': '..---', '3': '...--', '4': '....-', '5': '.....', '6': '-....', '7': '--...',
-           '8': '---..', '9': '----.', '0': '-----', '&': ".-...", "'": ".----.", '@': ".--.-.", ')': "-.--.-",
-           '(': "-.--.", ':': "---...", ',': "--..--", '=': "-...-", '!': "-.-.--", '.': ".-.-.-", '-': "-....-",
-           '+': ".-.-.", '"': ".-..-.", '?': "..--..", '/': "-..-.",
-           }
 
 
+slovnik = {
+    'A': '.-',
+    'B': '-...',
+    'C': '-.-.',
+    'D': '-..',
+    'E': '.',
+    'F': '..-.',
+    'G': '--.',
+    'H': '....',
+    'I': '..',
+    'J': '.---',
+    'K': '-.-',
+    'L': '.-..',
+    'M': '--',
+    'N': '-.',
+    'O': '---',
+    'P': '.--.',
+    'Q': '--.-',
+    'R': '.-.',
+    'S': '...',
+    'T': '-',
+    'U': '..-',
+    'V': '...-',
+    'W': '.--',
+    'X': '-..-',
+    'Y': '-.--',
+    'Z': '--..',
+    '1': '.----',
+    '2': '..---',
+    '3': '...--',
+    '4': '....-',
+    '5': '.....',
+    '6': '-....',
+    '7': '--...',
+    '8': '---..',
+    '9': '----.',
+    '0': '-----',
+    '&': ".-...",
+    "'": ".----.",
+    '@': ".--.-.",
+    ')': "-.--.-",
+    '(': "-.--.",
+    ':': "---...",
+    ',': "--..--",
+    '=': "-...-",
+    '!': "-.-.--",
+    '.': ".-.-.-",
+    '-': "-....-",
+    '+': ".-.-.",
+    '"': ".-..-.",
+    '?': "..--..",
+    '/': "-..-.",
+}
 def sifrovani(text):
-    zasifrovany_text = ""
+    sifrovany_text = ""
     for znak in text:
         if znak != " ":
-            zasifrovany_text = zasifrovany_text + slovnik.get(znak) + " "
+            sifrovany_text = sifrovany_text + slovnik.get(znak) + " "
         else:
-            zasifrovany_text = zasifrovany_text + " "
-    return zasifrovany_text
-
-
-def test_sifrovani():
-    ocekavany_vystup = "- . ... - "
-    assert sifrovani("TEST") == ocekavany_vystup
-
+            sifrovany_text += " "
+    return(sifrovany_text)
 
 
 def desifrovani(text):
-    text = text + " "
-    pismena_list = list(slovnik.keys())
-    znaky_list = list(slovnik.values())
+    text += " "
+    pismeno = list(slovnik.keys())
+    hodnota = list(slovnik.values())
     morse = ""
     desifrovany_text = ""
     for znak in text:
         if znak != " ":
-            morse = morse + znak
-            mezera = 0
+            morse += znak
+            mezery = 0
         else:
-            mezera = mezera + 1
-            if mezera == 2:
-                desifrovany_text = desifrovany_text + " "
+            mezery += 1
+            if mezery == 2:
+                desifrovany_text += " "
             else:
-                desifrovany_text = desifrovany_text + pismena_list[znaky_list.index(morse)]
+                desifrovany_text = desifrovany_text + pismeno[hodnota.index(morse)]
                 morse = ""
-    return desifrovany_text
+    return(desifrovany_text)
 
 
-def main():
-    print("PREKLADAC MORSEOVKY")
-    dotaz = input("\nStiskni '1' pro sifrovani, '2' pro desifrovani: ")
-    if dotaz == '1':
-        text_pro_sifru = input("Vlozte text pro sifrovani: ").upper()
-        vysledek = sifrovani(text_pro_sifru)
-        print(vysledek)
-    else:
-        text_pro_desifru = input("Vlozte text pro desifrovani: ")
-        vysledek = desifrovani(text_pro_desifru)
-        print(vysledek)
+print("\t\tPREKLADAC MORSEOVKY")
+dotaz = input("Stiskni '1' pro sifrovani, '2' pro desifrovani : ")
+if dotaz == '1':
+    text_pro_prevod = input("Vlozte text, ktery chcete sifrovat : ").upper()
+    vysledek = sifrovani(text_pro_prevod)
+    print(vysledek)
+else:
+    text_pro_prevod = input("Vlozte kod, ktery chcete desifrovat : ")
+    vysledek = desifrovani(text_pro_prevod)
+    print(vysledek)
 
-test_sifrovani()
 
-if __name__ == '__main__':
-    main()
+
+
