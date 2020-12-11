@@ -114,17 +114,24 @@ def test_desifrovani():
     test na funkci desifrovani()
     """
     vstup = "- . ... -"
-    vystup = desifrovani(vstup)
     ocekavany_vystup = "TEST"
-    assert vystup == ocekavany_vystup
+    assert desifrovani(vstup) == ocekavany_vystup
 
 # vstup od uzivatele:
+# do prommene TextSifrovani vlozte text
+# do promenne TextDesifrovani vlozte zakodovany text v morseovce
 
 
 TextSifrovani = "Zde vlozte text".upper()
 TextDesifrovani = "- . ... -"
-print(sifrovani(TextSifrovani))
-print(desifrovani(TextDesifrovani))
+
+print("\t\t\t PREKLADAC MORSEOVKY")
+print('SIFROVANI: ')
+print('Vlozili jste: ', TextSifrovani.lower())
+print('Vas text v morseovce: ', sifrovani(TextSifrovani))
+print('DESIFROVANI: ')
+print('Vlozili jste: ', TextDesifrovani)
+print('Vas desifrovany text: ', desifrovani(TextDesifrovani))
 
 test_sifrovani()
 test_desifrovani()
