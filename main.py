@@ -1,4 +1,4 @@
-
+"""PREKLADAC MORSEOVKY."""
 
 slovnik = {
     'A': '.-',
@@ -54,9 +54,16 @@ slovnik = {
     '/': "-..-.",
 }
 
+
 def sifrovani(text):
+    """Funkce sifrovani.
+
+    funkce rozpozna znaky ve vlozenem
+    retezci a kazdemu z nich priradi
+    prislusny znak ze slovniku
+    return: sifrovany text
+    """
     sifrovany_text = ""
-    zasifrovany_text = ""
     for znak in text:
         if znak != " ":
             sifrovany_text = sifrovany_text + slovnik.get(znak) + " "
@@ -66,6 +73,13 @@ def sifrovani(text):
 
 
 def desifrovani(text):
+    """Funkce desifrovani.
+
+    funkce rozpozna vlozeny kod v morseovce
+    a kazdemu z nich priradi prislusny znak
+    ze slovniku
+    return: desifrovany text
+    """
     text += " "
     pismeno = list(slovnik.keys())
     hodnota = list(slovnik.values())
@@ -80,7 +94,7 @@ def desifrovani(text):
             if mezery == 2:
                 desifrovany_text += " "
             else:
-                desifrovany_text = desifrovany_text + pismeno[hodnota.index(morse)]
+                desifrovany_text += pismeno[hodnota.index(morse)]
                 morse = ""
     return(desifrovany_text)
 
@@ -95,5 +109,3 @@ else:
     text_pro_prevod = input("Vlozte kod, ktery chcete desifrovat : ")
     vysledek = desifrovani(text_pro_prevod)
     print(vysledek)
-
-
