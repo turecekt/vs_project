@@ -1,4 +1,6 @@
-"""This is a program for simple mathematical operations with two numbers.
+"""Caclulator program
+This is a program for simple mathematical operations with two numbers.
+
 The operations are addition, subtraction, multiplication and division.
 
 The functions are defined in "calculator".
@@ -40,7 +42,7 @@ while True:
     # Take input from the user.
     choice = int(input("Insert choice |1|2|3|4| -> "))
 
-    # Check the user input. 
+    # Check the user input.
     if choice in (1, 2, 3, 4):
 
         # Get input numbers from the user for the calculation.
