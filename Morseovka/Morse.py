@@ -193,6 +193,9 @@ def dotaz(start):
     [2] Dešifrovat zprávu
     [3] Automatický překlad zprávy (může chybovat)
     [4] Vypsat knihovnu znaků
+
+    >>> dotaz('x')
+    False
     """
     if(start == 'start'):
         # dotaz na akci
