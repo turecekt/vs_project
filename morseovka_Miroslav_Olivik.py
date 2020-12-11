@@ -61,22 +61,21 @@ def Code_To_Text():
 
 print("""\n1 - TEXT KE KODOVÁNÍ \n2 - KÓD K ROZKÓDOVÁNÍ\n3 - KONEC\n""")
 
-if name == "mane": 
+if name == __mane__
+while True:
 
-    while True:
+    vyber = int(input("TVŮJ VÝBĚR: "))
+    if vyber == 1:
+        print(Text_To_Code())
+        break
 
-        vyber = int(input("TVŮJ VÝBĚR: "))
-        if vyber == 1:
-            print(Text_To_Code())
-            break
+     elif vyber == 2:
+        print(Code_To_Text())
+        break
 
-        elif vyber == 2:
-            print(Code_To_Text())
-            break
+     elif vyber == 3:
+        print("UKONČUJI")
+        exit()
 
-        elif vyber == 3:
-           print("UKONČUJI")
-           exit()
-
-        else:
-           print("NESPRÁVNÁ VOLBA, ZVOLTE ZNOVU")
+     else:
+        print("NESPRÁVNÁ VOLBA, ZVOLTE ZNOVU")
