@@ -9,12 +9,7 @@ class romanNum:
 
     # Vytvorime funcki ktera vezme userInp jako vstupni parametr
     def intToRom(self, userInp):
-        """.
-
-        :type userInp: int
-        :param userInp:
-        :return:
-        """
+        """Vezme input a prevede na rimske."""
         # Nadefinujeme si cisla na ktere pak budem odkazovat
         val = [
             1000, 900, 500, 400,
