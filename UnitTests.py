@@ -10,40 +10,46 @@ class Test(unittest.TestCase):
 
     def test_sifrovani(self):
         """Unit test pro sifrovaci funkci."""
-        test = source.sifrovani("test")
-        self.assertEqual(test, "- . ... - ")
+        vstup = source.sifrovani("test")
+        self.assertEqual(vstup, "- . ... - ")
 
     def test_sifrovani_1(self):
         """Unit test pro sifrovaci funkci."""
-        test = source.sifrovani("1, 2, 3, 4")
-        self.assertEqual(test, ".---- --..--  "
-                               "..--- --..--  ...-- --..--  ....- ")
+        vstup = source.sifrovani("1, 2, 3, 4")
+        self.assertEqual(vstup, ".---- --..--  "
+                                "..--- --..--  ...-- --..--  ....- ")
 
     def test_sifrovani_2(self):
         """Unit test pro sifrovaci funkci."""
-        self.assertEqual(source.sifrovani("text s mezerami"),
-                         "- . -..- -  ...  -- . --.. . .-. .- -- .. ")
+        vstup = source.sifrovani("text s mezerami")
+        self.assertEqual(vstup, "- . -..- -  ...  -- . --.. . .-. .- -- .. ")
 
     def test_sifrovani_3(self):
         """Unit test pro sifrovaci funkci."""
-        self.assertEqual(source.sifrovani(",? )( !"),
-                         "--..-- ..--..  -.--.- -.--.  -.-.-- ")
+        vstup = source.sifrovani(",? )( !")
+        self.assertEqual(vstup, "--..-- ..--..  -.--.- -.--.  -.-.-- ")
 
     def test_desifrovani(self):
         """Unit test pro desifrovaci funkci."""
-        self.assertEqual(source.desifrovani("- . ... -"), "TEST")
+        vstup = source.desifrovani("- . ... -")
+        self.assertEqual(vstup, "TEST")
 
     def test_desifrovani_1(self):
         """Unit test pro desifrovaci funkci."""
-        self.assertEqual(source.desifrovani("----- -----  "
-                                            ".----  ..---  ...--  ....-"),
-                         "00 1 2 3 4")
+        vstup = source.desifrovani("----- -----  .----  ..---  ...--  ....-")
+        self.assertEqual(vstup, "00 1 2 3 4")
 
     def test_desifrovani_2(self):
         """Unit test pro desifrovaci funkci."""
-        self.assertEqual(source.desifrovani(".-.-.- --..-- ..--"
-                                            ".. -.-.-- -.--.- -.--. -..-."),
-                         ".,?!)(/")
+        vstup = source.desifrovani(".-.-.- --..-- ..--.. -.-.-- -.--."
+                                   "- -.--. -..-.")
+        self.assertEqual(vstup, ".,?!)(/")
+
+    def test_sifrovani_4(self):
+        """Unit test pro desifrovaci funkci."""
+        vstup = source.sifrovani("TEST VELKYCH PISMEN")
+        self.assertEqual(vstup, "- . ... -  ...- . .-.. -.- "
+                                "-.-- -.-. ....  .--. .. ... -- . -. ")
 
 
 if __name__ == '__main__':
