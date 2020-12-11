@@ -118,7 +118,6 @@ def translation(text, isAlphabet):
     # Kontrola prázdného řetězce
     if modifyText == "":
         return ""
-    
     return morseCodeTranslation(modifyText) if not isAlphabet else alphabetTranslation(modifyText)
 
 
