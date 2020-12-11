@@ -1,3 +1,6 @@
+# Import necessary functions.
+import calculator
+
 """This is a program for simple mathematical operations with two numbers."""
 
 """The operations are addition, subtraction, multiplication and division.
@@ -23,9 +26,6 @@ Insert your second number -> 15
 
 20.0 + 15.0 = 35
 """
-
-# Import necessary functions.
-import calculator
 
 # List the choices for the user.
 print("""
