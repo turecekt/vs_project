@@ -1,4 +1,6 @@
-﻿#Funkce pro převod
+﻿import pytest
+
+#Funkce pro převod
 def prevod(vstup):
 
     # Vytvoření dictionary pro morseovku
