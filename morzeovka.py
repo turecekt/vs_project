@@ -1,3 +1,4 @@
+"""Morse Coder/Decoder."""
 import pytest
 
 
@@ -83,8 +84,8 @@ def GetInput(text):
 
 
 def if1(morseZprava):
-    """
-    Když se vybere možnost 1. spustí se dešifrovací metoda.
+    """Když se vybere možnost 1. spustí se dešifrovací metoda.
+
     >>> if1("- . ... - .----")
     TEST1
     """
@@ -95,6 +96,7 @@ def if1(morseZprava):
 def if2(textZprava):
     """
     Když se vybere možnost 2. spustí se šifrovací metoda.
+
     >>> if2("AUTOBUS")
     .- ..- - --- -... ..- ...
     """
@@ -104,6 +106,7 @@ def if2(textZprava):
 def ifRandom():
     """
     Při výběru jakékoliv jiné možnosti než 1 a 2 vyhodí hlášku.
+
     >>> ifRandom()
     ##########################
     Zadal jste špatnou hodnotu
@@ -116,6 +119,7 @@ def ifRandom():
 
 def multiif():
     """Output při spuštění programu."""
+
     print("#### Morse Translator ####")
     print("1 Dešifrovat")
     print("2 Zašifrovat")
@@ -131,6 +135,7 @@ def multiif():
 
 
 def main():
+    """Metoda main."""
     multiif()
 
 
