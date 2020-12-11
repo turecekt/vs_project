@@ -118,17 +118,13 @@ def test_desifrovani():
     ocekavany_vystup = "TEST"
     assert vystup == ocekavany_vystup
 
+# vstup od uzivatele:
 
-print("\t\tPREKLADAC MORSEOVKY")
-dotaz = input("Stiskni '1' pro sifrovani, '2' pro desifrovani : ")
-if dotaz == '1':
-    text_pro_prevod = input("Vlozte text, ktery chcete sifrovat : ").upper()
-    vysledek = sifrovani(text_pro_prevod)
-    print(vysledek)
-else:
-    text_pro_prevod = input("Vlozte kod, ktery chcete desifrovat : ")
-    vysledek = desifrovani(text_pro_prevod)
-    print(vysledek)
+
+TextSifrovani = "Zde vlozte text".upper()
+TextDesifrovani = "- . ... -"
+print(sifrovani(TextSifrovani))
+print(desifrovani(TextDesifrovani))
 
 test_sifrovani()
 test_desifrovani()
