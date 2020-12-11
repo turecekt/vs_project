@@ -79,6 +79,12 @@ def test_sifrovani():
     """
     ocekavany_vystup = "- . ... - "
     assert sifrovani("test") == ocekavany_vystup
+    assert sifrovani("test s mezerami") == \
+           "- . ... -  ...  -- . --.. . .-. .- -- .. "
+    assert sifrovani("1, 2, 3, 4") == \
+           ".---- --..--  ..--- --..--  ...-- --..--  ....- "
+    assert sifrovani(". , () ? !") == \
+           ".-.-.-  --..--  -.--. -.--.-  ..--..  -.-.-- "
 
 
 def desifrovani(text):
@@ -116,6 +122,13 @@ def test_desifrovani():
     vstup = "- . ... -"
     ocekavany_vystup = "TEST"
     assert desifrovani(vstup) == ocekavany_vystup
+    assert desifrovani("- . ... -  ...  -- . --.. . .-. .- -- ..") == \
+           "test s mezerami".upper()
+    assert desifrovani(".---- --..--  ..--- --..--  ...-- --..--  ....-") \
+           == "1, 2, 3, 4"
+    assert desifrovani(".-.-.-  --..--  -.--. -.--.-  ..--..  -.-.--") == \
+           ". , () ? !"
+
 
 # vstup od uzivatele:
 # do prommene TextSifrovani vlozte text
