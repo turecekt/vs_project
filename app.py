@@ -1,12 +1,5 @@
 """This is a program for simple mathematical operations with two numbers."""
 
-import calculator
-"""Import necessary functions.
-
-Functions:
-(add, subtract, multiply, divide)
-"""
-
 """The operations are addition, subtraction, multiplication and division.
 
 The functions are defined in "calculator".
