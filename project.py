@@ -7,7 +7,6 @@ userInp = int(userInp)
 
 
 class romanNum:
-    
     """Vytvorime class romanNum kde vlozime funckci na preklad."""
 
     def intToRom(self, userInp):
