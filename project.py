@@ -1,4 +1,4 @@
-# Tohle vezme input od uzivatele
+"""Tohle vezme input od uzivatele."""
 userInp = input('Zadejte cele cislo na preklad :')
 # Tohle prevede input od uzivatele na int aby to program mohl zpracovat
 userInp = int(userInp)
@@ -8,11 +8,11 @@ class romanNum:
 
     # Vytvorime funcki ktera vezme userInp jako vstupni parametr
     def intToRom(self, userInp):
-        """
+        """.
 
         :type userInp: int
-        :param userInp: 
-        :return: 
+        :param userInp:
+        :return:
         """
         # Nadefinujeme si cisla na ktere pak budem odkazovat
         val = [
@@ -42,7 +42,6 @@ class romanNum:
 
         # Vratim transNum
         return transNum
-
 
 # Do konzole vypisu prevedenou hodnotu userInp. V kozoli se ukaze hodnota cisla ktere zadal user v rimskych cislicih
 
