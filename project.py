@@ -1,12 +1,19 @@
-userInp = input('Zadejte cele cislo na preklad :')  # Tohle vezme input od uzivatele
-userInp = int(userInp)  # Tohle prevede input od uzivatele na int aby to program mohl zpracovat
+# Tohle vezme input od uzivatele
+userInp = input('Zadejte cele cislo na preklad :')
+# Tohle prevede input od uzivatele na int aby to program mohl zpracovat
+userInp = int(userInp)
 
 
 class romanNum:
 
     # Vytvorime funcki ktera vezme userInp jako vstupni parametr
     def intToRom(self, userInp):
+        """
 
+        :type userInp: int
+        :param userInp: 
+        :return: 
+        """
         # Nadefinujeme si cisla na ktere pak budem odkazovat
         val = [
             1000, 900, 500, 400,
@@ -22,7 +29,9 @@ class romanNum:
             "I"
         ]
         # Vytvorim transNum ktery zatim bude mit value prazdneho stringu
+
         transNum = ''
+
         # While loopem loopnu syb a val, priradim hodnotu k transNum ktera odpovida danemu user inputu (userInp)
         i = 0
         while userInp > 0:
