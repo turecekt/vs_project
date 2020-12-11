@@ -19,22 +19,28 @@ morse = {
     "/": "-..-."
 }
 
+# Funkcia na zakodovanie retazca
+# podla morzeovej abecedy
+
+
 def encrypt(sprava):
-    
+
     zasifruj = ''
     for letter in sprava:
         if letter != ' ':
 
-
+            # Najde v prilusny znak a prida ho
             zasifruj += morse[letter] + ' '
         else:
-           
+            # 1 medzera znamena iny znak
+            # a 2 medzery znamenaju nove slova
             zasifruj += ' '
 
     return zasifruj
 
 
-
+# Funkcia na odkodovanie retazca
+# z morzeovej abecedy
 def decrypt(sprava):
 
     global i
@@ -44,28 +50,28 @@ def decrypt(sprava):
     citext = ''
     for letter in sprava:
 
-  
+        # kontroluje medzery
         if letter != ' ':
 
-        
+            # counter to keep track of space
             i = 0
 
-
+            # u
             citext += letter
 
-
+            # v pripade medzery
         else:
-
+            # if i = 1 novy znak
             i += 1
 
-
+            # if i = 2 nove slovo
             if i == 2:
 
-
+                # pridanie medzery na oddelenie slov
                 odsifruj += ' '
             else:
 
-
+                # odkodovanie
                 odsifruj += \
                     list(morse.keys())[list(morse.values()).index(citext)]
                 citext = ''
@@ -73,6 +79,7 @@ def decrypt(sprava):
     return odsifruj
 
 
+# Funkcia na spustenie programu
 def main():
 
     sprava = input("Zadajte text na zakodovanie:")
@@ -83,5 +90,7 @@ def main():
     result = decrypt(sprava)
     print(result)
 
+
+# Vykona main funkciu
 if __name__ == '__main__':
     main()
