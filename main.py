@@ -72,6 +72,15 @@ def sifrovani(text):
     return(sifrovany_text)
 
 
+def test_sifrovani():
+    """Unit test.
+
+    test na funkci sifrovani()
+    """
+    ocekavany_vystup = "- . ... - "
+    assert sifrovani("TEST") == ocekavany_vystup
+
+
 def desifrovani(text):
     """Funkce desifrovani.
 
@@ -109,3 +118,5 @@ else:
     text_pro_prevod = input("Vlozte kod, ktery chcete desifrovat : ")
     vysledek = desifrovani(text_pro_prevod)
     print(vysledek)
+
+test_sifrovani()
