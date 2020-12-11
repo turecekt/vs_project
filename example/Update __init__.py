@@ -7,7 +7,7 @@ The example module supplies one function: compute(). For example,
 
 
 def compute(x):
-    """Function compute return evaluation of expression using argument x.
+    """Compute return evaluation of expression.
 
     Args:
         - x - Input of the function
