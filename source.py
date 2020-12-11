@@ -1,5 +1,8 @@
-﻿# Vytvoření dictionary pro morseovku
-morseovka = {'1': '.----',
+﻿#Funkce pro převod
+def prevod(vstup):
+
+    # Vytvoření dictionary pro morseovku
+    morseovka = {'1': '.----',
     '2': '..---',
     '3': '...--',
     '4': '....-',
@@ -36,22 +39,27 @@ morseovka = {'1': '.----',
     'Y': '-.--',
     'Z': '--..',
     ' ': ' '}
-    
-# Vytvoření vstupu a následovné převedení vstupu na pole znaků
-vstup = input('Zadejte text pro převod do Morseovky: ').upper()
 
-rozdVstup = list(vstup)
-# Vytvoření cyklu for pro převod zadaných znaků do morseovky
-g = ""    
-for prvek in rozdVstup:
-    if prvek not in morseovka:
-            print('Zadávané znaky můžou být jen písmena bez diakritiky a číslice') # Ošetření podmínek
-            exit()
-    for i in morseovka:
-        if prvek == i:
-            g = g + morseovka[i] + ' '
-        
+    #Převedení textu na velká písmena
+    vstupV = vstup.upper()
 
-print(g) # Výstup      
+    #Převedení textu na pole znaků
+    rozdVstup = list(vstupV)
 
- 
+    # Vytvoření cyklu for pro převod zadaných znaků do morseovky
+    g = ""    
+    for prvek in rozdVstup:
+        if prvek not in morseovka:
+                print('Zadávané znaky můžou být jen písmena bez diakritiky a číslice') # Ošetření podmínek
+                exit()
+        for i in morseovka:
+            if prvek == i:
+                g = g + morseovka[i] + ' '
+
+    return g
+
+#vytvoření vstupu
+vstup = input('Zadejte text pro převod do Morseovky: ')
+
+#výstup
+print(prevod(vstup))
