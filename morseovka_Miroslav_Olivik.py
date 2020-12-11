@@ -1,6 +1,6 @@
 #!/usr/bin/env python 3
 
-"""Jako první věc si msíme definovat abecedu"""
+"""Jako první věc si musíme definovat abecedu"""
 
 
 SLOVNIK_MORSEOVKA = {' ': '/', 'A': '.-',
@@ -32,7 +32,7 @@ SLOVNIK_MORSEOVKA = {' ': '/', 'A': '.-',
 """A string necháme přečíst"""
 
 
-def Text_To_Code():
+def Text_To_Code():"""Funkce - překlad slov do morseovky"""
     text2 = input("Napište slova, která chcete kodovat: ")
     code2 = [SLOVNIK_MORSEOVKA
              [i.upper()] + " "
@@ -46,7 +46,7 @@ def Text_To_Code():
 """Opet nechame udělat string z code a necháme ho vypsat"""
 
 
-def Code_To_Text():
+def Code_To_Text():"""Vytvořené funkce - přeložení morseovky"""
     text1 = input("Napište kod, který chcete dekodovat: ")
     code1 = [k for i in text1.split() for k,
              v in SLOVNIK_MORSEOVKA.items() if i == v]
@@ -61,10 +61,10 @@ def Code_To_Text():
 
 print("""\n1 - TEXT KE KODOVÁNÍ \n2 - KÓD K ROZKÓDOVÁNÍ\n3 - KONEC\n""")
 
-if name == "main":
-  
+if __name__ == '__main__':
+
     while True:
-      
+
         vyber = int(input("TVŮJ VÝBĚR: "))
         if vyber == 1:
             print(Text_To_Code())
