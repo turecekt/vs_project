@@ -63,8 +63,6 @@ print("""\n1 - TEXT KE KODOVÁNÍ \n2 - KÓD K ROZKÓDOVÁNÍ\n3 - KONEC\n""")
 
 if name == "main":
 
-    while True:
-
         vyber = int(input("TVŮJ VÝBĚR: "))
         if vyber == 1:
             print(Text_To_Code())
