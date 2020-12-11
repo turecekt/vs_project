@@ -67,6 +67,12 @@ def test_sifrovani():
     assert sifrovani("TEST") == ocekavany_vystup
 
 
+def test_sifrovani1():
+    vstup = "ahoj".upper()
+    vystup = sifrovani(vstup)
+    ocekavany_vystup = ".- .... --- .--- "
+    assert vystup == ocekavany_vystup
+
 
 def desifrovani(text):
     text = text + " "
@@ -87,8 +93,8 @@ def desifrovani(text):
                 morse = ""
     return desifrovany_text
 
-test_sifrovani()
-"""def main():
+
+def main():
     print("PREKLADAC MORSEOVKY")
     dotaz = input("\nStiskni '1' pro sifrovani, '2' pro desifrovani: ")
     if dotaz == '1':
@@ -101,5 +107,9 @@ test_sifrovani()
         print(vysledek)
 
 
+test_sifrovani()
+test_sifrovani1()
+
+
 if __name__ == '__main__':
-    main()"""
+    main()
