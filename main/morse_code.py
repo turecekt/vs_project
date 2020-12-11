@@ -4,7 +4,7 @@
 VARIABLE KEY
 'cipher' -> 'stores the morse translated form of the english string'
 'decipher' -> 'stores the english translated form of the morse string'
-'citext' -> 'stores morse code of a single character'
+'cipher_char' -> 'stores morse code of a single character'
 'i' -> 'keeps count of the spaces between morse characters'
 'message' -> 'stores the string to be encoded or decoded'
 """
@@ -37,9 +37,9 @@ def encrypt(message):
             - cipher - Encrypted given text
         """
     cipher = ""
-    message2 = str(message).upper()
+    formatted_message = str(message).upper()
 
-    for letter in message2:
+    for letter in formatted_message:
         if letter != " ":
 
             # Looks up the dictionary and adds the
@@ -70,11 +70,12 @@ def decrypt(message):
         """
     # extra space added at the end to access the
     # last morse code
-    global i, message2
+    i = 0
+    decipher_message = ""
     message += " "
 
     decipher = ""
-    citext = ""
+    cipher_char = ""
     for letter in message:
 
         # checks for space
@@ -84,7 +85,7 @@ def decrypt(message):
             i = 0
 
             # storing morse code of a single character
-            citext += letter
+            cipher_char += letter
 
             # in case of space
         else:
@@ -100,15 +101,15 @@ def decrypt(message):
 
                 # accessing the keys using their values (reverse of encryption)
                 decipher += list(MORSE_CODE_DICT.keys())[list(MORSE_CODE_DICT
-                                                              .values()).index(citext)]
-                citext = ""
+                                                              .values()).index(cipher_char)]
+                cipher_char = ""
 
-        message2 = str(decipher).upper()
+        decipher_message = str(decipher).upper()
 
-    return message2
+    return decipher_message
 
 
-g = "UTB je skvela univerzita"
+g = "TBU is great university"
 print(encrypt(g))
 print(decrypt(encrypt(g)))
 
