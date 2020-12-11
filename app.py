@@ -1,7 +1,7 @@
-"""Calculator program.
-This is a program for simple mathematical operations with two numbers.
+"""This is a program for simple mathematical operations with two numbers."""
 
-The operations are addition, subtraction, multiplication and division.
+"""The operations are addition, subtraction, multiplication and division.
+
 The functions are defined in "calculator".
 
 Input is from the console.
