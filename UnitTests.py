@@ -36,13 +36,13 @@ class Test(unittest.TestCase):
     def test_desifrovani_1(self):
         """Unit test pro desifrovaci funkci."""
         self.assertEqual(source.desifrovani("----- -----  "
-                                           ".----  ..---  ...--  ....-"),
+                                            ".----  ..---  ...--  ....-"),
                          "00 1 2 3 4")
 
     def test_desifrovani_2(self):
         """Unit test pro desifrovaci funkci."""
         self.assertEqual(source.desifrovani(".-.-.- --..-- ..--"
-                                           ".. -.-.-- -.--.- -.--. -..-."),
+                                            ".. -.-.-- -.--.- -.--. -..-."),
                          ".,?!)(/")
 
 
