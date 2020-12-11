@@ -37,7 +37,7 @@ class Test(unittest.TestCase):
         prekladac = morse.encrypt("AHOJ SVET ")
         self.assertEqual(prekladac, ".- .... --- .---  ... ...- . -  ")
 
-    def test_vsetko_na_morse(self):
+    def test_mix_na_morse(self):
         """Unit test."""
         prekladac = morse.encrypt("AHOJ 123 SVET")
         self.assertEqual(prekladac, ".- .... --- .---  .---- ..--- ...-- "
