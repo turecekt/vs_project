@@ -16,3 +16,22 @@ def sifrovani(text):
         else:
             zasifrovany_text = zasifrovany_text + " "
     return zasifrovany_text
+
+def desifrovani(text):
+    text = text + " "
+    pismena_list = list(slovnik.keys())
+    znaky_list = list(slovnik.values())
+    morse = ""
+    desifrovany_text = ""
+    for znak in text:
+        if znak != " ":
+            morse = morse + znak
+            mezera = 0
+        else:
+            mezera = mezera + 1
+            if mezera == 2:
+                desifrovany_text = desifrovany_text + " "
+            else:
+                desifrovany_text = desifrovany_text + pismena_list[znaky_list.index(morse)]
+                morse = ""
+    return desifrovany_text
