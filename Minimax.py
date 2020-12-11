@@ -1,8 +1,10 @@
+"""Minimax.py program pro serazeni cisel a vypisu informaci o prvcich."""
 import sys
 import random
 
 
 def main():
+    """Hlavni funkce."""
     vstup = []  # vytvori list vstup
     numbers = []  # vytvori list filtrovany vstup
 
@@ -18,7 +20,8 @@ def main():
     if len(vstup) > 0:
         for x in range(0, len(vstup)):
             if vstup[x].isnumeric():  # zjisti jestli je polozka cislo
-                numbers.append(int(vstup[x]))  # preda polozku jako cislo do promenne
+                numbers.append(int(vstup[x]))
+                # preda polozku jako cislo do promenne
 
     moznostizoradenia(numbers)
     # for y in vstup:  # docasne, vypise cisla
@@ -26,6 +29,7 @@ def main():
 
 
 def readfile():  # funkce precte soubor a rozdeli skupiny znaku do listu
+    """Cteni souboru."""
     file = open("soubor-s-cisly.txt", "r")  # otevre textovy soubor pro cteni
     text = file.read()  # ulozi obsah textoveho souboru do promenne
     output = []  # vytvoří list
@@ -43,6 +47,7 @@ def readfile():  # funkce precte soubor a rozdeli skupiny znaku do listu
 
 
 def randomnumbers():  # funkce vygenereuje 20 nahodnich cisel
+    """Generace cisel."""
     array = []  # vytvori pole
     for x in range(20):  # Cyklus ktorý sa bude opakovať 20 krát
         array.append(random.randint(0, 200))  # Pridanie cisla do pola
@@ -50,22 +55,26 @@ def randomnumbers():  # funkce vygenereuje 20 nahodnich cisel
 
 
 def bubble_sort(pomocna):  # funkce bubble sort
-    for i in range(0, len(pomocna)-1):  # Cyklus ktorý sa bude opakovat pre každý prvek
-        for j in range(0, len(pomocna)-1):  # Cyklus ktorý sa bude opakovat pre každý prvek
-            if pomocna[j] > pomocna[j+1]:  # Porovnani sučasného čisla s nasledujúcim čislem
+    """Bubble_sort."""
+    for i in range(0, len(pomocna)-1):  # Cyklus pre každý prvek
+        for j in range(0, len(pomocna)-1):  # Cyklus pre každý prvek
+            if pomocna[j] > pomocna[j+1]:  # Porovnani čisel
                 a = pomocna[j]  # Priradenie sučasneho čisla do pomocnej
-                pomocna[j] = pomocna[j+1]  # Priradenie sučasneho čísla na nasledujúce čislo
+                pomocna[j] = pomocna[j+1]  # Vymena čisel
                 pomocna[j+1] = a  # Priradenie nasledujúceho čisla na promenu
 
     return pomocna
 
 
 def selection_sort(pole):  # funkce selection sort
-    for i in range(0, len(pole)):  # Cyklus, který se bude opakovat pro každý prvek.
-        mezivypocet = i  # Přiřazení prvního nezařazeného prvku jako mezivýpočet
-        for j in range(i, len(pole)):  # Cyklus, který se bude opakovat pro každý nezařazený prvek.
+    """Selection_sort."""
+    for i in range(0, len(pole)):  # Cyklus pro každý prvek.
+        mezivypocet = i  # Uložení prvního prvku do proměnné
+        for j in range(i, len(pole)):  # Cyklus pro každý nezařazený prvek.
             if pole[mezivypocet] > pole[j]:
-                mezivypocet = j  # Pokud je současný prvek vyšší než mezivýpočet, tak se prvek stává mezivýpočtem
+                mezivypocet = j
+                # Pokud je současný prvek vyšší než mezivýpočet,
+                # tak se prvek stává mezivýpočtem
         mezivypocet2 = pole[i]
         pole[i] = pole[mezivypocet]
         pole[mezivypocet] = mezivypocet2  # Zařazení prvku
@@ -74,26 +83,30 @@ def selection_sort(pole):  # funkce selection sort
 
 
 def quick_sort(pole):
-    for i in range(1, len(pole)):
-        val = pole[i]
-        j = i - 1
-        while j >= 0 and val < pole[j]:
-            pole[j+1] = pole[j]
-            j = j - 1
-        pole[j+1] = val
+    """Quick_sort."""
+    for i in range(1, len(pole)):  # Cyklus pro každý prvek
+        val = pole[i]  # Vložení soucasneho prvku do proměnné
+        j = i - 1  # Uložení indexu o jeden méňe než současný index
+        while j >= 0 and val < pole[j]:  # Prochazi prvky od j po 0/val
+            pole[j+1] = pole[j]  # Vymeni polozku
+            j = j - 1  # Zmensi j
+        pole[j+1] = val  # Zapise val na misto j+1
+
     return pole
 
 
 def moznostizoradenia(cislo):  # funkce moznosti zoradenia
+    """Vyber sortu."""
     print('Moznosti zoradenia:\n '
           '1 - Zoradenie pomocou bubble sort\n '
           '2 - Zoradenie pomocou selection sort\n '
           '3 - Zoradenie pomocou ')  # Vypis moznosti zoradenia
-    klavesa = input('Prosim zadaj moznost zoradenia :\n ')  # Žadosť o zadanie možnosti zoradenia
+    klavesa = input('Prosim zadaj moznost zoradenia :\n ')
+    # Žadosť o zadanie možnosti zoradenia
     if klavesa == '1':  # Načitanie čisla
-        serazeno = bubble_sort(cislo)  # Odkazovanie na funkciu bubble sort
+        serazeno = bubble_sort(cislo)  # Odkaz na funkciu bubble sort
     elif klavesa == '2':  # Načitanie čisla
-        serazeno = selection_sort(cislo)  # Odkazovanie na funkciu selection sort
+        serazeno = selection_sort(cislo)  # Odkazo na funkciu selection sort
     elif klavesa == '3':  # Načitanie čisla
         serazeno = quick_sort(cislo)  # Odkaz na funkci quick sort
     else:  # Ak zadané čislo sa nenachádza v možnostiach
