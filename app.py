@@ -1,5 +1,9 @@
-# Import necessary functions.
 import calculator
+"""Import necessary functions.
+
+Functions:
+(add, subtract, multiply, divide)
+"""
 
 """This is a program for simple mathematical operations with two numbers."""
 
