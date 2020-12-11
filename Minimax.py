@@ -23,9 +23,18 @@ def main():
                 numbers.append(int(vstup[x]))
                 # preda polozku jako cislo do promenne
 
-    moznostizoradenia(numbers)
-    # for y in vstup:  # docasne, vypise cisla
-    #    print(y)
+    roztrizene = moznostizoradenia(numbers)  # vyber tridiciho algoritmu
+    if len(roztrizene) > 0:  # provede jestli existuje vystup
+        print("Vstup: ", end='')
+        for x in numbers:  # napise vstupni cisla
+            print(x, " ", end='')
+        print()
+        print("Nejmensi prvek: ", roztrizene[0])  # napise prvni cislo
+        print("Nejvetsi prvek: ", roztrizene[len(roztrizene)-1])
+        # napise posledni cislo
+        print("Roztrizene cisla: ", end='')
+        for x in roztrizene:  # napise roztrizena cisla
+            print(x, " ", end='')
 
 
 def readfile():  # funkce precte soubor a rozdeli skupiny znaku do listu
@@ -97,23 +106,23 @@ def quick_sort(pole):
 
 def moznostizoradenia(cislo):  # funkce moznosti zoradenia
     """Vyber sortu."""
+    pole = cislo.copy()
     print('Moznosti zoradenia:\n '
           '1 - Zoradenie pomocou bubble sort\n '
           '2 - Zoradenie pomocou selection sort\n '
-          '3 - Zoradenie pomocou ')  # Vypis moznosti zoradenia
+          '3 - Zoradenie pomocou quick sort ')  # Vypis moznosti zoradenia
     klavesa = input('Prosim zadaj moznost zoradenia :\n ')
     # Žadosť o zadanie možnosti zoradenia
     if klavesa == '1':  # Načitanie čisla
-        serazeno = bubble_sort(cislo)  # Odkaz na funkciu bubble sort
+        serazeno = bubble_sort(pole)  # Odkaz na funkciu bubble sort
     elif klavesa == '2':  # Načitanie čisla
-        serazeno = selection_sort(cislo)  # Odkazo na funkciu selection sort
+        serazeno = selection_sort(pole)  # Odkazo na funkciu selection sort
     elif klavesa == '3':  # Načitanie čisla
-        serazeno = quick_sort(cislo)  # Odkaz na funkci quick sort
+        serazeno = quick_sort(pole)  # Odkaz na funkci quick sort
     else:  # Ak zadané čislo sa nenachádza v možnostiach
         print('Zadali ste spatnu hodnotu')  # Vypis chybného hlášenia
         return
-    for i in serazeno:
-        print(i)
+    return serazeno
 
 
 if __name__ == '__main__':  # umoznuje psani funkci pod main
