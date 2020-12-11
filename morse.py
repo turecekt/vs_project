@@ -55,7 +55,7 @@ def decrypt(sprava):
         # kontroluje medzery
         if letter != ' ':
 
-            # counter to keep track of space
+            # pocitadlo na medzery
             i = 0
 
             # u
