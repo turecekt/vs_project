@@ -1,10 +1,3 @@
-import calculator
-"""Import necessary functions.
-
-Functions:
-(add, subtract, multiply, divide)
-"""
-
 """This is a program for simple mathematical operations with two numbers."""
 
 """The operations are addition, subtraction, multiplication and division.
@@ -29,6 +22,13 @@ Insert your first number -> 20
 Insert your second number -> 15
 
 20.0 + 15.0 = 35
+"""
+
+import calculator
+"""Import necessary functions.
+
+Functions:
+(add, subtract, multiply, divide)
 """
 
 # List the choices for the user.
