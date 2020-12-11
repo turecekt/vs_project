@@ -78,7 +78,7 @@ def test_sifrovani():
     test na funkci sifrovani()
     """
     ocekavany_vystup = "- . ... - "
-    assert sifrovani("TEST") == ocekavany_vystup
+    assert sifrovani("test") == ocekavany_vystup
 
 
 def desifrovani(text):
