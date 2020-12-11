@@ -1,7 +1,33 @@
-"""Program for simple mathematical operations.
+"""This is a program for simple mathematical operations with two numbers.
+
+The operations are addition, subtraction, multiplication and division.
+
+The functions are defined in "calculator".
+
+Input is from the console.
+
+Output is from the console.
+
+Example:
+
+Select operation:
+1.Add
+2.Subtract
+3.Multiply
+4.Divide
+
+Insert choice |1|2|3|4| -> 1
+
+Insert your first number -> 20
+Insert your second number -> 15
+
+20.0 + 15.0 = 35
 """
+
+# Import necessary functions.
 import calculator
 
+# List the choices for the user.
 print("""
 Select operation:
 1.Add
@@ -9,28 +35,33 @@ Select operation:
 3.Multiply
 4.Divide
 """)
-"""List the choices for the user.
-"""
+
 while True:
-    choice = input("Enter choice(1/2/3/4): ")
-    """Take input from the user.
 
-    Input are four number, representing a single mathematical operation.
-    """
-    if choice in ('1', '2', '3', '4'):
-        number1 = float(input("Enter first number: "))
-        number2 = float(input("Enter second number: "))
+    # Take input from the user.
+    choice = int(input("Insert choice |1|2|3|4| -> "))
 
-        if choice == '1':
+    # Check the user input.   
+    if choice in (1, 2, 3, 4):
+
+        # Get input numbers from the user for the calculation.
+        number1 = float(input("Insert your first number -> "))
+        number2 = float(input("Insert your second number -> "))
+
+        # Use the add function and print the result.
+        if choice == 1:
             print(number1, "+", number2, "=", calculator.add(number1, number2))
 
-        elif choice == '2':
+        # Use the subtract function and print the result.
+        elif choice == 2:
             print(number1, "-", number2, "=", calculator.subtract(number1, number2))
 
-        elif choice == '3':
+        # Use the multiply function and print the result.
+        elif choice == 3:
             print(number1, "*", number2, "=", calculator.multiply(number1, number2))
 
-        elif choice == '4':
+        # Use the divide function and print the result.
+        elif choice == 4:
             print(number1, "/", number2, "=", calculator.divide(number1, number2))
         break
     else:
