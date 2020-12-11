@@ -108,11 +108,3 @@ def decrypt(message):
         decipher_message = str(decipher).upper()
 
     return decipher_message
-
-
-g = "abcdefghijklmnopqrstuvwxyz"
-print(encrypt(g))
-print(decrypt(encrypt(g)))
-
-if print(encrypt(g)) is print(decrypt(encrypt(g))):
-    print("yes")
