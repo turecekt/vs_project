@@ -6,26 +6,33 @@ Created on Fri Dec 11 00:53:37 2020
 """
 import math
 
-class trojuhelniky():
-    def troj_sss(sA, sB, sC):
-        obvod = sA + sB + sC
-        cosA = (sB ** 2 + sC ** 2 - sA ** 2) / (2 * sB * sC)
-        cosB = (sA ** 2 + sC ** 2 - sB ** 2) / (2 * sA * sC)
-        cosC = (sA ** 2 + sB ** 2 - sC ** 2) / (2 * sA * sC)
-        uA = round(math.degrees(math.acos(cosA)), 2)
-        uB = round(math.degrees(math.acos(cosB)), 2)
-        uC = round(math.degrees(math.acos(cosC)), 2)
-        s = obvod / 2
-        obsah = math.sqrt(s * (s - sA) * (s - sB) * (s - sC))
-        trojuhelnik = {"obsah" : str(obsah) + "cm\u00B2",
-                       "obvod" : str(obvod) + "cm",
-                       "úhel \u03B1" : str(uA) + "°",
-                       "úhel \u03B2" : str(uB) + "°",
-                       "úhel \u03B3" : str(uC) + "°"}
-        return trojuhelnik
+class tris():
+    def __init__(self,sA = 0, sB = 0, sC = 0, uA = 0, uB = 0, uC = 0):
+        self.sA = sA
+        self.sB = sB
+        self.sC = sC
+        self.uA = uA
+        self.uB = uB
+        self.uC = uC
+
+    def troj_sss(self, sA, sB, sC):
+        self.obvod = self.sA + self.sB + self.sC
+        self.cosA = (self.sB ** 2 + self.sC ** 2 - self.sA ** 2) / (2 * self.sB * self.sC)
+        self.cosB = (self.sA ** 2 + self.sC ** 2 - self.sB ** 2) / (2 * self.sA * self.sC)
+        self.cosC = (self.sA ** 2 + self.sB ** 2 - self.sC ** 2) / (2 * self.sA * self.sC)
+        self.uA = round(math.degrees(math.acos(self.cosA)), 2)
+        self.uB = round(math.degrees(math.acos(self.cosB)), 2)
+        self.uC = round(math.degrees(math.acos(self.cosC)), 2)
+        self.s = self.obvod / 2
+        self.obsah = math.sqrt(self.s * (self.s - self.sA) * (self.s - self.sB) * (self.s - self.sC))
+        self.trojuhelnik = {"obsah" : str(self.obsah) + "cm\u00B2",
+                       "obvod" : str(self.obvod) + "cm",
+                       "úhel \u03B1" : str(self.uA) + "°",
+                       "úhel \u03B2" : str(self.uB) + "°",
+                       "úhel \u03B3" : str(self.uC) + "°"}
+        return self.trojuhelnik
 
 
 
-sss = trojuhelniky.troj_sss(3, 4, 5)
-for x, y in sss.items():
-    print("{} – {}".format(x, y))
+sss =tris(3, 4, 10)
+print(sss)
