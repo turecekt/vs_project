@@ -64,8 +64,7 @@ def determinantCalculation(matrixarray):
             if currentIndex - 4 == start:
                 break
         minusSide = minusSide + innerMultiply
-    print(plusSide)
-    print(minusSide)
+
     return plusSide - minusSide
 
 
@@ -89,6 +88,7 @@ def replaceWithRightSides(matrixarray, vector, column):
     Returns:
         determinant of given matrix, a number.
     """
+    #just in case that somebody uses index greater than 2
     column = column % 3
     workingArray = deepcopy(matrixarray)
     workingArray[column] = deepcopy(vector[0])
@@ -96,3 +96,6 @@ def replaceWithRightSides(matrixarray, vector, column):
     workingArray[column + 6] = deepcopy(vector[2])
 
     return workingArray
+
+def convertToMatrixAndVector(fileContent, matrix, vector):
+    return 0
