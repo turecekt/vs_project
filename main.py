@@ -87,8 +87,8 @@ def desifrovani(text):
                 morse = ""
     return desifrovany_text
 
-
-def main():
+test_sifrovani()
+"""def main():
     print("PREKLADAC MORSEOVKY")
     dotaz = input("\nStiskni '1' pro sifrovani, '2' pro desifrovani: ")
     if dotaz == '1':
@@ -100,7 +100,6 @@ def main():
         vysledek = desifrovani(text_pro_desifru)
         print(vysledek)
 
-test_sifrovani()
 
 if __name__ == '__main__':
-    main()
+    main()"""
