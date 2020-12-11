@@ -32,8 +32,11 @@ class romanNum:
 
         transNum = ''
 
-        # While loopem loopnu syb a val, priradim hodnotu k transNum ktera odpovida danemu user inputu (userInp)
+        # While loopem loopnu syb a val, priradim hodnotu k transNum
+        # ktera odpovida danemu user inputu (userInp)
+
         i = 0
+
         while userInp > 0:
             for _ in range(userInp // val[i]):
                 transNum += syb[i]
@@ -43,6 +46,8 @@ class romanNum:
         # Vratim transNum
         return transNum
 
+
 # Do konzole vypisu prevedenou hodnotu userInp. V kozoli se ukaze hodnota cisla ktere zadal user v rimskych cislicih
+
 
 print(romanNum().intToRom(userInp))
