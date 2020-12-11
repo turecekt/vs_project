@@ -129,9 +129,11 @@ def toWord(morseMessage):
     }
     vysledek = ""
     for x in morseMessage:
-        vysledek = Morse.message.split()
+        vysledek = Morse.message.split(" ")
         vysledek += Morseovka.get(x,";")
-
+    if(vysledek.find(";") != -1):
+        vysledek = "chybne zadany vstup"        
+    return vysledek
 
 def testToMorse():
     pass
@@ -148,6 +150,9 @@ def main():
     a.lower()
     d = toMorse(a)
     print(d)
+    b = input("zadej text v morseovce: ")
+    print(toWord(b))
+
 
 
 if __name__ == '__main__':
