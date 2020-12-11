@@ -64,7 +64,7 @@ def sifrovani(text):
     return: sifrovany text
     """
     sifrovany_text = ""
-    for znak in text:
+    for znak in text.upper():
         if znak != " ":
             sifrovany_text = sifrovany_text + slovnik.get(znak) + " "
         else:
