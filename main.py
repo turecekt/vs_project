@@ -75,7 +75,6 @@ def sifrovani(text):
 
 
 def test_sifrovani():
-
     ocekavany_vystup = "- . ... - "
     assert sifrovani("TEST") == ocekavany_vystup
 
@@ -102,17 +101,16 @@ def desifrovani(text):
             if mezera == 2:
                 desifrovany_text = desifrovany_text + " "
             else:
-                desifrovany_text = desifrovany_text \
-                                   + pismena_list[znaky_list.index(morse)]
+                desifrovany_text = desifrovany_text + pismena_list[znaky_list.index(morse)]
                 morse = ""
     return desifrovany_text
 
 
 def main():
     print("PREKLADAC MORSEOVKY")
-    dotaz = input("\nStiskni '1' pro sifrovani, '2' pro desifrovani: ")
+    dotaz = input("\nStiskni '1' pro sifrovani, '2' pro desifrovani: ").upper()
     if dotaz == '1':
-        text_pro_sifru = input("Vlozte text pro sifrovani: ").upper()
+        text_pro_sifru = input("Vlozte text pro sifrovani: ")
         vysledek = sifrovani(text_pro_sifru)
         print(vysledek)
     else:
@@ -121,8 +119,6 @@ def main():
         print(vysledek)
 
 
-test_sifrovani()
-test_sifrovani1()
-
 if __name__ == '__main__':
     main()
+
