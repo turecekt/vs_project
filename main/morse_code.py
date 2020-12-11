@@ -54,9 +54,9 @@ def encrypt(message):
             cipher += " "
 
     # shorten the string of the last char
-    st = str(cipher)
-    st = st[:-1]
-    return st
+    shortened_string = str(cipher)
+    shortened_string = shortened_string[:-1]
+    return shortened_string
 
 
 # Function to decrypt the string from morse to greek alphabet
