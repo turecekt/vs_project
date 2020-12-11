@@ -13,7 +13,23 @@ def test_translation_from_alphabet_to_morse_code_SOS():
     assert main.translation("\"SOS\"", True) == "...---..."
 
 
-def test_translation_from_alphabet_to_morse_code_null():
+def test_translation_from_alphabet_to_morse_code_white_space():
+    assert main.translation("\"  \"", True) == ""
+
+
+def test_white_space_end():
+    assert main.translation("\"--|.-|--| |....|.-..|.-|-..  \"", False) == "mam hlad"
+
+
+def test_white_space_start():
+    assert main.translation("\" -|---| |.---|...|.|--| |.---|.-\"", False) == "to jsem ja"
+
+
+def test_white_space_start_end():
+    assert main.translation("\"  .-..|.-|...-|..|-.-.|.| |.-| |-|.-|-...|..-|.-..|.   \"", False) == "lavice a tabule"
+
+
+def test_null():
     assert main.translation(None, True) == ""
 
 
@@ -21,12 +37,12 @@ def test_translation_from_alphabet_to_morse_code_empty_string():
     assert main.translation("", True) == ""
 
 
-def test_translation_from_morse_code_to_alphabet_null():
-    assert main.translation(None, False) == ""
-
-
 def test_translation_from_morse_code_to_alphabet_empty_string():
     assert main.translation("", False) == ""
+
+
+def test_translation_from_morse_code_to_alphabet_white_space():
+    assert main.translation("\"   \"", False) == ""
 
 
 def test_translation_from_morse_code_to_alphabet_SOS():
@@ -39,4 +55,4 @@ def test_translation_from_morse_code_to_alphabet():
 
 
 def test_translation_from_morse_code_to_alphabet_autobus():
-    assert main.translation("\".-|..-|-|---|-...|..-|...\"", True) == "autobus"
+    assert main.translation("\".-|..-|-|---|-...|..-|...\"", False) == "autobus"
