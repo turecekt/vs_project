@@ -45,7 +45,7 @@ def toMorse(message):
         "7": "--...",
         "8": "---..",
         "9": "----.",
-        # Specialni znaky
+        # Specialniznaky
         "&": ".-...",
         "'": ".----.",
         "@": ".--.-.",
@@ -62,6 +62,11 @@ def toMorse(message):
         "?": "..--..",
         "/": "-..-.",
     }
+    vysledek = ""
+    for c in message:
+        vysledek += Morseovka[c] + " "
+    return vysledek
+
 
 def toWord(morseMessage):
     pass
@@ -74,7 +79,11 @@ def testToWord():
 
 def main():
     #zde bude nacitani vstupu a vyber zda se bude kodovat nebo dekodovat
-    pass
+    a = "ahoj"
+    d = toMorse(a)
+
+    print(d)
+
 
 if __name__ == '__main__':
     main()
