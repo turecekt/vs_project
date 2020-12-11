@@ -1,0 +1,8 @@
+# Visual Studio
+.vs
+*.sln
+*.pyproj
+*.user
+
+# Auto-generated
+__pycache__
