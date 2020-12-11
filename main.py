@@ -1,4 +1,3 @@
-
 slovnik = {'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.', 'F': '..-.', 'G': '--.', 'H': '....', 'I': '..',
            'J': '.---', 'K': '-.-', 'L': '.-..', 'M': '--', 'N': '-.', 'O': '---', 'P': '.--.', 'Q': '--.-', 'R': '.-.',
            'S': '...', 'T': '-', 'U': '..-', 'V': '...-', 'W': '.--', 'X': '-..-', 'Y': '-.--', 'Z': '--..',
@@ -8,6 +7,7 @@ slovnik = {'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.', 'F': '..-.
            '+': ".-.-.", '"': ".-..-.", '?': "..--..", '/': "-..-.",
            }
 
+
 def sifrovani(text):
     zasifrovany_text = ""
     for znak in text:
@@ -16,6 +16,7 @@ def sifrovani(text):
         else:
             zasifrovany_text = zasifrovany_text + " "
     return zasifrovany_text
+
 
 def desifrovani(text):
     text = text + " "
@@ -35,3 +36,20 @@ def desifrovani(text):
                 desifrovany_text = desifrovany_text + pismena_list[znaky_list.index(morse)]
                 morse = ""
     return desifrovany_text
+
+
+def main():
+    print("PREKLADAC MORSEOVKY")
+    dotaz = input("\nStiskni '1' pro sifrovani, '2' pro desifrovani: ")
+    if dotaz == '1':
+        text_pro_sifru = input("Vlozte text pro sifrovani: ").upper()
+        vysledek = sifrovani(text_pro_sifru)
+        print(vysledek)
+    else:
+        text_pro_desifru = input("Vlozte text pro desifrovani: ")
+        vysledek = desifrovani(text_pro_desifru)
+        print(vysledek)
+
+
+if __name__ == '__main__':
+    main()
