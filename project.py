@@ -7,6 +7,7 @@ userInp = int(userInp)
 
 
 class romanNum:
+    
     """Vytvorime class romanNum kde vlozime funckci na preklad."""
 
     def intToRom(self, userInp):
@@ -41,7 +42,8 @@ class romanNum:
             i += 1
         # Vratim transNum
         return transNum
+
+
 # Do konzole vypisu prevedenou hodnotu userInp.
 # V kozoli se ukaze hodnota cisla ktere zadal user v rimskych cislicih
 print(romanNum().intToRom(userInp))
-
