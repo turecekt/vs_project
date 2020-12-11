@@ -7,6 +7,7 @@
     <list default="true" id="9a5c72ca-e56d-422c-a641-ae326917bf29" name="Default Changelist" comment="init commit of MorseCode.py">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/morse_code.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/morse_code.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/test_morse_code.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/test_morse_code.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +48,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.externalTools" />
   </component>
   <component name="RunManager" selected="Python.morse_code">
     <configuration name="__init__ (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">

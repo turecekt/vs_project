@@ -101,8 +101,9 @@ def decrypt(message):
             else:
 
                 # accessing the keys using their values (reverse of encryption)
-                decipher += list(MORSE_CODE_DICT.keys())[list(MORSE_CODE_DICT
-                                                              .values()).index(cipher_char)]
+                decipher += list(MORSE_CODE_DICT
+                                 .keys())[list(MORSE_CODE_DICT
+                                               .values()).index(cipher_char)]
                 cipher_char = ""
 
         decipher_message = str(decipher).upper()
