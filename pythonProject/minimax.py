@@ -1,6 +1,6 @@
 """MinMax Projekt AP1VS.
 
-Závěrečný zápočtový projekt MinMax v Pythonu Tomáš Uhřík
+Závěrečný zápočtový projekt MiniMax v Pythonu Tomáš Uhřík
 """
 import random
 import sys
