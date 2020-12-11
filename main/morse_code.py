@@ -38,7 +38,7 @@ def encrypt(message):
 
         Returns:
             - cipher - Encrypted given text
-        """
+    """
     cipher = ""
     formatted_message = str(message).upper()
 
@@ -72,7 +72,7 @@ def decrypt(message):
 
         Returns:
             - decipher - Decrypted text
-        """
+    """
     # extra space added at the end to access the
     # last morse code
     i = 0
