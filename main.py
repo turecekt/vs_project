@@ -18,6 +18,12 @@ def sifrovani(text):
     return zasifrovany_text
 
 
+def test_sifrovani():
+    ocekavany_vystup = "- . ... - "
+    assert sifrovani("TEST") == ocekavany_vystup
+
+
+
 def desifrovani(text):
     text = text + " "
     pismena_list = list(slovnik.keys())
@@ -50,6 +56,7 @@ def main():
         vysledek = desifrovani(text_pro_desifru)
         print(vysledek)
 
+test_sifrovani()
 
 if __name__ == '__main__':
     main()
