@@ -72,21 +72,6 @@ def sifrovani(text):
     return(sifrovany_text)
 
 
-def test_sifrovani():
-    """Unit test.
-
-    test na funkci sifrovani()
-    """
-    ocekavany_vystup = "- . ... - "
-    assert sifrovani("test") == ocekavany_vystup
-    assert sifrovani("test s mezerami") == \
-           "- . ... -  ...  -- . --.. . .-. .- -- .. "
-    assert sifrovani("1, 2, 3, 4") == \
-           ".---- --..--  ..--- --..--  ...-- --..--  ....- "
-    assert sifrovani(". , () ? !") == \
-           ".-.-.-  --..--  -.--. -.--.-  ..--..  -.-.-- "
-
-
 def desifrovani(text):
     """Funkce desifrovani.
 
@@ -114,37 +99,24 @@ def desifrovani(text):
     return(desifrovany_text)
 
 
-def test_desifrovani():
-    """Unit test.
-
-    test na funkci desifrovani()
-    """
-    vstup = "- . ... -"
-    ocekavany_vystup = "TEST"
-    assert desifrovani(vstup) == ocekavany_vystup
-    assert desifrovani("- . ... -  ...  -- . --.. . .-. .- -- ..") == \
-           "test s mezerami".upper()
-    assert desifrovani(".---- --..--  ..--- --..--  ...-- --..--  ....-") \
-           == "1, 2, 3, 4"
-    assert desifrovani(".-.-.-  --..--  -.--. -.--.-  ..--..  -.-.--") == \
-           ". , () ? !"
-
-
 # vstup od uzivatele:
-# do prommene TextSifrovani vlozte text
-# do promenne TextDesifrovani vlozte zakodovany text v morseovce
 
 
-TextSifrovani = "Zde vlozte text".upper()
-TextDesifrovani = "- . ... -"
+def main():
+    """Funkce na spousteni programu.
 
-print("\t\t\t PREKLADAC MORSEOVKY")
-print('SIFROVANI: ')
-print('Vlozili jste: ', TextSifrovani.lower())
-print('Vas text v morseovce: ', sifrovani(TextSifrovani))
-print('DESIFROVANI: ')
-print('Vlozili jste: ', TextDesifrovani)
-print('Vas desifrovany text: ', desifrovani(TextDesifrovani))
+    uzivatel zada textovy retezec
+    vypise prelozene textove retezce
+    """
+    print("\n\t\t PREKLADAC MORSEOVKY")
+    text = input("Vlozte text k sifrovani:")
+    vysledek = sifrovani(text.upper())
+    print(vysledek)
 
-test_sifrovani()
-test_desifrovani()
+    text = input("Vlozte kod k desifrovani:")
+    vysledek = desifrovani(text)
+    print(vysledek)
+
+
+if __name__ == '__main__':
+    main()
