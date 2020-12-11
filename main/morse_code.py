@@ -1,8 +1,7 @@
 # Python program to implement Morse Code Translator
 
-"""
+"""VARIABLE KEY.
 
-VARIABLE KEY.
 'cipher' -> 'stores the morse translated form of the english string'
 'decipher' -> 'stores the english translated form of the morse string'
 'cipher_char' -> 'stores morse code of a single character'
