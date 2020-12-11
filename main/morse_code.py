@@ -29,7 +29,9 @@ MORSE_CODE_DICT = {'A': '.-', 'B': '-...',
 
 
 def encrypt(message):
-    """Function encrypt() encrypts given text into Morse Code.
+    """Encrypting method.
+
+    Function encrypt() encrypts given text into Morse Code.
 
         Args:
             - message - Given text to encrypt
@@ -61,7 +63,9 @@ def encrypt(message):
 
 # Function to decrypt the string from morse to greek alphabet
 def decrypt(message):
-    """Function decrypt() decrypts given text from Morse Code into greek alphabet.
+    """Decrypting method.
+
+    Function decrypt() decrypts given text from Morse Code into greek alphabet.
 
         Args:
             - message - Given text to decrypt
