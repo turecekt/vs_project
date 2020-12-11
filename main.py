@@ -15,36 +15,56 @@ class tris():
         self.uB = uB
         self.uC = uC
 
+
         if self.sA > 0 and self.sB > 0 and self.sC > 0:
-            self.tris_sss()
+            self.result = self.tris_sss()
+
+    def __str__(self):
+
+        if isinstance(self.result, dict):
+            out = ""
+            for x, y in self.result.items():
+                out += "{} – {}\n".format(x, y)
+        else:
+            out = str(self.result)
+        return out
+
 
     def is_tris(self):
-        if self.sA + self.sB > self.sC and self.sA + self.sC > self.sB and self.sB + self.sC > self.sA:
+        sA = self.sA
+        sB = self.sB
+        sC = self.sC
+        if sA + sB > sC and sA + sC > sB and sB + sC > sA:
             return True
         else:
             return False
 
     def tris_sss(self):
         if self.is_tris():
-            self.obvod = self.sA + self.sB + self.sC
-            self.cosA = (self.sB ** 2 + self.sC ** 2 - self.sA ** 2) / (2 * self.sB * self.sC)
-            self.cosB = (self.sA ** 2 + self.sC ** 2 - self.sB ** 2) / (2 * self.sA * self.sC)
-            self.cosC = (self.sA ** 2 + self.sB ** 2 - self.sC ** 2) / (2 * self.sA * self.sC)
-            self.uA = round(math.degrees(math.acos(self.cosA)), 2)
-            self.uB = round(math.degrees(math.acos(self.cosB)), 2)
-            self.uC = round(math.degrees(math.acos(self.cosC)), 2)
-            self.s = self.obvod / 2
-            self.obsah = math.sqrt(self.s * (self.s - self.sA) * (self.s - self.sB) * (self.s - self.sC))
-            self.trojuhelnik = {"obsah" : str(self.obsah) + "cm\u00B2",
-                           "obvod" : str(self.obvod) + "cm",
-                           "úhel \u03B1" : str(self.uA) + "°",
-                           "úhel \u03B2" : str(self.uB) + "°",
-                           "úhel \u03B3" : str(self.uC) + "°"}
-            return self.trojuhelnik
+            sA = self.sA
+            sB = self.sB
+            sC = self.sC
+            obvod = sA + sB + sC
+            s = obvod / 2
+            obsah = math.sqrt(s * (s - sA) * (s - sB) * (s - sC))
+            cosA = (sB ** 2 + sC ** 2 - sA ** 2) / (2 * sB * sC)
+            cosB = (sA ** 2 + sC ** 2 - sB ** 2) / (2 * sA * sC)
+            cosC = (sA ** 2 + sB ** 2 - sC ** 2) / (2 * sA * sC)
+            uA = round(math.degrees(math.acos(cosA)), 2)
+            uB = round(math.degrees(math.acos(cosB)), 2)
+            uC = round(math.degrees(math.acos(cosC)), 2)
+            obsah = round(obsah, 2)
+
+            return {"obsah" : str(obsah) + "cm\u00B2",
+                    "obvod" : str(obvod) + "cm",
+                    "úhel \u03B1" : str(uA) + "°",
+                    "úhel \u03B2" : str(uB) + "°",
+                    "úhel \u03B3" : str(uC) + "°"}
+
         else:
-            return "Nejedná se o trojúhelník"
+            return "Nejedná se o trojúhelník. Součet dvou stran musí být větší než stranatřetí."
 
 
 
-sss =tris(3, 4, 15)
-print(str(sss))
+sss =tris(3, 3, 3)
+print(sss)
