@@ -1,5 +1,4 @@
 """This is a program for simple mathematical operations with two numbers.
-
 The operations are addition, subtraction, multiplication and division.
 
 The functions are defined in "calculator".
@@ -41,28 +40,28 @@ while True:
     # Take input from the user.
     choice = int(input("Insert choice |1|2|3|4| -> "))
 
-    # Check the user input.   
+    # Check the user input. 
     if choice in (1, 2, 3, 4):
 
         # Get input numbers from the user for the calculation.
-        number1 = float(input("Insert your first number -> "))
-        number2 = float(input("Insert your second number -> "))
+        n1 = float(input("Insert your first number -> "))
+        n2 = float(input("Insert your second number -> "))
 
         # Use the add function and print the result.
         if choice == 1:
-            print(number1, "+", number2, "=", calculator.add(number1, number2))
+            print(n1, "+", n2, "=", calculator.add(n1, n2))
 
         # Use the subtract function and print the result.
         elif choice == 2:
-            print(number1, "-", number2, "=", calculator.subtract(number1, number2))
+            print(n1, "-", n2, "=", calculator.subtract(n1, n2))
 
         # Use the multiply function and print the result.
         elif choice == 3:
-            print(number1, "*", number2, "=", calculator.multiply(number1, number2))
+            print(n1, "*", n2, "=", calculator.multiply(n1, n2))
 
         # Use the divide function and print the result.
         elif choice == 4:
-            print(number1, "/", number2, "=", calculator.divide(number1, number2))
+            print(n1, "/", n2, "=", calculator.divide(n1, n2))
         break
     else:
         print("Invalid Input! Input must be one of these numbers: 1,2,3,4.")
