@@ -119,7 +119,6 @@ def ifRandom():
 
 def multiif():
     """Output při spuštění programu."""
-
     print("#### Morse Translator ####")
     print("1 Dešifrovat")
     print("2 Zašifrovat")
