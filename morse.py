@@ -1,3 +1,5 @@
+"""PrekladacMorzeovejAbeced."""
+
 morse = {
     'A': '.-', 'B': '-...',
     'C': '-.-.', 'D': '-..', 'E': '.',
@@ -24,7 +26,7 @@ morse = {
 
 
 def encrypt(sprava):
-
+    """Funkcia na zakodovanie retazca podla morzeovej abecedy."""
     zasifruj = ''
     for letter in sprava:
         if letter != ' ':
@@ -42,7 +44,7 @@ def encrypt(sprava):
 # Funkcia na odkodovanie retazca
 # z morzeovej abecedy
 def decrypt(sprava):
-
+    """Funkcia na odkodovanie retazca z morzeovej abecedy."""
     global i
     sprava += ' '
 
@@ -81,7 +83,7 @@ def decrypt(sprava):
 
 # Funkcia na spustenie programu
 def main():
-
+    """Funkcia na spustenie programu."""
     sprava = input("Zadajte text na zakodovanie:")
     result = encrypt(sprava.upper())
     print(result)
