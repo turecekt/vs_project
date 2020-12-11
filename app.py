@@ -1,4 +1,4 @@
-"""Caclulator program
+"""
 This is a program for simple mathematical operations with two numbers.
 
 The operations are addition, subtraction, multiplication and division.
