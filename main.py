@@ -1,4 +1,4 @@
-"""Prekladac morseovky."""
+"""Prekladac morseovky.g"""
 
 slovnik = {
     """pismena"""
