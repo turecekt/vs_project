@@ -1,9 +1,12 @@
+"""These are unit tests for the main functions of the "calclulator".
+"""
 import unittest
 import calculator
 
 
 class TestCalculator(unittest.TestCase):
-
+"""Class for unit testing the functions.
+"""
     def test_add(self):
         """Test the add function.
 
