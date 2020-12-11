@@ -28,7 +28,7 @@ MORSE_CODE_DICT = {'A': '.-', 'B': '-...',
 
 
 def encrypt(message):
-    """Function encrypt() encrypt given text into Morse Code.
+    """Function encrypt() encrypts given text into Morse Code.
 
         Args:
             - message - Given text to encrypt
@@ -43,7 +43,7 @@ def encrypt(message):
         if letter != " ":
 
             # Looks up the dictionary and adds the
-            # correspponding morse code
+            # corresponding morse code
             # along with a space to separate
             # morse codes for different characters
             cipher += MORSE_CODE_DICT[letter] + ' '
