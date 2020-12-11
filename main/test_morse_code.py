@@ -7,7 +7,6 @@ def test_encrypt():
     assert morse_code.encrypt('33 -  10 = 23') == '...-- ...--  -....-   .---- -----  -...-  ..--- ...--'
     assert morse_code.encrypt('/+-: .    .') == '-..-. .-.-. -....- ---...  .-.-.-     .-.-.-'
     assert morse_code.encrypt('1234567890') == '.---- ..--- ...-- ....- ..... -.... --... ---.. ----. -----'
-    assert morse_code.encrypt('abcdefghijklmnopqrstuvwxyz') == '.- -... -.-. -.. . ..-. --. .... .. .--- -.- .-.. -- -. --- .--. --.- .-. ... - ..- ...- .-- -..- -.-- --..'
     assert morse_code.encrypt('This project was created for educational purposes. I am testing longer string to see '
                               'multiple lines of output. ') == '- .... .. ...  .--. .-. --- .--- . -.-. -  .-- .- ... '\
                                                                ' -.-. .-. . .- - . -..  ..-. --- .-.  . -.. ..- -.-. '\
@@ -19,6 +18,8 @@ def test_encrypt():
 
 
 def test_decrypt():
-    assert morse_code.decrypt('.- -- -... .. - .. --- ..- ...') == 'AMBITIOUS'
-    assert morse_code.decrypt('..- - -...  .--- .  ... -.- ...- . .-.. .-  ..- -. .. ...- . .-. --.. .. - .-') \
-           == 'UTB JE SKVELA UNIVERZITA'
+    assert morse_code.decrypt('- -... ..-  .. ...  --. .-. . .- -  ..- -. .. ...- . .-. ... .. - -.-- .-.-.-') \
+           == 'TBU IS GREAT UNIVERSITY.'
+    assert morse_code.decrypt('...-- ...--  -....-   .---- -----  -...-  ..--- ...--') == '33 - 10 = 23'
+    assert morse_code.decrypt('-..-. .-.-. -....- ---...  .-.-.-     .-.-.-') == '/+-: . .'
+    assert morse_code.decrypt('.---- ..--- ...-- ....- ..... -.... --... ---.. ----. -----') == '1234567890'
