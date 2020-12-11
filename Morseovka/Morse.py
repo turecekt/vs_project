@@ -252,7 +252,7 @@ def odpoved(dotaz):
     ) = -.--.-
     / = -..-.
     - = -....-
-    
+
     >>> odpoved('5')
     Neplatná hodnota
     """
