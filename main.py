@@ -15,6 +15,9 @@ class tris():
         self.uB = uB
         self.uC = uC
 
+        if self.sA > 0 and self.sB > 0 and self.sC > 0:
+            self.troj_sss(self.sA, self.sB, self.sC)
+
     def troj_sss(self, sA, sB, sC):
         self.obvod = self.sA + self.sB + self.sC
         self.cosA = (self.sB ** 2 + self.sC ** 2 - self.sA ** 2) / (2 * self.sB * self.sC)
@@ -34,5 +37,5 @@ class tris():
 
 
 
-sss =tris(3, 4, 10)
+sss =tris(3, 4, 5)
 print(sss)
