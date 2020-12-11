@@ -61,7 +61,8 @@ def Code_To_Text():
 
 print("""\n1 - TEXT KE KODOVÁNÍ \n2 - KÓD K ROZKÓDOVÁNÍ\n3 - KONEC\n""")
 
-if name == __mane__
+if name == "main"
+
 while True:
 
     vyber = int(input("TVŮJ VÝBĚR: "))
