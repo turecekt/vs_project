@@ -64,24 +64,30 @@ def toMorse(message):
     }
     vysledek = ""
     for c in message:
-        vysledek += Morseovka[c] + " "
+        vysledek += Morseovka.get(c,";") + " "
+    if(vysledek.find(";") != -1):
+        vysledek = "chybne zadany vstup"        
     return vysledek
 
 
 def toWord(morseMessage):
     pass
 
+
 def testToMorse():
     pass
+
 
 def testToWord():
     pass
 
+
 def main():
     #zde bude nacitani vstupu a vyber zda se bude kodovat nebo dekodovat
-    a = "ahoj"
+    print('Zadej co chces prelozit do morseovky: ')
+    a = imput()
+    a.lower()
     d = toMorse(a)
-
     print(d)
 
 
