@@ -27,15 +27,18 @@ class Minesweeper:
             cols: number of cols.
             count_of_mines: count of mines.
         """
-        # Count of rows of the playground, +2 means # for each side of the playground
+        # Count of rows of the playground,
+        # +2 means # for each side of the playground
         self.rows = rows + 2
-        # count of cols of the playground, +2 means # for each side of the playground
+        # count of cols of the playground,
+        # +2 means # for each side of the playground
         self.cols = cols + 2
         # count of mines which should be in the playground
         self.count_of_mines = count_of_mines
         # playground which is full of #
         self.playground = [["#"] * self.cols for row in range(self.rows)]
-        # full playground with EMPTY constant, from 1 to rows/cols - 1, which means borders of the playground
+        # full playground with EMPTY constant,
+        # from 1 to rows/cols - 1, which means borders of the playground
         for i in range(1, self.rows - 1):
             for j in range(1, self.cols - 1):
                 self.playground[i][j] = EMPTY
@@ -72,16 +75,21 @@ def put_mines_to_playground(minesweeper):
         output: nothing, this function randomly put mines to the playground
         * represents mine
     """
-    bombs_array = create_array_with_mines(minesweeper.rows - 2, minesweeper.cols - 2, minesweeper.count_of_mines)
+    bombs_array = create_array_with_mines(minesweeper.rows - 2,
+                                          minesweeper.cols - 2,
+                                          minesweeper.count_of_mines)
 
     for i in range(1, minesweeper.rows - 1):
         for j in range(1, minesweeper.cols - 1):
             bombs_array_i = i - 1
             bombs_array_j = j - 1
-            minesweeper.playground[i][j] = bombs_array[bombs_array_i][bombs_array_j]
+            minesweeper.playground[i][j] =\
+                bombs_array[bombs_array_i][bombs_array_j]
 
 
-def check_neighbours_of_cell(minesweeper, index_of_row, index_of_col, number_of_near_mines):
+def check_neighbours_of_cell(minesweeper,
+                             index_of_row, index_of_col,
+                             number_of_near_mines):
     """
         input:  minesweeper
                 index_of_row is current index of row
@@ -91,7 +99,8 @@ def check_neighbours_of_cell(minesweeper, index_of_row, index_of_col, number_of_
     """
     for i in range(-1, 2):
         for j in range(-1, 2):
-            if minesweeper.playground[index_of_row + i][index_of_col + j] == MINE:
+            if minesweeper.playground[index_of_row + i][index_of_col + j] ==\
+                    MINE:
                 # increase number_of_near_mines if the cell touches mine
                 number_of_near_mines += 1
     return number_of_near_mines
@@ -102,13 +111,17 @@ def put_numbers_to_playground(minesweeper):
         input:  minesweeper
         output: nothing, this function put numbers that represent the number of mines that this cell touches
     """
-    # from 1 to rows/columns - 1 because we do not want to change borders from #
+    # from 1 to rows/columns - 1
+    # because we do not want to change borders from #
     for i in range(1, minesweeper.rows - 1):
         for j in range(1, minesweeper.cols - 1):
             # cell does not include mine
             if minesweeper.playground[i][j] == EMPTY:
-                number_of_near_mines = check_neighbours_of_cell(minesweeper, i, j, 0)
-                # if number of near mines is not 0, put the number to the playground, we do not want to have 0
+                number_of_near_mines =\
+                    check_neighbours_of_cell(minesweeper, i, j, 0)
+                # if number of near mines is not 0,
+                # put the number to the playground,
+                # we do not want to have 0
                 if number_of_near_mines != 0:
                     minesweeper.playground[i][j] = number_of_near_mines
 

@@ -49,11 +49,13 @@ class TestCheckNeighboursOfCell(TestCase):
                                        ['#', '#', '#', '#', '#']]
 
     def test_check_neighbours_of_cell_1(self):
-        number_of_neighbours = minesweeper_generator.check_neighbours_of_cell(self.minesweeper, 1, 2, 0)
+        number_of_neighbours = minesweeper_generator\
+                .check_neighbours_of_cell(self.minesweeper, 1, 2, 0)
         self.assertEqual(number_of_neighbours, 4)
 
     def test_check_neighbours_of_cell_2(self):
-        number_of_neighbours = minesweeper_generator.check_neighbours_of_cell(self.minesweeper, 3, 3, 0)
+        number_of_neighbours = minesweeper_generator\
+            .check_neighbours_of_cell(self.minesweeper, 3, 3, 0)
         self.assertEqual(number_of_neighbours, 3)
 
 
