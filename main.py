@@ -45,4 +45,6 @@ def int_to_roman(number):
 
 unconverted = int(input("Enter a number to be converted: "))
 
-print(int_to_roman(unconverted))
+converted = int_to_roman(unconverted)
+
+print(converted)
