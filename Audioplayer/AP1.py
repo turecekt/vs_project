@@ -6,7 +6,20 @@ import os
 
 class MusicPlayer:
     # Definovani Konstruktoru
-    
+    def __init__(self, root):
+        self.root = root
+        # Nazev okna
+        self.root.title("Music Player")
+        # Geometrie okna
+        self.root.geometry("1000x200+200+200")
+        # Zahajeni PyGame
+        pygame.init()
+        # Zahajeni PyGame Mixer
+        pygame.mixer.init()
+        # Deklarace promenne hudby
+        self.track = StringVar()
+        # Deklarace stavu promenne
+        self.status = StringVar()
 
         # Vytvoreni ramecku hudby pro label hudby a stavovy label
         trackframe = LabelFrame(self.root, text="Song Track", font=("times new roman", 15, "bold"), bg="grey",
