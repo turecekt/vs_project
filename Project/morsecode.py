@@ -59,7 +59,7 @@ Characters = {"A": ".-",
 
 
 def encode_morse(message):
-    """Functon encode_morse returns encoded_message in morse code.
+    """Function encode_morse returns encoded_message in morse code.
 
     Args:
         - message - Input of the function, string in quotation marks
@@ -80,7 +80,7 @@ def encode_morse(message):
 
 
 def decode_morse(message):
-    """Functon decode_morse returns decoded_message in alphabet.
+    """Function decode_morse returns decoded_message in alphabet.
 
     Args:
         - message - Input of the function, string in quotation marks
@@ -113,7 +113,7 @@ def decode_morse(message):
 
 
 def continue_program():
-    """Function continue_program asks user for input to continue/quit."""
+    """Function continue_program asks user for input."""
     print("If you want to translate another message press 1.")
     print("If you want to close the program press 2.")
     x = input()
