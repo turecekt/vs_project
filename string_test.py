@@ -1,35 +1,35 @@
-"""unittestování k morseove abecede."""
+"""Unittestování k morseove abecede."""
 import unittest
 
 
-"""unit testy pro morseovku a jeji stringove fce."""
-"""vytvoření testovací třídy class."""
+"""Unit testy pro morseovku a jeji stringove fce."""
+"""Vytvoření testovací třídy class."""
 
 
-class TestStringMethods(unittest.TestCase):
-    """vytvoření třídy."""
+class Tests(unittest.TestCase):
+    """Vytvoření třídy."""
 
 
-def test_upper(self): """test na fce zvětšení písmena."""
+    def test_upper(self): """Test na fce zvětšení písmena."""
 
 
-self.assertEqual("abc".upper(), "ABC")
+    self.assertEqual("abc".upper(), "ABC")
 
 
-def test_isupper(self): """testování fce zvětšení písmena."""
+    def test_isupper(self): """Testování fce zvětšení písmena."""
 
 
-self.assertTrue("ABC".isupper())
-elf.assertFalse("Abc".isupper())
+    self.assertTrue("ABC".isupper())
+    self.assertFalse("Abc".isupper())
 
 
-def test_split(self): """testování fce split."""
+    def test_split(self): """Testování fce split."""
 
 
-s = "miroslav olivik"
-self.assertEqual(s.split(), ["miroslav", "olivik"])
-with self.assertRaises(TypeError):
-    s.split(2)
+    s = "miroslav olivik"
+    self.assertEqual(s.split(), ["miroslav", "olivik"])
+    with self.assertRaises(TypeError):
+        s.split(2)
 
 
 if __name__ == '__main__':
