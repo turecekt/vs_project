@@ -138,7 +138,7 @@ print("-" * 50)
 time.sleep(1)
 # way of sorting data
 sortingWay = int(input("Enter 1 for Selection Sort\nEnter 2 for Bubble Sort\n"
-    "Enter 3 for Insertion Sort\n"))
+                        "Enter 3 for Insertion Sort\n"))
 print("-" * 50)
 time.sleep(1)
 
