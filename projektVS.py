@@ -146,19 +146,36 @@ def testToWord():
 def main():
     #zde bude nacitani vstupu a vyber zda se bude kodovat nebo dekodovat
     print('Vítej v našem dekodéru morseovky')
-    print("Kódování-[1] Dekódování-[2]")
-    vstup = input()
-    if(vstup==1):
-        print('Zadej co chces prelozit do morseovky: ')
-        a = input()
-        a.lower()
-        d = toMorse(a)
-        print(d)
-    elif(vstup==2):
-        b = input("zadej text v morseovce: ")
-        print(toWord(b))
-    else: print("Chybný vstup!")
-
+    
+    
+    chcePokracovat = True
+    while(chcePokracovat):
+        print("Kódování-[1] Dekódování-[2]")
+        vstup = int(input())
+        if(vstup==1):
+            print('Zadej co chces prelozit do morseovky: ')
+            a = input()
+            a.lower()
+            d = toMorse(a)
+            print(d)
+            chcePokracovat = False
+        elif(vstup==2):
+            b = input("zadej text v morseovce: ")
+            print(toWord(b))
+            chcePokracovat = False
+        else: 
+            print("Chybný vstup!")
+            print("Chcete ukončit program? [y,n]")
+            vyber = input()
+            if(vyber == "y"):
+                chcePokracovat = False
+            elif(vyber == "n"):
+                chcePokracovat = True
+            else: 
+                print("Už končím nemám na tebe náladu")
+                chcePokracovat = False
+    
+        pom = input()
 
 if __name__ == '__main__':
     main()
