@@ -2,7 +2,7 @@ import turtle
 import time
 
 
-# turn_line - # function for drawing Dragon curve
+""" turn_line - # function for drawing Dragon curve"""
 def turn_line(a):
     for j in range(len(a)):
         if a[j] == 'r':
@@ -13,7 +13,7 @@ def turn_line(a):
             turtle.forward(10)
 
 
-# input_data - function to enter background and pen colors
+"""input_data - function to enter background and pen colors"""
 def input_data():
     data = []
     for i in range(2):
@@ -30,7 +30,7 @@ def input_data():
     return data
 
 
-# sides - function for calculating rotations Dragon curve
+"""sides - function for calculating rotations Dragon curve"""
 def sides(itr):
     old = 'r'
     new = old
