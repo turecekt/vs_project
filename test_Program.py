@@ -43,11 +43,41 @@ def test_checkUserInputText_Invalid():
     assert res == 'False'
 
 
-def test_encodeText():
+def test_encodeText_Test():
     """Test kodovani."""
     assert p.encodeText('test') == '- . ... -'
 
 
-def test_decodeText():
+def test_decodeText_Test():
     """Test dekodovani."""
     assert p.decodeText('- . ... -') == 'TEST'
+
+
+def test_encodeText_InvalidChar():
+    """Test kodovani."""
+    assert p.encodeText('č') == '..--..'
+
+
+def test_encodeText_SpecialChars():
+    """Test dekodovani."""
+    assert p.decodeText('. , ? ! ; : ( ) - _ @') == '.-.-.-. .-..-. --..--' +
+    ' .-..-. ..--.. .-..-. --..- .-..-. -.-.-. .-..-. ---... .-..-. --...' +
+    ' .-..-. -.--.- .-..-. -....- .-..-. ..--.- .-..-. .--.-.'
+
+
+def test_encodeText_SpecialChars():
+    """Test dekodovani."""
+    assert p.decodeText('.-.-.-. .-..-. --..--' +
+    ' .-..-. ..--.. .-..-. --..- .-..-. -.-.-. .-..-. ---... .-..-. --...' +
+    ' .-..-. -.--.- .-..-. -....- .-..-. ..--.- .-..-. .--.-.' ==
+    '. , ? ! ; : ( ) - _ @'
+
+
+def test_encodeText_Filip():
+    """Test kodovani."""
+    assert p.encodeText('Filip') == '..-. .. .-.. .. .--.'
+
+
+def test_decodeText_Filip():
+    """Test dekodovani."""
+    assert p.decodeText('..-. .. .-.. .. .--.') == 'FILIP'
