@@ -67,7 +67,7 @@ space = " "
 charSeparator = "|"
 
 
-def isAlphabetTranslation():
+def __isAlphabetTranslation():
     """Funkce, která zajišťuje správný výběr překladu."""
     print("Translate from:")
     print("1 - Alphabet")
@@ -87,7 +87,7 @@ def isAlphabetTranslation():
             continue
 
 
-def alphabetTranslation(text):
+def __alphabetTranslation(text):
     """Funkce překládá z abecedy do Morseovy abecedy."""
     result = ""
     for char in text.lower():
@@ -98,7 +98,7 @@ def alphabetTranslation(text):
     return result
 
 
-def morseCodeTranslation(text):
+def __morseCodeTranslation(text):
     """Funkce překládá z Morseovy abecedy do abecedy."""
     result = ""
     chars = text.split(charSeparator)
@@ -124,7 +124,7 @@ def translation(text, isAlphabet):
             alphabetTranslation(modifyText))
 
 
-def mainLoop(isRepeat):
+def __mainLoop(isRepeat):
     """Funkce s logikou hlavní smyčky programu."""
     # Menu (základní nastavení pro kódování a dekódování)
     (print("Welcome to the Translator!\n") if not isRepeat else
