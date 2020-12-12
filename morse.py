@@ -1,6 +1,8 @@
 """Hlavni modul kod na preklad morseovky."""
 
+
 class MorseCodeTranslator:
+    """Definice prekladu znaku."""
 
     morse = {
         "a": ".-",
@@ -110,4 +112,3 @@ class MorseCodeTranslator:
             translation += "   "
 
         return translation.rstrip()
-        
