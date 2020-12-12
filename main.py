@@ -1,4 +1,4 @@
-"""Výpis morseovy abecedy."""
+"""Vypis morseovy abecedy."""
 
 morse_code = {'A': '.-', 'B': '-...',
               'C': '-.-.', 'D': '-..', 'E': '.',
@@ -14,21 +14,21 @@ morse_code = {'A': '.-', 'B': '-...',
               '6': '-....', '7': '--...', '8': '---..',
               '9': '----.'}
 """
-text -> promìnná, do které si uložíme
-originalní text k pøeložení
-cyklus for -> pøekladá pismeno ve zprávì
-podminka if    -> pokud pismeno není ve zprávì mezera,
+text -> promenna, do ktere si ulozime
+originalni text k prelozeni
+cyklus for -> preklada pismeno ve zprave
+podminka if    -> pokud pismeno ve zprave neni mezera
 najdu si v poli morse_code
-odpovidající znak k pismenu a pøidám mezeru
-        else   -> pokud pismeno
-        ve zprávì je mezera, pøidám mezeru
+odpovidajici znak k pismenu a pridam mezeru
+        else   -> pokud pismeno ve
+        zprave je mezera, pridam mezeru
 """
 
 
 def zasifrovat(zprava):
-    """Funkce zasifrovat -> slouží k zašifrování zprávy pomocí.
+    """Funkce zasifrovat -> slouzi k zasifrovani zpravy pomoci.
 
-    morseovy abecedy funkce vrací zašifrovaný text.
+    morseovy abecedy funkce vraci zasifrovany text.
     """
     text = ''
     for pismeno in zprava:
@@ -40,8 +40,8 @@ def zasifrovat(zprava):
 
 
 """
-zprava -> pøidaní mezery na konec zprávy k pøistupu
-poslednímu znaku morseovy abecedy
+zprava -> pridani mezery na konec zpravy k pristupu
+poslednimu znaku morseovy abecedy
  ve zprave protoze index zacina na 0
 prelozeny_text -> promenna
 ve ktere je ulozeny finalni text z morseovy abecedy
