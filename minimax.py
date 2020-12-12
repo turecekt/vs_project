@@ -110,6 +110,45 @@ def insertionSort(array):
     return array
 
 
+def testGenerateRandomArray():
+    """Generate Random Array test."""
+    test_array = createRandomArray()
+    assert len(test_array) == 20
+
+
+def testSelectionSort():
+    """Selection Sort algorithm - unit test."""
+    test_array = [97, -83, -2, 21, 20]
+    sorted_array = [-83, -2, 20, 21, 97]
+    assert selectionSort(test_array) == sorted_array
+
+
+def testBubbleSort():
+    """Bubble Sort algorithm - unit test."""
+    test_array = [97, -83, -2, 21, 20]
+    sorted_array = [-83, -2, 20, 21, 97]
+    assert bubbleSort(test_array) == sorted_array
+
+
+def testInsertionSort():
+    """Insertion Sort algorithm - unit test."""
+    test_array = [97, -83, -2, 21, 20]
+    sorted_array = [-83, -2, 20, 21, 97]
+    assert insertionSort(test_array) == sorted_array
+
+
+def testMinValue():
+    """Function findMinValue - unit test."""
+    test_array = [97, -83, -2, 21, 20]
+    assert findMinValue(test_array) == -83
+
+
+def testMinValueIndex():
+    """Function findMinIndex - unit test."""
+    test_array = [97, -83, -2, 21, 20]
+    assert findMinIndex(test_array) == 1
+
+
 # hlavni cast programu
 print("*" * 50)
 print("Generating 20 random numbers")
