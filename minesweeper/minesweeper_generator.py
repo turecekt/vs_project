@@ -101,3 +101,19 @@ def print_playground(minesweeper):
         for j in range(minesweeper.cols):
             print(minesweeper.playground[i][j], end=" ")
         print()
+
+
+def check_input(input_for_check):
+    """
+        input:  input
+        output: True if input is correct else False
+    """
+    if not input_for_check.isnumeric():
+        return False
+
+    input_for_check = int(input_for_check)
+
+    if input_for_check <= 0:
+        return False
+    return True
+
