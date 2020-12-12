@@ -23,4 +23,22 @@ class Minesweeper:
                 self.playground[i][j] = EMPTY
 
 
-
+def create_array_with_mines(rows, cols, count_of_mines):
+    """
+        input:  rows
+                cols
+                count of mines
+        output: array with bombs on random indices
+        * represents mine
+    """
+    array = []
+    array_len = rows * cols
+    for i in range(0, array_len):
+        if count_of_mines == 0:
+            array.append(EMPTY)
+        else:
+            array.append(MINE)
+            count_of_mines -= 1
+    numpy.random.shuffle(array)
+    bombs_array = numpy.reshape(array, (rows, cols))
+    return bombs_array
