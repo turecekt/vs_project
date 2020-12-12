@@ -26,4 +26,4 @@ jobs:
         flake8 .
     - name: Test with pytest
       run: |
-        pytest --doctest-modules
+        pytest --doctest-modules --cov=. --cov-fail-under=66
