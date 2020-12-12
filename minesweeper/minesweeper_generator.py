@@ -6,7 +6,7 @@ EMPTY = " "
 MINE = "*"
 
 
-# class which represents minesweeper structure
+# class which represents minesweeper structure.
 class Minesweeper:
     def __init__(self, rows, cols, count_of_mines):
         # count of rows of the playground, +2 means # for each side of the playground
