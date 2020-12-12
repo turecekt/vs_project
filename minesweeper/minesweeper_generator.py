@@ -1,17 +1,33 @@
-""" Project minesweeper generator. """
+"""
+Project minesweeper generator.
+"""
 
 import numpy
 
 EMPTY = " "
-""" Global constant for empty field in the playground. """
+"""
+Global constant for empty field in the playground.
+"""
 MINE = "*"
-""" Global constant for mine in the playground. """
+"""
+Global constant for mine in the playground.
+"""
 
 
 class Minesweeper:
-    """class which represents minesweeper structure"""
+    """
+    Class which represents minesweeper structure.
+    """
     def __init__(self, rows, cols, count_of_mines):
-        """count of rows of the playground, +2 means # for each side of the playground"""
+        """
+        Init minesweeper.
+
+        Attributes:
+            rows: number of rows.
+            cols: number of cols.
+            count_of_mines: count of mines.
+        """
+        # Count of rows of the playground, +2 means # for each side of the playground
         self.rows = rows + 2
         # count of cols of the playground, +2 means # for each side of the playground
         self.cols = cols + 2
@@ -27,11 +43,14 @@ class Minesweeper:
 
 def create_array_with_mines(rows, cols, count_of_mines):
     """
-        input:  rows
-                cols
-                count of mines
-        output: array with bombs on random indices
-        * represents mine
+    Create array with mines.
+
+    Attributes:
+        rows: number of rows.
+        cols: number of cols.
+        count_of_mines: count of mines.
+
+    Returns: array with bombs on random indices * represents mine
     """
     array = []
     array_len = rows * cols
