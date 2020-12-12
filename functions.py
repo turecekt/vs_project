@@ -20,3 +20,13 @@ def delkaStranyBC(xb, xc, yb, yc):
 def delkaStranyAC(xa, xc, ya, yc):
     """Funkce vrátí velikost délky strany AC."""
     return math.sqrt(((xc-xa)**2)+(yc-ya)**2)
+
+
+# Funkce pro výpočet obvodu trojůhelníku
+def obvodTroj(xa, xb, xc, ya, yb, yc):
+    """Deklarace proměnných a vložení hodnot."""
+    stranaAB = math.sqrt(((xb-xa)**2)+(yb-ya)**2)
+    stranaBC = math.sqrt(((xc-xb)**2)+(yc-yb)**2)
+    stranaAC = math.sqrt(((xc-xa)**2)+(yc-ya)**2)
+    """Funkce vráti délku obvodu."""
+    return stranaAB + stranaBC + stranaAC
