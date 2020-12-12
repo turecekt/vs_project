@@ -33,3 +33,8 @@ class TestDelkaStrany(unittest.TestCase):
         self.assertEqual(functions.delkaStranyAC(-3.38, -3.38, -1, 10), 11)
         self.assertEqual(functions.delkaStranyAC(67, 71, 310, 313), 5)
         self.assertEqual(functions.delkaStranyAC(4, -2, -4, -12), 10)
+
+
+# Třída pro unittesty na obvod a obsah trojúhelníku
+class TestObvodObsah(unittest.TestCase):
+    """Unittest na obvod a obsah."""
