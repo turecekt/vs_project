@@ -89,9 +89,7 @@ def decodeText(txt):
 
 
 def main():
-    """Hlavni smycka programu.
-    """
-
+    """Hlavni smycka programu."""
     # vypiseme do konzole start aplikace
     print('***************************************************************')
     print('     *****************************************************')
@@ -126,7 +124,7 @@ def main():
             # akce zadana uzivatelem
             action = Enums.Actions.UNKNOWN
             while (action == Enums.Actions.UNKNOWN):
-                c = input('Zvolena akce: ') 
+                c = input('Zvolena akce: ')
                 action = parseAction(c)
                 if (action == Enums.Actions.UNKNOWN):
                     print(formateError('Chybne zvolena akce. Zvolte prosim' +
