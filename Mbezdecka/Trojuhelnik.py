@@ -10,7 +10,7 @@ Zda je nebo neni pravouhly.
 
 def nacteni_bodu():
     """ Nacteni Bodu A, B, C
-    >>>nacteni()
+    >>> nacteni()
     [1, 3]
     """
     print("Zadej souradnice bodu, danou souradnici vzdy potvrd enterem")
