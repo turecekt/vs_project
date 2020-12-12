@@ -8,7 +8,8 @@ def arguments():
     """
     Method for parsing argument from std-in or as parameters.
     Use argparse library.
-    Without parameter it read from std-in else from input files return all arguments.
+    Without parameter it read from std-in else from input files
+    return all arguments.
     """
     parser=ArgumentParser()
     parser.add_argument("-f", "--file", dest = "filename", action = "store",
@@ -16,10 +17,10 @@ def arguments():
 
     arg_len = len(sys.argv)
     if arg_len == 1:
-        result = sys.stdin.read()
+        result=sys.stdin.read()
         return read_file(result, arg_len)
     else:
-        args = parser.parse_args().filename
+        args=parser.parse_args().filename
         return read_file(args, arg_len)
 
 def read_file(input_file, arg_len):
@@ -29,10 +30,10 @@ def read_file(input_file, arg_len):
     """
     if arg_len != 1:
         with open(input_file, "rt") as f:
-            text = f.read()
-            data = text.split('#', 1)[0]
+            text=f.read()
+            data=text.split('#', 1)[0]
     else:
-        data = input_file.split('#', 1)[0]
+        data=input_file.split('#', 1)[0]
 
     return data
 
@@ -40,7 +41,7 @@ def number_char(file_data):
     """
     Method return lenght of passing string.
     """
-    num_char = len(file_data)
+    num_char=len(file_data)
 
     return num_char
 
@@ -48,11 +49,11 @@ def number_occurence(file_data):
     """
     Method create list of occurrence and eleminate unwanted chars from string.
     """
-    my_list = []
-    file_data = file_data.lower()
+    my_list=[]
+    file_data=file_data.lower()
     for char in file_data:
         if re.match('^[a-z]+$', char):
-            count = len(re.findall(char, file_data))
+            count=len(re.findall(char, file_data))
             if not tuple((char, count)) in my_list:
                 my_list.append(tuple((char, count)))
 
@@ -69,7 +70,7 @@ def print_number_occurence(list):
 
 
 def main():
-    file_data  = arguments()
+    file_data=arguments()
     number_char(file_data)
     print_number_occurence(number_occurence(file_data.replace(" ", "")))
 
