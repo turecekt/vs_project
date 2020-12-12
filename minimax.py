@@ -110,7 +110,7 @@ def insertionSort(array):
     return array
 
 
-def testGenerateRandomArray():
+def test_GenerateRandomArray():
     """Generate Random Array test."""
     test_array = createRandomArray()
     temp = [0]*20
@@ -120,46 +120,46 @@ def testGenerateRandomArray():
         assert temp[i] == 1
 
 
-def testSelectionSort():
+def test_SelectionSort():
     """Selection Sort algorithm - unit test."""
     test_array = [97, -83, -2, 21, 20]
     sorted_array = [-83, -2, 20, 21, 97]
     assert selectionSort(test_array) == sorted_array
 
 
-def testBubbleSort():
+def test_BubbleSort():
     """Bubble Sort algorithm - unit test."""
     test_array = [97, -83, -2, 21, 20]
     sorted_array = [-83, -2, 20, 21, 97]
     assert bubbleSort(test_array) == sorted_array
 
 
-def testInsertionSort():
+def test_InsertionSort():
     """Insertion Sort algorithm - unit test."""
     test_array = [97, -83, -2, 21, 20]
     sorted_array = [-83, -2, 20, 21, 97]
     assert insertionSort(test_array) == sorted_array
 
 
-def testMinValue():
+def test_MinValue():
     """Function findMinValue - unit test."""
     test_array = [97, -83, -2, 21, 20]
     assert findMinValue(test_array) == -83
 
 
-def testMinValueIndex():
+def test_MinValueIndex():
     """Function findMinIndex - unit test."""
     test_array = [97, -83, -2, 21, 20]
     assert findMinIndex(test_array) == 1
 
 
-def testMaxValue():
+def test_MaxValue():
     """Function findMaxValue - unit test."""
     test_array = [97, -83, -2, 21, 20]
     assert findMaxValue(test_array) == 97
 
 
-def testMaxIndex():
+def test_MaxIndex():
     """Function findMaxIndex - unit test."""
     test_array = [97, -83, -2, 21, 20]
     assert findMaxIndex(test_array) == 0
@@ -197,23 +197,26 @@ sortingWay = int(input("Enter 1 for Selection Sort\nEnter 2 for Bubble Sort\n"
 print("-" * 50)
 time.sleep(1)
 
-if sortingWay == 1:
-    print("Selection Sort:")
-    selectionSort(array)
-    print(array)
+try:
+    if sortingWay == 1:
+        print("Selection Sort:")
+        selectionSort(array)
+        print(array)
 
-elif sortingWay == 2:
-    print("Bubble Sort:")
-    bubbleSort(array)
-    print(array)
+    elif sortingWay == 2:
+        print("Bubble Sort:")
+        bubbleSort(array)
+        print(array)
 
-elif sortingWay == 3:
-    print("Insertion Sort:")
-    insertionSort(array)
-    print(array)
+    elif sortingWay == 3:
+        print("Insertion Sort:")
+        insertionSort(array)
+        print(array)
 
-else:
-    print("Wrong input!!")
+    else:
+        print("Wrong input!!")
+except Exception:
+    print("Chyba")
 
 print("*" * 50)
 print("End of program.")
