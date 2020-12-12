@@ -59,7 +59,7 @@ def obvod(Sa, Sb, Sc):
 
 
 def svypocet(Sa, Sb, Sc):
-    """pomocny vypocet pro obsah
+    """Pomocny vypocet pro obsah.
 
     >>> svypocet(4.243, 5.099, 2.828)
     6.085
