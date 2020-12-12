@@ -7,7 +7,7 @@ from operator import itemgetter
 def arguments():
     # Method for parsing argument from std-in or as parameters
     # Use argparse library
-    # Without parameter it read from std-in else from input file
+    # Without parameter it read from std-in else from input files
     # return all arguments
     parser = ArgumentParser()
     parser.add_argument("-f", "--file", dest = "filename", action = "store",
