@@ -23,3 +23,17 @@ class TestCreateArrayWithMines(TestCase):
                 if bombs_array[i][j] == "*":
                     count_of_mines += 1
         self.assertEqual(count_of_mines, 5)
+
+
+class TestPutMinesToPlayground(TestCase):
+    def test_put_mines_to_playground(self):
+        minesweeper = minesweeper_generator.Minesweeper(5, 5, 0)
+        minesweeper_generator.put_mines_to_playground(minesweeper)
+        expected_array = [['#', '#', '#', '#', '#', '#', '#'],
+                          ['#', ' ', ' ', ' ', ' ', ' ', '#'],
+                          ['#', ' ', ' ', ' ', ' ', ' ', '#'],
+                          ['#', ' ', ' ', ' ', ' ', ' ', '#'],
+                          ['#', ' ', ' ', ' ', ' ', ' ', '#'],
+                          ['#', ' ', ' ', ' ', ' ', ' ', '#'],
+                          ['#', '#', '#', '#', '#', '#', '#']]
+        self.assertListEqual(minesweeper.playground, expected_array)
