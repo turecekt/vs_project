@@ -10,20 +10,23 @@ class TestStringMethods(unittest.TestCase):
     """vytvoření třídy pro testování."""
 
 
-def test_upper(self): """testování fce zvětšení písmena."""
+def test_upper(self): # noqua: F821
+    """testování fce zvětšení písmena."""
 
-    
+
 self.assertEqual("abc".upper(), "ABC")
 
 
-def test_isupper(self): """testování fce zvětšení písmena."""
+def test_isupper(self): # noqua: F821
+    """testování fce zvětšení písmena."""
 
 
 self.assertTrue("ABC".isupper())
 self.assertFalse("Abc".isupper())
 
 
-def test_split(self): """testování fce split."""
+def test_split(self): # noqua: F821
+    """testování fce split."""
 
 
 s = "miroslav olivik"
