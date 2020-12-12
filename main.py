@@ -24,7 +24,6 @@ def int_to_roman(number):
         10, 9, 5, 4,
         1
         ]
-    assert values != []
 
     dictionary = [
         "M", "CM", "D", "CD",
@@ -32,7 +31,6 @@ def int_to_roman(number):
         "X", "IX", "V", "IV",
         "I"
         ]
-    assert dictionary != []
 
     roman_number = ''
     i = 0
@@ -47,11 +45,8 @@ def int_to_roman(number):
 
 def main():
     """Ask for user input, convert it and print it to console."""
-    print("This script is for converting number to Roman numeral system.")
-    print("Enter a number to be converted and press enter:")
-    unconverted = int(input())
-    print("Converted number is:")
-    print(int_to_roman(unconverted))
+    unconverted = int(input("Enter a number to be converted: "))
+    print("Number in Roman numeral system: " + int_to_roman(unconverted))
 
 
 # This if statement runs the main function.
