@@ -10,7 +10,7 @@ def int_to_roman(number):
     """
     Convert integer to Roman numeral system.
 
-    Tests for this function:
+    Example tests for this function:
     >>> int_to_roman(10)
     'X'
     >>> int_to_roman(468)
@@ -49,6 +49,5 @@ def main():
     print("Number in Roman numeral system: " + int_to_roman(unconverted))
 
 
-# This if statement runs the main function.
 if __name__ == '__main__':
     main()
