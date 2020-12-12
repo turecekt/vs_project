@@ -1,66 +1,82 @@
+"""Import knihovny math."""
 import math
 
-# Třída představující bod
+
 class Bod:
-    x = 0 # souřadnice x
-    y = 0 # souřadnice z
-    
-    # konstruktor
+    """souradnice x."""
+
+    x = 0
+    """souradnice y."""
+    y = 0
+
     def __init__(self, x, y):
-        """ :param x: souřadnice x 
-            :param y: souřadnice y
+        """Konstruktor.
+
+        :param x: souradnice x
+        :param y: souradnice y
         """
         self.x = x
         self.y = y
 
-# Zajišťuje vstup od uživatele ve formě bodů
+
 def vrat_bod(bod):
+    """Zajistuje vstup od uzivatele ve forme bodu."""
     n = f'Zadej bod {bod} souradnici'
     while True:
         try:
             x = int(input(f'{n} x: ').strip())
             break
-        except:
+        except TypeError:
             print('Je treba zadat ciselnou hodnotu')
 
     while True:
         try:
             y = int(input(f'{n} y: ').strip())
             break
-        except:
+        except TypeError:
             print('Je treba zadat ciselnou hodnotu')
-    
-    return Bod(x,y)
+
+    return Bod(x, y)
 
 
-# Vypočítá pythagorovu větu na základě součtu souřadnic bodů zadaných uživatelem
 def pythagorova_veta(bod):
+    """Popis.
+
+    Vypocita pythagorovu vetu na zaklade souctu
+    souradnic bodu zadanych uzivatelem
+    """
     x = math.sqrt((bod.x*bod.x)+(bod.y*bod.y))
     return x
 
-# Sečte souřadnice bodů zadaných uživatelem
+
 def secteni_souradnic(bod1, bod2):
+    """Secte souradnice bodu zadanych uzivatelem."""
     return Bod(abs(bod1.x - bod2.x), abs(bod1.y - bod2.y))
 
-# Spočítá délku strany z bodů zadaných uživatelem
+
 def delka_strany(bod1, bod2):
+    """Spocita delku strany z bodu zadanych uzivatelem."""
     return pythagorova_veta(secteni_souradnic(bod1, bod2))
 
-# Ověří zda je trojúhelník sestrojitelný na základě délek stran
+
 def sestrojitelny(a, b, c):
+    """Overi zda je trojuhelnik sestrojitelny na zaklade delek stran."""
     return (a + b > c and b + c > a and a + c > b)
 
-# Spočítá obvod trojúhelníku pomocí délek stran
-def obvod(a, b ,c):
+
+def obvod(a, b, c):
+    """Spocita obvod trojuhelnik pomoci delek stran."""
     return a + b + c
 
-# Spočítá obvod trojúhelníku pomocí délek stran
+
 def obsah(a, b, c):
+    """Spocita obvod trojuhelnik pomoci delek stran."""
     s = (a + b + c)/2
     return math.sqrt(s * ((s - a) * (s - b) * (s - c)))
 
-# Ověří zda je trojúhelník pravouhlý
+
 def pravouhly(a, b, c):
+    """Overi zda je trojuhelnik pravouhly."""
     tmp_r = c
     tmp_l1 = a
     tmp_l2 = b
@@ -73,7 +89,7 @@ def pravouhly(a, b, c):
 
     right = math.pow(tmp_r, 2)
     left = (math.pow(tmp_l1, 2) + math.pow(tmp_l2, 2))
-    
+
     return right == left
 
 
@@ -82,45 +98,56 @@ if __name__ == '__main__':
     b = vrat_bod('B')
     c = vrat_bod('C')
 
-    ab = delka_strany(a,b)
-    bc = delka_strany(b,c)
-    ac = delka_strany(a,c)
+    ab = delka_strany(a, b)
+    bc = delka_strany(b, c)
+    ac = delka_strany(a, c)
     print()
     if (sestrojitelny(ab, bc, ac)):
         print("Trojuhelnik je sestrojitelny")
     else:
-         print("Trojuhelnik neni sestrojitelny")
+        print("Trojuhelnik neni sestrojitelny")
     print()
     print(f"Strana a: {bc}\n\rStrana b: {ac}\n\rStrana c: {ab}")
     print()
     print(f"Obvod: {obvod(ab,ac,bc)}\n\rObsah: {obsah(ab,ac,bc)}")
     print()
-    if (pravouhly(ab,bc,ac)):
+    if (pravouhly(ab, bc, ac)):
         print("Trojuhelnik je pravouhly")
     else:
-         print("Trojuhelnik neni pravouhly")
-    
+        print("Trojuhelnik neni pravouhly")
 
-# Testy
 
 def test_pythagorova_veta():
-    assert pythagorova_veta(Bod(3,4)) == 5.0
+    """Test Pythagorovy vety."""
+    assert pythagorova_veta(Bod(3, 4)) == 5.0
+
 
 def test_secteni_souradnic():
-    bod = secteni_souradnic(Bod(3,-2),Bod(-1,-2))
+    """Test souctu souradnic."""
+    bod = secteni_souradnic(Bod(3, -2), Bod(-1, -2))
     assert bod.x == 4 and bod.y == 0.0
 
+
 def test_delka_strany():
-    assert delka_strany(Bod(2,2),Bod(-1,-2)) == 5.0
+    """Test delky stran."""
+    assert delka_strany(Bod(2, 2), Bod(-1, -2)) == 5.0
+
 
 def test_sestrojitelny():
-    assert sestrojitelny(3,4,5)
+    """Test sestrojitelnosti."""
+    assert sestrojitelny(3, 4, 5)
+
 
 def test_obvod():
-    assert obvod(3,4,5) == 12.0
+    """Test obvodu."""
+    assert obvod(3, 4, 5) == 12.0
+
 
 def test_obsah():
-    assert obsah(3,4,5) == 6.0
+    """Test obsahu."""
+    assert obsah(3, 4, 5) == 6.0
+
 
 def test_pravouhly():
-    assert pravouhly(3,4,5)
+    """Test pravouhlosti."""
+    assert pravouhly(3, 4, 5)
