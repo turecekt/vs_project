@@ -38,3 +38,9 @@ class TestDelkaStrany(unittest.TestCase):
 # Třída pro unittesty na obvod a obsah trojúhelníku
 class TestObvodObsah(unittest.TestCase):
     """Unittest na obvod a obsah."""
+
+    """Unittest na obvod"""
+    def test_obvod(self):
+        """Unittesty pro obvod."""
+        self.assertEqual(functions.obvodTroj(0, 8, 0, 6, 0, 0), 24)
+        self.assertEqual(functions.obvodTroj(0, 3, 0, 4, 0, 0), 12)
