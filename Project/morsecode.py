@@ -1,4 +1,4 @@
-#dictionery translating alphabet letters into morse code
+# dictionery translating alphabet letters into morse code
 Characters = {"A": ".-",
               "B": "-...",
               "C": "-.-.",
@@ -41,7 +41,6 @@ Characters = {"A": ".-",
               ";": "-.-.-.",
               "/": "-..-.",
               "=": "-...-",
-              "=": "-...-",
               "-": "-....-",
               "'": ".----.",
               "(": "-.--.",
@@ -52,12 +51,14 @@ Characters = {"A": ".-",
               "+": ".-.-.",
               "@": ".--.-."}
 
+
 def encode_morse(message):
     """Functon encode_morse returns encoded_message in morse code.
     Args:
         - message - Input of the function, string in quotation marks
     Returns:
-        - encoded_message - Output of the function, message encoded into morse code
+        - encoded_message - Output of the function, message encoded
+        into morse code
     """
     print(message)
     encoded_message = ""
@@ -69,12 +70,13 @@ def encode_morse(message):
     print(encoded_message)
     return encoded_message
 
+
 def decode_morse(message):
     """Functon decode_morse returns decoded_message in alphabet.
     Args:
         - message - Input of the function, string in quotation marks
     Returns:
-        - decoded_message - Output of the function, message decoded 
+        - decoded_message - Output of the function, message decoded
         from morse code into alphabet
     """
     message += " "
@@ -88,8 +90,8 @@ def decode_morse(message):
         else:
             space += 1
             if space > 1:
-                #when there are two spaces, we found the end of the word 
-                #and a space is added to decoded message
+                # when there are two spaces, we found the end of the word
+                # and a space is added to decoded message
                 decoded_message += " "
             else:
                 for key, value in Characters.items():
@@ -98,6 +100,7 @@ def decode_morse(message):
                         letter = ""
     print(decoded_message)
     return decoded_message
+
 
 def continue_program():
     """Functon continue_program asks user for input to continue encoding/decoding
@@ -112,7 +115,8 @@ def continue_program():
     else:
         print("Wrong input.")
         continue_program()
-    
+
+
 def main():
     """Functon main asks user for input to start encoding/decoding."""
     print("For encoding a message press 1.")
@@ -133,6 +137,6 @@ def main():
         main()
     return
 
+
 if __name__ == "__main__":
     main()
-
