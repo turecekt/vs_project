@@ -130,11 +130,20 @@ def toWord(morseMessage):
         " ": "",
     }
     vysledek = ""
-    for x in morseMessage:
-        vysledek = Morse.message.split(" ")
-        vysledek += Morseovka.get(x,";")
-    if(vysledek.find(";") != -1):
-        vysledek = "chybne zadany vstup"        
+
+    pom = morseMessage.split(" ")
+    listValue = Morseovka.values()
+    
+
+
+    for x in pom:
+        if(x in listValues != -1):
+            vysledek += list(Morseovka.keys())[list(listValue).index(x)]
+        else:
+            vysledek = "Chybne zadany vstup: " + x
+            break
+
+
     return vysledek
 
 def testToMorse():
