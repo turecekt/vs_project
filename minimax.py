@@ -7,5 +7,15 @@ def createRandomArray():
 
     return random_array
 
+def findMinValue(array):
+    
+    min_value = min(array)
+
+    return min_value
+
 array = createRandomArray()
-print(array)    
+min_value = findMinValue(array)
+
+# print for testing purposes
+print("Random array: ", array)    
+print("Minimal value of array: ", min_value)
