@@ -5,12 +5,10 @@ Program pro preklad textu na morseovku a naopak.
 "sos"
 1. ocekavany output:
 "...|---|..."
-
 2. priklad - input:
 "Wikipedia is a free online encyclopedia"
 2. ocekavany output:
 ".--|..|-.-|..|.--.|.|-..|..|.-||..|...||.-||..-.|.-.|.|.||---|-.|.-..|..|-.|.||.|-.|-.-.|-.--|-.-.|.-..|---|.--.|.|-..|..|.-"
-
 """
 
 table = {
@@ -67,18 +65,6 @@ def get_letter_by_value(search_value):
     return None
 
 
-text = input("Zadejte text: ").lower()
-translated_text = ""
-valid = True
-
-# pokud prvni index je znak abecedy
-is_alphabet = True
-try:
-    list(table.keys()).index(text[0])
-except ValueError:
-    is_alphabet = False
-
-
 def encode(text):
     """Zakoduje zadany text do morseovy abecedy."""
     global translated_text
@@ -124,18 +110,6 @@ def decode(text):
     return translated_text
 
 
-# prekladani
-if is_alphabet:
-    encode(text)
-
-else:
-    decode(text)
-
-if valid:
-    print("Prelozeny text: ")
-    print(translated_text)
-
-
 # unit testy
 def test_get_letter_by_value():
     """Unit test 1."""
@@ -152,3 +126,27 @@ def test_decode():
     """Unit test 3."""
     assert (decode(".-|....|---|.---") == "ahoj")
     assert (decode("...|---|...") == "sos")
+
+
+if __name__ == "__main__":
+    text = input("Zadejte text: ").lower()
+    translated_text = ""
+    valid = True
+
+    # pokud prvni index je znak abecedy
+    is_alphabet = True
+    try:
+        list(table.keys()).index(text[0])
+    except ValueError:
+        is_alphabet = False
+
+    # prekladani
+    if is_alphabet:
+        translated_text = encode(text)
+
+    else:
+        translated_text = decode(text)
+
+    if valid:
+        print("Prelozeny text: ")
+        print(translated_text)
