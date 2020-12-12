@@ -100,3 +100,20 @@ def testodsifrovat():
     """Unit test funkce odsifrovat."""
     zprava = ".- .... --- .---  ... ...- . - ."
     assert odsifrovat(zprava) == "AHOJ SVETE"
+    
+    
+    def main():
+    """Funkce main je hlavni funce ktera nam umozni cely program spustit."""
+    print("Zadejte èíslo 1 pro šifrování nebo èíslo 2 pro dešifrování: ")
+    vyber = input()
+    if vyber == "1":
+        print("Zadejte text pro zašífrování: ")
+        zprava = input()
+        vysledek = zasifrovat(zprava.upper())
+        print(vysledek)
+    if vyber == "2":
+        print("Zadejte text pro dešífrování a mezi "
+              "jednotlivými písmeny morseovy abecedy dávejte mezery: ")
+        zprava = input()
+        vysledek = odsifrovat(zprava)
+        print(vysledek)
