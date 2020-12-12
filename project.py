@@ -23,7 +23,7 @@ def numberSelection():
     if n == 'exit':
         sys.exit('Program byl ukončen')
 
-    while not n.isnumeric():
+    while not str(n).isnumeric():
         print('Zadali jste neplatnou hodnotu:', n)
         print('Musíte zadat kladné celé číslo '
               '(Pro ukončení zadejte \"exit\"):')
@@ -57,7 +57,7 @@ def systemSelection():
     if s == 'exit':
         sys.exit('Program byl ukončen')
 
-    while not s.isnumeric():
+    while not str(s).isnumeric():
         print('Zadali jste neplatnou hodnotu:', s)
         print('Vyberte soustavu, do které chcete číšlo převést '
               '(Pro ukončení zadejte \"exit\"):')
@@ -81,22 +81,66 @@ def systemSelection():
 
 
 def decimalToBinary(decimal):
-    """Převod do dvojkové soustavy."""
+    """Převod do dvojkové soustavy.
+
+    Unittest:
+    >>> decimalToBinary(32)
+    32 je ve dvojkové soustavě: 100000
+
+    >>> decimalToBinary(37)
+    37 je ve dvojkové soustavě: 100101
+
+    >>> decimalToBinary(127)
+    127 je ve dvojkové soustavě: 1111111
+    """
     print(decimal, 'je ve dvojkové soustavě:', bin(decimal)[2:])
 
 
 def decimalToOctal(decimal):
-    """Převod do osmičkové soustavy."""
+    """Převod do osmičkové soustavy.
+
+    Unittest:
+    >>> decimalToOctal(547)
+    547 je v osmičkové soustavě: 1043
+
+    >>> decimalToOctal(215)
+    215 je v osmičkové soustavě: 327
+
+    >>> decimalToOctal(7)
+    7 je v osmičkové soustavě: 7
+    """
     print(decimal, 'je v osmičkové soustavě:', oct(decimal)[2:])
 
 
 def decimalToHexadecimal(decimal):
-    """Převod do šestnáctkové soustavy."""
+    """Převod do šestnáctkové soustavy.
+
+    Unittest:
+    >>> decimalToHexadecimal(255)
+    255 je v šestnáctkové soustavě: ff
+
+    >>> decimalToHexadecimal(847)
+    847 je v šestnáctkové soustavě: 34f
+
+    >>> decimalToHexadecimal(30412)
+    30412 je v šestnáctkové soustavě: 76cc
+    """
     print(decimal, 'je v šestnáctkové soustavě:', hex(decimal)[2:])
 
 
 def switch(selection, n):
-    """Metoda pro výběr soustavy."""
+    """Metoda pro výběr soustavy.
+
+    Unittest:
+    >>> switch(1, 37)
+    37 je ve dvojkové soustavě: 100101
+
+    >>> switch(2, 24)
+    24 je v osmičkové soustavě: 30
+
+    >>> switch(3, 847)
+    847 je v šestnáctkové soustavě: 34f
+    """
     if selection == 1:
         decimalToBinary(n)
     elif selection == 2:
