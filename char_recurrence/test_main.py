@@ -3,12 +3,12 @@
 Author: Matúš Juhasz.
 """
 
-from unittest import TestCase
+import unittest
 
-from char_recurrence import main
+import main
 
 
-class Test(TestCase):
+class Test(unittest.TestCase):
     """Testing class for methods."""
 
     def setUp(self):
@@ -64,3 +64,6 @@ class Test(TestCase):
         self.assertEqual("Najmenej sa vyskutuje znak: \"""l" "\""
                          " a pocet vyskytov je: 1",
                          main.min_occurence([('l', 1)]))
+
+    if __name__ == "__main__":
+        unittest.main()
