@@ -9,9 +9,10 @@ class Point:
         self.y = float(y)
 
     def distance(self, point):
-        dx = self.x - point.x
-        dy = self.y - point.y
-        return math.sqrt(dx ** 2 + dy ** 2)
+        return distance(self.x, self.y, point.x, point.y)
 
     def __str__(self):
         return "(%.2f; %.2f)" % (self.x, self.y)
+
+def distance(x1, y1, x2, y2):
+    return math.sqrt((x1 - x2) ** 2 + (y1 - y2) ** 2)

@@ -4,5 +4,9 @@
 *.pyproj
 *.user
 
+# pytest
+.pytest_cache
+.coverage
+
 # Auto-generated
 __pycache__

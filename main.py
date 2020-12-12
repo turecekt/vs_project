@@ -41,26 +41,33 @@ def request_point(name):
             print(e)
             print()
 
-if __name__ == "__main__":
-    args = sys.argv
-    arg_count = len(args)
-    if arg_count == 1:
-        point_a = request_point("A")
-        point_b = request_point("B")
-        point_c = request_point("C")
-        print()
+def init():
+    if __name__ == "__main__":
+        args = sys.argv
+        arg_count = len(args)
+        if arg_count == 1:
+            point_a = request_point("A")
+            point_b = request_point("B")
+            point_c = request_point("C")
+            print()
 
-        print_triangle_info(point_a, point_b, point_c)
-    elif arg_count == 7:
-        try:
-            point_a = Point(args[1], args[2])
-            point_b = Point(args[3], args[4])
-            point_c = Point(args[5], args[6])
             print_triangle_info(point_a, point_b, point_c)
-        except ValueError as e:
-            print("Nesprávný vstup")
-            print(e)
-    else:
-        print("Nesprávný počet argumentů")
-        print("Očekáváno 6")
-        print("Nalezeno " + str(arg_count -1))
+            sys.exit(0)
+        elif arg_count == 7:
+            try:
+                point_a = Point(args[1], args[2])
+                point_b = Point(args[3], args[4])
+                point_c = Point(args[5], args[6])
+                print_triangle_info(point_a, point_b, point_c)
+                sys.exit(0)
+            except ValueError as e:
+                print("Nesprávný vstup")
+                print(e)
+                sys.exit(1)
+        else:
+            print("Nesprávný počet argumentů")
+            print("Očekáváno 6")
+            print("Nalezeno " + str(arg_count -1))
+            sys.exit(1)
+
+init()
