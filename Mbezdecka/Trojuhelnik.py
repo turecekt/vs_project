@@ -86,7 +86,7 @@ def pravouhly(Sa, Sb, Sc):
     >>> pravouhly(4.243, 5.099, 2.828)
     True
      >>> pravouhly(2.243, 5.099, 2.828)
-    False
+     False
     """
     SbSc = round(Sb**2 + Sc**2)
     SaSb = round(Sa**2 + Sb**2)
