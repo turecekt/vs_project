@@ -1,21 +1,22 @@
 """Unit testy."""
 import Translator as t
 
+
 def test_decodeChar():
     """Test dekodovani znaku."""
-    assert(t.decodeChar('.-') == 'A')
+    assert t.decodeChar('.-') == 'A'
 
 
 def test_encodeChar():
     """Test zakodovani znaku."""
-    assert(t.encodeChar('A') == '.-')
+    assert t.encodeChar('A') == '.-'
 
 
 def test_encode():
     """Test zakodovani textu."""
-    assert(t.encode('test') == '- . ... -')
+    assert t.encode('test') == '- . ... -'
 
 
 def test_dencode():
     """Test zakodovani textu."""
-    assert(t.dencode('- . ... -') == 'TEST')
+    assert t.dencode('- . ... -') == 'TEST'
