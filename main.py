@@ -1,3 +1,4 @@
+import sys
 from point import Point
 import triangle
 
@@ -24,8 +25,42 @@ def print_triangle_info(point_a, point_b, point_c):
         print("Obvod: %.2f" % (side_a + side_b + side_c))
         print("Obsah: %.2f" % (triangle.area(side_a, side_b, side_c)))
 
+def request_point(name):
+    while True:
+        try:
+            print("Zadejte souřadnice bodu " + name)
+            values = input().strip().split(" ")
+            if len(values) == 2:
+                return Point(values[0], values[1])
+            else:
+                print("Nesprávný vstup")
+                print("Zadejte dvě čísla oddělená mezerou")
+                print()
+        except ValueError as e:
+            print("Nesprávný vstup")
+            print(e)
+            print()
+
 if __name__ == "__main__":
-    a = Point(0, 0)
-    b = Point(0, 50.8)
-    c = Point(50.6668215, 0)
-    print_triangle_info(a, b, c)
+    args = sys.argv
+    arg_count = len(args)
+    if arg_count == 1:
+        point_a = request_point("A")
+        point_b = request_point("B")
+        point_c = request_point("C")
+        print()
+
+        print_triangle_info(point_a, point_b, point_c)
+    elif arg_count == 7:
+        try:
+            point_a = Point(args[1], args[2])
+            point_b = Point(args[3], args[4])
+            point_c = Point(args[5], args[6])
+            print_triangle_info(point_a, point_b, point_c)
+        except ValueError as e:
+            print("Nesprávný vstup")
+            print(e)
+    else:
+        print("Nesprávný počet argumentů")
+        print("Očekáváno 6")
+        print("Nalezeno " + str(arg_count -1))
