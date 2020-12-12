@@ -1,4 +1,4 @@
-"""Překladač"""
+"""Překladač."""
 # Mapování písmen abecedy na znaky Morseovy abecedy
 alphabetMorse = {
     "a": ".-",
@@ -68,8 +68,8 @@ charSeparator = "|"
 
 
 def isAlphabetTranslation():
-    """Funkce, která zajišťuje správný výběr překladu"""
-    
+    """Funkce, která zajišťuje správný výběr překladu."""
+
     print("Translate from:")
     print("1 - Alphabet")
     print("2 - Morse code")
@@ -88,8 +88,9 @@ def isAlphabetTranslation():
             continue
 
 
-"""Funkce překládá z abecedy do Morseovy abecedy"""
 def alphabetTranslation(text):
+    """Funkce překládá z abecedy do Morseovy abecedy."""
+
     result = ""
     for char in text.lower():
         if char in alphabetMorse:
@@ -99,8 +100,9 @@ def alphabetTranslation(text):
     return result
 
 
-"""Funkce překládá z Morseovy abecedy do abecedy"""
 def morseCodeTranslation(text):
+    """Funkce překládá z Morseovy abecedy do abecedy."""
+
     result = ""
     chars = text.split(charSeparator)
     for char in chars:
@@ -110,8 +112,10 @@ def morseCodeTranslation(text):
             result += space
     return result
 
-"""Funkce překládá text z Abecedy do Morseovy abecedy a naopak"""
+
 def translation(text, isAlphabet):
+    """Funkce překládá text z Abecedy do Morseovy abecedy a naopak."""
+
     if text is None:
         return ""
 
@@ -123,8 +127,9 @@ def translation(text, isAlphabet):
     return morseCodeTranslation(modifyText) if not isAlphabet else alphabetTranslation(modifyText)
 
 
-"""Funkce s logikou hlavní smyčky programu"""
 def mainLoop(isRepeat):
+    """Funkce s logikou hlavní smyčky programu."""
+
     # Menu (základní nastavení pro kódování a dekódování)
     print("Welcome to the Translator!\n") if not isRepeat else print("Translator\n")
     isAlphabet = isAlphabetTranslation()
@@ -138,8 +143,10 @@ def mainLoop(isRepeat):
     print("Translation:")
     print(translation(text, isAlphabet))
 
-"""Hlavní smyčka programu"""
+
 def run():
+    """Hlavní smyčka programu."""
+
     isRepeat = False
     exitCode = 'n'
 
