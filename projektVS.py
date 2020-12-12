@@ -1,13 +1,18 @@
-#zde budeme delat nas projekt
-#TODO: potreba udelat komentare
-#TODO: udelat funkci toMorse, ktera prevede text do morseovky
-#TODO: udelat funkci toWord, která prevede morseovku do slov
-#TODO: udelat nacitani vstupu vyber zda chce uzivatel kodovat nebo dekodovat
-#TODO: udelat testy
+"""@file projektVS.py.
+
+@brief Prekladac morseovky.
+@author Lahoda, Slovak, Netbal, Masar.
+"""
+
 
 def toMorse(message):
-    Morseovka={
-        #Pismena
+    """Prevedeni textu do morseovky.
+
+    Parametr[message] textovy retezec
+    Returs prevedeny text do morseovky
+    """
+    Morseovka = {
+        # Pismena
         "a": ".-",
         "b": "-...",
         "c": "-.-.",
@@ -34,7 +39,7 @@ def toMorse(message):
         "x": "-..-",
         "y": "-.--",
         "z": "--..",
-        #Cisla
+        # Cisla
         "0": "-----",
         "1": ".----",
         "2": "..---",
@@ -64,16 +69,31 @@ def toMorse(message):
         " ": "",
     }
     vysledek = ""
+    message = message.lower()
     for c in message:
-        vysledek += Morseovka.get(c,";") + " "
+        vysledek += Morseovka.get(c, ";") + " "
     if(vysledek.find(";") != -1):
-        vysledek = "chybne zadany vstup"        
+        vysledek = "chybne zadany vstup"
+
     return vysledek
 
 
+def testZkouska():
+    """Unit test."""
+    assert toMorse("a  b") == ".-  -... "
+
+
 def toWord(morseMessage):
-    Morseovka={
-        #Pismena
+    """Prevadi z morseovky do textoveho retezce.
+
+    param[morseMessage] retezec znaku v morseovce
+    return prevedeny text z morseovky
+
+    >>> toWord(".- -... -.-.")
+    'abc'
+    """
+    Morseovka = {
+        # Pismena
         "a": ".-",
         "b": "-...",
         "c": "-.-.",
@@ -100,7 +120,7 @@ def toWord(morseMessage):
         "x": "-..-",
         "y": "-.--",
         "z": "--..",
-        #Cisla
+        # Cisla
         "0": "-----",
         "1": ".----",
         "2": "..---",
@@ -133,8 +153,6 @@ def toWord(morseMessage):
 
     pom = morseMessage.split(" ")
     listValue = Morseovka.values()
-    
-
 
     for x in pom:
         if(x in listValue != -1):
@@ -143,39 +161,96 @@ def toWord(morseMessage):
             vysledek = "Chybne zadany vstup: " + x
             break
 
-
     return vysledek
 
+
 def testToMorse():
+    """Unit test."""
     assert toMorse("a") == ".- "
     assert toMorse("I") == ".. "
+
+
+def testLower():
+    """Unit test."""
+    assert "M".lower() == "m"
+
+
+def testToMorseDalsi():
+    """Unit test."""
     assert toMorse("Ahoj") == ".- .... --- .--- "
+    assert toMorse("Ahoj svete") == ".- .... --- .---  ... ...- . - . "
+    assert toMorse("1234") == ".---- ..--- ...-- ....- "
+
+
+def testToMorseSlovo():
+    """Unit test."""
+    assert toMorse("Ahoj") == ".- .... --- .--- "
+    assert toMorse("joha") == ".--- --- .... .- "
+
+
+def testToMorse2Slova():
+    """Unit test."""
+    assert toMorse("ahoj svete") == ".- .... --- .---  ... ...- . - . "
     assert toMorse("Ahoj svete") == ".- .... --- .---  ... ...- . - . "
 
 
 def testToWord():
+    """Unit test."""
     assert toWord(".-") == "a"
     assert toWord("..") == "i"
-    assert toWord(".- .... --- .----") == "ahoj"
+
+
+def testDalsi():
+    """Unit test."""
+    assert toWord(".- .... --- .---") == "ahoj"
     assert toWord(".- .... --- .---  ... ...- . - .") == "ahoj svete"
 
 
+def testToWordSlovo():
+    """Unit test."""
+    assert toWord(".- .... --- .---") == "ahoj"
+    assert toWord(".- .--. .---- ...- ...") == "ap1vs"
+
+
+def testToWord2Slova():
+    """Unit test."""
+    assert toWord(".- .... --- .---  ... ...- . - .") == "ahoj svete"
+    assert toWord(".--- .-  - -.--  --- -.") == "ja ty on"
+
+
+def testKontrola():
+    """Unit test."""
+    assert toMorse(";;;;") == "chybne zadany vstup"
+    assert toWord(".----...-.-.") == "Chybne zadany vstup: .----...-.-."
+    assert toMorse("   ") == "   "
+    assert toWord("  ") == "   "
+
+
+def testZnaky():
+    """Unit test."""
+    assert toMorse("&@") == ".-... .--.-. "
+
+
 def main():
-    #zde bude nacitani vstupu a vyber zda se bude kodovat nebo dekodovat
+    """Funkce main slouzi pro zadavani vstupu od uzivatele.
+
+    funkce main v soube vola metody toMorse() a toWord()
+    """
     print('Vítej v našem dekodéru morseovky')
-    
-    
+
     chcePokracovat = True
+
     while(chcePokracovat):
         print("Kódování-[1] Dekódování-[2]")
         vstup = int(input())
-        if(vstup==1):
+        if(vstup == 1):
             print('Zadej co chces prelozit do morseovky: ')
             a = input()
             a = a.lower()
+            print(a)
             d = toMorse(a)
-            print(d)           
-            
+            print(d)
+
             print("Chcete ukončit program? [y,n]")
             vyber = input()
             vyber = vyber.lower()
@@ -183,10 +258,10 @@ def main():
                 chcePokracovat = False
             elif(vyber == "n"):
                 chcePokracovat = True
-            else: 
+            else:
                 print("Už končím nemám na tebe náladu")
                 chcePokracovat = False
-        elif(vstup==2):
+        elif(vstup == 2):
             b = input("zadej text v morseovce: ")
             print(toWord(b))
             print("Chcete ukončit program? [y,n]")
@@ -196,10 +271,10 @@ def main():
                 chcePokracovat = False
             elif(vyber == "n"):
                 chcePokracovat = True
-            else: 
+            else:
                 print("Už končím nemám na tebe náladu")
                 chcePokracovat = False
-        else: 
+        else:
             print("Chybný vstup!")
             print("Chcete ukončit program? [y,n]")
             vyber = input()
@@ -208,14 +283,15 @@ def main():
                 chcePokracovat = False
             elif(vyber == "n"):
                 chcePokracovat = True
-            else: 
+            else:
                 print("Už končím nemám na tebe náladu")
                 chcePokracovat = False
-    
-        pom = input()
+
+
+def testMain():
+    """Unit test."""
+    pass
+
 
 if __name__ == '__main__':
     main()
-
-
-
