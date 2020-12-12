@@ -10,7 +10,7 @@ Zda je nebo neni pravouhly.
 
 def nacteni_bodu():
     """Nacteni Bodu.
-    
+
     >>> nacteni_bodu()
     Zadej souradnice bodu, danou souradnici vzdy potvrd enterem
     [0, 0]
