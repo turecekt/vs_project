@@ -72,8 +72,8 @@ def test_translation_from_morse_code_to_alphabet_autobus():
 def test_morseCodeTranslation_koberec_nebo_parkety():
     """Překlad z Morseovy abecedy do Abecedy - koberec nebo parkety."""
     assert (main.morseCodeTranslation("-.-|---|-...|.|.-.|.|-.-.| |-.|"
-                                        ".|-...|---| |.--.|.-|.-.|-.-|.|-|"
-                                        "-.--") ==
+                                      ".|-...|---| |.--.|.-|.-.|-.-|.|-|"
+                                      "-.--") ==
             "koberec nebo parkety")
 
 
