@@ -3,7 +3,7 @@
 The example module supplies one function: compute(). For example,
 
 >>> compute(3)
-3
+-3
 """
 
 
@@ -16,4 +16,4 @@ def compute(x):
     Returns:
         - output - Output of the function
     """
-    return x * x - 2 * x
+    return x - 2 * x
