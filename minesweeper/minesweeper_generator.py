@@ -1,15 +1,15 @@
 import numpy
 
-# global constant for empty field in the playground
+"""global constant for empty field in the playground"""
 EMPTY = " "
-# global constant for mine in the playground
+"""global constant for mine in the playground"""
 MINE = "*"
 
 
-# class which represents minesweeper structure.
 class Minesweeper:
+    """class which represents minesweeper structure"""
     def __init__(self, rows, cols, count_of_mines):
-        # count of rows of the playground, +2 means # for each side of the playground
+        """count of rows of the playground, +2 means # for each side of the playground"""
         self.rows = rows + 2
         # count of cols of the playground, +2 means # for each side of the playground
         self.cols = cols + 2
