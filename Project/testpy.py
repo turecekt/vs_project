@@ -3,5 +3,5 @@ import morsecode
 
 
 def test_simple_input():
-    """Tests simple unput."""
+    """Tests simple input."""
     assert morsecode.encode_morse("e", True) == "."
