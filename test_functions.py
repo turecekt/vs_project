@@ -19,3 +19,10 @@ class TestDelkaStrany(unittest.TestCase):
         self.assertEqual(functions.delkaStranyAB(2, 5, 5, 9), 5)
         self.assertEqual(functions.delkaStranyAB(2, -6, -13, -19), 10)
         self.assertEqual(functions.delkaStranyAB(-2.6, -2.6, 119, 130), 11)
+
+    """Unittest na délku strany |BC|."""
+    def test_delkaStranyBC(self):
+        """Unittesty pro stranu BC."""
+        self.assertEqual(functions.delkaStranyBC(5, 13, 232, 238), 10)
+        self.assertEqual(functions.delkaStranyBC(-70, -81, -3, -3), 11)
+        self.assertEqual(functions.delkaStranyBC(16, 19, -4, -8), 5)
