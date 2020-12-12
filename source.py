@@ -1,6 +1,4 @@
-﻿import pytest
-
-#Funkce pro převod
+﻿#Funkce pro převod z Morseovky do abecedy a naopak
 def prevod(vstup):
 
     # Vytvoření dictionary pro morseovku
@@ -42,79 +40,48 @@ def prevod(vstup):
     'Z': '--..',
     ' ': ' '}
 
-    #Převedení textu na velká písmena
-    vstupV = vstup.upper()
+    g = ""
 
-    #Převedení textu na pole znaků
-    rozdVstup = list(vstupV)
+    #Převedení z morseovky na text
+    if vstup.startswith('.') or vstup.startswith('-'):
+        
+        #Rozdělení morseovky na jednotlivé kombinace
+        rozdVstup = vstup.split(' ')
 
-    # Vytvoření cyklu for pro převod zadaných znaků do morseovky
-    g = ""    
-    for prvek in rozdVstup:
-        if prvek not in morseovka:
-                print('Zadávané znaky můžou být jen písmena bez diakritiky a číslice') # Ošetření podmínek
-                exit()
-        for i in morseovka:
-            if prvek == i:
-                g = g + morseovka[i] + ' '
+        #Vytvoření cyklu pro převod z morseovky na text
+        for prvek in rozdVstup:
+            if prvek not in morseovka:
+                    print('Zadávané znaky nejsou písmena, či číslice, nebo znaky morseovky') # Ošetření vstupu
+                    exit()
+            for i in morseovka:
+                if prvek == morseovka[i]:
+                    g = g + i
+            
+        return g
 
-    return g
+    #Převedení z textu do morseovky
+    else: 
+        #Převedení textu na velká písmena
+        vstupV = vstup.upper()
 
-#UNIT TEST 1
-def unitTest1():
-    result = "... --- ... "
-    s = "sos"
-    test = prevod(s)
-    if result == test:
-        return print("OK")
-    else:
-        return print("NOT OK")
+        #Převedení textu na pole znaků
+        rozdVstup = list(vstupV)
 
-#UNIT TEST 2
-def unitTest2():
-    result = "...-- -.... ..... "
-    s = "365"
-    test = prevod(s)
-    if result == test:
-        return print("OK")
-    else:
-        return print("NOT OK")
+        # Vytvoření cyklu for pro převod zadaných znaků do morseovky
+            
+        for prvek in rozdVstup:
+            if prvek not in morseovka:
+                    print('Zadávané znaky nejsou písmena, či číslice, nebo znaky morseovky') # Ošetření vstupu
+                    exit()
+            for i in morseovka:
+                if prvek == i:
+                    g = g + morseovka[i] + ' '
 
-#UNIT TEST 3
-def unitTest3():
-    result = "...- . .-.. .. -.- --- ... - "
-    s = "vEliKoSt"
-    test = prevod(s)
-    if result == test:
-        return print("OK")
-    else:
-        return print("NOT OK")
-
-#UNIT TEST 4
-def unitTest4():
-    result = "-.-. .. ... .-.. --- ....- ..--- "
-    s = "Cislo42"
-    test = prevod(s)
-    if result == test:
-        return print("OK")
-    else:
-        return print("NOT OK")
-
-#UNIT TEST 5
-def unitTest5():
-    result = ".- .... --- .---   .--- .- -.-   ... .   -- .- ..."
-    s = "Ahoj jak se mas"
-    test = prevod(s)
-    if result == test:
-        return print("OK")
-    else:
-        return print("NOT OK")
-
-
-
+        return g
 
 #vytvoření vstupu
-vstup = input('Zadejte text pro převod do Morseovky: ')
+print('--KODÉR A DEKODÉR MORSEOVKY--')
+vstup = input('Zadejte text pro převod: ')
 
 #výstup
 print(prevod(vstup))
