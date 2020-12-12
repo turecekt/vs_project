@@ -1,4 +1,4 @@
-"""Proste projekt."""
+"""Prost e projekt."""
 
 import math
 
