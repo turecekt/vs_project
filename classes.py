@@ -136,3 +136,49 @@ class trojuhelnik:
 Konec definování tříd
 """
 
+
+"""
+Následuje definování metody vstup()
+"""
+
+
+def vstup():
+    """
+    Metoda, která zprostředkovává vstupy uživatele a vrací instanci
+    třídy trojuhelník.
+
+    Args:
+    Žádné argumenty.
+    """
+    print("""Vstupem programu  jsou souřadnice
+          vrcholů (tří bodů) ve 2D prostoru""")
+    print()
+    print("""Program poté sdělí informaci o sestrojitelnosti trojúhelníku,
+          informaci o délkách stran, obvod,
+          obsah a informaci o tom, zda je trojúhelník pravoúhlý""")
+    print()
+    print("""Zadejte body A, B a C v 2D prostory, a to ve tvaru
+          např. Ax mezera Ay, při úmyslu zadat bod B[3, 7], tedy
+          zadám na vyzvání k bodu B číslo 3 7.""")
+    A = input("Zadejte souřadnice bodu A: ")
+    B = input("Zadejte souřadnice bodu B: ")
+    C = input("Zadejte souřadnice bodu C: ")
+    Ax = A.split(" ", 1)[0]
+    Ay = A.split(" ", 1)[1]
+    Bx = B.split(" ", 1)[0]
+    By = B.split(" ", 1)[1]
+    Cx = C.split(" ", 1)[0]
+    Cy = C.split(" ", 1)[1]
+    Ax2 = float(Ax)
+    Ay2 = float(Ay)
+    Bx2 = float(Bx)
+    By2 = float(By)
+    Cx2 = float(Cx)
+    Cy2 = float(Cy)
+    print("Zadali jste následující hodnoty:")
+    print()
+    print("Bod A[" + Ax + " ," + Ay + "]")
+    print("Bod B[" + Bx + " ," + By + "]")
+    print("Bod C[" + Cx + " ," + Cy + "]")
+    print()
+    return trojuhelnik(Ax2, Ay2, Bx2, By2, Cx2, Cy2)
