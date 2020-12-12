@@ -6,21 +6,21 @@ from char_recurrence.main import read_file, number_char, number_occurence
 class Test(TestCase):
     def setUp(self):
         """Set variables for testing."""
-        self.s="Lorem Ipsum is simply dummy text of " \
+        self.s = "Lorem Ipsum is simply dummy text of " \
                  "the printing and typesetting industry"
-        self.mylist=[('l', 1), ('o', 1), ('r', 1)]
+        self.mylist = [('l', 1), ('o', 1), ('r', 1)]
+
     def test_read_file(self):
         """Test for read_file method."""
         self.assertEqual(read_file(arg_len=1,
-                                   input_file="Lorem Ipsum is simply dummy text of "
-                                                "the printing and typesetting industry"),
+                                   input_file="Lorem Ipsum is simply "
+                                              "dummy text of the printing and typesetting industry"),
                          self.s)
         self.assertNotEqual(read_file(arg_len=1, input_file="AHoj"), self.s)
 
     def test_number_char(self):
         """Test if method return correct lenght of word."""
         self.assertEqual(73, number_char(self.s))
-
 
     def test_number_occurence(self):
         """Test with random word.
