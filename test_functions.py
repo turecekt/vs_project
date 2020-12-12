@@ -55,3 +55,8 @@ class TestObvodObsah(unittest.TestCase):
 # Třída pro unittest na zkoušku pravoúhlosti
 class TestPravouhlosti(unittest.TestCase):
     """Unittest na zkoušku pravoúhlosti."""
+
+    def test_pravouhlosti(self):
+        """Unittesty pro zkoušku pravoúhlosti."""
+        self.assertEqual(functions.zkPravouhlosti(0, 3, 0, 4, 0, 0), 1)
+        self.assertEqual(functions.zkPravouhlosti(-8, 24, 19, 0, -74, 67), 0)
