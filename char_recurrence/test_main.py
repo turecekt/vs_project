@@ -1,10 +1,12 @@
 """Project for AK1VS.
+
 Author: Matúš Juhasz.
 """
 
 from unittest import TestCase
 
-from char_recurrence.main import read_file, number_char, number_occurence, arguments, print_number_occurence
+from char_recurrence.main import read_file, number_char,number_occurence\
+                                , arguments, print_number_occurence
 
 
 class Test(TestCase):

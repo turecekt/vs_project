@@ -1,4 +1,5 @@
 """Project for AK1VS.
+
 Author: Matúš Juhasz.
 """
 
