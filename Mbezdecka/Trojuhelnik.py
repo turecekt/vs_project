@@ -58,13 +58,22 @@ def obvod(Sa, Sb, Sc):
     return Sa+Sb+Sc
 
 
+def svypocet(Sa, Sb, Sc):
+    """pomocny vypocet pro obsah
+
+    >>> svypocet(4.243, 5.099, 2.828)
+    6.085
+    """
+    return obvod(Sa, Sb, Sc)/2
+
+
 def obsah(Sa, Sb, Sc):
     """Vypocet osahu trojuhelniku.
 
     >>> obvod(4.243, 5.099, 2.828)
     12.17
     """
-    s = obvod(Sa, Sb, Sc)/2
+    s = svypocet(Sa, Sb, Sc)
     return math.sqrt(s*(s-Sa)*(s-Sb)*(s-Sc))
 
 
@@ -77,17 +86,20 @@ def pravouhly(Sa, Sb, Sc):
     SbSc = round(Sb**2 + Sc**2)
     SaSb = round(Sa**2 + Sb**2)
     SaSc = round(Sa**2 + Sc**2)
-    Sb2 = float(round(Sb**2))
-    Sa2 = float(round(Sa**2))
-    Sc2 = float(round(Sc**2))
-    if Sc2 == SaSb or Sa2 == SbSc or Sb2 == SaSc:
+    if round(Sc**2) == SaSb or round(Sa**2) == SbSc or round(Sb**2) == SaSc:
         return True
     else:
         return False
 
 
-def vypis():
-    """Vypocet a vypis na konzoli."""
+if __name__ == '__main__':
+    """ Hlavni telo programu."""
+
+    import math
+    A = ['0', '0']
+    B = ['0', '0']
+    C = ['0', '0']
+    check = False
     A = nacteni_bodu()
     B = nacteni_bodu()
     C = nacteni_bodu()
@@ -108,13 +120,3 @@ def vypis():
             pass
     else:
         pass
-
-
-if __name__ == '__main__':
-    """ Main programu."""
-    import math
-    A = [0, 0]
-    B = [0, 0]
-    C = [0, 0]
-    check = False
-    vypis()
