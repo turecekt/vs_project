@@ -7,15 +7,27 @@ def createRandomArray():
 
     return random_array
 
+# funkce pro vyhledani minimalni hodnoty elementu v poli
 def findMinValue(array):
     
     min_value = min(array)
 
     return min_value
 
+# funkce pro vyhledalni maximalni hodnoty elementu v poli
+def findMaxValue(array):
+    
+    max_value = max(array)
+
+    return max_value
+
+
+# temporary variables for testing purposes
 array = createRandomArray()
 min_value = findMinValue(array)
+max_value = findMaxValue(array)
 
 # print for testing purposes
 print("Random array: ", array)    
 print("Minimal value of array: ", min_value)
+print("Maximal value of array: ", max_value)
