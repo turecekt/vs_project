@@ -122,11 +122,11 @@ class trojuhelnik:
         a = self.delkaStrany("a")
         b = self.delkaStrany("b")
         c = self.delkaStrany("c")
-        if math.pow(a, 2) == math.pow(b, 2) + math.pow(c, 2):
+        if a == math.sqrt(math.pow(b, 2) + math.pow(c, 2)):
             return "ANO"
-        elif math.pow(b, 2) == math.pow(a, 2) + math.pow(c, 2):
+        elif b == math.sqrt(math.pow(a, 2) + math.pow(c, 2)):
             return "ANO"
-        elif math.pow(c, 2) == math.pow(b, 2) + math.pow(a, 2):
+        elif c == math.sqrt(math.pow(b, 2) + math.pow(a, 2)):
             return "ANO"
         else:
             return "NE"
