@@ -8,7 +8,7 @@ Created on Sun Nov  1 14:14:51 2020
 
 from roman_library import roman_lib
 
-if name == "main":
+if __name__ == "__main__":
     print("Převodník na římská čísla V1.0")
     vstup = int(input("Zadej celé číslo: "))
     print(roman_lib.toRoman(vstup))
