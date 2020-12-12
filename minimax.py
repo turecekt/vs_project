@@ -1,4 +1,4 @@
-"""MiniMax AP1VS
+"""MiniMax AP1VS.
 
 Zaverecny projekt v Pythonu - Adam Karas
 """
@@ -60,7 +60,7 @@ def findMaxIndex(array):
 
 
 def selectionSort(array):
-    """Sorting algorithm: Selection Sort"""
+    """Sorting algorithm: Selection Sort."""
     n = len(array)
     for i in range(n):
         # Initially, assume the first element
@@ -80,9 +80,7 @@ def selectionSort(array):
 
 
 def bubbleSort(array):
-    """
-    Sorting algorithm: Bubble Sort
-    """
+    """Sorting algorithm: Bubble Sort."""
     n = len(array)
     # Traverse through all array elements
     for i in range(n - 1):
@@ -98,7 +96,7 @@ def bubbleSort(array):
 
 
 def insertionSort(array):
-    """Sorting algorithm: Insertion Sort"""
+    """Sorting algorithm: Insertion Sort."""
     # traverse through 1 to len(array)
     for i in range(1, len(array)):
         key = array[i]
@@ -140,7 +138,7 @@ print("-" * 50)
 time.sleep(1)
 # way of sorting data
 sortingWay = int(input("Enter 1 for Selection Sort\nEnter 2 for Bubble Sort\n"
-"Enter 3 for Insertion Sort\n"))
+    "Enter 3 for Insertion Sort\n"))
 print("-" * 50)
 time.sleep(1)
 
