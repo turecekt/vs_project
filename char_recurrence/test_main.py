@@ -23,11 +23,12 @@ class Test(TestCase):
         self.assertEqual(73, number_char(self.s))
 
     def test_number_occurence(self):
-        """Test with random word.
-        Test if method create correct List.
-        Test if all word are lower case.
-        Test for ignoring characters with accents.
-        Test for ignoring characters with accents.
+        """Testing method for correct number of occurrence.
+
+        #1 Test if method create correct List.
+        #2 Test if all word are lower case.
+        #3 Test for ignoring characters with accents.
+        #4 Test for ignoring characters with accents.
         """
         self.assertNotEqual(self.mylist, number_occurence("Example"))
         self.assertEqual(self.mylist, number_occurence("Lor"))

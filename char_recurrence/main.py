@@ -28,7 +28,7 @@ def arguments():
 
 
 def read_file(input_file, arg_len):
-    """Method for reading char to specific char.
+    """Method read all characters to specific char.
 
     Returns:
          data = string which will be working next.
@@ -44,7 +44,7 @@ def read_file(input_file, arg_len):
 
 
 def number_char(file_data):
-    """Method return length of passing string.
+    """Method return length of given string.
 
     Returns:
         number_char = number of characters in string
@@ -72,7 +72,7 @@ def number_occurence(file_data):
 
 
 def print_number_occurence(list):
-    """Method for printing results collected and sorted in list.
+    """Method print result collected and sorted in list.
 
     Returns:
         Print output to std-out
@@ -88,9 +88,11 @@ def print_number_occurence(list):
 
 
 def main():
-    file_data=arguments()
+    """ Main method"""
+    file_data = arguments()
     number_char(file_data)
     print_number_occurence(number_occurence(file_data.replace(" ", "")))
+
 
 if __name__ == '__main__':
     main()
