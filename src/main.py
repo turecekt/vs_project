@@ -69,7 +69,6 @@ charSeparator = "|"
 
 def isAlphabetTranslation():
     """Funkce, která zajišťuje správný výběr překladu."""
-
     print("Translate from:")
     print("1 - Alphabet")
     print("2 - Morse code")
