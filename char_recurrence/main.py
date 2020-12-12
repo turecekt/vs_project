@@ -5,7 +5,8 @@ from operator import itemgetter
 
 
 def arguments():
-    """Method for parsing argument from std-in or as parameters.
+    """
+    Method parse argument from std-in or as parameters.
 
     Use argparse library.
     Args:
@@ -28,7 +29,8 @@ def arguments():
 
 
 def read_file(input_file, arg_len):
-    """Method read all characters to specific char.
+    """
+    Method read all characters to specific char.
 
     Returns:
          data = string which will be working next.
@@ -49,7 +51,7 @@ def number_char(file_data):
     Returns:
         number_char = number of characters in string
     """
-    num_char=len(file_data)
+    num_char = len(file_data)
 
     return num_char
 
@@ -88,7 +90,7 @@ def print_number_occurence(list):
 
 
 def main():
-    """ Main method"""
+    """Main method."""
     file_data = arguments()
     number_char(file_data)
     print_number_occurence(number_occurence(file_data.replace(" ", "")))
