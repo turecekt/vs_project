@@ -51,7 +51,6 @@ Characters = {"A": ".-",
               "'": ".----.",
               "(": "-.--.",
               ")": "-.--.-",
-              "\"": ".-..-.",
               ":": "---...",
               "_": "..--.-",
               "+": ".-.-.",
@@ -68,15 +67,17 @@ def encode_morse(message):
         - encoded_message - Output of the function, message encoded
         into morse code
     """
-    print(message)
     encoded_message = ""
     for char in message.upper():
         if char != " ":
-            encoded_message += Characters[char] + " "
+            if char in Characters:
+                encoded_message += Characters[char] + " "
+            else:
+                encoded_message += char + " "
         else:
             encoded_message += " "
-    print(encoded_message)
-    return encoded_message
+    print(encoded_message.strip())
+    return encoded_message.strip()
 
 
 def decode_morse(message):
@@ -108,8 +109,8 @@ def decode_morse(message):
                     if letter == value:
                         decoded_message += key
                         letter = ""
-    print(decoded_message)
-    return decoded_message
+    print(decoded_message.strip())
+    return decoded_message.strip()
 
 
 def continue_program():
