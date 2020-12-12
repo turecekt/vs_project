@@ -103,16 +103,16 @@ def testodsifrovat():
 
 def main():
     """Funkce main je hlavni funce ktera nam umozni cely program spustit."""
-    print("Zadejte èíslo 1 pro šifrování nebo èíslo 2 pro dešifrování: ")
+    print("Zadejte cislo 1 pro sifrovani nebo cislo 2 pro desifrovani: ")
     vyber = input()
     if vyber == "1":
-        print("Zadejte text pro zašífrování: ")
+        print("Zadejte text pro zaaifrovani: ")
         zprava = input()
         vysledek = zasifrovat(zprava.upper())
         print(vysledek)
     if vyber == "2":
-        print("Zadejte text pro dešífrování a mezi "
-              "jednotlivými písmeny morseovy abecedy dávejte mezery: ")
+        print("Zadejte text pro desifrovani a mezi "
+              "jednotlivymi pismeny morseovy abecedy davejte mezery: ")
         zprava = input()
         vysledek = odsifrovat(zprava)
         print(vysledek)
