@@ -1,4 +1,4 @@
-import turtle
+from turtle import bgcolor, color, left, forward, right, ht, speed
 import time
 
 """ turn_line - # function for drawing Dragon curve"""
@@ -7,11 +7,11 @@ import time
 def turn_line(a):
     for j in range(len(a)):
         if a[j] == 'r':
-            turtle.right(90)
-            turtle.forward(10)
+            right(90)
+            forward(10)
         if a[j] == 'l':
-            turtle.left(90)
-            turtle.forward(10)
+            left(90)
+            forward(10)
 
 
 """input_data - function to enter background and pen colors"""
@@ -26,10 +26,10 @@ def input_data():
             data.append(input('Enter pen color:'))
     if data[0] == '':
         data[0] = 'red'
-    turtle.color(data[0])
+    color(data[0])
     if data[1] == "":
         data[1] = 'black'
-    turtle.bgcolor(data[1])
+    bgcolor(data[1])
     return data
 
 
@@ -39,9 +39,9 @@ def input_data():
 def sides(itr):
     old = 'r'
     new = old
-    turtle.ht()
-    turtle.speed(0)
-    turtle.forward(10)
+    ht()
+    speed(0)
+    forward(10)
     for i in range(1, itr, 1):
         new = old + 'r'
         old = old[::-1]
