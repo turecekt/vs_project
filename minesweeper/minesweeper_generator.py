@@ -156,3 +156,22 @@ def load_count_of_mines():
     else:
         return int(count_of_mines)
 
+
+def load_data_from_input():
+    """
+        input:  nothing
+        output: nothing
+        Main function which calls every function
+    """
+    rows = load_rows_from_input()
+    cols = load_cols_from_input()
+    count_of_mines = load_count_of_mines()
+    if (rows * cols) < count_of_mines:
+        count_of_mines_invalid_input = True
+        while count_of_mines_invalid_input:
+            count_of_mines = load_count_of_mines()
+            count_of_mines_invalid_input = (rows * cols) < count_of_mines
+
+    minesweeper = Minesweeper(rows, cols, count_of_mines)
+    return minesweeper
+
