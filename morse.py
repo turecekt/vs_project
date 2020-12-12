@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
 """
-Created on Sat Dec 12 14:21:11 2020
+Created on Sat Dec 12 14:21:11 2020.
 
-@author: pavel
+@author: pavel.
 """
 
-# Slovnik morseovy abecedy
+# Slovnik morseovy abecedy.
+
 morse = {
     'A': '.-',
     'B': '-...',
@@ -61,9 +62,8 @@ morse = {
 }
 
 
-# Funkce pro preklad textoveho retezce do morseovy abecedy
 def encryption(message):
-
+    """Funkce pro preklad textoveho retezce do morseovy abecedy."""
     encrypt = ''
     for letter in message:
         if letter != ' ':
@@ -74,8 +74,8 @@ def encryption(message):
     return encrypt
 
 
-# Funkce pro preklad morseovy abecedy do textoveho retezce
 def decryption(message):
+    """Funkce pro preklad morseovy abecedy do textoveho retezce."""
     # sledovani poctu mezer
     global i
     message += ' '
@@ -101,8 +101,8 @@ def decryption(message):
     return decrypt
 
 
-# Hlavní funkce programu
 def main():
+    """Hlavní funkce programu."""
     # Input pro preklad textoveho retezce do morseovy abecedy
     message = input("Zadajte text, ktery chcete zasifrovat:")
     result = encryption(message.upper())
