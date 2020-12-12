@@ -51,6 +51,19 @@ def selectionSort(array):
         array[minimum] = temp
     return array
 
+# funkce pro razeni, Bubble Sort
+def bubbleSort(array):
+    n = len(array)
+    # Traverse through all array elements 
+    for i in range(n - 1):
+        # range(n) also work but outer loop will repeat one time more than needed. 
+        # Last i elements are already in place 
+        for j in range(0, n - i - 1):
+            # Traverse the array from 0 to n-i-1, swap if the element found is greater than the next element
+            if array[j] > array[j + 1]:
+                array[j], array[j + 1] = array[j + 1], array[j]
+    return array
+
 # temporary variables and prints for testing purposes
 array = createRandomArray()
 print("Random array: ", array)    
@@ -62,5 +75,7 @@ min_index = findMinIndex(array)
 print("Index of min_value is: ", min_index)
 max_index = findMaxIndex(array)
 print("Index of max_value is: ", max_index)
-selectionSort(array)
-print("Array after Selection Sort: ", array)
+#selectionSort(array)
+#print("Array after Selection Sort: ", array)
+bubbleSort(array)
+print("Array after Bubble Sort: ", array)
