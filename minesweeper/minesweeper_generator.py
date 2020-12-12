@@ -175,3 +175,12 @@ def load_data_from_input():
     minesweeper = Minesweeper(rows, cols, count_of_mines)
     return minesweeper
 
+
+def main():
+    minesweeper = load_data_from_input()
+    put_mines_to_playground(minesweeper)
+    put_numbers_to_playground(minesweeper)
+    print_playground(minesweeper)
+
+
+# main()
