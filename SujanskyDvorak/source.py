@@ -47,6 +47,7 @@ def obsah(a, b, c):
     s = (a + b + c)/2
     return math.sqrt(s * ((s - a) * (s - b) * (s - c)))
 
+# kontrola zda je trojúhelník pravouhlý
 def pravouhlost(a, b, c):
     tmp_r = c
     if(a > tmp_r):
