@@ -82,29 +82,55 @@ def insertionSort(array):
 print("*" * 50)
 print("Generating 20 random numbers")
 print("-" * 50)
+# creating array via function
 array = createRandomArray()
-time.sleep(2)
+time.sleep(1)
 print(array)
 print("-" * 50)
-
 print("Getting min/max data and their index")
 print("-" * 50)
-time.sleep(2)
+time.sleep(1)
 #min value, min index
 min_value = findMinValue(array)
 print("Minimal value of array: ", min_value)
 min_index = findMinIndex(array)
 print("Index of min value is: ", min_index)
 print("-" * 50)
-time.sleep(2)
+time.sleep(1)
 #max value, max index
 max_value = findMaxValue(array)
 print("Maximal value of array: ", max_value)
 max_index = findMaxIndex(array)
 print("Index of max value is: ", max_index)
 print("-" * 50)
-time.sleep(2)
-sortingWay = input("Press 1 for Selection Sort\nPress 2 for Bubble Sort\nPress 3 for Insertion Sort\n")
+time.sleep(1)
+# way of sorting data
+sortingWay = int(input("Enter 1 for Selection Sort\nEnter 2 for Bubble Sort\nEnter 3 for Insertion Sort\n"))
+print("-" * 50)
+time.sleep(1)
+
+if sortingWay == 1:
+    print("Selection Sort:")
+    selectionSort(array)
+    print(array)
+        
+elif sortingWay == 2:
+    print("Bubble Sort:")   
+    bubbleSort(array)
+    print(array)
+    
+elif sortingWay == 3:
+    print("Insertion Sort:")
+    insertionSort(array)
+    print(array)
+    
+else: 
+    print("Wrong input!!")
+        
+
+print("*" * 50)
+print("End of program.")
+print("*" * 50)
     
 
 
