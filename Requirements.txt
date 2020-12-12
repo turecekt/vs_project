@@ -1,0 +1,12 @@
+Pro spusteni souboru AP1.py a test_AP1.py je nutne nainstalovat knihovny. Seznam knihoven je nize.
+
+Knihovny:
+pyflakes==2.2.0
+pygame==2.0.0
+pyparsing==2.4.7
+pypiwin32==223
+PySimpleGUI==4.31.0
+pytest==6.1.2
+pytest-cov==2.10.1
+pytest-forked==1.3.0
+pytest-xdist==2.1.0
