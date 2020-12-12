@@ -1,9 +1,11 @@
+""" Project minesweeper generator. """
+
 import numpy
 
-"""global constant for empty field in the playground"""
 EMPTY = " "
-"""global constant for mine in the playground"""
+""" Global constant for empty field in the playground. """
 MINE = "*"
+""" Global constant for mine in the playground. """
 
 
 class Minesweeper:
