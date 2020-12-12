@@ -73,7 +73,7 @@ class MusicPlayer:
         # Vkladani hudby do playlistu
         for track in songtracks:
             self.playlist.insert(END, track)
-            
+
     # Definovani funkce Play hudby
     def playsong(self):
         # Zobrazeni vybraneho nazvu skladby
@@ -91,14 +91,14 @@ class MusicPlayer:
         self.status.set("Stopped...")
         # Zastaveni hudby
         pygame.mixer.music.stop()
-        
+
     # Definovani funkce Pause hudby
     def pausesong(self):
         # Zobrazeni stavu
         self.status.set("Paused...")
         # Pozastaveni hudby
         pygame.mixer.music.pause()
-        
+
     # Definovani funkce Unpause hudby
     def unpausesong(self):
         # Zobrazeni stavu
