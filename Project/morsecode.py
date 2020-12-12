@@ -1,3 +1,7 @@
+"""Translator
+This module will encode alphabet letters into morse code
+and decode morse code back into alphabet letters"""
+
 # dictionery translating alphabet letters into morse code
 Characters = {"A": ".-",
               "B": "-...",
@@ -54,8 +58,10 @@ Characters = {"A": ".-",
 
 def encode_morse(message):
     """Functon encode_morse returns encoded_message in morse code.
+
     Args:
         - message - Input of the function, string in quotation marks
+
     Returns:
         - encoded_message - Output of the function, message encoded
         into morse code
@@ -73,8 +79,10 @@ def encode_morse(message):
 
 def decode_morse(message):
     """Functon decode_morse returns decoded_message in alphabet.
+
     Args:
         - message - Input of the function, string in quotation marks
+
     Returns:
         - decoded_message - Output of the function, message decoded
         from morse code into alphabet
@@ -103,9 +111,8 @@ def decode_morse(message):
 
 
 def continue_program():
-    """Functon continue_program asks user for input to continue encoding/decoding
-    or quit."""
-    print("If you want to translate another message press 1")
+    """Function continue_program asks user for input to continue or quit."""
+    print("If you want to translate another message press 1.")
     print("If you want to close the program press 2.")
     x = input()
     if x == "1":
