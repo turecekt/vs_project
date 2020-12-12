@@ -56,3 +56,23 @@ class TestCheckNeighboursOfCell(TestCase):
         number_of_neighbours = minesweeper_generator.check_neighbours_of_cell(self.minesweeper, 3, 3, 0)
         self.assertEqual(number_of_neighbours, 3)
 
+
+class TestPutNumbersToPlayground(TestCase):
+    def test_put_numbers_to_playground(self):
+        minesweeper = minesweeper_generator.Minesweeper(5, 5, 6)
+        expected_minesweeper = [['#', '#', '#', '#', '#', '#', '#'],
+                                ['#', '*', 2, 1, 1, 1, '#'],
+                                ['#', '*', 2, 1, '*', 1, '#'],
+                                ['#', 1, 1, 2, 3, 3, '#'],
+                                ['#', 1, 1, 1, '*', '*', '#'],
+                                ['#', '*', 1, 1, 2, 2, '#'],
+                                ['#', '#', '#', '#', '#', '#', '#']]
+        minesweeper.playground = [['#', '#', '#', '#', '#', '#', '#'],
+                                  ['#', '*', ' ', ' ', ' ', ' ', '#'],
+                                  ['#', '*', ' ', ' ', '*', ' ', '#'],
+                                  ['#', ' ', ' ', ' ', ' ', ' ', '#'],
+                                  ['#', ' ', ' ', ' ', '*', '*', '#'],
+                                  ['#', '*', ' ', ' ', ' ', ' ', '#'],
+                                  ['#', '#', '#', '#', '#', '#', '#']]
+        minesweeper_generator.put_numbers_to_playground(minesweeper)
+        self.assertEqual(minesweeper.playground, expected_minesweeper)
