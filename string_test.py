@@ -6,7 +6,8 @@ import unittest
 """Vytvoření testovací třídy class."""
 
 
-class TestMorse(unittest.TestCase): """Vytvoření třídy."""
+class TestMorse(unittest.TestCase):
+"""Vytvoření třídy."""
 
     def test_upper(self): """Test na fce zvětšení písmena."""
         self.assertEqual("abc".upper(), "ABC")
