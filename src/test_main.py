@@ -67,3 +67,14 @@ def test_translation_from_morse_code_to_alphabet_autobus():
     """Překlad z Morseovy abecedy do Abecedy - autobus."""
     assert (main.translation("\".-|..-|-|---|-...|..-|...\"", False) ==
             "autobus")
+
+
+def test_morseCodeTranslation_autobus():
+    """Překlad z Morseovy abecedy do Abecedy - autobus."""
+    assert (main.__morseCodeTranslation(".-|..-|-|---|-...|..-|...") ==
+            "autobus")
+
+
+def test_alphabetTranslation_autobus():
+    """Překlad z Morseovy abecedy do Abecedy - autobus."""
+    assert main.__alphabetTranslation("SOS") == "...---..."
