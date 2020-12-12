@@ -38,19 +38,18 @@ class TestMusicPlayer(unittest.TestCase):
             del sound
         finally:
             os.remove(temp_file)
-            
+
     def test_init__zero_values(self):
         # Kontroluje, zda vstupni podminky jsou ekvivalentni.
         mixer.pre_init(44100, 8, 1)
         mixer.init(0, 0, 0)
         self.assertNotEqual(mixer.get_init(), (44100, 8, 1))        
-    
+
     def test_get_num_channels__defaults_eight_after_init(self):
         # Porovnani poctu zvukovych kanalu v mixer.get_num_channels() s ocekavanymi 8 kanaly.
         mixer.init()
         self.assertEqual(mixer.get_num_channels(), 8)
-    
-    
+
 
 if __name__ == "__main__":
     unittest.main()
