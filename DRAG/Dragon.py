@@ -1,7 +1,9 @@
 import turtle
 import time
 
-""" turn_line - # function for drawing Dragon curve"""
+""" turn_line - # 
+function for drawing
+ Dragon curve"""
 
 
 def turn_line(a):
@@ -14,7 +16,9 @@ def turn_line(a):
             turtle.forward(10)
 
 
-"""input_data - function to enter background and pen colors"""
+"""input_data
+ - function to enter background
+  and pen colors"""
 
 
 def input_data():
@@ -33,7 +37,8 @@ def input_data():
     return data
 
 
-"""sides - function for calculating rotations Dragon curve"""
+"""sides - function for calculating
+ rotations Dragon curve"""
 
 
 def sides(itr):
