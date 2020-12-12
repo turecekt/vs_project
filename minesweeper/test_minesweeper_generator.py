@@ -94,3 +94,14 @@ class TestLoadCountOfMines(TestCase):
     def test_load_count_of_mines(self):
         with patch('builtins.input', return_value='5'):
             self.assertEqual(minesweeper_generator.load_count_of_mines(), 5)
+
+
+class TestLoadDataFromInput(TestCase):
+    def test_load_data_from_input(self):
+        inputs_in_order = ['5', '5', '5']
+        minesweeper = minesweeper_generator.Minesweeper(5, 5, 5)
+        with patch('builtins.input', side_effect=inputs_in_order):
+            result = minesweeper_generator.load_data_from_input()
+            self.assertEqual(result.rows, minesweeper.rows)
+            self.assertEqual(result.cols, minesweeper.cols)
+            self.assertEqual(result.count_of_mines, minesweeper.count_of_mines)
