@@ -1,9 +1,13 @@
+"""Project for AK1VS.
+Author: Matúš Juhasz.
+"""
 from unittest import TestCase
 
 from char_recurrence.main import read_file, number_char, number_occurence
 
 
 class Test(TestCase):
+    """Testing class for methods."""
     def setUp(self):
         """Set variables for testing."""
         self.s = "Lorem Ipsum is simply dummy text of " \

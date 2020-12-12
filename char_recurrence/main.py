@@ -1,3 +1,6 @@
+"""Project for AK1VS.
+Author: Matúš Juhasz.
+"""
 import re
 import sys
 from argparse import ArgumentParser
