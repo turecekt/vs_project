@@ -1,17 +1,9 @@
-"""Semestralni projekt - MiniMax AP1VS
+"""MiniMax AP1VS
 
-Adam Karas
+Zaverecny projekt v Pythonu - Adam Karas
 """
 import random
-""" random numbers module
-
-For generating random numbers.
-"""
 import time
-""" time module
-
-For working with time functions
-"""
 
 def createRandomArray():
     """ Create an array of random integers.
