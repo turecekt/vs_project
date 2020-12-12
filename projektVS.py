@@ -145,14 +145,19 @@ def testToWord():
 
 def main():
     #zde bude nacitani vstupu a vyber zda se bude kodovat nebo dekodovat
-    print('Zadej co chces prelozit do morseovky: ')
-    a = input()
-    a.lower()
-    d = toMorse(a)
-    print(d)
-    b = input("zadej text v morseovce: ")
-    print(toWord(b))
-
+    print('Vítej v našem dekodéru morseovky')
+    print("Kódování-[1] Dekódování-[2]")
+    vstup = input()
+    if(vstup==1):
+        print('Zadej co chces prelozit do morseovky: ')
+        a = input()
+        a.lower()
+        d = toMorse(a)
+        print(d)
+    elif(vstup==2):
+        b = input("zadej text v morseovce: ")
+        print(toWord(b))
+    else: print("Chybný vstup!")
 
 
 if __name__ == '__main__':
