@@ -1,4 +1,5 @@
 import random
+import time
 
 # funkce pro vytvoreni nahodneho pole 20ti cisel v rozsahu -100 : 100
 def createRandomArray():
@@ -64,18 +65,65 @@ def bubbleSort(array):
                 array[j], array[j + 1] = array[j + 1], array[j]
     return array
 
-# temporary variables and prints for testing purposes
+# funkce pro razeni, Insertion Sort
+def insertionSort(array):
+    # traverse through 1 to len(array)
+    for i in range(1, len(array)):
+        key = array[i]
+        #move elements of array [0..i-1], that are greater than key, to one position ahed of their current position
+        j = i - 1
+        while j >= 0 and key < array[j]:
+            array[j + 1] = array[j]
+            j -= 1
+        array[j + 1] = key
+    return array
+
+# hlavni cast programu
+print("*" * 50)
+print("Generating 20 random numbers")
+print("-" * 50)
 array = createRandomArray()
-print("Random array: ", array)    
+time.sleep(2)
+print(array)
+print("-" * 50)
+
+print("Getting min/max data and their index")
+print("-" * 50)
+time.sleep(2)
+#min value, min index
 min_value = findMinValue(array)
 print("Minimal value of array: ", min_value)
+min_index = findMinIndex(array)
+print("Index of min value is: ", min_index)
+print("-" * 50)
+time.sleep(2)
+#max value, max index
 max_value = findMaxValue(array)
 print("Maximal value of array: ", max_value)
-min_index = findMinIndex(array)
-print("Index of min_value is: ", min_index)
 max_index = findMaxIndex(array)
-print("Index of max_value is: ", max_index)
+print("Index of max value is: ", max_index)
+print("-" * 50)
+time.sleep(2)
+sortingWay = input("Press 1 for Selection Sort\nPress 2 for Bubble Sort\nPress 3 for Insertion Sort\n")
+    
+
+
+
+
+# temporary variables and prints for testing purposes
+#array = createRandomArray()
+#print("Random array: ", array)    
+#min_value = findMinValue(array)
+#print("Minimal value of array: ", min_value)
+#max_value = findMaxValue(array)
+#print("Maximal value of array: ", max_value)
+#min_index = findMinIndex(array)
+#print("Index of min_value is: ", min_index)
+#max_index = findMaxIndex(array)
+#print("Index of max_value is: ", max_index)
 #selectionSort(array)
 #print("Array after Selection Sort: ", array)
-bubbleSort(array)
-print("Array after Bubble Sort: ", array)
+#bubbleSort(array)
+#print("Array after Bubble Sort: ", array)
+#insertionSort(array)
+#print("Array after Insertion Sort: ", array)
