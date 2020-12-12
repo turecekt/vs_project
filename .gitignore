@@ -1,0 +1,4 @@
+.idea
+.coverage
+/tests.sh
+/tests_mac.sh
