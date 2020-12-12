@@ -6,22 +6,24 @@ import unittest
 """vytvoření testovací třídy class."""
 
 
-class TestStringMethods(unittest.TestCase): 
+class TestStringMethods(unittest.TestCase):
     """vytvoření třídy."""
 
 
 def test_upper(self): """test na fce zvětšení písmena."""
-
-
-    self.assertEqual("abc".upper(), "ABC")
+self.assertEqual("abc".upper(), "ABC")
 
 
 def test_isupper(self): """testování fce zvětšení písmena."""
+
+    
 self.assertTrue("ABC".isupper())
 elf.assertFalse("Abc".isupper())
 
 
 def test_split(self): """testování fce split."""
+
+    
 s = "miroslav olivik"
 self.assertEqual(s.split(), ["miroslav", "olivik"])
 with self.assertRaises(TypeError):
