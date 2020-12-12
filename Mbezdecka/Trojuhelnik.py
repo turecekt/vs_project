@@ -11,7 +11,7 @@ Zda je nebo neni pravouhly.
 def nacteni_bodu():
     """Nacteni Bodu.
 
-    >>> nacteni()
+    >>> nacteni_bodu()
     [1, 3]
     """
     print("Zadej souradnice bodu, danou souradnici vzdy potvrd enterem")
@@ -37,7 +37,7 @@ def vypocet_strany(A, B):
 def sestrojitelny(Sa, Sb, Sc):
     """Test sestrojitelnosti.
 
-    >>> setrojitelny( 4.243, 5.099, 2.828)
+    >>> sestrojitelny( 4.243, 5.099, 2.828)
     True
     """
     if Sa + Sb > Sc and Sa + Sc > Sb and Sb + Sc > Sa:
@@ -61,7 +61,7 @@ def obsah(Sa, Sb, Sc):
     """Vypocet osahu trojuhelniku.
 
     >>> obvod(4.243, 5.099, 2.828)
-    6.0
+    12.17
     """
     s = obvod(Sa, Sb, Sc)/2
     return math.sqrt(s*(s-Sa)*(s-Sb)*(s-Sc))
@@ -92,7 +92,6 @@ if __name__ == '__main__':
     A = ['0', '0']
     B = ['0', '0']
     C = ['0', '0']
-    i = 0
     check = False
     A = nacteni_bodu()
     B = nacteni_bodu()
