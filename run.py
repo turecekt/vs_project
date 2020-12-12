@@ -1,13 +1,15 @@
+"""Modul pro spousteni kodu."""
+
 from morse import MorseCodeTranslator
 
 translator = MorseCodeTranslator()
 
 text = "Testovaci string na preklad do morseovky a zpet."
 
-# Translate text to morse code
+# Prelozi text do morseovky
 morse = translator.translate_text(text)
 
-# Translate morse code to text
+# Prelozi morseovku na text
 translated_text = translator.translate_morse(morse)
 
 print(morse)
