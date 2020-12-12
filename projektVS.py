@@ -61,6 +61,7 @@ def toMorse(message):
         '"': ".-..-.",
         "?": "..--..",
         "/": "-..-.",
+        " ": "",
     }
     vysledek = ""
     for c in message:
@@ -126,6 +127,7 @@ def toWord(morseMessage):
         '"': ".-..-.",
         "?": "..--..",
         "/": "-..-.",
+        " ": "",
     }
     vysledek = ""
     for x in morseMessage:
@@ -143,7 +145,10 @@ def testToMorse():
 
 
 def testToWord():
-    pass
+    assert toWord(".-") == "a"
+    assert toWord("..") == "i"
+    assert toWord(".- .... --- .----") == "ahoj"
+    assert toWord(".- .... --- .---  ... ...- . - .") == "ahoj svete"
 
 
 def main():
