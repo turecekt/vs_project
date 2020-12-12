@@ -74,3 +74,20 @@ def check_neighbours_of_cell(minesweeper, index_of_row, index_of_col, number_of_
                 # increase number_of_near_mines if the cell touches mine
                 number_of_near_mines += 1
     return number_of_near_mines
+
+
+def put_numbers_to_playground(minesweeper):
+    """
+        input:  minesweeper
+        output: nothing, this function put numbers that represent the number of mines that this cell touches
+    """
+    # from 1 to rows/columns - 1 because we do not want to change borders from #
+    for i in range(1, minesweeper.rows - 1):
+        for j in range(1, minesweeper.cols - 1):
+            # cell does not include mine
+            if minesweeper.playground[i][j] == EMPTY:
+                number_of_near_mines = check_neighbours_of_cell(minesweeper, i, j, 0)
+                # if number of near mines is not 0, put the number to the playground, we do not want to have 0
+                if number_of_near_mines != 0:
+                    minesweeper.playground[i][j] = number_of_near_mines
+
