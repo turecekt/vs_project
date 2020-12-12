@@ -8,3 +8,7 @@ import functions
 if __name__ == '__main__':
     unittest.main()
 
+
+# Třída pro unittesty na délky stran trojúhelníku
+class TestDelkaStrany(unittest.TestCase):
+    """Unittest na délku stran AB, BC, AC."""
