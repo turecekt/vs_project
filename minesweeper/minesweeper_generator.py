@@ -1,31 +1,24 @@
-"""
-Project minesweeper generator.
-"""
+"""Project minesweeper generator."""
 
 import numpy
 
 EMPTY = " "
-"""
-Global constant for empty field in the playground.
-"""
+"""Global constant for empty field in the playground."""
 MINE = "*"
-"""
-Global constant for mine in the playground.
-"""
+"""Global constant for mine in the playground."""
 
 
 class Minesweeper:
-    """
-    Class which represents minesweeper structure.
-    """
+    """Class which represents minesweeper structure."""
+
     def __init__(self, rows, cols, count_of_mines):
         """
         Init minesweeper.
 
         Attributes:
-            rows: number of rows.
-            cols: number of cols.
-            count_of_mines: count of mines.
+            rows: number of rows
+            cols: number of cols
+            count_of_mines: count of mines
         """
         # Count of rows of the playground,
         # +2 means # for each side of the playground
@@ -49,9 +42,9 @@ def create_array_with_mines(rows, cols, count_of_mines):
     Create array with mines.
 
     Attributes:
-        rows: number of rows.
-        cols: number of cols.
-        count_of_mines: count of mines.
+        rows: number of rows
+        cols: number of cols
+        count_of_mines: count of mines
 
     Returns: array with bombs on random indices * represents mine
     """
@@ -70,10 +63,13 @@ def create_array_with_mines(rows, cols, count_of_mines):
 
 def put_mines_to_playground(minesweeper):
     """
-        input:  minesweeper
-                count of mines
-        output: nothing, this function randomly put mines to the playground
-        * represents mine
+    Put mines to the playground.
+
+    Attributes:
+        minesweeper: minesweeper
+
+    Returns: Nothing, this function randomly put mines to the playground
+        * represents mine.
     """
     bombs_array = create_array_with_mines(minesweeper.rows - 2,
                                           minesweeper.cols - 2,
@@ -91,11 +87,15 @@ def check_neighbours_of_cell(minesweeper,
                              index_of_row, index_of_col,
                              number_of_near_mines):
     """
-        input:  minesweeper
-                index_of_row is current index of row
-                index_of_col is current index of column
-                number_of_near_mines is count of mines that the cell touches
-        output: number of near mines of the cell
+    Check neighbours of the cell.
+
+    Attributes:
+        minesweeper: minesweeper
+        index_of_row: index of the row
+        index_of_col: index of the column
+        number_of_near_mines: number of near mines of the cell
+
+    Returns: number of near mines of the cell.
     """
     for i in range(-1, 2):
         for j in range(-1, 2):
@@ -108,8 +108,13 @@ def check_neighbours_of_cell(minesweeper,
 
 def put_numbers_to_playground(minesweeper):
     """
-        input:  minesweeper
-        output: nothing, this function put numbers that represent the number of mines that this cell touches
+    Put numbers to the playground.
+
+    Attributes:
+        minesweeper: minesweeper
+
+    Returns: Nothing, this function put numbers which represent
+    the number of mines which this cell touches.
     """
     # from 1 to rows/columns - 1
     # because we do not want to change borders from #
@@ -128,8 +133,10 @@ def put_numbers_to_playground(minesweeper):
 
 def print_playground(minesweeper):
     """
-        input:  minesweeper
-        output: printed playground
+    Print playground to the output console.
+
+    Attributes:
+        minesweeper: completed minesweeper
     """
     for i in range(minesweeper.rows):
         for j in range(minesweeper.cols):
@@ -139,8 +146,12 @@ def print_playground(minesweeper):
 
 def check_input(input_for_check):
     """
-        input:  input
-        output: True if input is correct else False
+    Check if input is correct.
+
+    Attributes:
+        input_for_check: input
+
+    Returns: True if the input is correct else False.
     """
     if not input_for_check.isnumeric():
         return False
@@ -154,8 +165,9 @@ def check_input(input_for_check):
 
 def load_rows_from_input():
     """
-        input:  nothing
-        output: number of rows if input is correct
+    Load rows from input.
+
+    Returns: number of rows if input is correct
     """
     rows = input("Enter number of rows: ")
     if not check_input(rows):
@@ -167,8 +179,9 @@ def load_rows_from_input():
 
 def load_cols_from_input():
     """
-        input:  nothing
-        output: number of columns if input is correct
+    Load columns from input.
+
+    Returns: number of columns if input is correct
     """
     cols = input("Enter number of cols: ")
     if not check_input(cols):
@@ -180,8 +193,9 @@ def load_cols_from_input():
 
 def load_count_of_mines():
     """
-        input:  nothing
-        output: number of mines if input is correct
+    Load count of mines from input.
+
+    Returns: count of mines if input is correct
     """
     count_of_mines = input("Enter number of mines: ")
     if not check_input(count_of_mines):
@@ -193,9 +207,9 @@ def load_count_of_mines():
 
 def load_data_from_input():
     """
-        input:  nothing
-        output: nothing
-        Main function which calls every function
+    Load all data from input.
+
+    Returns: minesweeper with rows, cols, count of mines from input
     """
     rows = load_rows_from_input()
     cols = load_cols_from_input()
@@ -211,6 +225,7 @@ def load_data_from_input():
 
 
 def main():
+    """Main function which calls other methods."""
     minesweeper = load_data_from_input()
     put_mines_to_playground(minesweeper)
     put_numbers_to_playground(minesweeper)
