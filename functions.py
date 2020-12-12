@@ -14,3 +14,9 @@ def delkaStranyAB(xa, xb, ya, yb):
 def delkaStranyBC(xb, xc, yb, yc):
     """Funkce vrátí velikost délky strany BA."""
     return math.sqrt(((xc-xb)**2)+(yc-yb)**2)
+
+
+# Funkce pro výpočet délky strany AC trojúhelníku
+def delkaStranyAC(xa, xc, ya, yc):
+    """Funkce vrátí velikost délky strany AC."""
+    return math.sqrt(((xc-xa)**2)+(yc-ya)**2)
