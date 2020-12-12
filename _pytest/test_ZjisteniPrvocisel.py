@@ -33,10 +33,9 @@ funkce HeurestickaMetoda()
 False
 
 """
-import pytest
 import math
 from os import path
-
+# flake8: noqa 
 
 def test_Metody():
     assert Metody(1) == -1
@@ -47,7 +46,7 @@ def test_Metody():
     assert Metody(40011) == -4
 
 
-def test_MetodaPravidelDelitelnosti():
+def test_MetodaPravidelDelitelnosti(): 
     assert MetodaPravidelDelitelnosti(44) == True
     assert MetodaPravidelDelitelnosti(51) == False
 
@@ -63,7 +62,7 @@ def test_ZjistiVicePrvocisel():
     assert ZjistiVicePrvocisel(["2", "3", "5", "7"], 15) == ["2", "3", "5", "7", "11", "13"]
 
 
-def test_HeurestickaMetoda():
+def test_HeurestickaMetoda(): 
     assert HeurestickaMetoda(7) == True
     assert HeurestickaMetoda(6) == False
 
