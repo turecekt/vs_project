@@ -44,3 +44,9 @@ class TestObvodObsah(unittest.TestCase):
         """Unittesty pro obvod."""
         self.assertEqual(functions.obvodTroj(0, 8, 0, 6, 0, 0), 24)
         self.assertEqual(functions.obvodTroj(0, 3, 0, 4, 0, 0), 12)
+
+    """Unittest na obsah."""
+    def test_obsah(self):
+        """Unittesty pro obsah."""
+        self.assertEqual(functions.obsahTroj(1, 9, 1, 7, 1, 1), 24)
+        self.assertEqual(functions.obsahTroj(17, 20, 17, 21, 17, 17), 6)
