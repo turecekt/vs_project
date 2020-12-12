@@ -7,3 +7,5 @@ class TestCheckInput(TestCase):
     def test_check_input_non_numeric_input(self):
         self.assertFalse(minesweeper_generator.check_input("jrif"))
 
+    def test_check_input_negative_value(self):
+        self.assertFalse(minesweeper_generator.check_input('-2'))
