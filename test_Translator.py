@@ -12,6 +12,11 @@ def test_encodeChar():
     assert t.encodeChar('A') == '.-'
 
 
+def test_encodeChar_Invalid():
+    """Test zakodovani znaku."""
+    assert t.encodeChar('č') == '..--..'
+
+
 def test_encode():
     """Test zakodovani textu."""
     assert t.encode('test') == '- . ... -'
