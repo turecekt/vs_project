@@ -87,7 +87,7 @@ def pravouhly(Sa, Sb, Sc):
 
 
 def vypis():
-    """ Vzpocet a vypis na konzoli."""
+    """Vypocet a vypis na konzoli."""
     A = nacteni_bodu()
     B = nacteni_bodu()
     C = nacteni_bodu()
