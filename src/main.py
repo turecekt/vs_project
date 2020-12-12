@@ -1,3 +1,4 @@
+"""Překladač"""
 # Mapování písmen abecedy na znaky Morseovy abecedy
 alphabetMorse = {
     "a": ".-",
@@ -66,7 +67,7 @@ space = " "
 charSeparator = "|"
 
 
-# Funkce, která zajišťuje správný výběr překladu
+"""Funkce, která zajišťuje správný výběr překladu"""
 def isAlphabetTranslation():
     print("Translate from:")
     print("1 - Alphabet")
@@ -86,7 +87,7 @@ def isAlphabetTranslation():
             continue
 
 
-# Funkce překládá z abecedy do Morseovy abecedy
+"""Funkce překládá z abecedy do Morseovy abecedy"""
 def alphabetTranslation(text):
     result = ""
     for char in text.lower():
@@ -97,7 +98,7 @@ def alphabetTranslation(text):
     return result
 
 
-# Funkce překládá z Morseovy abecedy do abecedy
+"""Funkce překládá z Morseovy abecedy do abecedy"""
 def morseCodeTranslation(text):
     result = ""
     chars = text.split(charSeparator)
@@ -108,7 +109,7 @@ def morseCodeTranslation(text):
             result += space
     return result
 
-
+"""Funkce překládá text z Abecedy do Morseovy abecedy a naopak"""
 def translation(text, isAlphabet):
     if text is None:
         return ""
@@ -121,7 +122,7 @@ def translation(text, isAlphabet):
     return morseCodeTranslation(modifyText) if not isAlphabet else alphabetTranslation(modifyText)
 
 
-# Funkce s logikou hlavní smyčky programu
+"""Funkce s logikou hlavní smyčky programu"""
 def mainLoop(isRepeat):
     # Menu (základní nastavení pro kódování a dekódování)
     print("Welcome to the Translator!\n") if not isRepeat else print("Translator\n")
@@ -136,7 +137,7 @@ def mainLoop(isRepeat):
     print("Translation:")
     print(translation(text, isAlphabet))
 
-
+"""Hlavní smyčka programu"""
 def run():
     isRepeat = False
     exitCode = 'n'
