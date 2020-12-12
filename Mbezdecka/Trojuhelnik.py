@@ -9,12 +9,7 @@ Zda je nebo neni pravouhly.
 
 
 def nacteni_bodu():
-    """Nacteni Bodu.
-
-    >>> nacteni_bodu()
-    Zadej souradnice bodu, danou souradnici vzdy potvrd enterem
-    [0, 0]
-    """
+    """Nacteni Bodu."""
     print("Zadej souradnice bodu, danou souradnici vzdy potvrd enterem")
     nc = [0, 0]
     nc[0] = input()
@@ -30,6 +25,8 @@ def vypocet_strany(A, B):
     >>> import math
     >>> math.sqrt(float(4**2) + float(3**2))
     5.0
+    >>> float(5) - float(4)
+    1.0
     """
     import math
     ab = [0, 0]
@@ -69,11 +66,14 @@ def obvod(Sa, Sb, Sc):
 def obsah(Sa, Sb, Sc):
     """Vypocet osahu trojuhelniku.
 
-    >>> obvod(4.243, 5.099, 2.828)
-    12.17
+    >>> obsah(4.243, 5.099, 2.828)
+    6.0
+    >>> obvod(4.243, 5.099, 2.828)/2
+    6.085
     """
+    import math
     s = obvod(Sa, Sb, Sc)/2
-    return math.sqrt(s*(s-Sa)*(s-Sb)*(s-Sc))
+    return round(math.sqrt(s*(s-Sa)*(s-Sb)*(s-Sc)))
 
 
 def pravouhly(Sa, Sb, Sc):
@@ -96,7 +96,6 @@ def pravouhly(Sa, Sb, Sc):
 if __name__ == '__main__':
     """ Hlavni telo programu."""
 
-    import math
     A = ['0', '0']
     B = ['0', '0']
     C = ['0', '0']
@@ -113,7 +112,7 @@ if __name__ == '__main__':
         print("Delka strany b je: ", round(Sb, 3))
         print("Delka strany c je: ", round(Sc, 3))
         print("Obvod trojuhelniku je: ", round(obvod(Sa, Sb, Sc), 3))
-        print("Obsah trojuhelniku je: ", round(obsah(Sa, Sb, Sc), 3))
+        print("Obsah trojuhelniku je: ", obsah(Sa, Sb, Sc), 3)
         if pravouhly(Sa, Sb, Sc) is True:
             print("Trojuhelnik je pravouhly")
         else:
