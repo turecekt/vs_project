@@ -50,3 +50,8 @@ class TestObvodObsah(unittest.TestCase):
         """Unittesty pro obsah."""
         self.assertEqual(functions.obsahTroj(1, 9, 1, 7, 1, 1), 24)
         self.assertEqual(functions.obsahTroj(17, 20, 17, 21, 17, 17), 6)
+
+
+# Třída pro unittest na zkoušku pravoúhlosti
+class TestPravouhlosti(unittest.TestCase):
+    """Unittest na zkoušku pravoúhlosti."""
