@@ -1,5 +1,9 @@
+# The function that handles the logic of encoding/decoding
+# morse code to text and vice-versa.
 def morse(text):
 
+    # This dictionary contains the specified letters and
+    # their morse code equivalent.
     morseovka = {'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.',
                  'F': '..-.', 'G': '--.', 'H': '....', 'I': '..', 'J': '.---',
                  'K': '-.-', 'L': '.-..', 'M': '--', 'N': '-.', 'O': '---',
@@ -8,11 +12,16 @@ def morse(text):
                  'Z': '--..', ' ': '.....'}
     preklad = ''
 
+    # If the input string does not start with double quotes,
+    # print an error (double quotes were a project requirement).
+    # The double quotes are then trimmed for easier work with the string.
     if text.startswith('"') and text.endswith('"'):
         text = text[1:-1]
     else:
         return 'Vstupni retezec neni napsan v uvozovkach'
 
+    # Check if the input string contains any letters that are not
+    # defined in the dictionary, then print an error.
     for x in text:
         x = x.upper()
         key_check = x
@@ -23,12 +32,17 @@ def morse(text):
         else:
             return 'Vstupni retezec obsahuje neocekavane znaky'
 
+    # If the input string starts with a dot or a dash,
+    # the program will convert morse code back to text.
+    # The string is split if there is a space, and that
+    # split string gets converted via the dictionary.
     if text.startswith('.') or text.startswith('−'):
         morseovka_preklad = dict([(v, k) for k, v in morseovka.items()])
         text = text.split(' ')
         for x in text:
             preklad += morseovka_preklad.get(x)
 
+    # Else the program converts text to morse code.
     else:
         text = text.upper()
         for x in text:
@@ -36,45 +50,54 @@ def morse(text):
     return preklad.strip()
 
 
-# here is the input string
+# Here is the input string, where the user can
+# freely input to encode/decode.
 inputstr = '"ahoj"'
 
+# Call to method for encoding/decoding with the
+# input string as the parameter.
 print(morse(inputstr))
 
 
+# Here are the unit tests.
 def test_morse_lower():
-    """test text-to-morse function with only lowercase letters"""
+    """Test text-to-morse function with only lowercase letters."""
     assert morse('"ahoj"') == '.- .... --- .---'
 
 
 def test_morse_upper():
-    """test text-to-morse function with only uppercase letters"""
+    """Test text-to-morse function with only uppercase letters."""
     assert morse('"AHOJ"') == '.- .... --- .---'
 
 
 def test_morse_mixed():
-    """test text-to-morse function with mixed lowercase and uppercase letters"""
+    """Test text-to-morse function with mixed
+    lowercase and uppercase letters."""
     assert morse('"Ahoj"') == '.- .... --- .---'
 
 
 def test_morse_unsupported():
-    """test text-to-morse function with unsupported chars"""
+    """Test text-to-morse function with unsupported chars."""
     assert morse('"123ěšč?!"') == 'Vstupni retezec obsahuje neocekavane znaky'
 
 
 def test_morse_mixed_unsupported():
-    """test text-to-morse function with mixed unsupported chars and supported chars"""
+    """Test text-to-morse function with mixed
+    unsupported chars and supported chars."""
     assert morse('"a1"') == 'Vstupni retezec obsahuje neocekavane znaky'
 
 
 def test_text():
-    """test morse-to-text function"""
+    """Test morse-to-text function."""
     assert morse('".- .... --- .---"') == 'AHOJ'
 
 
 def test_text_unsupported():
+    """Test morse-to-text function with unsupported chars."""
     assert morse('"123"') == 'Vstupni retezec obsahuje neocekavane znaky'
 
 
 def test_text_mixed_unsupported():
-    assert morse('".- .... 123"') == 'Vstupni retezec obsahuje neocekavane znaky'
+    """Test morse-to-text function with mixed
+        unsupported chars and supported chars."""
+    assert morse('".- 123"') == 'Vstupni retezec obsahuje neocekavane znaky'
