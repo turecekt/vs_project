@@ -67,7 +67,7 @@ space = " "
 charSeparator = "|"
 
 
-def __isAlphabetTranslation():
+def isAlphabetTranslation():
     """Funkce, která zajišťuje správný výběr překladu."""
     print("Translate from:")
     print("1 - Alphabet")
@@ -87,7 +87,7 @@ def __isAlphabetTranslation():
             continue
 
 
-def __alphabetTranslation(text):
+def alphabetTranslation(text):
     """Funkce překládá z abecedy do Morseovy abecedy."""
     result = ""
     for char in text.lower():
@@ -98,7 +98,7 @@ def __alphabetTranslation(text):
     return result
 
 
-def __morseCodeTranslation(text):
+def morseCodeTranslation(text):
     """Funkce překládá z Morseovy abecedy do abecedy."""
     result = ""
     chars = text.split(charSeparator)
@@ -120,16 +120,16 @@ def translation(text, isAlphabet):
     # Kontrola prázdného řetězce
     if modifyText == "":
         return ""
-    return (__morseCodeTranslation(modifyText) if not isAlphabet else
-            __alphabetTranslation(modifyText))
+    return (morseCodeTranslation(modifyText) if not isAlphabet else
+            alphabetTranslation(modifyText))
 
 
-def __mainLoop(isRepeat):
+def mainLoop(isRepeat):
     """Funkce s logikou hlavní smyčky programu."""
     # Menu (základní nastavení pro kódování a dekódování)
     (print("Welcome to the Translator!\n") if not isRepeat else
         print("Translator\n"))
-    isAlphabet = __isAlphabetTranslation()
+    isAlphabet = isAlphabetTranslation()
     print()
 
     if not isAlphabet:
@@ -148,7 +148,7 @@ def run():
 
     # Spuštění hlavní smyčky
     while exitCode != 'y':
-        __mainLoop(isRepeat)
+        mainLoop(isRepeat)
         exitCode = input("\nDo you want exit program (y/n): ").lower()
         print()
         isRepeat = True
