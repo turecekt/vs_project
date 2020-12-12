@@ -63,7 +63,7 @@ def test_encodeText_SpecialChars():
     assert p.decodeText('. , ? !') == '.-.-.-. .-..-. --..-- .-..-.'
 
 
-def test_encodeText_SpecialChars():
+def test_decodeText_SpecialChars():
     """Test dekodovani."""
     assert p.decodeText('.-.-.-. .-..-. --..-- .-..-.') == '. , ? !'
 
