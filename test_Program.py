@@ -60,12 +60,12 @@ def test_encodeText_InvalidChar():
 
 def test_encodeText_SpecialChars():
     """Test dekodovani."""
-    assert p.decodeText('. , ? !') == '.-.-.-. .-..-. --..-- .-..-.'
+    assert p.encodeText('. , !') == '.-.-.-. .-..-. --..-- .-..-. --..-'
 
 
 def test_decodeText_SpecialChars():
     """Test dekodovani."""
-    assert p.decodeText('.-.-.-. .-..-. --..-- .-..-.') == '. , ? !'
+    assert p.decodeText('.-.-.-. .-..-. --..-- .-..-. --..-') == '. , !'
 
 
 def test_encodeText_Filip():
