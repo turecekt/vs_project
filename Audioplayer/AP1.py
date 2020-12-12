@@ -74,18 +74,6 @@ class MusicPlayer:
         for track in songtracks:
             self.playlist.insert(END, track)
 
-    # Definovani funkce Play hudby
-    def playsong(self):
-        # Zobrazeni vybraneho nazvu skladby
-        self.track.set(self.playlist.get(ACTIVE))
-        # Zobrazeni stavu
-        self.status.set("Playing...")
-        # Nacitani vybrane hudby
-        pygame.mixer.music.load(self.playlist.get(ACTIVE))
-        # Prehravani vybrane hudby
-        pygame.mixer.music.play()
-
-
     def stopsong(self):
         # Zobrazeni stavu
         self.status.set("Stopped...")
