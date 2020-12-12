@@ -24,6 +24,7 @@ def int_to_roman(number):
         10, 9, 5, 4,
         1
         ]
+    assert values != []
 
     dictionary = [
         "M", "CM", "D", "CD",
@@ -31,6 +32,7 @@ def int_to_roman(number):
         "X", "IX", "V", "IV",
         "I"
         ]
+    assert dictionary != []
 
     roman_number = ''
     i = 0
@@ -51,8 +53,6 @@ def main():
     print("Converted number is:")
     print(int_to_roman(unconverted))
 
-
-assert int_to_roman(10) == 'X'
 
 # This if statement runs the main function.
 if __name__ == '__main__':
