@@ -137,7 +137,7 @@ def toWord(morseMessage):
 
 
     for x in pom:
-        if(x in listValues != -1):
+        if(x in listValue != -1):
             vysledek += list(Morseovka.keys())[list(listValue).index(x)]
         else:
             vysledek = "Chybne zadany vstup: " + x
@@ -172,18 +172,38 @@ def main():
         if(vstup==1):
             print('Zadej co chces prelozit do morseovky: ')
             a = input()
-            a.lower()
+            a = a.lower()
             d = toMorse(a)
-            print(d)
-            chcePokracovat = False
+            print(d)           
+            
+            print("Chcete ukončit program? [y,n]")
+            vyber = input()
+            vyber = vyber.lower()
+            if(vyber == "y"):
+                chcePokracovat = False
+            elif(vyber == "n"):
+                chcePokracovat = True
+            else: 
+                print("Už končím nemám na tebe náladu")
+                chcePokracovat = False
         elif(vstup==2):
             b = input("zadej text v morseovce: ")
             print(toWord(b))
-            chcePokracovat = False
+            print("Chcete ukončit program? [y,n]")
+            vyber = input()
+            vyber = vyber.lower()
+            if(vyber == "y"):
+                chcePokracovat = False
+            elif(vyber == "n"):
+                chcePokracovat = True
+            else: 
+                print("Už končím nemám na tebe náladu")
+                chcePokracovat = False
         else: 
             print("Chybný vstup!")
             print("Chcete ukončit program? [y,n]")
             vyber = input()
+            vyber = vyber.lower()
             if(vyber == "y"):
                 chcePokracovat = False
             elif(vyber == "n"):
