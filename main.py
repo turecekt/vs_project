@@ -27,19 +27,18 @@ odpovidajici znak k pismenu a pridam mezeru
 
 def zasifrovat(zprava):
     """Funkce zasifrovat -> slouzi k zasifrovani zpravy pomoci.
-    
+
     morseovy abecedy funkce vraci zasifrovany text.
     """
     text = ''
     for pismeno in zprava:
-
         if pismeno != ' ':
             text += morse_code[pismeno] + ' '
         else:
             text += ' '
     return text
-    
-    
+
+
 """
 zprava -> pridani mezery na konec zpravy k pristupu
 poslednimu znaku morseovy abecedy
@@ -88,20 +87,20 @@ def odsifrovat(zprava):
                 prelozit_text = ''
 
     return prelozeny_text
-    
-    
+
+
 def testzasifrovat():
     """Unit test funkce zasifrovat."""
     zprava = "Ahoj svete"
     assert zasifrovat(zprava.upper()) == ".- .... --- .---  ... ...- . - . "
-    
-    
+
+
 def testodsifrovat():
     """Unit test funkce odsifrovat."""
     zprava = ".- .... --- .---  ... ...- . - ."
     assert odsifrovat(zprava) == "AHOJ SVETE"
-    
-    
+
+
 def main():
     """Funkce main je hlavni funce ktera nam umozni cely program spustit."""
     print("Zadejte èíslo 1 pro šifrování nebo èíslo 2 pro dešifrování: ")
@@ -117,8 +116,8 @@ def main():
         zprava = input()
         vysledek = odsifrovat(zprava)
         print(vysledek)
-        
-        
+
+
 """Provede hlavni funkci."""
 if __name__ == '__main__':
     main()
