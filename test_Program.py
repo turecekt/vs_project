@@ -77,6 +77,7 @@ def test_decodeText_Numbers():
     """Test dekodovani."""
     assert p.decodeText('.---- .-..-. ..--- .-..-. ...--') == '1 2 3'
 
+
 def test_encodeText_Filip():
     """Test kodovani."""
     assert p.encodeText('Filip') == '..-. .. .-.. .. .--.'
