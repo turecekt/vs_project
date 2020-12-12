@@ -111,8 +111,7 @@ class MusicPlayer:
         scrol_y.config(command=self.playlist.yview)
         self.playlist.pack(fill=BOTH)
         # Zmena adresare pro nacitani hudby
-        os.chdir("C:/Users/Temirkhan Amanzhanov/Documents/MATLAB/ 
-                 "UTB projects/Project_2")
+        os.chdir("C:/Songs")
         # Nacitani hudby
         songtracks = os.listdir()
         # Vkladani hudby do playlistu
