@@ -1,6 +1,5 @@
 """
 Music Player.
-
 Data:12/12/2020
 """
 # Import pozadovanych modulu a knihoven
@@ -111,7 +110,7 @@ class MusicPlayer:
         scrol_y.config(command=self.playlist.yview)
         self.playlist.pack(fill=BOTH)
         # Zmena adresare pro nacitani hudby
-        os.chdir("C:/Danil/Hudba")
+        os.chdir("C:/Users/Temirkhan Amanzhanov/Documents/MATLAB/UTB projects/Project_2")
         # Nacitani hudby
         songtracks = os.listdir()
         # Vkladani hudby do playlistu
