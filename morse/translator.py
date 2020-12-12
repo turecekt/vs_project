@@ -1,6 +1,4 @@
 """Main logic of the morse encoder/decoder."""
-import time
-
 from chars import letters_to_morse, morse_to_letters
 
 
@@ -11,11 +9,11 @@ def encode(letters):
     sets each morse code for given letter to output variable
     returns morse code that is in the output variable.
     """
+    letters = letters.lower()
     output = ''
     for i in letters:
         if i not in letters_to_morse:
-            print('Data not formatted properly')
-            time.sleep(5)
+            output = 'Data not formatted properly'
             break
         else:
             output += letters_to_morse[i] + ' '
@@ -35,11 +33,8 @@ def decode(morse):
         if i != ' ':
             words = words + i
             if i not in morse_to_letters:
-                print('Data not formatted properly')
-                time.sleep(5)
+                output = 'Data not formatted properly'
                 break
-        elif i == '/':
-            output += morse_to_letters[words] + ' '
         else:
             output += morse_to_letters[words] + ''
             words = ''
