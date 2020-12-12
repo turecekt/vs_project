@@ -59,12 +59,14 @@ def encode_morse(message):
     Returns:
         - encoded_message - Output of the function, message encoded into morse code
     """
+    print(message)
     encoded_message = ""
     for char in message.upper():
         if char != " ":
             encoded_message += Characters[char] + " "
         else:
             encoded_message += " "
+    print(encoded_message)
     return encoded_message
 
 def decode_morse(message):
@@ -94,5 +96,43 @@ def decode_morse(message):
                     if letter == value:
                         decoded_message += key
                         letter = ""
+    print(decoded_message)
     return decoded_message
+
+def continue_program():
+    """Functon continue_program asks user for input to continue encoding/decoding
+    or quit."""
+    print("If you want to translate another message press 1")
+    print("If you want to close the program press 2.")
+    x = input()
+    if x == "1":
+        main()
+    elif x == "2":
+        return
+    else:
+        print("Wrong input.")
+        continue_program()
     
+def main():
+    """Functon main asks user for input to start encoding/decoding."""
+    print("For encoding a message press 1.")
+    print("For decoding a message press 2.")
+    x = input()
+    if x == "1":
+        print("Write a string that you want to encode into morse.")
+        message = input()
+        encode_morse(message)
+        continue_program()
+    elif x == "2":
+        print("Write a string that you want to decode from morse.")
+        message = input()
+        decode_morse(message)
+        continue_program()
+    else:
+        print("Wrong input.")
+        main()
+    return
+
+if __name__ == "__main__":
+    main()
+
