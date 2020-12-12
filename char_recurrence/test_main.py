@@ -5,8 +5,7 @@ Author: Matúš Juhasz.
 
 from unittest import TestCase
 
-from char_recurrence.main import read_file, number_char, number_occurence, \
-     all_occurence, max_occurence, min_occurence
+from char_recurrence import main
 
 
 class Test(TestCase):
@@ -20,16 +19,16 @@ class Test(TestCase):
 
     def test_read_file(self):
         """Test for read_file method."""
-        self.assertEqual(read_file(arg_len=1,
-                                   input_file="Lorem Ipsum is simply "
+        self.assertEqual(main.read_file(arg_len=1,
+                                        input_file="Lorem Ipsum is simply "
                                               "dummy text of the printing "
                                               "and typesetting industry"),
                          self.s)
-        self.assertNotEqual(read_file(arg_len=1, input_file="AHoj"), self.s)
+        self.assertNotEqual(main.read_file(arg_len=1, input_file= "AHoj"), self.s)
 
     def test_number_char(self):
         """Test if method return correct lenght of word."""
-        self.assertEqual(73, number_char(self.s))
+        self.assertEqual(73, main.number_char(self.s))
 
     def test_number_occurence(self):
         """Testing method for correct number of occurrence.
@@ -39,15 +38,15 @@ class Test(TestCase):
         #3 Test for ignoring characters with accents.
         #4 Test for ignoring characters with accents.
         """
-        self.assertNotEqual(self.mylist, number_occurence("Example"))
-        self.assertEqual(self.mylist, number_occurence("Lor"))
-        self.assertEqual([('l', 1)], number_occurence("L"))
-        self.assertEqual([], number_occurence("žáš"))
-        self.assertEqual([], number_occurence("9_+"))
+        self.assertNotEqual(self.mylist, main.number_occurence("Example"))
+        self.assertEqual(self.mylist, main.number_occurence("Lor"))
+        self.assertEqual([('l', 1)], main.number_occurence("L"))
+        self.assertEqual([], main.number_occurence("žáš"))
+        self.assertEqual([], main.number_occurence("9_+"))
 
     def test_all_occurence(self):
         """Test for final output."""
-        a = all_occurence([('l', 1)])
+        a = main.all_occurence([('l', 1)])
         b = "Znak \" l \" sa v texte nachadza : \" 1 \"krat\n"
         self.assertEqual(a, b)
 
@@ -55,10 +54,10 @@ class Test(TestCase):
         """Test for max occurence."""
         self.assertEqual("Najcastejsie sa vyskutuje znak: \"""l" "\""
                          " a pocet vyskytov je: 1",
-                         max_occurence([('l', 1)]))
+                         main.max_occurence([('l', 1)]))
 
     def test_min_occurence(self):
         """Test for min."""
         self.assertEqual("Najmenej sa vyskutuje znak: \"""l" "\""
                          " a pocet vyskytov je: 1",
-                         min_occurence([('l', 1)]))
+                         main.min_occurence([('l', 1)]))
