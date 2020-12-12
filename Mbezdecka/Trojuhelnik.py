@@ -11,8 +11,6 @@ Zda je nebo neni pravouhly.
 def nacteni_bodu():
     """Nacteni Bodu.
 
-    >>> nacteni_bodu()
-    [1, 3]
     """
     print("Zadej souradnice bodu, danou souradnici vzdy potvrd enterem")
     nc = [0, 0]
@@ -27,6 +25,7 @@ def vypocet_strany(A, B):
     >>> vypocet_strany([1, 3], [3, 5])
     2.828
     """
+    import math
     ab = [0, 0]
     ab[0] = float(A[0]) - float(B[0])
     ab[1] = float(A[1]) - float(B[1])
@@ -38,6 +37,7 @@ def sestrojitelny(Sa, Sb, Sc):
     """Test sestrojitelnosti.
 
     >>> sestrojitelny( 4.243, 5.099, 2.828)
+    Trojuhelnik lze setrojit
     True
     """
     if Sa + Sb > Sc and Sa + Sc > Sb and Sb + Sc > Sa:
