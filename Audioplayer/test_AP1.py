@@ -38,7 +38,6 @@ class TestMusicPlayer(unittest.TestCase):
             del sound
         finally:
             os.remove(temp_file)
-
             
     def test_init__zero_values(self):
         # Kontroluje, zda vstupni podminky jsou ekvivalentni.
@@ -50,7 +49,6 @@ class TestMusicPlayer(unittest.TestCase):
         # Porovnani poctu zvukovych kanalu v mixer.get_num_channels() s ocekavanymi 8 kanaly.
         mixer.init()
         self.assertEqual(mixer.get_num_channels(), 8)
-
     
 
 if __name__ == "__main__":
