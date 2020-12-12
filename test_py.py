@@ -3,7 +3,7 @@ import pytest
 import morsecode
 
 
-@pytest.mark.parametrize("input,expected",[("e", "."),
+@pytest.mark.parametrize("input,expected", [("e", "."),
                          ("My name is Kate", "-- -.--  -. .- -- .  "
                           ".. ...  -.- .- - ."), ("?,.;/=-'():_+@",
                           "..--.. --..-- .-.-.- -.-.-. -..-. -...- "
@@ -15,7 +15,7 @@ def test_encode(input, expected):
 
 
 @pytest.mark.parametrize("input,expected", [("....", "H"),
-                         ("?", ""),("-- --- .-. ... . --- "
+                         ("?", ""), ("-- --- .-. ... . --- "
                           "...- -.- .-", "MORSEOVKA")])
 def test_decode(input, expected):
     """Tests decode_morse function."""
