@@ -1,3 +1,5 @@
+"""Hlavni modul kod na preklad morseovky."""
+
 class MorseCodeTranslator:
 
     morse = {
@@ -55,14 +57,12 @@ class MorseCodeTranslator:
     }
 
     def translate_morse(self, morse, strict=True):
-
         """
         Prelozi morseovku na text.
 
         Vraci:
             str: Prelozeny string textu
         """
-
         if morse == "":
             return "Musite vlozit string na preklad!"
 
@@ -87,14 +87,12 @@ class MorseCodeTranslator:
         return translation.rstrip()
 
     def translate_text(self, text):
-
         """
         Prelozi text do morseovky.
 
         Vraci:
             str: Prelozeny string morseovky
         """
-
         if text == "":
             return "Musite vlozit string na preklad!"
 
@@ -112,3 +110,4 @@ class MorseCodeTranslator:
             translation += "   "
 
         return translation.rstrip()
+        
