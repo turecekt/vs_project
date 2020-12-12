@@ -6,76 +6,104 @@ Jaky je jeho obvod a obsah.
 Zda je nebo neni pravouhly.
 
 """
-import math
-A = [0, 0]
-B = [0, 0]
-C = [0, 0]
-bc = [0, 0]
-ab = [0, 0]
-ac = [0, 0]
-i = 0
-check = False
-
-""" Nacteni Bodu A"""
-print("Zadej souradnice x a y pro bod A, danou souradnici vzdy potvrd enterem")
-A[0] = input()
-A[1] = input()
 
 
-"""nacteni bodu B"""
+def nacteni_bodu():
+    """ Nacteni Bodu A, B, C
+    >>>nacteni()
+    [1, 3]
+    """
+    print("Zadej souradnice bodu, danou souradnici vzdy potvrd enterem")
+    nc = [0, 0]
+    nc[0] = input()
+    nc[1] = input()
+    return nc
 
-print("Zadej souradnice x a y pro bod B, danou souradnici vzdy potvrd enterem")
-B[0] = input()
-B[1] = input()
+
+def vypocet_strany(A, B):
+    """ vypocet strany
+    >>> vypocet_strany([1, 3], [3, 5])
+    2.828
+    """
+    ab = [0, 0]
+    ab[0] = float(A[0]) - float(B[0])
+    ab[1] = float(A[1]) - float(B[1])
+    S = float(math.sqrt(float(ab[0]**2) + float(ab[1]**2)))
+    return round(S, 3)
 
 
-"""nacteni bodu C"""
-
-print("Zadej souradnice x a y pro bod C, danou souradnici vzdy potvrd enterem")
-C[0] = input()
-C[1] = input()
-
-""" vypocet stran"""
-bc[0] = float(B[0]) - float(C[0])
-bc[1] = float(B[1]) - float(C[1])
-ac[0] = float(A[0]) - float(C[0])
-ac[1] = float(A[1]) - float(C[1])
-ab[0] = float(A[0]) - float(B[0])
-ab[1] = float(A[1]) - float(B[1])
-
-Sa = float(math.sqrt(float(bc[0])**2 + float(bc[1]**2)))
-Sb = float(math.sqrt(float(ac[0]**2) + float(ac[1]**2)))
-Sc = float(math.sqrt(ab[0]**2 + ab[1]**2))
-
-"""test sestrojitelnosti"""
-if Sa + Sb > Sc and Sa + Sc > Sb and Sb + Sc > Sa:
-    print("Trojuhelnik lze setrojit")
-    check = True
-else:
-    print("Trojuhelnik nelze setrojit")
-    check = False
-    pass
-
-""" vypis hodnot trojuhelniku"""
-if check is True:
-    print("Delka strany a je: ", round(Sa, 3))
-    print("Delka strany b je: ", round(Sb, 3))
-    print("Delka strany c je: ", round(Sc, 3))
-    obvod = Sa+Sb+Sc
-    s = obvod/2
-    obsah = math.sqrt(s*(s-Sa)*(s-Sb)*(s-Sc))
-    print("Obvod trojuhelniku je: ", round(obvod, 3))
-    print("Obsah trojuhelniku je: ", round(obsah, 3))
-
-    SbSc = Sb**2 + Sc**2
-    SaSb = Sa**2 + Sb**2
-    SaSc = Sa**2 + Sc**2
-    round(SbSc)
-    round(SaSb)
-    round(SaSc)
-
-    if round(Sc**2) == SaSb or round(Sa**2) == SbSc or round(Sb**2) == SaSc:
-        print("Trojuhelnik je pravouhly")
+def sestrojitelny(Sa, Sb, Sc):
+    """test sestrojitelnosti
+    >>> setrojitelny( 4.243, 5.099, 2.828)
+    True
+    """
+    if Sa + Sb > Sc and Sa + Sc > Sb and Sb + Sc > Sa:
+        print("Trojuhelnik lze setrojit")
+        return True
     else:
-        print("Trojuhelnik neni pravouhly")
+        print("Trojuhelnik nelze setrojit")
+        return False
+
+
+def obvod(Sa, Sb, Sc):
+    """vypocet obvodu trojuhelniku
+    >>> obvod(4.243, 5.099, 2.828)
+    12.17
+    """
+    return Sa+Sb+Sc
+
+
+def obsah(Sa, Sb, Sc):
+    """vypocet osahu trojuhelniku
+    >>> obvod(4.243, 5.099, 2.828)
+    6.0
+    """
+    s = obvod(Sa, Sb, Sc)/2
+    return math.sqrt(s*(s-Sa)*(s-Sb)*(s-Sc))
+
+
+def pravouhly(Sa, Sb, Sc):
+    """test zda se jedna o pravouhly trojuhelnik
+    >>> pravouhly(4.243, 5.099, 2.828)
+    True
+    """
+    SbSc = round(Sb**2 + Sc**2)
+    SaSb = round(Sa**2 + Sb**2)
+    SaSc = round(Sa**2 + Sc**2)
+    Sb2 = float(round(Sb**2))
+    Sa2 = float(round(Sa**2))
+    Sc2 = float(round(Sc**2))
+    if Sc2 == SaSb or Sa2 == SbSc or Sb2 == SaSc:
+        return True
+    else:
+        return False
+
+
+if __name__ == '__main__':
+    """ Hlavni telo programu"""
+    import math
+    A = ['0', '0']
+    B = ['0', '0']
+    C = ['0', '0']
+    i = 0
+    check = False
+    A = nacteni_bodu()
+    B = nacteni_bodu()
+    C = nacteni_bodu()
+    Sa = vypocet_strany(B, C)
+    Sb = vypocet_strany(A, C)
+    Sc = vypocet_strany(A, B)
+    check = sestrojitelny(Sa, Sb, Sc)
+    if check is True:
+        print("Delka strany a je: ", round(Sa, 3))
+        print("Delka strany b je: ", round(Sb, 3))
+        print("Delka strany c je: ", round(Sc, 3))
+        print("Obvod trojuhelniku je: ", round(obvod(Sa, Sb, Sc), 3))
+        print("Obsah trojuhelniku je: ", round(obsah(Sa, Sb, Sc), 3))
+        if pravouhly(Sa, Sb, Sc) is True:
+            print("Trojuhelnik je pravouhly")
+        else:
+            print("Trojuhelnik neni pravouhly")
+            pass
+    else:
         pass
