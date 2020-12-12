@@ -9,7 +9,11 @@ Zda je nebo neni pravouhly.
 
 
 def nacteni_bodu():
-    """Nacteni Bodu."""
+    """Nacteni Bodu.
+    >>> nacteni_bodu()
+    Zadej souradnice bodu, danou souradnici vzdy potvrd enterem
+    [0, 0]
+    """
     print("Zadej souradnice bodu, danou souradnici vzdy potvrd enterem")
     nc = [0, 0]
     nc[0] = input()
@@ -61,22 +65,13 @@ def obvod(Sa, Sb, Sc):
     return Sa+Sb+Sc
 
 
-def svypocet(Sa, Sb, Sc):
-    """Pomocny vypocet pro obsah.
-
-    >>> svypocet(4.243, 5.099, 2.828)
-    6.085
-    """
-    return obvod(Sa, Sb, Sc)/2
-
-
 def obsah(Sa, Sb, Sc):
     """Vypocet osahu trojuhelniku.
 
     >>> obvod(4.243, 5.099, 2.828)
     12.17
     """
-    s = svypocet(Sa, Sb, Sc)
+    s = obvod(Sa, Sb, Sc)/2
     return math.sqrt(s*(s-Sa)*(s-Sb)*(s-Sc))
 
 
