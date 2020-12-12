@@ -1,5 +1,6 @@
 """
 Music Player.
+
 Data:12/12/2020
 """
 # Import pozadovanych modulu a knihoven
