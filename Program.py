@@ -89,6 +89,8 @@ def decodeText(txt):
 
 
 def main():
+    """Hlavni smycka programu.
+    """
 
     # vypiseme do konzole start aplikace
     print('***************************************************************')
@@ -123,12 +125,12 @@ def main():
         elif (state == Enums.States.ACTION):
             # akce zadana uzivatelem
             action = Enums.Actions.UNKNOWN
-            while (action == Enums.Actions.UNKNOWN):                
-                c = input('Zvolena akce: ')                                
+            while (action == Enums.Actions.UNKNOWN):
+                c = input('Zvolena akce: ') 
                 action = parseAction(c)
                 if (action == Enums.Actions.UNKNOWN):
-                    print(formateError('Chybne zvolena akce. Zvolte prosim akci' +
-                                       ' dle menu.'))
+                    print(formateError('Chybne zvolena akce. Zvolte prosim' +
+                                       ' akci dle menu.'))
             state = Enums.States.PROCCESS
         elif (state == Enums.States.PROCCESS):
             if (action == Enums.Actions.END):
@@ -137,14 +139,14 @@ def main():
                 print('PREVOD')
                 print('**************************************************' +
                       '*************')
-                if (action == Enums.Actions.ENCODE):                    
-                    txt = input('Vepiste text k zakodovani ohraniceny uvozovkami' +
-                                ' a bez diakritiky.\n')                                        
+                if (action == Enums.Actions.ENCODE):
+                    txt = input('Vepiste text k zakodovani ohraniceny' +
+                                ' uvozovkami a bez diakritiky.\n')
                     if (not checkUserInputText(txt)):
                         print(formateError('Neni zadan text, nebo neni ' +
                                            'ohranicen uvozovkami.'))
                     else:
-                        print(encodeText(txt[1:len(txt) - 1]))                    
+                        print(encodeText(txt[1:len(txt) - 1]))
                 else:
                     txt = input('Vepiste text k dekodovani ohraniceny ' +
                                 'uvozovkami. Kazdy znak musi byt oddelen od ' +
