@@ -24,7 +24,7 @@ def vypocet_strany(A, B):
     2.828
     >>> import math
     >>> math.sqrt(float(4**2) + float(3**2))
-    25
+    5
     """
     import math
     ab = [0, 0]
