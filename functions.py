@@ -30,3 +30,15 @@ def obvodTroj(xa, xb, xc, ya, yb, yc):
     stranaAC = math.sqrt(((xc-xa)**2)+(yc-ya)**2)
     """Funkce vráti délku obvodu."""
     return stranaAB + stranaBC + stranaAC
+
+
+# Funkce pro výpočet obsahu trojůhelníku
+def obsahTroj(xa, xb, xc, ya, yb, yc):
+    """Deklarace proměnných a vložení hodnot."""
+    strAB = math.sqrt(((xb-xa)**2)+(yb-ya)**2)
+    strBC = math.sqrt(((xc-xb)**2)+(yc-yb)**2)
+    strAC = math.sqrt(((xc-xa)**2)+(yc-ya)**2)
+    """Výpočet poloviny obvodu"""
+    pulO = (strAB + strBC + strAC) / 2
+    """Funkce vrátí velikost obsahu."""
+    return math.sqrt(pulO * (pulO - strAB) * (pulO - strBC) * (pulO - strAC))
