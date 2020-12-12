@@ -9,7 +9,8 @@ Zda je nebo neni pravouhly.
 
 
 def nacteni_bodu():
-    """ Nacteni Bodu A, B, C
+    """Nacteni Bodu.
+
     >>> nacteni()
     [1, 3]
     """
@@ -21,7 +22,8 @@ def nacteni_bodu():
 
 
 def vypocet_strany(A, B):
-    """ vypocet strany
+    """Vypocet strany.
+
     >>> vypocet_strany([1, 3], [3, 5])
     2.828
     """
@@ -33,7 +35,8 @@ def vypocet_strany(A, B):
 
 
 def sestrojitelny(Sa, Sb, Sc):
-    """test sestrojitelnosti
+    """Test sestrojitelnosti.
+
     >>> setrojitelny( 4.243, 5.099, 2.828)
     True
     """
@@ -46,7 +49,8 @@ def sestrojitelny(Sa, Sb, Sc):
 
 
 def obvod(Sa, Sb, Sc):
-    """vypocet obvodu trojuhelniku
+    """Vypocet obvodu trojuhelniku.
+
     >>> obvod(4.243, 5.099, 2.828)
     12.17
     """
@@ -54,7 +58,8 @@ def obvod(Sa, Sb, Sc):
 
 
 def obsah(Sa, Sb, Sc):
-    """vypocet osahu trojuhelniku
+    """vypocet osahu trojuhelniku.
+
     >>> obvod(4.243, 5.099, 2.828)
     6.0
     """
@@ -63,7 +68,8 @@ def obsah(Sa, Sb, Sc):
 
 
 def pravouhly(Sa, Sb, Sc):
-    """test zda se jedna o pravouhly trojuhelnik
+    """test zda se jedna o pravouhly trojuhelnik.
+
     >>> pravouhly(4.243, 5.099, 2.828)
     True
     """
@@ -80,7 +86,8 @@ def pravouhly(Sa, Sb, Sc):
 
 
 if __name__ == '__main__':
-    """ Hlavni telo programu"""
+    """ Hlavni telo programu."""
+
     import math
     A = ['0', '0']
     B = ['0', '0']
