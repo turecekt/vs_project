@@ -10,19 +10,25 @@ class TestStringMethods(unittest.TestCase):
     """vytvoření třídy pro testování."""
 
 
-def test_upper(self): """testování fce zvětšení písmena."""
-self.assertEqual("abc".upper(), "ABC")
+def test_upper(vlastni): """testování fce zvětšení písmena."""
+
+    
+vlastni.assertEqual("abc".upper(), "ABC")
 
 
-def test_isupper(self): """testování fce zvětšení písmena."""
-self.assertTrue("ABC".isupper())
-self.assertFalse("Abc".isupper())
+def test_isupper(vlastni): """testování fce zvětšení písmena."""
 
 
-def test_split(self): """testování fce split."""
+vlastni.assertTrue("ABC".isupper())
+vlastni.assertFalse("Abc".isupper())
+
+
+def test_split(vlastni): """testování fce split."""
+
+
 s = "miroslav olivik"
-self.assertEqual(s.split(), ["miroslav", "olivik"])
-with self.assertRaises(TypeError):
+vlastni.assertEqual(s.split(), ["miroslav", "olivik"])
+with vlastni.assertRaises(TypeError):
     s.split(2)
 
 
