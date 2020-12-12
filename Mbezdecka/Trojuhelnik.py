@@ -9,7 +9,9 @@ Zda je nebo neni pravouhly.
 
 
 def nacteni_bodu():
-    """Nacteni Bodu."""
+    """Nacteni Bodu.
+
+    """
     print("Zadej souradnice bodu, danou souradnici vzdy potvrd enterem")
     nc = [0, 0]
     nc[0] = input()
@@ -111,3 +113,4 @@ if __name__ == '__main__':
             pass
     else:
         pass
+
