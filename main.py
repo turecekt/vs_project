@@ -88,7 +88,15 @@ def odsifrovat(zprava):
                 prelozit_text = ''
 
     return prelozeny_text
-    def testzasifrovat():
+    
+    
+def testzasifrovat():
     """Unit test funkce zasifrovat."""
     zprava = "Ahoj svete"
     assert zasifrovat(zprava.upper()) == ".- .... --- .---  ... ...- . - . "
+    
+    
+def testodsifrovat():
+    """Unit test funkce odsifrovat."""
+    zprava = ".- .... --- .---  ... ...- . - ."
+    assert odsifrovat(zprava) == "AHOJ SVETE"
