@@ -12,3 +12,14 @@ class TestCheckInput(TestCase):
 
     def test_check_input_float_number(self):
         self.assertFalse(minesweeper_generator.check_input("10.2"))
+
+
+class TestCreateArrayWithMines(TestCase):
+    def test_create_array_with_mines(self):
+        bombs_array = minesweeper_generator.create_array_with_mines(10, 10, 5)
+        count_of_mines = 0
+        for i in range(0, 10):
+            for j in range(0, 10):
+                if bombs_array[i][j] == "*":
+                    count_of_mines += 1
+        self.assertEqual(count_of_mines, 5)
