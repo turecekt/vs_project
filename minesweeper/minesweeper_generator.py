@@ -91,3 +91,13 @@ def put_numbers_to_playground(minesweeper):
                 if number_of_near_mines != 0:
                     minesweeper.playground[i][j] = number_of_near_mines
 
+
+def print_playground(minesweeper):
+    """
+        input:  minesweeper
+        output: printed playground
+    """
+    for i in range(minesweeper.rows):
+        for j in range(minesweeper.cols):
+            print(minesweeper.playground[i][j], end=" ")
+        print()
