@@ -1,5 +1,13 @@
 import random
+""" random numbers module
+
+For generating random numbers.
+"""
 import time
+""" time module
+
+For working with time functions
+"""
 
 # funkce pro vytvoreni nahodneho pole 20ti cisel v rozsahu -100 : 100
 def createRandomArray():
