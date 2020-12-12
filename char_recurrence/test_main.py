@@ -22,8 +22,8 @@ class Test(TestCase):
         """Test for read_file method."""
         self.assertEqual(read_file(arg_len=1,
                                    input_file="Lorem Ipsum is simply "
-                                               "dummy text of the printing "
-                                               "and typesetting industry"),
+                                              "dummy text of the printing "
+                                              "and typesetting industry"),
                          self.s)
         self.assertNotEqual(read_file(arg_len=1, input_file="AHoj"), self.s)
 
