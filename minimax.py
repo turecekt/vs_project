@@ -131,25 +131,3 @@ else:
 print("*" * 50)
 print("End of program.")
 print("*" * 50)
-    
-
-
-
-
-# temporary variables and prints for testing purposes
-#array = createRandomArray()
-#print("Random array: ", array)    
-#min_value = findMinValue(array)
-#print("Minimal value of array: ", min_value)
-#max_value = findMaxValue(array)
-#print("Maximal value of array: ", max_value)
-#min_index = findMinIndex(array)
-#print("Index of min_value is: ", min_index)
-#max_index = findMaxIndex(array)
-#print("Index of max_value is: ", max_index)
-#selectionSort(array)
-#print("Array after Selection Sort: ", array)
-#bubbleSort(array)
-#print("Array after Bubble Sort: ", array)
-#insertionSort(array)
-#print("Array after Insertion Sort: ", array)
