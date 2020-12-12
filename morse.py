@@ -7,115 +7,112 @@ Created on Sat Dec 12 14:21:11 2020
 
 # Slovnik morseovy abecedy
 morse = {
-    'A': '.-', 
+    'A': '.-',
     'B': '-...',
-    'C': '-.-.', 
-    'D': '-..', 
+    'C': '-.-.',
+    'D': '-..',
     'E': '.',
-    'F': '..-.', 
-    'G': '--.', 
+    'F': '..-.',
+    'G': '--.',
     'H': '....',
-    'I': '..', 
-    'J': '.---', 
+    'I': '..',
+    'J': '.---',
     'K': '-.-',
-    'L': '.-..', 
-    'M': '--', 
+    'L': '.-..',
+    'M': '--',
     'N': '-.',
-    'O': '---', 
-    'P': '.--.', 
+    'O': '---',
+    'P': '.--.',
     'Q': '--.-',
-    'R': '.-.', 
-    'S': '...', 
+    'R': '.-.',
+    'S': '...',
     'T': '-',
-    'U': '..-', 
-    'V': '...-', 
+    'U': '..-',
+    'V': '...-',
     'W': '.--',
-    'X': '-..-', 
-    'Y': '-.--', 
+    'X': '-..-',
+    'Y': '-.--',
     'Z': '--..',
-    '0': '-----', 
-    '1': '.----', 
+    '0': '-----',
+    '1': '.----',
     '2': '..---',
-    '3': '...--', 
-    '4': '....-', 
+    '3': '...--',
+    '4': '....-',
     '5': '.....',
-    '6': '-....', 
-    '7': '--...', 
+    '6': '-....',
+    '7': '--...',
     '8': '---..',
-    '9': '----.', 
-    "&": ".-...", 
+    '9': '----.',
+    "&": ".-...",
     "'": ".----.",
-    "@": ".--.-.", 
-    ")": "-.--.-", 
+    "@": ".--.-.",
+    ")": "-.--.-",
     "(": "-.--.",
-    ":": "---...", 
-    ",": "--..--", 
+    ":": "---...",
+    ",": "--..--",
     "=": "-...-",
-    "!": "-.-.--", 
-    ".": ".-.-.-", 
+    "!": "-.-.--",
+    ".": ".-.-.-",
     "-": "-....-",
-    "+": ".-.-.", 
-    '"': ".-..-.", 
+    "+": ".-.-.",
+    '"': ".-..-.",
     "?": "..--..",
     "/": "-..-."
 }
 
 
-#Funkce pro preklad textoveho retezce do morseovy abecedy
+# Funkce pro preklad textoveho retezce do morseovy abecedy
 def encryption(message):
 
     encrypt = ''
     for letter in message:
         if letter != ' ':
-            #Prideleni prislusneho znaku
+            # Prideleni prislusneho znaku
             encrypt += morse[letter] + ' '
         else:
             encrypt += ' '
     return encrypt
 
 
-#Funkce pro preklad morseovy abecedy do textoveho retezce
+# Funkce pro preklad morseovy abecedy do textoveho retezce
 def decryption(message):
-    #sledovani poctu mezer
+    # sledovani poctu mezer
     global i
     message += ' '
     decrypt = ''
     crtext = ''
     for letter in message:
         if letter != ' ':
-            #Pokud znak neni mezera, i se vynuluje
+            # Pokud znak neni mezera, i se vynuluje
             i = 0
             crtext += letter
         else:
-            #Kdyz i je rovno 1, prida se novy znak
+            # Kdyz i je rovno 1, prida se novy znak
             i += 1
             if i == 2:
-                #Kdyz i je rovno 2, zapocne nove  slovo
-                #Pridani mezery pro odliseni slov
+                # Kdyz i je rovno 2, zapocne nove  slovo
+                # Pridani mezery pro odliseni slov
                 decrypt += ' '
             else:
-                #proces desifrovani
+                # proces desifrovani
                 decrypt += \
                     list(morse.keys())[list(morse.values()).index(crtext)]
                 crtext = ''
     return decrypt
 
 
-#Hlavní funkce programu
+# Hlavní funkce programu
 def main():
-    #Input pro preklad textoveho retezce do morseovy abecedy
+    # Input pro preklad textoveho retezce do morseovy abecedy
     message = input("Zadajte text, ktery chcete zasifrovat:")
-    
     result = encryption(message.upper())
     print(result)
-
-
-    #Input pro preklad morseovy abecedy do textoveho retezce
+    # Input pro preklad morseovy abecedy do textoveho retezce
     message = input("Zadajte morseovu abecedu, kterou chcete odsifrovat:")
-    
     result = decryption(message)
     print(result)
 
-#Zavolani main funkce
+
+# Zavolani main funkce
 if __name__ == '__main__':
     main()
