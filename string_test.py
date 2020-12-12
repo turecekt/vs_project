@@ -8,14 +8,12 @@ import unittest
 
 class TestStringMethods(unittest.TestCase): """vytvoření třídy pro testování."""
 
-        def test_upper(self): """testování fce zvětšení písmena."""
+        def test_upper(self): """test na fce zvětšení písmena."""
         self.assertEqual("abc".upper(), "ABC")
-
 
         def test_isupper(self): """testování fce zvětšení písmena."""
         self.assertTrue("ABC".isupper())
         self.assertFalse("Abc".isupper())
-
 
         def test_split(self): """testování fce split."""
         s = "miroslav olivik"
