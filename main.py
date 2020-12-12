@@ -102,7 +102,7 @@ def testodsifrovat():
     assert odsifrovat(zprava) == "AHOJ SVETE"
     
     
-    def main():
+def main():
     """Funkce main je hlavni funce ktera nam umozni cely program spustit."""
     print("Zadejte èíslo 1 pro šifrování nebo èíslo 2 pro dešifrování: ")
     vyber = input()
@@ -117,3 +117,8 @@ def testodsifrovat():
         zprava = input()
         vysledek = odsifrovat(zprava)
         print(vysledek)
+        
+        
+"""Provede hlavni funkci."""
+if __name__ == '__main__':
+    main()
