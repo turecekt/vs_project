@@ -42,3 +42,42 @@ def obsahTroj(xa, xb, xc, ya, yb, yc):
     pulO = (strAB + strBC + strAC) / 2
     """Funkce vrátí velikost obsahu."""
     return math.sqrt(pulO * (pulO - strAB) * (pulO - strBC) * (pulO - strAC))
+
+
+# Funkce pro zkoušku, jestli je trojúhelník pravoúhlý
+def zkPravouhlosti(xa, xb, xc, ya, yb, yc):
+    """Deklarace proměnných a vložení hodnot."""
+    strAB = math.sqrt(((xb-xa)**2)+(yb-ya)**2)
+    strBC = math.sqrt(((xc-xb)**2)+(yc-yb)**2)
+    strAC = math.sqrt(((xc-xa)**2)+(yc-ya)**2)
+    """Podmínka, která zjistí, která strana trojúhelníku je přepona."""
+    if strAB > strBC and strAB > strAC:
+        """Vypočítání odmocnin součtu odvěsen podle pythagorova vzorce"""
+        odvesnyBCAC = math.sqrt((strBC**2) + (strAC**2))
+        """Podmínka jestli je trojúhelník pravoúhlý."""
+        if strAB == odvesnyBCAC:
+            """Funkce vrátí hodnotu 1 pokud je pravoúhlý."""
+            return 1
+        else:
+            """Funkce vrátí hodnotu 0 pokud není pravoúhlý"""
+            return 0
+    elif strBC > strAB and strBC > strAC:
+        """Vypočítání odmocnin součtu odvěsen podle pythagorova vzorce"""
+        odvesnyABAC = math.sqrt((strAB**2) + (strAC**2))
+        """Podmínka jestli je trojúhelník pravoúhlý."""
+        if strBC == odvesnyABAC:
+            """Funkce vrátí hodnotu 1 pokud je pravoúhlý."""
+            return 1
+        else:
+            """Funkce vrátí hodnotu 0 pokud není pravoúhlý"""
+            return 0
+    else:
+        """Vypočítání odmocnin součtu odvěsen podle pythagorova vzorce"""
+        odvesnyABBC = math.sqrt((strAB**2) + (strBC**2))
+        """Podmínka jestli je trojúhelník pravoúhlý."""
+        if strAC == odvesnyABBC:
+            """Funkce vrátí hodnotu 1 pokud je pravoúhlý."""
+            return 1
+        else:
+            """Funkce vrátí hodnotu 0 pokud není pravoúhlý"""
+            return 0
