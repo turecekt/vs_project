@@ -1,6 +1,6 @@
 """This module works with Roman Numerals.
 
-The module supplies one function: toRoman(self, iArabicNum). For example,
+The module supplies one function: toRoman(iArabicNum). For example,
 
 >>> toRoman(10)
 X
