@@ -45,6 +45,10 @@ def sestrojitelny(Sa, Sb, Sc):
     >>> sestrojitelny( 0, 5.099, 2.828)
     Trojuhelnik nelze setrojit
     False
+    >>> 5+2 > 3
+    True
+    >>> 7+2 > 10
+    False
     """
     if Sa + Sb > Sc and Sa + Sc > Sb and Sb + Sc > Sa:
         print("Trojuhelnik lze setrojit")
@@ -83,6 +87,12 @@ def pravouhly(Sa, Sb, Sc):
     True
      >>> pravouhly(2.243, 5.099, 2.828)
      False
+     >>> round(4**2 + 2**2)
+     20.0
+     >>> round(2**2 + 3**2)
+     13.0
+     >>> 2**2
+     4
     """
     SbSc = round(Sb**2 + Sc**2)
     SaSb = round(Sa**2 + Sb**2)
