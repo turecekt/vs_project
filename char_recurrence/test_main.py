@@ -1,18 +1,24 @@
 """Project for AK1VS.
 Author: Matúš Juhasz.
 """
+
 from unittest import TestCase
 
-from char_recurrence.main import read_file, number_char, number_occurence
+from char_recurrence.main import read_file, number_char, number_occurence, arguments, print_number_occurence
 
 
 class Test(TestCase):
     """Testing class for methods."""
+
     def setUp(self):
         """Set variables for testing."""
         self.s = "Lorem Ipsum is simply dummy text of " \
                  "the printing and typesetting industry"
         self.mylist = [('l', 1), ('o', 1), ('r', 1)]
+
+    def test_arguments(self):
+        """Test for parsing of arguments."""
+        self.assertFalse(arguments())
 
     def test_read_file(self):
         """Test for read_file method."""
@@ -40,3 +46,10 @@ class Test(TestCase):
         self.assertEqual([('l', 1)], number_occurence("L"))
         self.assertEqual([], number_occurence("žáš"))
         self.assertEqual([], number_occurence("9_+"))
+
+    def test_print_number_occurence(self):
+        """Test for final output."""
+        self.assertEqual(print("Znak \" l \" sa v texte nachadza :  1 krat\n"
+                               "Znak \" o \" sa v texte nachadza :  1 krat\n"
+                               "Znak \" r \" sa v texte nachadza :  1 krat\n"
+                               ), print_number_occurence(self.mylist))

@@ -1,6 +1,7 @@
 """Project for AK1VS.
 Author: Matúš Juhasz.
 """
+
 import re
 import sys
 from argparse import ArgumentParser
@@ -9,7 +10,7 @@ from operator import itemgetter
 
 def arguments():
     """
-    Method parse argument from std-in or as parameters.
+    Parse argument from std-in or as parameters.
 
     Use argparse library.
     Args:
@@ -33,7 +34,7 @@ def arguments():
 
 def read_file(input_file, arg_len):
     """
-    Method read all characters to specific char.
+    Read all characters to specific char.
 
     Returns:
          data = string which will be working next.
@@ -49,7 +50,7 @@ def read_file(input_file, arg_len):
 
 
 def number_char(file_data):
-    """Method return length of given string.
+    """Return length of given string.
 
     Returns:
         number_char = number of characters in string
@@ -60,7 +61,7 @@ def number_char(file_data):
 
 
 def number_occurence(file_data):
-    """Method create list of occurrence without unwanted chars.
+    """Create list of occurrence without unwanted chars.
 
     Returns:
         my_list = list of all characters
@@ -77,7 +78,7 @@ def number_occurence(file_data):
 
 
 def print_number_occurence(list):
-    """Method print result collected and sorted in list.
+    """Print result collected and sorted in list.
 
     Returns:
         Print output to std-out
@@ -93,7 +94,7 @@ def print_number_occurence(list):
 
 
 def main():
-    """Main method."""
+    """Execute all."""
     file_data = arguments()
     number_char(file_data)
     print_number_occurence(number_occurence(file_data.replace(" ", "")))
