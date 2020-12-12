@@ -98,11 +98,7 @@ class MusicPlayer:
         # Pozastaveni hudby
         pygame.mixer.music.pause()
 
-    def unpausesong(self):
-        # Zobrazeni stavu
-        self.status.set("Playing...")
-        # Prehravani hudby
-        pygame.mixer.music.unpause()
+    
 
 
 # Vytvoreni TK kontejneru
