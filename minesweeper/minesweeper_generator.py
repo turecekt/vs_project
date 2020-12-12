@@ -60,3 +60,17 @@ def put_mines_to_playground(minesweeper):
             minesweeper.playground[i][j] = bombs_array[bombs_array_i][bombs_array_j]
 
 
+def check_neighbours_of_cell(minesweeper, index_of_row, index_of_col, number_of_near_mines):
+    """
+        input:  minesweeper
+                index_of_row is current index of row
+                index_of_col is current index of column
+                number_of_near_mines is count of mines that the cell touches
+        output: number of near mines of the cell
+    """
+    for i in range(-1, 2):
+        for j in range(-1, 2):
+            if minesweeper.playground[index_of_row + i][index_of_col + j] == MINE:
+                # increase number_of_near_mines if the cell touches mine
+                number_of_near_mines += 1
+    return number_of_near_mines
