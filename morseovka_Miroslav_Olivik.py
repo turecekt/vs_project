@@ -34,7 +34,7 @@ SLOVNIK_MORSEOVKA = {' ': '/', 'A': '.-',
 
 def Text_To_Code(): """Funkce - překlad slov do morseovky"""
 text2 = input("Napište slova, která chcete kodovat: ")
-    code2 = [SLOVNIK_MORSEOVKA
+code2 = [SLOVNIK_MORSEOVKA
              [i.upper()] + " "
              for i in text2 if i.upper() in SLOVNIK_MORSEOVKA.keys()]
     morseovka = "".join(code2)
@@ -47,8 +47,10 @@ text2 = input("Napište slova, která chcete kodovat: ")
 
 
 def Code_To_Text(): """Vytvořené funkce - přeložení morseovky"""
+
+  
 text1 = input("Napište kod, který chcete dekodovat: ")
-    code1 = [k for i in text1.split() for k,
+code1 = [k for i in text1.split() for k,
              v in SLOVNIK_MORSEOVKA.items() if i == v]
     novytext = "".join(code1)
     print(novytext)
