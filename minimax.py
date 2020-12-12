@@ -21,13 +21,31 @@ def findMaxValue(array):
 
     return max_value
 
+# funkce pro vyhledani indexu min_value
+def findMinIndex(array):
+     
+     min_index = array.index(min_value)
+
+     return min_index
+
+# funkce pro vyhledani indexu max_value
+def findMaxIndex(array):
+
+    max_index = array.index(max_value)
+
+    return max_index
+
 
 # temporary variables for testing purposes
 array = createRandomArray()
 min_value = findMinValue(array)
 max_value = findMaxValue(array)
+min_index = findMinIndex(array)
+max_index = findMaxIndex(array)
 
 # print for testing purposes
 print("Random array: ", array)    
 print("Minimal value of array: ", min_value)
 print("Maximal value of array: ", max_value)
+print("Index of min_value is: ", min_index)
+print("Index of max_value is: ", max_index)
