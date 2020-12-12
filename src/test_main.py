@@ -69,12 +69,15 @@ def test_translation_from_morse_code_to_alphabet_autobus():
             "autobus")
 
 
-def test_morseCodeTranslation_autobus():
-    """Překlad z Morseovy abecedy do Abecedy - autobus."""
-    assert (main.__morseCodeTranslation(".-|..-|-|---|-...|..-|...") ==
-            "autobus")
+def test_morseCodeTranslation_koberec_nebo_parkety():
+    """Překlad z Morseovy abecedy do Abecedy - koberec nebo parkety."""
+    assert (main.morseCodeTranslation("-.-|---|-...|.|.-.|.|-.-.| |-.|"
+                                        ".|-...|---| |.--.|.-|.-.|-.-|.|-|"
+                                        "-.--") ==
+            "koberec nebo parkety")
 
 
-def test_alphabetTranslation_autobus():
-    """Překlad z Morseovy abecedy do Abecedy - autobus."""
-    assert main.__alphabetTranslation("SOS") == "...---..."
+def test_alphabetTranslation_v_lese_jsou_stromy():
+    """Překlad z Morseovy abecedy do Abecedy - v lese jsou stromy."""
+    assert (main.alphabetTranslation("v lese jsou stromy") == "...- .-......."
+            " .---...---..- ...-.-.------.--")
