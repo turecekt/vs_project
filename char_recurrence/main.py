@@ -85,7 +85,7 @@ def all_occurence(list):
         return all occurence of char
     """
     string = "Znak \" {} \" sa v texte nachadza : \" {} \"krat\n"
-    final_string= ""
+    final_string = ""
     for x in list:
         final_string += string.format(x[0], x[1])
 
@@ -99,7 +99,8 @@ def max_occurence(list):
         max occurence of char
     """
     string = "Najcastejsie sa vyskutuje znak: \"{}\" a pocet vyskytov je: {}"\
-        .format(max(list, key=itemgetter(1))[0], max(list, key=itemgetter(1))[1])
+        .format(max(list, key=itemgetter(1))[0],
+                max(list, key=itemgetter(1))[1])
 
     return string
 
@@ -111,7 +112,8 @@ def min_occurence(list):
         min occurence of char
     """
     string = "Najmenej sa vyskutuje znak: \"{}\" a pocet vyskytov je: {}"\
-        .format(min(list, key = itemgetter(1))[0], min(list, key = itemgetter(1))[1])
+        .format(min(list, key=itemgetter(1))[0],
+                min(list, key=itemgetter(1))[1])
 
     return string
 
