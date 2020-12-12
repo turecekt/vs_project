@@ -76,3 +76,21 @@ class TestPutNumbersToPlayground(TestCase):
                                   ['#', '#', '#', '#', '#', '#', '#']]
         minesweeper_generator.put_numbers_to_playground(minesweeper)
         self.assertEqual(minesweeper.playground, expected_minesweeper)
+
+
+class TestLoadRows(TestCase):
+    def test_load_rows_from_input(self):
+        with patch('builtins.input', return_value='2'):
+            self.assertEqual(minesweeper_generator.load_rows_from_input(), 2)
+
+
+class TestLoadCols(TestCase):
+    def test_load_cols_from_input(self):
+        with patch('builtins.input', return_value='5'):
+            self.assertEqual(minesweeper_generator.load_cols_from_input(), 5)
+
+
+class TestLoadCountOfMines(TestCase):
+    def test_load_count_of_mines(self):
+        with patch('builtins.input', return_value='5'):
+            self.assertEqual(minesweeper_generator.load_count_of_mines(), 5)
