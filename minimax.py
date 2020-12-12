@@ -40,11 +40,13 @@ def findMaxIndex(array):
 def selectionSort(array):
     n = len(array)
     for i in range(n):
-        # Initially, assume the first element of the unsorted part as the minimum.
+        # Initially, assume the first element 
+        # of the unsorted part as the minimum.
         minimum = i
         for j in range(i+1, n):
             if (array[j] < array[minimum]):
-                # Update position of minimum element if a smaller element is found.
+                # Update position of minimum element 
+                # if a smaller element is found.
                 minimum = j
         # Swap the minimum element with the first element of the unsorted part.     
         temp = array[i]
@@ -57,10 +59,12 @@ def bubbleSort(array):
     n = len(array)
     # Traverse through all array elements 
     for i in range(n - 1):
-        # range(n) also work but outer loop will repeat one time more than needed. 
+        # range(n) also work but outer loop will 
+        # repeat one time more than needed. 
         # Last i elements are already in place 
         for j in range(0, n - i - 1):
-            # Traverse the array from 0 to n-i-1, swap if the element found is greater than the next element
+            # Traverse the array from 0 to n-i-1, 
+            # swap if the element found is greater than the next element
             if array[j] > array[j + 1]:
                 array[j], array[j + 1] = array[j + 1], array[j]
     return array
@@ -70,7 +74,8 @@ def insertionSort(array):
     # traverse through 1 to len(array)
     for i in range(1, len(array)):
         key = array[i]
-        #move elements of array [0..i-1], that are greater than key, to one position ahed of their current position
+        #move elements of array [0..i-1], that are greater than key, 
+        #to one position ahed of their current position
         j = i - 1
         while j >= 0 and key < array[j]:
             array[j + 1] = array[j]
