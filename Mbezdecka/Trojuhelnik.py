@@ -24,7 +24,7 @@ def vypocet_strany(A, B):
     2.828
     >>> import math
     >>> math.sqrt(float(4**2) + float(3**2))
-    5
+    5.0
     """
     import math
     ab = [0, 0]
@@ -86,14 +86,8 @@ def pravouhly(Sa, Sb, Sc):
         return False
 
 
-if __name__ == '__main__':
-    """ Hlavni telo programu."""
-
-    import math
-    A = ['0', '0']
-    B = ['0', '0']
-    C = ['0', '0']
-    check = False
+def vypis():
+    """ Vzpocet a vypis na konzoli."""
     A = nacteni_bodu()
     B = nacteni_bodu()
     C = nacteni_bodu()
@@ -114,3 +108,13 @@ if __name__ == '__main__':
             pass
     else:
         pass
+
+
+if __name__ == '__main__':
+    """ Main programu."""
+    import math
+    A = [0, 0]
+    B = [0, 0]
+    C = [0, 0]
+    check = False
+    vypis()
