@@ -14,7 +14,10 @@ def test_parseAction():
 
 def test_checkUserInputText():
     """Test vstupu uzivatele."""
-    assert p.checkUserInputText('"test"') == True
+    res = 'False'
+    if (p.checkUserInputText('"test"')):
+        res = 'True'
+    assert res == 'True'
 
 
 def test_encodeText():
