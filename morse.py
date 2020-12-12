@@ -5,6 +5,7 @@ Created on Sat Dec 12 14:21:11 2020
 @author: pavel
 """
 
+# Slovnik morseovy abecedy
 morse = {
     'A': '.-', 
     'B': '-...',
@@ -59,52 +60,62 @@ morse = {
     "/": "-..-."
 }
 
+
+#Funkce pro preklad textoveho retezce do morseovy abecedy
 def encryption(message):
 
     encrypt = ''
     for letter in message:
         if letter != ' ':
+            #Prideleni prislusneho znaku
             encrypt += morse[letter] + ' '
         else:
             encrypt += ' '
     return encrypt
 
 
-
+#Funkce pro preklad morseovy abecedy do textoveho retezce
 def decryption(message):
+    #sledovani poctu mezer
     global i
     message += ' '
     decrypt = ''
     crtext = ''
     for letter in message:
         if letter != ' ':
+            #Pokud znak neni mezera, i se vynuluje
             i = 0
             crtext += letter
         else:
+            #Kdyz i je rovno 1, prida se novy znak
             i += 1
             if i == 2:
+                #Kdyz i je rovno 2, zapocne nove  slovo
+                #Pridani mezery pro odliseni slov
                 decrypt += ' '
             else:
+                #proces desifrovani
                 decrypt += \
                     list(morse.keys())[list(morse.values()).index(crtext)]
                 crtext = ''
     return decrypt
 
 
-
+#Hlavní funkce programu
 def main():
-
+    #Input pro preklad textoveho retezce do morseovy abecedy
     message = input("Zadajte text, ktery chcete zasifrovat:")
     
     result = encryption(message.upper())
     print(result)
 
 
-
+    #Input pro preklad morseovy abecedy do textoveho retezce
     message = input("Zadajte morseovu abecedu, kterou chcete odsifrovat:")
     
     result = decryption(message)
     print(result)
 
+#Zavolani main funkce
 if __name__ == '__main__':
     main()
