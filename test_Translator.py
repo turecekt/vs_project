@@ -19,4 +19,4 @@ def test_encode():
 
 def test_decode():
     """Test zakodovani textu."""
-    assert t.dencode('- . ... -') == 'TEST'
+    assert t.decode('- . ... -') == 'TEST'
