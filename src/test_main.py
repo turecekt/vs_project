@@ -4,7 +4,8 @@ import main
 
 def test_translation_from_alphabet_to_morse_code():
     """Překlad z Abecedy do Morseovy abecedy."""
-    assert main.translation("\"Jmenuji se Martin\"", True) == ".-----.-...-.---.. .... --.-.-.-..-."
+    assert (main.translation("\"Jmenuji se Martin\"", True) ==
+    ".-----.-...-.---.. .... --.-.-.-..-.")
 
 
 def test_translation_from_alphabet_to_morse_code_autobus():
@@ -24,17 +25,21 @@ def test_translation_from_alphabet_to_morse_code_white_space():
 
 def test_white_space_end():
     """Mezera na konci slova."""
-    assert main.translation("\"--|.-|--| |....|.-..|.-|-..  \"", False) == "mam hlad"
+    assert (main.translation("\"--|.-|--| |....|.-..|.-|-..  \"", False) ==
+    "mam hlad")
 
 
 def test_white_space_start():
     """Mezera na začátku slova."""
-    assert main.translation("\" -|---| |.---|...|.|--| |.---|.-\"", False) == "to jsem ja"
+    assert (main.translation("\" -|---| |.---|...|.|--| |.---|.-\"", False) ==
+    "to jsem ja")
 
 
 def test_white_space_start_end():
     """Mezera na začátku a konci slova."""
-    assert main.translation("\"  .-..|.-|...-|..|-.-.|.| |.-| |-|.-|-...|..-|.-..|.   \"", False) == "lavice a tabule"
+    assert
+    (main.translation("\"  .-..|.-|...-|..|-.-.|.| |.-| |-|.-|-...|..-|.-..|.  \"",
+                      False) == "lavice a tabule")
 
 
 def test_none():
@@ -54,7 +59,8 @@ def test_translation_from_morse_code_to_alphabet_SOS():
 
 def test_translation_from_morse_code_to_alphabet():
     """Překlad z Morseovy abecedy do Abecedy - ahoj jmenuji se martin."""
-    assert main.translation("\".-|....|---|.---| |.---|--|.|-.|..-|.---|..| |...|.| |--|.-|.-.|-|..|-.\"",
+    assert
+    main.translation("\".-|....|---|.---| |.---|--|.|-.|..-|.---|..| |...|.| |--|.-|.-.|-|..|-.\"",
                             False) == "ahoj jmenuji se martin"
 
 
