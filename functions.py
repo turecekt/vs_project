@@ -81,3 +81,26 @@ def zkPravouhlosti(xa, xb, xc, ya, yb, yc):
         else:
             """Funkce vrátí hodnotu 0 pokud není pravoúhlý"""
             return 0
+
+
+# Funkce pro otestování vstupu, zda je vstupní hodnota od uživatele číslo
+def souradniceJeCislo(xa, xb, xc, ya, yb, yc):
+    """Proměnná pro vrácení hodnoty funkce."""
+    zkouskaSouradnic = 0
+    """Zkouška jestli jsou vstupní hodnoty číslo."""
+    try:
+        xa = float(xa.replace(',', '.'))
+        ya = float(ya.replace(',', '.'))
+        xb = float(xb.replace(',', '.'))
+        yb = float(yb.replace(',', '.'))
+        xc = float(xc.replace(',', '.'))
+        yc = float(yc.replace(',', '.'))
+        zkouskaSouradnic = 1
+    except ValueError:
+        zkouskaSouradnic = 0
+
+    """Podmínka, která vrátí hodnotu 1, když vstupní hodnoty jsou čísla."""
+    if zkouskaSouradnic == 1:
+        return 1
+    else:
+        return 0
