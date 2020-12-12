@@ -43,8 +43,13 @@ def int_to_roman(number):
     return roman_num
 
 
-unconverted = int(input("Enter a number to be converted: "))
+def main():
+    """Ask for user input, convert it and print it to console."""
+    unconverted = int(input("Enter a number to be converted: "))
+    converted = int_to_roman(unconverted)
+    print(converted)
 
-converted = int_to_roman(unconverted)
 
-print(converted)
+# This if runs the main function.
+if __name__ == '__main__':
+    main()
