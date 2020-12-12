@@ -1,3 +1,4 @@
+#dictionery translating alphabet letters into morse code
 Characters = {"A": ".-",
               "B": "-...",
               "C": "-.-.",
@@ -52,6 +53,12 @@ Characters = {"A": ".-",
               "@": ".--.-."}
 
 def encode_morse(message):
+    """Functon encode_morse returns encoded_message in morse code.
+    Args:
+        - message - Input of the function, string in quotation marks
+    Returns:
+        - encoded_message - Output of the function, message encoded into morse code
+    """
     encoded_message = ""
     for char in message.upper():
         if char != " ":
@@ -61,6 +68,13 @@ def encode_morse(message):
     return encoded_message
 
 def decode_morse(message):
+    """Functon decode_morse returns decoded_message in alphabet.
+    Args:
+        - message - Input of the function, string in quotation marks
+    Returns:
+        - decoded_message - Output of the function, message decoded 
+        from morse code into alphabet
+    """
     message += " "
     decoded_message = ""
     letter = ""
@@ -72,6 +86,8 @@ def decode_morse(message):
         else:
             space += 1
             if space > 1:
+                #when there are two spaces, we found the end of the word 
+                #and a space is added to decoded message
                 decoded_message += " "
             else:
                 for key, value in Characters.items():
