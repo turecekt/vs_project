@@ -1,3 +1,7 @@
+"""Semestralni projekt - MiniMax AP1VS
+
+Adam Karas
+"""
 import random
 """ random numbers module
 
@@ -9,43 +13,66 @@ import time
 For working with time functions
 """
 
-# funkce pro vytvoreni nahodneho pole 20ti cisel v rozsahu -100 : 100
 def createRandomArray():
+    """ Create an array of random integers.
+
+    Values of an array are between -100 and 100
+    Number of array elements = 20
+
+    Returns:
+        - array - an unsorted array of random integers
+    """
    
     random_array = random.sample(range(-100,100), 20)
 
     return random_array
 
-# funkce pro vyhledani minimalni hodnoty elementu v poli
 def findMinValue(array):
+    """ Finds a min value of array.
+
+    Returns:
+        - min_value - minimal value of array
+    """
     
     min_value = min(array)
 
     return min_value
 
-# funkce pro vyhledalni maximalni hodnoty elementu v poli
 def findMaxValue(array):
+    """ Finds a max value of array.
+
+    Returns:
+        - max_value - maximal value of array
+    """
     
     max_value = max(array)
-
+    
     return max_value
 
-# funkce pro vyhledani indexu min_value
 def findMinIndex(array):
+    """ Finds an index of min value in array.
+
+    Returns:
+        - min_index - position of minimal value in array.
+    """
      
-     min_index = array.index(min_value)
+    min_index = array.index(min_value)
 
-     return min_index
+    return min_index
 
-# funkce pro vyhledani indexu max_value
 def findMaxIndex(array):
+    """ Finds an index of max value in array.
+
+    Returns:
+        - max_index - position of maximal value in array.
+    """
 
     max_index = array.index(max_value)
 
     return max_index
 
-# funkce pro razeni, Selection Sort
 def selectionSort(array):
+    """Sorting algorithm: Selection Sort"""
     n = len(array)
     for i in range(n):
         # Initially, assume the first element 
@@ -62,8 +89,8 @@ def selectionSort(array):
         array[minimum] = temp
     return array
 
-# funkce pro razeni, Bubble Sort
 def bubbleSort(array):
+    """Sorting algorithm: Bubble Sort"""
     n = len(array)
     # Traverse through all array elements 
     for i in range(n - 1):
@@ -77,8 +104,8 @@ def bubbleSort(array):
                 array[j], array[j + 1] = array[j + 1], array[j]
     return array
 
-# funkce pro razeni, Insertion Sort
 def insertionSort(array):
+    """Sorting algorithm: Insertion Sort"""
     # traverse through 1 to len(array)
     for i in range(1, len(array)):
         key = array[i]
