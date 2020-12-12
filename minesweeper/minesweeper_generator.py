@@ -117,3 +117,42 @@ def check_input(input_for_check):
         return False
     return True
 
+
+def load_rows_from_input():
+    """
+        input:  nothing
+        output: number of rows if input is correct
+    """
+    rows = input("Enter number of rows: ")
+    if not check_input(rows):
+        print("Incorrect input, please try again.")
+        return load_rows_from_input()
+    else:
+        return int(rows)
+
+
+def load_cols_from_input():
+    """
+        input:  nothing
+        output: number of columns if input is correct
+    """
+    cols = input("Enter number of cols: ")
+    if not check_input(cols):
+        print("Incorrect input, please try again.")
+        return load_cols_from_input()
+    else:
+        return int(cols)
+
+
+def load_count_of_mines():
+    """
+        input:  nothing
+        output: number of mines if input is correct
+    """
+    count_of_mines = input("Enter number of mines: ")
+    if not check_input(count_of_mines):
+        print("Incorrect input, please try again.")
+        return load_count_of_mines()
+    else:
+        return int(count_of_mines)
+
