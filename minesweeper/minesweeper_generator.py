@@ -225,7 +225,7 @@ def load_data_from_input():
 
 
 def main():
-    """Main function which calls other methods."""
+    """Call functions to create minesweeper."""
     minesweeper = load_data_from_input()
     put_mines_to_playground(minesweeper)
     put_numbers_to_playground(minesweeper)
