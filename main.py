@@ -1,7 +1,13 @@
-# The function that handles the logic of encoding/decoding
-# morse code to text and vice-versa.
-def morse(text):
+"""Encoding/decoding morse code to text and vice-versa."""
 
+
+def morse(text):
+    """Decode or encode the text.
+
+    This function takes an input string, decides whether it decodes
+    from morse code or encodes text to morse code and executes
+    itself accordingly.
+    """
     # This dictionary contains the specified letters and
     # their morse code equivalent.
     morseovka = {'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.',
@@ -71,8 +77,11 @@ def test_morse_upper():
 
 
 def test_morse_mixed():
-    """Test text-to-morse function with mixed
-    lowercase and uppercase letters."""
+    """Testing.
+
+    Test text-to-morse function with mixed
+    lowercase and uppercase letters.
+    """
     assert morse('"Ahoj"') == '.- .... --- .---'
 
 
@@ -82,8 +91,11 @@ def test_morse_unsupported():
 
 
 def test_morse_mixed_unsupported():
-    """Test text-to-morse function with mixed
-    unsupported chars and supported chars."""
+    """Testing.
+
+    Test text-to-morse function with mixed
+    unsupported chars and supported chars.
+    """
     assert morse('"a1"') == 'Vstupni retezec obsahuje neocekavane znaky'
 
 
@@ -98,6 +110,9 @@ def test_text_unsupported():
 
 
 def test_text_mixed_unsupported():
-    """Test morse-to-text function with mixed
-        unsupported chars and supported chars."""
+    """Testing.
+
+    Test morse-to-text function with mixed
+    unsupported chars and supported chars.
+    """
     assert morse('".- 123"') == 'Vstupni retezec obsahuje neocekavane znaky'
