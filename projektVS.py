@@ -136,7 +136,10 @@ def toWord(morseMessage):
     return vysledek
 
 def testToMorse():
-    pass
+    assert toMorse("a") == ".- "
+    assert toMorse("I") == ".. "
+    assert toMorse("Ahoj") == ".- .... --- .--- "
+    assert toMorse("Ahoj svete") == ".- .... --- .---  ... ...- . - . "
 
 
 def testToWord():
