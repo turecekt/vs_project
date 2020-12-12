@@ -5,8 +5,8 @@ Author: Matúš Juhasz.
 
 from unittest import TestCase
 
-from char_recurrence.main import read_file, number_char,number_occurence\
-                                , arguments, print_number_occurence
+from char_recurrence.main import read_file, number_char, number_occurence, \
+     all_occurence, max_occurence, min_occurence
 
 
 class Test(TestCase):
@@ -18,18 +18,14 @@ class Test(TestCase):
                  "the printing and typesetting industry"
         self.mylist = [('l', 1), ('o', 1), ('r', 1)]
 
-    def test_arguments(self):
-        """Test for parsing of arguments."""
-        self.assertFalse(arguments())
-
     def test_read_file(self):
         """Test for read_file method."""
-        self.assertEqual(read_file(arg_len=1,
-                                   input_file="Lorem Ipsum is simply "
-                                              "dummy text of the printing "
-                                              "and typesetting industry"),
+        self.assertEqual(read_file(arg_len = 1,
+                                   input_file = "Lorem Ipsum is simply "
+                                                "dummy text of the printing "
+                                                "and typesetting industry"),
                          self.s)
-        self.assertNotEqual(read_file(arg_len=1, input_file="AHoj"), self.s)
+        self.assertNotEqual(read_file(arg_len = 1, input_file = "AHoj"), self.s)
 
     def test_number_char(self):
         """Test if method return correct lenght of word."""
@@ -49,9 +45,20 @@ class Test(TestCase):
         self.assertEqual([], number_occurence("žáš"))
         self.assertEqual([], number_occurence("9_+"))
 
-    def test_print_number_occurence(self):
+    def test_all_occurence(self):
         """Test for final output."""
-        self.assertEqual(print("Znak \" l \" sa v texte nachadza :  1 krat\n"
-                               "Znak \" o \" sa v texte nachadza :  1 krat\n"
-                               "Znak \" r \" sa v texte nachadza :  1 krat\n"
-                               ), print_number_occurence(self.mylist))
+        a = all_occurence([('l', 1)])
+        b = "Znak \" l \" sa v texte nachadza : \" 1 \"krat\n"
+        self.assertEqual(a, b)
+
+    def test_max_occurence(self):
+        """Test for max occurence."""
+        self.assertEqual("Najcastejsie sa vyskutuje znak: \"""l" "\""
+                         " a pocet vyskytov je: 1",
+                         max_occurence([('l', 1)]))
+
+    def test_min_occurence(self):
+        """Test for min."""
+        self.assertEqual("Najmenej sa vyskutuje znak: \"""l" "\""
+                         " a pocet vyskytov je: 1",
+                         min_occurence([('l', 1)]))

@@ -78,27 +78,51 @@ def number_occurence(file_data):
     return my_list
 
 
-def print_number_occurence(list):
+def all_occurence(list):
     """Print result collected and sorted in list.
 
     Returns:
-        Print output to std-out
+        return all occurence of char
     """
+    string = "Znak \" {} \" sa v texte nachadza : \" {} \"krat\n"
+    final_string= ""
     for x in list:
-        print('Znak \"', x[0], "\" sa v texte nachadza : ", x[1], "krat")
-    print("Najcastejsie sa vyskutuje znak: \"",
-          max(list, key=itemgetter(1))[0], "\" a pocet vyskytov je: ",
-          max(list, key=itemgetter(1))[1])
-    print("Najmenej sa vyskutuje znak: \"",
-          min(list, key=itemgetter(1))[0], "\" a pocet vyskytov je: ",
-          min(list, key=itemgetter(1))[1])
+        final_string += string.format(x[0], x[1])
+
+    return final_string
+
+
+def max_occurence(list):
+    """Print max occurence.
+
+    Returns:
+        max occurence of char
+    """
+    string = "Najcastejsie sa vyskutuje znak: \"{}\" a pocet vyskytov je: {}"\
+        .format(max(list, key=itemgetter(1))[0], max(list, key=itemgetter(1))[1])
+
+    return string
+
+
+def min_occurence(list):
+    """Print min occurence.
+
+    Returns:
+        min occurence of char
+    """
+    string = "Najmenej sa vyskutuje znak: \"{}\" a pocet vyskytov je: {}"\
+        .format(min(list, key = itemgetter(1))[0], min(list, key = itemgetter(1))[1])
+
+    return string
 
 
 def main():
     """Execute all."""
     file_data = arguments()
     number_char(file_data)
-    print_number_occurence(number_occurence(file_data.replace(" ", "")))
+    print(all_occurence(number_occurence(file_data.replace(" ", ""))))
+    print(max_occurence(number_occurence(file_data.replace(" ", ""))))
+    print(min_occurence(number_occurence(file_data.replace(" ", ""))))
 
 
 if __name__ == '__main__':
