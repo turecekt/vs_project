@@ -52,6 +52,8 @@ def main():
     print(int_to_roman(unconverted))
 
 
+assert int_to_roman(10) == 'X'
+
 # This if statement runs the main function.
 if __name__ == '__main__':
     main()
