@@ -113,7 +113,11 @@ def insertionSort(array):
 def testGenerateRandomArray():
     """Generate Random Array test."""
     test_array = createRandomArray()
-    assert len(test_array) == 20
+    temp = [0]*20
+    for i in range(0, 20):
+        if -1000 < test_array[i] < 1000:
+            temp[i] = 1
+        assert temp[i] == 1
 
 
 def testSelectionSort():
@@ -147,6 +151,18 @@ def testMinValueIndex():
     """Function findMinIndex - unit test."""
     test_array = [97, -83, -2, 21, 20]
     assert findMinIndex(test_array) == 1
+
+
+def testMaxValue():
+    """Function findMaxValue - unit test."""
+    test_array = [97, -83, -2, 21, 20]
+    assert findMaxValue(test_array) == 97
+
+
+def testMaxIndex():
+    """Function findMaxIndex - unit test."""
+    test_array = [97, -83, -2, 21, 20]
+    assert findMaxIndex(test_array) == 0
 
 
 # hlavni cast programu
