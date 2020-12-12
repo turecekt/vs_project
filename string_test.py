@@ -6,7 +6,7 @@ import unittest
 """Vytvoření testovací třídy class."""
 
 
-class Tests(unittest.TestCase):
+class TestMorse(unittest.TestCase):
     """Vytvoření třídy."""
 
     def test_upper(self): """Test na fce zvětšení písmena."""
@@ -23,5 +23,5 @@ class Tests(unittest.TestCase):
             s.split(2)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()
