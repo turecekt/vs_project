@@ -35,17 +35,32 @@ def findMaxIndex(array):
 
     return max_index
 
+# funkce pro razeni, Selection Sort
+def selectionSort(array):
+    n = len(array)
+    for i in range(n):
+        # Initially, assume the first element of the unsorted part as the minimum.
+        minimum = i
+        for j in range(i+1, n):
+            if (array[j] < array[minimum]):
+                # Update position of minimum element if a smaller element is found.
+                minimum = j
+        # Swap the minimum element with the first element of the unsorted part.     
+        temp = array[i]
+        array[i] = array[minimum]
+        array[minimum] = temp
+    return array
 
-# temporary variables for testing purposes
+# temporary variables and prints for testing purposes
 array = createRandomArray()
-min_value = findMinValue(array)
-max_value = findMaxValue(array)
-min_index = findMinIndex(array)
-max_index = findMaxIndex(array)
-
-# print for testing purposes
 print("Random array: ", array)    
+min_value = findMinValue(array)
 print("Minimal value of array: ", min_value)
+max_value = findMaxValue(array)
 print("Maximal value of array: ", max_value)
+min_index = findMinIndex(array)
 print("Index of min_value is: ", min_index)
+max_index = findMaxIndex(array)
 print("Index of max_value is: ", max_index)
+selectionSort(array)
+print("Array after Selection Sort: ", array)
