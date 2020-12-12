@@ -42,3 +42,21 @@ def create_array_with_mines(rows, cols, count_of_mines):
     numpy.random.shuffle(array)
     bombs_array = numpy.reshape(array, (rows, cols))
     return bombs_array
+
+
+def put_mines_to_playground(minesweeper):
+    """
+        input:  minesweeper
+                count of mines
+        output: nothing, this function randomly put mines to the playground
+        * represents mine
+    """
+    bombs_array = create_array_with_mines(minesweeper.rows - 2, minesweeper.cols - 2, minesweeper.count_of_mines)
+
+    for i in range(1, minesweeper.rows - 1):
+        for j in range(1, minesweeper.cols - 1):
+            bombs_array_i = i - 1
+            bombs_array_j = j - 1
+            minesweeper.playground[i][j] = bombs_array[bombs_array_i][bombs_array_j]
+
+
