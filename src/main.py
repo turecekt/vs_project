@@ -120,8 +120,8 @@ def translation(text, isAlphabet):
     # Kontrola prázdného řetězce
     if modifyText == "":
         return ""
-    return (morseCodeTranslation(modifyText) if not isAlphabet else
-            alphabetTranslation(modifyText))
+    return (__morseCodeTranslation(modifyText) if not isAlphabet else
+            __alphabetTranslation(modifyText))
 
 
 def __mainLoop(isRepeat):
@@ -129,7 +129,7 @@ def __mainLoop(isRepeat):
     # Menu (základní nastavení pro kódování a dekódování)
     (print("Welcome to the Translator!\n") if not isRepeat else
         print("Translator\n"))
-    isAlphabet = isAlphabetTranslation()
+    isAlphabet = __isAlphabetTranslation()
     print()
 
     if not isAlphabet:
@@ -148,7 +148,7 @@ def run():
 
     # Spuštění hlavní smyčky
     while exitCode != 'y':
-        mainLoop(isRepeat)
+        __mainLoop(isRepeat)
         exitCode = input("\nDo you want exit program (y/n): ").lower()
         print()
         isRepeat = True
