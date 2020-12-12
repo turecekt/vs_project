@@ -16,9 +16,6 @@ def formateError(err):
         - err - String obsahujici chybovou zpravu.
     Return:
         - Naformatovany string chybove zpravy.
-
-    >>> formateError('test')
-    '!!! test !!!'
     """
     return '!!! ' + err + ' !!!'
 
@@ -30,9 +27,6 @@ def parseAction(char):
         - char - Znak reprezentujici pozadovanou akci.
     Return:
         - Vrati pozadovanou akci formou vyctoveho typu.
-
-    >>> parseAction('Z')
-    1
     """
     c = char.upper()
     if (c == 'Z'):
@@ -53,9 +47,6 @@ def checkUserInputText(txt):
 
     Return:
         - Vrati True, pokud je v poradku, v opacnem pripade vrati False.
-
-    >>> checkUserInputText('"test"')
-    True
     """
     return (txt.startswith('"') and txt.endswith('"') and len(txt) > 2)
 
@@ -67,9 +58,6 @@ def encodeText(txt):
         - txt - String k zakodovani.
     Return:
         - Zakodovany string.
-
-    >>> encodeText('test')
-    '- . ... -'
     """
     return Translator.encode(txt)
 
@@ -81,9 +69,6 @@ def decodeText(txt):
         - txt - String k dekodovani.
     Return:
         - Dekodovany string.
-
-    >>> decodeText('- . ... -')
-    'TEST'
     """
     return Translator.decode(txt)
 

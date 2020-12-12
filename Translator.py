@@ -58,9 +58,6 @@ def decodeChar(enc):
 
     Returns:
         - Dekodovany znak, pripadne ?, pokud se nepovede dekodovat.
-
-    >>> decodeChar('.-')
-    'A'
     """
     for key, value in abeceda.items():
         if (value == enc):
@@ -77,9 +74,6 @@ def encodeChar(dec):
     Returns:
         - Zakodovany znak, pripadne zakodovany ?,
           pokud se nepovede zakodovat.
-
-    >>> encodeChar('A')
-    '.-'
     """
     for key, value in abeceda.items():
         if (key == dec.upper()):
@@ -95,9 +89,6 @@ def encode(txt):
 
     Returns:
         - Zakodovany string.
-
-    >>> encode('test')
-    '- . ... -'
     """
     enc = ''
     for i in range(0, len(txt)):
@@ -113,9 +104,6 @@ def decode(txt):
 
     Returns:
         - Dekodovany string.
-
-    >>> decode('- . ... -')
-    'TEST'
     """
     dec = ''
     w = ''
