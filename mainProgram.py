@@ -35,3 +35,13 @@ if functions.souradniceJeCislo(xA, xB, xC, yA, yB, yC) == 1:
         print(f'Obvod = {functions.obvodTroj(xA, xB, xC, yA, yB, yC)}\n')
         print(f'Obsah = {functions.obsahTroj(xA, xB, xC, yA, yB, yC)}\n')
         print('Informace o pravoúhlosti:')
+
+        # Podmínka pro zkontrolování jestli je trojúhelník pravoúhlý
+        if functions.zkPravouhlosti == 1:
+            print('Trojuhelnik je pravoúhlý.')
+        else:
+            print('Trojúhelník není pravoúhlý')
+    else:
+        print('\nPodle zadaných souřadnic bodů se nejedná o trojúhelník.\n')
+else:
+    print('Do souřadnic jste nezadali číslo.')
