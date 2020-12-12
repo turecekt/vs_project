@@ -17,6 +17,6 @@ def test_encode():
     assert t.encode('test') == '- . ... -'
 
 
-def test_dencode():
+def test_decode():
     """Test zakodovani textu."""
     assert t.dencode('- . ... -') == 'TEST'
