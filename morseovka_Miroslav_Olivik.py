@@ -33,6 +33,8 @@ SLOVNIK_MORSEOVKA = {' ': '/', 'A': '.-',
 
 
 def Text_To_Code(): """Funkce - překlad slov do morseovky."""
+
+
 text2 = input("Napište slova, která chcete kodovat: ")
 code2 = [SLOVNIK_MORSEOVKA
          [i.upper()] + " "
