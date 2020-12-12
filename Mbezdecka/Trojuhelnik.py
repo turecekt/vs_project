@@ -9,9 +9,7 @@ Zda je nebo neni pravouhly.
 
 
 def nacteni_bodu():
-    """Nacteni Bodu.
-
-    """
+    """Nacteni Bodu."""
     print("Zadej souradnice bodu, danou souradnici vzdy potvrd enterem")
     nc = [0, 0]
     nc[0] = input()
@@ -24,6 +22,9 @@ def vypocet_strany(A, B):
 
     >>> vypocet_strany([1, 3], [3, 5])
     2.828
+    >>> import math
+    >>> math.sqrt(float(4**2) + float(3**2))
+    25
     """
     import math
     ab = [0, 0]
@@ -113,4 +114,3 @@ if __name__ == '__main__':
             pass
     else:
         pass
-
