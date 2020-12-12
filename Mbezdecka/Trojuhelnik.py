@@ -58,7 +58,7 @@ def obvod(Sa, Sb, Sc):
 
 
 def obsah(Sa, Sb, Sc):
-    """vypocet osahu trojuhelniku.
+    """Vypocet osahu trojuhelniku.
 
     >>> obvod(4.243, 5.099, 2.828)
     6.0
@@ -68,7 +68,7 @@ def obsah(Sa, Sb, Sc):
 
 
 def pravouhly(Sa, Sb, Sc):
-    """test zda se jedna o pravouhly trojuhelnik.
+    """Test zda se jedna o pravouhly trojuhelnik.
 
     >>> pravouhly(4.243, 5.099, 2.828)
     True
