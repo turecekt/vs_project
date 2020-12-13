@@ -38,6 +38,7 @@ def test_sestrojitelnost():
     assert sestrojitelnost(3, 4, 5) is True
     assert sestrojitelnost(5, 4, 3) is True
     assert sestrojitelnost(4, 5, 3) is True
+# PyTest konec -----------------------------
 
 
 def sestrojitelnost(A, B, C):
@@ -51,7 +52,6 @@ def sestrojitelnost(A, B, C):
     lze = A + B > C and B + C > A and A + C > B
 
     return lze
-# PyTest konec -----------------------------
 
 
 def obsah(A, B, C):
