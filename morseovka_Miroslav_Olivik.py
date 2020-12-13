@@ -50,7 +50,7 @@ def Code_To_Text(): """Fce pro preklad morseovky."""
 """Zvolili jsme fci else, ktera nam pokryje jinou moznost nez-li 1-3."""
 
 
-print("""\n1 - TEXT KE KODOVANI\n2 - KOD K ROZKODOVANI\n3 - KONEC\,""")
+print("""\n1 - TEXT KE KODOVANI\n2 - KOD K ROZKODOVANI\n3 - KONEC\n""")
 
 if __name__ == "__main__":
 
