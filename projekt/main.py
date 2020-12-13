@@ -48,8 +48,8 @@ def test_encrypt():
     """Test zasifrovani.
 
     Vraceni vsech znaku v morseove sifre
-    >>> encrypt('E')
-    '. '
+    >>> encrypt('EEEE')
+    '. . . . '
     """
     correctResult = '. . . . '
     result = encrypt('EEEE')
@@ -58,7 +58,11 @@ def test_encrypt():
 
 # test numbers
 def test_encrypt_numbers():
-    """Testing decrypting with numbers as an input."""
+    """Testing decrypting with numbers as an input.
+
+    >>>encrypt('12345')
+    '.---- ..--- ...-- ....- ..... '
+    """
     correctResult = '12345'
     result = encrypt('.---- ..--- ...-- ....- ..... ')
     assert result == correctResult
