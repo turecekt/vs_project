@@ -3,7 +3,6 @@ Skript s unit testy.
 
 Pro program pro preklad textu na morseovku a naopak.
 Petr Marak a Pavel Cuba, 2020
-
 """
 
 from source import encode, decode
@@ -15,9 +14,10 @@ def test_encode():
     assert encode("sos") == "...|---|..."
     assert encode("ahoj") == ".-|....|---|.---"
     assert encode("wikipedia") == ".--|..|-.-|..|.--.|.|-..|..|.-"
-    assert encode("encyklopedie") == ".|-.|-.-.|-.--|-.-|.-..|---|.--.|.|-..|..|."
+    assert encode("encyklopedie") == \
+           ".|-.|-.-.|-.--|-.-|.-..|---|.--.|.|-..|..|."
     assert encode("xbmc 0451") == "-..-|-...|--|-.-.||-----|....-|.....|.----"
-    assert encode("!?#") == None
+    assert encode("!?#") is None
 
 
 def test_decode():
@@ -25,6 +25,7 @@ def test_decode():
     assert decode("...|---|...") == "sos"
     assert decode(".-|....|---|.---") == "ahoj"
     assert decode(".--|..|-.-|..|.--.|.|-..|..|.-") == "wikipedia"
-    assert decode(".|-.|-.-.|-.--|-.-|.-..|---|.--.|.|-..|..|.") == "encyklopedie"
+    assert decode(".|-.|-.-.|-.--|-.-|.-..|---|.--.|.|-..|..|.") == \
+           "encyklopedie"
     assert decode("-..-|-...|--|-.-.||-----|....-|.....|.----") == "xbmc 0451"
-    assert decode("!?#") == None
+    assert decode("!?#") is None
