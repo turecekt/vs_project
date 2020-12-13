@@ -6,6 +6,20 @@ def sestrojitelnost():
 
     return lze
 
+def obsah():
+
+    s = (sA + sB + sC) / 2
+
+    S = math.sqrt(s * (s - sA) * (s - sB) * (s - sC))
+
+    return S
+
+def obvod():
+
+    O = sA + sB + sC
+
+    return O
+
 if __name__ == '__main__':
     print('Napis souradnici x bodu A: ')
     Ax = int(input())
@@ -26,9 +40,13 @@ if __name__ == '__main__':
 
     if sestrojitelnost():
         print('Trojuhelnik lze sestrojit.')
+
+        print('Strana A je dlouha: ', sA)
+        print('Strana B je dlouha: ', sB)
+        print('Strana C je dlouha: ', sC)
+
+        print('Obsah je: ', obsah(), ' a obvod je: ', obvod())
     else:
         print('Trojuhelnik nelze sestrojit.')
 
-    print('Strana A je dlouha: ', sA)
-    print('Strana B je dlouha: ', sB)
-    print('Strana C je dlouha: ', sC)
+    
