@@ -13,3 +13,20 @@ MORSE_DICTIONARY = { 'A':'.-', 'B':'-...',
                     '0':'-----', ', ':'--..--', '.':'.-.-.-',
                     '?':'..--..', '/':'-..-.', '-':'-....-',
                     '(':'-.--.', ')':'-.--.-'}
+                    
+def encrypt(message): 
+    cipher = '' 
+    for letter in message: 
+        if letter != ' ': 
+ 
+            cipher += MORSE_DICTIONARY[letter] + ' '
+        elif letter == '':  
+            cipher = ''
+        else: 
+            cipher += ' '  
+    return cipher 
+    
+def main(): 
+    message = input("Zadejte zprávu v abc: ").upper()
+    result = encrypt(message.upper()) 
+    print (result) 
