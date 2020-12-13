@@ -48,7 +48,7 @@ def test_encrypt():
     """Test zasifrovani.
 
     Vraceni vsech znaku v morseove sifre
-    >>> E
+    >>> encrypt('E')
     .
     """
     assert encrypt('E') == '. '
@@ -59,6 +59,8 @@ def decrypt(message):
     """Odsifrovani zpravy.
 
     Odsifrovani morseovky na text.
+    >>> decrypt('.')
+    E
     """
     message += ' '
 
@@ -93,6 +95,8 @@ def test_decrypt():
     """Testovani decryptu.
 
     Odsifrovani morseovky na text.
+    >>> decrypt('.')
+    E
     """
     assert decrypt('.') == ('E')
 
