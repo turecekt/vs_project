@@ -19,3 +19,22 @@ Os. číslo: **A20522**
 - Informace o délkách stran
 - Informace o obvodu a obsahu
 - Informace o pravoúhlosti
+
+## Návod na použití
+body trojúhelníku lze zadat buď pomocí argumentů příkazové řádky
+
+```
+python main.py <Ax> <Ay> <Bx> <By> <Cx> <Cy>
+```
+např.: `python main.py 0 0 100 0 0 100`
+
+nebo interaktivně (bez argumentů příkazové řádky)
+```
+python main.py
+```
+
+kdy se program ptá na souřadnice jednotlivých bodů. Souřadnice jednoho bodu se zadávají jako dvě čísla oddělená mezerou, např.:
+```
+Zadejte souřadnice bodu A
+-50 50.5
+```
