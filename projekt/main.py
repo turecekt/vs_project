@@ -1,10 +1,12 @@
 import math
 
+
 def sestrojitelnost(): 
     
     lze = sA + sB > sC and sB + sC > sA and sA + sC > sB
 
     return lze
+
 
 def obsah():
 
@@ -14,11 +16,13 @@ def obsah():
 
     return S
 
+
 def obvod():
 
     O = sA + sB + sC
 
     return O
+
 
 def pravouhelnost():
 
@@ -32,6 +36,7 @@ def pravouhelnost():
         je = sA ** 2 == sB ** 2 + sC ** 2
 
     return je
+
 
 if __name__ == '__main__':
     print('Napis souradnici x bodu A: ')
@@ -54,7 +59,7 @@ if __name__ == '__main__':
         int(By)
         int(Cx)
         int(Cy)
-    except:
+    except Exception:
        print('Cisla byla zadana ve spatnem tvaru! Zadej pouze cela cisla.')
     else:
         sA = math.sqrt(((int(Bx) - int(Ax)) ** 2) + ((int(By) - int(Ay)) ** 2))
@@ -78,5 +83,3 @@ if __name__ == '__main__':
             print('Trojuhelnik nelze sestrojit.')
 
     input('Zmackni Enter k zavreni programu.')
-
-    
