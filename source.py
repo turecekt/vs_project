@@ -63,6 +63,7 @@ def prevod(vstup):
 
     # Převedení z textu do morseovky
     else:
+
         # Převedení textu na velká písmena
         vstupV = vstup.upper()
 
