@@ -50,8 +50,8 @@ def decrypt(message):
                 decipher += ' '
             else:
 
-                decipher += list(MORSE_DICTIONARY.keys()
-                [list(MORSE_DICTIONARY.values()).index(citext)]
+                decipher += list(MORSE_DICTIONARY.keys())[
+                    list(MORSE_DICTIONARY.values()).index(citext)]
                 citext = ''
 
     return decipher
@@ -69,4 +69,3 @@ def main():
 
 if __name__ == '__main__': 
     main()
-  
