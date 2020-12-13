@@ -33,6 +33,7 @@ funkce HeurestickaMetoda()
 False
 
 """
+import pytest
 import math
 from os import path
 # flake8: noqa 
@@ -73,7 +74,7 @@ def Vstup():
     Returns:
         - output - Vrátí číslo uživatele nebo 0 jako chybu
     """
-    NapsanaRadka = input()
+    NapsanaRadka = 0
 
     for znak in NapsanaRadka:
         if not(znak in "0123456789"):
