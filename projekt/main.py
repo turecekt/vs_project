@@ -10,6 +10,7 @@ Tvurce: Tomas Blaho
 
 import math
 
+
 # PyTest sekce ------------------------------
 def test_obvod():
     """Test obvod()."""
