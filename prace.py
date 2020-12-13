@@ -116,5 +116,3 @@ def test_predkladmorse(predkladmorse):
            == "NERADPRACUJU"
     assert predkladmorse(".–./–.––/–.–./..../.–.././/–././–.../–––//.––."
                          "/–––/––/.–/.–../..–/") == "RYCHLENEBOPOMALU"
-
-
