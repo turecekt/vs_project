@@ -64,10 +64,9 @@ ABECEDAmorse = {
     '––..': 'Z'
 }
 
-"""Přeložení text do morse."""
-
 
 def Txt_do_Morse():
+    """Přeložení text do morse."""
     txt = input('Napiste text, ktery se ma prelozit do Morseovky:')
     code = [morseABECEDA[i.upper()] + '' for i in txt
             if i.upper() in morseABECEDA.keys()]
@@ -75,10 +74,8 @@ def Txt_do_Morse():
     print(morse)
 
 
-"""Přeložení morse na text."""
-
-
 def Morse_do_Txt():
+    """Přeložení morse na text."""
     txt = input('Napiste Morseovku ktera se ma prekladat na text:')
     novy = txt.split('/')
     code = [ABECEDAmorse[i] + '' for i in novy if i in ABECEDAmorse.keys()]
