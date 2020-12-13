@@ -98,7 +98,9 @@ def test_decrypt():
     >>> decrypt('.')
     'E'
     """
-    assert decrypt('.') == 'E'
+    correctResult = 'EEEE'
+    result = decrypt('. . . . ')
+    assert result == correctResult
 
 
 def test_malaaVelka():
