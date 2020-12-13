@@ -1,3 +1,2 @@
-aosisdhd
-asdhkasdhsk
-asdhkashdka
+message=input('Vloz text na preklad:')
+
