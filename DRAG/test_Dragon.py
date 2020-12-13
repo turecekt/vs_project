@@ -1,6 +1,6 @@
 """Module (file) docstring."""
 import unittest
-from Dragon import sides, input_data
+from Dragon import sides
 
 
 class TestDragonCurve(unittest.TestCase):
@@ -71,16 +71,6 @@ class TestDragonCurve(unittest.TestCase):
                             'lrrllrrrllrlllrrlrrlllrrllrlllrr'
                             'lrrllrrrllrllrrrlrrlllrrllrlllrrlr'
                             'rllrrrllrlllrrlrrlllrrllrll')
-
-    def test_color1(self):
-        """Function docstring."""
-        q = input_data()
-        self.assertEqual(type(q[0]), str)
-
-    def test_color2(self):
-        """Function docstring."""
-        q = input_data()
-        self.assertEqual(type(q[1]), str)
 
 
 if __name__ == '__main__':
