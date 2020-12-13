@@ -3,7 +3,7 @@
 Zaverecny projekt v Pythonu - Adam Karas
 """
 import random
-#import time
+# import time
 
 
 def createRandomArray():
@@ -145,7 +145,7 @@ def test_GenerateRandomArray():
 
 
 def main():
-    """This is the main function of program."""
+    """Hlavni cast programu."""
     print("")
     array = createRandomArray()
     print(array)
