@@ -50,7 +50,7 @@ class TestMorseovky(unittest.TestCase):
         self.assertEqual(result, "MAM20LET")
 
     def test_9(self):
-        """Čísla, písmena"""
+        """Čísla, písmena."""
         result = source_test.prevod("-.. -. . ... -.- .- .--- . .--. ."
                                     " -.- -. -.-- -.. . -. .- .--- . ..--- "
                                     "---.. ... - ..- .--. -. ..-")
