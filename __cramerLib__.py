@@ -110,6 +110,8 @@ def replaceWithRightSides(matrixarray, vector, column):
 
 >>> convertToMatrixAndVector(["1 1 1 1", "2 2 2 2", "3 3 3 3"], [], [])
 1
+>>> convertToMatrixAndVector(["1 1 1 1", "2 2 2 2", "3 3 3 3", "3 3 3 3"], [], [])
+0
 """
 
 
