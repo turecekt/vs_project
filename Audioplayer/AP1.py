@@ -155,9 +155,10 @@ class MusicPlayer:
         pygame.mixer.music.unpause()
 
 
-# Vytvoreni TK kontejneru
-root = Tk()
-# Absolvovani Root do klassu MusicPlayer
-MusicPlayer(root)
-# Smycka korenoveho okna
-root.mainloop()
+if __name__ == "__main__":
+    # Vytvoreni TK kontejneru
+    root = Tk()
+    # Absolvovani Root do klassu MusicPlayer
+    MusicPlayer(root)
+    # Smycka korenoveho okna
+    root.mainloop()
