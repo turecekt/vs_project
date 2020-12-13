@@ -1,4 +1,4 @@
-"""this module supplies methods for operation with matrixes.
+"""this module supplies methods for operation with matrixes,
 
 """
 from copy import deepcopy

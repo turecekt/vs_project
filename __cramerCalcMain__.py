@@ -1,6 +1,4 @@
-"""this module is wrapper for running calculation of matrixes
-
-"""
+"""this module is wrapper for running calculation of matrixes"""
 
 # import file with methodss for matri operation
 from __cramerLib__ import convertToMatrixAndVector
@@ -10,7 +8,7 @@ from __cramerLib__ import determinantCalculation
 import sys
 
 
-"""This method calcualtes teterminant of matrix.
+"""This method calcualtes teterminant of matrix,
 
  determinantCalculation(). For example,
 
@@ -19,8 +17,11 @@ import sys
 """
 def main():
     """
-        main of the script
+        main of the script,
+        this method is run automatically
     """
+
+
     if(len(sys.argv) != 2):
         if(len(sys.argv) < 2):
             print("too few argumetns specified")
@@ -85,5 +86,6 @@ def main():
     print("y: "+str(results["y"]))
     print("z: "+str(results["z"]))
     sys.exit(0)
+
 
 main()
