@@ -74,6 +74,7 @@ def quick_sort(arr, low, high):
         # prostřední je sama od sebe setříděná
         quick_sort(arr, low, pi-1)
         quick_sort(arr, pi+1, high)
+    return arr
 
 
 # Konstrukce haldy, použití tzv. maximové haldy (bubble up - bublání nahoru)
@@ -104,6 +105,7 @@ def heap_sort(arr):
     for i in range(n-1, 0, -1):
         arr[i], arr[0] = arr[0], arr[i]
         heapify(arr, i, 0)
+    return arr
 
 
 # Switch na zvolení typu řadícího algortimu
@@ -163,7 +165,6 @@ if len(sys.argv) > 1:
         sort_choice(mylist, x)
         print("Sorted Array: ", mylist)
     else:
-        mylist = []
         for i in sys.argv[1:]:
             mylist.append(i)
         print("Input Array: ", mylist)
@@ -195,33 +196,30 @@ def test_max():
 def test_quicksort():
     """Quicksort Unittest."""
     test_arr = [7, 13, 5]
-    quick_sort(test_arr, 0, len(test_arr)-1)
-    assert test_arr == [5, 7, 13]
+    assert quick_sort(test_arr, 0, len(test_arr)-1) == [5, 7, 13]
     # test nahodných vstupů
-    test_rArr = [random.sample(range(100), 10)]
-    test_rArrCopy = test_rArr.copy()
-    quick_sort(test_rArr, 0, len(test_rArr)-1)
-    test_rArrCopy.sort()
-    assert (test_rArr) == test_rArrCopy
+    # test_rArr = [random.sample(range(100), 10)]
+    # test_rArrCopy = test_rArr.copy()
+    # quick_sort(test_rArr, 0, len(test_rArr)-1)
+    # test_rArrCopy.sort()
+    # assert (test_rArr) == test_rArrCopy
 
 
 # Unittest heapsortu
 def test_heapsort():
     """Heapsort Unittest."""
     test_arr = [37, 41, 73, 13, 7, 101]
-    heap_sort(test_arr)
-    assert(test_arr) == [7, 13, 37, 41, 73, 101]
+    assert(heap_sort(test_arr)) == [7, 13, 37, 41, 73, 101]
     # test nahodných vstupů
-    test_rArr = [random.sample(range(100), 10)]
-    test_rArrCopy = test_rArr.copy()
-    heap_sort(test_rArr)
-    test_rArrCopy.sort()
-    assert (test_rArr) == test_rArrCopy
+    # test_rArr = [random.sample(range(100), 10)]
+    # test_rArrCopy = test_rArr.copy()
+    # heap_sort(test_rArr)
+    # test_rArrCopy.sort()
+    # assert (test_rArr) == test_rArrCopy
 
 
 def test_readfile():
     """Test reading values in a text file."""
-    test_arr = []
     test_arr = read_file()
     assert test_arr == [57, 21, 63, 3, 15, 7, 68, 46, 20, 58, 48, 41]
 
@@ -232,14 +230,26 @@ def test_generateRandom():
 
     By checking their resulting lengths.
     """
-    test_arr = []
-    test_arr2 = []
     test_arr = generate_array()
     test_arr2 = generate_array()
     assert len(test_arr) == len(test_arr2)
 
 
-def test_sort_choice():
+def test_sort_choice1():
+    """Test switch."""
+    test_arr = [57, 21, 63, 15]
+    sort_choice(test_arr, '1')
+    assert test_arr == [15, 21, 57, 63]
+
+
+def test_sort_choice2():
+    """Test switch."""
+    test_arr = [57, 21, 63, 15]
+    sort_choice(test_arr, '2')
+    assert test_arr == [15, 21, 57, 63]
+
+
+def test_sort_choice3():
     """Test switch."""
     test_arr = [57, 21, 63, 15]
     sort_choice(test_arr, '3')
@@ -253,3 +263,5 @@ def test_min_max():
     assert res[1] == '63'
     assert res[2] == '3'
     assert res[3] == '2'
+    # test_minmax = min_max([57, 21, 63, 15])
+    # assert test_minmax == ['15', '63', '3', '2']
