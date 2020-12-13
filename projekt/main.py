@@ -60,3 +60,8 @@ def main():
     message = input("Zadejte zprávu v abc: ").upper()
     result = encrypt(message.upper()) 
     print (result) 
+    
+    message = input("Zadejte zprávu v morseovce: ")
+    result = decrypt(message) 
+    print (result)
+  
