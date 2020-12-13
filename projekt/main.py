@@ -52,7 +52,6 @@ def test_encrypt():
     '. '
     """
     assert encrypt('E') == '. '
-    assert encrypt('E E') == '. . '
 
 
 # odsifrovavani
@@ -110,6 +109,12 @@ def main():
     zavola druhy input pro decrypt.
     """
     message = input("Zadejte zprávu v abc: ").upper()
+    """Zprava.
+
+    Pimena na velka.
+    >>>input('e')
+    'E'
+    """
     result = encrypt(message.upper())
     print(result)
 
