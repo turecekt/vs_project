@@ -105,7 +105,8 @@ def pravouhly(Sa, Sb, Sc):
 
 
 def vypis(xA, yA, xB, yB, xC, yC):
-    """Vypis hodnot do terminalu
+    """Vypis hodnot do terminalu.
+
     >>> vypis(0, 0, 0, 0, 0, 0)
     Trojuhelnik nelze setrojit
     """
