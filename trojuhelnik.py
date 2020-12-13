@@ -1,4 +1,6 @@
+"""Import math library."""
 import math
+
 
 def delkaStrany(x1, y1, x2, y2):
     """Calculate the length of a side of a triangle.
@@ -16,6 +18,7 @@ def delkaStrany(x1, y1, x2, y2):
     st = round(math.sqrt(str1+str2), 2)
     return st
 
+
 def getObvod(a, b, c):
     """Calculate the perimeter of a triangle.
 
@@ -27,6 +30,7 @@ def getObvod(a, b, c):
     """
     o = a + b + c
     return o
+
 
 def getObsah(a, b, c):
     """Calculate the area of a triangle.
@@ -50,6 +54,7 @@ def getObsah(a, b, c):
         obs = -1
     return obs
 
+
 def jeSestrojitelny(a, b, c):
     """Calculate if a triangle is valid.
 
@@ -63,6 +68,7 @@ def jeSestrojitelny(a, b, c):
         return True
     else:
         return False
+
 
 def jePravouhly(a, b, c):
     """Calculate if a triangle is a right triangle.
@@ -84,6 +90,7 @@ def jePravouhly(a, b, c):
         return True
     else:
         return False
+
 
 def trojuhelnik():
     """Calculate various properties of a triangle.
@@ -126,26 +133,32 @@ def trojuhelnik():
         print("Trojúhelník je pravoúhlý")
     else:
         print("Trojúhelník není pravoúhlý")
-        
+
+
 def test_delkaStrany():
     """Unit test for delkaStrany() function."""
     assert delkaStrany(14, 8, 3, 65) == 58.05
     assert (delkaStrany(47, 65, 3, 12) == 68.88) is True
-    
+
+
 def test_getObvod():
     """Unit test for getObvod() function."""
     assert getObvod(23.45, 32.01, 41.34) == 96.8
     assert (getObvod(1.01, 2.35, 9.87) == 13.23) is True
-    
+
+
 def test_getObsah():
     """Unit test for getObsah() function."""
     assert getObsah(14, 17, 23) == 118.49
     assert (getObsah(8, 15, 34) >= 0) is False
+
+
 def test_jeSestrojitelny():
     """Unit test for jeSestrojitelny() function."""
     assert jeSestrojitelny(1, 88, 55) is False
     assert jeSestrojitelny(76, 67, 55) is True
-    
+
+
 def test_jePravouhly():
     """Unit test for jePravouhly() function."""
     assert jePravouhly(25, 16, 9) is False
