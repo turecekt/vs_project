@@ -60,12 +60,12 @@ def decrypt(message):
 def main():
     message = input("Zadejte zprávu v abc: ").upper()
     result = encrypt(message.upper())
-    print (result)
-    
+    print(result)
+
     message = input("Zadejte zprávu v morseovce: ")
-    result = decrypt(message) 
-    print (result)
+    result = decrypt(message)
+    print(result)
 
 
-if __name__ == '__main__': 
+if __name__ == '__main__':
     main()
