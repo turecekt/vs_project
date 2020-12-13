@@ -34,7 +34,7 @@ def print_input():
 
 
 def check_number(text: str):
-    """Function check if number is number."""
+    """If number is integer return true."""
     try:
         int(text)
         return True
@@ -45,7 +45,7 @@ def check_number(text: str):
 
 
 def check_prime_number(number: int):
-    """Function to check if number is prime number."""
+    """Test number if is prime then return true."""
     if(number <= 1):
         return False
 
