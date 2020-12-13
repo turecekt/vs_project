@@ -141,10 +141,6 @@ class Gui(tk.Tk):
         self.app.columnconfigure(0, weight=2)
         self.app.columnconfigure(1, weight=2)
         self.app.columnconfigure(2, weight=2)
-        #tk.Checkbutton() = tk.Checkbutton(fg="white", bg="#1d1d1d",
-         #                               activeforeground = "white",
-          #                              activebackground = "#1d1d1d",
-           #                             selectcolor="green",bd=5)
         self.nazvy = {1: "Strana a",
                       2: "Strana b",
                       3: "Strana c",
