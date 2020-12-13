@@ -48,7 +48,7 @@ def main(file=0):
             FILE = open(sys.argv[1])
         except IOError:
             print("File "+sys.argv[1]+' not found on this machine')
-            reutrn 1
+            return 1
     else:
         try:
             FILE = open(file)
