@@ -67,7 +67,7 @@ def obvod(Sa, Sb, Sc):
     >>> obvod(1, 1, 1)
     3.0
     """
-    return round (Sa+Sb+Sc, 3)
+    return round(Sa+Sb+Sc, 3)
 
 
 def obsah(Sa, Sb, Sc):
