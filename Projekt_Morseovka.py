@@ -4,7 +4,7 @@
 
 # mcipher -> stores translated from latin string
 # dcipher -> strores translated from morsecode
-# mtext -> morse of single character
+# morsCharacter -> morse of single character
 # i -> counts spaces betwees morse
 # message -> string tob encoded or decoded
 
@@ -52,118 +52,80 @@ LAT_MORSE_DICT = {'A':'.-',
               '-':'-....-',
               '(':'-.--.',
               ')':'-.--.-'}
-#Morsecode dictionary form Morse to Latin
-MORSE_LATIN_DICT = {'.-':'A',
-              '-...':'B',
-              '-.-.':'C',
-              '-..':'D',
-              '.':'E',
-              '..-.':'F',
-              '--.':'G',
-              '....':'H',
-              '..':'I',
-              '.---':'J',
-              '-.-':'K',
-              '.-..':'L',
-              '--':'M',
-              '-.':'N',
-              '---':'O',
-              '.--.':'.P',
-              '--.-':'Q',
-              '.-.':'R',
-              '...':'S',
-              '-':'T',
-              '..-':'U',
-              '...-':'V',
-              '.--':'W',
-              '-..-':'X',
-              '-.--':'Y',
-              '--..':'Z',
-              '.----':'1',
-              '..---':'2',
-              '...--':'3',
-              '....-':'4',
-              '.....':'5',
-              '-....':'6',
-              '--...':'7',
-              '---..':'8',
-              '----.':'9',
-              '-----':'0',
-              '--..--':',',
-              '.-.-.-':'.',
-              '..--..':'?',
-              '-..-.':'/',
-              '-....-':'-',
-              '-.--.':'(',
-              '-.--.-':')'}
 
-message = print("Text do Morse použij decrypt('TEXT'), Morse do Text použij decrypt('ZNAKY')")
-message = input("Zde napiš svou zprávu:").upper()
-# Function encrypts the message to Morsecode
+#Funcion to decrypt the string from Latin to Morsecode
+#each morse letter is devided by /
 def encrypt(message):
+  
+   
+    message = message.upper()
     mcipher = ''
+
+
     for letter in message:
-        if letter != '':
-            
-            #Looking for right morsecode in dictionary and adding slash
+        if letter != ' ':
             mcipher += LAT_MORSE_DICT[letter] + '/'
         else:
-            # one space indicates different characters and two indicatates different words
             mcipher += '/'
-            
     return mcipher
 
-#Funcion to decrypt the string from Morsecode to latin
+
+#Funcion to decrypt the string from Morsecode to Latin letters
 def decrypt(message):
     
-    #Adding extra space at the end to acces the last morsecode
-    message +=''
-    
+    #Adding extra space at the end to acces the Last morsecode
+    message += ' '
     dcipher = ''
-    mtext = ''
+    morsCharacter = ''
+  
     for letter in message:
-        
-        #Checks for space
-        if (letter != ''):
-            
-            #Counter to keep track of space
+        if(letter != '-' and letter != '.' and letter != ' '):
+            dcipher = 'Bad format'
+            return dcipher
+
+    for letter in message:
+        if (letter != ' '):
             i = 0
-            
-            #Storing morse code of a single character
-            mtext += letter
-           
-        #In case of space    
+            morsCharacter += letter
         else:
-            
-            #If i=1 that indicates a new character
             i += 1
-            
-            #If i=2 that indicates a new word
-            if i == 2 :
-                
-                #Adding space to separate words
-                dcipher +=''
+            if i == 2:
+                dcipher += ' '
             else:
-                
-                #accesing the keys using their values (reverse of encryption)
-                dcipher += list(LAT_MORSE_DICT.keys())[list(LAT_MORSE_DICT.values()).index(mtext)]
-                mtext = ''
-                
-                
-                
+                dcipher += list(LAT_MORSE_DICT.keys())[list(LAT_MORSE_DICT.values()).index(morsCharacter)]
+                morsCharacter = ''
     return dcipher
 
-# Hard-coded driver function to run the program 
-def main(): 
-    message = "Vítej v mém dekodéru"
-    result = encrypt(message.upper()) 
-    print (result) 
-  
-    message = "Začni psát"
-    result = decrypt(message) 
-    print (result) 
+
+
+#Chooses type of the translation
+def choice(choose):
+   
+    if choose == 1:
+        vyberPrekladu = input("Your text: ")
+        result = encrypt(vyberPrekladu)
+
+    elif choose == 2:
+        vyberPrekladu2 = input("Morse: ")
+        result = decrypt(vyberPrekladu2)
     
-# Executes the main function
+    return result
+
+
+#Definice main
+def main():
+    
+    try:
+        print("1 for Latin to Morse ")
+        print("2 for Morse to Latin")
+        a = int(input())
+        volani = choice(a)
+        print(volani)
+    except ValueError:
+        print("Musí být znak")
+
+
+if __name__ == '__main__':
     main()
         
             
