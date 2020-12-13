@@ -85,10 +85,15 @@ def prevod(vstup):
 
         return g
 
+def main():
+    """Main funkce."""
+    # Vytvoření vstupu
+    print('--KODÉR A DEKODÉR MORSEOVKY--')
+    vstup = input('Zadejte text pro převod: ')
 
-# Vytvoření vstupu
-print('--KODÉR A DEKODÉR MORSEOVKY--')
-vstup = input('Zadejte text pro převod: ')
+    # Výstup
+    print(prevod(vstup))
 
-# Výstup
-print(prevod(vstup))
+
+if __name__ == '__main__':
+    main()
