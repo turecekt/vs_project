@@ -1,5 +1,4 @@
-"""Jako první věc si musíme definovat abecedu."""
-
+"""Prekladac morseovky."""
 
 SLOVNIK_MORSEOVKA = {' ': '/', 'A': '.-',
                      'B': '-...', 'C': '-.-.',
