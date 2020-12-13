@@ -3,7 +3,7 @@ import sys
 import random
 
 
-def main():
+def main(test_args=[]):
     """Hlavni funkce."""
     vstup = []  # vytvori list vstup
     numbers = []  # vytvori list filtrovany vstup
@@ -11,6 +11,9 @@ def main():
     for x in sys.argv:  # nacte vsechny arumenty do listu vstup
         vstup.append(x)
     vstup.pop(0)  # ondstrani prvni argument (cestu k souboru)
+
+    if len(test_args) > 0:  # pokud se testuje nacte testovaci args
+        vstup = test_args
 
     if len(vstup) == 0:  # nahodne generovani cisel
         numbers = randomnumbers()
@@ -20,7 +23,10 @@ def main():
     if len(vstup) > 0:
         numbers = filtr(vstup)
 
-    roztrizene = moznostizoradenia(numbers)  # vyber tridiciho algoritmu
+    if len(test_args) > 0:
+        roztrizene = moznostizoradenia(numbers, '1')
+    else:
+        roztrizene = moznostizoradenia(numbers)  # vyber tridiciho algoritmu
     if len(roztrizene) > 0:  # provede jestli existuje vystup
         print("Vstup: ", end='')
         for x in numbers:  # napise vstupni cisla
@@ -162,6 +168,12 @@ def test_moznostizoradenia():
 def test_filtr():
     """Test filtru."""
     assert filtr(['1', '2', '3', 'a', 'b', 'c']) == [1, 2, 3]
+
+
+def test_main():
+    """Test hlavni funkce."""
+    assert main(['a', 'b', '25', '1', '111', '55987', 'abcdef']) == \
+           [1, 25, 111, 55987]
 
 
 if __name__ == '__main__':  # umoznuje psani funkci pod main
