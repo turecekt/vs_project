@@ -7,8 +7,6 @@ A jeho setřídění 3 různými třídícími algoritmy.
 
 import sys
 import random
-from Quicksort import quick_sort
-from Heapsort import heap_sort
 
 
 # Funkce pro zjištění nejmenšího prvku v poli
@@ -42,6 +40,65 @@ def min_max(mylist):
     (print("Největší prvek v seznamu má hodnotu: "
      + str(max(mylist)) + " a nachazi se na indexu: "
      + str(mylist.index(max(mylist)))))
+
+
+# Rozdělení vstupu podle pivota na levou, pravou a střední část
+def partition(arr, low, high):
+    """Return partitioned array into three sections left, right and middle."""
+    i = (low-1)  # Index menšího prvku
+    pivot = arr[high]
+    for j in range(low, high):
+        # Umístění všech prvků menších než je pivot nalevo od něj
+        if arr[j] <= pivot:
+            # Inkrementovaní indexu menšího prvku
+            i = i+1
+            arr[i], arr[j] = arr[j], arr[i]
+
+    arr[i+1], arr[high] = arr[high], arr[i+1]
+    return (i+1)
+
+
+# Main funkce Quicksortu
+def quick_sort(arr, low, high):
+    """Return sorted array."""
+    if len(arr) == 1:
+        return arr
+    if low < high:
+        pi = partition(arr, low, high)
+        # Rekurzivní setřídění levé a pravé části,
+        # prostřední je sama od sebe setříděná
+        quick_sort(arr, low, pi-1)
+        quick_sort(arr, pi+1, high)
+
+
+# Konstrukce haldy, použití tzv. maximové haldy (bubble up - bublání nahoru)
+def heapify(arr, n, i):
+    """Return BubbleUp (heap collection) from given array."""
+    # inicializace bublání, n - velikost velikost haldy, kořen na indexu i
+    largest = i
+    left = 2 * i + 1
+    right = 2 * i + 2
+    # Porovnání levých synů stromu, jestli jsou větší než kořen tak prohodíme
+    if left < n and arr[i] < arr[left]:
+        largest = left
+    # Porovnání pravých synů stromu, jestli jsou větší než kořen tak prohodíme
+    if right < n and arr[largest] < arr[right]:
+        largest = right
+    # Výměna kořene (opakované mazání maxima)
+    if largest != i:
+        arr[i], arr[largest] = arr[largest], arr[i]
+        heapify(arr, n, largest)
+
+
+# Main funkce heap (halda) sortu
+def heap_sort(arr):
+    """Return sorted array."""
+    n = len(arr)
+    for i in range(n // 2 - 1, -1, -1):
+        heapify(arr, n, i)
+    for i in range(n-1, 0, -1):
+        arr[i], arr[0] = arr[0], arr[i]
+        heapify(arr, i, 0)
 
 
 # Switch na zvolení typu řadícího algortimu
@@ -122,3 +179,31 @@ def test_max():
     """Max test."""
     test_list = [1, 2, 3]
     assert(max(test_list)) == 3
+
+
+# Unittest Quicksortu
+def test_quicksort():
+    """Quicksort Unittest."""
+    test_arr = [7, 13, 5]
+    quick_sort(test_arr, 0, len(test_arr)-1)
+    assert test_arr == [5, 7, 13]
+    # test nahodných vstupů
+    test_rArr = [random.sample(range(100), 10)]
+    test_rArrCopy = test_rArr.copy()
+    quick_sort(test_rArr, 0, len(test_rArr)-1)
+    test_rArrCopy.sort()
+    assert (test_rArr) == test_rArrCopy
+
+
+# Unittest heapsortu
+def test_heapsort():
+    """Heapsort Unittest."""
+    test_arr = [37, 41, 73, 13, 7, 101]
+    heap_sort(test_arr)
+    assert(test_arr) == [7, 13, 37, 41, 73, 101]
+    # test nahodných vstupů
+    test_rArr = [random.sample(range(100), 10)]
+    test_rArrCopy = test_rArr.copy()
+    heap_sort(test_rArr)
+    test_rArrCopy.sort()
+    assert (test_rArr) == test_rArrCopy
