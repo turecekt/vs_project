@@ -145,3 +145,16 @@ def test_jeSestrojitelny():
     """Unit test for jeSestrojitelny() function."""
     assert jeSestrojitelny(1, 88, 55) is False
     assert jeSestrojitelny(76, 67, 55) is True
+    
+def test_jePravouhly():
+    """Unit test for jePravouhly() function."""
+    assert jePravouhly(25, 16, 9) is False
+    assert jePravouhly(5, 3, 4) is True
+
+
+if __name__ == "__main__":
+    test_delkaStrany()
+    test_getObvod()
+    test_getObsah()
+    test_jeSestrojitelny()
+    test_jePravouhly()
