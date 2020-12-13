@@ -36,8 +36,12 @@ else:
 obvod = stra + strb + strc
 print("Obvod trojúhelníku je " + str(obvod) + " cm")
 s = (stra + strb + strc) / 2
-obsah = math.sqrt(s * (s - stra) * (s - strb) * (s - strc))
-print("Obsah trojúhelníku je " + str(obsah) + " cm")
+m = s * (s - stra) * (s - strb) * (s - strc)
+if m >= 0:
+    obsah = math.sqrt(m)
+    print("Obsah trojúhelníku je " + str(obsah) + " cm")
+else:
+    print("Obsah nelze vypočítat (záporné číslo pod odmocninou")
 if math.pow(2, stra) == math.pow(2, strb) + math.pow(2, strc) or math.pow(2, strb) == math.pow(2, strc) + math.pow(2, stra) or math.pow(2, strc) == math.pow(2, stra) + math.pow(2, strb):
     print("Trojúhelník je pravoúhlý")
 else:
