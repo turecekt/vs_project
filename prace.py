@@ -2,6 +2,7 @@
 import unittest
 
 """Kodovani a dekodovaní morseovy text."""
+
 """Abeceda potřebná na překlad na Morse"""
 morseABECEDA = {
     ' ': '/',
@@ -33,6 +34,7 @@ morseABECEDA = {
     'Y': '–.––/',
     'Z': '––../'
 }
+
 """Abeceda potřebná na překlad na text"""
 ABECEDAmorse = {
     '/': ' ',
@@ -77,6 +79,8 @@ def Txt_do_Morse():
 
 
 """Přeložení morse na text."""
+
+
 def Morse_do_Txt():
     txt = input('Napiste Morseovku ktera se ma prekladat na text:')
     novy = txt.split('/')
