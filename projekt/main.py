@@ -1,14 +1,20 @@
 import math
+"""
+Tento program zjistuje jestli lze sestrojit trojuhelnik
+Pokud ano, tak se vypocita delka jeho stran, obsah, obvod a jestli je pravouhly
+Program prijima souradnice bodu A,B,C na konzoli a vypisuje vysledky
 
+Tvurce: Tomáš Blaho
+"""
 
 def sestrojitelnost():
-    '''
+    """
     Funkce zjistuje jestli lze sestrojit trojuhelnik
 
     Vraci:
     true = trojuhelnik lze sestrojit
     false = trojhelnik nelze sestrojit
-    '''
+    """
 
     lze = sA + sB > sC and sB + sC > sA and sA + sC > sB
 
@@ -16,11 +22,11 @@ def sestrojitelnost():
 
 
 def obsah():
-    '''
+    """
     Funkce pocita obsah trojuhelniku
 
     Vraci float s vypocitanou hodnotou
-    '''
+    """
 
     s = (sA + sB + sC) / 2
 
@@ -30,23 +36,23 @@ def obsah():
 
 
 def obvod():
-    '''
+    """
     Funkce pocita obvod trojuhelniku
 
     Vraci float s vypocitanou hodnotou
-    '''
+    """
 
     return sA + sB + sC
 
 
 def pravouhelnost():
-    '''
+    """
     Funkce zjistuje jesli je trojuhelnik pravouhly
 
     Vraci:
     true = trojuhelnik je pravouhlu
     false = trojuhelnik neni pravouhlu
-    '''
+    """
 
     nejdelsi = max(sA, sB, sC)
 
