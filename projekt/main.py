@@ -48,25 +48,10 @@ def test_encrypt():
     """Test zasifrovani.
 
     Vraceni vsech znaku v morseove sifre
-    >>> encrypt('EEEE')
-    '. . . . '
+    >>> encrypt('E')
+    '. '
     """
-    correctResult = '. . . . '
-    result = encrypt('EEEE')
-    assert result == correctResult
-
-
-# test numbers
-def test_encrypt_numbers():
-    """Testing decrypting with numbers as an input.
-
-    Vraceni vsech znaku v morseove sifre
-    >>> encrypt('12345')
-    '.---- ..--- ...-- ....- ..... '
-    """
-    correctResult = '12345'
-    result = encrypt('.---- ..--- ...-- ....- ..... ')
-    assert result == correctResult
+    assert encrypt('E') == '. '
 
 
 # odsifrovavani
@@ -107,23 +92,13 @@ def decrypt(message):
 
 # testovani decryptu
 def test_decrypt():
-    """Testing decrypt.
+    """Testovani decryptu.
 
     Odsifrovani morseovky na text.
     >>> decrypt('.')
     'E'
     """
-    correctResult = 'EEEE'
-    result = decrypt('. . . . ')
-    assert result == correctResult
-
-
-# test numbers
-def test_decrypt_numbers():
-    """Testing decrypting with numbers as an input."""
-    correctResult = '12345'
-    result = decrypt('.---- ..--- ...-- ....- ..... ')
-    assert result == correctResult
+    assert decrypt('.') == 'E'
 
 
 # funkce main
