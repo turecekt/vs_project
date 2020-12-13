@@ -103,16 +103,17 @@ if __name__ == '__main__':
         sC = math.sqrt(((int(Ax) - int(Cx)) ** 2) + ((int(Ay) - int(Cy)) ** 2))
 
         # Vystup pozadovany v zadani.
-        if sestrojitelnost(A = sA, B = sB, C = sC):
+        if sestrojitelnost(A=sA, B=sB, C=sC):
             print('Trojuhelnik lze sestrojit.')
 
             print('Strana A je dlouha: ', sA)
             print('Strana B je dlouha: ', sB)
             print('Strana C je dlouha: ', sC)
 
-            print('Obsah je: ', obsah(A = sA, B = sB, C = sC), ' a obvod je: ', obvod(A = sA, B = sB, C = sC))
+            print('Obsah je: ', obsah(A=sA, B=sB, C=sC), 
+                  ' a obvod je: ', obvod(A=sA, B=sB, C=sC))
 
-            if pravouhelnost(A = sA, B = sB, C = sC):
+            if pravouhelnost(A=sA, B=sB, C=sC):
                 print('Trojuhelnik je pravouhly.')
             else:
                 print('Trojuhelnik neni pravouhly.')
