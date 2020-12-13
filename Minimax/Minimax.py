@@ -34,12 +34,17 @@ def max(nums):
 # Výpis nejmenšího a největšího prvku v poli s jeho indexem
 def min_max(mylist):
     """Print outputs."""
+    minVal = min(mylist)
+    maxVal = max(mylist)
+    minIdx = mylist.index(minVal)
+    maxIdx = mylist.index(maxVal)
     (print("Nejmenší prvek v seznamu má hodnotu: "
-     + str(min(mylist)) + " a nachazi se na indexu: "
-     + str(mylist.index(min(mylist)))))
+     + str(minVal) + " a nachazi se na indexu: "
+     + str(minIdx)))
     (print("Největší prvek v seznamu má hodnotu: "
-     + str(max(mylist)) + " a nachazi se na indexu: "
-     + str(mylist.index(max(mylist)))))
+     + str(maxVal) + " a nachazi se na indexu: "
+     + str(maxIdx)))
+    return str(minVal), str(maxVal), str(minIdx), str(maxIdx)
 
 
 # Rozdělení vstupu podle pivota na levou, pravou a střední část
@@ -102,24 +107,21 @@ def heap_sort(arr):
 
 
 # Switch na zvolení typu řadícího algortimu
-def sort(mylist):
+def sort_choice(mylist, x):
     """
     Return min, max value and sorted array.
 
     Using specific sort chosen by a user.
     """
-    print("Jaký řadící algortimus chcete použít?")
-    print("Quick sort[1], Heap sort[2], Python Builtin[3]")
-    x = input()
     if x == '1':
         quick_sort(mylist, 0, len(mylist)-1)
-        print(mylist)
     elif x == '2':
         heap_sort(mylist)
-        print(mylist)
     elif x == '3':
         mylist.sort()
-        print(mylist)
+    else:
+        print("Nevalidní hodnota")
+        return
 
 
 # Generovaní pole při zavolání funkce uživatele bez argumentů
@@ -150,25 +152,30 @@ def read_file():
 
 # Vstup:
 mylist = []
+print("Jaký řadící algortimus chcete použít?")
+x = input("Quick sort[1], Heap sort[2], Python Builtin[3]")
 if len(sys.argv) > 1:
     argument = sys.argv[1]
     if argument[-3:] == 'txt':
         mylist = read_file()
-        print("List: ", mylist)
+        print("Input Array: ", mylist)
         min_max(mylist)
-        sort(mylist)
+        sort_choice(mylist, x)
+        print("Sorted Array: ", mylist)
     else:
         mylist = []
         for i in sys.argv[1:]:
             mylist.append(i)
-        print("List: ", mylist)
+        print("Input Array: ", mylist)
         min_max(mylist)
-        sort(mylist)
+        sort_choice(mylist, x)
+        print("Sorted Array: ", mylist)
 else:
     mylist = generate_array()
-    print("List: ", mylist)
+    print("Input Array: ", mylist)
     min_max(mylist)
-    sort(mylist)
+    sort_choice(mylist, x)
+    print("Sorted Array: ", mylist)
 
 
 # Unittesty
@@ -230,3 +237,19 @@ def test_generateRandom():
     test_arr = generate_array()
     test_arr2 = generate_array()
     assert len(test_arr) == len(test_arr2)
+
+
+def test_sort_choice():
+    """Test switch."""
+    test_arr = [57, 21, 63, 15]
+    sort_choice(test_arr, '3')
+    assert test_arr == [15, 21, 57, 63]
+
+
+def test_min_max():
+    """Test min_max function."""
+    res = min_max([57, 21, 63, 15])
+    assert res[0] == '15'
+    assert res[1] == '63'
+    assert res[2] == '3'
+    assert res[3] == '2'
