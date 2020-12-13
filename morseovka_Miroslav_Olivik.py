@@ -24,12 +24,12 @@ A string nechame precist."""
 
 
 def Text_To_Code(): """Fce pro preklad do morseovky"""
-    text2 = input("Napiste slova, ktera chcete kodovat: ")
-    code2 = [SLOVNIK_MORSEOVKA
-             [i.upper()] + " "
-             for i in text2 if i.upper() SLOVNIK_MORSEOVKA.keys()]
-    morseovka = "".join(code2)
-    print(morseovka)
+text2 = input("Napiste slova, ktera chcete kodovat: ")
+code2 = [SLOVNIK_MORSEOVKA
+         [i.upper()] + " "
+         for i in text2 if i.upper() SLOVNIK_MORSEOVKA.keys()]
+morseovka = "".join(code2)
+print(morseovka)
 
 
 """Stejny zpusob pouzijeme i zde i dekodovani nami zadaneho textu."""
@@ -38,11 +38,11 @@ def Text_To_Code(): """Fce pro preklad do morseovky"""
 
 
 def Code_To_Text(): """Fce pro preklad morseovky."""
-    text1 = input("Napiste kod, ktery chcete dekodovat: ")
-    code1 = [k for i in text1.split() for k,
-             v in SLOVNIK_MORSEOVKA.items() if i == v]
-    novytext = "".join(code1)
-    print(novytext)
+text1 = input("Napiste kod, ktery chcete dekodovat: ")
+code1 = [k for i in text1.split() for k,
+         v in SLOVNIK_MORSEOVKA.items() if i == v]
+novytext = "".join(code1)
+print(novytext)
 
 
 """Vypiseme menu pro vyber, co chceme aby program delal."""
