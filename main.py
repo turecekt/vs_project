@@ -1,3 +1,6 @@
+import random
+
+
 def main():
     """
     Get user input and check if the input is prime number
@@ -12,10 +15,21 @@ def main():
         text = input()
         pass
 
-    if(check_prime_number(int(text))):
-        print("Je prvočíslo")
+    number = int(text)
+
+    if(number > 50):
+        print("Prvočíslo bude zjíštěno přes fermatovu metodu")
+        if(fermat_test(number, 3)):
+            print("Je prvočíslo")
+        else:
+            print("Není prvočíslo")
     else:
-        print("Není prvočíslo")
+        print("Je použita obecná metoda")
+
+        if(check_prime_number(int(text))):
+            print("Je prvočíslo")
+        else:
+            print("Není prvočíslo")
 
 
 def print_input():
@@ -57,8 +71,31 @@ def check_prime_number(number: int):
     if(number == 2):
         return True
 
+    i = 3
     for i in range(2, number):
         if number % i == 0:
+            return False
+
+    return True
+
+
+def fermat_test(number, k):
+    """
+    Fermat test to test higher number
+
+    Return Boolean
+    """
+
+    if number == 2:
+        return True
+
+    if number % 2 == 0:
+        return False
+
+    for i in range(k):
+        randomNumber = random.randint(1, number - 1)
+
+        if (pow(randomNumber, number - 1) % number != 1):
             return False
 
     return True
