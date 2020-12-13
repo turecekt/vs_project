@@ -50,9 +50,9 @@ def prevod(vstup):
 
         #Vytvoření cyklu pro převod z morseovky na text
         for prvek in rozdVstup:
-            if prvek not in morseovka:
-                    print('Zadávané znaky nejsou písmena, či číslice, nebo znaky morseovky') # Ošetření vstupu
-                    exit()
+            if prvek not in morseovka.values():
+                print('Zadávané znaky nejsou písmena, či číslice, nebo znaky morseovky') # Ošetření vstupu
+                exit()
             for i in morseovka:
                 if prvek == morseovka[i]:
                     g = g + i
@@ -71,8 +71,8 @@ def prevod(vstup):
             
         for prvek in rozdVstup:
             if prvek not in morseovka:
-                    print('Zadávané znaky nejsou písmena, či číslice, nebo znaky morseovky') # Ošetření vstupu
-                    exit()
+                print('Zadávané znaky nejsou písmena, či číslice, nebo znaky morseovky') # Ošetření vstupu
+                exit()
             for i in morseovka:
                 if prvek == i:
                     g = g + morseovka[i] + ' '
