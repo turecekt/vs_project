@@ -57,6 +57,11 @@ def decrypt(message):
     return decipher
 
 
+#testovani decryptu
+def test_decrypt():
+    assert decrypt('.') == ('E')
+
+
 def main():
     message = input("Zadejte zprávu v abc: ").upper()
     result = encrypt(message.upper())
