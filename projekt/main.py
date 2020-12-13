@@ -110,7 +110,7 @@ if __name__ == '__main__':
             print('Strana B je dlouha: ', sB)
             print('Strana C je dlouha: ', sC)
 
-            print('Obsah je: ', obsah(A=sA, B=sB, C=sC), 
+            print('Obsah je: ', obsah(A=sA, B=sB, C=sC),
                   ' a obvod je: ', obvod(A=sA, B=sB, C=sC))
 
             if pravouhelnost(A=sA, B=sB, C=sC):
