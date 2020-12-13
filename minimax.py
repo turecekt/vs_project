@@ -193,7 +193,8 @@ def test_MinValue():
 def test_MinValueIndex():
     """Function findMinIndex - unit test."""
     test_array = [97, -83, -2, 21, 20]
-    assert findMinIndex(test_array) == 1
+    min_value = -83
+    assert findMinIndex(test_array, min_value) == 1
 
 
 def test_MaxValue():
@@ -205,7 +206,8 @@ def test_MaxValue():
 def test_MaxIndex():
     """Function findMaxIndex - unit test."""
     test_array = [97, -83, -2, 21, 20]
-    assert findMaxIndex(test_array) == 0
+    max_value = 97
+    assert findMaxIndex(test_array, max_value) == 0
 
 
 if __name__ == "__main__":
