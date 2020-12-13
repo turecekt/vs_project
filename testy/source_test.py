@@ -149,8 +149,8 @@ class TestMorseovky(unittest.TestCase):
     def test_9(self):
         """Čísla, písmena."""
         result = prevod("-.. -. . ... -.- .- .--- . .--. ."
-                                    " -.- -. -.-- -.. . -. .- .--- . ..--- "
-                                    "---.. ... - ..- .--. -. ..-")
+                        " -.- -. -.-- -.. . -. .- .--- . ..--- "
+                        "---.. ... - ..- .--. -. ..-")
         self.assertEqual(result, "DNESKAJEPEKNYDENAJE28STUPNU")
 
     def test_10(self):
