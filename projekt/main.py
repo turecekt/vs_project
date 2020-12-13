@@ -11,6 +11,27 @@ Tvurce: Tomáš Blaho
 import math
 
 
+# PyTest sekce ------------------------------
+def test_obvod():
+    """Test obvod()."""
+    assert obvod(3, 4, 5) == 12
+
+
+def test_obsah():
+    """Test obsah()."""
+    assert obsah(3, 4, 5) == 6
+
+
+def test_pravouhelnost():
+    """Test pravouhelnost()."""
+    assert pravouhelnost(3, 4, 5) is True
+
+
+def test_sestrojitelnost():
+    """Test sestrojitelnost()."""
+    assert sestrojitelnost(3, 4, 5) is True
+
+
 def sestrojitelnost(A, B, C):
     """
     Funkce zjistuje jestli lze sestrojit trojuhelnik.
@@ -22,6 +43,7 @@ def sestrojitelnost(A, B, C):
     lze = A + B > C and B + C > A and A + C > B
 
     return lze
+# PyTest konec -----------------------------
 
 
 def obsah(A, B, C):
@@ -122,24 +144,3 @@ if __name__ == '__main__':
 
     # Zde program ceka na uzivatelsky vstup k ukonceni.
     input('Zmackni Enter k zavreni programu.')
-
-
-# PyTest sekce ------------------------------
-def test_obvod():
-    """Test obvod()."""
-    assert obvod(3, 4, 5) == 12
-
-
-def test_obsah():
-    """Test obsah()."""
-    assert obsah(3, 4, 5) == 6
-
-
-def test_pravouhelnost():
-    """Test pravouhelnost()."""
-    assert pravouhelnost(3, 4, 5) is True
-
-
-def test_sestrojitelnost():
-    """Test sestrojitelnost()."""
-    assert sestrojitelnost(3, 4, 5) is True
