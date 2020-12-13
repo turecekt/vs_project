@@ -28,7 +28,7 @@ def encrypt(message):
     """Zasifrovani zpravy.
 
     Vraceni vsech znaku v morseove sifre
-    >>> E
+    >>> encrypt(E)
     .
     """
     cipher = ''
