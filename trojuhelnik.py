@@ -136,3 +136,8 @@ def test_getObvod():
     """Unit test for getObvod() function."""
     assert getObvod(23.45, 32.01, 41.34) == 96.8
     assert (getObvod(1.01, 2.35, 9.87) == 13.23) is True
+    
+def test_getObsah():
+    """Unit test for getObsah() function."""
+    assert getObsah(14, 17, 23) == 118.49
+    assert (getObsah(8, 15, 34) >= 0) is False
