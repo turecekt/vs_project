@@ -49,7 +49,6 @@ def readfile():  # funkce precte soubor a rozdeli skupiny znaku do listu
             i = i + j  # prida aktualni znak k i
     if len(text) != 0:  # prida posledni cislo do listu
         output.append(i)
-
     return output
 
 
@@ -178,6 +177,14 @@ def test_randomnumbers():
     """Test randomnumbers."""
     x = randomnumbers()
     assert len(x) == 20
+
+
+def test_readfile():
+    """Test cteni ze souboru."""
+    assert readfile() == ['99', '485', '21', '15', '66',
+                          '2', '1000', '753', '637', '448',
+                          '20', '58', '16', '32', '64', '7',
+                          '1', '1', '24', '78', '175', '284', '349']
 
 
 if __name__ == '__main__':  # umoznuje psani funkci pod main
