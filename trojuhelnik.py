@@ -14,3 +14,15 @@ def sestrojitelnost(a, b, c):
         return True
     else:
         return False
+
+
+# obvod obsah
+def obvod(a, b, c):
+    """Vypocita obvod trojuhelniku."""
+    return a + b + c
+
+
+def obsah(a, b, c):
+    """Vypočítá obsah trojúhelníku."""
+    s = (a + b + c)/2
+    return math.sqrt(s * (s - a) * (s - b) * (s - c))
