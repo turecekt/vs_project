@@ -52,7 +52,7 @@ def test_encrypt():
     .
     """
     assert encrypt('E') == '. '
-
+    assert encrypt('A') == '.- '
 
 # odsifrovavani
 def decrypt(message):
@@ -95,7 +95,7 @@ def test_decrypt():
     Odsifrovani morseovky na text.
     """
     assert decrypt('.') == ('E')
-
+    assert decrypt('.-') == ('A')
 
 # funkce main
 def main():
