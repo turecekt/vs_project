@@ -5,7 +5,7 @@ import unittest
 
 class TestMorseovka(unittest.TestCase):
     """Tato trida funguje jako testovaci trida."""
-    
+
     def test_1(self):
         """Testovani zvetsovani pismen."""
         self.asserEqual("abc".upper(), "ABC")
