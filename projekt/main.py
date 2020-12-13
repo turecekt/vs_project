@@ -1,6 +1,7 @@
 """
 Tento program zjistuje jestli lze sestrojit trojuhelnik.
-Pokud ano, tak se vypocita delka jeho stran, obsah, obvod 
+
+Pokud ano, tak se vypocita delka jeho stran, obsah, obvod
 a jestli je pravouhly.
 Program prijima souradnice bodu A,B,C na konzoli a vypisuje vysledky.
 
