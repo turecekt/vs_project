@@ -1,7 +1,10 @@
 # -*- coding: utf-8 -*-
+
 """
-Soubor definuje hlavní třídu trojuhelník, ze
-které nadále vychází celý program. Rvněž definuje
+
+Soubor definuje hlavní třídu trojuhelník.
+
+Z této třídy nadále vychází celý program. Rovněž definuje
 funckci vstup(), která zpracovává vstup uživatele.
 
 Created on Sat Dec 12 13:11:15 2020
@@ -17,6 +20,7 @@ Začátek definování tříd
 
 
 class trojuhelnik:
+    """Základní třída trojuhelník."""
 
     Ax = 0
     Bx = 0
@@ -25,9 +29,7 @@ class trojuhelnik:
     Cy = 0
 
     def __init__(self, Ax, Ay, Bx, By, Cx, Cy):
-        """
-        Konstruktor ke třídě trojuhelník.
-        """
+        """Konstruktor ke třídě trojuhelník."""
         self.Ax = float(Ax)
         self.Ay = float(Ay)
         self.Bx = float(Bx)
@@ -37,8 +39,9 @@ class trojuhelnik:
 
     def delkaStrany(self, strana):
         """
-        Metoda, která vypočítá délku strany. Vstupním argumentem
-        se určuje, která strana má být dopočítána.
+        Metoda, která vypočítá délku strany.
+
+        Vstupním argumentem se určuje, která strana má být dopočítána.
 
         Args:
         Vstupem je argument string "strana", které má označovat, kterou stranu
@@ -75,8 +78,9 @@ class trojuhelnik:
 
     def obsah(self):
         """
-        Metoda, která vypočítá obsahu trojuhelníku
-        dle Heronova vzorce.
+        Metoda, která vypočítá obsahu trojuhelníku.
+
+        Metoda pracuje na základě Heronova vzorce.
 
         Args:
         Žádné argumenty, metoda však používá k výpočtu metody třídy
@@ -91,6 +95,7 @@ class trojuhelnik:
     def jeSestrojitelny(self):
         """
         Metoda, která určí zda je trojuhelník sestrojitelný či nikoliv.
+
         K určení využívá vlastnosti trojuhelníku, kdy pro každý trojuhelník
         platí, že součet jakýchkoliv dvou stran
         musí být větší než strana třetí.
@@ -110,6 +115,7 @@ class trojuhelnik:
     def jePravouhly(self):
         """
         Metoda, která určuje zda je trojuhelník pravoúhlý či nikoliv.
+
         K určení vychází z faktu, že pro pravoúhlé trojúhelníky platí
         Pythagorova věta. To znamená, že pro jednu ze stran musá platit, že
         její druhá mocnina je rovna součtu druhých mocnin zbývajících dvou
@@ -144,8 +150,9 @@ Následuje definování metody vstup()
 
 def vstup():
     """
-    Metoda, která zprostředkovává vstupy uživatele a vrací instanci
-    třídy trojuhelník.
+    Metoda, která zprostředkovává vstupy uživatele.
+
+    Metoda vrací jako výstup instanci třídy trojuhelník.
 
     Args:
     Žádné argumenty.

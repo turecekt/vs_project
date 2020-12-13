@@ -1,7 +1,10 @@
 # -*- coding: utf-8 -*-
+
 """
-Tento soubor obsahuje jednotkové testy, které testují
-jednotlivé metody používané programem.
+Tento soubor obsahuje jednotkové testy.
+
+Testovány jsou jednotlivé metody ve třídě
+trojuhelník používané programem.
 
 Created on Tue Dec  1 17:33:30 2020
 
@@ -16,8 +19,9 @@ nesetrojitelny_trojuhelnik = classes.trojuhelnik(0, 5, 0, 10, 0, 35)
 
 def test_pravouhlytrojuhelnik_sestrojitelny():
     """
-    Metoda, která je jednotkovým testem k
-    funkci, která určuje, zda je trojúhelník sestavitelný či
+    Jednotkový test k metodě určující sestrojitelnost.
+
+    Funkci, která určuje, zda je trojúhelník sestavitelný či
     nikoliv.
 
     Args:
@@ -29,9 +33,10 @@ def test_pravouhlytrojuhelnik_sestrojitelny():
 
 def test_pravouhlytrojuhelnik_pravouhly():
     """
-    Metoda, která je jednotkovým testem k
-    funkci, která určuje, zda je trojúhelník pravoúhlý či
-    nikoliv.
+    Jednotkový test k metodě jePravouhly().
+
+    Test testuje metodu určující, zda se se jedná o pravoúhlý
+    trojuhelník či nikoliv.
 
     Args:
         Žádné argumenty.
@@ -42,8 +47,9 @@ def test_pravouhlytrojuhelnik_pravouhly():
 
 def test_pravouhlytrojuhelnik_delkaA():
     """
-    Metoda, která je jednotkovým testem k
-    funkci, která určuje délku strany.
+    Jednotkový test k metodě určující délku strany.
+
+    V tomto případě je testována délka strany "a".
 
     Args:
         Žádné argumenty.
@@ -54,8 +60,9 @@ def test_pravouhlytrojuhelnik_delkaA():
 
 def test_pravouhlytrojuhelnik_delkaB():
     """
-    Metoda, která je jednotkovým testem k
-    funkci, která určuje délku strany.
+    Jednotkový test k metodě určující délku strany.
+
+    V tomto případě je testována délka strany "b".
 
     Args:
         Žádné argumenty.
@@ -66,8 +73,9 @@ def test_pravouhlytrojuhelnik_delkaB():
 
 def test_pravouhlytrojuhelnik_delkaC():
     """
-    Metoda, která je jednotkovým testem k
-    funkci, která určuje délku strany.
+    Jednotkový test k metodě určující délku strany.
+
+    V tomto případě je testována délka strany "c".
 
     Args:
         Žádné argumenty.
@@ -78,8 +86,7 @@ def test_pravouhlytrojuhelnik_delkaC():
 
 def test_pravouhlytrojuhelnik_obvod():
     """
-    Metoda, která je jednotkovým testem k
-    funkci, která určuje obvod trojúhelníku.
+    Jednotkový test k metodě určující obvod.
 
     Args:
         Žádné argumenty.
@@ -90,8 +97,7 @@ def test_pravouhlytrojuhelnik_obvod():
 
 def test_pravouhlytrojuhelnik_obsah():
     """
-    Metoda, která je jednotkovým testem k
-    funkci, která určuje obsah trojúhelníku.
+    Jednotkový test k metodě určující obsah.
 
     Args:
         Žádné argumenty.
@@ -102,9 +108,10 @@ def test_pravouhlytrojuhelnik_obsah():
 
 def test_nepravouhlytrojuhelnik_sestrojitelny():
     """
-    Metoda, která je jednotkovým testem k
-    funkci, která určuje, zda je trojúhelník sestavitelný či
-    nikoliv.
+    Jednotkový test k metodě jeSestrojitelny().
+
+    Test testuje metodu určující, zda se dá daný trojuhelník
+    sestrojit či nikoliv.
 
     Args:
         Žádné argumenty.
@@ -115,9 +122,10 @@ def test_nepravouhlytrojuhelnik_sestrojitelny():
 
 def test_nepravouhlytrojuhelnik_pravouhly():
     """
-    Metoda, která je jednotkovým testem k
-    funkci, která určuje, zda je trojúhelník pravoúhlý či
-    nikoliv.
+    Jednotkový test k metodě jePravouhly().
+
+    Test testuje metodu určující, zda se se jedná o pravoúhlý
+    trojuhelník či nikoliv.
 
     Args:
         Žádné argumenty.
@@ -128,9 +136,10 @@ def test_nepravouhlytrojuhelnik_pravouhly():
 
 def test_nesestrojitelnytrojuhelnik_sestrojitelny():
     """
-    Metoda, která je jednotkovým testem k
-    funkci, která určuje, zda je trojúhelník sestavitelný či
-    nikoliv.
+    Jednotkový test k metodě jeSestrojitelny().
+
+    Test testuje metodu určující, zda se dá daný trojuhelník
+    sestrojit či nikoliv.
 
     Args:
         Žádné argumenty.

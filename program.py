@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 """
 Tento soubor obsahuje vlastní průběh programu.
 
