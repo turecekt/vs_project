@@ -3,7 +3,7 @@ Tento program zjistuje jestli lze sestrojit trojuhelnik.
 
 Pokud ano, tak se vypocita delka jeho stran, obsah, obvod
 a jestli je pravouhly.
-Program prijima souradnice bodu A,B,C na konzoli a vypisuje vysledky.
+Program prijima souradnice bodu A,B,C z konzole a vypisuje vysledky na konzoli.
 
 Tvurce: Tomáš Blaho
 """
@@ -69,6 +69,7 @@ def pravouhelnost():
 
 
 if __name__ == '__main__':
+    #Program pozaduje uzivatelsky vstup.
     print('Napis souradnici x bodu A: ')
     Ax = input()
     print('Napis souradnici y bodu A: ')
@@ -82,6 +83,7 @@ if __name__ == '__main__':
     print('Napis souradnici y bodu C: ')
     Cy = input()
 
+    #Zkouska cisel jestli jsou ve spravnem tvaru.
     try:
         int(Ax)
         int(Ay)
@@ -90,12 +92,16 @@ if __name__ == '__main__':
         int(Cx)
         int(Cy)
     except Exception:
+        #Nejsou ve spravnem tvaru. Program skoci na konec.
         print('Cisla byla zadana ve spatnem tvaru! Zadej pouze cela cisla.')
     else:
+        #Jsou ve spravnem tvaru.
+        #Zde se pocita delka sran A, B, C. Toto se bude pozdeji pouzivat ve funkcich.
         sA = math.sqrt(((int(Bx) - int(Ax)) ** 2) + ((int(By) - int(Ay)) ** 2))
         sB = math.sqrt(((int(Cx) - int(Bx)) ** 2) + ((int(Cy) - int(By)) ** 2))
         sC = math.sqrt(((int(Ax) - int(Cx)) ** 2) + ((int(Ay) - int(Cy)) ** 2))
 
+        #Vystup pozadovany v zadani.
         if sestrojitelnost():
             print('Trojuhelnik lze sestrojit.')
 
@@ -112,4 +118,5 @@ if __name__ == '__main__':
         else:
             print('Trojuhelnik nelze sestrojit.')
 
+    #Zde program ceka na uzivatelsky vstup k ukonceni.
     input('Zmackni Enter k zavreni programu.')
