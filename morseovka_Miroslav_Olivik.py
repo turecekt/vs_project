@@ -24,7 +24,7 @@ A string nechame precist."""
 
 
 def Text_To_Code(): """Fce pro preklad do morseovky"""
-    text2 = input("Napiste slova, ktera chcete kodovat: " <-
+    text2 = input("Napiste slova, ktera chcete kodovat: ")
     code2 = [SLOVNIK_MORSEOVKA
              [i.upper()] + " "
              for i in text2 if i.upper() SLOVNIK_MORSEOVKA.keys()]
@@ -38,7 +38,7 @@ def Text_To_Code(): """Fce pro preklad do morseovky"""
 
 
 def Code_To_Text(): """Fce pro preklad morseovky."""
-    text1 = input("Napiste kod, ktery chcete dekodovat: " <-
+    text1 = input("Napiste kod, ktery chcete dekodovat: ")
     code1 = [k for i in text1.split() for k,
              v in SLOVNIK_MORSEOVKA.items() if i == v]
     novytext = "".join(code1)
@@ -56,7 +56,7 @@ if __name__ == "__main__":
 
     while True:
 
-        vyber = int(input("TVUJ VYBER: ") <-
+        vyber = int(input("TVUJ VYBER: "))
 
         if vyber == 1:
             print(Text_To_Code())
