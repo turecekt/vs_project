@@ -11,7 +11,7 @@ Tvurce: Tomáš Blaho
 import math
 
 
-def sestrojitelnost():
+def sestrojitelnost(A, B, C):
     """
     Funkce zjistuje jestli lze sestrojit trojuhelnik.
 
@@ -19,36 +19,36 @@ def sestrojitelnost():
     true = trojuhelnik lze sestrojit
     false = trojhelnik nelze sestrojit
     """
-    lze = sA + sB > sC and sB + sC > sA and sA + sC > sB
+    lze = A + B > C and B + C > A and A + C > B
 
     return lze
 
 
-def obsah():
+def obsah(A, B, C):
     """
     Funkce pocita obsah trojuhelniku.
 
     Vraci:
     float s vypocitanou hodnotou
     """
-    s = (sA + sB + sC) / 2
+    s = (A + B + C) / 2
 
-    S = math.sqrt(s * (s - sA) * (s - sB) * (s - sC))
+    S = math.sqrt(s * (s - A) * (s - B) * (s - C))
 
     return S
 
 
-def obvod():
+def obvod(A, B, C):
     """
     Funkce pocita obvod trojuhelniku.
 
     Vraci:
     float s vypocitanou hodnotou
     """
-    return sA + sB + sC
+    return A + B + C
 
 
-def pravouhelnost():
+def pravouhelnost(A, B, C):
     """
     Funkce zjistuje jesli je trojuhelnik pravouhly.
 
@@ -56,14 +56,14 @@ def pravouhelnost():
     true = trojuhelnik je pravouhlu
     false = trojuhelnik neni pravouhlu
     """
-    nejdelsi = max(sA, sB, sC)
+    nejdelsi = max(A, B, C)
 
-    if nejdelsi == sC:
-        je = sC ** 2 == sA ** 2 + sB ** 2
-    elif nejdelsi == sB:
-        je = sB ** 2 == sA ** 2 + sC ** 2
+    if nejdelsi == C:
+        je = C ** 2 == A ** 2 + B ** 2
+    elif nejdelsi == B:
+        je = B ** 2 == A ** 2 + C ** 2
     elif nejdelsi == sA:
-        je = sA ** 2 == sB ** 2 + sC ** 2
+        je = A ** 2 == B ** 2 + C ** 2
 
     return je
 
@@ -103,16 +103,16 @@ if __name__ == '__main__':
         sC = math.sqrt(((int(Ax) - int(Cx)) ** 2) + ((int(Ay) - int(Cy)) ** 2))
 
         # Vystup pozadovany v zadani.
-        if sestrojitelnost():
+        if sestrojitelnost(A = sA, B = sB, C = sC):
             print('Trojuhelnik lze sestrojit.')
 
             print('Strana A je dlouha: ', sA)
             print('Strana B je dlouha: ', sB)
             print('Strana C je dlouha: ', sC)
 
-            print('Obsah je: ', obsah(), ' a obvod je: ', obvod())
+            print('Obsah je: ', obsah(A = sA, B = sB, C = sC), ' a obvod je: ', obvod(A = sA, B = sB, C = sC))
 
-            if pravouhelnost():
+            if pravouhelnost(A = sA, B = sB, C = sC):
                 print('Trojuhelnik je pravouhly.')
             else:
                 print('Trojuhelnik neni pravouhly.')
