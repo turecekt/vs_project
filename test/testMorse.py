@@ -1,4 +1,4 @@
-import morse
+import Morseovka
 
 def testMorse():
 """
