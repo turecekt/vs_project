@@ -122,16 +122,14 @@ def sort_choice(mylist, x):
     elif x == '3':
         mylist.sort()
     else:
-        print("Nevalidní hodnota")
-        return
-
+        raise Exception("Nevalidní hodnota.")
 
 # Generovaní pole při zavolání funkce uživatele bez argumentů
 def generate_array():
     """Return generated array if program is called without argumets."""
     mylist = []
     while len(mylist) < 20:
-        r = random.randint(1, 100)
+        r = random.randint(-100, 100)
         if r not in mylist:
             mylist.append(r)
     return mylist
@@ -157,7 +155,7 @@ def main():
     """Run main driver function of the program."""
     mylist = []
     print("Jaký řadící algortimus chcete použít?")
-    x = int(input("Quick sort[1], Heap sort[2], Python Builtin[3]"))
+    x = input("Quick sort[1], Heap sort[2], Python Builtin[3]")
     if len(sys.argv) > 1:
         argument = sys.argv[1]
         if argument[-3:] == 'txt':
@@ -184,13 +182,13 @@ def main():
 # Unittesty
 def test_min():
     """Min test."""
-    test_list = [1, 2, 3]
-    assert(min(test_list)) == 1
+    test_list = [1, 2, 3, -4, -2]
+    assert(min(test_list)) == -4
 
 
 def test_max():
     """Max test."""
-    test_list = [1, 2, 3]
+    test_list = [1, 2, 3, -4, -2]
     assert(max(test_list)) == 3
 
 
