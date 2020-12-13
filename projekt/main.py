@@ -35,17 +35,27 @@ def pravouhelnost():
 
 if __name__ == '__main__':
     print('Napis souradnici x bodu A: ')
-    Ax = int(input())
+    Ax = input()
     print('Napis souradnici y bodu A: ')
-    Ay = int(input())
+    Ay = input()
     print('Napis souradnici x bodu B: ')
-    Bx = int(input())
+    Bx = input()
     print('Napis souradnici y bodu B: ')
-    By = int(input())
+    By = input()
     print('Napis souradnici x bodu C: ')
-    Cx = int(input())
+    Cx = input()
     print('Napis souradnici y bodu C: ')
-    Cy = int(input())
+    Cy = input()
+
+    try:
+        int(Ax)
+        int(Ay)
+        int(Bx)
+        int(By)
+        int(Cx)
+        int(Cy)
+    except:
+       print('Cisla byla zadana ve spatnem tvaru! Zadej pouze cela cisla.')
 
     sA = math.sqrt(((Bx - Ax) ** 2) + ((By - Ay) ** 2))
     sB = math.sqrt(((Cx - Bx) ** 2) + ((Cy - By) ** 2))
