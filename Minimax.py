@@ -10,12 +10,14 @@ import sys
 
 
 def vytvor_pole(pole):
+    """vytvoř pole s 20 náhodnými prvky mezi 1 a 30"""
     for i in range(0, 20):
         pole.append(randint(1, 30))
     print("Pole s 20 pseudonáhodně vygenerovanými prvky mezi čísly 1 a 30:")
 
 
 def nejmensi(pole):
+    """Najdi nejmensi prvek pole a vypis ho i jeho poradi"""
     mini = min(pole)
     print("Nejmenší hodnota v poli", mini, "se nachází na pozici/pozicích:")
     for i in range(0, len(pole)):
@@ -24,6 +26,7 @@ def nejmensi(pole):
 
 
 def nejvetsi(pole):
+    """Najdi nejvetsi prvek pole a vypis ho i jeho poradi"""
     maxi = max(pole)
     print("Nevětší hodnota v poli", maxi, "se nachází na pozici/pozicích:")
     for i in range(0, len(pole)):
@@ -32,6 +35,7 @@ def nejvetsi(pole):
 
 
 def Bubble_sort(pole):
+    """Serad pole pomoci Bubble sortu"""
     for i in range(len(pole)):
         for j in range(len(pole) - 1):
             if pole[j] > pole[j+1]:
@@ -40,6 +44,7 @@ def Bubble_sort(pole):
 
 
 def Insertion_sort(pole):
+    """Serad pole pomoci Insertion sortu"""
     for i in range(1, len(pole)):
         hodnota = pole[i]
         pozice = i
@@ -51,6 +56,7 @@ def Insertion_sort(pole):
 
 
 def Selection_sort(pole):
+    """Serad pole pomoci Selection sortu"""
     for i in range(len(pole)):
         min_i = i
         for j in range(i + 1, len(pole)):
@@ -155,4 +161,3 @@ if test is True:
     print("Seřazené pole:", pole1)
 else:
     print("parametry nebo soubor neodpovídají požadavku")
-    
