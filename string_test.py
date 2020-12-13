@@ -1,26 +1,25 @@
-"""Unittestování k morseove abecede."""
+"""UnitTest k morseove pekladaci.
+
+Vyzkousime si zde zakladni procesy programu,
+kterymi se ridi program.
+"""
+
 import unittest
-
-
-"""Unit testy pro morseovku a jeji stringove fce."""
-"""Vytvoření testovací třídy class."""
-
-
-class TestMorse(unittest.TestCase):
-
-    def test_upper(self): """Test na fce zvětšení písmena."""
-        self.assertEqual("abc".upper(), "ABC")
-
-    def test_isupper(self): """Testování fce zvětšení písmena."""
-        self.assertTrue("ABC".isupper())
+    
+class TestMorseovka(unittest.TestCase):
+    """Tato trida funguje jako testovaci trida."""
+    def test_1(self):
+        self.asserEqual("abc".upper(),"ABC")
+        self.assertTrue("ABC.isupper())
         self.assertFalse("Abc".isupper())
-
-    def test_split(self): """Testování fce split."""
-        s = "miroslav olivik"
-        self.assertEqual(s.split(), ["miroslav", "olivik"])
-        with self.assertRaises(TypeError):
+          
+    def test_2(self):
+        """Prevod na rozlozeni textu"
+        s= "miroslav olivik"
+        self.assertEqual(s.split(), ["miroslav","olivik"])
+        with seld.assertRaises(TypeError):
             s.split(2)
 
 
-if __name__ == "__main__":
+if __name__=="main":
     unittest.main()
