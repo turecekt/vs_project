@@ -80,7 +80,7 @@ def toMorse(message):
 
 def testZkouska():
     """Unit test."""
-    assert toMorse("a  b") == ".-  -... "
+    assert toMorse("a  b") == ".-   -... "
 
 
 def toWord(morseMessage):
