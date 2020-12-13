@@ -7,10 +7,19 @@ některou z heuristických či statistických metod, o použití alternativní m
 bude informovat uživatele.
 
 VSTUP:
+
   • Libovolné celé číslo zadané uživatelem
+  
   • Program neakceptuje jiný/neplatný vstup
+  
 VÝSTUP:
+
   • Informace o tom zda je číslo prvočíslo či nikoliv
-  • Informace j
+  
+  • Informace jakým způsobem byl výsledek zjištěn (deterministickou/heuristickou metodou)
+
+main.py -> hlavní program a metody
+
+main_test.py -> Unit testy přes pytest
 
 Autor: Lukáš Venhoda (l_venhoda@utb.cz)
