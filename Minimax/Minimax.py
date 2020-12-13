@@ -130,42 +130,45 @@ def generate_array():
         r = random.randint(1, 100)
         if r not in mylist:
             mylist.append(r)
-    print("Generated list: ", mylist)
-    sort(mylist)
-    min_max(mylist)
+    return mylist
+
+
+def read_file():
+    """Read text file line by line and return array."""
+    output = []
+    row_data = []
+    # file = open(sys.argv[1], "r")
+    file = open("soubor-s-cisly.txt", "r")
+    lines = file.read().splitlines()
+    file.close()
+    for line in lines:
+        row_data = line.split()
+        for num in row_data:
+            output.append(int(num))
+    return output
 
 
 # Vstup:
-inputTestFails = False
 mylist = []
 if len(sys.argv) > 1:
     argument = sys.argv[1]
     if argument[-3:] == 'txt':
-        row_data = []
-        file = open(sys.argv[1], "r")
-        lines = file.read().splitlines()
-        file.close()
-        for line in lines:
-            row_data = line.split()
-            for num in row_data:
-                try:
-                    mylist.append(int(num))
-                except ValueError:
-                    inputTestFails = True
-        print(mylist)
+        mylist = read_file()
+        print("List: ", mylist)
         min_max(mylist)
         sort(mylist)
     else:
         mylist = []
         for i in sys.argv[1:]:
-            try:
-                mylist.append(i)
-            except ValueError:
-                inputTestFails = True
+            mylist.append(i)
+        print("List: ", mylist)
         min_max(mylist)
         sort(mylist)
 else:
-    generate_array()
+    mylist = generate_array()
+    print("List: ", mylist)
+    min_max(mylist)
+    sort(mylist)
 
 
 # Unittesty
@@ -207,3 +210,23 @@ def test_heapsort():
     heap_sort(test_rArr)
     test_rArrCopy.sort()
     assert (test_rArr) == test_rArrCopy
+
+
+def test_readfile():
+    """Test reading values in a text file."""
+    test_arr = []
+    test_arr = read_file()
+    assert test_arr == [57, 21, 63, 3, 15, 7, 68, 46, 20, 58, 48, 41]
+
+
+def test_generateRandom():
+    """
+    Test array generate_array function.
+
+    By checking their resulting lengths.
+    """
+    test_arr = []
+    test_arr2 = []
+    test_arr = generate_array()
+    test_arr2 = generate_array()
+    assert len(test_arr) == len(test_arr2)
