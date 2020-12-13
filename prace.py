@@ -1,6 +1,3 @@
-
-
-
 """Kodovani a dekodovaní morseovy text."""
 
 """Abeceda potřebná na překlad na Morse"""
@@ -76,6 +73,7 @@ def Txt_do_Morse(slovo):
     print(morse)
     return morse
 
+
 def Morse_do_Txt(slovo):
     """Přeložení morse na text."""
     novy = slovo.split('/')
@@ -83,6 +81,7 @@ def Morse_do_Txt(slovo):
     morse = ''.join(code)
     print(morse)
     return morse
+
 
 print('''\n1- Prelozit text na Morseovku \n2- Prelozit Morseovku na text ''')
 
@@ -119,6 +118,3 @@ def test_Morse_do_Txt():
            == "NERADPRACUJU"
     assert Morse_do_Txt(".–./–.––/–.–./..../.–.././/–././–.../–––//.––."
                          "/–––/––/.–/.–../..–/") == "RYCHLENEBOPOMALU"
-
-
-
