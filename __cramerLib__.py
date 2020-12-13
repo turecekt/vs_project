@@ -26,7 +26,8 @@ def determinantCalculation(matrixarray):
     """
     # we need copy of array, not reference.
     matrixArray = deepcopy(matrixarray)
-    # matrix is stored as list of 9 elementst, first rows, then columns beginning at te zero
+    # matrix is stored as list of 9 elementst, first rows,
+    #then columns beginning at te zero
     startIndexesP = [0, 3, 6]
     startIndexesM = [2, 5, 8]
 
@@ -104,7 +105,8 @@ def replaceWithRightSides(matrixarray, vector, column):
 
 """This method converts input from fiel to matrix.
 
- convertToMatrixAndVector - converts input from file to matrix an vector of right sides
+ ConvertToMatrixAndVector - converts input from file to matrix an vector of
+ right sides
 
 >>> matrix = []
 >>> vector = []
@@ -114,7 +116,8 @@ def replaceWithRightSides(matrixarray, vector, column):
 
 
 def convertToMatrixAndVector(fileContent, matrix, vector):
-    """Functon convertToMatrixAndVector checks and converts content of file to matrix and vector of right sides.
+    """Functon convertToMatrixAndVector checks and converts content of file to
+    matrix and vector of right sides.
 
     Args:
         fileConetn - array of lines
@@ -138,7 +141,8 @@ def convertToMatrixAndVector(fileContent, matrix, vector):
         # trim new line from line and spit it by delimieter, delimiter is space
         lineArray = line.rstrip("\n").split(" ")
         if len(lineArray) != 4:
-            print("Invalid number of cloumns in file. File must contain 4 columns, 3 for matrix and 1 for vector of right sides")
+            print("Invalid number of cloumns in file. File must contain 4 colu\\
+            mns, 3 for matrix and 1 for vector of right sides")
             return 0
 
         for element in lineArray:

@@ -11,17 +11,11 @@ from __cramerLib__ import determinantCalculation
 import sys
 
 
-"""This method calcualtes teterminant of matrix,
-
- determinantCalculation(). For example,
-
->>> determinantCalculation([1, 1, 1, 1, 1, 1, 1, 1, 1])
-1
-"""
+"""This method wraps all the code"""
 
 
 def main():
-    """TThis method runs all the code.
+    """This method runs all the code.
 
     this method is run automatically after script is opened
     """
@@ -34,9 +28,14 @@ def main():
             sys.exit(1)
 
     if(sys.argv[1] == 'help'):
-        print("-Welcome to 3x3 matrix variables calculation script\n script returns value of variables x y z of matrix epanded by vector of right sides containing results of equations")
-        print("-Script is run by running python __cramerCalcMain__.py with specification of file containing matrix to be solved with space used as delimiter between columns.")
-        print("-Matrix must be of 3x3 with column with results of equations, tus in format:")
+        print("-Welcome to 3x3 matrix variables calculation script\n script re\\
+        turns value of variables x y z of matrix epanded by vector of right \\
+        sides containing results of equations")
+        print("-Script is run by running python __cramerCalcMain__.py with spe\\
+        cification of file containing matrix to be solved with space used as d\\
+        elimiter between columns.")
+        print("-Matrix must be of 3x3 with column with results of equations, \\
+        thus in format:")
         print("\t k1x l1y m1z R1")
         print("\t k2x l2y m2z R2")
         print("\t k3x l3y m3z R3")
@@ -67,7 +66,8 @@ def main():
     determinantOfMatrix = determinantCalculation(matrix)
 
     if determinantOfMatrix == 0:
-        print("determinant of matrix is ZERO! Can't calcualte value of variables")
+        print("determinant of matrix is ZERO! Can't calcualte value of \\
+        variables")
         sys.exit(1)
 
     # array of results
@@ -77,6 +77,7 @@ def main():
     results["x"] = determinantCalculation(replaceWithRightSides(matrix, vector, 0))/determinantOfMatrix
     results["y"] = determinantCalculation(replaceWithRightSides(matrix, vector, 1))/determinantOfMatrix
     results["z"] = determinantCalculation(replaceWithRightSides(matrix, vector, 2))/determinantOfMatrix
+
 
     # print results of calculation
     print("Results form matrix:")
