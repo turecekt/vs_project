@@ -104,9 +104,7 @@ def test_decrypt():
 def testEncrypt():
     """Unit test."""
     assert encrypt("Radim") == ".-. .- -.. .. --"
-    assert encrypt("Ahoj ja jsem Radim") == "" \
-                                            ".- .... --- .---  .--- .-  .--- ... . --  .-. .- -.. .. --" \
-                                            ""
+    assert encrypt("Ahoj e Radim") == ".- .... --- .---  .  .-. .- -.. .. --"
     assert encrypt("12345") == ".---- ..--- ...-- ....- ....."
 
 
