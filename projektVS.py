@@ -1,7 +1,7 @@
 """@file projektVS.py.
 
 @brief Prekladac morseovky.
-@author Lahoda, Slovak, Netbal, Masar.
+@author Lahoda, Slovak, Nedbal, Masar.
 """
 
 
@@ -191,7 +191,7 @@ def testToMorseSlovo():
 def testToMorse2Slova():
     """Unit test."""
     assert toMorse("ahoj svete") == ".- .... --- .---  ... ...- . - . "
-    assert toMorse("Ahoj svete") == ".- .... --- .---  ... ...- . - . "
+    assert toMorse("AHOJ SVETE") == ".- .... --- .---  ... ...- . - . "
 
 
 def testToWord():
@@ -231,6 +231,56 @@ def testZnaky():
     assert toMorse("&@") == ".-... .--.-. "
 
 
+def vyberMoznosti(vstup):
+    """Metoda k vyberu zda chce uzivatel kodovat nebo dekodovat.
+
+    param[vstup] vstup z klavesnice
+    return vraci prelozeny text nebo chybu
+    """
+    vysledek = ""
+
+    if(vstup == "1"):
+        print("zadej co chces prelozit do morseovky: ")
+        a = input()
+        a = a.lower()
+        vysledek = toMorse(a)
+
+    elif(vstup == "2"):
+        print("zadej text v morseovce a ja ti ho prelozim")
+        a = input()
+        vysledek = toWord(a)
+
+    else:
+        vysledek = "Chyba vstupu!"  # znaci chybny vstup pro kontrolu
+
+    return vysledek
+
+
+def kontrolaVstupu(vstup):
+    """Kontrola vstupu od uzivatele.
+
+    vyuzito pri kontrole zda chce ukoncit program nebo ne
+    param[vstup] vstup z klavesnice
+    return vybranou moznost zda chce ukoncit program nebo ne
+    """
+    chcePokracovat = 1
+    if(vstup.lower() == "y"):
+        chcePokracovat = 0
+    elif(vstup.lower() == "n"):
+        chcePokracovat = 1
+    else:
+        chcePokracovat = -1
+
+    return chcePokracovat
+
+
+def testKontrolaVstupu():
+    """Unit test."""
+    assert kontrolaVstupu("y") == 0
+    assert kontrolaVstupu("n") == 1
+    assert kontrolaVstupu("vcv") == -1
+
+
 def main():
     """Funkce main slouzi pro zadavani vstupu od uzivatele.
 
@@ -239,58 +289,28 @@ def main():
     print('Vítej v našem dekodéru morseovky')
 
     chcePokracovat = True
-
+    vystup = ""
     while(chcePokracovat):
         print("Kódování-[1] Dekódování-[2]")
-        vstup = int(input())
-        if(vstup == 1):
-            print('Zadej co chces prelozit do morseovky: ')
-            a = input()
-            a = a.lower()
-            print(a)
-            d = toMorse(a)
-            print(d)
+        vyber = input()
 
-            print("Chcete ukončit program? [y,n]")
-            vyber = input()
-            vyber = vyber.lower()
-            if(vyber == "y"):
-                chcePokracovat = False
-            elif(vyber == "n"):
-                chcePokracovat = True
-            else:
-                print("Už končím nemám na tebe náladu")
-                chcePokracovat = False
-        elif(vstup == 2):
-            b = input("zadej text v morseovce: ")
-            print(toWord(b))
-            print("Chcete ukončit program? [y,n]")
-            vyber = input()
-            vyber = vyber.lower()
-            if(vyber == "y"):
-                chcePokracovat = False
-            elif(vyber == "n"):
-                chcePokracovat = True
-            else:
-                print("Už končím nemám na tebe náladu")
-                chcePokracovat = False
-        else:
-            print("Chybný vstup!")
-            print("Chcete ukončit program? [y,n]")
-            vyber = input()
-            vyber = vyber.lower()
-            if(vyber == "y"):
-                chcePokracovat = False
-            elif(vyber == "n"):
-                chcePokracovat = True
-            else:
-                print("Už končím nemám na tebe náladu")
-                chcePokracovat = False
+        vystup = vyberMoznosti(vyber)
+        print(vystup)
 
-
-def testMain():
-    """Unit test."""
-    pass
+        print("Prejes si ukoncit Program? [y, n]")
+        ukoncit = input()
+        while(True):
+            if(kontrolaVstupu(ukoncit) == 0):
+                print("Nashledanou")
+                chcePokracovat = False
+                break
+            elif(kontrolaVstupu(ukoncit) == 1):
+                chcePokracovat = True
+                break
+            else:
+                print("nespravny vstup, zkus to znova. [y, n]")
+                chcePokracovat = False
+            ukoncit = input()
 
 
 if __name__ == '__main__':
