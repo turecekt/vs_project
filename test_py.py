@@ -9,7 +9,9 @@ import morsecode
                          ("?,.;/=-'():_+@", "..--.. --..-- .-.-.- "
                           "-.-.-. -..-. -...- -....- .----. -.--. "
                           "-.--.- ---... ..--.- .-.-. .--.-."),
-                         ("čáp!", "Č Á .--. !")])
+                         ("čáp!", "Č Á .--. !"),
+                         ("0123456789", "----- .---- ..--- ...-- "
+                          "....- ..... -.... --... ---.. ----.")])
 def test_encode(input, expected):
     """Tests encode function."""
     assert(morsecode.encode_morse(input) == expected)
@@ -17,8 +19,10 @@ def test_encode(input, expected):
 
 @pytest.mark.parametrize("input,expected", [("....", "H"),
                          ("?", ""),
-                         ("-- --- .-. ... . --- "
-                          "...- -.- .-", "MORSEOVKA")])
+                         (".... . .-.. .-.. ---", "HELLO"),
+                         (".... . .-.. .-.. ---  .-- --- .-. .-.. -..",
+                          "HELLO WORLD"),
+                         (".---- ..---  ...-- -....", "12 36")])
 def test_decode(input, expected):
     """Tests decode_morse function."""
     assert(morsecode.decode_morse(input) == expected)
