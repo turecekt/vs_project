@@ -64,3 +64,19 @@ def prepona(a, b, c):
             else:
                 print("Trojuhelnik neni pravoúhly")
 
+
+def trojuhelnik(ax, ay, bx, by, cx, cy):
+    """Postupně provede všechny potřebné kroky k vypočítání trojúhelníku."""
+    c = math.sqrt(((by-ay)**2) + ((bx-ax)**2))  # délka strany c
+    b = math.sqrt(((cy-ay)**2) + ((cx-ax)**2))  # délka strany b
+    a = math.sqrt(((by-cy)**2) + ((bx-cx)**2))  # délka strany a
+    print("Delka strany a: ", a)    # výpis délky strany a
+    print("Delka strany b: ", b)    # výpis délky strany b
+    print("Delka strany c: ", c)    # výpis délky strany c
+    if sestrojitelnost(a, b, c):    # overeni sestrojitelnosti trouhelniku
+        print("Lze setrojit")
+        print("Obvod trojuhelniku je: ", obvod(a, b, c))
+        print("Obsah trojuhelniku je: ", obsah(a, b, c))
+        prepona(a, b, c)
+    else:
+        print("Trojuhelnik nelze sestrojit")
