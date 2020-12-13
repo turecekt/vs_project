@@ -24,8 +24,38 @@ def encrypt(message):
             cipher = ''
         else: 
             cipher += ' '  
-    return cipher 
-    
+    return cipher
+
+
+def decrypt(message):
+    message += ' '
+
+    decipher = ''
+    citext = ''
+    for letter in message:
+
+        if (letter != ' '):
+
+            i = 0
+
+            citext += letter
+
+        else:
+
+            i += 1
+
+            if i == 2:
+
+                decipher += ' '
+            else:
+
+                decipher += list(MORSE_DICTIONARY.keys())[list(MORSE_DICTIONARY
+                                                              .values()).index(citext)]
+                citext = ''
+
+    return decipher
+
+
 def main(): 
     message = input("Zadejte zprávu v abc: ").upper()
     result = encrypt(message.upper()) 
