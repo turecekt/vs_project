@@ -24,7 +24,7 @@ def determinantCalculation(matrixarray):
     Returns:
         determinant of given matrix, a number.
     """
-	# we need copy of array, not reference.
+    # we need copy of array, not reference.
     matrixArray = deepcopy(matrixarray)
     # matrix is stored as list of 9 elementst, first rows, then columns beginning at te zero
     startIndexesP = [0, 3, 6]
@@ -43,7 +43,7 @@ def determinantCalculation(matrixarray):
         while True:
             if currentIndex > 8:
                 # remov 9 as there are 9 elements in array beginning at tha zero
-                innerMultiply = innerMultiply * matrixArray[currentIndex -9]
+                innerMultiply = innerMultiply * matrixArray[currentIndex - 9]
             else:
                 innerMultiply = innerMultiply * matrixArray[currentIndex]
             currentIndex = currentIndex + 4
@@ -96,7 +96,7 @@ def replaceWithRightSides(matrixarray, vector, column):
     column = column % 3
     workingArray = deepcopy(matrixarray)
     workingArray[column] = deepcopy(vector[0])
-    workingArray[column + 3] =  deepcopy(vector[1])
+    workingArray[column + 3] = deepcopy(vector[1])
     workingArray[column + 6] = deepcopy(vector[2])
 
     return workingArray
