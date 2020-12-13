@@ -1,5 +1,3 @@
-#!/usr/bin/env python 3
-
 """Jako první věc si musíme definovat abecedu."""
 
 
