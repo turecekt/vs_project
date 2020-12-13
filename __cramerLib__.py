@@ -110,6 +110,9 @@ def replaceWithRightSides(matrixarray, vector, column):
 
 >>> convertToMatrixAndVector(["1 1 1 1", "2 2 2 2", "3 3 3 3"], [], [])
 1
+
+>>> convertToMatrixAndVector(["2 2 2 2", "3 3 3 3"], [], [])
+0
 """
 
 
@@ -129,7 +132,7 @@ def convertToMatrixAndVector(fileContent, matrix, vector):
     """
     if len(fileContent) < 3:
         print("File format problem: too few lines")
-        return (0)
+        return 0
 
     if len(fileContent) > 3:
         print("File format problem: too many lines")
