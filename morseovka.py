@@ -17,3 +17,19 @@ def Morseovka_na_Text():
     print(text2)
 
 print('''\n1 - Napis text pro Morseovo sifrovani \n2 - Napis Morseuv kod pro desifrovani do textu\n3 - Konec\n ''')
+while True:
+    try:
+        vyber = int(input('Zvol moznost 1-3 a potvrd klavesou ENTER: '))
+        if vyber == 1:
+            print(Text_na_Morseovku())
+            break
+        elif vyber == 2:
+            print(Morseovka_na_Text())
+            break
+        elif vyber == 3:
+            print('Ukonceni')
+            break
+        else:
+            print('Spatne zadani, opakujte volbu')
+    except:
+        print('Spatne zadani, opakujte volbu')
