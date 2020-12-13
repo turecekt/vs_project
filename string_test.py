@@ -1,5 +1,3 @@
-'''Unittest k morseove pekladaci.'''
-
 import unittest
 
 
