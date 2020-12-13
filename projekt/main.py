@@ -51,7 +51,7 @@ def test_encrypt():
     >>> E
     .
     """
-    assert encrypt('E') == '. '
+    assert encrypt('ahoj tady je karel') == '.- .... --- .---  - .- -.. -.--  .--- .  -.- .- .-. . .-..'
     assert encrypt('A') == '.- '
 
 
@@ -95,7 +95,7 @@ def test_decrypt():
 
     Odsifrovani morseovky na text.
     """
-    assert decrypt('.') == ('E')
+    assert decrypt('.- .... --- .---  - .- -.. -.--  .--- .  -.- .- .-. . .-..') == ('ahoj tady je karel')
     assert decrypt('.-') == ('A')
 
 
