@@ -36,6 +36,7 @@ def encrypt(message):
         if letter != ' ':
 
             cipher += MORSE_DICTIONARY[letter] + ' '
+            assert letter('E') == '.'
         elif letter == '':
             cipher = ''
         else:
@@ -69,9 +70,9 @@ def decrypt(message):
     for letter in message:
         """Kazde pismeno ve zprave."""
         if letter != ' ':
-            """Pismeno neni NULL.
+            """Pismeno neni mezera.
 
-            uzivatel nezada NULL
+            uzivatel nezada nulu
             >>> decrypt('.')
             'E'
             """
