@@ -72,3 +72,21 @@ def Morse_do_Txt():
     code = [ABECEDAmorse[i] + '' for i in novy if i in ABECEDAmorse.keys()]
     morse = ''.join(code)
     print(morse)
+
+
+print('''\n1- Prelozit text na Morseovku \n2- Prelozit Morseovku na text ''')
+
+
+while True:
+    try:
+        selection = int(input('Vyberte si co na co chcete prekladat:'))
+        if selection == 1:
+            print((Txt_do_Morse()))
+            break
+        elif selection == 2:
+            print(Morse_do_Txt())
+            break
+        else:
+            print('Spatna volba')
+    except:
+        print('Spatna volba')
