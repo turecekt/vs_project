@@ -98,9 +98,7 @@ def test_decrypt():
     >>> decrypt('.')
     'E'
     """
-    correctResult = 'EEEE'
-    result = decrypt('. . . . ')
-    assert result == correctResult
+    assert decrypt('.') == 'E'
 
 def test_decrypt_empty_string():
     """Testing decrypting with empty input."""
@@ -115,12 +113,6 @@ def main():
     zavola druhy input pro decrypt.
     """
     message = input("Zadejte zprávu v abc: ").upper()
-    """Zprava.
-
-    Pimena na velka.
-    >>>input('e')
-    'E'
-    """
     result = encrypt(message.upper())
     print(result)
 
