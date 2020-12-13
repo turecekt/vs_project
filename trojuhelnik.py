@@ -90,3 +90,8 @@ c1 = 11  # x souřadnice bodu C
 c2 = 4  # y souřadnice bodu C
 
 trojuhelnik(a1, a2, b1, b2, c1, c2)
+
+
+def test_sestrojitelnost():
+    """Ověří funčnost metody sestrojitelnost."""
+    assert sestrojitelnost(5, 7, 8.60) is True
