@@ -25,7 +25,8 @@ class Test(TestCase):
         """Test textu do morseovky."""
         self.assertEqual(zasifrovani
                          ("Ahoj, jak se mas?"),
-                         ".- .... --- .--- --..--  .--- .- -.-  ... .  -- .- ... ..--.. ",
+                         ".- .... --- .--- --..--  .--- .- -.-"
+                         "  ... .  -- .- ... ..--.. ",
                          "OK")
 
     # Morseovka do textu
