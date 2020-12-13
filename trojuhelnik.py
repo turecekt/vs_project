@@ -1,16 +1,16 @@
 import math
 print("Zadejte souřadnice pro bod A na ose X: ")
-ax = input()
+ax = float(input())
 print("Zadejte souřadnice pro bod A na ose Y: ")
-ay = input()
+ay = float(input())
 print("Zadejte souřadnice pro bod B na ose X: ")
-bx = input()
+bx = float(input())
 print("Zadejte souřadnice pro bod B na ose Y: ")
-by = input()
+by = float(input())
 print("Zadejte souřadnice pro bod C na ose X: ")
-cx = input()
+cx = float(input())
 print("Zadejte souřadnice pro bod C na ose Y: ")
-cy = input()
+cy = float(input())
 stra1 = bx-cx
 stra2 = by-cy
 stra1 = math.pow(2, stra1)
