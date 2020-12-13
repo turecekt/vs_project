@@ -25,13 +25,13 @@ if functions.souradniceJeCislo(xA, xB, xC, yA, yB, yC) == 1:
     if functions.obsahTroj(xA, xB, xC, yA, yB, yC) != 0:
         "Výpis výsledných hodnot volaných ze souboru functions.py"
         print('\nPodle zadaných souřadnic bodů se jedná o trojúhelník.\n')
-        print('Souřadnice jednotlivých bodů trojúhelníku:\n')
+        print('Souřadnice jednotlivých bodů trojúhelníku:')
         print(f'A[{xA},{yA}]\nB[{xB},{yB}]\nC[{xC},{yC}]\n')
-        print('Délky jednotlivých stran:\n')
+        print('Délky jednotlivých stran:')
         print(f'c=|AB|={functions.delkaStranyAB(xA, xB, yA, yB)}')
         print(f'a=|BC|={functions.delkaStranyBC(xB, xC, yB, yC)}')
         print(f'b=|AC|={functions.delkaStranyAC(xA, xC, yA, yC)}\n')
-        print('Obvod a obsah zadaného trojúhelníku:\n')
+        print('Obvod a obsah zadaného trojúhelníku:')
         print(f'Obvod = {functions.obvodTroj(xA, xB, xC, yA, yB, yC)}')
         print(f'Obsah = {functions.obsahTroj(xA, xB, xC, yA, yB, yC)}\n')
         print('Informace o pravoúhlosti:')
