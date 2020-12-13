@@ -113,20 +113,6 @@ def decode_morse(message):
     return decoded_message.strip()
 
 
-def continue_program():
-    """Process user input for continuation."""
-    print("If you want to translate another message press 1.")
-    print("If you want to close the program press 2.")
-    x = input()
-    if x == "1":
-        main()
-    elif x == "2":
-        return
-    else:
-        print("Wrong input.")
-        continue_program()
-
-
 def main():
     """Process user input."""
     print("For encoding a message press 1.")
@@ -136,16 +122,14 @@ def main():
         print("Write a string that you want to encode into morse.")
         message = input()
         encode_morse(message)
-        continue_program()
     elif x == "2":
         print("Write a string that you want to decode from morse.")
         message = input()
         decode_morse(message)
-        continue_program()
     else:
         print("Wrong input.")
         main()
-    return 0
+    return
 
 
 if __name__ == "__main__":
