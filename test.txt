@@ -1,2 +1,2 @@
 message=input('Vloz text na preklad:')
-
+#uzivatel nejprve vlozi text, ktery chce prelozit do Morseovy abecedy
