@@ -154,14 +154,30 @@ def test_quick_sort():
            == [3, 4, 28, 45, 56, 69, 99, 420, 666, 2020, 2077]
 
 
-def test_moznostizoradenia():
+def test_moznostizoradenia1():
     """Test moznostizoradenia."""
     assert moznostizoradenia([5, 4, 2, 10, 1], '1') == [1, 2, 4, 5, 10]
+
+
+def test_moznostizoradenia2():
+    """Test moznostizoradenia."""
+    assert moznostizoradenia([5, 4, 2, 10, 1], '2') == [1, 2, 4, 5, 10]
+
+
+def test_moznostizoradenia3():
+    """Test moznostizoradenia."""
+    assert moznostizoradenia([5, 4, 2, 10, 1], '3') == [1, 2, 4, 5, 10]
 
 
 def test_filtr():
     """Test filtru."""
     assert filtr(['1', '2', '3', 'a', 'b', 'c']) == [1, 2, 3]
+
+
+def test_randomnumbers():
+    """Test randomnumbers."""
+    x = randomnumbers()
+    assert len(x) == 20
 
 
 if __name__ == '__main__':  # umoznuje psani funkci pod main
