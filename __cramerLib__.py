@@ -1,5 +1,8 @@
-"""this module supplies methods for operation with matrixes,
+"""this module supplies methods for operation with matrixes.
 
+Module suppliees methods for manipulation with matrixes, conversion of file to
+matrix and vector of right sides and for check that iinput file is properly for-
+mated
 """
 from copy import deepcopy
 
@@ -10,7 +13,6 @@ from copy import deepcopy
 >>> determinantCalculation([1, 1, 1, 1, 1, 1, 1, 1, 1])
 1
 """
-
 
 
 def determinantCalculation(matrixarray):
@@ -78,6 +80,7 @@ def determinantCalculation(matrixarray):
 [4, 1 , 1, 5, 1, 1, 6, 1, 1]
 """
 
+
 def replaceWithRightSides(matrixarray, vector, column):
     """Functon replaceWithRightSides replaces with vector of right sides.
 
@@ -98,6 +101,7 @@ def replaceWithRightSides(matrixarray, vector, column):
 
     return workingArray
 
+
 """This method converts input from fiel to matrix.
 
  convertToMatrixAndVector - converts input from file to matrix an vector of right sides
@@ -107,6 +111,7 @@ def replaceWithRightSides(matrixarray, vector, column):
 >>> convertToMatrixAndVector(["1 1 1 1", "2 2 2 2", "3 3 3 3"], matrix, vector)
 1
 """
+
 
 def convertToMatrixAndVector(fileContent, matrix, vector):
     """Functon convertToMatrixAndVector checks and converts content of file to matrix and vector of right sides.
