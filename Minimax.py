@@ -3,6 +3,7 @@ import sys
 import random
 import pytest
 
+
 def main():
     """Hlavni funkce."""
     vstup = []  # vytvori list vstup
@@ -71,13 +72,6 @@ def bubble_sort(pomocna):  # funkce bubble sort
                 a = pomocna[j]  # Priradenie sučasneho čisla do pomocnej
                 pomocna[j] = pomocna[j+1]  # Vymena čisel
                 pomocna[j+1] = a  # Priradenie nasledujúceho čisla na promenu
-
-<<<<<<< HEAD
-def selection_sort(pole): # funkce selection sort
-    for i in range (0, len(pole)-1): # Cyklus, který se bude opakovat pro každý prvek.
-        mezivypocet = i # Přiřazení prvního nezařazeného prvku jako mezivýpočet
-        for j in range (i, len(pole)): # Cyklus, který se bude opakovat pro každý nezařazený prvek.
-=======
     return pomocna
 
 
@@ -86,7 +80,6 @@ def selection_sort(pole):  # funkce selection sort
     for i in range(0, len(pole)):  # Cyklus pro každý prvek.
         mezivypocet = i  # Uložení prvního prvku do proměnné
         for j in range(i, len(pole)):  # Cyklus pro každý nezařazený prvek.
->>>>>>> 80feceb8aac79502e7381a3d0750165139f81906
             if pole[mezivypocet] > pole[j]:
                 mezivypocet = j
                 # Pokud je současný prvek vyšší než mezivýpočet,
