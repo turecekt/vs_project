@@ -261,13 +261,13 @@ def ZjistiVicePrvocisel(cachePrvocisel, doCisla):
 
     #UNIT TESTY:
     >>> ZjistiVicePrvocisel(["2", "3", "5", "7", "11", "13"], 25)
-    ["2", "3", "5", "7", "11", "13", "17", "19", "23"]
+    ['2', '3', '5', '7', '11', '13', '17', '19', '23']
 
     >>> ZjistiVicePrvocisel(["2", "3", "5", "7"], 15)
-    ["2", "3", "5", "7", "11", "13"]
+    ['2', '3', '5', '7', '11', '13']
 
     >>> ZjistiVicePrvocisel(["2"], 10)
-    ["2", "3", "5", "7"]
+    ['2', '3', '5', '7']
     """
     if(int(cachePrvocisel[len(cachePrvocisel) - 1]) == 2):
         cislo = 3
