@@ -78,7 +78,7 @@ def determinantCalculation(matrixarray):
  replaceWithRightSides - replaces column  in matrix with vector of right sides
 
 >>> replaceWithRightSides([1, 1, 1, 1, 1, 1, 1, 1, 1], [4,5,6], 0)
-22
+[4, 1 , 1, 5, 1, 1, 6, 1, 1]
 """
 
 
@@ -94,7 +94,6 @@ def replaceWithRightSides(matrixarray, vector, column):
         - output - determinant of given matrix, a number.
     """
     # just in case that somebody uses index greater than 2
-    return 22
     column = column % 3
     workingArray = deepcopy(matrixarray)
     workingArray[column] = deepcopy(vector[0])
