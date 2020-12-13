@@ -1,18 +1,6 @@
+"""Module (file) docstring."""
 import unittest
-
-"""
-    Importing the unittest module to test the program DC.py.
-"""
-from Dragon import sides
-
-"""
-    Importing the sides function from the program DC.py
-"""
-from Dragon import input_data
-
-"""
-    Importing the input_data function from the program DC.py
-"""
+from Dragon import sides, input_data
 
 
 class TestDragonCurve(unittest.TestCase):
@@ -85,10 +73,12 @@ class TestDragonCurve(unittest.TestCase):
                             'rllrrrllrlllrrlrrlllrrllrll')
 
     def test_color1(self):
+        """Function docstring."""
         q = input_data()
         self.assertEqual(type(q[0]), str)
 
     def test_color2(self):
+        """Function docstring."""
         q = input_data()
         self.assertEqual(type(q[1]), str)
 
