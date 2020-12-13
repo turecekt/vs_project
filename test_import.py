@@ -6,7 +6,7 @@ import projectRom
 class MyTestCase(unittest.TestCase):
     """Vytvoreni class a funkce na pytesty."""
 
-    def test_deset(self):
+def test_deset(self):
         """Vytvoreni testu ktery testne input 10."""
         result = projectRom.intToRom(10)
         self.assertEqual(result, 'X')
