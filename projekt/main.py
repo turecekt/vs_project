@@ -101,6 +101,16 @@ def test_decrypt():
     assert decrypt('.') == 'E'
 
 
+def test_malaaVelka():
+    """Zprava.
+
+    Pimena na velka.
+    >>>input('e')
+    'E'
+    """
+    assert input('e') == message('E')
+    
+    
 # funkce main
 def main():
     """Definovani funkce main.
@@ -109,12 +119,6 @@ def main():
     zavola druhy input pro decrypt.
     """
     message = input("Zadejte zprávu v abc: ").upper()
-    """Zprava.
-
-    Pimena na velka.
-    >>>input('e')
-    'E'
-    """
     result = encrypt(message.upper())
     print(result)
 
