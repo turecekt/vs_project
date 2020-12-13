@@ -67,12 +67,6 @@ def rozsifrovani(zprava):
 
     return text  # Funkce vrátí přeloženou zprávu
 
-"""def test_morse_to_text(self):
-    translator = rozsifrovani()
-    morse = ".... . .-.. .-.. ---   .-- --- .-. .-.. -.."
-    expected_output = "hello world"
-    self.assertEqual(translator.translate_morse(morse), expected_output)"""
-
 def main():
     print("Vlož text (bez diakritiky):")  # Vypsání zprávy na konzoli
     zprava = input()  # Načtení zprávy z konzole a přiřazení
