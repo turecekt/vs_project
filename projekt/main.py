@@ -14,11 +14,20 @@ MORSE_DICTIONARY = {'A': '.-', 'B': '-...',
                     '?': '..--..', '/': '-..-.', '-': '-....-',
                     '(': '-.--.', ')': '-.--.-'}
 
+<<<<<<< HEAD
 def encrypt(message):
     cipher = ''
     for letter in message:
         if letter != ' ':
 
+=======
+
+def encrypt(message): 
+    cipher = '' 
+    for letter in message: 
+        if letter != ' ': 
+ 
+>>>>>>> 254f27041f94ecdaddc24457af04105c18a5fba2
             cipher += MORSE_DICTIONARY[letter] + ' '
         elif letter == '':
             cipher = ''
