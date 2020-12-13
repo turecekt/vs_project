@@ -118,6 +118,7 @@ def main():
     result = decrypt(message)
     print(result)
 
+    assert message('ahoj') != ('.-.-.-')
 
 if __name__ == '__main__':
     main()
