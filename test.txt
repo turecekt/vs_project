@@ -1,1 +1,7 @@
+<<<<<<< HEAD
 message=input('Vloz text na preklad:')
+=======
+aosisdhd
+asdhkasdhsk
+asdhkashdka
+>>>>>>> aaf2f496158e8fe2e65ce0fd01f47d3ce4da59dd
