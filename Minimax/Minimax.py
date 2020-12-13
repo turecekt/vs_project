@@ -124,6 +124,7 @@ def sort_choice(mylist, x):
     else:
         raise Exception("Nevalidní hodnota.")
 
+
 # Generovaní pole při zavolání funkce uživatele bez argumentů
 def generate_array():
     """Return generated array if program is called without argumets."""
