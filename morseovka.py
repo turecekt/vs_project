@@ -15,3 +15,5 @@ def Morseovka_na_Text():
     kod = [j for i in text.split() for j,k in MORSEUV_SLOVNIK.items() if i==k]
     text2 = ''.join(kod)
     print(text2)
+
+print('''\n1 - Napis text pro Morseovo sifrovani \n2 - Napis Morseuv kod pro desifrovani do textu\n3 - Konec\n ''')
