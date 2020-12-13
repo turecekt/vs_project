@@ -16,6 +16,18 @@ def delkaStrany(x1, y1, x2, y2):
     st = round(math.sqrt(str1+str2), 2)
     return st
 
+def getObvod(a, b, c):
+    """Calculate the perimeter of a triangle.
+
+    Return the perimeter of the triangle
+    >>> getObvod(5, 10, 20) == 35
+    True
+    >>> getObvod(1, 2, 3)
+    6
+    """
+    o = a + b + c
+    return o
+
 print("Zadejte souřadnice pro bod A na ose X: ")
 ax = float(input())
 print("Zadejte souřadnice pro bod A na ose Y: ")
@@ -38,7 +50,7 @@ if stra + strb > strc and strb + strc > stra and strc + stra > strb:
     print("Trojúhelník je sestrojitelný")
 else:
     print("Trojúhelník není sestrojitelný")
-obvod = stra + strb + strc
+obvod = getObvod(stra, strb, strc)
 print("Obvod trojúhelníku je " + str(obvod) + " cm")
 s = (stra + strb + strc) / 2
 m = s * (s - stra) * (s - strb) * (s - strc)
