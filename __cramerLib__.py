@@ -1,8 +1,8 @@
 """this module supplies methods for operation with matrixes.
 
 Module suppliees methods for manipulation with matrixes, conversion of file to
-matrix and vector of right sides and for check that iinput file is properly for-
-mated
+matrix and vector of right sides and for check that iinput file is properly
+formated
 """
 from copy import deepcopy
 
@@ -116,7 +116,8 @@ def replaceWithRightSides(matrixarray, vector, column):
 
 
 def convertToMatrixAndVector(fileContent, matrix, vector):
-    """Functon convertToMatrixAndVector checks and converts content of file to
+    """Functon convertToMatrixAndVector checks and converts content.
+    Functon convertToMatrixAndVector checks and converts content of file to
     matrix and vector of right sides.
 
     Args:
