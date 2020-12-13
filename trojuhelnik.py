@@ -41,4 +41,4 @@ print("Obsah trojúhelníku je" + obsah + "cm")
 if math.pow(2, stra) == math.pow(2, strb) + math.pow(2, strc) or math.pow(2, strb) == math.pow(2, strc) + math.pow(2, stra) or math.pow(2, strc) == math.pow(2, stra) + math.pow(2, strb):
     print("Trojúhelník je pravoúhlý")
 else:
-    print("Trojúhelník není pravoúhlý") 
+    print("Trojúhelník není pravoúhlý")
