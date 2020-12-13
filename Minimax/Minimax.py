@@ -77,8 +77,8 @@ def generate_array():
     sort(mylist)
     min_max(mylist)
 
-
 # Vstup:
+inputTestFails = False
 mylist = []
 if len(sys.argv) > 1:
     argument = sys.argv[1]
@@ -90,14 +90,20 @@ if len(sys.argv) > 1:
         for line in lines:
             row_data = line.split()
             for num in row_data:
-                mylist.append(int(num))
+                try:
+                    mylist.append(int(num))
+                except ValueError:
+                    inputTestFails = True
         print(mylist)
         min_max(mylist)
         sort(mylist)
     else:
         mylist = []
         for i in sys.argv[1:]:
-            mylist.append(i)
+            try:
+                mylist.append(i)
+            except ValueError:
+                inputTestFails = True
         min_max(mylist)
         sort(mylist)
 else:
