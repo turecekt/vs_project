@@ -74,9 +74,12 @@ def main():
     results = {}
 
     # calculation of
-    results["x"] = determinantCalculation(replaceWithRightSides(matrix, vector, 0))/determinantOfMatrix
-    results["y"] = determinantCalculation(replaceWithRightSides(matrix, vector, 1))/determinantOfMatrix
-    results["z"] = determinantCalculation(replaceWithRightSides(matrix, vector, 2))/determinantOfMatrix
+    deterX = determinantCalculation(replaceWithRightSides(matrix, vector, 0))
+    deterY = determinantCalculation(replaceWithRightSides(matrix, vector, 1))
+    deterZ = determinantCalculation(replaceWithRightSides(matrix, vector, 2))
+    results["x"] = deterX / determinantOfMatrix
+    results["y"] = deterY / determinantOfMatrix
+    results["z"] = deterZ / determinantOfMatrix
 
     # print results of calculation
     print("Results form matrix:")
