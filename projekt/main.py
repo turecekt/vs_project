@@ -60,7 +60,7 @@ def decrypt(message):
 
     Odsifrovani morseovky na text.
     >>> decrypt('.')
-    E
+    decipher(E)
     """
     message += ' '
 
