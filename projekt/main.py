@@ -14,6 +14,7 @@ MORSE_DICTIONARY = {'A': '.-', 'B': '-...',
                     '?': '..--..', '/': '-..-.', '-': '-....-',
                     '(': '-.--.', ')': '-.--.-'}
 
+
 def encrypt(message): 
     cipher = '' 
     for letter in message: 
