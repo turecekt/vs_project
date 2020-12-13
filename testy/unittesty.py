@@ -5,7 +5,6 @@ import source_test
 
 
 class TestMorseovky(unittest.TestCase):
-
     """Tato class funguje pro testování našeho source."""
 
     # PŘEVODY Z ABECEDY DO MORSEOVKY
