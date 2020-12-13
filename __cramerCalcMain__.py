@@ -23,13 +23,6 @@ def main():
     Returns:
         - 0 on scucess, 1 on failure
     """
-    if(len(sys.argv) != 2):
-        if(len(sys.argv) < 2):
-            print("too few argumetns specified")
-        #    sys.exit(1)
-        else:
-            print("too many arguments specified")
-        #    sys.exit(1)
 
     if(sys.argv[1] == 'help'):
         print("-Welcome to 3x3 matrix variables calculation script\n script re\
