@@ -27,7 +27,7 @@ def determinantCalculation(matrixarray):
     # we need copy of array, not reference.
     matrixArray = deepcopy(matrixarray)
     # matrix is stored as list of 9 elementst, first rows,
-    #then columns beginning at te zero
+    # then columns beginning at te zero
     startIndexesP = [0, 3, 6]
     startIndexesM = [2, 5, 8]
 
@@ -43,7 +43,7 @@ def determinantCalculation(matrixarray):
         # do-while replacement
         while True:
             if currentIndex > 8:
-                # remov 9 as there are 9 elements in array beginning at tha zero
+                # remov 9 as there are 9 elements in array beginning at zero
                 innerMultiply = innerMultiply * matrixArray[currentIndex - 9]
             else:
                 innerMultiply = innerMultiply * matrixArray[currentIndex]
@@ -61,7 +61,7 @@ def determinantCalculation(matrixarray):
 
         while True:
             if currentIndex > 8:
-                # remov 9 as there are 9 elements in array beginning at tha zero
+                # remov 9 as there are 9 elements in array beginning at zero
                 innerMultiply = innerMultiply * matrixArray[currentIndex - 9]
             else:
                 innerMultiply = innerMultiply * matrixArray[currentIndex]
@@ -141,7 +141,7 @@ def convertToMatrixAndVector(fileContent, matrix, vector):
         # trim new line from line and spit it by delimieter, delimiter is space
         lineArray = line.rstrip("\n").split(" ")
         if len(lineArray) != 4:
-            print("Invalid number of cloumns in file. File must contain 4 colu\\
+            print("Invalid number of cloumns in file. File must contain 4 colu\
             mns, 3 for matrix and 1 for vector of right sides")
             return 0
 
