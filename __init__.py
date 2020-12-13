@@ -48,6 +48,31 @@ def Vystup(pouzitaMetoda=0):
 
     Args:
         - pouzitaMetoda - Metoda, kterou program použil pro zjištění výsledku
+
+    #UNIT TESTY
+    >>> pouzitaMetoda()
+    False
+
+    >>> pouzitaMetoda(-1)
+    True
+
+    >>> pouzitaMetoda(-2)
+    True
+
+    >>> pouzitaMetoda(-3)
+    True
+
+    >>> pouzitaMetoda(3)
+    True
+
+    >>> pouzitaMetoda(-4)
+    True
+
+    >>> pouzitaMetoda(4)
+    True
+
+    >>> pouzitaMetoda(5)
+    False
     """
     if(pouzitaMetoda == 0):
         print("------------------------------------------------------------")
@@ -57,7 +82,7 @@ def Vystup(pouzitaMetoda=0):
               "rozpoznání prvočísla.")
         print("Zkuste program restartovat a zadat přirozené číslo. (1 až " +
               "nekonečno)")
-        return
+        return False
     elif(pouzitaMetoda > 0):
         print("Zadané číslo PATŘÍ mezi prvočísla.")
     else:
@@ -73,6 +98,7 @@ def Vystup(pouzitaMetoda=0):
         print("Metoda rozpozná číslici 1 a vyřadí ji z pátrání, protože " +
               "toto číslo nesplňuje definici prvočísel. (číslo musí být ")
         print("dělitelné DVĚMA čísly, samosebou a jedničkou)")
+        return True
     elif(pouzitaMetoda == 2):
         print("Byla použita HEURISTICKÁ metoda - pravidla dělitelnosti")
         print("------------------------------------------------------------")
@@ -80,11 +106,13 @@ def Vystup(pouzitaMetoda=0):
               "končí určitým číslem, které podle pravidel dělitelnosti, lze ")
         print("vydělit již prvočíslem. (např. čísla končící na číslo 5 a 0 ")
         print("jdou vždy vydělit 5)")
+        return True
     elif(pouzitaMetoda == 3):
         print("Byla použita HEURISTICKÁ metoda - Wilsonova věta")
         print("------------------------------------------------------------")
         print("Metoda používá matematický vztah '((n - 1)! + 1) % n' pro " +
               "zjištění některých prvočísel.")
+        return True
     elif(pouzitaMetoda == 4):
         print("Byla použita DETERMINISTICKÁ metoda")
         print("------------------------------------------------------------")
@@ -96,10 +124,12 @@ def Vystup(pouzitaMetoda=0):
               "tudíž číslem 2 a 3, nevznikne zbytek 0 a tak je číslo 7 ")
         print("prvočíslo. (metoda používá paměť s vypočítanými prvočísly " +
               "k zrychlení procesu)")
+        return True
     else:
         print("Pravděpodobně jde o nějakou metodu, kterou si vymyslela " +
               "umělá inteligence vašeho počítače. Tuhle zprávu byste ")
         print("totiž neměli nikdy vidět.")
+        return False
 
 
 def Metody(cislo):
