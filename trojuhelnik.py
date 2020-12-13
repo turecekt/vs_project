@@ -50,6 +50,20 @@ def getObsah(a, b, c):
         obs = -1
     return obs
 
+def jeSestrojitelny(a, b, c):
+    """Calculate if a triangle is valid.
+
+    Return true or false based on the validity of the triangle
+    >>> jeSestrojitelny(50, 100, 1)
+    False
+    >>> jeSestrojitelny(12, 13, 14)
+    True
+    """
+    if a + b > c and b + c > a and c + a > b:
+        return True
+    else:
+        return False
+
 print("Zadejte souřadnice pro bod A na ose X: ")
 ax = float(input())
 print("Zadejte souřadnice pro bod A na ose Y: ")
@@ -68,7 +82,7 @@ strb = delkaStrany(ax, ay, cx, cy)
 print("Délka strany b: " + str(strb) + " cm")
 strc = delkaStrany(bx, by, ax, ay)
 print("Délka strany c: " + str(strc) + " cm")
-if stra + strb > strc and strb + strc > stra and strc + stra > strb:
+if jeSestrojitelny(stra, strb, strc):
     print("Trojúhelník je sestrojitelný")
 else:
     print("Trojúhelník není sestrojitelný")
