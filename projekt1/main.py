@@ -1,8 +1,9 @@
-#Tento Program slouží k překládání textu do morseovy abecedy a zpět.
-#Uživatel zadá libovolný text do konzole, algoritmus rozpozná jestli je
-#na vstupu zadána zpráva v morseově abecedě nebo pomocí znaků klasické abecedy.
-#Uživatel může zadat velká i malá písmena bez diakritiky, čísla i jiné znaky.
-#Na výstupu uživatel získá zašifrovaný nebo rozšifrovaný text.
+"""MORSEOVA ABECEDA."""
+# Tento Program slouží k překládání textu do morseovy abecedy a zpět.
+# Uživatel zadá libovolný text do konzole, algoritmus rozpozná jestli je
+# na vstupu zadána zpráva v morseově abecedě nebo pomocí znaků klasické abecedy.
+# Uživatel může zadat velká i malá písmena bez diakritiky, čísla i jiné znaky.
+# Na výstupu uživatel získá zašifrovaný nebo rozšifrovaný text.
 
 # Knihovna Morseovy Abecedy
 MORSE_CODE = {'A': '.-', 'B': '-...',
@@ -62,8 +63,8 @@ def rozsifrovani(zprava):
                 text += ' '
             else:
                 # Přístup ke knihovně morseovy abecedy přes hodnoty znaku
-                text += list(MORSE_CODE.keys()) \
-                    [list(MORSE_CODE.values()).index(citext)]
+                text += list(MORSE_CODE.keys())\
+                     [list(MORSE_CODE.values()).index(citext)]
                 citext = ''
 
     return text
