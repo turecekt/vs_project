@@ -84,3 +84,11 @@ def prevod(vstup):
                     g = g + morseovka[i] + ' '
 
         return g
+
+
+# Vytvoření vstupu
+print('--KODÉR A DEKODÉR MORSEOVKY--')
+vstup = input('Zadejte text pro převod: ')
+
+# Výstup
+print(prevod(vstup))
