@@ -15,7 +15,7 @@ import sys
 
 
 def main():
-    """Function main runs all the code for calculation of matrixes.
+    """Functon determinantCalculation calculates determinant of given matrix.
 
     This method is run automatically after script is opened
     """
