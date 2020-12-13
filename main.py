@@ -4,6 +4,7 @@ import sys
 from point import Point
 import triangle
 
+
 def print_triangle_info(point_a, point_b, point_c):
     """Print information about a triangle to the command line.
 
@@ -34,11 +35,12 @@ def print_triangle_info(point_a, point_b, point_c):
         print("Obvod: %.2f" % (side_a + side_b + side_c))
         print("Obsah: %.2f" % (triangle.area(side_a, side_b, side_c)))
 
+
 def request_point(name):
     """Prompt a user to enter point coordinates.
 
     Input is expected to be two numbers separated by a space (e. g. "0 10").
-    If the user enters invalid data, they are promped again until the data is valid.
+    If the user enters invalid data, they are promped again.
 
     Parameters:
         name (str): a display name for the point
@@ -57,6 +59,7 @@ def request_point(name):
             print("Nesprávný vstup")
             print(e)
             print()
+
 
 def init():
     """Process command line arguments or prompt user to enter coordinates."""
@@ -85,7 +88,8 @@ def init():
         else:
             print("Nesprávný počet argumentů")
             print("Očekáváno 6")
-            print("Nalezeno " + str(arg_count -1))
+            print("Nalezeno " + str(arg_count - 1))
             sys.exit(1)
+
 
 init()
