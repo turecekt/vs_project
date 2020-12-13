@@ -66,6 +66,24 @@ class TestMethods(unittest.TestCase):
         assert prevod(1000) == 'M'
 
 
+class ToRomanBadInput(unittest.TestCase):
+    """Špatný vstup."""
+
+    def test_zero(self):
+        """prevod(0) by měl vyhodit chybu."""
+        self.assertRaises(OutOfRangeError, prevod, 0)
+
+    def test_negative(self):
+        """prevod(-1) by měl vyhodit chybu."""
+        self.assertRaises(OutOfRangeError, prevod, -1)
+
+
+class OutOfRangeError(Exception):
+    """Třída pokud je není číslo větší než nula."""
+
+    pass
+
+
 """Prevod na rimske cislo."""
 
 
@@ -76,24 +94,35 @@ def prevod(cislo):
     'I'
     """
     """Seznamy znaku a jejich hodnot."""
-    hodnota = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
-    znak = ["M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV",
-            "I"]
-    """Vystup prevodu na rimske cislo."""
-    rimske_cislo = ''
-    """Promenna urcujici pozici v seznamech."""
-    pozice = 0
-    while cislo > 0:
-        """Hodnota vydeli celociselne se zaokrouhlenim dolu vstup."""
-        a = (cislo // hodnota[pozice])
-        b = 0
-        for b in range(a):
-            rimske_cislo = rimske_cislo + znak[pozice]
-            cislo = cislo - hodnota[pozice]
-        pozice = pozice + 1
-    return rimske_cislo
+    if cislo < 0:
+        raise OutOfRangeError("Číslo nemůže bý záporné")
+    if cislo == 0:
+        raise OutOfRangeError("Číslo nesmí být nula")
+    else:
+        hodnota = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
+        znak = ["M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V",
+                "IV", "I"]
+        """Vystup prevodu na rimske cislo."""
+        rimske_cislo = ''
+        """Promenna urcujici pozici v seznamech."""
+        pozice = 0
+        while cislo > 0:
+            """Hodnota vydeli celociselne se zaokrouhlenim dolu vstup."""
+            a = (cislo // hodnota[pozice])
+            b = 0
+            for b in range(a):
+                rimske_cislo = rimske_cislo + znak[pozice]
+                cislo = cislo - hodnota[pozice]
+            pozice = pozice + 1
+        return rimske_cislo
 
 
 if __name__ == '__main__':
     unittest.main(exit=False)
-    print(prevod(int(input("Zadej číslo: "))))
+    cislo = int(input("Zadej čislo: "))
+    if cislo < 0:
+        raise OutOfRangeError("Číslo nemůže bý záporné")
+    if cislo == 0:
+        raise OutOfRangeError("Číslo nesmí být nula")
+    else:
+        print(prevod(cislo))
