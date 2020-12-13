@@ -14,7 +14,7 @@ import sys
 """This method wraps all the code.
 
 >>> convertToMatrixAndVector("matrixTest")
-0
+1
 """
 
 
@@ -48,12 +48,13 @@ def main(file=0):
             FILE = open(sys.argv[1])
         except IOError:
             print("File "+sys.argv[1]+' not found on this machine')
-            sys.exit(1)
+            reutrn 1
     else:
         try:
             FILE = open(file)
         except IOError:
             print("File "+file+' not found on this machine')
+            return 1
 
     lines = []
     # convert file to array of strings where string is one line.
