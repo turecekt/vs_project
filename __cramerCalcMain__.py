@@ -1,4 +1,6 @@
-"""this module is wrapper for running calculation of matrixes"""
+"""this module is wrapper for running calculation of matrixes,
+you should tun it with file specified
+"""
 
 # import file with methodss for matri operation
 from __cramerLib__ import convertToMatrixAndVector
@@ -15,12 +17,13 @@ import sys
 >>> determinantCalculation([1, 1, 1, 1, 1, 1, 1, 1, 1])
 1
 """
-def main():
-    """
-        main of the script,
-        this method is run automatically
-    """
 
+
+def main():
+    """ main of the script,
+
+        this method is run automatically after script is opened
+    """
 
     if(len(sys.argv) != 2):
         if(len(sys.argv) < 2):
