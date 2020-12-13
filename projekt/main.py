@@ -25,6 +25,12 @@ MORSE_DICTIONARY = {'A': '.-', 'B': '-...',
 
 # zasifrovani
 def encrypt(message):
+    """Zasifrovani zpravy.
+
+    Vraceni vsech znaku v morseove sifre
+    >>> E
+    .
+    """
     cipher = ''
     for letter in message:
         if letter != ' ':
@@ -39,11 +45,21 @@ def encrypt(message):
 
 # testovani spravnosti encryptu
 def test_encrypt():
+    """Test zasifrovani.
+
+    Vraceni vsech znaku v morseove sifre
+    >>> E
+    .
+    """
     assert encrypt('E') == '. '
 
 
 # odsifrovavani
 def decrypt(message):
+    """Odsifrovani zpravy.
+
+    Odsifrovani morseovky na text.
+    """
     message += ' '
 
     decipher = ''
@@ -74,11 +90,20 @@ def decrypt(message):
 
 # testovani decryptu
 def test_decrypt():
+    """Testovani decryptu.
+
+    Odsifrovani morseovky na text.
+    """
     assert decrypt('.') == ('E')
 
 
 # funkce main
 def main():
+    """Definovani funkce main.
+
+    V mainu se prvne zavola input po encrypt potom
+    zavola druhy input pro decrypt.
+    """
     message = input("Zadejte zprávu v abc: ").upper()
     result = encrypt(message.upper())
     print(result)
