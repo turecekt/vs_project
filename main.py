@@ -1,8 +1,17 @@
+"""Main module which handles user input and prints results to the console."""
+
 import sys
 from point import Point
 import triangle
 
 def print_triangle_info(point_a, point_b, point_c):
+    """Print information about a triangle to the command line.
+
+    Parameters:
+        point_a (Point): point A
+        point_b (Point): point B
+        point_c (Point): point C
+    """
     side_a = point_b.distance(point_c)
     side_b = point_a.distance(point_c)
     side_c = point_a.distance(point_b)
@@ -26,6 +35,14 @@ def print_triangle_info(point_a, point_b, point_c):
         print("Obsah: %.2f" % (triangle.area(side_a, side_b, side_c)))
 
 def request_point(name):
+    """Prompt a user to enter point coordinates.
+
+    Input is expected to be two numbers separated by a space (e. g. "0 10").
+    If the user enters invalid data, they are promped again until the data is valid.
+
+    Parameters:
+        name (str): a display name for the point
+    """
     while True:
         try:
             print("Zadejte souřadnice bodu " + name)
@@ -42,6 +59,7 @@ def request_point(name):
             print()
 
 def init():
+    """Process command line arguments or prompt user to enter coordinates."""
     if __name__ == "__main__":
         args = sys.argv
         arg_count = len(args)
