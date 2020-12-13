@@ -4,10 +4,6 @@
 import unittest
 import functions
 
-# Rychlý způsob, jak napsat modul, který jde jak importovat, tak spustit
-if __name__ == '__functions__':
-    unittest.functions()
-
 
 # Třída pro unittesty na délky stran trojúhelníku
 class TestDelkaStrany(unittest.TestCase):
