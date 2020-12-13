@@ -93,7 +93,7 @@ if test is True:
     """
     al = 24
     while al > 3 or al < 1:
-        al = input("Chcete pole seřadit pomocí algoritmu 1)Bubble Sort 2) Insertion Sort 3)Selection Sort (napiš 1 - 3):")
+        al = input("1)Bubble Sort 2) Insertion Sort 3)Selection Sort(1-3)):")
         test = True
         try:
             int(al)
