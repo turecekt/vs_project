@@ -1,4 +1,8 @@
-"""Unittesty funkcí."""
+"""Tohle je soubor na unittesty funkcí souboru functions.
+
+Tento modul obsahuje třídy, které se délí podle typu na
+TestDelkaStrany(), TestObvodObsah() a TestPravouhlosti()
+"""
 
 import unittest     # Inport frameworku unittest
 import functions    # Inport souboru functions
@@ -6,15 +10,23 @@ import functions    # Inport souboru functions
 
 # Třída pro unittesty na délky stran trojúhelníku
 class TestDelkaStrany(unittest.TestCase):
-    """Unittest na délku stran AB, BC, AC."""
+    """Unittesty na délku stran AB, BC, AC."""
 
     """Unittest na délku strany AB"""
     def test_delkaStranyAB(self):
-        """#01. unittest pro stranu AB."""
+        """Funkce slouží k otestování funkčnosti funkce.
+
+        Testy píšeme ve tvaru:
+        self.assertEqual(nazev.funkce.k.porovnani(hodnoty), očekávaný výsledek)
+
+        Proměnné:
+            - self - hodnota samotné funkce
+
+        Výsledek:
+            - passed
+        """
         self.assertEqual(functions.delkaStranyAB(2, 5, 5, 9), 5)
-        """#02. unittest pro stranu AB."""
         self.assertEqual(functions.delkaStranyAB(2, -6, -13, -19), 10)
-        """#03. unittest pro stranu AB."""
         self.assertEqual(functions.delkaStranyAB(-2.6, -2.6, 119, 130), 11)
 
     """Unittest na délku strany |BC|."""
