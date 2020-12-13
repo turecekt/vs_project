@@ -8,8 +8,59 @@ Created on Sun Dec 13 13:31:54 2020.
 from random import randint
 import sys
 
+
+def vytvor_pole(pole):
+    for i in range(0, 20):
+        pole.append(randint(1, 30))
+    print("Pole s 20 pseudonáhodně vygenerovanými prvky mezi čísly 1 a 30:")
+
+
+def nejmensi(pole):
+    mini = min(pole)
+    print("Nejmenší hodnota v poli", mini, "se nachází na pozici/pozicích:")
+    for i in range(0, len(pole)):
+        if pole[i] == mini:
+            print(i)
+
+
+def nejvetsi(pole):
+    maxi = max(pole)
+    print("Nevětší hodnota v poli", maxi, "se nachází na pozici/pozicích:")
+    for i in range(0, len(pole)):
+        if pole[i] == maxi:
+            print(i)
+
+
+def Bubble_sort(pole):
+    for i in range(len(pole)):
+        for j in range(len(pole) - 1):
+            if pole[j] > pole[j+1]:
+                pole[j], pole[j+1] = pole[j+1], pole[j]
+    return pole
+
+
+def Insertion_sort(pole):
+    for i in range(1, len(pole)):
+        hodnota = pole[i]
+        pozice = i
+        while pozice > 0 and pole[pozice - 1] > hodnota:
+            pole[pozice] = pole[pozice - 1]
+            pozice = pozice - 1
+        pole[pozice] = hodnota
+    return pole
+
+
+def Selection_sort(pole):
+    for i in range(len(pole)):
+        min_i = i
+        for j in range(i + 1, len(pole)):
+            if pole[min_i] > pole[j]:
+                min_i = j
+        pole[i], pole[min_i] = pole[min_i], pole[i]
+
+
 # deklaruji si pole a proměnou Boolean test pro další postup
-pole = []
+pole1 = []
 test = True
 """
 Ověřím zda nebyl zadán nějaký argument,
@@ -17,9 +68,7 @@ pokud ne vygeneruji pole, pokud ano jdu dál
 """
 if len(sys.argv) < 2:
     # 20x vygeneruji číslo mezi 1 až 30 na koenc pole
-    for i in range(0, 20):
-        pole.append(randint(1, 30))
-    print("Pole s 20 pseudonáhodně vygenerovanými prvky mezi čísly 1 a 30:")
+    vytvor_pole(pole1)
     """
     Ověřím zda je první argument název textového souboru,
     pokud ano výtahnu z něj data do pole, pokud ne jdu dál
@@ -38,7 +87,7 @@ elif sys.argv[1].endswith(".txt") is True:
             test = False
         if test is True:
             tmp = int(i)
-            pole.append(tmp)
+            pole1.append(tmp)
     # pokud byly všechny řádky v pořádku vypíšu tuto větu
     if test is True:
         print("Pole s hodnotami obsažené ve vašem souboru", sys.argv[1], ":")
@@ -58,7 +107,7 @@ else:
         except ValueError:
             test = False
         if test is True:
-            pole.append(int(sys.argv[i]))
+            pole1.append(int(sys.argv[i]))
     # pokud byly všechny argumenty v pořádku vypíšu tuto větu
     if test is True:
         print("Pole s vámi zadanými hodnotami:")
@@ -67,26 +116,17 @@ pokud byly všechny požadavky splněny vypíšu pole a pokračuju dál,
 pokud ne napíšu chybovou hlášku
 """
 if test is True:
-    print(pole)
-    # najdu minimální a maximální prvek
-    mini = min(pole)
-    maxi = max(pole)
+    print(pole1)
     """
     vypíšu hodnotu minimálního prvku a projdu celé pole vždy,
     když se číslo v poli shoduje vypíšu jeho pozici
     """
-    print("Nejmenší hodnota v poli", mini, "se nachází na pozici/pozicích:")
-    for i in range(0, len(pole)):
-        if pole[i] == mini:
-            print(i)
+    nejvetsi(pole1)
     """
     vypíšu hodnotu největšího prvku a projdu celé pole vždy,
     když se číslo v poli shoduje vypíšu jeho pozici
     """
-    print("Nevětší hodnota v poli", maxi, "se nachází na pozici/pozicích:")
-    for i in range(0, len(pole)):
-        if pole[i] == maxi:
-            print(i)
+    nejmensi(pole1)
     """
     budu se ptát na to, jaký třídící algoritmus chce uživatel použít,
     dokud nezadá celé číslo mezi 1 a 3
@@ -105,27 +145,14 @@ if test is True:
     # podle inputu do uživatele provedu třídící algoritmus
     # Bubble sort
     if al == 1:
-        for i in range(len(pole)):
-            for j in range(len(pole) - 1):
-                if pole[j] > pole[j+1]:
-                    pole[j], pole[j+1] = pole[j+1], pole[j]
+        pole = Bubble_sort(pole1)
     # Insertion sort
     elif al == 2:
-        for i in range(1, len(pole)):
-            hodnota = pole[i]
-            pozice = i
-            while pozice > 0 and pole[pozice - 1] > hodnota:
-                pole[pozice] = pole[pozice - 1]
-                pozice = pozice - 1
-            pole[pozice] = hodnota
-    # Seletion sort
+        pole = Insertion_sort(pole1)
+    # Selection sort
     else:
-        for i in range(len(pole)):
-            min_i = i
-            for j in range(i + 1, len(pole)):
-                if pole[min_i] > pole[j]:
-                    min_i = j
-            pole[i], pole[min_i] = pole[min_i], pole[i]
-    print("Seřazené pole:", pole)
+        pole = Selection_sort(pole1)
+    print("Seřazené pole:", pole1)
 else:
     print("parametry nebo soubor neodpovídají požadavku")
+    
