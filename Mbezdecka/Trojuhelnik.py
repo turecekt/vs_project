@@ -64,10 +64,10 @@ def sestrojitelny(Sa, Sb, Sc):
 def obvod(Sa, Sb, Sc):
     """Vypocet obvodu trojuhelniku.
 
-    >>> obvod(4.243, 5.099, 2.828)
-    12.17
+    >>> obvod(1, 1, 1)
+    3.0
     """
-    return Sa+Sb+Sc
+    return round (Sa+Sb+Sc, 3)
 
 
 def obsah(Sa, Sb, Sc):
@@ -120,7 +120,7 @@ def vypis(xA, yA, xB, yB, xC, yC):
         print("Delka strany b je: ", round(Sb, 3))
         print("Delka strany c je: ", round(Sc, 3))
         print("Obvod trojuhelniku je: ", round(obvod(Sa, Sb, Sc), 3))
-        print("Obsah trojuhelniku je: ", obsah(Sa, Sb, Sc), 3)
+        print("Obsah trojuhelniku je: ", obsah(Sa, Sb, Sc))
         if pravouhly(Sa, Sb, Sc) is True:
             print("Trojuhelnik je pravouhly")
         else:
