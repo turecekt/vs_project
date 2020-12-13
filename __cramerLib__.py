@@ -1,8 +1,7 @@
-from copy import deepcopy
 """this module supplies methods for operation with matrixes.
 
 """
-
+from copy import deepcopy
 
 """This method calcualtes teterminant of matrix.
 
@@ -11,6 +10,8 @@ from copy import deepcopy
 >>> determinantCalculation([1, 1, 1, 1, 1, 1, 1, 1, 1])
 1
 """
+
+
 
 def determinantCalculation(matrixarray):
     """Functon determinantCalculation calculates determinant of given matrix.

@@ -1,13 +1,14 @@
+
+"""this module is wrapper for running calculation of matrixes
+
+"""
+
 # import file with methodss for matri operation
 from __cramerLib__ import convertToMatrixAndVector
 from __cramerLib__ import replaceWithRightSides
 from __cramerLib__ import determinantCalculation
 # import sys for handling of arguments
 import sys
-
-"""this module is wrapper for running .
-
-"""
 
 
 """This method calcualtes teterminant of matrix.
@@ -17,11 +18,7 @@ import sys
 >>> determinantCalculation([1, 1, 1, 1, 1, 1, 1, 1, 1])
 1
 """
-
-
-# Main method doing the calculation
 def main():
-
 
     if(len(sys.argv) != 2):
         if(len(sys.argv) < 2):
