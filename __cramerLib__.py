@@ -108,8 +108,6 @@ def replaceWithRightSides(matrixarray, vector, column):
  ConvertToMatrixAndVector - converts input from file to matrix an vector of
  right sides
 
->>> matrix = []
->>> vector = []
 >>> convertToMatrixAndVector(["1 1 1 1", "2 2 2 2", "3 3 3 3"], matrix, vector)
 1
 """
