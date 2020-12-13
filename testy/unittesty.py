@@ -2,10 +2,10 @@
 import unittest
 import source_test
 
-"""Vytvoření testovací classy."""
 # Testovácí class
 class TestMorseovky(unittest.TestCase):
 
+    """Vytvoření funkcí pro testování."""
     # PŘEVODY Z ABECEDY DO MORSEOVKY
     def test_1(self):
         """Jen písmena všechna malá."""
