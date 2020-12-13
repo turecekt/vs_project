@@ -28,6 +28,11 @@ def encrypt(message):
     return cipher
 
 
+# testovani spravnosti encryptu
+def test_encrypt():
+    assert encrypt('E') == '. '
+
+
 def decrypt(message):
     message += ' '
 
