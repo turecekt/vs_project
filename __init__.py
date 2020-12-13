@@ -274,9 +274,10 @@ def HeurestickaMetoda(o):
 
 
 # FUNKCE MAIN >>
-moznePrvocislo = Vstup()            # Získá vstup od uživatele
+if __name__ == "__main__":
+    moznePrvocislo = Vstup()            # Získá vstup od uživatele
 
-if(moznePrvocislo > 0):             # Otestuje chybový vstup
-    Vystup(Metody(moznePrvocislo))  # Vystup s řešením
-else:
-    Vystup()                        # Vystup s chybovou hláškou
+    if(moznePrvocislo > 0):             # Otestuje chybový vstup
+        Vystup(Metody(moznePrvocislo))  # Vystup s řešením
+    else:
+        Vystup()                        # Vystup s chybovou hláškou

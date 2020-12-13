@@ -47,8 +47,13 @@ def test_Metody():
     assert Metody(40011) == -4
 
 
-def test_MetodaPravidelDelitelnosti(): 
+def test_MetodaPravidelDelitelnosti():
+    assert MetodaPravidelDelitelnosti(40) == True
+    assert MetodaPravidelDelitelnosti(42) == True 
     assert MetodaPravidelDelitelnosti(44) == True
+    assert MetodaPravidelDelitelnosti(45) == True
+    assert MetodaPravidelDelitelnosti(46) == True
+    assert MetodaPravidelDelitelnosti(48) == True
     assert MetodaPravidelDelitelnosti(51) == False
 
 
@@ -62,6 +67,7 @@ def test_DeterministickaMetoda():
 def test_ZjistiVicePrvocisel():
     assert ZjistiVicePrvocisel(["2", "3", "5", "7", "11", "13"], 25) == ["2", "3", "5", "7", "11", "13", "17", "19", "23"]
     assert ZjistiVicePrvocisel(["2", "3", "5", "7"], 15) == ["2", "3", "5", "7", "11", "13"]
+    assert ZjistiVicePrvocisel(["2"], 10) == ["2", "3", "5", "7"]
 
 def test_HeurestickaMetoda(): 
     assert HeurestickaMetoda(7) == True
@@ -304,9 +310,10 @@ def HeurestickaMetoda(o):
 
 
 # FUNKCE MAIN >>
-moznePrvocislo = Vstup()            # Získá vstup od uživatele
+if __name__ == "__main__":
+    moznePrvocislo = Vstup()            # Získá vstup od uživatele
 
-if(moznePrvocislo > 0):             # Otestuje chybový vstup
-    Vystup(Metody(moznePrvocislo))  # Vystup s řešením
-else:
-    Vystup()                        # Vystup s chybovou hláškou
+    if(moznePrvocislo > 0):             # Otestuje chybový vstup
+        Vystup(Metody(moznePrvocislo))  # Vystup s řešením
+    else:
+        Vystup()                        # Vystup s chybovou hláškou
