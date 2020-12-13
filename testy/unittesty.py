@@ -3,9 +3,9 @@ import unittest
 import source_test
 
 
+"""Tato class funguje pro testování našeho source."""
 # Testovácí class
 class TestMorseovky(unittest.TestCase):
-
 
     # PŘEVODY Z ABECEDY DO MORSEOVKY
     def test_1(self):
