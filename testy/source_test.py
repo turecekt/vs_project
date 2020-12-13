@@ -85,8 +85,9 @@ def prevod(vstup):
 
         return g
 
+
 def main():
-    """Main funkce."""
+    """Hlavní funkce pro spuštění programu."""
     # Vytvoření vstupu
     print('--KODÉR A DEKODÉR MORSEOVKY--')
     vstup = input('Zadejte text pro převod: ')
