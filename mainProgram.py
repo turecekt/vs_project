@@ -22,7 +22,7 @@ if functions.souradniceJeCislo(xA, xB, xC, yA, yB, yC) == 1:
     yC = float(yC.replace(',', '.'))
 
     # Podmínka pro zkontolování jestli je daný objekt trojúhelník
-    if functions.obsahTrojuhelniku(xA, xB, xC, yA, yB, yC) != 0:
+    if functions.obsahTroj(xA, xB, xC, yA, yB, yC) != 0:
         "Výpis výsledných hodnot volaných ze souboru functions.py"
         print('\nPodle zadaných souřadnic bodů se jedná o trojúhelník.\n')
         print('Souřadnice jednotlivých bodů trojúhelníku:\n')
