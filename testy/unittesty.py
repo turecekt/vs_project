@@ -8,7 +8,7 @@ class TestMorseovky(unittest.TestCase):
 
     # PŘEVODY Z ABECEDY DO MORSEOVKY
     def test_1(self):
-    """jen písmena všechna mala."""
+        """jen písmena všechna malá."""
         result = source_test.prevod("sos")
         self.assertEqual(result, "... --- ... ")
 

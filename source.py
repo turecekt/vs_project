@@ -59,7 +59,7 @@ def prevod(vstup):
                 if prvek == morseovka[i]:
                     g = g + i
 
-    return g
+        return g
 
     # Převedení z textu do morseovky
     else:
