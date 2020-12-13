@@ -85,36 +85,44 @@ def jePravouhly(a, b, c):
     else:
         return False
 
-print("Zadejte souřadnice pro bod A na ose X: ")
-ax = float(input())
-print("Zadejte souřadnice pro bod A na ose Y: ")
-ay = float(input())
-print("Zadejte souřadnice pro bod B na ose X: ")
-bx = float(input())
-print("Zadejte souřadnice pro bod B na ose Y: ")
-by = float(input())
-print("Zadejte souřadnice pro bod C na ose X: ")
-cx = float(input())
-print("Zadejte souřadnice pro bod C na ose Y: ")
-cy = float(input())
-stra = delkaStrany(cx, cy, bx, by)
-print("Délka strany a: " + str(stra) + " cm")
-strb = delkaStrany(ax, ay, cx, cy)
-print("Délka strany b: " + str(strb) + " cm")
-strc = delkaStrany(bx, by, ax, ay)
-print("Délka strany c: " + str(strc) + " cm")
-if jeSestrojitelny(stra, strb, strc):
-    print("Trojúhelník je sestrojitelný")
-else:
-    print("Trojúhelník není sestrojitelný")
-obvod = getObvod(stra, strb, strc)
-print("Obvod trojúhelníku je " + str(obvod) + " cm")
-obsah = getObsah(stra, strb, strc)
-if obsah >= 0:
-    print("Obsah trojúhelníku je " + str(obsah) + " cm")
-else:
-    print("Obsah nelze vypočítat (záporné číslo pod odmocninou)")
-if jePravouhly(stra, strb, strc):
-    print("Trojúhelník je pravoúhlý")
-else:
-    print("Trojúhelník není pravoúhlý")
+def trojuhelnik():
+    """Calculate various properties of a triangle.
+
+    Calculate the length of the sides, the perimeter and
+    the area (if possible to calculate) of a triangle based on the entered
+    coordinates of its three vertices.
+    Also calculate if the triangle is valid and if it is a right triangle.
+    """
+    print("Zadejte souřadnice pro bod A na ose X: ")
+    ax = float(input())
+    print("Zadejte souřadnice pro bod A na ose Y: ")
+    ay = float(input())
+    print("Zadejte souřadnice pro bod B na ose X: ")
+    bx = float(input())
+    print("Zadejte souřadnice pro bod B na ose Y: ")
+    by = float(input())
+    print("Zadejte souřadnice pro bod C na ose X: ")
+    cx = float(input())
+    print("Zadejte souřadnice pro bod C na ose Y: ")
+    cy = float(input())
+    stra = delkaStrany(cx, cy, bx, by)
+    print("Délka strany a: " + str(stra) + " cm")
+    strb = delkaStrany(ax, ay, cx, cy)
+    print("Délka strany b: " + str(strb) + " cm")
+    strc = delkaStrany(bx, by, ax, ay)
+    print("Délka strany c: " + str(strc) + " cm")
+    if jeSestrojitelny(stra, strb, strc):
+        print("Trojúhelník je sestrojitelný")
+    else:
+        print("Trojúhelník není sestrojitelný")
+    obvod = getObvod(stra, strb, strc)
+    print("Obvod trojúhelníku je " + str(obvod) + " cm")
+    obsah = getObsah(stra, strb, strc)
+    if obsah >= 0:
+        print("Obsah trojúhelníku je " + str(obsah) + " cm")
+    else:
+        print("Obsah nelze vypočítat (záporné číslo pod odmocninou)")
+    if jePravouhly(stra, strb, strc):
+        print("Trojúhelník je pravoúhlý")
+    else:
+        print("Trojúhelník není pravoúhlý")
