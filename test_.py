@@ -146,3 +146,25 @@ def test_nesestrojitelnytrojuhelnik_sestrojitelny():
     """
     total = nesetrojitelny_trojuhelnik.jeSestrojitelny()
     assert total == "NE"
+
+
+def test_vstup():
+    """
+    Jednotkový test k vstup().
+
+    Args:
+        Žádné argumenty.
+    """
+    trojuhelnik = classes.vstup("3 4", "5 6", "7 8")
+    total1 = trojuhelnik.Ax
+    total2 = trojuhelnik.Ay
+    total3 = trojuhelnik.Bx
+    total4 = trojuhelnik.By
+    total5 = trojuhelnik.Cx
+    total6 = trojuhelnik.Cy
+    assert total1 == 3
+    assert total2 == 4
+    assert total3 == 5
+    assert total4 == 6
+    assert total5 == 7
+    assert total6 == 8

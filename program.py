@@ -12,7 +12,21 @@ import classes
 
 """Vlastní program"""
 
-zadanyTrojuhelnik = classes.vstup()
+print("""Vstupem programu  jsou souřadnice
+          vrcholů (tří bodů) ve 2D prostoru""")
+print()
+print("""Program poté sdělí informaci o sestrojitelnosti trojúhelníku,
+          informaci o délkách stran, obvod,
+          obsah a informaci o tom, zda je trojúhelník pravoúhlý""")
+print()
+print("""Zadejte body A, B a C v 2D prostory, a to ve tvaru
+          např. Ax mezera Ay, při úmyslu zadat bod B[3, 7], tedy
+          zadám na vyzvání k bodu B číslo 3 7.""")
+
+First = input("Zadejte souřadnice bodu A: ")
+Second = input("Zadejte souřadnice bodu B: ")
+Third = input("Zadejte souřadnice bodu C: ")
+zadanyTrojuhelnik = classes.vstup(First, Second, Third)
 if zadanyTrojuhelnik.jeSestrojitelny() == "NE":
     a = zadanyTrojuhelnik.delkaStrany("a")
     b = zadanyTrojuhelnik.delkaStrany("b")
