@@ -34,9 +34,7 @@ def sides(itr_):
     """Miscalculation of turns."""
     old = 'r'
     new = old
-    turtle.ht()
-    turtle.speed(0)
-    turtle.forward(10)
+
     for i in range(1, itr_, 1):
         new = old + 'r'
         old = old[::-1]
@@ -57,5 +55,7 @@ if __name__ == '__main__':
         itr = 9
     itr = int(itr)
     q = sides(itr)
+    turtle.ht()
+    turtle.speed(0)
     turn_line(q)
     turtle.done()
