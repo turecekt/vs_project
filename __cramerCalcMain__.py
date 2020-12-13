@@ -15,9 +15,9 @@ import sys
 
 
 def main():
-    """This method runs all the code.
+    """Function runs all code for calculation of matrixes.
 
-    this method is run automatically after script is opened
+    This method is run automatically after script is opened
     """
     if(len(sys.argv) != 2):
         if(len(sys.argv) < 2):
@@ -77,7 +77,6 @@ def main():
     results["x"] = determinantCalculation(replaceWithRightSides(matrix, vector, 0))/determinantOfMatrix
     results["y"] = determinantCalculation(replaceWithRightSides(matrix, vector, 1))/determinantOfMatrix
     results["z"] = determinantCalculation(replaceWithRightSides(matrix, vector, 2))/determinantOfMatrix
-
 
     # print results of calculation
     print("Results form matrix:")
