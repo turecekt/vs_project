@@ -1,14 +1,14 @@
-# import class source_test pro testování a unittestingu
+"""Testování source"""
 import unittest
 import source_test
+
 
 # Testovácí class
 class TestMorseovky(unittest.TestCase):
 
-
     # PŘEVODY Z ABECEDY DO MORSEOVKY
-    # jen písmena všechna mala
     def test_1(self):
+        # jen písmena všechna mala
         result = source_test.prevod("sos")
         self.assertEqual(result, "... --- ... ")
 
@@ -47,6 +47,7 @@ class TestMorseovky(unittest.TestCase):
     def test_8(self):
         result = source_test.prevod("-- .- -- ..--- ----- .-.. . -")
         self.assertEqual(result, "MAM20LET")
+
 
 if __name__ == '__main__':
     unittest.main()
