@@ -2,6 +2,13 @@ import math
 
 
 def sestrojitelnost():
+    '''
+    Funkce zjistuje jestli lze sestrojit trojuhelnik
+
+    Vraci:
+    true = trojuhelnik lze sestrojit
+    false = trojhelnik nelze sestrojit
+    '''
 
     lze = sA + sB > sC and sB + sC > sA and sA + sC > sB
 
@@ -9,6 +16,11 @@ def sestrojitelnost():
 
 
 def obsah():
+    '''
+    Funkce pocita obsah trojuhelniku
+
+    Vraci float s vypocitanou hodnotou
+    '''
 
     s = (sA + sB + sC) / 2
 
@@ -18,11 +30,23 @@ def obsah():
 
 
 def obvod():
+    '''
+    Funkce pocita obvod trojuhelniku
+
+    Vraci float s vypocitanou hodnotou
+    '''
 
     return sA + sB + sC
 
 
 def pravouhelnost():
+    '''
+    Funkce zjistuje jesli je trojuhelnik pravouhly
+
+    Vraci:
+    true = trojuhelnik je pravouhlu
+    false = trojuhelnik neni pravouhlu
+    '''
 
     nejdelsi = max(sA, sB, sC)
 
@@ -58,7 +82,7 @@ if __name__ == '__main__':
         int(Cx)
         int(Cy)
     except Exception:
-       print('Cisla byla zadana ve spatnem tvaru! Zadej pouze cela cisla.')
+        print('Cisla byla zadana ve spatnem tvaru! Zadej pouze cela cisla.')
     else:
         sA = math.sqrt(((int(Bx) - int(Ax)) ** 2) + ((int(By) - int(Ay)) ** 2))
         sB = math.sqrt(((int(Cx) - int(Bx)) ** 2) + ((int(Cy) - int(By)) ** 2))
