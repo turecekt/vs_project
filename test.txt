@@ -24,4 +24,5 @@ def encrypt(message):
             				# a 2 označuje různá slova
             sifra += ' '
     return sifra 			#vrací šifru
+print(encrypt(message))			#vypíše šifru v morseově abecedě
 
