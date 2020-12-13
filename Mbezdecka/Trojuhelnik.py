@@ -6,33 +6,36 @@ Jaky je jeho obvod a obsah.
 Zda je nebo neni pravouhly.
 
 """
+import math
+import sys
 
 
 def nacteni_bodu():
     """Nacteni Bodu."""
-    print("Zadej souradnice bodu, danou souradnici vzdy potvrd enterem")
-    nc = [0, 0]
-    nc[0] = input()
-    nc[1] = input()
-    return nc
+    while(True):
+        vstup = input("Spustit program trojuhelnik A/N?: ")
+        if(vstup == 'A'):
+            print("Zadej souradnice bodu x a y")
+            xA = int(input("Zadaj souradnici x bodu A: "))
+            yA = int(input("Zadaj souradnici y bodu A: "))
+            xB = int(input("Zadaj souradnici x bodu B: "))
+            yB = int(input("Zadaj souradnici y bodu B: "))
+            xC = int(input("Zadaj souradnici x bodu C: "))
+            yC = int(input("Zadaj souradnici y bodu C: "))
+            vypis(xA, yA, xB, yB, xC, yC)
+        elif(vstup == 'N'):
+            sys.exit()
+        else:
+            print("Zadaj Y alebo N")
 
 
-def vypocet_strany(A, B):
+def vypocet_strany(x0, y0, x1, y1):
     """Vypocet strany.
 
-    >>> vypocet_strany([1, 3], [3, 5])
+    >>> vypocet_strany(1, 3, 3, 5)
     2.828
-    >>> import math
-    >>> math.sqrt(float(4**2) + float(3**2))
-    5.0
-    >>> float(5) - float(4)
-    1.0
     """
-    import math
-    ab = [0, 0]
-    ab[0] = float(A[0]) - float(B[0])
-    ab[1] = float(A[1]) - float(B[1])
-    S = float(math.sqrt(float(ab[0]**2) + float(ab[1]**2)))
+    S = math.sqrt((x0 - x1)**2 + (y0 - y1)**2)
     return round(S, 3)
 
 
@@ -75,7 +78,6 @@ def obsah(Sa, Sb, Sc):
     >>> obvod(4.243, 5.099, 2.828)/2
     6.085
     """
-    import math
     s = obvod(Sa, Sb, Sc)/2
     return round(math.sqrt(s*(s-Sa)*(s-Sb)*(s-Sc)))
 
@@ -94,29 +96,24 @@ def pravouhly(Sa, Sb, Sc):
      >>> 2**2
      4
     """
-    SbSc = round(Sb**2 + Sc**2)
-    SaSb = round(Sa**2 + Sb**2)
-    SaSc = round(Sa**2 + Sc**2)
-    if round(Sc**2) == SaSb or round(Sa**2) == SbSc or round(Sb**2) == SaSc:
+    if ((round(Sc**2) == round(Sa**2 + Sb**2))
+        or (round(Sa**2) == round(Sb**2 + Sc**2))
+            or (round(Sb**2) == round(Sa**2 + Sc**2))):
         return True
     else:
         return False
 
 
-if __name__ == '__main__':
-    """ Hlavni telo programu."""
-
-    A = ['0', '0']
-    B = ['0', '0']
-    C = ['0', '0']
-    check = False
-    A = nacteni_bodu()
-    B = nacteni_bodu()
-    C = nacteni_bodu()
-    Sa = vypocet_strany(B, C)
-    Sb = vypocet_strany(A, C)
-    Sc = vypocet_strany(A, B)
+def vypis(xA, yA, xB, yB, xC, yC):
+    """Vypis hodnot do terminalu
+    >>> vypis(0, 0, 0, 0, 0, 0)
+    Trojuhelnik nelze setrojit
+    """
+    Sa = vypocet_strany(xB, yB, xC, yC)
+    Sb = vypocet_strany(xA, yA, xC, yC)
+    Sc = vypocet_strany(xA, yA, xB, yB)
     check = sestrojitelny(Sa, Sb, Sc)
+
     if check is True:
         print("Delka strany a je: ", round(Sa, 3))
         print("Delka strany b je: ", round(Sb, 3))
@@ -130,3 +127,9 @@ if __name__ == '__main__':
             pass
     else:
         pass
+
+
+if __name__ == '__main__':
+    """ Hlavni telo programu."""
+
+    nacteni_bodu()
