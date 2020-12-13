@@ -154,7 +154,7 @@ def read_file():
 
 # Hlavní funkce:
 def main():
-    """Main function."""
+    """Run main driver function of the program."""
     mylist = []
     print("Jaký řadící algortimus chcete použít?")
     x = int(input("Quick sort[1], Heap sort[2], Python Builtin[3]"))
@@ -267,6 +267,7 @@ def test_min_max():
     assert res[3] == '2'
     # test_minmax = min_max([57, 21, 63, 15])
     # assert test_minmax == ['15', '63', '3', '2']
+
 
 if __name__ == "__main__":
     main()
