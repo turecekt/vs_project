@@ -55,7 +55,6 @@ def main(file=0):
         except IOError:
             print("File "+file+' not found on this machine')
 
-
     lines = []
     # convert file to array of strings where string is one line.
     for line in FILE:
