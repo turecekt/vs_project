@@ -108,13 +108,27 @@ def main():
     V mainu se prvne zavola input po encrypt potom
     zavola druhy input pro decrypt.
     """
-    message = input("Zadejte zprávu v abc: ").upper()
-    result = encrypt(message.upper())
-    print(result)
+    text = input('1 Zašifrování textu na morseovku\n'
+                 '2 Odšifrování morseovky na text\n'
+                 '3 konec\n'
+                 'Zvolte způsob překladu:')
 
-    message = input("Zadejte zprávu v morseovce: ")
-    result = decrypt(message)
-    print(result)
+    if text == '1':
+        message = input("Zadejte zprávu v abc: ").upper()
+        result = encrypt(message.upper())
+        print(result)
+
+    elif text == '2':
+        message = input("Zadejte zprávu v morseovce: ")
+        result = decrypt(message)
+        print(result)
+
+    elif text == '3':
+        exit()
+
+    else:
+        print('Špatný znak ukončuji program')
+        exit()
 
 
 if __name__ == '__main__':
