@@ -61,9 +61,9 @@ if __name__ == '__main__':
         print('Obsah je: ', obsah(), ' a obvod je: ', obvod())
 
         if pravouhelnost():
-            print('Trojuhelnik je pravoihly.')
+            print('Trojuhelnik je pravouhly.')
         else:
-            print('Trojuhelnik neni pravoihly.')
+            print('Trojuhelnik neni pravouhly.')
     else:
         print('Trojuhelnik nelze sestrojit.')
 
