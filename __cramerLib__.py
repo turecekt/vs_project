@@ -22,33 +22,31 @@ def determinantCalculation(matrixarray):
     Returns:
         determinant of given matrix, a number.
     """
-
-
-	#we need copy of array, not reference.
+	# we need copy of array, not reference.
     matrixArray = deepcopy(matrixarray)
-    #matrix is stored as list of 9 elementst, first rows, then columns beginning at te zero
+    # matrix is stored as list of 9 elementst, first rows, then columns beginning at te zero
     startIndexesP = [0, 3, 6]
     startIndexesM = [2, 5, 8]
 
-    #part of determinants
+    # part of determinants
     plusSide = 0
     minusSide = 0
 
-    #calculate positive side of determinantn
+    # calculate positive side of determinantn
     for start in startIndexesP:
-        #set current index to start  index and inner multiply to 1
+        # set current index to start  index and inner multiply to 1
         currentIndex = start
         innerMultiply = 1
-        #do-while replacement
+        # do-while replacement
         while True:
             if currentIndex > 8:
-                #remov 9 as there are 9 elements in array beginning at tha zero
+                # remov 9 as there are 9 elements in array beginning at tha zero
                 innerMultiply = innerMultiply * matrixArray[currentIndex -9]
             else:
                 innerMultiply = innerMultiply * matrixArray[currentIndex]
             currentIndex = currentIndex + 4
 
-            #when current index is same as
+            # when current index is same as
             if currentIndex - 8 == start:
                 break
         plusSide = plusSide + innerMultiply
@@ -70,7 +68,6 @@ def determinantCalculation(matrixarray):
         minusSide = minusSide + innerMultiply
 
     return plusSide - minusSide
-
 
 
 """This method replaces specified certain column in 3x3 matrix.

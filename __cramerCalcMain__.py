@@ -1,4 +1,3 @@
-
 """this module is wrapper for running calculation of matrixes
 
 """
@@ -19,7 +18,9 @@ import sys
 1
 """
 def main():
-
+    """
+        main of the script
+    """
     if(len(sys.argv) != 2):
         if(len(sys.argv) < 2):
             print("too few argumetns specified")
