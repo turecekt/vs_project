@@ -67,9 +67,14 @@ def decrypt(message):
     decipher = ''
     citext = ''
     for letter in message:
-
+        """Kazde pismeno ve zprave."""
         if letter != ' ':
+            """Pismeno neni NULL.
 
+            uzivatel nezada NULL
+            >>> decrypt('.')
+            'E'
+            """
             i = 0
 
             citext += letter
