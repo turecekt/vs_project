@@ -29,7 +29,7 @@ def encrypt(message):
 
     Vraceni vsech znaku v morseove sifre
     >>> encrypt(E)
-    '.'
+    '. '
     """
     cipher = ''
     for letter in message:
@@ -49,7 +49,7 @@ def test_encrypt():
 
     Vraceni vsech znaku v morseove sifre
     >>> encrypt('E')
-    '.'
+    '. '
     """
     assert encrypt('E') == '. '
 
