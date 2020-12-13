@@ -131,3 +131,8 @@ def test_delkaStrany():
     """Unit test for delkaStrany() function."""
     assert delkaStrany(14, 8, 3, 65) == 58.05
     assert (delkaStrany(47, 65, 3, 12) == 68.88) is True
+    
+def test_getObvod():
+    """Unit test for getObvod() function."""
+    assert getObvod(23.45, 32.01, 41.34) == 96.8
+    assert (getObvod(1.01, 2.35, 9.87) == 13.23) is True
