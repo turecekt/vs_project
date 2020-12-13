@@ -38,3 +38,29 @@ def pveta(c, b, a):
     else:
         return False
 
+
+def prepona(a, b, c):
+    """Urci nejdelsi stranu trojuhelniku."""
+    if (a > b):
+        if (a > c):
+            if (pveta(a, b, c)):
+                print("Trojuhelnik je pravouhly")
+            else:
+                print("Trojuhelnik neni pravoúhly")
+        else:
+            if (pveta(c, a, b)):
+                print("Trojuhelnik je pravouhly")
+            else:
+                print("Trojuhelnik neni pravoúhly")
+    else:
+        if (b > c):
+            if (pveta(b, a, c)):
+                print("Trojuhelnik je pravouhly")
+            else:
+                print("Trojuhelnik neni pravoúhly")
+        else:
+            if (pveta(c, a, b)):
+                print("Trojuhelnik je pravouhly")
+            else:
+                print("Trojuhelnik neni pravoúhly")
+
