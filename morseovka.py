@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
 
+# This program encodes and decodes latin alphabet to and from MorseCode
+
+# Morsecode dictionary
 MORSE_CODE_DICT = {'A':'.-'
                    'B':'-...'
                    'C':'-.-.'
@@ -37,3 +40,21 @@ MORSE_CODE_DICT = {'A':'.-'
                    '9':'----.'
                    '0':'-----'}
 
+# Function to encrypt the string
+# according to the morse code dictionary
+def encrypt(message):
+    cipher = ''
+    for letter in message:
+        if letter != '':
+            cipher += MORSE_CODE_DICT[letter] + ''
+        else:
+            cipher += ''
+            
+    return
+
+
+        
+            
+            
+            
+    
