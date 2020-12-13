@@ -13,7 +13,7 @@ def main():
 
     number = int(text)
 
-    if(number > 50):
+    if(check_higher_number(number)):
         print("Prvočíslo bude zjíštěno přes fermatovu metodu")
         if(fermat_test(number, 3)):
             print("Je prvočíslo")
@@ -26,6 +26,14 @@ def main():
             print("Je prvočíslo")
         else:
             print("Není prvočíslo")
+
+
+def check_higher_number(number):
+    """Check if number is higher then 100 to select best method."""
+    if(number > 100):
+        return True
+    else:
+        return False
 
 
 def print_input():
