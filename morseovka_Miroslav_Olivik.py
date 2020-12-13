@@ -56,7 +56,7 @@ if __name__ == "__main__":
 
     while True:
 
-        vyber = int(input"TVUJ VYBER: ") <-
+        vyber = int(input("TVUJ VYBER: ") <-
 
         if vyber == 1:
             print(Text_To_Code())
