@@ -7,64 +7,13 @@ class TestMethods(unittest.TestCase):
 
     def test1(self):
         """Kontrola správné hodnoty."""
-        assert prevod(1) == 'I'
-
-    def test2(self):
-        """Kontrola správné hodnoty."""
-        assert prevod(2) == 'II'
-
-    def test3(self):
-        """Kontrola správné hodnoty."""
-        assert prevod(3) == 'III'
-
-    def test4(self):
-        """Kontrola správné hodnoty."""
-        assert prevod(4) == 'IV'
-
-    def test5(self):
-        """Kontrola správné hodnoty."""
-        assert prevod(5) == 'V'
-
-    def test6(self):
-        """Kontrola správné hodnoty."""
-        assert prevod(9) == 'IX'
-
-    def test7(self):
-        """Kontrola správné hodnoty."""
-        assert prevod(10) == 'X'
-
-    def test8(self):
-        """Kontrola správné hodnoty."""
-        assert prevod(40) == 'XL'
-
-    def test9(self):
-        """Kontrola správné hodnoty."""
-        assert prevod(50) == 'L'
-
-    def test10(self):
-        """Kontrola správné hodnoty."""
-        assert prevod(90) == 'XC'
-
-    def test11(self):
-        """Kontrola správné hodnoty."""
-        assert prevod(100) == 'C'
-
-    def test12(self):
-        """Kontrola správné hodnoty."""
-        assert prevod(400) == 'CD'
-
-    def test13(self):
-        """Kontrola správné hodnoty."""
-        assert prevod(500) == 'D'
-
-    def test14(self):
-        """Kontrola správné hodnoty."""
-        assert prevod(900) == 'CM'
-
-    def test15(self):
-        """Kontrola správné hodnoty."""
-        assert prevod(1000) == 'M'
-
+        self.assertEqual(prevod(1), "I")
+        self.assertEqual(prevod(5), "V")
+        self.assertEqual(prevod(10), "X")
+        self.assertEqual(prevod(50), "L")
+        self.assertEqual(prevod(100), "C")
+        self.assertEqual(prevod(500), "D")
+        self.assertNotEqual(prevod(1000), "D")
 
 class ToRomanBadInput(unittest.TestCase):
     """Špatný vstup."""
