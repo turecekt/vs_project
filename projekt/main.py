@@ -126,20 +126,20 @@ if __name__ == '__main__':
 
 # PyTest sekce ------------------------------
 def test_obvod():
-    """ Test obvod(). """
+    """Test obvod()."""
     assert obvod(3, 4, 5) == 12
 
 
 def test_obsah():
-    """ Test obsah(). """
+    """Test obsah()."""
     assert obsah(3, 4, 5) == 6
 
 
 def test_pravouhelnost():
-    """ Test pravouhelnost(). """
+    """Test pravouhelnost()."""
     assert pravouhelnost(3, 4, 5) is True
 
 
 def test_sestrojitelnost():
-    """ Test sestrojitelnost(). """
+    """Test sestrojitelnost()."""
     assert sestrojitelnost(3, 4, 5) is True
