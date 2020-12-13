@@ -1,7 +1,7 @@
 """Minimax.py program pro serazeni cisel a vypisu informaci o prvcich."""
 import sys
 import random
-
+import pytest
 
 def main():
     """Hlavni funkce."""
@@ -124,6 +124,14 @@ def moznostizoradenia(cislo):  # funkce moznosti zoradenia
         return
     return serazeno
 
+def test_bubble_sort():
+    assert bubble_sort([45, 2077, 69, 420, 3, 666, 2020, 56, 28, 99, 4, 68])==[3, 4, 28,45, 56, 68, 69, 99, 420, 666, 2020, 2077]
+
+def test_selection_sort():
+    assert selection_sort([45, 2077, 69, 420, 3, 666, 2020, 56, 28, 99, 4, 68])==[3, 4, 28,45, 56, 68, 69, 99, 420, 666, 2020, 2077]
+
+def test_quick_sort():
+    assert quick_sort([45, 2077, 69, 420, 3, 666, 2020, 56, 28, 99, 4, 68])==[3, 4, 28,45, 56, 68, 69, 99, 420, 666, 2020, 2077]
 
 if __name__ == '__main__':  # umoznuje psani funkci pod main
     main()  # zavola main funkci
