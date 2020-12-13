@@ -109,7 +109,7 @@ def test_decrypt_empty_string():
     result = decrypt('')
     assert result == correctResult
 
-    
+
 # funkce main
 def main():
     """Definovani funkce main.
