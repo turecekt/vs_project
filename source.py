@@ -117,6 +117,7 @@ def decode(text):
 
 if __name__ == "__main__":
     text = input("Zadejte text: ").lower()
+    translated_text = ""
     valid = True
 
     # pokud prvni index je znak abecedy
