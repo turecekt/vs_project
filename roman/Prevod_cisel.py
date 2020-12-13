@@ -93,7 +93,7 @@ def prevod(cislo):
     """Prevod promenne cislo.
 
     >>> prevod(1)
-    I
+    'I'
     """
     """Seznamy znaku a jejich hodnot."""
     hodnota = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
