@@ -3,7 +3,7 @@
 Zaverecny projekt v Pythonu - Adam Karas
 """
 import random
-import time
+#import time
 
 
 def createRandomArray():
@@ -113,8 +113,8 @@ def insertionSort(array):
 def sortMenu(array):
     """User menu for sorting function."""
     sortingWay = int(input("Enter 1 for Selection Sort\n"
-                            "Enter 2 for Bubble Sort\n"
-                            "Enter 3 for Insertion Sort\n"))
+                           "Enter 2 for Bubble Sort\n"
+                           "Enter 3 for Insertion Sort\n"))
     if sortingWay == 1:
         print("Selection Sort:")
         selectionSort(array)
@@ -145,7 +145,7 @@ def test_GenerateRandomArray():
 
 
 def main():
-    """Main function of minimax program."""
+    """This is the main function of program."""
     print("")
     array = createRandomArray()
     print(array)
