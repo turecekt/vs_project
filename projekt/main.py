@@ -1,8 +1,8 @@
 import math
 
 
-def sestrojitelnost(): 
-    
+def sestrojitelnost():
+
     lze = sA + sB > sC and sB + sC > sA and sA + sC > sB
 
     return lze
@@ -19,9 +19,7 @@ def obsah():
 
 def obvod():
 
-    O = sA + sB + sC
-
-    return O
+    return sA + sB + sC
 
 
 def pravouhelnost():
