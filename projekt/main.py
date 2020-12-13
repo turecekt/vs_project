@@ -101,13 +101,6 @@ def test_decrypt():
     assert decrypt('.') == 'E'
 
 
-def testEncrypt():
-    """Unit test."""
-    assert encrypt("Radim") == ".-. .- -.. .. --"
-    assert encrypt("Ahoj e Radim") == ".- .... --- .---  .  .-. .- -.. .. --"
-    assert encrypt("12345") == ".---- ..--- ...-- ....- ....."
-
-
 # funkce main
 def main():
     """Definovani funkce main.
@@ -115,27 +108,13 @@ def main():
     V mainu se prvne zavola input po encrypt potom
     zavola druhy input pro decrypt.
     """
-    text = input('1 Zašifrování textu na morseovku\n'
-                 '2 Odšifrování morseovky na text\n'
-                 '3 konec\n'
-                 'Zvolte způsob překladu:')
+    message = input("Zadejte zprávu v abc: ").upper()
+    result = encrypt(message.upper())
+    print(result)
 
-    if text == '1':
-        message = input("Zadejte zprávu v abc: ").upper()
-        result = encrypt(message.upper())
-        print(result)
-
-    elif text == '2':
-        message = input("Zadejte zprávu v morseovce: ")
-        result = decrypt(message)
-        print(result)
-
-    elif text == '3':
-        exit()
-
-    else:
-        print('Špatný znak ukončuji program')
-        exit()
+    message = input("Zadejte zprávu v morseovce: ")
+    result = decrypt(message)
+    print(result)
 
 
 if __name__ == '__main__':
