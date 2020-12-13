@@ -102,9 +102,9 @@ def test_decrypt():
 
 def testEncrypt():
     """Unit test."""
-    assert toMorse("Radim") == ".-. .- -.. .. --"
-    assert toMorse("Ahoj ja jsem Radim") == ".- .... --- .---  .--- .-  .--- ... . --  .-. .- -.. .. --"
-    assert toMorse("12345") == ".---- ..--- ...-- ....- ....."
+    assert encrypt("Radim") == ".-. .- -.. .. --"
+    assert encrypt("Ahoj ja jsem Radim") == ".- .... --- .---  .--- .-  .--- ... . --  .-. .- -.. .. --"
+    assert encrypt("12345") == ".---- ..--- ...-- ....- ....."
 
 
 # funkce main
