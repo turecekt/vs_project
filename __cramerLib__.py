@@ -127,7 +127,7 @@ def convertToMatrixAndVector(fileContent, matrix, vector):
     Returns:
         - output - 0 on failure, 1 on sucess.
     """
-    for line in fileContent: # now convert array to vector and matrix.
+    for line in fileContent:  # now convert array to vector and matrix.
         column = 0
         # trim new line from line and spit it by delimieter, delimiter is space
         lineArray = line.rstrip("\n").split(" ")
