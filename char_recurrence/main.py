@@ -79,7 +79,7 @@ def number_occurence(file_data):
 
 
 def all_occurence(list):
-    """Print result collected and sorted in list.
+    """Find frequency of each char in string
 
     Returns:
         return all occurence of char
@@ -93,7 +93,7 @@ def all_occurence(list):
 
 
 def max_occurence(list):
-    """Print max occurence.
+    """Find max occurence.
 
     Returns:
         max occurence of char
@@ -106,7 +106,7 @@ def max_occurence(list):
 
 
 def min_occurence(list):
-    """Print min occurence.
+    """Find min occurence.
 
     Returns:
         min occurence of char
@@ -118,14 +118,28 @@ def min_occurence(list):
     return string
 
 
+def art_freq(list):
+    """Count frequency of characters.
+
+        Returns:
+            frequency of characters
+        """
+    number = 0
+    for x in list:
+        number += x[1]
+
+    return number/len(list)
+
+
 def main():
     """Execute all."""
     file_data = arguments()
     number_char(file_data)
-    print(all_occurence(number_occurence(file_data.replace(" ", ""))))
+    print("Celkovy pocet znakov je: ", number_char(file_data))
     print(max_occurence(number_occurence(file_data.replace(" ", ""))))
     print(min_occurence(number_occurence(file_data.replace(" ", ""))))
-
+    print(all_occurence(number_occurence(file_data.replace(" ", ""))))
+    print("Cetnost znakov je: ",art_freq( number_occurence(file_data)))
 
 if __name__ == '__main__':
     main()

@@ -65,5 +65,10 @@ class Test(unittest.TestCase):
                          " a pocet vyskytov je: 1",
                          main.min_occurence([('l', 1)]))
 
+    def test_art_freq(self):
+        """Test for frequency."""
+        self.assertEqual(1.0, main.art_freq(self.mylist))
+        self.assertNotEqual(4.0, main.art_freq(self.mylist))
+
     if __name__ == "__main__":
         unittest.main()
