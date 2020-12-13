@@ -64,6 +64,27 @@ def jeSestrojitelny(a, b, c):
     else:
         return False
 
+def jePravouhly(a, b, c):
+    """Calculate if a triangle is a right triangle.
+
+    Return true if the triangle is a right triangle or false if it is not
+    >>> jePravouhly(3, 5, 4)
+    True
+    >>> jePravouhly(4, 3, 5)
+    True
+    >>> jePravouhly(5, 3, 4)
+    True
+    >>> jePravouhly(74, 73, 72)
+    False
+    """
+    cond1 = math.pow(a, 2) == math.pow(b, 2) + math.pow(c, 2)
+    cond2 = math.pow(b, 2) == math.pow(c, 2) + math.pow(a, 2)
+    cond3 = math.pow(c, 2) == math.pow(a, 2) + math.pow(b, 2)
+    if cond1 or cond2 or cond3:
+        return True
+    else:
+        return False
+
 print("Zadejte souřadnice pro bod A na ose X: ")
 ax = float(input())
 print("Zadejte souřadnice pro bod A na ose Y: ")
@@ -93,7 +114,7 @@ if obsah >= 0:
     print("Obsah trojúhelníku je " + str(obsah) + " cm")
 else:
     print("Obsah nelze vypočítat (záporné číslo pod odmocninou)")
-if math.pow(2, stra) == math.pow(2, strb) + math.pow(2, strc) or math.pow(2, strb) == math.pow(2, strc) + math.pow(2, stra) or math.pow(2, strc) == math.pow(2, stra) + math.pow(2, strb):
+if jePravouhly(stra, strb, strc):
     print("Trojúhelník je pravoúhlý")
 else:
     print("Trojúhelník není pravoúhlý")
