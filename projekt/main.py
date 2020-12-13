@@ -5,31 +5,38 @@ Pokud ano, tak se vypocita delka jeho stran, obsah, obvod
 a jestli je pravouhly.
 Program prijima souradnice bodu A,B,C z konzole a vypisuje vysledky na konzoli.
 
-Tvurce: Tomáš Blaho
+Tvurce: Tomas Blaho
 """
 
 import math
-
 
 # PyTest sekce ------------------------------
 def test_obvod():
     """Test obvod()."""
     assert obvod(3, 4, 5) == 12
+    assert obvod(5, 4, 3) == 12
+    assert obvod(3, 5, 4) == 12
 
 
 def test_obsah():
     """Test obsah()."""
     assert obsah(3, 4, 5) == 6
+    assert obsah(5, 4, 3) == 6
+    assert obsah(3, 5, 4) == 6
 
 
 def test_pravouhelnost():
     """Test pravouhelnost()."""
     assert pravouhelnost(3, 4, 5) is True
+    assert pravouhelnost(5, 4, 3) is True
+    assert pravouhelnost(3, 5, 4) is True
 
 
 def test_sestrojitelnost():
     """Test sestrojitelnost()."""
     assert sestrojitelnost(3, 4, 5) is True
+    assert sestrojitelnost(5, 4, 3) is True
+    assert sestrojitelnost(4, 5, 3) is True
 
 
 def sestrojitelnost(A, B, C):
@@ -84,35 +91,22 @@ def pravouhelnost(A, B, C):
         je = C ** 2 == A ** 2 + B ** 2
     elif nejdelsi == B:
         je = B ** 2 == A ** 2 + C ** 2
-    elif nejdelsi == sA:
+    elif nejdelsi == A:
         je = A ** 2 == B ** 2 + C ** 2
 
     return je
 
 
 if __name__ == '__main__':
-    # Program pozaduje uzivatelsky vstup.
-    print('Napis souradnici x bodu A: ')
-    Ax = input()
-    print('Napis souradnici y bodu A: ')
-    Ay = input()
-    print('Napis souradnici x bodu B: ')
-    Bx = input()
-    print('Napis souradnici y bodu B: ')
-    By = input()
-    print('Napis souradnici x bodu C: ')
-    Cx = input()
-    print('Napis souradnici y bodu C: ')
-    Cy = input()
-
     # Zkouska cisel jestli jsou ve spravnem tvaru.
     try:
-        int(Ax)
-        int(Ay)
-        int(Bx)
-        int(By)
-        int(Cx)
-        int(Cy)
+        # Program pozaduje uzivatelsky vstup.
+        Ax = int(input('Napis souradnici x bodu A: '))
+        Ay = int(input('Napis souradnici y bodu A: '))
+        Bx = int(input('Napis souradnici x bodu B: '))
+        By = int(input('Napis souradnici y bodu B: '))
+        Cx = int(input('Napis souradnici x bodu C: '))
+        Cy = int(input('Napis souradnici y bodu C: '))
     except Exception:
         # Nejsou ve spravnem tvaru. Program skoci na konec.
         print('Cisla byla zadana ve spatnem tvaru! Zadej pouze cela cisla.')
