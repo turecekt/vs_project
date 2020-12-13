@@ -59,3 +59,10 @@ ABECEDAmorse = {
     '–.––': 'Y',
     '––..': 'Z'
 }
+
+def Txt_do_Morse():
+    txt = input('Napiste text, ktery se ma prelozit do Morseovky:')
+    code = [morseABECEDA[i.upper()] + '' for i in txt if i.upper() in morseABECEDA.keys()]
+    morse = ''.join(code)
+    print(morse)
+
