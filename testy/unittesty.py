@@ -5,7 +5,6 @@ import source_test
 
 # Testovácí class
 class TestMorseovky(unittest.TestCase):
-"""Class na testování morseovky."""
 
     # PŘEVODY Z ABECEDY DO MORSEOVKY
     def test_1(self):
