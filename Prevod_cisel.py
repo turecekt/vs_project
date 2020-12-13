@@ -64,7 +64,8 @@ class TestMethods(unittest.TestCase):
     def test15(self):
         """Kontrola správné hodnoty."""
         assert prevod(1000) == 'M'
-        def test16(self):
+
+    def test16(self):
         """Kontrola správné hodnoty."""
         assert prevod(1226) == 'MCCXXVI'
 
