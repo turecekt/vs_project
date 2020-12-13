@@ -55,8 +55,8 @@ def main():
     vector = []
 
     # run conversion of file to matrix
-    if convertToMatrixAndVector(lines, matrix, vector) != 1:
-        sys.exit(1)
+    convertToMatrixAndVector(lines, matrix, vector)
+
 
     # determinant of matrix without altered columns
     determinantOfMatrix = determinantCalculation(matrix)
