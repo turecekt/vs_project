@@ -95,9 +95,9 @@ if __name__ == '__main__':
         # Nejsou ve spravnem tvaru. Program skoci na konec.
         print('Cisla byla zadana ve spatnem tvaru! Zadej pouze cela cisla.')
     else:
-		# Jsou ve spravnem tvaru.
-		# Zde se pocita delka sran A, B, C.
-		# Toto se bude pozdeji pouzivat ve funkcich.
+        # Jsou ve spravnem tvaru.
+        # Zde se pocita delka sran A, B, C.
+        # Toto se bude pozdeji pouzivat ve funkcich.
         sA = math.sqrt(((int(Bx) - int(Ax)) ** 2) + ((int(By) - int(Ay)) ** 2))
         sB = math.sqrt(((int(Cx) - int(Bx)) ** 2) + ((int(Cy) - int(By)) ** 2))
         sC = math.sqrt(((int(Ax) - int(Cx)) ** 2) + ((int(Ay) - int(Cy)) ** 2))
