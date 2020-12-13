@@ -96,9 +96,9 @@ def test_decrypt():
 
     Odsifrovani morseovky na text.
     >>> decrypt('.')
-    E
+    'E'
     """
-    assert decrypt('.') == E
+    assert decrypt('.') == 'E'
 
 
 # funkce main
