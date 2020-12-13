@@ -18,11 +18,12 @@ value entered by the user is a prime number
 This project was made for educational purpose only.
 
 """
+import unittest
 
 
 def prvocislo(val):  # program pro urceni prvocisla
-    """Chceck the val."""
-    if isinstance(val, int):         # checks if 'val' is of type 'int'
+    """Check the val."""
+    if isinstance(val, int):  # checks if 'val' is of type 'int'
 
         if val > 1:  # pro cislo > 1
             for i in range(2, val):
@@ -45,6 +46,9 @@ def prvocislo(val):  # program pro urceni prvocisla
             print(val, ' neni prvocislo.')  # cislo mezi 0 a 1
             print('(Pro vypocet byla pouzita deterministicka metoda.)')
             return 10
+    else:
+        print('Zadana hodnota musi byt cele cislo.')
+        return 22
 
 
 # print('(Pro vypocet byla pouzita deterministicka metoda.)')
@@ -54,49 +58,42 @@ def prvocislo(val):  # program pro urceni prvocisla
 
 
 # unit testy:
+class TestPrvocislo(unittest.TestCase):
 
-def test_is_one():
-    """Use this function to check the entered value 1."""
-    assert prvocislo(1) == 1        # from return
+    def test_is_one(self):
+        """Use this function to check the entered value 1."""
+        assert prvocislo(1) == 1  # from return
 
+    def test_is_not_val(self):
+        """Check if the entered value is not of the type 'int'."""
+        assert prvocislo('a') == 22
 
-def test_is_not_val():
-    """Check if the entered value is not of the type 'int'."""
-    assert prvocislo('a') == 22
+    def test_small_not_primes(self):
+        """Check if the entered low values aren't a prime number."""
+        for i in range(4, 100, 2):
+            assert prvocislo(i) == 2
 
+    def test_small_primes(self):
+        """Use this function to check the small prime values."""
+        numbers = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]
+        for i in range(0, (len(numbers) - 1)):
+            assert prvocislo(numbers[i]) == 99
 
-def test_small_not_primes():
-    """Check if the entered low values aren't a prime number."""
-    for i in range(4, 100, 2):
-        assert prvocislo(i) == 2
+    def test_big_primes(self):
+        """Use this function to check the big prime values."""
+        numbers = [104677, 104681, 104683, 104693, 104701,
+                   104707, 104711, 104717, 104723, 104729]
+        for i in range(0, (len(numbers) - 1)):
+            assert prvocislo(numbers[i]) == 99
 
-
-def test_big_not_primes():
-    """Check if the entered high values aren't a prime number."""
-    for i in range(100, 1000000, 2):
-        assert prvocislo(i) == 2
-
-
-def test_small_primes():
-    """Use this function to check the small prime values."""
-    numbers = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]
-    for i in range(0, (len(numbers)-1)):
-        assert prvocislo(numbers[i]) == 99
-
-
-def test_big_primes():
-    """Use this function to check the big prime values."""
-    numbers = [104677, 104681, 104683, 104693, 104701,
-               104707, 104711, 104717, 104723, 104729]
-    for i in range(0, (len(numbers)-1)):
-        assert prvocislo(numbers[i]) == 99
-
-
-def test_is_between():
-    """Check the entered value is between 0 and 1."""
-    assert prvocislo(0) == 10
+    def test_is_between(self):
+        """Check the entered value is between 0 and 1."""
+        assert prvocislo(0) == 10
 
 
 print('===Program pro posouzeni cisla / prvocisla===')
-cislo = int(input('Zadejte libovolne cele cislo k posouzeni: '))
+cislo = input('Zadejte libovolne cele cislo k posouzeni: ')
 prvocislo(cislo)
+
+if __name__ == '__main__':
+    unittest.main()
