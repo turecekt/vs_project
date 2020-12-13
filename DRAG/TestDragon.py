@@ -3,12 +3,12 @@ import unittest
 """
     Importing the unittest module to test the program DC.py.
 """
-from .Dragon import sides
+from Dragon import sides
 
 """
     Importing the sides function from the program DC.py
 """
-from .Dragon import input_data
+from Dragon import input_data
 
 """
     Importing the input_data function from the program DC.py

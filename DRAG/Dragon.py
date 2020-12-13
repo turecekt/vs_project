@@ -49,7 +49,7 @@ def sides(itr_):
         new = old + 'r'
         old = old[::-1]
         for j in range(0, len(old)):
-            if old[i] == 'r':
+            if old[j] == 'r':
                 old = old[:j] + 'l' + old[j + 1:]
             else:
                 old = (old[:j]) + 'r' + (old[j + 1:])
