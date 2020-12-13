@@ -120,5 +120,6 @@ def main():
 
     assert message('ahoj') != ('.-.-.-')
 
+
 if __name__ == '__main__':
     main()
