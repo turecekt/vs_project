@@ -1,7 +1,7 @@
 import math
 
-def sestrojitelnost():  
-
+def sestrojitelnost(): 
+    
     lze = sA + sB > sC and sB + sC > sA and sA + sC > sB
 
     return lze
@@ -28,3 +28,7 @@ if __name__ == '__main__':
         print('Trojuhelnik lze sestrojit.')
     else:
         print('Trojuhelnik nelze sestrojit.')
+
+    print('Strana A je dlouha: ', sA)
+    print('Strana B je dlouha: ', sB)
+    print('Strana C je dlouha: ', sC)
