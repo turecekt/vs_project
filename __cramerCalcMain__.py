@@ -11,10 +11,14 @@ from __cramerLib__ import determinantCalculation
 import sys
 
 
-"""This method wraps all the code"""
+"""This method wraps all the code.
+
+>>> convertToMatrixAndVector("matrixTest")
+0
+"""
 
 
-def main():
+def main(file=0):
     """Functon main calculates determinant of given matrix.
 
     This method is run automatically after script is opened
@@ -39,11 +43,18 @@ def main():
         sys.exit(0)
 
     # open file
-    try:
-        FILE = open(sys.argv[1])
-    except IOError:
-        print("File "+sys.argv[1]+' not found on this machine')
-        # sys.exit(1)
+    if file == 0:
+        try:
+            FILE = open(sys.argv[1])
+        except IOError:
+            print("File "+sys.argv[1]+' not found on this machine')
+            sys.exit(1)
+    else:
+        try:
+            FILE = open(file)
+        except IOError:
+            print("File "+file+' not found on this machine')
+
 
     lines = []
     # convert file to array of strings where string is one line.
@@ -86,7 +97,6 @@ def main():
     print("x: "+str(results["x"]))
     print("y: "+str(results["y"]))
     print("z: "+str(results["z"]))
-    sys.exit(0)
-
+    return 0
 
 # main()
