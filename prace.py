@@ -1,6 +1,8 @@
-import pytest
+
 import unittest
-from subprocess import check_output
+
+"""Kodovani a dekodovaní morseovy text."""
+"""Abeceda potřebná na překlad na Morse"""
 morseABECEDA = {
     ' ': '/',
     'A': '.–/',
@@ -31,7 +33,7 @@ morseABECEDA = {
     'Y': '–.––/',
     'Z': '––../'
 }
-
+"""Abeceda potřebná na překlad na text"""
 ABECEDAmorse = {
     '/': ' ',
     '.–': 'A',
@@ -63,12 +65,18 @@ ABECEDAmorse = {
     '––..': 'Z'
 }
 
+"""Přeložení text do morse."""
+
+
 def Txt_do_Morse():
     txt = input('Napiste text, ktery se ma prelozit do Morseovky:')
-    code = [morseABECEDA[i.upper()] + '' for i in txt if i.upper() in morseABECEDA.keys()]
+    code = [morseABECEDA[i.upper()] + '' for i in txt
+            if i.upper() in morseABECEDA.keys()]
     morse = ''.join(code)
     print(morse)
 
+
+"""Přeložení morse na text."""
 def Morse_do_Txt():
     txt = input('Napiste Morseovku ktera se ma prekladat na text:')
     novy = txt.split('/')
@@ -79,7 +87,7 @@ def Morse_do_Txt():
 
 print('''\n1- Prelozit text na Morseovku \n2- Prelozit Morseovku na text ''')
 
-
+"""Vybrání možnosti překladu text do morse nebo morse na text."""
 while True:
     try:
         selection = int(input('Vyberte si co na co chcete prekladat:'))
@@ -95,21 +103,20 @@ while True:
         print('Spatna volba')
 
 
-
-
-
 def test_prekladslov(prekladslov):
-
+    """Předklad text na morse."""
     assert prekladslov("AHOJ") == " .–/..../–––/.–––/"
     assert prekladslov('DOMOV') == "–../–––/––/–––/...–/"
-    assert prekladslov("DNES JE HEZKE POCASI") == "–../–././...//.–––/.//...././––../–.–/.//.––./–––/–.–./.–/.../../"
+    assert prekladslov("DNES JE HEZKE POCASI") == \
+           "–../–././...//.–––/.//...././––../–.–/.//.––./–––/–.–./.–/.../../"
 
 
-
-def test_predladmorse(predladmorse):
-
-    assert predladmorse("−/–––/––/.//.–––/.–/–.–//.–––/./") == "TOMEJAKJE"
-    assert predladmorse("–././.–./.–/–..//.––./.–./.–/–.–./..–/.–––/..–/") == "NERADPRACUJU"
-    assert predladmorse(".–./–.––/–.–./..../.–.././/–././–.../–––//.––./–––/––/.–/.–../..–/") == "RYCHLENEBOPOMALU"
+def test_predkladmorse(predkladmorse):
+    """Překlad morse na text."""
+    assert predkladmorse("−/–––/––/.//.–––/.–/–.–//.–––/./") == "TOMEJAKJE"
+    assert predkladmorse("–././.–./.–/–..//.––./.–./.–/–.–./..–/.–––/..–/") \
+           == "NERADPRACUJU"
+    assert predkladmorse(".–./–.––/–.–./..../.–.././/–././–.../–––//.––."
+                         "/–––/––/.–/.–../..–/") == "RYCHLENEBOPOMALU"
 
 
