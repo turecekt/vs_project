@@ -1,3 +1,6 @@
+import pytest
+import unittest
+from subprocess import check_output
 morseABECEDA = {
     ' ': '/',
     'A': '.–/',
@@ -92,8 +95,21 @@ while True:
         print('Spatna volba')
 
 
-def test_prekladslov():
+
+
+
+def test_prekladslov(prekladslov):
 
     assert prekladslov("AHOJ") == " .–/..../–––/.–––/"
     assert prekladslov('DOMOV') == "–../–––/––/–––/...–/"
     assert prekladslov("DNES JE HEZKE POCASI") == "–../–././...//.–––/.//...././––../–.–/.//.––./–––/–.–./.–/.../../"
+
+
+
+def test_predladmorse(predladmorse):
+
+    assert predladmorse("−/–––/––/.//.–––/.–/–.–//.–––/./") == "TOMEJAKJE"
+    assert predladmorse("–././.–./.–/–..//.––./.–./.–/–.–./..–/.–––/..–/") == "NERADPRACUJU"
+    assert predladmorse(".–./–.––/–.–./..../.–.././/–././–.../–––//.––./–––/––/.–/.–../..–/") == "RYCHLENEBOPOMALU"
+
+
