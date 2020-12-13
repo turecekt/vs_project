@@ -1,4 +1,7 @@
 from copy import deepcopy
+"""this module supplies methods for operation with matrixes.
+
+"""
 
 
 """This method calcualtes teterminant of matrix.
@@ -97,5 +100,58 @@ def replaceWithRightSides(matrixarray, vector, column):
 
     return workingArray
 
+"""This method converts input from fiel to matrix.
+
+ convertToMatrixAndVector - converts input from file to matrix an vector of right sides
+
+>>> matrix = []
+>>> vector = []
+>>> convertToMatrixAndVector(["1 1 1 1", "2 2 2 2", "3 3 3 3"], matrix, vector)
+1
+"""
+
 def convertToMatrixAndVector(fileContent, matrix, vector):
-    return 0
+    """Functon convertToMatrixAndVector checks and converts content of file to matrix and vector of right sides.
+
+    Args:
+        fileConetn - array of lines
+        matrix  - array representing matrix
+        vector - array, vector of right sides
+
+    Returns:
+        determinant of given matrix, a number.
+    """
+    if len(fileContent)<3:
+        print("File format problem: too few lines")
+        return (0)
+
+    if len(fileContent) > 3:
+        print("File format problem: too many lines")
+        return 0
+
+    #now convert array to vector and matrix.
+    for line in fileContent:
+        column = 0
+        #trim new line from line and spit it by delimieter, delimiter is space
+        lineArray = line.rstrip("\n").split(" ")
+        if len(lineArray) != 4:
+            print("Invalid number of cloumns in file. File must contain 4 columns, 3 for matrix and 1 for vector of right sides")
+            return 0
+
+        for element in lineArray:
+            try:
+                elementValue = float(element)
+            except ValueError:
+                print("Input Error! "+element+" can't be converted to string")
+                return 0
+
+
+            #first three columns are of
+            if column == 3:
+                vector.append(elementValue)
+            else:
+                matrix.append(elementValue)
+            #culumn counter increment
+            column += 1
+
+    return 1
