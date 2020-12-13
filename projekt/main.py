@@ -64,4 +64,7 @@ def main():
     message = input("Zadejte zprávu v morseovce: ")
     result = decrypt(message) 
     print (result)
+    
+if __name__ == '__main__': 
+    main()
   
