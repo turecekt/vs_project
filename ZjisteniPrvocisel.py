@@ -224,15 +224,18 @@ def ZjistiVicePrvocisel(cachePrvocisel, doCisla):
     step = 1
 
     while(cislo < doCisla):
+        startIndex = 1
+
         if(cislo < 13):
             step = 1
+            startIndex = 0
         elif(str(cislo)[-1] == '3'):
             step = 4
         else:
             step = 2
 
         jePrvocislo = True
-        for prvocislo in cachePrvocisel[1:]:
+        for prvocislo in cachePrvocisel[startIndex:]:
             if(cislo % int(prvocislo) == 0):
                 jePrvocislo = False
                 break

@@ -60,8 +60,8 @@ def test_DeterministickaMetoda():
 
 
 def test_ZjistiVicePrvocisel():
+    assert ZjistiVicePrvocisel(["2", "3", "5", "7", "11", "13"], 25) == ["2", "3", "5", "7", "11", "13", "17", "19", "23"]
     assert ZjistiVicePrvocisel(["2", "3", "5", "7"], 15) == ["2", "3", "5", "7", "11", "13"]
-
 
 def test_HeurestickaMetoda(): 
     assert HeurestickaMetoda(7) == True
@@ -74,7 +74,7 @@ def Vstup():
     Returns:
         - output - Vrátí číslo uživatele nebo 0 jako chybu
     """
-    NapsanaRadka = 0
+    NapsanaRadka = "0"
 
     for znak in NapsanaRadka:
         if not(znak in "0123456789"):
@@ -254,15 +254,18 @@ def ZjistiVicePrvocisel(cachePrvocisel, doCisla):
     step = 1
 
     while(cislo < doCisla):
+        startIndex = 1
+
         if(cislo < 13):
             step = 1
+            startIndex = 0
         elif(str(cislo)[-1] == '3'):
             step = 4
         else:
             step = 2
 
         jePrvocislo = True
-        for prvocislo in cachePrvocisel[1:]:
+        for prvocislo in cachePrvocisel[startIndex:]:
             if(cislo % int(prvocislo) == 0):
                 jePrvocislo = False
                 break
