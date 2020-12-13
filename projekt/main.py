@@ -54,18 +54,6 @@ def test_encrypt():
     assert encrypt('E') == '. '
 
 
-def compute(x):
-    """Functon compute returns evaluation of expression using argument x.
-
-    Args:
-        - x - Input of the function
-
-    Returns:
-        - output - Output of the function
-    """
-    return x * x - 2 * x
-
-
 # odsifrovavani
 def decrypt(message):
     """Odsifrovani zpravy.
