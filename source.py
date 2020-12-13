@@ -2,7 +2,8 @@
 def prevod(vstup):
 
     # Vytvoření dictionary pro morseovku
-    morseovka = {'1': '.----',
+    morseovka = {
+        '1': '.----',
         '2': '..---',
         '3': '...--',
         '4': '....-',
