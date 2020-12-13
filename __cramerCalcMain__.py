@@ -1,4 +1,5 @@
-"""this module is wrapper for running calculation of matrixes,
+"""This module is wrapper for running calculation of matrixes,
+
 you should tun it with file specified
 """
 
@@ -20,11 +21,10 @@ import sys
 
 
 def main():
-    """ main of the script,
+    """This is main of the script,
 
-        this method is run automatically after script is opened
+    this method is run automatically after script is opened
     """
-
     if(len(sys.argv) != 2):
         if(len(sys.argv) < 2):
             print("too few argumetns specified")
