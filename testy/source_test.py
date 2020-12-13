@@ -1,8 +1,8 @@
 ﻿"""Program pro převod z Morseovky do abecedy a naopak."""
 def prevod(vstup):
+
+    
     """Funkce pro tuto akci."""
-
-
     # Vytvoření dictionary pro morseovku
     morseovka = {
         '1': '.----',

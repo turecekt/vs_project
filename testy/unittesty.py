@@ -2,7 +2,7 @@
 import unittest
 import source_test
 
-
+"""Vytvoření testovací classy."""
 # Testovácí class
 class TestMorseovky(unittest.TestCase):
 
