@@ -98,7 +98,7 @@ def test_decrypt():
     >>> decrypt('.')
     E
     """
-    assert decrypt('.') == 'E'
+    assert decrypt('.') == E
 
 
 # funkce main
