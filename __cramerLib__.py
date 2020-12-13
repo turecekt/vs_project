@@ -148,7 +148,6 @@ def convertToMatrixAndVector(fileContent, matrix, vector):
                 print("Input Error! "+element+" can't be converted to string")
                 return 0
 
-
             # first three columns are of
             if column == 3:
                 vector.append(elementValue)
