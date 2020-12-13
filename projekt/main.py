@@ -57,16 +57,9 @@ if __name__ == '__main__':
     except:
        print('Cisla byla zadana ve spatnem tvaru! Zadej pouze cela cisla.')
     else:
-        int(Ax)
-        int(Ay)
-        int(Bx)
-        int(By)
-        int(Cx)
-        int(Cy)
-
-        sA = math.sqrt(((Bx - Ax) ** 2) + ((By - Ay) ** 2))
-        sB = math.sqrt(((Cx - Bx) ** 2) + ((Cy - By) ** 2))
-        sC = math.sqrt(((Ax - Cx) ** 2) + ((Ay - Cy) ** 2))
+        sA = math.sqrt(((int(Bx) - int(Ax)) ** 2) + ((int(By) - int(Ay)) ** 2))
+        sB = math.sqrt(((int(Cx) - int(Bx)) ** 2) + ((int(Cy) - int(By)) ** 2))
+        sC = math.sqrt(((int(Ax) - int(Cx)) ** 2) + ((int(Ay) - int(Cy)) ** 2))
 
         if sestrojitelnost():
             print('Trojuhelnik lze sestrojit.')
