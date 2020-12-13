@@ -141,3 +141,7 @@ def test_getObsah():
     """Unit test for getObsah() function."""
     assert getObsah(14, 17, 23) == 118.49
     assert (getObsah(8, 15, 34) >= 0) is False
+def test_jeSestrojitelny():
+    """Unit test for jeSestrojitelny() function."""
+    assert jeSestrojitelny(1, 88, 55) is False
+    assert jeSestrojitelny(76, 67, 55) is True
