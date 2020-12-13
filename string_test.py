@@ -1,4 +1,4 @@
-"""UnitTest k morseove pekladaci."""
+"""Unittest k morseove pekladaci."""
 
 import unittest
 
