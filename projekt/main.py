@@ -6,11 +6,6 @@ a jestli je pravouhly.
 Program prijima souradnice bodu A,B,C z konzole a vypisuje vysledky na konzoli.
 
 Tvurce: Tomáš Blaho
-
-PyTest:
-
-def test_obvod():
-    assert obvod(12, 16, 22) == 40
 """
 
 import math
@@ -127,3 +122,20 @@ if __name__ == '__main__':
 
     # Zde program ceka na uzivatelsky vstup k ukonceni.
     input('Zmackni Enter k zavreni programu.')
+
+
+# PyTest sekce ------------------------------
+def test_obvod():
+    assert obvod(3, 4, 5) == 12
+
+
+def test_obsah():
+    assert obsah(3, 4, 5) == 6
+
+
+def test_pravouhelnost():
+    assert pravouhelnost(3, 4, 5) == True
+
+
+def test_sestrojitelnost():
+    assert sestrojitelnost(3, 4, 5) == True
