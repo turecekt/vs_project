@@ -5,42 +5,42 @@ def prevod(vstup):
 
     # Vytvoření dictionary pro morseovku
     morseovka = {'1': '.----',
-    '2': '..---',
-    '3': '...--',
-    '4': '....-',
-    '5': '.....',
-    '6': '-....',
-    '7': '--...',
-    '8': '---..',
-    '9': '----.',
-    '0': '-----',
-    'A': '.-',
-    'B': '-...',
-    'C': '-.-.',
-    'D': '-..',
-    'E': '.',
-    'F': '..-.',
-    'G': '--.',
-    'H': '....',
-    'I': '..',
-    'J': '.---',
-    'K': '-.-',
-    'L': '.-..',
-    'M': '--',
-    'N': '-.',
-    'O': '---',
-    'P': '.--.',
-    'Q': '--.-',
-    'R': '.-.',
-    'S': '...',
-    'T': '-',
-    'U': '..-',
-    'V': '...-',
-    'W': '.--',
-    'X': '-..-',
-    'Y': '-.--',
-    'Z': '--..',
-    ' ': ' '}
+            '2': '..---',
+            '3': '...--',
+            '4': '....-',
+            '5': '.....',
+            '6': '-....',
+            '7': '--...',
+            '8': '---..',
+            '9': '----.',
+            '0': '-----',
+            'A': '.-',
+            'B': '-...',
+            'C': '-.-.',
+            'D': '-..',
+            'E': '.',
+            'F': '..-.',
+            'G': '--.',
+            'H': '....',
+            'I': '..',
+            'J': '.---',
+            'K': '-.-',
+            'L': '.-..',
+            'M': '--',
+            'N': '-.',
+            'O': '---',
+            'P': '.--.',
+            'Q': '--.-',
+            'R': '.-.',
+            'S': '...',
+            'T': '-',
+            'U': '..-',
+            'V': '...-',
+            'W': '.--',
+            'X': '-..-',
+            'Y': '-.--',
+            'Z': '--..',
+            ' ': ' '}
 
     g = ""
 
@@ -53,7 +53,8 @@ def prevod(vstup):
         #Vytvoření cyklu pro převod z morseovky na text
         for prvek in rozdVstup:
             if prvek not in morseovka.values():
-                    print('Zadávané znaky nejsou písmena, či číslice, nebo znaky morseovky') # Ošetření vstupu
+                    # Ošetření vstupu
+                    print('Zadávané znaky nejsou písmena, či číslice, nebo znaky morseovky') 
                     exit()
             for i in morseovka:
                 if prvek == morseovka[i]:
@@ -73,7 +74,8 @@ def prevod(vstup):
             
         for prvek in rozdVstup:
             if prvek not in morseovka:
-                    print('Zadávané znaky nejsou písmena, či číslice, nebo znaky morseovky') # Ošetření vstupu
+                    # Ošetření vstupu
+                    print('Zadávané znaky nejsou písmena, či číslice, nebo znaky morseovky') 
                     exit()
             for i in morseovka:
                 if prvek == i:
