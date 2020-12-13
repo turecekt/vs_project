@@ -125,17 +125,21 @@ if __name__ == '__main__':
 
 
 # PyTest sekce ------------------------------
+# Test obvod()
 def test_obvod():
     assert obvod(3, 4, 5) == 12
 
 
+# Test obsah()
 def test_obsah():
     assert obsah(3, 4, 5) == 6
 
 
+# Test pravouhelnost()
 def test_pravouhelnost():
-    assert pravouhelnost(3, 4, 5) == True
+    assert pravouhelnost(3, 4, 5) is True
 
 
+# Test sestrojitelnost()
 def test_sestrojitelnost():
-    assert sestrojitelnost(3, 4, 5) == True
+    assert sestrojitelnost(3, 4, 5) is True
