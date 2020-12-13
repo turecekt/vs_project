@@ -12,9 +12,6 @@ VÝSTUP
         (deterministickou/heuristickou metodou)
 
 Program obsahuje 7 funkcí, například:
-funkce Vstup()
->>> Vstup()
-0
 
 funkce Metody()
 >>> Metody(2)
