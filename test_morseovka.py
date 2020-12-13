@@ -1,4 +1,4 @@
-import morseovka
+import morse
 
 
 def test_Text_na_Morseovku():
@@ -9,7 +9,7 @@ def test_Text_na_Morseovku():
     assert Text_na_Morseovku('A A') == '.- / .-'
     assert Text_na_Morseovku('test') == '- . ... -'
     assert Text_na_Morseovku('33 -  10 = 23') == \
-           '...-- ...--  -....-   .---- -----  -...-  ..--- ...--'
+           '...-- ...-- / -....- / / .---- ----- / / ..--- ...--'
     assert Text_na_Morseovku('/+-: .    .') == \
            '-..-. .-.-. -....- ---...  .-.-.-     .-.-.-'
     assert Text_na_Morseovku('1234567890') == \
@@ -28,11 +28,11 @@ def test_Morseovka_na_Text():
     """
   
    
-    assert morseovka.Morseovka_na_Text('-..-. .-.-. -....- ---...  '
-                              '.-.-.-     .-.-.-') \
+    assert morseovka.Morseovka_na_Text('-..-. -....- / .-.-.- / .-.-.-') \
            == '/+-: . .'
-    assert morseovka.Morseovka_na_Text('.---- ..--- ...-- ....- ..... '
-                              '-.... --... ---.. ----. -----') \
+    assert morseovka.Morseovka_na_Text('.---- ..--- ...-- ....- ..... -.... --... ---.. ----. -----') \
            == '1234567890'
+    assert morseovka.Morseovka_na_Text('.--. -.-- - .... --- -. / .--- . / -. . .--- .-.. . .--. ... .. / .--- .- --.. -.-- -.- / -. .- / ... ...- . - . .-.-.-') \
+           == 'PYTHON JE NEJLEPSI JAZYK NA SVETE.'
 
         
