@@ -15,7 +15,7 @@ import sys
 
 
 def main():
-    """Function runs all code for calculation of matrixes.
+    """Function main runs all the code for calculation of matrixes.
 
     This method is run automatically after script is opened
     """
