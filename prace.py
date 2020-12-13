@@ -117,4 +117,4 @@ def test_Morse_do_Txt():
     assert Morse_do_Txt("–././.–./.–/–..//.––./.–./.–/–.–./..–/.–––/..–/") \
            == "NERADPRACUJU"
     assert Morse_do_Txt(".–./–.––/–.–./..../.–.././/–././–.../–––//.––."
-                         "/–––/––/.–/.–../..–/") == "RYCHLENEBOPOMALU"
+                        "/–––/––/.–/.–../..–/") == "RYCHLENEBOPOMALU"
