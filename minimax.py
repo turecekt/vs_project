@@ -39,7 +39,7 @@ def findMaxValue(array):
     return max_value
 
 
-def findMinIndex(array):
+def findMinIndex(array, min_value):
     """Find an index of min value in array.
 
     Returns:
@@ -49,7 +49,7 @@ def findMinIndex(array):
     return min_index
 
 
-def findMaxIndex(array):
+def findMaxIndex(array, max_value):
     """Find an index of max value in array.
 
     Returns:
@@ -110,6 +110,30 @@ def insertionSort(array):
     return array
 
 
+def sortMenu(array):
+    """User menu for sorting function."""
+    sortingWay = int(input("Enter 1 for Selection Sort\n"
+                            "Enter 2 for Bubble Sort\n"
+                            "Enter 3 for Insertion Sort\n"))
+    if sortingWay == 1:
+        print("Selection Sort:")
+        selectionSort(array)
+        print(array)
+
+    elif sortingWay == 2:
+        print("Bubble Sort:")
+        bubbleSort(array)
+        print(array)
+
+    elif sortingWay == 3:
+        print("Insertion Sort:")
+        insertionSort(array)
+        print(array)
+
+    else:
+        print("Wrong input!!")
+
+
 def test_GenerateRandomArray():
     """Generate Random Array test."""
     test_array = createRandomArray()
@@ -118,6 +142,25 @@ def test_GenerateRandomArray():
         if -1000 < test_array[i] < 1000:
             temp[i] = 1
         assert temp[i] == 1
+
+
+def main():
+    """Main function of minimax program."""
+    print("")
+    array = createRandomArray()
+    print(array)
+    print("")
+    min_value = findMinValue(array)
+    print("Minimal value of array: ", min_value)
+    min_index = findMinIndex(array, min_value)
+    print("Index of min value is: ", min_index)
+    max_value = findMaxValue(array)
+    print("Maximal value of array: ", max_value)
+    max_index = findMaxIndex(array, max_value)
+    print("Index of max value is: ", max_index)
+    print("")
+    sortMenu(array)
+    print("")
 
 
 def test_SelectionSort():
@@ -165,59 +208,5 @@ def test_MaxIndex():
     assert findMaxIndex(test_array) == 0
 
 
-# hlavni cast programu
-print("*" * 50)
-print("Generating 20 random numbers")
-print("-" * 50)
-# creating array via function
-array = createRandomArray()
-time.sleep(1)
-print(array)
-print("-" * 50)
-print("Getting min/max data and their index")
-print("-" * 50)
-time.sleep(1)
-# min value, min index
-min_value = findMinValue(array)
-print("Minimal value of array: ", min_value)
-min_index = findMinIndex(array)
-print("Index of min value is: ", min_index)
-print("-" * 50)
-time.sleep(1)
-# max value, max index
-max_value = findMaxValue(array)
-print("Maximal value of array: ", max_value)
-max_index = findMaxIndex(array)
-print("Index of max value is: ", max_index)
-print("-" * 50)
-time.sleep(1)
-# way of sorting data
-sortingWay = int(input("Enter 1 for Selection Sort\nEnter 2 for Bubble Sort\n"
-                       "Enter 3 for Insertion Sort\n"))
-print("-" * 50)
-time.sleep(1)
-
-try:
-    if sortingWay == 1:
-        print("Selection Sort:")
-        selectionSort(array)
-        print(array)
-
-    elif sortingWay == 2:
-        print("Bubble Sort:")
-        bubbleSort(array)
-        print(array)
-
-    elif sortingWay == 3:
-        print("Insertion Sort:")
-        insertionSort(array)
-        print(array)
-
-    else:
-        print("Wrong input!!")
-except Exception:
-    print("Chyba")
-
-print("*" * 50)
-print("End of program.")
-print("*" * 50)
+if __name__ == "__main__":
+    main()
