@@ -1,12 +1,17 @@
-import turtle
-import time
 
-""" turn_line - # 
-function for drawing
- Dragon curve"""
+import turtle
+"""
+    Importing the turtle module to use graphics.
+"""
+import time
+"""
+    Importing the time module to delay
+     the closing time of a window with Dragon curve
+"""
 
 
 def turn_line(a):
+    """Drawing Dragon curve."""
     for j in range(len(a)):
         if a[j] == 'r':
             turtle.right(90)
@@ -16,12 +21,8 @@ def turn_line(a):
             turtle.forward(10)
 
 
-"""input_data
- - function to enter background
-  and pen colors"""
-
-
 def input_data():
+    """Input bg and pen cl."""
     data = []
     for i in range(2):
         if i == 0:
@@ -37,24 +38,21 @@ def input_data():
     return data
 
 
-"""sides - function for calculating
- rotations Dragon curve"""
-
-
-def sides(itr):
+def sides(itr_):
+    """Miscalculation of turns."""
     old = 'r'
     new = old
     turtle.ht()
     turtle.speed(0)
     turtle.forward(10)
-    for i in range(1, itr, 1):
+    for i in range(1, itr_, 1):
         new = old + 'r'
         old = old[::-1]
-        for i in range(0, len(old)):
+        for j in range(0, len(old)):
             if old[i] == 'r':
-                old = old[:i] + 'l' + old[i + 1:]
+                old = old[:j] + 'l' + old[j + 1:]
             else:
-                old = (old[:i]) + 'r' + (old[i + 1:])
+                old = (old[:j]) + 'r' + (old[j + 1:])
         new += old
         old = new
     return new
@@ -67,4 +65,4 @@ if itr == '':
 itr = int(itr)
 q = sides(itr)
 turn_line(q)
-time.sleep(20)
+time.sleep(10)
