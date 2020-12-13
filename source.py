@@ -45,7 +45,7 @@ def prevod(vstup):
 
     # Převedení z morseovky na text
     if vstup.startswith('.') or vstup.startswith('-'):
-        
+
         # Rozdělení morseovky na jednotlivé kombinace
         rozdVstup = vstup.split(' ')
 
@@ -53,12 +53,12 @@ def prevod(vstup):
         for prvek in rozdVstup:
             if prvek not in morseovka.values():
                 # Ošetření vstupu
-                print('Zadávané znaky nejsou písmena, či číslice, nebo znaky morseovky') 
+                print('Zadaná nesprávná kombince znaků')
                 exit()
             for i in morseovka:
                 if prvek == morseovka[i]:
                     g = g + i
-            
+
     return g
 
     # Převedení z textu do morseovky
@@ -70,11 +70,11 @@ def prevod(vstup):
         rozdVstup = list(vstupV)
 
         # Vytvoření cyklu for pro převod zadaných znaků do morseovky
-            
+
         for prvek in rozdVstup:
             if prvek not in morseovka:
                 # Ošetření vstupu
-                print('Zadávané znaky nejsou písmena, či číslice, nebo znaky morseovky') 
+                print('Zadaná nesprávná kombince znaků')
                 exit()
             for i in morseovka:
                 if prvek == i:
@@ -82,10 +82,10 @@ def prevod(vstup):
 
         return g
 
+
 # Vytvoření vstupu
 print('--KODÉR A DEKODÉR MORSEOVKY--')
 vstup = input('Zadejte text pro převod: ')
 
 # Výstup
 print(prevod(vstup))
-
