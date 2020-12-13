@@ -52,6 +52,7 @@ def test_encrypt():
     '. '
     """
     assert encrypt('E') == '. '
+    assert encrypt('E E') == '. . '
 
 
 # odsifrovavani
