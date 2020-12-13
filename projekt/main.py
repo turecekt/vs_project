@@ -36,7 +36,6 @@ def encrypt(message):
         if letter != ' ':
 
             cipher += MORSE_DICTIONARY[letter] + ' '
-            assert letter('E') == cipher('.')
         elif letter == '':
             cipher = ''
         else:
