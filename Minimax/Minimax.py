@@ -77,6 +77,7 @@ def generate_array():
     sort(mylist)
     min_max(mylist)
 
+
 # Vstup:
 inputTestFails = False
 mylist = []
