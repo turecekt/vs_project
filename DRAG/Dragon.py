@@ -1,13 +1,5 @@
-
-import turtle
-"""
-    Importing the turtle module to use graphics.
-"""
-import time
-"""
-    Importing the time module to delay
-     the closing time of a window with Dragon curve
-"""
+"""Module (file) docstring."""
+import turtle  # Importing the turtle module to use graphics.
 
 
 def turn_line(a):
@@ -58,11 +50,12 @@ def sides(itr_):
     return new
 
 
-w = input_data()
-itr = input('Enter the number of iterations:')
-if itr == '':
-    itr = 9
-itr = int(itr)
-q = sides(itr)
-turn_line(q)
-time.sleep(10)
+if __name__ == '__main__':
+    w = input_data()
+    itr = input('Enter the number of iterations:')
+    if itr == '':
+        itr = 9
+    itr = int(itr)
+    q = sides(itr)
+    turn_line(q)
+    turtle.done()
