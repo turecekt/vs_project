@@ -117,6 +117,7 @@ def replaceWithRightSides(matrixarray, vector, column):
 
 def convertToMatrixAndVector(fileContent, matrix, vector):
     """Functon convertToMatrixAndVector checks and converts content.
+    
     Functon convertToMatrixAndVector checks and converts content of file to
     matrix and vector of right sides.
 
