@@ -20,6 +20,19 @@ def obvod():
 
     return O
 
+def pravouhelnost():
+
+    nejdelsi = max(sA, sB, sC)
+
+    if nejdelsi == sC:
+        je = sC ** 2 == sA ** 2 + sB ** 2
+    elif nejdelsi == sB:
+        je = sB ** 2 == sA ** 2 + sC ** 2
+    elif nejdelsi == sA:
+        je = sA ** 2 == sB ** 2 + sC ** 2
+
+    return je
+
 if __name__ == '__main__':
     print('Napis souradnici x bodu A: ')
     Ax = int(input())
@@ -46,6 +59,11 @@ if __name__ == '__main__':
         print('Strana C je dlouha: ', sC)
 
         print('Obsah je: ', obsah(), ' a obvod je: ', obvod())
+
+        if pravouhelnost():
+            print('Trojuhelnik je pravoihly.')
+        else:
+            print('Trojuhelnik neni pravoihly.')
     else:
         print('Trojuhelnik nelze sestrojit.')
 
