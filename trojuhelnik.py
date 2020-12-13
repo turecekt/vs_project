@@ -126,3 +126,8 @@ def trojuhelnik():
         print("Trojúhelník je pravoúhlý")
     else:
         print("Trojúhelník není pravoúhlý")
+        
+def test_delkaStrany():
+    """Unit test for delkaStrany() function."""
+    assert delkaStrany(14, 8, 3, 65) == 58.05
+    assert (delkaStrany(47, 65, 3, 12) == 68.88) is True
