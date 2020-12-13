@@ -64,24 +64,24 @@ if __name__ == '__main__':
         int(Cx)
         int(Cy)
 
-    sA = math.sqrt(((Bx - Ax) ** 2) + ((By - Ay) ** 2))
-    sB = math.sqrt(((Cx - Bx) ** 2) + ((Cy - By) ** 2))
-    sC = math.sqrt(((Ax - Cx) ** 2) + ((Ay - Cy) ** 2))
+        sA = math.sqrt(((Bx - Ax) ** 2) + ((By - Ay) ** 2))
+        sB = math.sqrt(((Cx - Bx) ** 2) + ((Cy - By) ** 2))
+        sC = math.sqrt(((Ax - Cx) ** 2) + ((Ay - Cy) ** 2))
 
-    if sestrojitelnost():
-        print('Trojuhelnik lze sestrojit.')
+        if sestrojitelnost():
+            print('Trojuhelnik lze sestrojit.')
 
-        print('Strana A je dlouha: ', sA)
-        print('Strana B je dlouha: ', sB)
-        print('Strana C je dlouha: ', sC)
+            print('Strana A je dlouha: ', sA)
+            print('Strana B je dlouha: ', sB)
+            print('Strana C je dlouha: ', sC)
 
-        print('Obsah je: ', obsah(), ' a obvod je: ', obvod())
+            print('Obsah je: ', obsah(), ' a obvod je: ', obvod())
 
-        if pravouhelnost():
-            print('Trojuhelnik je pravouhly.')
+            if pravouhelnost():
+                print('Trojuhelnik je pravouhly.')
+            else:
+                print('Trojuhelnik neni pravouhly.')
         else:
-            print('Trojuhelnik neni pravouhly.')
-    else:
-        print('Trojuhelnik nelze sestrojit.')
+            print('Trojuhelnik nelze sestrojit.')
 
     
