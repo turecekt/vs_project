@@ -66,3 +66,9 @@ def Txt_do_Morse():
     morse = ''.join(code)
     print(morse)
 
+def Morse_do_Txt():
+    txt = input('Napiste Morseovku ktera se ma prekladat na text:')
+    novy = txt.split('/')
+    code = [ABECEDAmorse[i] + '' for i in novy if i in ABECEDAmorse.keys()]
+    morse = ''.join(code)
+    print(morse)
