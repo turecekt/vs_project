@@ -1,4 +1,4 @@
-"""Unit testy."""
+"""Unitt testy."""
 
 import projekt
 
