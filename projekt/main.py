@@ -95,11 +95,6 @@ def decrypt(message):
     return decipher
 
 
-def test_encrypt_empty():
-    """Test kdyz je string na vstupu prazdny."""
-    assert encrypt('') == ''
-
-
 # testovani decryptu
 def test_decrypt():
     """Testovani decryptu.
