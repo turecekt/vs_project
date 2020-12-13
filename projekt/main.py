@@ -51,8 +51,17 @@ def test_encrypt():
     >>> encrypt('E')
     '. '
     """
-    assert encrypt('E') == '. '
+    correctResult = '. . . . '
+    result = encrypt('EEEE')
+    assert result == correctResult
 
+
+# test numbers
+def test_encrypt_numbers():
+    """Testing decrypting with numbers as an input."""
+    correctResult = '12345'
+    result = encrypt('.---- ..--- ...-- ....- ..... ')
+    assert result == correctResult
 
 # odsifrovavani
 def decrypt(message):
@@ -103,10 +112,11 @@ def test_decrypt():
     assert result == correctResult
 
 
-def test_decrypt_empty_string():
-    """Testing decrypting with empty input."""
-    correctResult = ''
-    result = decrypt('')
+# test numbers
+def test_decrypt_numbers():
+    """Testing decrypting with numbers as an input."""
+    correctResult = '12345'
+    result = decrypt('.---- ..--- ...-- ....- ..... ')
     assert result == correctResult
 
 
