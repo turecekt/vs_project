@@ -90,3 +90,10 @@ while True:
             print('Spatna volba')
     except:
         print('Spatna volba')
+
+
+def test_prekladslov():
+
+    assert prekladslov("AHOJ") == " .–/..../–––/.–––/"
+    assert prekladslov('DOMOV') == "–../–––/––/–––/...–/"
+    assert prekladslov("DNES JE HEZKE POCASI") == "–../–././...//.–––/.//...././––../–.–/.//.––./–––/–.–./.–/.../../"
