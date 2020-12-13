@@ -1,3 +1,11 @@
+"""
+Morseova sifra.
+
+Program se postupne zepta na vstupy ve formatu ABC,
+nebo v morseove sifre a nasledne prevede.
+"""
+
+
 MORSE_DICTIONARY = {'A': '.-', 'B': '-...',
                     'C': '-.-.', 'D': '-..', 'E': '.',
                     'F': '..-.', 'G': '--.', 'H': '....',
@@ -15,6 +23,7 @@ MORSE_DICTIONARY = {'A': '.-', 'B': '-...',
                     '(': '-.--.', ')': '-.--.-'}
 
 
+# zasifrovani
 def encrypt(message):
     cipher = ''
     for letter in message:
@@ -33,6 +42,7 @@ def test_encrypt():
     assert encrypt('E') == '. '
 
 
+# odsifrovavani
 def decrypt(message):
     message += ' '
 
@@ -62,11 +72,12 @@ def decrypt(message):
     return decipher
 
 
-#testovani decryptu
+# testovani decryptu
 def test_decrypt():
     assert decrypt('.') == ('E')
 
 
+# funkce main
 def main():
     message = input("Zadejte zprávu v abc: ").upper()
     result = encrypt(message.upper())
