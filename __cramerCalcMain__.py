@@ -28,13 +28,13 @@ def main():
             sys.exit(1)
 
     if(sys.argv[1] == 'help'):
-        print("-Welcome to 3x3 matrix variables calculation script\n script re\\
-        turns value of variables x y z of matrix epanded by vector of right \\
+        print("-Welcome to 3x3 matrix variables calculation script\n script re\
+        turns value of variables x y z of matrix epanded by vector of right \
         sides containing results of equations")
-        print("-Script is run by running python __cramerCalcMain__.py with spe\\
-        cification of file containing matrix to be solved with space used as d\\
+        print("-Script is run by running python __cramerCalcMain__.py with spe\
+        cification of file containing matrix to be solved with space used as d\
         elimiter between columns.")
-        print("-Matrix must be of 3x3 with column with results of equations, \\
+        print("-Matrix must be of 3x3 with column with results of equations, \
         thus in format:")
         print("\t k1x l1y m1z R1")
         print("\t k2x l2y m2z R2")
@@ -66,7 +66,7 @@ def main():
     determinantOfMatrix = determinantCalculation(matrix)
 
     if determinantOfMatrix == 0:
-        print("determinant of matrix is ZERO! Can't calcualte value of \\
+        print("determinant of matrix is ZERO! Can't calcualte value of \
         variables")
         sys.exit(1)
 
