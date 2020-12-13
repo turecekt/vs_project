@@ -63,6 +63,7 @@ def test_encrypt_numbers():
     result = encrypt('.---- ..--- ...-- ....- ..... ')
     assert result == correctResult
 
+
 # odsifrovavani
 def decrypt(message):
     """Odsifrovani zpravy.
