@@ -9,6 +9,8 @@ Program pro preklad textu na morseovku a naopak.
 "Wikipedia is a free online encyclopedia"
 2. ocekavany output:
 ".--|..|-.-|..|.--.|.|-..|..|.-||..|...||.-||..-.|.-.|.|.||---|-.|.-..|..|-.|.||.|-.|-.-.|-.--|-.-.|.-..|---|.--.|.|-..|..|.-"
+
+Petr Marak a Pavel Cuba, 2020
 """
 
 table = {
@@ -77,6 +79,7 @@ def encode(text):
         else:
             print("Text neni validni")
             valid = False
+            return None
             break
     # smaze posledni znak ktery je "|"
     translated_text = translated_text[0: len(translated_text) - 1]
@@ -101,24 +104,15 @@ def decode(text):
             else:
                 print("Text neni validni")
                 valid = False
+                return None
                 break
         else:
             print("Text neni validni")
             valid = False
+            return None
             break
     translated_text += get_letter_by_value(buffer)
     return translated_text
-
-
-# unit testy
-def test_encode():
-    """Unit test 1."""
-    assert encode("sos") == "...|---|..."
-
-
-def test_decode():
-    """Unit test 2."""
-    assert decode("...|---|...") == "sos"
 
 
 if __name__ == "__main__":
