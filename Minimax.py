@@ -25,9 +25,11 @@ def main():
         print("Vstup: ", end='')
         for x in numbers:  # napise vstupni cisla
             print(x, " ", end='')
-        print()
-        print("Nejmensi prvek: ", roztrizene[0])  # napise prvni cislo
-        print("Nejvetsi prvek: ", roztrizene[len(roztrizene)-1])
+        print()  # Vypis dat
+        print("Nejmensi prvek:", roztrizene[0])
+        print("Na indexu:", numbers.index(roztrizene[0]))
+        print("Nejvetsi prvek:", roztrizene[len(roztrizene)-1])
+        print("Na indexu:", numbers.index(roztrizene[len(roztrizene)-1]))
         # napise posledni cislo
         print("Roztrizene cisla: ", end='')
         for x in roztrizene:  # napise roztrizena cisla
