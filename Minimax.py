@@ -129,4 +129,3 @@ if test is True:
     print("Seřazené pole:", pole)
 else:
     print("parametry nebo soubor neodpovídají požadavku")
-input("Zmáčkni Enter pro ukončení...")
