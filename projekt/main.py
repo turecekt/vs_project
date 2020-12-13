@@ -100,6 +100,12 @@ def test_decrypt():
     """
     assert decrypt('.') == 'E'
 
+def testEncrypt():
+    """Unit test."""
+    assert toMorse("Radim") == ".-. .- -.. .. --"
+    assert toMorse("Ahoj ja jsem Radim") == ".- .... --- .---  .--- .-  .--- ... . --  .-. .- -.. .. --"
+    assert toMorse("12345") == ".---- ..--- ...-- ....- ....."
+
 
 # funkce main
 def main():
