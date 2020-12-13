@@ -50,28 +50,28 @@ def Vystup(pouzitaMetoda=0):
         - pouzitaMetoda - Metoda, kterou program použil pro zjištění výsledku
 
     #UNIT TESTY
-    >>> pouzitaMetoda()
+    >>> Vystup()
     False
 
-    >>> pouzitaMetoda(-1)
+    >>> Vystup(-1)
     True
 
-    >>> pouzitaMetoda(-2)
+    >>> Vystup(-2)
     True
 
-    >>> pouzitaMetoda(-3)
+    >>> Vystup(-3)
     True
 
-    >>> pouzitaMetoda(3)
+    >>> Vystup(3)
     True
 
-    >>> pouzitaMetoda(-4)
+    >>> Vystup(-4)
     True
 
-    >>> pouzitaMetoda(4)
+    >>> Vystup(4)
     True
 
-    >>> pouzitaMetoda(5)
+    >>> Vystup(5)
     False
     """
     if(pouzitaMetoda == 0):
