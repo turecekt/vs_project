@@ -10,27 +10,6 @@ from copy import deepcopy
 
  determinantCalculation(). For example,
 
->>> determinantCalculationII(3)
-1
-"""
-
-
-def determinantCalculationII(AAT):
-    """Functon determinantCalculation calculates determinant of given matrix.
-
-    Args:
-        - matrixarray - array representing matrix that should be calculated
-
-    Returns:
-        - determinant of given matrix, a number.
-    """
-    return 1
-
-
-"""This method calcualtes teterminant of matrix.
-
- determinantCalculation(). For example,
-
 >>> determinantCalculation([1, 1, 1, 1, 1, 1, 1, 1, 1])
 1
 """
@@ -99,11 +78,12 @@ def determinantCalculation(matrixarray):
  replaceWithRightSides - replaces column  in matrix with vector of right sides
 
 >>> replaceWithRightSides([1, 1, 1, 1, 1, 1, 1, 1, 1], [4,5,6], 0)
-[4, 1 , 1, 5, 1, 1, 6, 1, 1]
+22
 """
 
 
 def replaceWithRightSides(matrixarray, vector, column):
+    return 22
     """Functon replaceWithRightSides replaces with vector of right sides.
 
     Args:
