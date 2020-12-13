@@ -1,10 +1,12 @@
+#Unit testy pro morseovu abecedu
+
 from unittest import TestCase
 
 from main import zasifrovani, rozsifrovani
 
 
 class Test(TestCase):
-# Text do morseovky
+    """ Text do morseovky."""
     def test_Text_do_morseovky_SOS(self):
         """Test textu do morseovky."""
         self.assertEqual(zasifrovani("SOS"), "... --- ... ", "OK")
@@ -15,12 +17,14 @@ class Test(TestCase):
 
     def test_Text_do_morseovky_znaky(self):
         """Test textu do morseovky."""
-        self.assertEqual(zasifrovani("?.()"), "..--.. .-.-.- -.--. -.--.- ", "OK")
+        self.assertEqual(zasifrovani("?.()"),
+                                     "..--.. .-.-.- -.--. -.--.- ", "OK")
 
     def test_Text_do_morseovky_veta(self):
         """Test textu do morseovky."""
         self.assertEqual(zasifrovani
-        ("Ahoj, jak se mas?"),".- .... --- .--- --..--  .--- .- -.-  ... .  -- .- ... ..--.. ", "OK")
+        ("Ahoj, jak se mas?"),
+        ".- .... --- .--- --..--  .--- .- -.-  ... .  -- .- ... ..--.. ", "OK")
 
 # Morseovka do textu
     def test_Morseovka_do_textu_SOS(self):
@@ -33,9 +37,12 @@ class Test(TestCase):
 
     def test_Morseovka_do_textu_znaky(self):
         """Test moresovky do textu."""
-        self.assertEqual(rozsifrovani("..--.. -....- -..-. .-.-.- -.--. "), "?-/.( ", "OK")
+        self.assertEqual(rozsifrovani("..--.. -....- -..-. .-.-.- -.--. "),
+                                      "?-/.( ", "OK")
 
     def test_Morseovka_do_textu_veta(self):
         """Test moresovky do textu."""
-        self.assertEqual(rozsifrovani("-.. --- -... .-. -.--  -.. . -. --..--  .--- .- -.-  ... .  -- .- - . ..--.. "),
-                                      "DOBRY DEN, JAK SE MATE? ", "OK")
+        self.assertEqual(rozsifrovani
+        ("-.. --- -... .-. -.--  -.. . -. --..--"
+         "  .--- .- -.-  ... .  -- .- - . ..--.. "),
+         "DOBRY DEN, JAK SE MATE? ", "OK")

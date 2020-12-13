@@ -1,10 +1,9 @@
-"""
-Tento Program slouží k překládání textu do morseovy abecedy a zpět.
-Uživatel zadá libovolný text do konzole, algoritmus rozpozná jestli je
-na vstupu zadána zpráva v morseově abecedě nebo pomocí znaků klasické abecedy.
-Uživatel může zadat velká i malá písmena bez diakritiky, čísla i jiné znaky.
-Na výstupu uživatel získá zašifrovaný nebo rozšifrovaný text.
-"""
+#Tento Program slouží k překládání textu do morseovy abecedy a zpět.
+#Uživatel zadá libovolný text do konzole, algoritmus rozpozná jestli je
+#na vstupu zadána zpráva v morseově abecedě nebo pomocí znaků klasické abecedy.
+#Uživatel může zadat velká i malá písmena bez diakritiky, čísla i jiné znaky.
+#Na výstupu uživatel získá zašifrovaný nebo rozšifrovaný text.
+
 # Knihovna Morseovy Abecedy
 MORSE_CODE = {'A': '.-', 'B': '-...',
               'C': '-.-.', 'D': '-..', 'E': '.',
@@ -24,7 +23,7 @@ MORSE_CODE = {'A': '.-', 'B': '-...',
 
 
 def zasifrovani(zprava):
-    """Funkce, která zajištuje zašifrování prostého textu do Morseovy abecedy."""
+    """Funkce, která zašifruje prostý text do Morseovy abecedy."""
     zprava = zprava.upper()  # Převede zprávu z konzole na velká písmena
     sifra = ''
     for pismeno in zprava:
@@ -64,7 +63,7 @@ def rozsifrovani(zprava):
             else:
                 # Přístup ke knihovně morseovy abecedy přes hodnoty znaku
                 text += list(MORSE_CODE.keys()) \
-                [list(MORSE_CODE.values()).index(citext)]
+                    [list(MORSE_CODE.values()).index(citext)]
                 citext = ''
 
     return text
