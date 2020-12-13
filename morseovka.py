@@ -7,3 +7,5 @@ MORSEUV_SLOVNIK = { ' ':'/', 'A':'.-', 'B':'-...', 'C':'-.-.', 'D':'-..', 'E':'.
 def Text_na_Morseovku():
     text = input('Napis text pro Morseovo sifrovani : ')
     kod = [MORSEUV_SLOVNIK[i.upper()] + ' ' for i in text if i.upper() in MORSEUV_SLOVNIK.keys()]
+    morseovka=''.join(kod)
+    print(morseovka)
