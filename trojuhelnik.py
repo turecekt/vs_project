@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
 Created on Sun Dec 6 16:44:53 2020.
@@ -26,3 +26,15 @@ def obsah(a, b, c):
     """Vypočítá obsah trojúhelníku."""
     s = (a + b + c)/2
     return math.sqrt(s * (s - a) * (s - b) * (s - c))
+
+
+def pveta(c, b, a):
+    """Vypočítá pythagorovu větu a ověří její pravdivost."""
+    cd = c*c
+    ab2 = (a * a) + (b * b)
+
+    if (cd == ab2):
+        return True
+    else:
+        return False
+
