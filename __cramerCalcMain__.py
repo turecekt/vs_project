@@ -21,7 +21,7 @@ import sys
 
 
 def main():
-    """This runs all the code needed.
+    """This method runs all the code needed.
 
     this method is run automatically after script is opened
     """

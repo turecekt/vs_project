@@ -124,7 +124,7 @@ def convertToMatrixAndVector(fileContent, matrix, vector):
     Returns:
         determinant of given matrix, a number.
     """
-    if len(fileContent)<3:
+    if len(fileContent) < 3:
         print("File format problem: too few lines")
         return (0)
 
