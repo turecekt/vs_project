@@ -23,11 +23,11 @@ Vytvorime string k danemu codu.
 A string nechame precist."""
 
 
-def Text_To_Code(): """Fce pro preklad do morseovky"""
+def Text_To_Code(): """Fce pro preklad do morseovky."""
 
 
 text2 = input("Napiste slova, ktera chcete kodovat: ")
-code2 = [SLOVNIK_MORSEOVKA[i.upper()] 
+code2 = [SLOVNIK_MORSEOVKA[i.upper()]
          + " " for i in text2 if i.upper() in SLOVNIK_MORSEOVKA.keys()]
 morseovka = "".join(code2)
 print(morseovka)
