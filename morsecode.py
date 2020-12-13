@@ -4,7 +4,7 @@ This module will encode alphabet letters into morse code
 and decode morse code back into alphabet letters.
 """
 
-# dictionery translating alphabet letters into morse code
+# dictionary used for translating alphabet letters into morse code
 Characters = {"A": ".-",
               "B": "-...",
               "C": "-.-.",
@@ -117,6 +117,7 @@ def main():
     """Process user input."""
     print("For encoding a message press 1.")
     print("For decoding a message press 2.")
+    print("To close the program press 3.")
     x = input()
     if x == "1":
         print("Write a string that you want to encode into morse.")
@@ -126,9 +127,11 @@ def main():
         print("Write a string that you want to decode from morse.")
         message = input()
         decode_morse(message)
+    elif x == "3":
+        return
     else:
         print("Wrong input.")
-        main()
+    main()
     return
 
 
