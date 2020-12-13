@@ -31,4 +31,5 @@ def test_higher_number():
     """Test if number is higher then 100."""
     assert main.check_higher_number(10) is False
     assert main.check_higher_number(154) is True
+    assert main.check_higher_number(101) is True
     assert main.check_higher_number(57) is False
