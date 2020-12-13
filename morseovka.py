@@ -9,3 +9,6 @@ def Text_na_Morseovku():
     kod = [MORSEUV_SLOVNIK[i.upper()] + ' ' for i in text if i.upper() in MORSEUV_SLOVNIK.keys()]
     morseovka=''.join(kod)
     print(morseovka)
+
+def Morseovka_na_Text():
+    text = input('Napis Morseuv kod pro desifrovani do textu: ')
