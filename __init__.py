@@ -51,38 +51,91 @@ def Vystup(pouzitaMetoda=0):
 
     #UNIT TESTY
     >>> Vystup()
-    False
+    ------------------------------------------------------------
+    Nastala CHYBA způsobená uživatelem.
+    ------------------------------------------------------------
+    Zadaná hodnota neopodívá formátu, který se dá přečíst pro
+    rozpoznání prvočísla. Zkuste program restartovat a zadat 
+    přirozené číslo. (1 až nekonečno)
 
     >>> Vystup(-1)
-    True
-
+    Zadané číslo NEPATŘÍ mezi prvočísla.
+    ------------------------------------------------------------
+    Byla použita HEURISTICKÁ metoda - 1
+    ------------------------------------------------------------
+    Metoda rozpozná číslici 1 a vyřadí ji z pátrání, protože
+    toto číslo nesplňuje definici prvočísel. (číslo musí být
+    dělitelné DVĚMA čísly, samosebou a jedničkou)
+    
     >>> Vystup(-2)
-    True
+    Zadané číslo NEPATŘÍ mezi prvočísla.
+    ------------------------------------------------------------
+    Byla použita HEURISTICKÁ metoda - pravidla dělitelnosti
+    ------------------------------------------------------------
+    Metoda určí některá neprvočísla, pomocí toho, že je číslo
+    končí určitým číslem, které podle pravidel dělitelnosti,
+    lze vydělit již prvočíslem. (např. čísla končící na číslo
+    5 a 0 jdou vždy vydělit 5)
 
     >>> Vystup(-3)
-    True
+    Zadané číslo NEPATŘÍ mezi prvočísla.
+    ------------------------------------------------------------
+    Byla použita HEURISTICKÁ metoda - Wilsonova věta
+    ------------------------------------------------------------
+    Metoda používá matematický vztah '((n - 1)! + 1) % n' pro
+    zjištění některých prvočísel.
 
     >>> Vystup(3)
-    True
+    Zadané číslo PATŘÍ mezi prvočísla.
+    ------------------------------------------------------------
+    Byla použita HEURISTICKÁ metoda - Wilsonova věta
+    ------------------------------------------------------------
+    Metoda používá matematický vztah '((n - 1)! + 1) % n' pro
+    zjištění některých prvočísel.
 
     >>> Vystup(-4)
-    True
+    Zadané číslo NEPATŘÍ mezi prvočísla.
+    ------------------------------------------------------------
+    Byla použita DETERMINISTICKÁ metoda
+    ------------------------------------------------------------
+    Metoda zkouší pokud je číslo dělitelné některým z již
+    předtím nalezených prvočísel do maximální hodnoty odmocniny
+    ze zadaného čísla. Pokud číslo není dělitelné, je to další
+    prvočíslo.
+    Např. u čísla 7 otestuje dělitelnost prvočísly do čísla 4,
+    tudíž číslem 2 a 3, nevznikne zbytek 0 a tak je číslo 7
+    prvočíslo. (metoda používá paměť s vypočítanými prvočísly
+    k zrychlení procesu)
 
     >>> Vystup(4)
-    True
+    Zadané číslo PATŘÍ mezi prvočísla.
+    ------------------------------------------------------------
+    Byla použita DETERMINISTICKÁ metoda
+    ------------------------------------------------------------
+    Metoda zkouší pokud je číslo dělitelné některým z již
+    předtím nalezených prvočísel do maximální hodnoty odmocniny
+    ze zadaného čísla. Pokud číslo není dělitelné, je to další
+    prvočíslo.
+    Např. u čísla 7 otestuje dělitelnost prvočísly do čísla 4,
+    tudíž číslem 2 a 3, nevznikne zbytek 0 a tak je číslo 7
+    prvočíslo. (metoda používá paměť s vypočítanými prvočísly
+    k zrychlení procesu)
 
     >>> Vystup(5)
-    False
+    Zadané číslo PATŘÍ mezi prvočísla.
+    ------------------------------------------------------------
+    Pravděpodobně jde o nějakou metodu, kterou si vymyslela
+    umělá inteligence vašeho počítače. Tuhle zprávu byste
+    totiž neměli nikdy vidět.
     """
     if(pouzitaMetoda == 0):
         print("------------------------------------------------------------")
         print("Nastala CHYBA způsobená uživatelem.")
         print("------------------------------------------------------------")
-        print("Zadaná hodnota neopodívá formátu, který se dá přečíst pro " +
-              "rozpoznání prvočísla.")
-        print("Zkuste program restartovat a zadat přirozené číslo. (1 až " +
-              "nekonečno)")
-        return False
+        print("Zadaná hodnota neopodívá formátu, který se dá přečíst pro\n"
+            + "rozpoznání prvočísla. Zkuste program restartovat a zadat\n"
+            + "přirozené číslo. (1 až nekonečno)")
+        return
     elif(pouzitaMetoda > 0):
         print("Zadané číslo PATŘÍ mezi prvočísla.")
     else:
@@ -95,41 +148,36 @@ def Vystup(pouzitaMetoda=0):
     if(pouzitaMetoda == 1):
         print("Byla použita HEURISTICKÁ metoda - 1")
         print("------------------------------------------------------------")
-        print("Metoda rozpozná číslici 1 a vyřadí ji z pátrání, protože " +
-              "toto číslo nesplňuje definici prvočísel. (číslo musí být ")
-        print("dělitelné DVĚMA čísly, samosebou a jedničkou)")
-        return True
+        print("Metoda rozpozná číslici 1 a vyřadí ji z pátrání, protože\n"
+            + "toto číslo nesplňuje definici prvočísel. (číslo musí být\n"
+            + "dělitelné DVĚMA čísly, samosebou a jedničkou)")
     elif(pouzitaMetoda == 2):
         print("Byla použita HEURISTICKÁ metoda - pravidla dělitelnosti")
         print("------------------------------------------------------------")
-        print("Metoda určí některá neprvočísla, pomocí toho, že je číslo "
-              "končí určitým číslem, které podle pravidel dělitelnosti, lze ")
-        print("vydělit již prvočíslem. (např. čísla končící na číslo 5 a 0 ")
-        print("jdou vždy vydělit 5)")
-        return True
+        print("Metoda určí některá neprvočísla, pomocí toho, že je číslo\n"
+            + "končí určitým číslem, které podle pravidel dělitelnosti,\n"
+            + "lze vydělit již prvočíslem. (např. čísla končící na číslo\n"
+            + "5 a 0 jdou vždy vydělit 5)")
     elif(pouzitaMetoda == 3):
         print("Byla použita HEURISTICKÁ metoda - Wilsonova věta")
         print("------------------------------------------------------------")
-        print("Metoda používá matematický vztah '((n - 1)! + 1) % n' pro " +
+        print("Metoda používá matematický vztah '((n - 1)! + 1) % n' pro\n" +
               "zjištění některých prvočísel.")
-        return True
     elif(pouzitaMetoda == 4):
         print("Byla použita DETERMINISTICKÁ metoda")
         print("------------------------------------------------------------")
-        print("Metoda zkouší pokud je číslo dělitelné některým z již " +
-              "předtím nalezených prvočísel do maximální hodnoty odmocniny ")
-        print("ze zadaného čísla. Pokud číslo není dělitelné, je to ")
-        print("další prvočíslo.")
-        print("Např. u čísla 7 otestuje dělitelnost prvočísly do čísla 4, " +
-              "tudíž číslem 2 a 3, nevznikne zbytek 0 a tak je číslo 7 ")
-        print("prvočíslo. (metoda používá paměť s vypočítanými prvočísly " +
-              "k zrychlení procesu)")
-        return True
+        print("Metoda zkouší pokud je číslo dělitelné některým z již\n"
+            + "předtím nalezených prvočísel do maximální hodnoty odmocniny\n"
+            + "ze zadaného čísla. Pokud číslo není dělitelné, je to další\n"
+            + "prvočíslo.\n"
+            + "Např. u čísla 7 otestuje dělitelnost prvočísly do čísla 4,\n"
+            + "tudíž číslem 2 a 3, nevznikne zbytek 0 a tak je číslo 7\n"
+            + "prvočíslo. (metoda používá paměť s vypočítanými prvočísly\n" 
+            + "k zrychlení procesu)")
     else:
-        print("Pravděpodobně jde o nějakou metodu, kterou si vymyslela " +
-              "umělá inteligence vašeho počítače. Tuhle zprávu byste ")
-        print("totiž neměli nikdy vidět.")
-        return False
+        print("Pravděpodobně jde o nějakou metodu, kterou si vymyslela\n"
+            + "umělá inteligence vašeho počítače. Tuhle zprávu byste\n"
+            + "totiž neměli nikdy vidět.")
 
 
 def Metody(cislo):
