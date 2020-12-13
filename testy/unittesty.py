@@ -2,9 +2,9 @@
 import unittest
 import source_test
 
+
 # Testovácí class
 class TestMorseovky(unittest.TestCase):
-"""Vytvoření funkcí pro testování."""
 
 
     # PŘEVODY Z ABECEDY DO MORSEOVKY
