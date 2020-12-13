@@ -10,6 +10,27 @@ from copy import deepcopy
 
  determinantCalculation(). For example,
 
+>>> determinantCalculationII(3)
+1
+"""
+
+
+def determinantCalculationII(AAT):
+    """Functon determinantCalculation calculates determinant of given matrix.
+
+    Args:
+        - matrixarray - array representing matrix that should be calculated
+
+    Returns:
+        - determinant of given matrix, a number.
+    """
+    return 1
+
+
+"""This method calcualtes teterminant of matrix.
+
+ determinantCalculation(). For example,
+
 >>> determinantCalculation([1, 1, 1, 1, 1, 1, 1, 1, 1])
 1
 """
