@@ -92,7 +92,7 @@ def decrypt(message):
 
 # testovani decryptu
 def test_decrypt():
-    """Testovani decryptu.
+    """Testing decrypt.
 
     Odsifrovani morseovky na text.
     >>> decrypt('.')
@@ -102,7 +102,11 @@ def test_decrypt():
     result = decrypt('. . . . ')
     assert result == correctResult
 
-
+def test_decrypt_empty_string():
+    """Testing decrypting with empty input."""
+    correctResult = ''
+    result = decrypt('')
+    assert result == correctResult
 # funkce main
 def main():
     """Definovani funkce main.
