@@ -1,4 +1,21 @@
 import math
+
+def delkaStrany(x1, y1, x2, y2):
+    """Calculate the length of a side of a triangle.
+
+    Return the length of the side rounded to 2 decimal places
+    >>> delkaStrany(10, 10, 5, 5) == 7.07
+    True
+    >>> delkaStrany(6, 4, 2, 3)
+    4.12
+    """
+    str1 = x2-x1
+    str2 = y2-y1
+    str1 = math.pow(str1, 2)
+    str2 = math.pow(str2, 2)
+    st = round(math.sqrt(str1+str2), 2)
+    return st
+
 print("Zadejte souřadnice pro bod A na ose X: ")
 ax = float(input())
 print("Zadejte souřadnice pro bod A na ose Y: ")
@@ -11,23 +28,11 @@ print("Zadejte souřadnice pro bod C na ose X: ")
 cx = float(input())
 print("Zadejte souřadnice pro bod C na ose Y: ")
 cy = float(input())
-stra1 = bx-cx
-stra2 = by-cy
-stra1 = math.pow(2, stra1)
-stra2 = math.pow(2, stra2)
-stra = math.sqrt(stra1+stra2)
+stra = delkaStrany(cx, cy, bx, by)
 print("Délka strany a: " + str(stra) + " cm")
-strb1 = cx-ax
-strb2 = cy-ay
-strb1 = math.pow(2, strb1)
-strb2 = math.pow(2, strb2)
-strb = math.sqrt(strb1+strb2)
+strb = delkaStrany(ax, ay, cx, cy)
 print("Délka strany b: " + str(strb) + " cm")
-strc1 = ax-bx
-strc2 = ay-by
-strc1 = math.pow(2, strc1)
-strc2 = math.pow(2, strc2)
-strc = math.sqrt(strc1+strc2)
+strc = delkaStrany(bx, by, ax, ay)
 print("Délka strany c: " + str(strc) + " cm")
 if stra + strb > strc and strb + strc > stra and strc + stra > strb:
     print("Trojúhelník je sestrojitelný")
