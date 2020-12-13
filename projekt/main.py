@@ -6,6 +6,11 @@ a jestli je pravouhly.
 Program prijima souradnice bodu A,B,C z konzole a vypisuje vysledky na konzoli.
 
 Tvurce: Tomáš Blaho
+
+PyTest:
+
+def test_obvod():
+    assert obvod(12, 16, 22) == 40
 """
 
 import math
