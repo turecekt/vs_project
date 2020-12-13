@@ -62,6 +62,9 @@ def check_prime_number(number: int):
 
 def fermat_test(number, k):
     """Fermat test to test higher number. Return Boolean."""
+    if number == 1:
+        return False
+
     if number == 2:
         return True
 
