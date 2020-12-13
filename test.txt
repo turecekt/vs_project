@@ -16,4 +16,11 @@ MORSE_CODE_DICT = { 'A':'.-', 'B':'-...',
                     '?':'..--..', '/':'-..-.', '-':'-....-',
                     '(':'-.--.', ')':'-.--.-'}
 #slovnik na preklad Morseovy abecedy
-
+def encrypt(message):
+    sifra = ''
+    for pismeno in message:
+        if pismeno != ' ':
+#Vyhledá slovník a přidá
+# odpovídající Morseova abeceda
+# spolu s mezerou k oddělení
+# morseovy kódy pro různé znaky
