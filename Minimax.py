@@ -18,10 +18,7 @@ def main():
         vstup = readfile()
 
     if len(vstup) > 0:
-        for x in range(0, len(vstup)):
-            if vstup[x].isnumeric():  # zjisti jestli je polozka cislo
-                numbers.append(int(vstup[x]))
-                # preda polozku jako cislo do promenne
+        numbers = filtr(vstup)
 
     roztrizene = moznostizoradenia(numbers)  # vyber tridiciho algoritmu
     if len(roztrizene) > 0:  # provede jestli existuje vystup
@@ -35,6 +32,7 @@ def main():
         print("Roztrizene cisla: ", end='')
         for x in roztrizene:  # napise roztrizena cisla
             print(x, " ", end='')
+    return roztrizene
 
 
 def readfile():  # funkce precte soubor a rozdeli skupiny znaku do listu
@@ -53,6 +51,16 @@ def readfile():  # funkce precte soubor a rozdeli skupiny znaku do listu
         output.append(i)
 
     return output
+
+
+def filtr(inp):
+    """Filtr vstupu."""
+    out = []
+    for x in range(0, len(inp)):
+        if inp[x].isnumeric():  # zjisti jestli je polozka cislo
+            out.append(int(inp[x]))
+            # preda polozku jako cislo do promenne
+    return out
 
 
 def randomnumbers():  # funkce vygenereuje 20 nahodnich cisel
@@ -103,14 +111,18 @@ def quick_sort(pole):
     return pole
 
 
-def moznostizoradenia(cislo):  # funkce moznosti zoradenia
+def moznostizoradenia(cislo, test='0'):  # funkce moznosti zoradenia
     """Vyber sortu."""
     pole = cislo.copy()
-    print('Moznosti zoradenia:\n '
-          '1 - Zoradenie pomocou bubble sort\n '
-          '2 - Zoradenie pomocou selection sort\n '
-          '3 - Zoradenie pomocou quick sort ')  # Vypis moznosti zoradenia
-    klavesa = input('Prosim zadaj moznost zoradenia :\n ')
+    if test == '0':
+        print('Moznosti zoradenia:\n '
+              '1 - Zoradenie pomocou bubble sort\n '
+              '2 - Zoradenie pomocou selection sort\n '
+              '3 - Zoradenie pomocou quick sort ')
+        # Vypis moznosti zoradenia
+        klavesa = input('Prosim zadaj moznost zoradenia :\n ')
+    else:
+        klavesa = test
     # Žadosť o zadanie možnosti zoradenia
     if klavesa == '1':  # Načitanie čisla
         serazeno = bubble_sort(pole)  # Odkaz na funkciu bubble sort
@@ -140,6 +152,16 @@ def test_quick_sort():
     """Test pro quick_sort."""
     assert quick_sort([45, 2077, 69, 420, 3, 666, 2020, 56, 28, 99, 4])\
            == [3, 4, 28, 45, 56, 69, 99, 420, 666, 2020, 2077]
+
+
+def test_moznostizoradenia():
+    """Test moznostizoradenia."""
+    assert moznostizoradenia([5, 4, 2, 10, 1], '1') == [1, 2, 4, 5, 10]
+
+
+def test_filtr():
+    """Test filtru."""
+    assert filtr(['1', '2', '3', 'a', 'b', 'c']) == [1, 2, 3]
 
 
 if __name__ == '__main__':  # umoznuje psani funkci pod main
