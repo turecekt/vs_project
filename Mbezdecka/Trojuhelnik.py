@@ -11,7 +11,11 @@ import sys
 
 
 def nacteni_bodu():
-    """Nacteni Bodu."""
+    """Nacteni Bodu.
+
+    Funkce nacitajici body z konzole,
+    ktera nasledne vola FCI vypis
+    """
     while(True):
         vstup = input("Spustit program trojuhelnik A/N?: ")
         if(vstup == 'A' or vstup == 'a'):
@@ -32,6 +36,8 @@ def nacteni_bodu():
 def vypocet_strany(x0, y0, x1, y1):
     """Vypocet strany.
 
+    Vypocita delku strany ze souradnic
+    dvou zadanych bodu
     >>> vypocet_strany(1, 3, 3, 5)
     2.828
     """
@@ -42,6 +48,7 @@ def vypocet_strany(x0, y0, x1, y1):
 def sestrojitelny(Sa, Sb, Sc):
     """Test sestrojitelnosti.
 
+    Overi zde je trojuhelnik mozne sestrojit
     >>> sestrojitelny( 4.243, 5.099, 2.828)
     Trojuhelnik lze setrojit
     True
@@ -64,6 +71,7 @@ def sestrojitelny(Sa, Sb, Sc):
 def obvod(Sa, Sb, Sc):
     """Vypocet obvodu trojuhelniku.
 
+    Vypocita obvod trojuhelniku ze zadanych stran
     >>> obvod(1, 1, 1)
     3
     """
@@ -85,6 +93,7 @@ def obsah(Sa, Sb, Sc):
 def pravouhly(Sa, Sb, Sc):
     """Test zda se jedna o pravouhly trojuhelnik.
 
+    Overi zda nektery z uhlu je pravouhly
     >>> pravouhly(4.243, 5.099, 2.828)
     True
      >>> pravouhly(2.243, 5.099, 2.828)
