@@ -29,17 +29,18 @@ def zasifrovani(zprava):
     sifra = ''
     for pismeno in zprava:
         if pismeno != ' ':  # Pokud je ve zprávě písmeno,
-            sifra += MORSE_CODE[pismeno] + ' '  # program vloží příslušný kod z Morseovy abecedy
+            sifra += MORSE_CODE[pismeno] + ' '
+            # program vloží příslušný kod z Morseovy abecedy
         else:
 
-            sifra += ' '  # Pokud je ve zprávě mezera, program vloží mezeru mezi znaky
+            sifra += ' '
+            # Pokud je ve zprávě mezera, program vloží mezeru mezi znaky
 
     return sifra  # Funkce vrátí přeloženou zprávu
 
 
-
 def rozsifrovani(zprava):
-    # Funkce která zajištuje rozšifrování textu z Morseovy abecedy
+    """Funkce která zajištuje rozšifrování textu z Morseovy abecedy."""
     zprava += ' '  # Přidána mezera na konec zprávy,
 
     text = ''
@@ -65,25 +66,31 @@ def rozsifrovani(zprava):
                 text += list(MORSE_CODE.keys())[list(MORSE_CODE.values()).index(citext)]
                 citext = ''
 
-    return text  # Funkce vrátí přeloženou zprávu
+    return text
+    # Funkce vrátí přeloženou zprávu
 
 
 def main():
-    #Hlavni funkce, ktera slouzi k vypisu
+    """Hlavni funkce, ktera slouzi k vypisu"""
     print("Vlož text (bez diakritiky):")  # Vypsání zprávy na konzoli
     zprava = input()  # Načtení zprávy z konzole a přiřazení
     if not zprava:
-        print("Musite zadat zpravu")   #Kdyz uzivatel nic nevypise do kodu, vypise mu chybnou zpravu
+        print("Musite zadat zpravu")
+        # Kdyz uzivatel nic nevypise do kodu, vypise mu chybnou zpravu
     else:
 
-        if zprava[0] in (".", "-"):  # Pokud zpráva začíná "." nebo "-" program zavolá funkci rozsifrovani
+        if zprava[0] in (".", "-"):
+            # Pokud zpráva začíná "." nebo "-" program zavolá funkci rozsifrovani
             result = rozsifrovani(zprava)
 
-        else:  # Pokud zpráva nezačíná "." nebo "-" znamená to že je zpráva napsáná klasickou abecedou
-               # a program zavolá funkci zasifrovani
+        else:
+            # Pokud zpráva nezačíná "." nebo "-"
+            # znamená to že je zpráva napsáná klasickou abecedou
+            # a program zavolá funkci zasifrovani
             result = zasifrovani(zprava)
 
-        print(result)  # Program vypíše výsledek na konzoli
+        print(result)
+        # Program vypíše výsledek na konzoli
 
 # Ukončení main funkce
 if __name__ == '__main__':
