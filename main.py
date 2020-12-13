@@ -1,11 +1,9 @@
-"""Main.py - Checking if input number is prime number"""
+"""Main.py - Checking if input number is prime number."""
 import random
 
 
 def main():
-    """Get user input and check if the input is prime number
-    Return None
-    """
+    """Get user input and check if the input is prime number. Return None."""
 
     print_input()
     text = input()
@@ -32,18 +30,13 @@ def main():
 
 
 def print_input():
-    """Print sentece to user
-    Return None
-    """
+    """Print sentece to user. Return None."""
 
     print('Zadejte číslo k zjíštění, zda je číslo prvočíslo')
 
 
 def check_number(text: str):
-    """This function is checking, if the input is Integer return True if is not
-    return False
-    Return Boolean
-    """
+    """This function is checking, if the input is Integer. Return Boolean."""
     try:
         int(text)
         return True
@@ -54,9 +47,7 @@ def check_number(text: str):
 
 
 def check_prime_number(number: int):
-    """Checking if number is prime number
-    Return Boolean
-    """
+    """Checking if number is prime number. Return Boolean."""
 
     if(number <= 1):
         return False
@@ -73,9 +64,7 @@ def check_prime_number(number: int):
 
 
 def fermat_test(number, k):
-    """Fermat test to test higher number
-    Return Boolean
-    """
+    """Fermat test to test higher number. Return Boolean."""
 
     if number == 2:
         return True
