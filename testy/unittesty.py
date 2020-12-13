@@ -56,6 +56,21 @@ class TestMorseovky(unittest.TestCase):
                                     "---.. ... - ..- .--. -. ..-")
         self.assertEqual(result, "DNESKAJEPEKNYDENAJE28STUPNU")
 
+    def test_10(self):
+        """Nepovolené znaky na začátku."""
+        result = source_test.prevod("?ahoj")
+        self.assertEqual(result, 'Zadaná nesprávná kombince znaků')
+
+    def test_11(self):
+        """Nepovolené znaky uprostřed."""
+        result = source_test.prevod("ah?oj")
+        self.assertEqual(result, 'Zadaná nesprávná kombince znaků')
+
+    def test_12(self):
+        """Nepovolené znaky na konci."""
+        result = source_test.prevod("ahoj?")
+        self.assertEqual(result, 'Zadaná nesprávná kombince znaků')
+
 
 if __name__ == '__main__':
     unittest.main()

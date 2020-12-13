@@ -77,8 +77,8 @@ def prevod(vstup):
         for prvek in rozdVstup:
             if prvek not in morseovka:
                 # Ošetření vstupu
-                print('Zadaná nesprávná kombince znaků')
-                exit()
+                g = 'Zadaná nesprávná kombince znaků'
+                return g
             for i in morseovka:
                 if prvek == i:
                     g = g + morseovka[i] + ' '
