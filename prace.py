@@ -1,3 +1,6 @@
+
+
+
 """Kodovani a dekodovaní morseovy text."""
 
 """Abeceda potřebná na překlad na Morse"""
@@ -65,23 +68,21 @@ ABECEDAmorse = {
 }
 
 
-def Txt_do_Morse():
+def Txt_do_Morse(slovo):
     """Přeložení text do morse."""
-    txt = input('Napiste text, ktery se ma prelozit do Morseovky:')
-    code = [morseABECEDA[i.upper()] + '' for i in txt
+    code = [morseABECEDA[i.upper()] + '' for i in slovo
             if i.upper() in morseABECEDA.keys()]
     morse = ''.join(code)
     print(morse)
+    return morse
 
-
-def Morse_do_Txt():
+def Morse_do_Txt(slovo):
     """Přeložení morse na text."""
-    txt = input('Napiste Morseovku ktera se ma prekladat na text:')
-    novy = txt.split('/')
+    novy = slovo.split('/')
     code = [ABECEDAmorse[i] + '' for i in novy if i in ABECEDAmorse.keys()]
     morse = ''.join(code)
     print(morse)
-
+    return morse
 
 print('''\n1- Prelozit text na Morseovku \n2- Prelozit Morseovku na text ''')
 
@@ -90,10 +91,12 @@ while True:
     try:
         selection = int(input('Vyberte si co na co chcete prekladat:'))
         if selection == 1:
-            print((Txt_do_Morse()))
+            slovo = input('Napiš slovo')
+            Txt_do_Morse(slovo)
             break
         elif selection == 2:
-            print(Morse_do_Txt())
+            slovo = input('Napiš slovo')
+            Morse_do_Txt(slovo)
             break
         else:
             print('Spatna volba')
@@ -101,18 +104,21 @@ while True:
         print('Spatna volba')
 
 
-def test_prekladslov(prekladslov):
+def test_Txt_do_Morse():
     """Předklad text na morse."""
-    assert prekladslov("AHOJ") == " .–/..../–––/.–––/"
-    assert prekladslov('DOMOV') == "–../–––/––/–––/...–/"
-    assert prekladslov("DNES JE HEZKE POCASI") == \
+    assert Txt_do_Morse("AHOJ") == " .–/..../–––/.–––/"
+    assert Txt_do_Morse("DOMOV") == "–../–––/––/–––/...–/"
+    assert Txt_do_Morse("DNES JE HEZKE POCASI") == \
            "–../–././...//.–––/.//...././––../–.–/.//.––./–––/–.–./.–/.../../"
 
 
-def test_predkladmorse(predkladmorse):
+def test_Morse_do_Txt():
     """Překlad morse na text."""
-    assert predkladmorse("−/–––/––/.//.–––/.–/–.–//.–––/./") == "TOMEJAKJE"
-    assert predkladmorse("–././.–./.–/–..//.––./.–./.–/–.–./..–/.–––/..–/") \
+    assert Morse_do_Txt("−/–––/––/.//.–––/.–/–.–//.–––/./") == "TOMEJAKJE"
+    assert Morse_do_Txt("–././.–./.–/–..//.––./.–./.–/–.–./..–/.–––/..–/") \
            == "NERADPRACUJU"
-    assert predkladmorse(".–./–.––/–.–./..../.–.././/–././–.../–––//.––."
+    assert Morse_do_Txt(".–./–.––/–.–./..../.–.././/–././–.../–––//.––."
                          "/–––/––/.–/.–../..–/") == "RYCHLENEBOPOMALU"
+
+
+
