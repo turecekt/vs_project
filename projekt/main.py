@@ -25,7 +25,8 @@ MORSE_DICTIONARY = {'A': '.-', 'B': '-...',
 
 # zasifrovani
 def encrypt(message):
-    """Zasifrovani zpravy.
+    """
+    Zasifrovani zpravy.
 
     Vraceni vsech znaku v morseove sifre
     >>> E
@@ -45,10 +46,11 @@ def encrypt(message):
 
 # testovani spravnosti encryptu
 def test_encrypt():
-    """Test zasifrovani.
+    """
+    Test zasifrovani.
 
     Vraceni vsech znaku v morseove sifre
-    >>> E
+    >>> encrypt('E')
     .
     """
     assert encrypt(
@@ -59,7 +61,8 @@ def test_encrypt():
 
 # odsifrovavani
 def decrypt(message):
-    """Odsifrovani zpravy.
+    """
+    Odsifrovani zpravy.
 
     Odsifrovani morseovky na text.
     """
@@ -93,19 +96,21 @@ def decrypt(message):
 
 # testovani decryptu
 def test_decrypt():
-    """Testovani decryptu.
+    """
+    Testovani decryptu.
 
     Odsifrovani morseovky na text.
     """
     assert decrypt(
         '.- .... --- .---  - .- -.. -.--  .--- .  -.- .- .-. . .-..'
-    ) == ('ahoj tady je karel')
-    assert decrypt('.-') == ('A')
+    ) == 'ahoj tady je karel'
+    assert decrypt('.-') == 'A'
 
 
 # funkce main
 def main():
-    """Definovani funkce main.
+    """
+    Definovani funkce main.
 
     V mainu se prvne zavola input po encrypt potom
     zavola druhy input pro decrypt.
@@ -118,7 +123,7 @@ def main():
     result = decrypt(message)
     print(result)
 
-    assert message('ahoj') != ('.-.-.-')
+    assert message('ahoj') != '.-.-.-'
 
 
 if __name__ == '__main__':
