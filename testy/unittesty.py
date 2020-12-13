@@ -49,6 +49,13 @@ class TestMorseovky(unittest.TestCase):
         result = source_test.prevod("-- .- -- ..--- ----- .-.. . -")
         self.assertEqual(result, "MAM20LET")
 
+    def test_9(self):
+        """Čísla, písmena"""
+        result = source_test.prevod("-.. -. . ... -.- .- .--- . .--. ."
+                                    " -.- -. -.-- -.. . -. .- .--- . ..--- "
+                                    "---.. ... - ..- .--. -. ..-")
+        self.assertEqual(result, "DNESKAJEPEKNYDENAJE28STUPNU")
+
 
 if __name__ == '__main__':
     unittest.main()
