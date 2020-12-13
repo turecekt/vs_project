@@ -22,10 +22,10 @@ def main():
     if(len(sys.argv) != 2):
         if(len(sys.argv) < 2):
             print("too few argumetns specified")
-            sys.exit(1)
+            sys.exit(0)
         else:
             print("too many arguments specified")
-            sys.exit(1)
+            sys.exit(0)
 
     if(sys.argv[1] == 'help'):
         print("-Welcome to 3x3 matrix variables calculation script\n script re\
@@ -47,7 +47,7 @@ def main():
         FILE = open(sys.argv[1])
     except IOError:
         print("File "+sys.argv[1]+' not found on this machine')
-        sys.exit(1)
+        sys.exit(0)
 
     lines = []
     # convert file to array of strings where string is one line.
@@ -60,7 +60,7 @@ def main():
 
     # run conversion of file to matrix
     if convertToMatrixAndVector(lines, matrix, vector) != 1:
-        sys.exit(1)
+        sys.exit(0)
 
     # determinant of matrix without altered columns
     determinantOfMatrix = determinantCalculation(matrix)
@@ -68,7 +68,7 @@ def main():
     if determinantOfMatrix == 0:
         print("determinant of matrix is ZERO! Can't calcualte value of \
         variables")
-        sys.exit(1)
+        sys.exit(0)
 
     # array of results
     results = {}
