@@ -1,6 +1,8 @@
-#import file with methodss for matri operation
-from __cramerLib__ import *
-#import sys for handling of arguments
+# import file with methodss for matri operation
+from __cramerLib__ import convertToMatrixAndVector
+from __cramerLib__ import replaceWithRightSides
+from __cramerLib__ import determinantCalculation
+# import sys for handling of arguments
 import sys
 
 """this module is wrapper for running .
@@ -17,7 +19,7 @@ import sys
 """
 
 
-#main method doing the calculation
+# Main method doing the calculation
 def main():
 
 
@@ -39,7 +41,7 @@ def main():
 
         sys.exit(0)
 
-    #open file
+    # open file
     try:
         FILE = open(sys.argv[1])
     except IOError:
@@ -47,34 +49,34 @@ def main():
         sys.exit(1)
 
     lines = []
-    #convert file to array of strings where string is one line.
+    # convert file to array of strings where string is one line.
     for line in FILE:
         lines.append(line)
 
-    #variables used in code to
+    # variables used in code to
     matrix = []
     vector = []
 
-    #run conversion of file to matrix
+    # run conversion of file to matrix
     if convertToMatrixAndVector(lines, matrix, vector) != 1:
         sys.exit(1)
 
-    #determinant of matrix without altered columns
-    determinantOfMatrix = determinantCalculation(matrix);
+    # determinant of matrix without altered columns
+    determinantOfMatrix = determinantCalculation(matrix)
 
     if determinantOfMatrix == 0:
-        print ("determinant of matrix is ZERO! Can't calcualte value of variables")
+        print("determinant of matrix is ZERO! Can't calcualte value of variables")
         sys.exit(1)
 
-    #array of results
+    # array of results
     results = {}
 
-    #calculation of
+    # calculation of
     results["x"] = determinantCalculation(replaceWithRightSides(matrix, vector, 0))/determinantOfMatrix
     results["y"] = determinantCalculation(replaceWithRightSides(matrix, vector, 1))/determinantOfMatrix
     results["z"] = determinantCalculation(replaceWithRightSides(matrix, vector, 2))/determinantOfMatrix
 
-    #print results of calculation
+    # print results of calculation
     print("Results form matrix:")
     print(str(matrix[0])+"\t"+str(matrix[1])+"\t"+str(matrix[2]))
     print(str(matrix[3])+"\t"+str(matrix[4])+"\t"+str(matrix[5]))

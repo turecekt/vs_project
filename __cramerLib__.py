@@ -52,14 +52,14 @@ def determinantCalculation(matrixarray):
                 break
         plusSide = plusSide + innerMultiply
 
-    #iterate and calculate minus side of the determinant
+    # iterate and calculate minus side of the determinant
     for start in startIndexesM:
         currentIndex = start
         innerMultiply = 1
 
         while True:
             if currentIndex > 8:
-                #remov 9 as there are 9 elements in array beginning at tha zero
+                # remov 9 as there are 9 elements in array beginning at tha zero
                 innerMultiply = innerMultiply * matrixArray[currentIndex - 9]
             else:
                 innerMultiply = innerMultiply * matrixArray[currentIndex]
@@ -91,7 +91,7 @@ def replaceWithRightSides(matrixarray, vector, column):
     Returns:
         determinant of given matrix, a number.
     """
-    #just in case that somebody uses index greater than 2
+    # just in case that somebody uses index greater than 2
     column = column % 3
     workingArray = deepcopy(matrixarray)
     workingArray[column] = deepcopy(vector[0])
@@ -129,10 +129,10 @@ def convertToMatrixAndVector(fileContent, matrix, vector):
         print("File format problem: too many lines")
         return 0
 
-    #now convert array to vector and matrix.
+    # now convert array to vector and matrix.
     for line in fileContent:
         column = 0
-        #trim new line from line and spit it by delimieter, delimiter is space
+        # trim new line from line and spit it by delimieter, delimiter is space
         lineArray = line.rstrip("\n").split(" ")
         if len(lineArray) != 4:
             print("Invalid number of cloumns in file. File must contain 4 columns, 3 for matrix and 1 for vector of right sides")
@@ -146,12 +146,12 @@ def convertToMatrixAndVector(fileContent, matrix, vector):
                 return 0
 
 
-            #first three columns are of
+            # first three columns are of
             if column == 3:
                 vector.append(elementValue)
             else:
                 matrix.append(elementValue)
-            #culumn counter increment
+            # culumn counter increment
             column += 1
 
     return 1
