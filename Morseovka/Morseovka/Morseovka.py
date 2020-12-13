@@ -55,3 +55,16 @@ def MorseToText(text):
         return('prazdne pole')
     else:
         return(stroka)
+
+def main():
+    Vyber = input('1 - TEXT -> MORSE \n2 - MORSE -> TEXT \n') 
+    if Vyber == str(1): # kontroluje vyber zadavatele
+        text = input("Zapiste vetu:").lower().split() # zadavani textu
+        TextToMorse(text)
+    elif Vyber == str(2):# kontroluje vyber zadavatele
+        text = input("Zapiste Moresouv kod:").lower().split() # zadavani textu
+        MorseToText(text)
+    else: # jestli bude neco jineho, nez 1 a 2 
+        print("Zvolte prosim 1 nebo 2")
+if __name__ == '__main__':
+    main()
