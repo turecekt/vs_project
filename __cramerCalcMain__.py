@@ -23,7 +23,6 @@ def main():
     Returns:
         - 0 on scucess, 1 on failure
     """
-
     if(sys.argv[1] == 'help'):
         print("-Welcome to 3x3 matrix variables calculation script\n script re\
         turns value of variables x y z of matrix epanded by vector of right \
