@@ -152,31 +152,33 @@ def read_file():
     return output
 
 
-# Vstup:
-mylist = []
-print("Jaký řadící algortimus chcete použít?")
-x = input("Quick sort[1], Heap sort[2], Python Builtin[3]")
-if len(sys.argv) > 1:
-    argument = sys.argv[1]
-    if argument[-3:] == 'txt':
-        mylist = read_file()
-        print("Input Array: ", mylist)
-        min_max(mylist)
-        sort_choice(mylist, x)
-        print("Sorted Array: ", mylist)
+# Hlavní funkce:
+def main():
+    """Main function."""
+    mylist = []
+    print("Jaký řadící algortimus chcete použít?")
+    x = int(input("Quick sort[1], Heap sort[2], Python Builtin[3]"))
+    if len(sys.argv) > 1:
+        argument = sys.argv[1]
+        if argument[-3:] == 'txt':
+            mylist = read_file()
+            print("Input Array: ", mylist)
+            min_max(mylist)
+            sort_choice(mylist, x)
+            print("Sorted Array: ", mylist)
+        else:
+            for i in sys.argv[1:]:
+                mylist.append(i)
+            print("Input Array: ", mylist)
+            min_max(mylist)
+            sort_choice(mylist, x)
+            print("Sorted Array: ", mylist)
     else:
-        for i in sys.argv[1:]:
-            mylist.append(i)
+        mylist = generate_array()
         print("Input Array: ", mylist)
         min_max(mylist)
         sort_choice(mylist, x)
         print("Sorted Array: ", mylist)
-else:
-    mylist = generate_array()
-    print("Input Array: ", mylist)
-    min_max(mylist)
-    sort_choice(mylist, x)
-    print("Sorted Array: ", mylist)
 
 
 # Unittesty
@@ -265,3 +267,6 @@ def test_min_max():
     assert res[3] == '2'
     # test_minmax = min_max([57, 21, 63, 15])
     # assert test_minmax == ['15', '63', '3', '2']
+
+if __name__ == "__main__":
+    main()
