@@ -65,7 +65,7 @@ def obvod(Sa, Sb, Sc):
     """Vypocet obvodu trojuhelniku.
 
     >>> obvod(1, 1, 1)
-    3.0
+    3
     """
     return round(Sa+Sb+Sc, 3)
 
@@ -74,7 +74,7 @@ def obsah(Sa, Sb, Sc):
     """Vypocet osahu trojuhelniku.
 
     >>> obsah(4.243, 5.099, 2.828)
-    6.0
+    6
     >>> obvod(4.243, 5.099, 2.828)/2
     6.085
     """
@@ -90,9 +90,9 @@ def pravouhly(Sa, Sb, Sc):
      >>> pravouhly(2.243, 5.099, 2.828)
      False
      >>> round(4**2 + 2**2)
-     20.0
+     20
      >>> round(2**2 + 3**2)
-     13.0
+     13
      >>> 2**2
      4
     """
