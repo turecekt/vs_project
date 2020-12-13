@@ -80,3 +80,13 @@ def trojuhelnik(ax, ay, bx, by, cx, cy):
         prepona(a, b, c)
     else:
         print("Trojuhelnik nelze sestrojit")
+
+
+a1 = 9  # x souřadnice bodu A
+a2 = 1  # y souřadnice bodu A
+b1 = -6  # x souřadnice bodu B
+b2 = 2  # y souřadnice bodu B
+c1 = 11  # x souřadnice bodu C
+c2 = 4  # y souřadnice bodu C
+
+trojuhelnik(a1, a2, b1, b2, c1, c2)
