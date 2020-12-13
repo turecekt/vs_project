@@ -1,4 +1,4 @@
-﻿#Funkce pro převod z Morseovky do abecedy a naopak
+﻿# Funkce pro převod z Morseovky do abecedy a naopak
 def prevod(vstup):
 
     # Vytvoření dictionary pro morseovku
@@ -42,13 +42,13 @@ def prevod(vstup):
 
     g = ""
 
-    #Převedení z morseovky na text
+    # Převedení z morseovky na text
     if vstup.startswith('.') or vstup.startswith('-'):
         
-        #Rozdělení morseovky na jednotlivé kombinace
+        # Rozdělení morseovky na jednotlivé kombinace
         rozdVstup = vstup.split(' ')
 
-        #Vytvoření cyklu pro převod z morseovky na text
+        # Vytvoření cyklu pro převod z morseovky na text
         for prvek in rozdVstup:
             if prvek not in morseovka.values():
 <<<<<<< HEAD
@@ -64,12 +64,12 @@ def prevod(vstup):
             
         return g
 
-    #Převedení z textu do morseovky
+    # Převedení z textu do morseovky
     else: 
-        #Převedení textu na velká písmena
+        # Převedení textu na velká písmena
         vstupV = vstup.upper()
 
-        #Převedení textu na pole znaků
+        # Převedení textu na pole znaků
         rozdVstup = list(vstupV)
 
         # Vytvoření cyklu for pro převod zadaných znaků do morseovky
@@ -84,10 +84,10 @@ def prevod(vstup):
 
         return g
 
-#vytvoření vstupu
+# Vytvoření vstupu
 print('--KODÉR A DEKODÉR MORSEOVKY--')
 vstup = input('Zadejte text pro převod: ')
 
-#výstup
+# Výstup
 print(prevod(vstup))
 
