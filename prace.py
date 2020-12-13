@@ -1,6 +1,3 @@
-
-import unittest
-
 """Kodovani a dekodovaní morseovy text."""
 
 """Abeceda potřebná na překlad na Morse"""
@@ -103,7 +100,7 @@ while True:
             break
         else:
             print('Spatna volba')
-    except:
+    except Exception:
         print('Spatna volba')
 
 
