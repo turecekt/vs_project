@@ -14,6 +14,7 @@ MORSE_DICTIONARY = {'A': '.-', 'B': '-...',
                     '?': '..--..', '/': '-..-.', '-': '-....-',
                     '(': '-.--.', ')': '-.--.-'}
 
+
 def encrypt(message):
     cipher = ''
     for letter in message:
@@ -34,7 +35,7 @@ def decrypt(message):
     citext = ''
     for letter in message:
 
-        if (letter != ' '):
+        if letter != ' ':
 
             i = 0
 
@@ -49,8 +50,7 @@ def decrypt(message):
                 decipher += ' '
             else:
 
-                decipher += list(MORSE_DICTIONARY.keys())[list(MORSE_DICTIONARY
-                                                              .values()).index(citext)]
+                decipher += list(MORSE_DICTIONARY.keys())[list(MORSE_DICTIONARY.values()).index(citext)]
                 citext = ''
 
     return decipher
