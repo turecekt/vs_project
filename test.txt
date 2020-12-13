@@ -1,4 +1,6 @@
-message=input('Vloz text na preklad:')			#uzivatel nejprve vlozi text, ktery chce prelozit do Morseovy abecedy
+message=input('Vloz text na preklad:')			
+#uzivatel nejprve vlozi text, ktery chce prelozit do Morseovy abecedy
+
 MORSE_CODE_DICT = { 'A':'.-', 'B':'-...',
                     'C':'-.-.', 'D':'-..', 'E':'.',
                     'F':'..-.', 'G':'--.', 'H':'....',
@@ -13,16 +15,31 @@ MORSE_CODE_DICT = { 'A':'.-', 'B':'-...',
                     '7':'--...', '8':'---..', '9':'----.',
                     '0':'-----', ', ':'--..--', '.':'.-.-.-',
                     '?':'..--..', '/':'-..-.', '-':'-....-',
-                    '(':'-.--.', ')':'-.--.-'}		#slovnik na preklad Morseovy abecedy
-def encrypt(message):
-    sifra = ''
-    for pismeno in message:
-        if pismeno != ' ': 				#Vyhledá slovník a přidá odpovídající Morseovu abecedu spolu s mezerou pro různé znaky
-            sifra += MORSE_CODE_DICT[pismeno] + ' '
-        else:
-            				# 1 označuje různé znaky
-            				# a 2 označuje různá slova
-            sifra += ' '
-    return sifra 			#vrací šifru
-print(encrypt(message))			#vypíše šifru v morseově abecedě
+                    '(':'-.--.', ')':'-.--.-'}		
 
+#slovnik na preklad Morseovy abecedy
+
+def encrypt(message):
+    	sifra = ''
+    for pismeno in message:
+        if pismeno != ' ': 				
+
+#Vyhledá slovník a přidá odpovídající Morseovu abecedu spolu s mezerou pro různé znaky
+            
+
+	sifra += MORSE_CODE_DICT[pismeno] + ' '
+        	else:
+# označuje různé znaky
+# a označuje různá slova
+            
+
+	sifra += ' '
+    return sifra 			
+
+#vrací šifru
+
+print(encrypt(message))			
+#vypíše šifru v morseově abecedě
+
+input()
+#na ukonční programu musí uživatel stiknout Enter
