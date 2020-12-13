@@ -1,1 +1,13 @@
-
+if __name__ == '__main__':
+    print('Napis souradnici x bodu A: ')
+    Ax = input()
+    print('Napis souradnici y bodu A: ')
+    Ay = input()
+    print('Napis souradnici x bodu B: ')
+    Bx = input()
+    print('Napis souradnici y bodu B: ')
+    By = input()
+    print('Napis souradnici x bodu C: ')
+    Cx = input()
+    print('Napis souradnici y bodu C: ')
+    Cy = input()
