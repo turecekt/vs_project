@@ -19,8 +19,4 @@ MORSE_CODE_DICT = { 'A':'.-', 'B':'-...',
 def encrypt(message):
     sifra = ''
     for pismeno in message:
-        if pismeno != ' ':
-#Vyhledá slovník a přidá
-# odpovídající Morseova abeceda
-# spolu s mezerou k oddělení
-# morseovy kódy pro různé znaky
+        if pismeno != ' ': #Vyhledá slovník a přidá odpovídající Morseovu abecedu spolu s mezerou pro různé znaky
