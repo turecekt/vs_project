@@ -2,7 +2,7 @@ message=input('Vloz text na preklad:')
 #uzivatel nejprve vlozi text, ktery chce prelozit do Morseovy abecedy
 
 message = message.upper()
-#slovnik Morseovy abecedy je ve formatu uppercase. V pripade zadani vedy v lowercase, prepise vetu na uppercase.
+#slovnik Morseovy abecedy je ve formatu uppercase. V pripade zadani vety v lowercase, prepise vetu na uppercase.
 
 MORSE_CODE_DICT = { 'A':'.-', 'B':'-...',
                     'C':'-.-.', 'D':'-..', 'E':'.',
@@ -45,4 +45,4 @@ print(encrypt(message))
 #vypíše šifru v morseově abecedě
 
 input()
-#na ukonční programu musí uživatel stiknout Enter
+#na ukončení programu musí uživatel stisknout Enter
