@@ -56,6 +56,13 @@ if __name__ == '__main__':
         int(Cy)
     except:
        print('Cisla byla zadana ve spatnem tvaru! Zadej pouze cela cisla.')
+    else:
+        int(Ax)
+        int(Ay)
+        int(Bx)
+        int(By)
+        int(Cx)
+        int(Cy)
 
     sA = math.sqrt(((Bx - Ax) ** 2) + ((By - Ay) ** 2))
     sB = math.sqrt(((Cx - Bx) ** 2) + ((Cy - By) ** 2))
