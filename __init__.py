@@ -11,23 +11,6 @@ VÝSTUP
     - Informace jakým způsobem byl výsledek zjištěn
         (deterministickou/heuristickou metodou)
 
-Program obsahuje 7 funkcí, například:
-
-funkce Metody()
->>> Metody(2)
-3
-
-funkce MetodaPravidelDelitelnosti()
->>> MetodaPravidelDelitelnosti(22)
-True
-
-funkce DeterministickaMetoda()
->>> DeterministickaMetoda(56545121)
-False
-
-funkce HeurestickaMetoda()
->>> HeurestickaMetoda(4)
-False
 
 """
 
@@ -35,14 +18,22 @@ import math
 from os import path
 
 
-def Vstup():
-    """Funkce získá vstup od uživatele a ošetří jej proti chybám.
+def Vstup(NapsanaRadka):
+    """Funkce ověří vstup od uživatele a ošetří jej proti chybám.
 
     Returns:
         - output - Vrátí číslo uživatele nebo 0 jako chybu
-    """
-    NapsanaRadka = input()
 
+    #UNIT TESTY:
+    >>> Vstup("A")
+    0
+
+    >>> Vstup("12")
+    12
+
+    >>> Vstup("3")
+    3
+    """
     for znak in NapsanaRadka:
         if not(znak in "0123456789"):
             return 0
@@ -125,6 +116,25 @@ def Metody(cislo):
 
     Returns:
         - output - Číslo použité metody a znaménko určující je/není prvočíslo
+
+    #UNIT TESTY:
+    >>> Metody(1)
+    -1
+
+    >>> Metody(14)
+    -2
+
+    >>> Metody(3)
+    3
+
+    >>> Metody(4)
+    -3
+
+    >>> Metody(40013)
+    4
+
+    >>> Metody(40011)
+    -4
     """
     pouzitaMetoda = 1
     if(cislo <= 1):
@@ -159,6 +169,28 @@ def MetodaPravidelDelitelnosti(cislo):
 
     Returns:
         - output - Boolean pokud je/není prvočíslo.
+
+    #UNIT TESTY:
+    >>> MetodaPravidelDelitelnosti(40)
+    True
+
+    >>> MetodaPravidelDelitelnosti(42)
+    True
+
+    >>> MetodaPravidelDelitelnosti(44)
+    True
+
+    >>> MetodaPravidelDelitelnosti(45)
+    True
+
+    >>> MetodaPravidelDelitelnosti(46)
+    True
+
+    >>> MetodaPravidelDelitelnosti(48)
+    True
+
+    >>> MetodaPravidelDelitelnosti(51)
+    False
     """
     return (cislo > 9 and str(cislo)[-1] in "024568")
 
@@ -174,6 +206,19 @@ def DeterministickaMetoda(moznePrvocislo):
 
     Returns:
         - output - Boolean pokud je/není prvočíslo.
+
+    #UNIT TESTY:
+    >>> DeterministickaMetoda(3)
+    True
+
+    >>> DeterministickaMetoda(7)
+    True
+
+    >>> DeterministickaMetoda(40013)
+    True
+
+    >>> DeterministickaMetoda(40011)
+    False
     """
     if(not path.exists("nalezenaPrvocisla.txt")):
         cachePrvociselSoubor = open("nalezenaPrvocisla.txt", "w")
@@ -213,6 +258,16 @@ def ZjistiVicePrvocisel(cachePrvocisel, doCisla):
 
     Returns:
         - output - Pole všech dosud nalezených prvočísel
+
+    #UNIT TESTY:
+    >>> ZjistiVicePrvocisel(["2", "3", "5", "7", "11", "13"], 25)
+    ["2", "3", "5", "7", "11", "13", "17", "19", "23"]
+
+    >>> ZjistiVicePrvocisel(["2", "3", "5", "7"], 15)
+    ["2", "3", "5", "7", "11", "13"]
+
+    >>> ZjistiVicePrvocisel(["2"], 10)
+    ["2", "3", "5", "7"]
     """
     if(int(cachePrvocisel[len(cachePrvocisel) - 1]) == 2):
         cislo = 3
@@ -257,6 +312,13 @@ def HeurestickaMetoda(o):
 
     Returns:
         - output - Boolean pokud je/není prvočíslo.
+
+    #UNIT TESTY:
+    >>> HeurestickaMetoda(7)
+    True
+
+    >>> HeurestickaMetoda(6)
+    False
     """
     k = 1
     factorial = 1
@@ -272,7 +334,7 @@ def HeurestickaMetoda(o):
 
 # FUNKCE MAIN >>
 if __name__ == "__main__":
-    moznePrvocislo = Vstup()            # Získá vstup od uživatele
+    moznePrvocislo = Vstup(input())            # Získá vstup od uživatele
 
     if(moznePrvocislo > 0):             # Otestuje chybový vstup
         Vystup(Metody(moznePrvocislo))  # Vystup s řešením
