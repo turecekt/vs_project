@@ -60,6 +60,7 @@ def test_encrypt():
 def test_encrypt_numbers():
     """Testing decrypting with numbers as an input.
 
+    Vraceni vsech znaku v morseove sifre
     >>>encrypt('12345')
     '.---- ..--- ...-- ....- ..... '
     """
