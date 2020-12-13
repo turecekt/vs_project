@@ -53,6 +53,7 @@ def test_encrypt():
     """
     assert encrypt('E') == '. '
 
+
 def compute(x):
     """Functon compute returns evaluation of expression using argument x.
 
