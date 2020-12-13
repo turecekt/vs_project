@@ -98,21 +98,9 @@ def test_decrypt():
     >>> decrypt('.')
     'E'
     """
-    correctResult = 'EEEE'
-    result = decrypt('. . . . ')
-    assert result == correctResult
+    assert decrypt('.') == 'E'
 
 
-def test_malaaVelka():
-    """Zprava.
-
-    Pimena na velka.
-    >>>input('e')
-    'E'
-    """
-    assert input('e') == message('E')
-    
-    
 # funkce main
 def main():
     """Definovani funkce main.
