@@ -1,0 +1,1 @@
+message=input('Vloz text na preklad:')
