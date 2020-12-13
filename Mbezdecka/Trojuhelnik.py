@@ -14,7 +14,7 @@ def nacteni_bodu():
     """Nacteni Bodu."""
     while(True):
         vstup = input("Spustit program trojuhelnik A/N?: ")
-        if(vstup == 'A'):
+        if(vstup == 'A' or vstup == 'a'):
             print("Zadej souradnice bodu x a y")
             xA = int(input("Zadaj souradnici x bodu A: "))
             yA = int(input("Zadaj souradnici y bodu A: "))
@@ -23,7 +23,7 @@ def nacteni_bodu():
             xC = int(input("Zadaj souradnici x bodu C: "))
             yC = int(input("Zadaj souradnici y bodu C: "))
             vypis(xA, yA, xB, yB, xC, yC)
-        elif(vstup == 'N'):
+        elif(vstup == 'N' or vstup == 'n'):
             sys.exit()
         else:
             print("Zadaj Y alebo N")
@@ -109,6 +109,14 @@ def vypis(xA, yA, xB, yB, xC, yC):
 
     >>> vypis(0, 0, 0, 0, 0, 0)
     Trojuhelnik nelze setrojit
+    >>> vypis(1, 3, 3, 5, 6, 2)
+    Trojuhelnik lze setrojit
+    Delka strany a je:  4.243
+    Delka strany b je:  5.099
+    Delka strany c je:  2.828
+    Obvod trojuhelniku je:  12.17
+    Obsah trojuhelniku je:  6
+    Trojuhelnik je pravouhly
     """
     Sa = vypocet_strany(xB, yB, xC, yC)
     Sb = vypocet_strany(xA, yA, xC, yC)
@@ -134,3 +142,8 @@ if __name__ == '__main__':
     """ Hlavni telo programu."""
 
     nacteni_bodu()
+
+
+def test_obsah():
+    """Testovani Funkce obsahu."""
+    assert obsah(4.243, 5.099, 2.828) == 6
