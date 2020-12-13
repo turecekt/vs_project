@@ -54,6 +54,7 @@ def test_encrypt():
     assert encrypt('E') == '. '
     assert encrypt('A') == '.- '
 
+
 # odsifrovavani
 def decrypt(message):
     """Odsifrovani zpravy.
@@ -96,6 +97,7 @@ def test_decrypt():
     """
     assert decrypt('.') == ('E')
     assert decrypt('.-') == ('A')
+
 
 # funkce main
 def main():
