@@ -15,6 +15,7 @@ class TestMethods(unittest.TestCase):
         self.assertEqual(prevod(500), "D")
         self.assertNotEqual(prevod(1000), "D")
 
+
 class ToRomanBadInput(unittest.TestCase):
     """Špatný vstup."""
 
