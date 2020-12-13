@@ -85,6 +85,26 @@ class TestMethods(unittest.TestCase):
         """Kontrola správné hodnoty."""
         assert prevod(3743) == 'MMMDCCXLIII'
 
+    def test21(self):
+        """Kontrola správné hodnoty."""
+        assert prevod(1976) == 'MCMLXXVI'
+
+    def test22(self):
+        """Kontrola správné hodnoty."""
+        assert prevod(568) == 'DLXVIII'
+
+    def test23(self):
+        """Kontrola správné hodnoty."""
+        assert prevod(853) == 'DCCCLIII'
+
+    def test24(self):
+        """Kontrola správné hodnoty."""
+        assert prevod(1420) == 'MCDXX'
+
+    def test25(self):
+        """Kontrola správné hodnoty."""
+        assert prevod(2021) == 'MMXXI'
+
 
 """Prevod na rimske cislo."""
 
