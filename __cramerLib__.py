@@ -19,10 +19,10 @@ def determinantCalculation(matrixarray):
     """Functon determinantCalculation calculates determinant of given matrix.
 
     Args:
-        matrixarray - array representing matrix that should be calculated
+        - matrixarray - array representing matrix that should be calculated
 
     Returns:
-        determinant of given matrix, a number.
+        - determinant of given matrix, a number.
     """
     # we need copy of array, not reference.
     matrixArray = deepcopy(matrixarray)
@@ -86,12 +86,12 @@ def replaceWithRightSides(matrixarray, vector, column):
     """Functon replaceWithRightSides replaces with vector of right sides.
 
     Args:
-        matrixarray - array representing matrix that should be calculated
-        vector  - array of three values representing vecotr of right sides.
-        column - column to be replace, have to be in interval <0;2>
+        - matrixarray - array representing matrix that should be calculated
+        - vector  - array of three values representing vecotr of right sides.
+        - column - column to be replace, have to be in interval <0;2>
 
     Returns:
-        determinant of given matrix, a number.
+        - output - determinant of given matrix, a number.
     """
     # just in case that somebody uses index greater than 2
     column = column % 3
@@ -120,12 +120,12 @@ def convertToMatrixAndVector(fileContent, matrix, vector):
     matrix and vector of right sides.
 
     Args:
-        fileConetn - array of lines
-        matrix  - array representing matrix
-        vector - array, vector of right sides
+        - fileConetn - array of lines
+        - matrix  - array representing matrix
+        - vector - array, vector of right sides
 
     Returns:
-        determinant of given matrix, a number.
+        - output - 0 on failure, 1 on sucess.
     """
     if len(fileContent) < 3:
         print("File format problem: too few lines")

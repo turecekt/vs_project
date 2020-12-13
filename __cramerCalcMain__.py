@@ -18,6 +18,10 @@ def main():
     """Functon main calculates determinant of given matrix.
 
     This method is run automatically after script is opened
+    Args:
+
+    Returns:
+        - 0 on scucess, 1 on failure
     """
     if(len(sys.argv) != 2):
         if(len(sys.argv) < 2):
