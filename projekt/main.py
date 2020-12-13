@@ -50,17 +50,17 @@ def decrypt(message):
                 decipher += ' '
             else:
 
-                decipher += list(MORSE_DICTIONARY.keys())[list(MORSE_DICTIONARY
-                                                              .values()).index(citext)]
+                decipher += list(MORSE_DICTIONARY.keys()
+                [list(MORSE_DICTIONARY.values()).index(citext)]
                 citext = ''
 
     return decipher
 
 
-def main(): 
+def main():
     message = input("Zadejte zprávu v abc: ").upper()
-    result = encrypt(message.upper()) 
-    print (result) 
+    result = encrypt(message.upper())
+    print (result)
     
     message = input("Zadejte zprávu v morseovce: ")
     result = decrypt(message) 
