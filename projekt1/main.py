@@ -24,7 +24,7 @@ MORSE_CODE = {'A': '.-', 'B': '-...',
 
 
 def zasifrovani(zprava):
-    # Funkce, která zajištuje zašifrování prostého textu do Morseovy abecedy
+    """Funkce, která zajištuje zašifrování prostého textu do Morseovy abecedy."""
     zprava = zprava.upper()  # Převede zprávu z konzole na velká písmena
     sifra = ''
     for pismeno in zprava:
@@ -63,7 +63,8 @@ def rozsifrovani(zprava):
                 text += ' '
             else:
                 # Přístup ke knihovně morseovy abecedy přes hodnoty znaku
-                text += list(MORSE_CODE.keys())[list(MORSE_CODE.values()).index(citext)]
+                text += list(MORSE_CODE.keys()) \
+                [list(MORSE_CODE.values()).index(citext)]
                 citext = ''
 
     return text
@@ -71,7 +72,7 @@ def rozsifrovani(zprava):
 
 
 def main():
-    """Hlavni funkce, ktera slouzi k vypisu"""
+    """Hlavni funkce, ktera slouzi k vypisu."""
     print("Vlož text (bez diakritiky):")  # Vypsání zprávy na konzoli
     zprava = input()  # Načtení zprávy z konzole a přiřazení
     if not zprava:
@@ -80,7 +81,8 @@ def main():
     else:
 
         if zprava[0] in (".", "-"):
-            # Pokud zpráva začíná "." nebo "-" program zavolá funkci rozsifrovani
+            # Pokud zpráva začíná "." nebo "-"
+            # program zavolá funkci rozsifrovani
             result = rozsifrovani(zprava)
 
         else:
@@ -91,6 +93,7 @@ def main():
 
         print(result)
         # Program vypíše výsledek na konzoli
+
 
 # Ukončení main funkce
 if __name__ == '__main__':
