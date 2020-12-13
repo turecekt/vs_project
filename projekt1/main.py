@@ -64,8 +64,8 @@ def rozsifrovani(zprava):
                 text += ' '
             else:
                 # Přístup ke knihovně morseovy abecedy přes hodnoty znaku
-                text += list(MORSE_CODE.keys()) \ 
-                    [list(MORSE_CODE.values()).index(citext)]
+                text += list(MORSE_CODE.keys())\
+                        [list(MORSE_CODE.values()).index(citext)]
                 citext = ''
 
     return text
