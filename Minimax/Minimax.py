@@ -11,7 +11,13 @@ import random
 
 # Funkce pro zjištění nejmenšího prvku v poli
 def min(nums):
-    """Return minimum value in given array."""
+    """Return minimum value in given array.
+
+    Args:
+        - nums - Input array of numbers
+    Returns:
+        - min_value - Minimum value in the array
+    """
     min_value = None
     for value in nums:
         if not min_value:
@@ -23,7 +29,13 @@ def min(nums):
 
 # Funkce pro zjištění největšího prvku v poli
 def max(nums):
-    """Return maximum value in given array."""
+    """Return maximum value in given array.
+
+    Args:
+        - nums - Input array of numbers
+    Returns:
+        - max_value - Maximum value in the array
+    """
     max_value = nums[0]
     for value in nums:
         if value > max_value:
@@ -33,7 +45,16 @@ def max(nums):
 
 # Výpis nejmenšího a největšího prvku v poli s jeho indexem
 def min_max(mylist):
-    """Print outputs."""
+    """Print function for min and max values in array.
+
+    Args:
+        - mylist - Input array of numbers
+    Returns:
+        - minVal - Minimum value in the array
+        - maxVal - Maximum value in the array
+        - minIdx - Index of minimum value
+        - maxIdx - Index of maximum value
+    """
     minVal = min(mylist)
     maxVal = max(mylist)
     minIdx = mylist.index(minVal)
