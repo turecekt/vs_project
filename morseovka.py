@@ -1,9 +1,14 @@
-MORSEUV_SLOVNIK = {' ': '/', 'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.', 'F': '..-.', 'G': '--.', 'H': '....',
-                   'I': '..', 'J': '.---', 'K': '-.-', 'L': '.-..', 'M': '--', 'N': '-.', 'O': '---', 'P': '.--.', 'Q': '--.-',
-                   'R': '.-.', 'S': '...', 'T': '-', 'U': '..-', 'V': '...-', 'W': '.--', 'X': '-..-', 'Y': '-.--', 'Z': '--..',
-                   '1': '.----', '2': '..---', '3': '...--', '4': '....-', '5': '.....', '6': '-....', '7': '--...', '8': '---..', '9': '----.',
-                   '0': '-----', ', ': '--..--', '.': '.-.-.-', '?': '..--..', '/': '-..-.', '-': '-....-', '(': '-.--.', ')': '-.--.-'}
-
+MORSEUV_SLOVNIK = {' ': '/', 'A': '.-', 'B': '-...', 'C': '-.-.',
+                    'D': '-..', 'E': '.', 'F': '..-.', 'G': '--.', 
+                    'H': '....', 'I': '..', 'J': '.---', 'K': '-.-', 'L': '.-..', 
+                    'M': '--', 'N': '-.', 'O': '---', 
+                    'P': '.--.', 'Q': '--.-', 'R': '.-.', 'S': '...', 
+                    'T': '-', 'U': '..-', 'V': '...-', 'W': '.--', 
+                    'X': '-..-', 'Y': '-.--', 'Z': '--..','1': '.----', 
+                    '2': '..---', '3': '...--', '4': '....-', '5': '.....',
+                    '6': '-....', '7': '--...', '8': '---..', '9': '----.',
+                    '0': '-----', ', ': '--..--', '.': '.-.-.-', '?': '..--..', 
+                    '/': '-..-.', '-': '-....-', '(': '-.--.', ')': '-.--.-'}
 
 def Text_na_Morseovku():
     text = input('Napis text pro Morseovo sifrovani : ')
@@ -12,7 +17,6 @@ def Text_na_Morseovku():
     morseovka = ''.join(kod)
     print(morseovka)
 
-
 def Morseovka_na_Text():
     text = input('Napis Morseuv kod pro desifrovani do textu: ')
     kod = [j for i in text.split()
@@ -20,8 +24,8 @@ def Morseovka_na_Text():
     text2 = ''.join(kod)
     print(text2)
 
-
-print('''\n1 - Napis text pro Morseovo sifrovani \n2 - Napis Morseuv kod pro desifrovani do textu\n3 - Konec\n ''')
+print('''\n1 - Napis text pro Morseovo sifrovani 
+    \n2 - Napis Morseuv kod pro desifrovani do textu\n3 - Konec\n ''')
 while True:
     try:
         vyber = int(input('Zvol moznost 1-3 a potvrd klavesou ENTER: '))

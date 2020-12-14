@@ -1,4 +1,4 @@
-import morse
+import morseovka
 
 
 def test_Text_na_Morseovku():
