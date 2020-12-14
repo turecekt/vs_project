@@ -21,6 +21,7 @@ Projekt bol vytvorený pre vzdelávacie účely.
 """
 global cislo
 cislo = int(input('Zadajte ľubovoľné prirodzené číslo: '))
+# Definovanie vstupnej premennej cislo.
 
 
 # Hlavná funkcia
