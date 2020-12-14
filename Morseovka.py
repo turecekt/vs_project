@@ -1,6 +1,6 @@
 """Prevod textu na morseovku."""
 
-message = input('Vloz text na preklad')
+message = input('Vloz text na preklad:')
 """ Uzivatel nejprve vlozi text, ktery chce prelozit do Morseovy abecedy."""
 
 message = message.upper()
@@ -48,7 +48,7 @@ def encrypt(message):
 
             sifra += ' '
 
-        return sifra
+    return sifra
 
 
 """
