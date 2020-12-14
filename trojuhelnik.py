@@ -101,3 +101,7 @@ def test_obvod():
     """Ověří funčnost metody obvod."""
     assert obvod(5, 7, 8.60) == 20.60
 
+
+def test_obsah():
+    """Ověří funčnost metody obsah."""
+    assert obsah(5, 7, 8.60) == 17.49999714285692
