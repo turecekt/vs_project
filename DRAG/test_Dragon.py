@@ -73,7 +73,7 @@ class TestDragonCurve(unittest.TestCase):
                             'rllrrrllrlllrrlrrlllrrllrll')
 
     def test_color(self):
-        """Function docstring."""
+        """Function test color."""
         q = input_data
         default = "default"
         empty_value = ""
@@ -82,7 +82,7 @@ class TestDragonCurve(unittest.TestCase):
         self.assertEqueal(value, q(value, default))
 
     def assertEqueal(self, default, param):
-        """Function docstring pass."""
+        """color."""
         pass
 
 
