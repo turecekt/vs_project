@@ -4,6 +4,7 @@ import Morseovka
 def test_morse_enc0():
     """
     Encoding Test 0.
+
     Input:"Ahoj"
     Output:".-....---.---"
     """
@@ -14,6 +15,7 @@ def test_morse_enc0():
 def test_morse_enc1():
     """
     Encoding Test 1.
+
     Input:"SOS"
     Output:"... --- ..."
     """
@@ -23,6 +25,7 @@ def test_morse_enc1():
 def test_morse_enc2():
     """
     Encoding Test 2.
+
     Input:"jak se mas?"
     Output:".--- .- -.-  ... .  -- .- ... ..--.. "
     """
@@ -33,6 +36,7 @@ def test_morse_enc2():
 def test_morse_enc3():
     """
     Encoding Test 3.
+
     Input:"-.("
     Output:"-....- .-.-.- -.--."
     """
