@@ -189,23 +189,35 @@ def read_file():
 # Hlavní funkce:
 def main():
     """Run main driver function of the program."""
-    # mylist = []
+    inputIsValid = True
     print("Jaký řadící algortimus chcete použít?")
     x = str(input("Quicksort[1], Insertionsort[2], Mergesort[3]"))
     if len(sys.argv) > 1:
+        # Txt file passed as args -> read txt file
         argument = sys.argv[1]
         if argument[-3:] == 'txt':
-            mylist = read_file()
+            try:
+                mylist = read_file()
+            except ValueError:
+                inputIsValid = False
+                print("Soubor musí obsahovat pouze celá čísla oddělená mezerou!")
             print("Input Array: ", mylist)
             min_max(mylist)
             sort_choice(mylist, x)
         else:
+            # Integers passed as args -> read integers
             mylist = []
             for i in sys.argv[1:]:
-                mylist.append(int(i))
+                try:
+                    mylist.append(int(i))
+                except ValueError:
+                    inputIsValid = False
+                    print("Vstup musí být celá čísla!")
+                    break
             print("Input Array: ", mylist)
             min_max(mylist)
             sort_choice(mylist, x)
+    # No args passed -> generate array of integers
     else:
         mylist = generate_array()
         print("Input Array: ", mylist)
