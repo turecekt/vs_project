@@ -1,4 +1,5 @@
 import morseovka
+import pytest
 
 
 def test_Text_na_Morseovku():
@@ -14,10 +15,9 @@ def test_Text_na_Morseovku():
            '-..-. .-.-. -....- ---...  .-.-.-     .-.-.-'
     assert Text_na_Morseovku('1234567890') == \
            '.---- ..--- ...-- ....- ..... -.... --... ---.. ----. -----'
-    assert Text_na_Morseovku('Pokud je zadán text, '
-                             'je přeložen do morseovky a naopak. ') == \
-           '.--. --- -.- ..- -.. / .--- . / --.. .- -.. -. / - . -..- -'
-           '.--- . / .--. . .-.. --- . -. / -.. --- / -- --- .-. ... . --- ...- -.- -.-- / .- / -. .- --- .--. .- -.- .-.-.-'
+    assert Text_na_Morseovku(
+           'Pokud je zadán text, je přeložen do morseovky a naopak. ') == \
+           '.--. --- -.- ..- -.. / .--- . / --.. .- -.. -. / - . -..- - / .--- . / .--. . .-.. --- . -. / -.. --- / -- --- .-. ... . --- ...- -.- -.-- / .- / -. .- --- .--. .- -.- .-.-.-'
            
 
 
