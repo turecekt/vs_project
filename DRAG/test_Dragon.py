@@ -4,7 +4,7 @@ from Dragon import sides, input_data
 
 
 class TestDragonCurve(unittest.TestCase):
-    """Class for testing individual program functions DQ.py."""
+    """Class for testing individual program functions Dragon.py."""
 
     def test_sides2(self):
         """Function test, with the number of iterations equal to two."""
@@ -72,15 +72,17 @@ class TestDragonCurve(unittest.TestCase):
                             'lrrllrrrllrllrrrlrrlllrrllrlllrrlr'
                             'rllrrrllrlllrrlrrlllrrllrll')
 
-    def test_color1(self):
+    def test_color(self):
         """Function docstring."""
-        q = input_data()
-        self.assertEqual(type(q[0]), str)
+        q = input_data
+        default = "default"
+        empty_value = ""
+        value = "value"
+        self.assertEqueal(default, q(empty_value, default))
+        self.assertEqueal(value, q(value, default))
 
-    def test_color2(self):
-        """Function docstring."""
-        q = input_data()
-        self.assertEqual(type(q[1]), str)
+    def assertEqueal(self, default, param):
+        pass
 
 
 if __name__ == '__main__':
