@@ -32,7 +32,6 @@ code2 = [SLOVNIK_MORSEOVKA[i.upper()]
          + " " for i in text2 if i.upper() in SLOVNIK_MORSEOVKA.keys()]
 morseovka = "".join(code2)
 print(morseovka)
-Text_To_Code()
 
 
 """Stejny zpusob pouzijeme i zde i dekodovani nami zadaneho textu."""
