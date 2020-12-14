@@ -1,3 +1,4 @@
+"""Morse tests"""
 import Morseovka
 
 
@@ -8,7 +9,6 @@ def test_morse_enc0():
     Input:"Ahoj"
     Output:".-....---.---"
     """
-
     assert Morseovka.MORSE_CODE_DICT("Ahoj") == ".-....---.---"
 
 
