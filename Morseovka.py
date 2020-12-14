@@ -25,19 +25,14 @@ def encrypt(message):
     sifra = ''
     for pismeno in message:
         if pismeno != ' ':
- #vytvoreni definice n
-            # Looks up the dictionary and adds the
-            # correspponding morse code
-            # along with a space to separate
-            # morse codes for different characters
+#Vyhledá slovník a přidá
+# odpovídající Morseova abeceda
+# spolu s mezerou k oddělení
+# morseovy kódy pro různé znaky
             sifra += MORSE_CODE_DICT[pismeno] + ' '
         else:
-            # 1 space indicates different characters
-            # and 2 indicates different words
+            # 1 označuje různé znaky
+            # a 2 označuje různá slova
             sifra += ' '
-
     return sifra
-
-
-print(encrypt(message))
-input()
+#vrací šifru
