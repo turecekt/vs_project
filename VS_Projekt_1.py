@@ -27,7 +27,7 @@ cislo = int(input('Zadajte ľubovoľné prirodzené číslo: '))
 def prvocisla(a):
     """Definovanie hlavnej funkcie na vyhodnotenie prvočísel."""
     global text
-    global text2
+    global text2  # Definovanie globálnych premenných.
     global PocetDelitelov
     PocetDelitelov = 0
     text = ''
@@ -35,7 +35,7 @@ def prvocisla(a):
     if cislo == 0:
         pass
     elif cislo % cislo == 0:
-        PocetDelitelov += 1
+        PocetDelitelov += 1  # Podmienky na určenie počtu deliteľov.
     for i in range(1, 10):
         if cislo == i:
             PocetDelitelov += 0
@@ -48,7 +48,7 @@ def prvocisla(a):
         print(text)
     elif PocetDelitelov == 2:
         text = 'Číslo ' + str(cislo) + ' je prvočíslo.'
-        print(text)
+        print(text)  # Podmienky na určenie výstupného textu prvočísla.
         if cislo < 10:
             text2 = 'Metóda priameho delenia v cykle.'
             print(text2)
@@ -58,7 +58,7 @@ def prvocisla(a):
 
     elif PocetDelitelov != 2:
         text = ('Číslo ' + str(cislo) + ' nie je prvočíslo.')
-        print(text)
+        print(text)  # Podmienky na určenie výstupného textu neprvočísel.
         if cislo < 10:
             text2 = 'Metóda priameho delenia v cykle.'
             print(text2)
@@ -98,7 +98,7 @@ def test_prvocisla_delitelia():
         assert PocetDelitelov != 2
 
     elif cislo == 10:
-        assert PocetDelitelov != 2
+        assert PocetDelitelov != 2  # Otestuje prvých 20 čísel.
 
     elif cislo == 11:
         assert PocetDelitelov == 2
@@ -140,16 +140,16 @@ def test_parnecisla():
 
 def test_prvocislamale():
     """Testovacia funkcia na prvočísla v prvej stovke."""
-    pole = [23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71]
-    for i in range(0, len(pole)-1):
+    pole = [23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71]  # Zoznam.
+    for i in range(0, len(pole) - 1):  # Pomocou cyklu zistíme index poľa.
         if cislo == pole[i]:
             assert PocetDelitelov == 2
 
 
 def test_prvocislavelke():
     """Testovacia funkcia na prvočísla nad 1000."""
-    pole = [1019, 1021, 1031, 1033, 1039, 1049, 1051, 1061]
-    for i in range(0, len(pole) - 1):
+    pole = [1019, 1021, 1031, 1033, 1039, 1049, 1051, 1061]  # Zoznam.
+    for i in range(0, len(pole) - 1):  # Pomocou cyklu zistíme index poľa.
         if cislo == pole[i]:
             assert PocetDelitelov == 2
 
