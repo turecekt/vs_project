@@ -8,7 +8,7 @@ def testMorse01():
     Output:".-....---.---"
     """
 
-    assert MORSE_CODE_DICT("Ahoj") == ".-....---.---"
+    assert Morseovka.MORSE_CODE_DICT("Ahoj") == ".-....---.---"
 
 
 def testMorse02():
@@ -17,7 +17,7 @@ def testMorse02():
     Input:"SOS"
     Output:"... --- ..."
     """
-    assert MORSE_CODE_DICT("SOS") == "... --- ..."
+    assert Morseovka.MORSE_CODE_DICT("SOS") == "... --- ..."
 
 
 def testMorse03():
@@ -26,7 +26,7 @@ def testMorse03():
     Input:"jak se mas?"
     Output:".--- .- -.-  ... .  -- .- ... ..--.. "
     """
-    assert MORSE_CODE_DICT("mas se?") == "-- .- ...  ... . ..--.."
+    assert Morseovka.MORSE_CODE_DICT("mas se?") == "-- .- ...  ... . ..--.."
 
 
 def testMorse04():
@@ -35,4 +35,4 @@ def testMorse04():
     Input:"-.("
     Output:"-....- .-.-.- -.--."
     """
-    assert MORSE_CODE_DICT("-.(") == "-....- .-.-.- -.--."
+    assert Morseovka.MORSE_CODE_DICT("-.(") == "-....- .-.-.- -.--."
