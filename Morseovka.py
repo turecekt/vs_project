@@ -1,7 +1,7 @@
 """
-Kod morseovka,
+Kod morseovky.
 
-preklad z textu na morseovku
+Preklad z textu na morseovku
 """
 
 message = input('Vloz text na preklad:')
@@ -39,6 +39,12 @@ Slovnik na preklad Morseovy abecedy
 
 
 def encrypt(message):
+    """
+    Vyhledá slovník a přidá odpovídající Morseovu
+
+    :param message: vyhleda hodnotu
+    :return: vraci priprazeny kod k pismenu
+    """
 
     sifra = ''
     for pismeno in message:
@@ -52,10 +58,8 @@ def encrypt(message):
 
 
 """
+podminka
 
-Vyhledá slovník a přidá odpovídající Morseovu
-
-abecedu spolu s mezerou pro různé znaky,
 označuje různé znaky a označuje různá slova
 """
 
