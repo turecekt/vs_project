@@ -75,5 +75,3 @@ if __name__ == "__main__":
                 print("UKONCUJI")
                 exit()
 
-            else:
-                print("SPATNA VOLBA, ZKUSTE ZNOVU")  
