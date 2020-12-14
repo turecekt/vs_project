@@ -1,37 +1,44 @@
 import Morseovka
 
-def testMorse():
-    """
-    Test 1
+def testMorse01():
 
-    Input: "Ahoj"
-    Output: ".-....---.---"
-    """
-assert morse.morse_code("Ahoj") == ".-....---.---"
+"""
+Test 1
+Input:"Ahoj"
+Output:".-....---.---"
+"""
 
-def testMorse():
-    """
-    Test 2
+assert MORSE_CODE_DICT("Ahoj") == ".-....---.---"
 
-    Input: "SOS"
-    Output: "... --- ..."
-    """
-assert morse.morse_code("SOS") == "... --- ..."
 
-def testMorse():
-    """
-    Test 3
+def testMorse02():
 
-    Input: "jak se mas?"
-    Output: ".--- .- -.-  ... .  -- .- ... ..--.. "
-    """
-assert morse.morse_code("jak se mas?") == ".--- .- -.-  ... .  -- .- ... ..--.. "
+"""
+Test 2
+Input:"SOS"
+Output:"... --- ..."
+"""
 
-def testMorse():
-    """
-    Test 4
+assert MORSE_CODE_DICT("SOS") == "... --- ..."
 
-    Input: "-.("
-    Output: "-....- .-.-.- -.--."
-    """
-assert morse.morse_code("-.(") == "-....- .-.-.- -.--."
+
+def testMorse03():
+
+"""
+Test 3
+Input:"jak se mas?"
+Output:".--- .- -.-  ... .  -- .- ... ..--.. "
+"""
+
+assert MORSE_CODE_DICT("mas se?") == "-- .- ...  ... . ..--.."
+
+
+def testMorse04():
+
+"""
+Test 4
+Input:"-.("
+Output:"-....- .-.-.- -.--."
+"""
+
+assert MORSE_CODE_DICT("-.(") == "-....- .-.-.- -.--."
