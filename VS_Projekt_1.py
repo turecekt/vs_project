@@ -48,8 +48,7 @@ def prvocisla(a):
         text = 'Číslo ' + str(cislo) + ' je prvočíslo.'
         print(text)
         if cislo < 10:
-            text2 = 'Výsledok sme zistili pomocou metódy ' 
-                    'priameho delenia v cykle.'
+            text2 = 'Výsledok sme zistili pomocou metódy priameho delenia v cykle.'
             print(text2)
         elif cislo >= 10:
             text2 = 'Výsledok sme zistili pomocou štatistickej metódy.'
@@ -59,8 +58,7 @@ def prvocisla(a):
         text = ('Číslo ' + str(cislo) + ' nie je prvočíslo.')
         print(text)
         if cislo < 10:
-            text2 = 'Výsledok sme zistili pomocou ' 
-                    'metódy priameho delenia v cykle.'
+            text2 = 'Výsledok sme zistili pomocou metódy priameho delenia v cykle.'
             print(text2)
         elif cislo >= 10:
             text2 = 'Výsledok sme zistili pomocou štatistickej metódy.'
