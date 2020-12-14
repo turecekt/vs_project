@@ -1,6 +1,5 @@
 """Aplikace pro preklad morseovky."""
 
-import sys
 
 SLOVNIK_MORSEOVKA = {"A": ".-", "B": "-...",
                      "C": "-.-.", "D": "-..", "E": ".",
