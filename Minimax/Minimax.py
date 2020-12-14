@@ -147,15 +147,12 @@ def sort_choice(mylist, x):
     if x == '1':
         sorted_array = quick_sort(mylist)
         print("Sorted array: ", sorted_array)
-        return sorted_array
     elif x == '2':
         sorted_array = insertion_sort(mylist)
         print("Sorted array: ", sorted_array)
-        return sorted_array
     elif x == '3':
         sorted_array = merge_sort(mylist)
         print("Sorted array: ", sorted_array)
-        return sorted_array
     else:
         raise Exception("Nevalidní hodnota.")
 
@@ -189,18 +186,13 @@ def read_file():
 # Hlavní funkce:
 def main():
     """Run main driver function of the program."""
-    inputIsValid = True
     print("Jaký řadící algortimus chcete použít?")
     x = str(input("Quicksort[1], Insertionsort[2], Mergesort[3]"))
     if len(sys.argv) > 1:
         # Txt file passed as args -> read txt file
         argument = sys.argv[1]
         if argument[-3:] == 'txt':
-            try:
-                mylist = read_file()
-            except ValueError:
-                inputIsValid = False
-                print("Soubor musí obsahovat pouze celá čísla oddělená mezerou!")
+            mylist = read_file()
             print("Input Array: ", mylist)
             min_max(mylist)
             sort_choice(mylist, x)
@@ -208,12 +200,7 @@ def main():
             # Integers passed as args -> read integers
             mylist = []
             for i in sys.argv[1:]:
-                try:
-                    mylist.append(int(i))
-                except ValueError:
-                    inputIsValid = False
-                    print("Vstup musí být celá čísla!")
-                    break
+                mylist.append(int(i))
             print("Input Array: ", mylist)
             min_max(mylist)
             sort_choice(mylist, x)
@@ -228,21 +215,18 @@ def main():
 # Unittesty
 def test_min():
     """Min test."""
-    test_list = [1, 2, 3, -4, -2]
-    assert(min(test_list)) == -4
+    assert(min([1, 2, 3, -4, -2])) == -4
 
 
 def test_max():
     """Max test."""
-    test_list = [1, 2, 3, -4, -2]
-    assert(max(test_list)) == 3
+    assert(max([1, 2, 3, -4, -2])) == 3
 
 
 # Unittest Quicksortu
 def test_quicksort():
     """Quicksort Unittest."""
-    test_arr = [7, 13, 5]
-    assert(quick_sort(test_arr)) == [5, 7, 13]
+    assert(quick_sort([7, 13, 5])) == [5, 7, 13]
     # test nahodných vstupů
     # test_rArr = [random.sample(range(100), 10)]
     # test_rArrCopy = test_rArr.copy()
@@ -254,15 +238,14 @@ def test_quicksort():
 # Unittest Mergesortu
 def test_mergesort():
     """Mergesort Unittest."""
-    test_arr = [37, 41, 73, 13, 7, 101]
-    assert(merge_sort(test_arr)) == [7, 13, 37, 41, 73, 101]
+    assert(merge_sort([37, 41, 73, 13, 7, 101])) == [7, 13, 37, 41, 73, 101]
 
 
 # Unittest Insertionsortu
 def test_insertionsort():
     """Insertionsort Unittest."""
-    test_arr = [37, 41, 73, 13, 7, 101]
-    assert(insertion_sort(test_arr)) == [7, 13, 37, 41, 73, 101]
+    assert(insertion_sort([37, 41, 73, 13, 7, 101])) ==\
+        [7, 13, 37, 41, 73, 101]
 
 
 def test_readfile():
@@ -285,32 +268,41 @@ def test_generateRandom():
 
 def test_sort_choice1():
     """Test switch if user inserts choice no. 1."""
-    test_arr = [57, 21, 63, 15]
-    assert sort_choice(test_arr, '1') == [15, 21, 57, 63]
+    assert sort_choice([57, 21, 63, 15], '1') == print(
+        "Sorted array: ", [15, 21, 57, 63])
 
 
 def test_sort_choice2():
     """Test switch if user inserts choice no. 2."""
-    test_arr = [57, 21, 63, 15]
-    assert sort_choice(test_arr, '2') == [15, 21, 57, 63]
+    assert sort_choice([57, 21, 63, 15], '2') == print(
+        "Sorted array: ", [15, 21, 57, 63])
 
 
 def test_sort_choice3():
     """Test switch if user inserts choice no. 3."""
-    test_arr = [57, 21, 63, 15]
-    assert sort_choice(test_arr, '3') == [15, 21, 57, 63]
+    assert sort_choice([57, 21, 63, 15], '3') == print(
+        "Sorted array: ", [15, 21, 57, 63])
 
 
 def test_findMinIdx():
     """Test findMinIndex."""
-    test_arr = [57, 21, 63, 15]
-    assert findMinIdx(test_arr, min(test_arr)) == 3
+    assert findMinIdx([57, 21, 63, 15], min([57, 21, 63, 15])) == 3
 
 
 def test_findMaxIdx():
     """Test findMaxIndex."""
-    test_arr = [57, 21, 63, 15]
-    assert findMaxIdx(test_arr, max(test_arr)) == 2
+    assert findMaxIdx([57, 21, 63, 15], max([57, 21, 63, 15])) == 2
+
+
+def test_minmax_Print():
+    """Print test."""
+    assert(min_max([57, 21, 63, 15])) == (print(
+     "Nejmenší prvek v seznamu má hodnotu: "
+     + str(15) + " a nachazi se na indexu: "
+     + str(3)))
+    (print("Největší prvek v seznamu má hodnotu: "
+     + str(63) + " a nachazi se na indexu: "
+     + str(2)))
 
 
 if __name__ == "__main__":
