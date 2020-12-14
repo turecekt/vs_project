@@ -21,28 +21,23 @@ MORSE_CODE_DICT = { 'A':'.-', 'B':'-...',
                     '(':'-.--.', ')':'-.--.-'}		
 
 #slovnik na preklad Morseovy abecedy
-
 def encrypt(message):
-    	sifra = ''
+    sifra = ''
     for pismeno in message:
-        if pismeno != ' ': 				
+        if pismeno != ' ':
+ #vytvoreni definice n
+            # Looks up the dictionary and adds the
+            # correspponding morse code
+            # along with a space to separate
+            # morse codes for different characters
+            sifra += MORSE_CODE_DICT[pismeno] + ' '
+        else:
+            # 1 space indicates different characters
+            # and 2 indicates different words
+            sifra += ' '
 
-#Vyhledá slovník a přidá odpovídající Morseovu abecedu spolu s mezerou pro různé znaky
-            
+    return sifra
 
-	sifra += MORSE_CODE_DICT[pismeno] + ' '
-        	else:
-# označuje různé znaky
-# a označuje různá slova
-            
 
-	sifra += ' '
-    return sifra 			
-
-#vrací šifru
-
-print(encrypt(message))			
-#vypíše šifru v morseově abecedě
-
+print(encrypt(message))
 input()
-#na ukončení programu musí uživatel stisknout Enter
