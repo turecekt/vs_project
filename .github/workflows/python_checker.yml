@@ -24,4 +24,3 @@ jobs:
     - name: Test with pytest
       run: |
         pytest --doctest-modules --cov=. --cov-fail-under=66 *
-    
