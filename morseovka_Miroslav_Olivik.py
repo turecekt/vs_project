@@ -76,4 +76,4 @@ if __name__ == "__main__":
                 exit()
 
             else:
-                print("NESPRAVNA VOLBA, ZVOLTE ZNOVU")
+                print("SPATNA VOLBA, ZKUSTE ZNOVU")  
