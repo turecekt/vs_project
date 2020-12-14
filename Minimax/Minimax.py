@@ -43,29 +43,29 @@ def max(nums):
     return max_value
 
 
-# Výpis nejmenšího a největšího prvku v poli s jeho indexem
-def min_max(mylist):
-    """Print function for min and max values in array.
+# Funkce pro zjištění indexu nejmenšího prvku v poli
+def findMinIdx(nums, minVal):
+    """Find index of min value in the array."""
+    minIdx = nums.index(minVal)
+    return minIdx
 
-    Args:
-        - mylist - Input array of numbers
-    Returns:
-        - minVal - Minimum value in the array
-        - maxVal - Maximum value in the array
-        - minIdx - Index of minimum value
-        - maxIdx - Index of maximum value
-    """
-    minVal = min(mylist)
-    maxVal = max(mylist)
-    minIdx = mylist.index(minVal)
-    maxIdx = mylist.index(maxVal)
+
+# Funkce pro zjištění indexu největšího prvku v poli
+def findMaxIdx(nums, maxVal):
+    """Find index of min value in the array."""
+    maxIdx = nums.index(maxVal)
+    return maxIdx
+
+
+# Výpis nejmenšího a největšího prvku v poli s jeho indexem
+def min_max(nums):
+    """Print function for min and max values in array."""
     (print("Nejmenší prvek v seznamu má hodnotu: "
-     + str(minVal) + " a nachazi se na indexu: "
-     + str(minIdx)))
+     + str(min(nums)) + " a nachazi se na indexu: "
+     + str(findMinIdx(nums, min(nums)))))
     (print("Největší prvek v seznamu má hodnotu: "
-     + str(maxVal) + " a nachazi se na indexu: "
-     + str(maxIdx)))
-    return str(minVal), str(maxVal), str(minIdx), str(maxIdx)
+     + str(max(nums)) + " a nachazi se na indexu: "
+     + str(findMaxIdx(nums, max(nums)))))
 
 
 # Quicksort třídící algoritmu
@@ -199,7 +199,6 @@ def main():
             print("Input Array: ", mylist)
             min_max(mylist)
             sort_choice(mylist, x)
-            # print("Sorted Array: ", mylist)
         else:
             mylist = []
             for i in sys.argv[1:]:
@@ -207,7 +206,6 @@ def main():
             print("Input Array: ", mylist)
             min_max(mylist)
             sort_choice(mylist, x)
-            # print("Sorted Array: ", mylist)
     else:
         mylist = generate_array()
         print("Input Array: ", mylist)
@@ -257,8 +255,8 @@ def test_insertionsort():
 
 def test_readfile():
     """Test reading values in a text file."""
-    test_arr = read_file()
-    assert test_arr == [57, 21, 63, 3, 15, 7, 68, 46, 20, 58, 48, 41]
+    # test_arr = read_file()
+    assert read_file() == [57, 21, 63, 3, 15, 7, 68, 46, 20, 58, 48, 41]
 
 
 def test_generateRandom():
@@ -267,9 +265,10 @@ def test_generateRandom():
 
     By checking their resulting lengths.
     """
-    test_arr = generate_array()
-    test_arr2 = generate_array()
-    assert len(test_arr) == len(test_arr2)
+    assert len(generate_array()) == len(generate_array())
+    # test_arr = generate_array()
+    # test_arr2 = generate_array()
+    # assert len(test_arr) == len(test_arr2)
 
 
 def test_sort_choice1():
@@ -290,15 +289,16 @@ def test_sort_choice3():
     assert sort_choice(test_arr, '3') == [15, 21, 57, 63]
 
 
-def test_min_max():
-    """Test min_max function."""
-    res = min_max([57, 21, 63, 15])
-    assert res[0] == '15'
-    assert res[1] == '63'
-    assert res[2] == '3'
-    assert res[3] == '2'
-    # test_minmax = min_max([57, 21, 63, 15])
-    # assert test_minmax == ['15', '63', '3', '2']
+def test_findMinIdx():
+    """Test findMinIndex."""
+    test_arr = [57, 21, 63, 15]
+    assert findMinIdx(test_arr, min(test_arr)) == 3
+
+
+def test_findMaxIdx():
+    """Test findMaxIndex."""
+    test_arr = [57, 21, 63, 15]
+    assert findMaxIdx(test_arr, max(test_arr)) == 2
 
 
 if __name__ == "__main__":
