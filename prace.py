@@ -74,13 +74,13 @@ def Txt_do_Morse(slovo):
     return morse
 
 
-def Morse_do_Txt(slovo):
+def Morse_do_Txt(morse):
     """Přeložení morse na text."""
-    novy = slovo.split('/')
+    novy = morse.split('/')
     code = [ABECEDAmorse[i] + '' for i in novy if i in ABECEDAmorse.keys()]
-    morse = ''.join(code)
-    print(morse)
-    return morse
+    txt = ''.join(code)
+    print(txt)
+    return txt
 
 
 print('''\n1- Prelozit text na Morseovku \n2- Prelozit Morseovku na text ''')
@@ -88,13 +88,13 @@ print('''\n1- Prelozit text na Morseovku \n2- Prelozit Morseovku na text ''')
 """Vybrání možnosti překladu text do morse nebo morse na text."""
 while True:
     try:
-        selection = int(input('Vyberte si co na co chcete prekladat:'))
+        selection = int(input('Vyberte si co na co chcete prekladat: '))
         if selection == 1:
-            slovo = input('Napiš slovo')
+            slovo = input('Napiš slovo ')
             Txt_do_Morse(slovo)
             break
         elif selection == 2:
-            slovo = input('Napiš slovo')
+            slovo = input('Napiš morseovku ')
             Morse_do_Txt(slovo)
             break
         else:
@@ -105,16 +105,16 @@ while True:
 
 def test_Txt_do_Morse():
     """Předklad text na morse."""
-    assert Txt_do_Morse('AHOJ') == '.–/..../–––/.–––/'
+    assert Txt_do_Morse("AHOJ") == ".–/..../–––/.–––/"
     assert Txt_do_Morse("DOMOV") == "–../–––/––/–––/...–/"
-    assert Txt_do_Morse("DNES JE HEZKE POCASI") == \
-           "–../–././...//.–––/.//...././––../–.–/.//.––./–––/–.–./.–/.../../"
+    assert Txt_do_Morse(
+        "DNES JE HEZKE POCASI") == "–../–././...//.–––/.//...././––../–.–/.//.––./–––/–.–./.–/.../../"
 
 
 def test_Morse_do_Txt():
     """Překlad morse na text."""
     assert Morse_do_Txt("−/–––/––/.//.–––/.–/–.–//.–––/./") == "TOMEJAKJE"
     assert Morse_do_Txt("–././.–./.–/–..//.––./.–./.–/–.–./..–/.–––/..–/") \
-           == "NERADPRACUJU"
-    assert Morse_do_Txt(".–./–.––/–.–./..../.–.././/–././–.../–––//.––."
-                        "/–––/––/.–/.–../..–/") == "RYCHLENEBOPOMALU"
+        == "NERADPRACUJU"
+    assert Morse_do_Txt(
+        ".–./–.––/–.–./..../.–.././/–././–.../–––//.––./–––/––/.–/.–../..–/") == "RYCHLENEBOPOMALU"
