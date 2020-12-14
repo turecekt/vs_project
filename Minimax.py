@@ -69,26 +69,26 @@ def min_max(nums):
 
 
 # Quicksort třídící algoritmu
-# def quick_sort(arr):
-#     """Sort the array by using quicksort."""
-#     left = []
-#     middle = []
-#     right = []
-#     if len(arr) > 1:
-#         # Rozdělení vstupu podle pivota na levou, pravou a střední část
-#         pivot = arr[0]
-#         for x in arr:
-#             # Umístění všech prvků menších než je pivot nalevo od něj
-#             if x < pivot:
-#                 left.append(x)
-#             elif x == pivot:
-#                 middle.append(x)
-#             elif x > pivot:
-#                 right.append(x)
-#         return quick_sort(left)+middle+quick_sort(right)
-# Spojení částí pole
-#     else:
-#         return arr
+def quick_sort(arr):
+    """Sort the array by using quicksort."""
+    left = []
+    middle = []
+    right = []
+    if len(arr) > 1:
+        # Rozdělení vstupu podle pivota na levou, pravou a střední část
+        pivot = arr[0]
+        for x in arr:
+            # Umístění všech prvků menších než je pivot nalevo od něj
+            if x < pivot:
+                left.append(x)
+            elif x == pivot:
+                middle.append(x)
+            elif x > pivot:
+                right.append(x)
+        return quick_sort(left)+middle+quick_sort(right)
+        # Spojení částí pole
+    else:
+        return arr
 
 
 # Insertionsort třídící algoritmus
@@ -146,18 +146,14 @@ def sort_choice(mylist, x):
     Using specific sort chosen by a user.
     """
     if x == '1':
-        # sorted_array = quick_sort(mylist)
-        # print("Sorted array: ", sorted_array)
-        mylist.sort()
-        print("Sorted array: ", mylist)
+        sorted_array = quick_sort(mylist)
     elif x == '2':
         sorted_array = insertion_sort(mylist)
-        print("Sorted array: ", sorted_array)
     elif x == '3':
         sorted_array = merge_sort(mylist)
-        print("Sorted array: ", sorted_array)
     else:
         raise Exception("Nevalidní hodnota.")
+    return sorted_array
 
 
 # Generovaní pole při zavolání funkce uživatele bez argumentů
@@ -191,28 +187,32 @@ def main():
     """Run main driver function of the program."""
     print("Jaký řadící algortimus chcete použít?")
     x = str(input("Quicksort[1], Insertionsort[2], Mergesort[3]"))
+    mylist = []
     if len(sys.argv) > 1:
         # Txt file passed as args -> read txt file
         argument = sys.argv[1]
         if argument[-3:] == 'txt':
             mylist = read_file()
-            print("Input Array: ", mylist)
-            min_max(mylist)
-            sort_choice(mylist, x)
         else:
             # Integers passed as args -> read integers
-            mylist = []
             for i in sys.argv[1:]:
                 mylist.append(int(i))
-            print("Input Array: ", mylist)
-            min_max(mylist)
-            sort_choice(mylist, x)
     # No args passed -> generate array of integers
     else:
         mylist = generate_array()
-        print("Input Array: ", mylist)
-        min_max(mylist)
-        sort_choice(mylist, x)
+    # Výpis:
+    print("Input: ", end='')
+    for i in mylist:
+        print(i, " ", end='')
+    print()
+    min_max(mylist)
+    sorted = sort_choice(mylist, x)
+    if len(sorted) > 0:
+        print("Sorted: ", end='')
+        for x in sorted:
+            print(x, " ", end='')
+        print()
+    return sorted
 
 
 # Unittesty
@@ -227,9 +227,9 @@ def test_max():
 
 
 # Unittest Quicksortu
-# def test_quicksort():
-#     """Quicksort Unittest."""
-#     assert(quick_sort([7, 13, 5])) == [5, 7, 13]
+def test_quicksort():
+    """Quicksort Unittest."""
+    assert(quick_sort([7, 13, 5])) == [5, 7, 13]
     # test nahodných vstupů
     # test_rArr = [random.sample(range(100), 10)]
     # test_rArrCopy = test_rArr.copy()
@@ -271,20 +271,17 @@ def test_generateRandom():
 
 def test_sort_choice1():
     """Test switch if user inserts choice no. 1."""
-    assert sort_choice([57, 21, 63, 15], '1') == print(
-        "Sorted array: ", [15, 21, 57, 63])
+    assert sort_choice([57, 21, 63, 15], '1') == [15, 21, 57, 63]
 
 
 def test_sort_choice2():
     """Test switch if user inserts choice no. 2."""
-    assert sort_choice([57, 21, 63, 15], '2') == print(
-        "Sorted array: ", [15, 21, 57, 63])
+    assert sort_choice([57, 21, 63, 15], '2') == [15, 21, 57, 63]
 
 
 def test_sort_choice3():
     """Test switch if user inserts choice no. 3."""
-    assert sort_choice([57, 21, 63, 15], '3') == print(
-        "Sorted array: ", [15, 21, 57, 63])
+    assert sort_choice([57, 21, 63, 15], '3') == [15, 21, 57, 63]
 
 
 def test_findMinIdx():
