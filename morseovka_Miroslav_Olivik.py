@@ -59,19 +59,19 @@ if __name__ == "__main__":
 
     while True:
 
-            vyber = int(input("TVUJ VYBER: "))
+        vyber = int(input("TVUJ VYBER: "))
 
-            if vyber == 1:
-                print(Text_To_Code())
-                break
+        if vyber == 1:
+            print(Text_To_Code())
+            break
 
-            elif vyber == 2:
-                print(Code_To_Text())
-                break
+        elif vyber == 2:
+            print(Code_To_Text())
+            break
 
-            elif vyber == 3:
-                print("UKONCUJI")
-                exit()
-                
-            else:
-                print("SPATNA VOLBA, ZKUSTE ZNOVU")
+        elif vyber == 3:
+            print("UKONCUJI")
+            exit()
+
+        else:
+            print("SPATNA VOLBA, ZKUSTE ZNOVU")
