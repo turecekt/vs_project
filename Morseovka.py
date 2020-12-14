@@ -4,8 +4,9 @@ uzivatel nejprve vlozi text, ktery chce prelozit do Morseovy abecedy
 """
 
 message = message.upper()
+
 """
-Slovnik Morseovy abecedy je ve formatu uppercase.
+Slovnik Morseovy abecedy je ve formatu uppercase,
 
 V pripade zadani vety v lowercase, prepise vetu na uppercase.
 """
