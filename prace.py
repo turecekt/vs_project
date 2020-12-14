@@ -105,7 +105,7 @@ while True:
 
 def test_Txt_do_Morse():
     """Předklad text na morse."""
-    assert Txt_do_Morse("AHOJ") == " .–/..../–––/.–––/"
+    assert Txt_do_Morse('AHOJ') == '.–/..../–––/.–––/'
     assert Txt_do_Morse("DOMOV") == "–../–––/––/–––/...–/"
     assert Txt_do_Morse("DNES JE HEZKE POCASI") == \
            "–../–././...//.–––/.//...././––../–.–/.//.––./–––/–.–./.–/.../../"
