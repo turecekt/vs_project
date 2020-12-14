@@ -4,9 +4,9 @@ SEMESTRALNY PROJEKT NA AP1VS
 
 VS_Projekt.py
 
-version:    1.0
 
-Author: Marek Mitrik      (https://github.com/Grontax)
+
+Autori: Marek Mitrik      (https://github.com/Grontax)
         Jozef Varhanik    (https://github.com/jvarhanik)
         Michal Vojdan     (https://github.com/Migelvojto)
 
@@ -19,6 +19,7 @@ Tento algoritmus slúži na posúdenie či je zadané císlo prvočíslom
 Projekt bol vytvorený pre vzdelávacie účely.
 
 """
+global cislo
 cislo = int(input('Zadajte ľubovoľné prirodzené číslo: '))
 
 # Hlavná funkcia
@@ -70,63 +71,88 @@ def test_prvocisla_delitelia():
     if cislo == 1:
         assert PocetDelitelov != 2
 
-    if cislo == 2:
+    elif cislo == 2:
         assert PocetDelitelov == 2
 
-    if cislo == 3:
+    elif cislo == 3:
         assert PocetDelitelov == 2
 
-    if cislo == 4:
+    elif cislo == 4:
         assert PocetDelitelov != 2
 
-    if cislo == 5:
+    elif cislo == 5:
         assert PocetDelitelov == 2
 
-    if cislo == 6:
+    elif cislo == 6:
         assert PocetDelitelov != 2
 
-    if cislo == 7:
+    elif cislo == 7:
         assert PocetDelitelov == 2
 
-    if cislo == 8:
+    elif cislo == 8:
         assert PocetDelitelov != 2
 
-    if cislo == 9:
+    elif cislo == 9:
         assert PocetDelitelov != 2
 
-    if cislo == 10:
+    elif cislo == 10:
         assert PocetDelitelov != 2
 
-    if cislo == 11:
+    elif cislo == 11:
         assert PocetDelitelov == 2
 
-    if cislo == 12:
+    elif cislo == 12:
         assert PocetDelitelov != 2
 
-    if cislo == 13:
+    elif cislo == 13:
         assert PocetDelitelov == 2
 
-    if cislo == 14:
+    elif cislo == 14:
         assert PocetDelitelov != 2
 
-    if cislo == 15:
+    elif cislo == 15:
         assert PocetDelitelov != 2
 
-    if cislo == 16:
+    elif cislo == 16:
         assert PocetDelitelov != 2
 
-    if cislo == 17:
+    elif cislo == 17:
         assert PocetDelitelov == 2
 
-    if cislo == 18:
+    elif cislo == 18:
         assert PocetDelitelov != 2
 
-    if cislo == 19:
+    elif cislo == 19:
         assert PocetDelitelov == 2
 
-    if cislo == 20:
+    elif cislo == 20:
         assert PocetDelitelov != 2
+
+
+def test_parnecisla():
+    """Testovacia funkcia """
+    for n in range (4, 100000000, 2):
+        if cislo == n:
+            assert PocetDelitelov != 2
+
+def test_prvocislamale():
+    """Testovacia funkcia"""
+    pole = [23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71]
+    for i in range (0, len(pole)-1):
+        if cislo == pole [i]:
+            assert PocetDelitelov == 2
+
+
+def test_prvocislavelke():
+    """Testovacia funkcia"""
+    pole = [1019, 1021, 1031, 1033, 1039, 1049, 1051, 1061]
+    for i in range (0, len(pole)-1):
+        if cislo == pole [i]:
+            assert PocetDelitelov == 2
 
 
 prvocisla(cislo)
 test_prvocisla_delitelia()
+test_parnecisla()
+test_prvocislavelke()
+test_prvocislamale()
