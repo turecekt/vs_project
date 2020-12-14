@@ -1,9 +1,7 @@
 """Prevod textu na morseovku."""
 
 message = input('Vloz text na preklad')
-""" 
-uzivatel nejprve vlozi text, ktery chce prelozit do Morseovy abecedy
-"""
+""" Uzivatel nejprve vlozi text, ktery chce prelozit do Morseovy abecedy."""
 
 message = message.upper()
 """
@@ -36,11 +34,11 @@ Slovnik na preklad Morseovy abecedy
 
 def encrypt(message):
     """
-    Vyhledá slovník a přidá odpovídající Morseovku
+    Vyhledá slovník a přidá odpovídající Morseovku.
+
     :param message: vyhleda hodnotu
     :return: vraci priprazeny kod k pismenu
     """
-
     sifra = ''
     for pismeno in message:
         if pismeno != ' ':
