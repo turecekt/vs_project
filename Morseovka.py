@@ -29,27 +29,27 @@ MORSE_CODE_DICT = {'A': '.-', 'B': '-...',
 """
 Slovnik na preklad Morseovy abecedy
 """
-def encrypt(message):
 
+
+def encrypt(message):
 
     sifra = ''
     for pismeno in message:
         if pismeno != ' ':
-"""
-Vyhledá slovník a přidá odpovídající Morseovu
-abecedu spolu s mezerou pro různé znaky
-"""
 
             sifra += MORSE_CODE_DICT[pismeno] + ' '
         else:
-"""
-označuje různé znaky
-a označuje různá slova
-"""
+
             sifra += ' '
+        return sifra
 
-    return sifra
 
+"""
+
+Vyhledá slovník a přidá odpovídající Morseovu
+abecedu spolu s mezerou pro různé znaky,
+označuje různé znaky a označuje různá slova
+"""
 
 print(encrypt(message))
 """
