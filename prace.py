@@ -64,6 +64,7 @@ morseovka_preklad = {
     '--..': 'Z'
 }
 
+
 def Txt_do_Morse(slovo):
     """Přeložení text do morse."""
     code = [morseABECEDA[i.upper()] + '' for i in slovo
@@ -71,6 +72,7 @@ def Txt_do_Morse(slovo):
     morse = ''.join(code)
     print(morse)
     return morse
+
 
 def Morse_do_Txt(morse):
     """Přeložení morse na text."""
