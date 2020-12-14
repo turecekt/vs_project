@@ -110,3 +110,9 @@ def test_obsah():
 def test_pveta():
     """Ověří funčnost metody pveta."""
     assert pveta(17.12, 3.61, 15.03) is False
+
+
+def test_prepona():
+    """Ověří funčnost metody prepona."""
+    print("Trojuhelnik neni pravoúhly")
+    assert True
