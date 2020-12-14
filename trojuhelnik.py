@@ -95,3 +95,9 @@ trojuhelnik(a1, a2, b1, b2, c1, c2)
 def test_sestrojitelnost():
     """Ověří funčnost metody sestrojitelnost."""
     assert sestrojitelnost(5, 7, 8.60) is True
+
+
+def test_obvod():
+    """Ověří funčnost metody obvod."""
+    assert obvod(5, 7, 8.60) == 20.60
+
