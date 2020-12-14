@@ -13,21 +13,11 @@ def turn_line(a):
             turtle.forward(10)
 
 
-def input_data():
-    """Input bg and pen cl."""
-    data = []
-    for i in range(2):
-        if i == 0:
-            data.append(input('Enter background color:'))
-        if i == 1:
-            data.append(input('Enter pen color:'))
-    if data[0] == '':
-        data[0] = 'red'
-    turtle.color(data[0])
-    if data[1] == "":
-        data[1] = 'black'
-    turtle.bgcolor(data[1])
-    return data
+def input_data(value, default):
+    if input == '':
+        return default
+    else:
+        return value
 
 
 def sides(itr_):
@@ -49,11 +39,9 @@ def sides(itr_):
 
 
 if __name__ == '__main__':
-    w = input_data()
-    itr = input('Enter the number of iterations:')
-    if itr == '':
-        itr = 9
-    itr = int(itr)
+    turtle.bgcolor = input_data(input('Enter background color:'), 'black')
+    turtle.color = input_data(input('Enter pen color:'), 'red')
+    itr = int(input_data(input('Enter the number of iterations:'), 9))
     q = sides(itr)
     turtle.ht()
     turtle.speed(0)
