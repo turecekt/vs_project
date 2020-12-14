@@ -111,4 +111,3 @@ def test_Txt_do_Morse():
 def test_Morse_do_Txt():
     """Překlad morse na text."""
     assert Morse_do_Txt("−/–––/––/.//.–––/.–/–.–//.–––/./") == "TOMEJAKJE"
-
