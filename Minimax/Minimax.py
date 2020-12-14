@@ -47,64 +47,72 @@ def min_max(mylist):
     return str(minVal), str(maxVal), str(minIdx), str(maxIdx)
 
 
-# Rozdělení vstupu podle pivota na levou, pravou a střední část
-def partition(arr, low, high):
-    """Return partitioned array into three sections left, right and middle."""
-    i = (low-1)  # Index menšího prvku
-    pivot = arr[high]
-    for j in range(low, high):
-        # Umístění všech prvků menších než je pivot nalevo od něj
-        if arr[j] <= pivot:
-            # Inkrementovaní indexu menšího prvku
-            i = i+1
-            arr[i], arr[j] = arr[j], arr[i]
-
-    arr[i+1], arr[high] = arr[high], arr[i+1]
-    return (i+1)
-
-
-# Main funkce Quicksortu
-def quick_sort(arr, low, high):
-    """Return sorted array."""
-    if len(arr) == 1:
+# Quicksort třídící algoritmu
+def quick_sort(arr):
+    """Sort the array by using quicksort."""
+    left = []
+    middle = []
+    right = []
+    if len(arr) > 1:
+        # Rozdělení vstupu podle pivota na levou, pravou a střední část
+        pivot = arr[0]
+        for x in arr:
+            # Umístění všech prvků menších než je pivot nalevo od něj
+            if x < pivot:
+                left.append(x)
+            elif x == pivot:
+                middle.append(x)
+            elif x > pivot:
+                right.append(x)
+        return quick_sort(left)+middle+quick_sort(right)  # Spojení částí pole
+    else:
         return arr
-    if low < high:
-        pi = partition(arr, low, high)
-        # Rekurzivní setřídění levé a pravé části,
-        # prostřední je sama od sebe setříděná
-        quick_sort(arr, low, pi-1)
-        quick_sort(arr, pi+1, high)
+
+
+# Insertionsort třídící algoritmus
+def insertion_sort(arr):
+    """Sorting the array using insertionsort."""
+    for i in range(1, len(arr)):
+        key = arr[i]
+        j = i - 1
+        while j >= 0 and key < arr[j]:
+            arr[j + 1] = arr[j]
+            j -= 1
+        arr[j + 1] = key
     return arr
 
 
-# Konstrukce haldy, použití tzv. maximové haldy (bubble up - bublání nahoru)
-def heapify(arr, n, i):
-    """Return BubbleUp (heap collection) from given array."""
-    # inicializace bublání, n - velikost velikost haldy, kořen na indexu i
-    largest = i
-    left = 2 * i + 1
-    right = 2 * i + 2
-    # Porovnání levých synů stromu, jestli jsou větší než kořen tak prohodíme
-    if left < n and arr[i] < arr[left]:
-        largest = left
-    # Porovnání pravých synů stromu, jestli jsou větší než kořen tak prohodíme
-    if right < n and arr[largest] < arr[right]:
-        largest = right
-    # Výměna kořene (opakované mazání maxima)
-    if largest != i:
-        arr[i], arr[largest] = arr[largest], arr[i]
-        heapify(arr, n, largest)
-
-
-# Main funkce heap (halda) sortu
-def heap_sort(arr):
-    """Return sorted array."""
-    n = len(arr)
-    for i in range(n // 2 - 1, -1, -1):
-        heapify(arr, n, i)
-    for i in range(n-1, 0, -1):
-        arr[i], arr[0] = arr[0], arr[i]
-        heapify(arr, i, 0)
+# Mergesort třídící algoritmus
+def merge_sort(arr):
+    """Sort the array using mergesort."""
+    if len(arr) > 1:
+        mid = len(arr) // 2
+        left = arr[:mid]
+        right = arr[mid:]
+        # Rekurzivní volání druhé poloviny
+        merge_sort(left)
+        merge_sort(right)
+        i = 0
+        j = 0
+        # Iterátor kořenového listu
+        k = 0
+        while i < len(left) and j < len(right):
+            if left[i] < right[j]:
+                arr[k] = left[i]
+                i += 1
+            else:
+                arr[k] = right[j]
+                j += 1
+            k += 1
+        # Zbývající hodnoty
+        while i < len(left):
+            arr[k] = left[i]
+            i += 1
+            k += 1
+        while j < len(right):
+            arr[k] = right[j]
+            j += 1
+            k += 1
     return arr
 
 
@@ -116,11 +124,17 @@ def sort_choice(mylist, x):
     Using specific sort chosen by a user.
     """
     if x == '1':
-        quick_sort(mylist, 0, len(mylist)-1)
+        sorted_array = quick_sort(mylist)
+        print("Sorted array: ", sorted_array)
+        return sorted_array
     elif x == '2':
-        heap_sort(mylist)
+        sorted_array = insertion_sort(mylist)
+        print("Sorted array: ", sorted_array)
+        return sorted_array
     elif x == '3':
-        mylist.sort()
+        sorted_array = merge_sort(mylist)
+        print("Sorted array: ", sorted_array)
+        return sorted_array
     else:
         raise Exception("Nevalidní hodnota.")
 
@@ -154,9 +168,9 @@ def read_file():
 # Hlavní funkce:
 def main():
     """Run main driver function of the program."""
-    mylist = []
+    # mylist = []
     print("Jaký řadící algortimus chcete použít?")
-    x = input("Quick sort[1], Heap sort[2], Python Builtin[3]")
+    x = str(input("Quicksort[1], Insertionsort[2], Mergesort[3]"))
     if len(sys.argv) > 1:
         argument = sys.argv[1]
         if argument[-3:] == 'txt':
@@ -164,20 +178,20 @@ def main():
             print("Input Array: ", mylist)
             min_max(mylist)
             sort_choice(mylist, x)
-            print("Sorted Array: ", mylist)
+            # print("Sorted Array: ", mylist)
         else:
+            mylist = []
             for i in sys.argv[1:]:
-                mylist.append(i)
+                mylist.append(int(i))
             print("Input Array: ", mylist)
             min_max(mylist)
             sort_choice(mylist, x)
-            print("Sorted Array: ", mylist)
+            # print("Sorted Array: ", mylist)
     else:
         mylist = generate_array()
         print("Input Array: ", mylist)
         min_max(mylist)
         sort_choice(mylist, x)
-        print("Sorted Array: ", mylist)
 
 
 # Unittesty
@@ -197,7 +211,7 @@ def test_max():
 def test_quicksort():
     """Quicksort Unittest."""
     test_arr = [7, 13, 5]
-    assert quick_sort(test_arr, 0, len(test_arr)-1) == [5, 7, 13]
+    assert(quick_sort(test_arr)) == [5, 7, 13]
     # test nahodných vstupů
     # test_rArr = [random.sample(range(100), 10)]
     # test_rArrCopy = test_rArr.copy()
@@ -206,17 +220,18 @@ def test_quicksort():
     # assert (test_rArr) == test_rArrCopy
 
 
-# Unittest heapsortu
-def test_heapsort():
-    """Heapsort Unittest."""
+# Unittest Mergesortu
+def test_mergesort():
+    """Mergesort Unittest."""
     test_arr = [37, 41, 73, 13, 7, 101]
-    assert(heap_sort(test_arr)) == [7, 13, 37, 41, 73, 101]
-    # test nahodných vstupů
-    # test_rArr = [random.sample(range(100), 10)]
-    # test_rArrCopy = test_rArr.copy()
-    # heap_sort(test_rArr)
-    # test_rArrCopy.sort()
-    # assert (test_rArr) == test_rArrCopy
+    assert(merge_sort(test_arr)) == [7, 13, 37, 41, 73, 101]
+
+
+# Unittest Insertionsortu
+def test_insertionsort():
+    """Insertionsort Unittest."""
+    test_arr = [37, 41, 73, 13, 7, 101]
+    assert(insertion_sort(test_arr)) == [7, 13, 37, 41, 73, 101]
 
 
 def test_readfile():
@@ -237,24 +252,21 @@ def test_generateRandom():
 
 
 def test_sort_choice1():
-    """Test switch."""
+    """Test switch if user inserts choice no. 1."""
     test_arr = [57, 21, 63, 15]
-    sort_choice(test_arr, '1')
-    assert test_arr == [15, 21, 57, 63]
+    assert sort_choice(test_arr, '1') == [15, 21, 57, 63]
 
 
 def test_sort_choice2():
-    """Test switch."""
+    """Test switch if user inserts choice no. 2."""
     test_arr = [57, 21, 63, 15]
-    sort_choice(test_arr, '2')
-    assert test_arr == [15, 21, 57, 63]
+    assert sort_choice(test_arr, '2') == [15, 21, 57, 63]
 
 
 def test_sort_choice3():
-    """Test switch."""
+    """Test switch if user inserts choice no. 3."""
     test_arr = [57, 21, 63, 15]
-    sort_choice(test_arr, '3')
-    assert test_arr == [15, 21, 57, 63]
+    assert sort_choice(test_arr, '3') == [15, 21, 57, 63]
 
 
 def test_min_max():
