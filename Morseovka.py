@@ -1,14 +1,15 @@
 """
-Kod morseovka
-"""
-message = input('Vloz text na preklad:')
+Kod morseovka,
 
+preklad z textu na morseovku
+"""
+
+message = input('Vloz text na preklad:')
 """ 
 uzivatel nejprve vlozi text, ktery chce prelozit do Morseovy abecedy
 """
 
 message = message.upper()
-
 """
 Slovnik Morseovy abecedy je ve formatu uppercase,
 
