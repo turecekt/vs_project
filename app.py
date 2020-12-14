@@ -46,7 +46,6 @@ if __name__ == "__main__":
             n1 = float(input("Insert your first number -> "))
             n2 = float(input("Insert your second number -> "))
 
-
             def evaluate(choice):
                 """Evaluate the choice and make the calculation.
 
@@ -69,7 +68,6 @@ if __name__ == "__main__":
                 # Use the divide function and print the result.
                 elif choice == 4:
                     print(n1, "/", n2, "=", calculator.divide(n1, n2))
-
 
             evaluate(choice)
 
