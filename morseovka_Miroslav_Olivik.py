@@ -59,8 +59,6 @@ if __name__ == "__main__":
 
     while True:
 
-        try:
-
             vyber = int(input("TVUJ VYBER: "))
 
             if vyber == 1:
@@ -74,3 +72,6 @@ if __name__ == "__main__":
             elif vyber == 3:
                 print("UKONCUJI")
                 exit()
+                
+            else:
+                print("SPATNA VOLBA, ZKUSTE ZNOVU")
