@@ -1,9 +1,4 @@
-"""
-Prevod textu na morseovku.
-
-Kod pro prevod textu na morseovku
-LF,NV,MH
-"""
+"""Prevod textu na morseovku."""
 
 message = input('Vloz text na preklad')
 """ 
@@ -42,7 +37,6 @@ Slovnik na preklad Morseovy abecedy
 def encrypt(message):
     """
     Vyhledá slovník a přidá odpovídající Morseovku
-
     :param message: vyhleda hodnotu
     :return: vraci priprazeny kod k pismenu
     """
