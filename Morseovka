@@ -32,8 +32,8 @@ def encrypt(message):
 
 	sifra += MORSE_CODE_DICT[pismeno] + ' '
         	else:
-# označuje různé znaky
-# a označuje různá slova
+#označuje různé znaky
+#a označuje různá slova
             
 
 	sifra += ' '
