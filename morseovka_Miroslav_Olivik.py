@@ -29,7 +29,6 @@ def Text_To_Code(): """Fce pro preklad do morseovky."""
 
 
 text2 = str(input("Napiste slova, ktera chcete kodovat: "))
-text2 = sys.stdin.readlines()
 code2 = [SLOVNIK_MORSEOVKA[i.upper()]
          + " " for i in text2 if i.upper() in SLOVNIK_MORSEOVKA.keys()]
 morseovka = "".join(code2)
@@ -81,6 +80,3 @@ if __name__ == "__main__":
 
             else:
                 print("NESPRAVNA VOLBA, ZVOLTE ZNOVU")
-
-        Expection:
-            print("NESPRAVNA VOLBA, ZVOLTE ZNOVU")
