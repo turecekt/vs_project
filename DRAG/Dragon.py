@@ -14,6 +14,7 @@ def turn_line(a):
 
 
 def input_data(value, default):
+    """Input bg and pen cl."""
     if input == '':
         return default
     else:
