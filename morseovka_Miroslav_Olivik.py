@@ -1,6 +1,5 @@
 """Aplikace pro preklad morseovky."""
 
-
 SLOVNIK_MORSEOVKA = {"A": ".-", "B": "-...",
                      "C": "-.-.", "D": "-..", "E": ".",
                      "F": "..-.", "G": "--.", "H": "....",
