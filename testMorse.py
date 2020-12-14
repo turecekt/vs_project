@@ -6,7 +6,7 @@ Test 1
 Input: "Ahoj"
 Output: ".-....---.---"
 """
-assert morse.morse_code("Ahoj") == ".-....---.---"
+assert MORSE_CODE_DICT("Ahoj") == ".-....---.---"
 
 def testMorse():
 """
@@ -14,7 +14,7 @@ Test 2
 Input: "SOS"
 Output: "... --- ..."
 """
-assert morse.morse_code("SOS") == "... --- ..."
+assert MORSE_CODE_DICT("SOS") == "... --- ..."
 
 def testMorse():
 """
@@ -22,7 +22,7 @@ Test 3
 Input: "jak se mas?"
 Output: ".--- .- -.-  ... .  -- .- ... ..--.. "
 """
-assert morse.morse_code("jak se mas?") == ".--- .- -.-  ... .  -- .- ... ..--.. "
+assert MORSE_CODE_DICT("jak se mas?") == ".--- .- -.-  ... .  -- .- ... ..--.. "
 
 def testMorse():
 """
@@ -30,4 +30,4 @@ Test 4
 Input: "-.("
 Output: "-....- .-.-.- -.--."
 """
-assert morse.morse_code("-.(") == "-....- .-.-.- -.--."
+assert MORSE_CODE_DICT("-.(") == "-....- .-.-.- -.--."
