@@ -22,9 +22,10 @@ Projekt bol vytvorený pre vzdelávacie účely.
 global cislo
 cislo = int(input('Zadajte ľubovoľné prirodzené číslo: '))
 
+
 # Hlavná funkcia
 def prvocisla(a):
-    """Definovanie funkcie."""
+    """Definovanie hlavnej funkcie na vyhodnotenie prvočísel."""
     global text
     global text2
     global PocetDelitelov
@@ -49,7 +50,7 @@ def prvocisla(a):
         text = 'Číslo ' + str(cislo) + ' je prvočíslo.'
         print(text)
         if cislo < 10:
-            text2 = 'Výsledok sme zistili pomocou metódy priameho delenia v cykle.'
+            text2 = 'Metóda priameho delenia v cykle.'
             print(text2)
         elif cislo >= 10:
             text2 = 'Výsledok sme zistili pomocou štatistickej metódy.'
@@ -59,15 +60,16 @@ def prvocisla(a):
         text = ('Číslo ' + str(cislo) + ' nie je prvočíslo.')
         print(text)
         if cislo < 10:
-            text2 = 'Výsledok sme zistili pomocou metódy priameho delenia v cykle.'
+            text2 = 'Metóda priameho delenia v cykle.'
             print(text2)
         elif cislo >= 10:
             text2 = 'Výsledok sme zistili pomocou štatistickej metódy.'
             print(text2)
 
+
 # Unit testy
 def test_prvocisla_delitelia():
-    """Definicia funkcie na Unit Testy."""
+    """Testovacia funkcia na prvých 20 prirodzených čísel."""
     if cislo == 1:
         assert PocetDelitelov != 2
 
@@ -130,24 +132,25 @@ def test_prvocisla_delitelia():
 
 
 def test_parnecisla():
-    """Testovacia funkcia """
-    for n in range (4, 100000000, 2):
+    """Testovacia funkcia na párne čísla."""
+    for n in range(4, 100000000, 2):
         if cislo == n:
             assert PocetDelitelov != 2
 
+
 def test_prvocislamale():
-    """Testovacia funkcia"""
+    """Testovacia funkcia na prvočísla v prvej stovke."""
     pole = [23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71]
-    for i in range (0, len(pole)-1):
-        if cislo == pole [i]:
+    for i in range(0, len(pole)-1):
+        if cislo == pole[i]:
             assert PocetDelitelov == 2
 
 
 def test_prvocislavelke():
-    """Testovacia funkcia"""
+    """Testovacia funkcia na prvočísla nad 1000."""
     pole = [1019, 1021, 1031, 1033, 1039, 1049, 1051, 1061]
-    for i in range (0, len(pole)-1):
-        if cislo == pole [i]:
+    for i in range(0, len(pole) - 1):
+        if cislo == pole[i]:
             assert PocetDelitelov == 2
 
 
