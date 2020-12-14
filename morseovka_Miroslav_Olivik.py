@@ -81,7 +81,6 @@ if __name__ == "__main__":
 
             else:
                 print("NESPRAVNA VOLBA, ZVOLTE ZNOVU")
- 
+
         Expection:
-          print("NESPRAVNA VOLBA, ZVOLTE ZNOVU")
-          
+            print("NESPRAVNA VOLBA, ZVOLTE ZNOVU")
