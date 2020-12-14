@@ -69,25 +69,26 @@ def min_max(nums):
 
 
 # Quicksort třídící algoritmu
-def quick_sort(arr):
-    """Sort the array by using quicksort."""
-    left = []
-    middle = []
-    right = []
-    if len(arr) > 1:
-        # Rozdělení vstupu podle pivota na levou, pravou a střední část
-        pivot = arr[0]
-        for x in arr:
-            # Umístění všech prvků menších než je pivot nalevo od něj
-            if x < pivot:
-                left.append(x)
-            elif x == pivot:
-                middle.append(x)
-            elif x > pivot:
-                right.append(x)
-        return quick_sort(left)+middle+quick_sort(right)  # Spojení částí pole
-    else:
-        return arr
+# def quick_sort(arr):
+#     """Sort the array by using quicksort."""
+#     left = []
+#     middle = []
+#     right = []
+#     if len(arr) > 1:
+#         # Rozdělení vstupu podle pivota na levou, pravou a střední část
+#         pivot = arr[0]
+#         for x in arr:
+#             # Umístění všech prvků menších než je pivot nalevo od něj
+#             if x < pivot:
+#                 left.append(x)
+#             elif x == pivot:
+#                 middle.append(x)
+#             elif x > pivot:
+#                 right.append(x)
+#         return quick_sort(left)+middle+quick_sort(right)
+# Spojení částí pole
+#     else:
+#         return arr
 
 
 # Insertionsort třídící algoritmus
@@ -145,8 +146,10 @@ def sort_choice(mylist, x):
     Using specific sort chosen by a user.
     """
     if x == '1':
-        sorted_array = quick_sort(mylist)
-        print("Sorted array: ", sorted_array)
+        # sorted_array = quick_sort(mylist)
+        # print("Sorted array: ", sorted_array)
+        mylist.sort()
+        print("Sorted array: ", mylist)
     elif x == '2':
         sorted_array = insertion_sort(mylist)
         print("Sorted array: ", sorted_array)
@@ -224,9 +227,9 @@ def test_max():
 
 
 # Unittest Quicksortu
-def test_quicksort():
-    """Quicksort Unittest."""
-    assert(quick_sort([7, 13, 5])) == [5, 7, 13]
+# def test_quicksort():
+#     """Quicksort Unittest."""
+#     assert(quick_sort([7, 13, 5])) == [5, 7, 13]
     # test nahodných vstupů
     # test_rArr = [random.sample(range(100), 10)]
     # test_rArrCopy = test_rArr.copy()
