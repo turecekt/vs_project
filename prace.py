@@ -108,7 +108,8 @@ def test_Txt_do_Morse():
     assert Txt_do_Morse("AHOJ") == ".–/..../–––/.–––/"
     assert Txt_do_Morse("DOMOV") == "–../–––/––/–––/...–/"
     assert Txt_do_Morse(
-        "DNES JE HEZKE POCASI") == "–../–././...//.–––/.//...././––../–.–/.//.––./–––/–.–./.–/.../../"
+        "DNES JE HEZKE POCASI") == "–../–././...//.–––/.//..../" \
+                                   "./––../–.–/.//.––./–––/–.–./.–/.../../"
 
 
 def test_Morse_do_Txt():
@@ -117,4 +118,5 @@ def test_Morse_do_Txt():
     assert Morse_do_Txt("–././.–./.–/–..//.––./.–./.–/–.–./..–/.–––/..–/") \
         == "NERADPRACUJU"
     assert Morse_do_Txt(
-        ".–./–.––/–.–./..../.–.././/–././–.../–––//.––./–––/––/.–/.–../..–/") == "RYCHLENEBOPOMALU"
+        ".–./–.––/–.–./..../.–.././/–././–.../–––//.––./–––/––/."
+        "–/.–../..–/") == "RYCHLENEBOPOMALU"
