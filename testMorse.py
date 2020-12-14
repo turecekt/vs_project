@@ -1,4 +1,4 @@
-"""Morse tests"""
+"""Morse tests."""
 import Morseovka
 
 
@@ -30,7 +30,6 @@ def test_morse_enc2():
     Output:".--- .- -.-  ... .  -- .- ... ..--.. "
     """
     assert Morseovka.MORSE_CODE_DICT("mas se?") == "-- .- ...  ... . ..--.."
-
 
 
 def test_morse_enc3():
