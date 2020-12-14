@@ -82,6 +82,7 @@ class TestDragonCurve(unittest.TestCase):
         self.assertEqueal(value, q(value, default))
 
     def assertEqueal(self, default, param):
+        """Function docstring pass."""
         pass
 
 
