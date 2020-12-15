@@ -11,15 +11,14 @@ from __cramerLib__ import determinantCalculation
 import sys
 
 
-"""This method wraps all the code.
-
->>> convertToMatrixAndVector("matrixTest")
-1
-"""
+"""This method wraps all the code."""
 
 
 def main(file=0):
     """Functon main calculates determinant of given matrix.
+
+    >>> convertToMatrixAndVector("matrixTest")
+    1
 
     This method is run automatically after script is opened
     Args:
@@ -98,5 +97,6 @@ def main(file=0):
     print("y: "+str(results["y"]))
     print("z: "+str(results["z"]))
     return 0
+
 
 # main()

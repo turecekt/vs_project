@@ -10,13 +10,14 @@ from copy import deepcopy
 
  determinantCalculation(). For example,
 
->>> determinantCalculation([1, 1, 1, 1, 1, 1, 1, 1, 1])
-1
 """
 
 
 def determinantCalculation(matrixarray):
     """Functon determinantCalculation calculates determinant of given matrix.
+
+    >>> determinantCalculation([1, 1, 1, 1, 1, 1, 1, 1, 1])
+    1
 
     Args:
         - matrixarray - array representing matrix that should be calculated
@@ -77,13 +78,14 @@ def determinantCalculation(matrixarray):
 
  replaceWithRightSides - replaces column  in matrix with vector of right sides
 
->>> replaceWithRightSides([1, 1, 1, 1, 1, 1, 1, 1, 1], [4,5,6], 0)
-[4, 1 , 1, 5, 1, 1, 6, 1, 1]
 """
 
 
 def replaceWithRightSides(matrixarray, vector, column):
     """Functon replaceWithRightSides replaces with vector of right sides.
+
+    >>> replaceWithRightSides([1, 1, 1, 1, 1, 1, 1, 1, 1], [4,5,6], 0)
+    [4, 1 , 1, 5, 1, 1, 6, 1, 1]
 
     Args:
         - matrixarray - array representing matrix that should be calculated
