@@ -80,9 +80,7 @@ def encrypt(message):
 
 
 def main():
-    """
-    Spusti program.
-    """
+    """Spusti program."""
     message_to_encrypt = load_message_to_encrypt()
     print(encrypt(message_to_encrypt))
 
