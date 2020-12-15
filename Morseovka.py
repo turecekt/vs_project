@@ -1,19 +1,37 @@
 """Prevod textu na morseovku."""
 
 
+"""Funkce rekurze pri zadani znaku, ktery neni v abecede"""
+
+
 def is_input_correct(message):
+    """
+    Overi ze input je spravny.
+
+    Attributes:
+        message: Zprava
+    Returns: True/False
+    """
     for character in message:
         if character not in MORSE_CODE_DICT:
             return False
     return True
 
 
+""" Uzivatel nejprve vlozi text, ktery chce prelozit do Morseovy abecedy."""
+
+
 def load_message_to_encrypt():
+    """
+    Nacita text na preklad ze vstupu.
+
+    Returns: zpravu ktera je ve velkych pismenach
+    """
     message = input('Vloz text na preklad: ')
+    message = message.upper()
     if not is_input_correct(message):
         return load_message_to_encrypt()
     else:
-        message = message.upper()
         return message
 
 
@@ -48,7 +66,7 @@ Slovnik na preklad Morseovy abecedy
 
 def encrypt(message):
     """
-    Vyhledá slovník a přidá odpovídající Morseovku.
+    Vyhleda slovnik a přidá odpovídající Morseovku.
 
     :param message: vyhleda hodnotu
     :return: vraci priprazeny kod k pismenu
@@ -61,22 +79,10 @@ def encrypt(message):
     return sifra
 
 
-"""
-podminka
-
-označuje různé znaky a označuje různá slova
-"""
-
-"""
-vypíše šifru v morseově abecedě
-"""
-
-"""
-na ukončení programu musí uživatel stisknout Enter
-"""
-
-
 def main():
+    """
+    Spusti program.
+    """
     message_to_encrypt = load_message_to_encrypt()
     print(encrypt(message_to_encrypt))
 
