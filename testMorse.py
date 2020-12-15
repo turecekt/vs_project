@@ -29,7 +29,8 @@ _
     Input:"jak se mas?"
     Output:" .--- .- -.- / ... . / -- .- ... ..--.. "
     """
-    assert Morseovka.encrypt("jak se mas?".upper()) == " .--- .- -.- / ... . / -- .- ... ..--.. "
+    assert Morseovka.encrypt("jak se mas?".upper()) ==\
+           " .--- .- -.- / ... . / -- .- ... ..--.. "
 
 
 def test_morse_enc3():

@@ -1,5 +1,6 @@
 """Prevod textu na morseovku."""
 
+
 def is_input_correct(message):
     for character in message:
         if character not in MORSE_CODE_DICT:
