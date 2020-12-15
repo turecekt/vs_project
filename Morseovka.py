@@ -1,9 +1,21 @@
 """Prevod textu na morseovku."""
 
-message = input('Vloz text na preklad:')
-""" Uzivatel nejprve vlozi text, ktery chce prelozit do Morseovy abecedy."""
+def is_input_correct(message):
+    for character in message:
+        if character not in MORSE_CODE_DICT:
+            return False
+    return True
 
-message = message.upper()
+
+def load_message_to_encrypt():
+    message = input('Vloz text na preklad: ')
+    if not is_input_correct(message):
+        return load_message_to_encrypt()
+    else:
+        message = message.upper()
+        return message
+
+
 """
 Slovnik Morseovy abecedy je ve formatu uppercase,
 
@@ -24,7 +36,8 @@ MORSE_CODE_DICT = {'A': '.-', 'B': '-...',
                    '7': '--...', '8': '---..', '9': '----.',
                    '0': '-----', ', ': '--..--', '.': '.-.-.-',
                    '?': '..--..', '/': '-..-.', '-': '-....-',
-                   '(': '-.--.', ')': '-.--.-'}
+                   '(': '-.--.', ')': '-.--.-', '!': '––...–',
+                   ' ': '/'}
 
 
 """
@@ -39,14 +52,10 @@ def encrypt(message):
     :param message: vyhleda hodnotu
     :return: vraci priprazeny kod k pismenu
     """
-    sifra = ''
+    sifra = ' '
     for pismeno in message:
-        if pismeno != ' ':
 
-            sifra += MORSE_CODE_DICT[pismeno] + ' '
-        else:
-
-            sifra += ' '
+        sifra += MORSE_CODE_DICT[pismeno] + ' '
 
     return sifra
 
@@ -57,12 +66,18 @@ podminka
 označuje různé znaky a označuje různá slova
 """
 
-print(encrypt(message))
 """
 vypíše šifru v morseově abecedě
 """
 
-input()
 """
 na ukončení programu musí uživatel stisknout Enter
 """
+
+
+def main():
+    message_to_encrypt = load_message_to_encrypt()
+    print(encrypt(message_to_encrypt))
+
+
+# main()

@@ -7,9 +7,9 @@ def test_morse_enc0():
     Encoding Test 0.
 
     Input:"Ahoj"
-    Output:".-....---.---"
+    Output:" .- .... --- .--- "
     """
-    assert Morseovka.MORSE_CODE_DICT("Ahoj") == ".-....---.---"
+    assert Morseovka.encrypt("Ahoj".upper()) == " .- .... --- .--- "
 
 
 def test_morse_enc1():
@@ -17,19 +17,19 @@ def test_morse_enc1():
     Encoding Test 1.
 
     Input:"SOS"
-    Output:"... --- ..."
+    Output:" ... --- ... "
     """
-    assert Morseovka.MORSE_CODE_DICT("SOS") == "... --- ..."
+    assert Morseovka.encrypt("SOS".upper()) == " ... --- ... "
 
 
 def test_morse_enc2():
     """
     Encoding Test 2.
-
+_
     Input:"jak se mas?"
-    Output:".--- .- -.-  ... .  -- .- ... ..--.. "
+    Output:" .--- .- -.- / ... . / -- .- ... ..--.. "
     """
-    assert Morseovka.MORSE_CODE_DICT("mas se?") == "-- .- ...  ... . ..--.."
+    assert Morseovka.encrypt("jak se mas?".upper()) == " .--- .- -.- / ... . / -- .- ... ..--.. "
 
 
 def test_morse_enc3():
@@ -37,6 +37,14 @@ def test_morse_enc3():
     Encoding Test 3.
 
     Input:"-.("
-    Output:"-....- .-.-.- -.--."
+    Output:" -....- .-.-.- -.--. "
     """
-    assert Morseovka.MORSE_CODE_DICT("-.(") == "-....- .-.-.- -.--."
+    assert Morseovka.encrypt("-.(") == " -....- .-.-.- -.--. "
+
+
+def test_is_input_correct_unsupported_characters():
+    assert not Morseovka.is_input_correct("**")
+
+
+def test_is_input_correct_correct_input():
+    assert Morseovka.is_input_correct("AHOJ.")
