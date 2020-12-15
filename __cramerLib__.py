@@ -107,17 +107,21 @@ def replaceWithRightSides(matrixarray, vector, column):
 
  ConvertToMatrixAndVector - converts input from file to matrix an vector of
  right sides
->>> matrix = []
->>> vector = []
->>> convertToMatrixAndVector(["1 1 1 1", "2 2 2 2", "3 3 3 3"], matrix, vector)
-1
->>> convertToMatrixAndVector(["11 1", "2  2 2", "3 3", "3 33"], matrix, vector)
-0
+
 """
 
 
 def convertToMatrixAndVector(fileContent, matrix, vector):
     """Functon convertToMatrixAndVector checks and converts content.
+
+    >>> matrix = []
+    >>> vector = []
+    >>> convertToMatrixAndVector(["1 1 1 1", "2 2 2 2", "3 3 3 3"], matrix,\
+     vector)
+    1
+    >>> convertToMatrixAndVector(["11 1", "2  2 2", "3 3", "3 33"], matrix,\
+     vector)
+    0
 
     Functon convertToMatrixAndVector checks and converts content of file to
     matrix and vector of right sides.
