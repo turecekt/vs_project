@@ -18,7 +18,16 @@ def main(file=0):
     """Functon main calculates determinant of given matrix.
 
     >>> main("matrixTest.txt")
-    1
+    Results form matrix:
+    1.0	2.0	3.0
+    5.0	2.0	20.0
+    15.0	12.0	9.0
+    And vector: 28.0 60.0 30.0
+    Are:
+    x: -3.3255813953488373
+    y: 2.3372093023255816
+    z: 4.325581395348837
+    0
 
     This method is run automatically after script is opened
     Args:
