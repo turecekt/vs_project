@@ -4,7 +4,7 @@ import Morseovka
 
 def test_morse_enc0():
     """
-    Encoding Test 0.
+    Test 1.
 
     Input:"Ahoj"
     Output:" .- .... --- .--- "
@@ -14,7 +14,7 @@ def test_morse_enc0():
 
 def test_morse_enc1():
     """
-    Encoding Test 1.
+    Test 2.
 
     Input:"SOS"
     Output:" ... --- ... "
@@ -24,8 +24,8 @@ def test_morse_enc1():
 
 def test_morse_enc2():
     """
-    Encoding Test 2.
-_
+    Test 3.
+
     Input:"jak se mas?"
     Output:" .--- .- -.- / ... . / -- .- ... ..--.. "
     """
@@ -35,7 +35,7 @@ _
 
 def test_morse_enc3():
     """
-    Encoding Test 3.
+    Encoding Test 4.
 
     Input:"-.("
     Output:" -....- .-.-.- -.--. "
@@ -44,8 +44,5 @@ def test_morse_enc3():
 
 
 def test_is_input_correct_unsupported_characters():
+    """Definuje nepodporovane znaky"""
     assert not Morseovka.is_input_correct("**")
-
-
-def test_is_input_correct_correct_input():
-    assert Morseovka.is_input_correct("AHOJ.")
