@@ -1,9 +1,12 @@
 """Prevod textu na morseovku."""
 
-message = input('Vloz text na preklad:')
-""" Uzivatel nejprve vlozi text, ktery chce prelozit do Morseovy abecedy."""
+def load_message_to_encrypt():
+	message = input('Vloz text na preklad: ')
+	message = message.upper()
+	return message
 
 message = message.upper()
+
 """
 Slovnik Morseovy abecedy je ve formatu uppercase,
 
