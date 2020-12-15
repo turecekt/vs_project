@@ -17,7 +17,7 @@ import sys
 def main(file=0):
     """Functon main calculates determinant of given matrix.
 
-    >>> convertToMatrixAndVector("matrixTest")
+    >>> main("matrixTest.txt")
     1
 
     This method is run automatically after script is opened
