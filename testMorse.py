@@ -44,5 +44,5 @@ def test_morse_enc3():
 
 
 def test_is_input_correct_unsupported_characters():
-    """Definuje nepodporovane znaky"""
+    """Definuje nepodporovane znaky."""
     assert not Morseovka.is_input_correct("**")
