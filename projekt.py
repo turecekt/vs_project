@@ -1,4 +1,5 @@
 class MorseCode:
+    # seznam znaků a jejich ekvivalenty v morseově abecedě
     MORSE_CODE_LIST = {
             "1": ".----",
             "2": "..---",
@@ -39,6 +40,7 @@ class MorseCode:
             " ": "...---...",
     }
 
+    # Převede text do morseovy abecedy
     def encode(self, text):
         ret = ""
         words = self.get_words(text)
@@ -51,6 +53,7 @@ class MorseCode:
         ret.strip()
         return ret
 
+    # Převede text z morseovy abecedy
     def decode(self, text):
         ret = ""
         words = self.get_words(text)
@@ -66,6 +69,10 @@ class MorseCode:
         return text.split(" ")
 
 
+"""
+Vstupní bod - vyžádá od uživatele volbu a vstup a předá
+funkcím pro překlad do/z morseovy abecedy
+"""
 if __name__ == '__main__':
     morseCode = MorseCode()
     print("Volby:\nKódovat: 1\nDekódovat: 2")
