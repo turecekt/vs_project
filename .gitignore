@@ -1,0 +1,13 @@
+# Visual Studio
+.vs
+*.sln
+*.pyproj
+*.user
+TestResults
+
+# pytest
+.pytest_cache
+.coverage
+
+# Auto-generated
+__pycache__
