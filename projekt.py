@@ -65,6 +65,7 @@ class MorseCode:
         ret.strip()
         return ret
 
+    # Rozdělí text podle mezer
     def get_words(self, text):
         return text.split(" ")
 
