@@ -9,6 +9,8 @@ from copy import deepcopy
 """This method calcualtes teterminant of matrix.
 
  determinantCalculation(). For example,
+ >>> determinantCalculation([1, 1, 1, 1, 1, 1, 1, 1, 1])
+ 0
 
 """
 
@@ -108,7 +110,14 @@ def replaceWithRightSides(matrixarray, vector, column):
 """This method converts input from fiel to matrix.
 
  ConvertToMatrixAndVector - converts input from file to matrix an vector of
- right sides
+ right sides.
+
+ Vector and matrix are returned in variablex matrix and vector Return values - 1
+ on success, 0 on failure
+
+For example
+>>> convertToMatrixAndVector(["1 1 1 1", "2 2 2 2", "3 3 3 3"], matrix, vector)
+1
 
 """
 
@@ -141,8 +150,6 @@ def convertToMatrixAndVector(fileContent, matrix, vector):
         # trim new line from line and spit it by delimieter, delimiter is space
         lineArray = line.rstrip("\n").split(" ")
         if len(lineArray) != 4:
-        #    print("Invalid number of cloumns in file. File must contain 4 colu\
-        #    mns, 3 for matrix and 1 for vector of right sides")
             return 0
 
         for element in lineArray:
