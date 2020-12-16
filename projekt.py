@@ -1,5 +1,4 @@
 class MorseCode:
-
     MORSE_CODE_LIST = {
             "1": ".----",
             "2": "..---",
@@ -40,7 +39,6 @@ class MorseCode:
             " ": "...---...",
     }
 
-
     def encode(self, text):
         ret = ""
         words = self.get_words(text)
@@ -58,8 +56,8 @@ class MorseCode:
         words = self.get_words(text)
         for word in words:
             for i, x in self.MORSE_CODE_LIST.items():
-                        if word == x:
-                            ret += i
+                if word == x:
+                    ret += i
         ret += " "
         ret.strip()
         return ret
@@ -78,7 +76,3 @@ if __name__ == '__main__':
     else:
         print("Zadejte text pro dekódování")
         print(morseCode.decode(input()))
-    
-
-
-
