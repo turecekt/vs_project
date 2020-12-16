@@ -18,15 +18,6 @@ def main(file=0):
     """Functon main calculates determinant of given matrix.
 
     >>> main("matrixTest.txt")
-    Results form matrix:
-    1.0	2.0	3.0
-    5.0	2.0	20.0
-    15.0	12.0	9.0
-    And vector: 28.0 60.0 30.0
-    Are:
-    x: -3.3255813953488373
-    y: 2.3372093023255816
-    z: 4.325581395348837
     0
 
     This method is run automatically after script is opened
@@ -96,15 +87,15 @@ def main(file=0):
     results["z"] = deterZ / determinantOfMatrix
 
     # print results of calculation
-    print("Results form matrix:")
-    print(str(matrix[0])+"\t"+str(matrix[1])+"\t"+str(matrix[2]))
-    print(str(matrix[3])+"\t"+str(matrix[4])+"\t"+str(matrix[5]))
-    print(str(matrix[6])+"\t"+str(matrix[7])+"\t"+str(matrix[8]))
-    print("And vector: "+str(vector[0])+" "+str(vector[1])+" "+str(vector[2]))
-    print("Are:")
-    print("x: "+str(results["x"]))
-    print("y: "+str(results["y"]))
-    print("z: "+str(results["z"]))
+    # print("Results form matrix:")
+    # print(str(matrix[0])+"\t"+str(matrix[1])+"\t"+str(matrix[2]))
+    # print(str(matrix[3])+"\t"+str(matrix[4])+"\t"+str(matrix[5]))
+    # print(str(matrix[6])+"\t"+str(matrix[7])+"\t"+str(matrix[8]))
+    # print("And vector: "+str(vector[0])+" "+str(vector[1])+" "+str(vector[2]))
+    # print("Are:")
+    # print("x: "+str(results["x"]))
+    # print("y: "+str(results["y"]))
+    # print("z: "+str(results["z"]))
     return 0
 
 

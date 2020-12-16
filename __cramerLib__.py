@@ -17,7 +17,7 @@ def determinantCalculation(matrixarray):
     """Functon determinantCalculation calculates determinant of given matrix.
 
     >>> determinantCalculation([1, 1, 1, 1, 1, 1, 1, 1, 1])
-    1
+    0
 
     Args:
         - matrixarray - array representing matrix that should be calculated
@@ -85,7 +85,7 @@ def replaceWithRightSides(matrixarray, vector, column):
     """Functon replaceWithRightSides replaces with vector of right sides.
 
     >>> replaceWithRightSides([1, 1, 1, 1, 1, 1, 1, 1, 1], [4,5,6], 0)
-    [4, 1 , 1, 5, 1, 1, 6, 1, 1]
+    [4, 1, 1, 5, 1, 1, 6, 1, 1]
 
     Args:
         - matrixarray - array representing matrix that should be calculated
