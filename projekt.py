@@ -1,5 +1,9 @@
+"""Slouží pro převod textu do morseovy abecedy a zpět."""
+
+
 class MorseCode:
-    # seznam znaků a jejich ekvivalenty v morseově abecedě
+    """Třída slouží pro práci s morseovou abecedou."""
+
     MORSE_CODE_LIST = {
             "1": ".----",
             "2": "..---",
@@ -40,8 +44,8 @@ class MorseCode:
             " ": "...---...",
     }
 
-    # Převede text do morseovy abecedy
     def encode(self, text):
+        """Převede text do morseovy abecedy."""
         ret = ""
         words = self.get_words(text)
         for word in words:
@@ -53,8 +57,8 @@ class MorseCode:
         ret.strip()
         return ret
 
-    # Převede text z morseovy abecedy
     def decode(self, text):
+        """Převede text z morseovy abecedy."""
         ret = ""
         words = self.get_words(text)
         for word in words:
@@ -65,8 +69,8 @@ class MorseCode:
         ret.strip()
         return ret
 
-    # Rozdělí text podle mezer
     def get_words(self, text):
+        """Rozdělí text podle mezer."""
         return text.split(" ")
 
 
