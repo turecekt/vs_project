@@ -3,6 +3,7 @@
 *.sln
 *.pyproj
 *.user
+TestResults
 
 # pytest
 .pytest_cache
