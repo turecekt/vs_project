@@ -8,7 +8,7 @@ from copy import deepcopy
 
 """This method calcualtes teterminant of matrix.
 
- determinantCalculation(). For example,
+ For example,
  >>> determinantCalculation([1, 1, 1, 1, 1, 1, 1, 1, 1])
  0
 
@@ -80,6 +80,10 @@ def determinantCalculation(matrixarray):
 
  replaceWithRightSides - replaces column  in matrix with vector of right sides
 
+ For Example:
+     >>> replaceWithRightSides([1, 1, 1, 1, 1, 1, 1, 1, 1], [4,5,6], 0)
+     [4, 1, 1, 5, 1, 1, 6, 1, 1]
+
 """
 
 
@@ -95,7 +99,7 @@ def replaceWithRightSides(matrixarray, vector, column):
         - column - column to be replace, have to be in interval <0;2>
 
     Returns:
-        - output - determinant of given matrix, a number.
+        - output - matrix with one column replaced by vector
     """
     # just in case that somebody uses index greater than 2
     column = column % 3
@@ -112,8 +116,8 @@ def replaceWithRightSides(matrixarray, vector, column):
  ConvertToMatrixAndVector - converts input from file to matrix an vector of
  right sides.
 
- Vector and matrix are returned in variablex matrix and vector Return values - 1
- on success, 0 on failure
+ Vector and matrix are returned in variablex matrix and vector Return values:
+ 1 on success, 0 on failure
 
 For example
 >>> convertToMatrixAndVector(["1 1 1 1", "2 2 2 2", "3 3 3 3"], matrix, vector)
