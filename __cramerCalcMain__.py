@@ -21,6 +21,8 @@ def main(file=0):
     0
     >>> main("KolalokaTest.csv")
     1
+    >>> main()
+    1
 
     This method is run automatically after script is opened
     Args:
