@@ -91,7 +91,8 @@ def main(file=0):
     # print(str(matrix[0])+"\t"+str(matrix[1])+"\t"+str(matrix[2]))
     # print(str(matrix[3])+"\t"+str(matrix[4])+"\t"+str(matrix[5]))
     # print(str(matrix[6])+"\t"+str(matrix[7])+"\t"+str(matrix[8]))
-    # print("And vector: "+str(vector[0])+" "+str(vector[1])+" "+str(vector[2]))
+    # print("And vector: "+str(vector[0])+" "+str(vector[1])+" \
+    # "+str(vector[2]))
     # print("Are:")
     # print("x: "+str(results["x"]))
     # print("y: "+str(results["y"]))
