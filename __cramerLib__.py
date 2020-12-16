@@ -141,8 +141,8 @@ def convertToMatrixAndVector(fileContent, matrix, vector):
         # trim new line from line and spit it by delimieter, delimiter is space
         lineArray = line.rstrip("\n").split(" ")
         if len(lineArray) != 4:
-            print("Invalid number of cloumns in file. File must contain 4 colu\
-            mns, 3 for matrix and 1 for vector of right sides")
+        #    print("Invalid number of cloumns in file. File must contain 4 colu\
+        #    mns, 3 for matrix and 1 for vector of right sides")
             return 0
 
         for element in lineArray:

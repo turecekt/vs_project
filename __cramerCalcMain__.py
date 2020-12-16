@@ -46,13 +46,13 @@ def main(file=0):
         try:
             FILE = open(sys.argv[1])
         except IOError:
-            print("File "+sys.argv[1]+' not found on this machine')
+            # print("File "+sys.argv[1]+' not found on this machine')
             return 1
     else:
         try:
             FILE = open(file)
         except IOError:
-            print("File "+file+' not found on this machine')
+            # print("File "+file+' not found on this machine')
             return 1
 
     lines = []
