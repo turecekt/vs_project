@@ -1,12 +1,13 @@
 # -*- coding: utf-8 -*-
 
-# This program encodes and decodes latin alphabet to and from MorseCode
+"PROJECT MORSECODE TRANSLATOR"
 
-# mcipher -> stores translated from latin string
-# dcipher -> strores translated from morsecode
-# morsCharacter -> morse of single character
-# i -> counts spaces betwees morse
-# message -> string tob encoded or decoded
+"This program encodes and decodes latin alphabet to and from MorseCode"
+
+"dcipher -> strores translated from morsecode"
+"morsCharacter -> morse of single character"
+"i -> counts spaces betwees morse"
+"message -> string tob encoded or decoded"
 
 # Morsecode dictionary form Latin to Morse
 LAT_MORSE_DICT = {'A':'.-',
@@ -53,14 +54,14 @@ LAT_MORSE_DICT = {'A':'.-',
               '(':'-.--.',
               ')':'-.--.-'}
 
-#Funcion to decrypt the string from Latin to Morsecode
-#each morse letter is devided by /
+
+"Funcion decrypts the string from Latin to Morsecode each morse character is devided by /, words by //" 
+"Args: Words in Latin dictionary"
+"Returns: Morse code"
 def encrypt(message):
-  
    
     message = message.upper()
     mcipher = ''
-
 
     for letter in message:
         if letter != ' ':
@@ -70,10 +71,11 @@ def encrypt(message):
     return mcipher
 
 
-#Funcion to decrypt the string from Morsecode to Latin letters
+"Funcion to decrypt the string from Morsecode to Latin letters"
+"Args: Morse symbols"
+"Returns: Latin characters"
 def decrypt(message):
-    
-    #Adding extra space at the end to acces the Last morsecode
+     
     message += ' '
     dcipher = ''
     morsCharacter = ''
@@ -98,21 +100,24 @@ def decrypt(message):
 
 
 
-#Chooses type of the translation
+"Chooses type of the translation"
+"Args: 1 fof ecnrypting Latin to MorseCode"
+"      2 for decrypting MorseCode to Latin Characters"
+"Returns: waiting for user input"
 def choice(choose):
    
     if choose == 1:
-        vyberPrekladu = input("Your text: ")
-        result = encrypt(vyberPrekladu)
+        chooseTranslate = input("Your text: ")
+        result = encrypt(chooseTranslate)
 
     elif choose == 2:
-        vyberPrekladu2 = input("Morse: ")
-        result = decrypt(vyberPrekladu2)
+        choosTranslate2 = input("Morse: ")
+        result = decrypt(choosTranslate2)
     
     return result
 
 
-#Definice main
+"Main definition"
 def main():
     
     try:
@@ -122,7 +127,7 @@ def main():
         volani = choice(a)
         print(volani)
     except ValueError:
-        print("Musí být znak")
+        print("Must be symbol")
 
 
 if __name__ == '__main__':
