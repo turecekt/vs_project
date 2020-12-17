@@ -82,7 +82,8 @@ Blok pro volbu akce.
 """
 if __name__ == 'main':
     text_vstup = input("Zadejte text na převedení:\n")
-    vyberAkce = input("Vyberte akci:\n1 - Šifrování do Morseovky \n2 - Dešifrování z morseovky\n")
+    vyberAkce = input("Vyberte akci:\n1 - Šifrování do Morseovky "
+                      "\n2 - Dešifrování z morseovky\n")
 
     if vyberAkce == "1":
         print(sifrovani_morse(text_vstup))
