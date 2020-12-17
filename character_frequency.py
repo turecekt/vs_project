@@ -44,7 +44,7 @@ class CharacterFrequency:
     # (list because of equalities).
     def get_least_frequent(self):
         min_value = min(self.char_dict.values())
-        min_keys  = []
+        min_keys = []
         for k, v in self.char_dict.items():
             if v == min_value:
                 min_keys.append(k)
@@ -116,9 +116,9 @@ class CharacterFrequency:
 def parse_args():
     parser = argparse.ArgumentParser(
         description="Get information about character frequency form input.")
-    parser.add_argument("-i",nargs='?',
-        help="File containing characters to be analyzed.",
-        type=argparse.FileType('r'), default=sys.stdin)
+    parser.add_argument("-i", nargs='?',
+                        help="File containing characters to be analyzed.",
+                        type=argparse.FileType('r'), default=sys.stdin)
     args = parser.parse_args()
     return args
 

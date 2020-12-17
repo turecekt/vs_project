@@ -12,13 +12,14 @@
 from character_frequency import CharacterFrequency
 import unittest
 
+
 class TestCharacterFrequency(unittest.TestCase):
     ##########################################################################
     # This is executed only once.
     @classmethod
     def setUpClass(cls):
         cls.chars = CharacterFrequency("DEBUG")
-        cls.test_dict = {'a':42, 'b':18, 'c':6, '&':1}
+        cls.test_dict = {'a': 42, 'b': 18, 'c': 6, '&': 1}
 
     ##########################################################################
     # This is executed at the end.
@@ -68,8 +69,8 @@ class TestCharacterFrequency(unittest.TestCase):
         self.chars.char_dict['!'] = 13
         result = self.chars.get_alpha_frequency()
         for key in list(result.keys()):
-          self.assertTrue(key.isalpha())
+            self.assertTrue(key.isalpha())
 
 
 if __name__ == '__main__':
-  unittest.main()
+    unittest.main()
