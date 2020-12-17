@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+"""Testing part of final project"""
 
 #############################################################################
 # Project: AK1VS - Final project
@@ -14,58 +14,50 @@ import unittest
 
 
 class TestCharacterFrequency(unittest.TestCase):
-    ##########################################################################
-    # This is executed only once.
     @classmethod
     def setUpClass(cls):
+        """This is executed only once."""
         cls.chars = CharacterFrequency("DEBUG")
         cls.test_dict = {'a': 42, 'b': 18, 'c': 6, '&': 1}
 
-    ##########################################################################
-    # This is executed at the end.
     @classmethod
     def tearDownClass(cls):
+        """This is executed at the end."""
         pass
 
-    ##########################################################################
-    # This is executed before every test-case.
     def setUp(self):
+        """This is executed before every test-case."""
         self.chars.char_dict = self.test_dict
         pass
 
-    ##########################################################################
-    # This is executed after every test-case.
     def tearDown(self):
+        """This is executed after every test-case."""
         pass
 
-    ##########################################################################
-    # Tests if most frequent character could be found.
     # @unittest.skip('Intentionally skipped for development purposes.')
     def test_most_frequency(self):
+        """Tests if most frequent character could be found."""
         self.chars.char_dict['X'] = 100
         result = self.chars.get_most_frequent()
         self.assertEqual(result[1], 100)
 
-    ##########################################################################
-    # Tests if least frequent character could be found.
     # @unittest.skip('Intentionally skipped for development purposes.')
     def test_least_frequency(self):
+        """Tests if least frequent character could be found."""
         self.chars.char_dict['X'] = 1
         result = self.chars.get_least_frequent()
         self.assertEqual(result[1], 1)
 
-    ##########################################################################
-    # Tests if character with average rate could be found.
     # @unittest.skip('Intentionally skipped for development purposes.')
     def test_average_frequency(self):
+        """Tests if character with average rate could be found."""
         self.chars.char_dict['X'] = 13
         result = self.chars.get_average()
         self.assertEqual(result[0], 15.5)
 
-    ##########################################################################
-    # Tests if alphabetic characters with rate could be filtered.
     # @unittest.skip('Intentionally skipped for development purposes.')
     def test_alphabetic_frequency(self):
+        """Tests if alphabetic characters with rate could be filtered."""
         self.chars.char_dict['!'] = 13
         result = self.chars.get_alpha_frequency()
         for key in list(result.keys()):

@@ -1,7 +1,6 @@
-#!/usr/bin/env python3
+"""Project: AK1VS - Final project"""
 
 ##########################################################################
-# Project: AK1VS - Final project
 # Description: This project should show how to work with versioning tool such
 #              as git.
 # Task: Character rate
@@ -21,17 +20,16 @@ import argparse
 import statistics
 
 
-##########################################################################
-# Class contains whole functionality needed for completing deisred tasks.
 class CharacterFrequency:
+    """Class contains whole functionality needed for completing deisred tasks."""
     def __init__(self, intput):
+        """Initialize class properties"""
         self.input = intput
         self.char_dict = self._init_dictionary()
 
-    ##########################################################################
-    # Method returns touple of most frequent character list
-    # (list because of equalities).
     def get_most_frequent(self):
+        """Method returns touple of most frequent character list
+        (list because of equalities)."""
         max_value = max(self.char_dict.values())
         max_keys = []
         for k, v in self.char_dict.items():
@@ -39,10 +37,9 @@ class CharacterFrequency:
                 max_keys.append(k)
         return (max_keys, max_value)
 
-    ##########################################################################
-    # Method returns touple of least frequent character list
-    # (list because of equalities).
     def get_least_frequent(self):
+        """Method returns touple of least frequent character list
+        (list because of equalities)."""
         min_value = min(self.char_dict.values())
         min_keys = []
         for k, v in self.char_dict.items():
@@ -50,10 +47,9 @@ class CharacterFrequency:
                 min_keys.append(k)
         return (min_keys, min_value)
 
-    ##########################################################################
-    # Method returns touple of average occurence of character list
-    # (list because of equalities).
     def get_average(self):
+        """Method returns touple of average occurence of character list
+        (list because of equalities)."""
         avg_value = statistics.mean(self.char_dict.values())
         rounded_value = round(avg_value)
         avg_keys = []
@@ -62,28 +58,25 @@ class CharacterFrequency:
                 avg_keys.append(k)
         return (avg_value, avg_keys)
 
-    ##########################################################################
-    # Method returns list of alphabetic character with their frequency
-    # of occurence.
     def get_alpha_frequency(self):
+        """Method returns list of alphabetic character with their frequency
+        of occurence."""
         alpha_dict = {}
         for k, v in self.char_dict.items():
             if k.isalpha():
                 alpha_dict[k] = v
         return alpha_dict
 
-    ##########################################################################
-    # Method for printing lists with result.
     def output(self, output_list):
+        """Method for printing lists with result."""
         print(str(output_list))
 
-    ##########################################################################
-    # Private method read input data and store them into dictionary.
-    # For stdin dictionary contains only characters until '#' is read.
-    # 'DEBUG' option is for testing purposes, when tester can easily handle
-    # input. It can be only reached through code.
-    # Tester has to define self.char_dict by him self.
     def _init_dictionary(self):
+        """Private method read input data and store them into dictionary.
+        For stdin dictionary contains only characters until '#' is read.
+        'DEBUG' option is for testing purposes, when tester can easily handle
+        input. It can be only reached through code.
+        Tester has to define self.char_dict by him self."""
         character_dict = {}
         if (self.input != 'DEBUG'):
             if (self.input == '<stdin>'):
@@ -111,9 +104,8 @@ class CharacterFrequency:
         return character_dict
 
 
-##########################################################################
-# Outter method for parsing input arguments from terminal.
 def parse_args():
+    """Outter method for parsing input arguments from terminal."""
     parser = argparse.ArgumentParser(
         description="Get information about character frequency form input.")
     parser.add_argument("-i", nargs='?',
@@ -123,9 +115,8 @@ def parse_args():
     return args
 
 
-##########################################################################
-# Driving method for whole program.
 def main(args):
+    """Driving method for whole program."""
     characters = CharacterFrequency(args.i.name)
     # Print most frequent value with corresponding characters.
     characters.output(characters.get_most_frequent())
