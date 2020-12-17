@@ -8,7 +8,7 @@ Program prijima souradnice bodu A,B,C z konzole a vypisuje vysledky na konzoli.
 Tvurce: Tomas Blaho
 """
 
-import math
+from math import sqrt
 
 
 # PyTest sekce ------------------------------
@@ -38,10 +38,25 @@ def test_sestrojitelnost():
     assert sestrojitelnost(3, 4, 5) is True
     assert sestrojitelnost(5, 4, 3) is True
     assert sestrojitelnost(4, 5, 3) is True
+
+
+def test_sA():
+    """Test sA()."""
+    assert sA(9, 12, 12, 16) == 5
+
+
+def test_sB():
+    """Test sB()."""
+    assert sB(9, 12, 12, 16) == 5
+
+
+def test_sC():
+    """Test sC()."""
+    assert sC(9, 12, 12, 16) == 5
 # PyTest konec -----------------------------
 
 
-def sestrojitelnost(A, B, C):
+def sestrojitelnost(a, b, c):
     """
     Funkce zjistuje jestli lze sestrojit trojuhelnik.
 
@@ -49,36 +64,36 @@ def sestrojitelnost(A, B, C):
     true = trojuhelnik lze sestrojit
     false = trojhelnik nelze sestrojit
     """
-    lze = A + B > C and B + C > A and A + C > B
+    lze = a + b > c and b + c > a and a + c > b
 
     return lze
 
 
-def obsah(A, B, C):
+def obsah(a, b, c):
     """
     Funkce pocita obsah trojuhelniku.
 
     Vraci:
     float s vypocitanou hodnotou
     """
-    s = (A + B + C) / 2
+    s = (a + b + c) / 2
 
-    S = math.sqrt(s * (s - A) * (s - B) * (s - C))
+    S = sqrt(s * (s - a) * (s - b) * (s - c))
 
     return S
 
 
-def obvod(A, B, C):
+def obvod(a, b, c):
     """
     Funkce pocita obvod trojuhelniku.
 
     Vraci:
     float s vypocitanou hodnotou
     """
-    return A + B + C
+    return a + b + c
 
 
-def pravouhelnost(A, B, C):
+def pravouhelnost(a, b, c):
     """
     Funkce zjistuje jesli je trojuhelnik pravouhly.
 
@@ -86,16 +101,46 @@ def pravouhelnost(A, B, C):
     true = trojuhelnik je pravouhlu
     false = trojuhelnik neni pravouhlu
     """
-    nejdelsi = max(A, B, C)
+    nejdelsi = max(a, b, c)
 
-    if nejdelsi == C:
-        je = C ** 2 == A ** 2 + B ** 2
-    elif nejdelsi == B:
-        je = B ** 2 == A ** 2 + C ** 2
-    elif nejdelsi == A:
-        je = A ** 2 == B ** 2 + C ** 2
+    if nejdelsi == c:
+        je = c ** 2 == a ** 2 + b ** 2
+    elif nejdelsi == b:
+        je = b ** 2 == a ** 2 + c ** 2
+    elif nejdelsi == a:
+        je = a ** 2 == b ** 2 + c ** 2
 
     return je
+
+
+def sA(ax, ay, bx, by):
+    """
+    Funkce pocita delku strany A.
+
+    Vraci:
+    float s vypocitanou hodnotou
+    """
+    return sqrt(((int(bx) - int(ax)) ** 2) + ((int(by) - int(ay)) ** 2))
+
+
+def sB(bx, by, cx, cy):
+    """
+    Funkce pocita delku strany B.
+
+    Vraci:
+    float s vypocitanou hodnotou
+    """
+    return sqrt(((int(cx) - int(bx)) ** 2) + ((int(cy) - int(by)) ** 2))
+
+
+def sC(ax, ay, cx, cy):
+    """
+    Funkce pocita delku strany C.
+
+    Vraci:
+    float s vypocitanou hodnotou
+    """
+    return sqrt(((int(ax) - int(cx)) ** 2) + ((int(ay) - int(cy)) ** 2))
 
 
 if __name__ == '__main__':
@@ -114,28 +159,27 @@ if __name__ == '__main__':
     else:
         # Jsou ve spravnem tvaru.
         # Zde se pocita delka sran A, B, C.
-        # Toto se bude pozdeji pouzivat ve funkcich.
-        sA = math.sqrt(((int(Bx) - int(Ax)) ** 2) + ((int(By) - int(Ay)) ** 2))
-        sB = math.sqrt(((int(Cx) - int(Bx)) ** 2) + ((int(Cy) - int(By)) ** 2))
-        sC = math.sqrt(((int(Ax) - int(Cx)) ** 2) + ((int(Ay) - int(Cy)) ** 2))
+        A = sA(Ax, Ay, Bx, By)
+        B = sB(Bx, By, Cx, Cy)
+        C = sC(Ax, Ay, Cx, Cy)
 
         # Vystup pozadovany v zadani.
-        if sestrojitelnost(A=sA, B=sB, C=sC):
+        if sestrojitelnost(A, B, C):
             print('Trojuhelnik lze sestrojit.')
 
-            print('Strana A je dlouha: ', sA)
-            print('Strana B je dlouha: ', sB)
-            print('Strana C je dlouha: ', sC)
+            print('Strana A je dlouha: ', A)
+            print('Strana B je dlouha: ', B)
+            print('Strana C je dlouha: ', C)
 
-            print('Obsah je: ', obsah(A=sA, B=sB, C=sC),
-                  ' a obvod je: ', obvod(A=sA, B=sB, C=sC))
+            print('Obsah je: ', obsah(A, B, C),
+                  ' a obvod je: ', obvod(A, B, C))
 
-            if pravouhelnost(A=sA, B=sB, C=sC):
+            if pravouhelnost(A, B, C):
                 print('Trojuhelnik je pravouhly.')
             else:
                 print('Trojuhelnik neni pravouhly.')
         else:
             print('Trojuhelnik nelze sestrojit.')
 
-    # Zde program ceka na uzivatelsky vstup k ukonceni.
+    # Konec. Zde program ceka na uzivatelsky vstup k ukonceni.
     input('Zmackni Enter k zavreni programu.')
