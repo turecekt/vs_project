@@ -135,12 +135,16 @@ class Gui(tk.Tk):
     def __init__(self):
         """Konstruktor základní struktury."""
         self.app = tk.Tk()
-        self.app.geometry("450x300")
+        self.app.geometry("450x650")
         self.app.configure(bg="#1d1d1d")
         self.app.title("Výpočet troúhelníků")
         self.app.columnconfigure(0, weight=2)
         self.app.columnconfigure(1, weight=2)
         self.app.columnconfigure(2, weight=2)
+        self.app.minsize(450, 650)
+        self.app.maxsize(450, 5000)
+        self.app.option_add("*font", "Helvetica 10 bold")
+        self.canvas = tk.Canvas()
         self.nazvy = {1: "Strana a",
                       2: "Strana b",
                       3: "Strana c",
@@ -171,6 +175,7 @@ class Gui(tk.Tk):
         # volání metody checkbox_render()
         self.checkbox_render()
         self.value_render()
+        self.image_render()
         self.app.mainloop()
 
     def checkbox_render(self):
@@ -247,6 +252,7 @@ class Gui(tk.Tk):
         if self.isuC.get():
             self.count += 1
         self.value_render()
+        self.image_render()
 
     def value_render(self):
         """Vypisuje pokyni."""
@@ -271,8 +277,60 @@ class Gui(tk.Tk):
 
     def turn_off_checkbox(self):
         """Vypíná checkboxy po té co jsou vybrané 3."""
-        if self.count == 3:
-            print(str(self.count))
+        if self.count >= 3:
+            if not self.issA.get():
+                self.chbsA.configure(state="disabled")
+            if not self.issB.get():
+                self.chbsB.configure(state="disabled")
+            if not self.issC.get():
+                self.chbsC.configure(state="disabled")
+            if not self.isuA.get():
+                self.chbuA.configure(state="disabled")
+            if not self.isuB.get():
+                self.chbuB.configure(state="disabled")
+            if not self.isuC.get():
+                self.chbuC.configure(state="disabled")
+        else:
+            self.chbsA.configure(state="normal")
+            self.chbsB.configure(state="normal")
+            self.chbsC.configure(state="normal")
+            self.chbuA.configure(state="normal")
+            self.chbuB.configure(state="normal")
+            self.chbuC.configure(state="normal")
+    
+    def image_render(self):
+        trImg = tk.Canvas(self.app, bg="#1d1d1d", width=450, height=395)
+        trImg.grid(row=3, column=0, columnspan=3, sticky='we')
+        trImg.create_line(50, 343.109, 400, 343.109, 225, 40, 50, 343.109,
+                          fill="white", width=3)
+        trImg.create_text(35,360, anchor="w", text="A", fill="white",
+                          font=("Helvetica","16", "bold"))
+        trImg.create_text(405,360, anchor="w", text="B", fill="white",
+                          font=("Helvetica","16", "bold"))
+        trImg.create_text(225,25, anchor="center", text="C", fill="white",
+                          font=("Helvetica","16", "bold"))
+        stC = trImg.create_text(225,360, anchor="center", text="strana c", 
+                                fill="white", font=("Helvetica","12", "bold"))
+        stB = trImg.create_text(120,185, anchor="center", text="strana b",
+                                angle=60, fill="white",
+                                font=("Helvetica","12", "bold"))
+        stA = trImg.create_text(330,185, anchor="center", text="strana a",
+                                angle=-60, fill="white",
+                                font=("Helvetica","12", "bold"))
+        uaA = trImg.create_arc(0,293.109,100,393.109, start=0, extent=60,
+                               outline="white", width=1.5)
+        uaB = trImg.create_arc(350,293.109,450,393.109, start=120,
+                               extent=60, outline="white", width=1.5)
+        uaC = trImg.create_arc(175,-10,275,90, start=240,
+                               extent=60, outline="white", width=1.5)
+        utA = trImg.create_text(105,310, anchor="center", text="\u03B1", 
+                                fill="white", font=("Helvetica","12", "bold"))
+        stB = trImg.create_text(345,310, anchor="center", text="\u03B2",
+                                fill="white",
+                                font=("Helvetica","12", "bold"))
+        utC = trImg.create_text(225,105, anchor="center", text="\u03B3",
+                                fill="white",
+                                font=("Helvetica","12", "bold"))
 
-
-Gui()
+if __name__ == "__main__":
+    Gui()
