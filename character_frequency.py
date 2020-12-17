@@ -29,7 +29,7 @@ class CharacterFrequency:
 
   #############################################################################
   # Method returns list of most frequent character (list because of equalities).
-  def most_frequent(self):
+  def get_most_frequent(self):
     max_value = max(self.char_dict.values())
     max_keys  = []
 
@@ -41,7 +41,7 @@ class CharacterFrequency:
 
   #############################################################################
   # Method returns list of least frequent character (list because of equalities).
-  def least_frequent(self):
+  def get_least_frequent(self):
     min_value = min(self.char_dict.values())
     min_keys  = []
 
@@ -53,7 +53,7 @@ class CharacterFrequency:
 
   #############################################################################
   # Method returns list of average occurence of character (list because of equalities).
-  def average(self):
+  def get_average(self):
     avg_value     = statistics.mean(self.char_dict.values())
     rounded_value = round(avg_value)
     avg_keys      = []
@@ -66,7 +66,7 @@ class CharacterFrequency:
 
   #############################################################################
   # Method returns list of alphabetic character with their frequency of occurence.
-  def alpha_frequency(self):    
+  def get_alpha_frequency(self):    
     alpha_dict = {}
 
     for k, v in self.char_dict.items():
@@ -145,13 +145,13 @@ def main(args):
   characters = CharacterFrequency(args.i.name)
 
   # Print most frequent value with corresponding characters.
-  characters.output(characters.most_frequent())
+  characters.output(characters.get_most_frequent())
   # Print least frequent value with corresponding characters.
-  characters.output(characters.least_frequent())
+  characters.output(characters.get_least_frequent())
   # Print average rate value with characters having rounded average rate.
-  characters.output(characters.average())
+  characters.output(characters.get_average())
   # Print alphabetic characters rate.
-  characters.output(characters.alpha_frequency())
+  characters.output(characters.get_alpha_frequency())
 
 
 if __name__ == "__main__":
