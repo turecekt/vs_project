@@ -28,7 +28,7 @@ class CharacterFrequency:
     self.char_dict = self._init_dictionary()
 
   #############################################################################
-  # Method returns list of most frequent character (list because of equalities).
+  # Method returns touple of most frequent character list (list because of equalities).
   def get_most_frequent(self):
     max_value = max(self.char_dict.values())
     max_keys  = []
@@ -40,7 +40,7 @@ class CharacterFrequency:
     return (max_keys, max_value)
 
   #############################################################################
-  # Method returns list of least frequent character (list because of equalities).
+  # Method returns touple of least frequent character list (list because of equalities).
   def get_least_frequent(self):
     min_value = min(self.char_dict.values())
     min_keys  = []
@@ -52,7 +52,7 @@ class CharacterFrequency:
     return (min_keys, min_value)
 
   #############################################################################
-  # Method returns list of average occurence of character (list because of equalities).
+  # Method returns touple of average occurence of character list (list because of equalities).
   def get_average(self):
     avg_value     = statistics.mean(self.char_dict.values())
     rounded_value = round(avg_value)
