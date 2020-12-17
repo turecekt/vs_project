@@ -83,39 +83,43 @@ class CharacterFrequency:
   #############################################################################
   # Private method read input data and store them into dictionary.
   # For stdin dictionary contains only characters until '#' is read.
+  # 'DEBUG' option is for testing purposes, when tester can easily handle input. It can be only reached through code.
+  # Tester has to define self.char_dict by him self.
   def _init_dictionary(self):
     character_dict = {}
-    if (self.input == '<stdin>'):
-      while True:
-        char = sys.stdin.read(1)
 
-        if (char == '#'):
-          break
-        
-        dict_keys = character_dict.keys()
+    if (self.input != 'DEBUG'):
+      if (self.input == '<stdin>'):
+        while True:
+          char = sys.stdin.read(1)
 
-        if (char in dict_keys):
-          character_dict[char] += 1
-        else:
-          character_dict[char] = 1
+          if (char == '#'):
+            break
+          
+          dict_keys = character_dict.keys()
 
-    else:
-      file_input = open(self.input, 'r')
+          if (char in dict_keys):
+            character_dict[char] += 1
+          else:
+            character_dict[char] = 1
 
-      while True:
-        char = file_input.read(1)
+      else:
+        file_input = open(self.input, 'r')
 
-        if (char == ''):
-          break
+        while True:
+          char = file_input.read(1)
 
-        dict_keys = character_dict.keys()
+          if (char == ''):
+            break
 
-        if (char in dict_keys):
-          character_dict[char] += 1
-        else:
-          character_dict[char] = 1
+          dict_keys = character_dict.keys()
 
-      file_input.close()
+          if (char in dict_keys):
+            character_dict[char] += 1
+          else:
+            character_dict[char] = 1
+
+        file_input.close()
 
     return character_dict
 
