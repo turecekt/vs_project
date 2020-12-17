@@ -29,7 +29,14 @@ class CharacterFrequency:
   #############################################################################
   # Method returns list of most frequent character (list because of equalities).
   def most_frequent(self):
-    return
+    max_value = max(self.char_dict.values())
+    max_keys  = []
+
+    for k, v in self.char_dict.items():
+      if v == max_value:
+        max_keys.append(k)
+
+    return (max_keys, max_value)
 
   #############################################################################
   # Method returns list of least frequent character (list because of equalities).
@@ -109,6 +116,8 @@ def parse_args():
 # Driving method for whole program.
 def main(args):
   characters = CharacterFrequency(args.i.name)
+
+  characters.output(characters.most_frequent())
 
 if __name__ == "__main__":
   args = parse_args()
