@@ -66,8 +66,14 @@ class CharacterFrequency:
 
   #############################################################################
   # Method returns list of alphabetic character with their frequency of occurence.
-  def alpha_frequency(self):
-    return
+  def alpha_frequency(self):    
+    alpha_dict = {}
+
+    for k, v in self.char_dict.items():
+      if k.isalpha():
+        alpha_dict[k] = v
+
+    return alpha_dict
 
   #############################################################################
   # Method for printing lists with result.
@@ -76,6 +82,7 @@ class CharacterFrequency:
 
   #############################################################################
   # Private method read input data and store them into dictionary.
+  # For stdin dictionary contains only characters until '#' is read.
   def _init_dictionary(self):
     character_dict = {}
     if (self.input == '<stdin>'):
@@ -119,7 +126,7 @@ def parse_args():
 
   parser.add_argument("-i",
                       nargs   = '?',
-                      help    = "File containing characters to be analyzed.\nDefault = StdIn closed with #",
+                      help    = "File containing characters to be analyzed.\nDefault = stdin closed with #",
                       type    = argparse.FileType('r'),
                       default = sys.stdin
                       )
@@ -139,6 +146,8 @@ def main(args):
   characters.output(characters.least_frequent())
   # Print average rate value with characters having rounded average rate.
   characters.output(characters.average())
+  # Print alphabetic characters rate.
+  characters.output(characters.alpha_frequency())
 
 
 if __name__ == "__main__":
