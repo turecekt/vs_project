@@ -6,7 +6,7 @@ Created on Fri Dec 11 00:53:37 2020.
 """
 import math
 import tkinter as tk
-from tkinter import ttk
+# from tkinter import ttk
 
 
 class Tris():
@@ -128,12 +128,12 @@ class Tris():
             out += " Součet dvou stran musí být větší než stranatřetí."
             return out
 
+
 class Gui(tk.Tk):
+    """Class pro gui."""
+
     def __init__(self):
-        """
-        Konstruktor základní struktury.
-        
-        """
+        """Konstruktor základní struktury."""
         self.app = tk.Tk()
         self.app.geometry("450x300")
         self.app.configure(bg="#1d1d1d")
@@ -147,94 +147,91 @@ class Gui(tk.Tk):
                       4: "Úhel \u03B1",
                       5: "Úhel \u03B2",
                       6: "Úhel \u03B3"}
-        """
         # Definice proměnných pro metodu checkbox_render()
-        """
-        #je strana A vybraná?
+        # je strana A vybraná?
         self.issA = tk.BooleanVar()
         self.issA.set(False)
-        #je strana B vybraná?
+        # je strana B vybraná?
         self.issB = tk.BooleanVar()
         self.issB.set(False)
-        #je strana C vybraná?
+        # je strana C vybraná?
         self.issC = tk.BooleanVar()
         self.issC.set(False)
-        #je úhel A vybraný?
+        # je úhel A vybraný?
         self.isuA = tk.BooleanVar()
         self.isuA.set(False)
-        #je úhel B vybraný?
+        # je úhel B vybraný?
         self.isuB = tk.BooleanVar()
         self.isuB.set(False)
-        #je úhel C vybraný?
+        # je úhel C vybraný?
         self.isuC = tk.BooleanVar()
         self.isuC.set(False)
-        #proměná pro metodu count_of_true()
+        # proměná pro metodu count_of_true()
         self.count = 0
-        #volání metody checkbox_render()
+        # volání metody checkbox_render()
         self.checkbox_render()
         self.value_render()
-    
         self.app.mainloop()
-    
-    def checkbox_render(self):
-        
 
-        #checkbox strany A
-        self.chbsA = tk.Checkbutton(self.app, text=self.nazvy[1], 
-                                    variable = self.issA, 
+    def checkbox_render(self):
+        """Stylování a vykreslování checkboxu."""
+        # checkbox strany A
+        self.chbsA = tk.Checkbutton(self.app, text=self.nazvy[1],
+                                    variable=self.issA,
                                     command=self.count_of_true,
                                     fg="white", bg="#1d1d1d",
-                                    activeforeground = "white",
-                                    activebackground = "#1d1d1d",
-                                    selectcolor="green",bd=5)
-        self.chbsA.grid(row = 0, column=0, sticky="W")
-        #checkbox strany B
-        self.chbsB = tk.Checkbutton(self.app, text=self.nazvy[2], 
-                                    variable = self.issB, 
+                                    activeforeground="white",
+                                    activebackground="#1d1d1d",
+                                    selectcolor="green", bd=5)
+        self.chbsA.grid(row=0, column=0, sticky="W")
+        # checkbox strany B
+        self.chbsB = tk.Checkbutton(self.app, text=self.nazvy[2],
+                                    variable=self.issB,
                                     command=self.count_of_true,
                                     fg="white", bg="#1d1d1d",
-                                    activeforeground = "white",
-                                    activebackground = "#1d1d1d",
-                                    selectcolor="green",bd=5)
-        self.chbsB.grid(row = 0, column=1, sticky="W")
-        #checkbox strany C
-        self.chbsC = tk.Checkbutton(self.app, text=self.nazvy[3], 
-                                    variable = self.issC, 
+                                    activeforeground="white",
+                                    activebackground="#1d1d1d",
+                                    selectcolor="green", bd=5)
+        self.chbsB.grid(row=0, column=1, sticky="W")
+        # checkbox strany C
+        self.chbsC = tk.Checkbutton(self.app, text=self.nazvy[3],
+                                    variable=self.issC,
                                     command=self.count_of_true,
                                     fg="white", bg="#1d1d1d",
-                                    activeforeground = "white",
-                                    activebackground = "#1d1d1d",
-                                    selectcolor="green",bd=5)
-        self.chbsC.grid(row = 0, column=2, sticky="W")
-        #checkbox úhlu A
-        self.chbuA = tk.Checkbutton(self.app, text=self.nazvy[4], 
-                                    variable = self.isuA, 
+                                    activeforeground="white",
+                                    activebackground="#1d1d1d",
+                                    selectcolor="green", bd=5)
+        self.chbsC.grid(row=0, column=2, sticky="W")
+        # checkbox úhlu A
+        self.chbuA = tk.Checkbutton(self.app, text=self.nazvy[4],
+                                    variable=self.isuA,
                                     command=self.count_of_true,
                                     fg="white", bg="#1d1d1d",
-                                    activeforeground = "white",
-                                    activebackground = "#1d1d1d",
-                                    selectcolor="green",bd=5)
-        self.chbuA.grid(row = 1, column=0, sticky="W")
-        #checkbox úhlu B
-        self.chbuB = tk.Checkbutton(self.app, text=self.nazvy[5], 
-                                    variable = self.isuB, 
+                                    activeforeground="white",
+                                    activebackground="#1d1d1d",
+                                    selectcolor="green", bd=5)
+        self.chbuA.grid(row=1, column=0, sticky="W")
+        # checkbox úhlu B
+        self.chbuB = tk.Checkbutton(self.app, text=self.nazvy[5],
+                                    variable=self.isuB,
                                     command=self.count_of_true,
                                     fg="white", bg="#1d1d1d",
-                                    activeforeground = "white",
-                                    activebackground = "#1d1d1d",
-                                    selectcolor="green",bd=5)
-        self.chbuB.grid(row = 1, column=1, sticky="W")
-        #checkbox úhlu C
-        self.chbuC = tk.Checkbutton(self.app, text=self.nazvy[6], 
-                                    variable = self.isuC, 
+                                    activeforeground="white",
+                                    activebackground="#1d1d1d",
+                                    selectcolor="green", bd=5)
+        self.chbuB.grid(row=1, column=1, sticky="W")
+        # checkbox úhlu C
+        self.chbuC = tk.Checkbutton(self.app, text=self.nazvy[6],
+                                    variable=self.isuC,
                                     command=self.count_of_true,
                                     fg="white", bg="#1d1d1d",
-                                    activeforeground = "white",
-                                    activebackground = "#1d1d1d",
-                                    selectcolor="green",bd=5)
-        self.chbuC.grid(row = 1, column=2, sticky="W")
-        
+                                    activeforeground="white",
+                                    activebackground="#1d1d1d",
+                                    selectcolor="green", bd=5)
+        self.chbuC.grid(row=1, column=2, sticky="W")
+
     def count_of_true(self):
+        """Bere hodnoty z checkboxů a počítá kolik jich je True."""
         self.count = 0
         if self.issA.get():
             self.count += 1
@@ -250,25 +247,32 @@ class Gui(tk.Tk):
         if self.isuC.get():
             self.count += 1
         self.value_render()
-        
+
     def value_render(self):
+        """Vypisuje pokyni."""
         self.stav = {0: "Vyberte, které veličiny zadáte.\n",
-                     1: "Pokracujte ve vybírání. Vyberte další {}. veličiny.\n".format(self.count*-1+3),
+                     1: "Pokracujte ve vybírání. Vyberte další {} "
+                     "veličiny.\n".format(self.count*-1+3),
                      2: "Perfektní! Více veličin nepotřebuji.\n"}
         if self.count == 0:
-            self.instrukce = tk.Label(self.app, text=self.stav[0], bg = "#1d1d1d", fg = "white", anchor="nw")
+            self.instrukce = tk.Label(self.app, text=self.stav[0],
+                                      bg="#1d1d1d", fg="white",
+                                      anchor="w")
         elif self.count > 0 and self.count < 3:
-            self.instrukce = tk.Label(self.app, text=self.stav[1], bg = "#1d1d1d", fg = "white", anchor="w")
+            self.instrukce = tk.Label(self.app, text=self.stav[1],
+                                      bg="#1d1d1d", fg="white",
+                                      anchor="w")
         else:
-            self.instrukce = tk.Label(self.app, text=self.stav[2], bg = "#1d1d1d", fg = "white", anchor="w")
-        self.instrukce.grid(row = 2,column=0, columnspan=3, sticky="WE")
+            self.instrukce = tk.Label(self.app, text=self.stav[2],
+                                      bg="#1d1d1d", fg="white",
+                                      anchor="w")
+        self.instrukce.grid(row=2, column=0, columnspan=3, sticky="ew")
         self.turn_off_checkbox()
-            
+
     def turn_off_checkbox(self):
-        if self.count == 3:        
-            
+        """Vypíná checkboxy po té co jsou vybrané 3."""
+        if self.count == 3:
             print(str(self.count))
-        
-        
+
 
 Gui()
