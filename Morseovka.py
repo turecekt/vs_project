@@ -85,4 +85,5 @@ def main():
     print(encrypt(message_to_encrypt))
 
 
-# main()
+if __name__ == '__main__':
+    main()
