@@ -37,10 +37,3 @@ def test_pravouhlost():
     assert projekt.pravouhlost(4, 4, 4) == 0
     assert projekt.pravouhlost(7, 9, 16) == 0
 
-
-if __name__ == '__main__':
-    test_dlzkystran()
-    test_obvod()
-    test_obsah()
-    test_zostrojenost()
-    test_pravouhlost()
