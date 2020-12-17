@@ -21,7 +21,7 @@ import argparse
 import statistics
 
 #############################################################################
-# Class contains whole functionality needed for completing deisred output tasks.
+# Class contains whole functionality needed for completing deisred tasks.
 class CharacterFrequency:
     def __init__(self, intput):
         self.input     = intput
@@ -103,21 +103,21 @@ class CharacterFrequency:
               else:
                 character_dict[char] = 1
 
-          else:
-            file_input = open(self.input, 'r')
+            else:
+                file_input = open(self.input, 'r')
 
             while True:
-              char = file_input.read(1)
+                char = file_input.read(1)
 
-              if (char == ''):
-                break
+                if (char == ''):
+                    break
 
-              dict_keys = character_dict.keys()
+                dict_keys = character_dict.keys()
 
-              if (char in dict_keys):
-                character_dict[char] += 1
-              else:
-                character_dict[char] = 1
+                if (char in dict_keys):
+                    character_dict[char] += 1
+                else:
+                    character_dict[char] = 1
 
             file_input.close()
 
@@ -129,11 +129,11 @@ def parse_args():
     parser = argparse.ArgumentParser(description = "Get information about character frequency form input.")
 
     parser.add_argument("-i",
-                      nargs   = '?',
-                      help    = "File containing characters to be analyzed.\nDefault = stdin closed with #",
-                      type    = argparse.FileType('r'),
-                      default = sys.stdin
-                      )
+                        nargs   = '?',
+                        help    = "File containing characters to be analyzed.\nDefault = stdin closed with #",
+                        type    = argparse.FileType('r'),
+                        default = sys.stdin
+                        )
 
     args = parser.parse_args()
 
@@ -155,5 +155,5 @@ def main(args):
 
 
 if __name__ == "__main__":
-  args = parse_args()
-  main(args)
+    args = parse_args()
+    main(args)
