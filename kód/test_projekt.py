@@ -36,4 +36,3 @@ def test_pravouhlost():
     assert projekt.pravouhlost(3, 4, 5) == 1
     assert projekt.pravouhlost(4, 4, 4) == 0
     assert projekt.pravouhlost(7, 9, 16) == 0
-
