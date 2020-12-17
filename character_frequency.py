@@ -41,7 +41,14 @@ class CharacterFrequency:
   #############################################################################
   # Method returns list of least frequent character (list because of equalities).
   def least_frequent(self):
-    return
+    min_value = min(self.char_dict.values())
+    min_keys  = []
+
+    for k, v in self.char_dict.items():
+      if v == min_value:
+        min_keys.append(k)
+
+    return (min_keys, min_value)
 
   #############################################################################
   # Method returns list of average occurence of character (list because of equalities).
@@ -118,6 +125,7 @@ def main(args):
   characters = CharacterFrequency(args.i.name)
 
   characters.output(characters.most_frequent())
+  characters.output(characters.least_frequent())
 
 if __name__ == "__main__":
   args = parse_args()
