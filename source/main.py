@@ -80,7 +80,7 @@ def desifrovani_morse(vstup):
 """
 Blok pro volbu akce.
 """
-if __name__ == 'main':
+if __name__ == '__main__':
     text_vstup = input("Zadejte text na převedení:\n")
     vyberAkce = input("Vyberte akci:\n1 - Šifrování do Morseovky "
                       "\n2 - Dešifrování z morseovky\n")
@@ -94,4 +94,4 @@ if __name__ == 'main':
     else:
         print("Nesprávná akce")
 
-input("Stiskněte jakoukoliv klávesu na ukončení programu.")
+    input("Stiskněte jakoukoliv klávesu na ukončení programu.")
