@@ -18,6 +18,7 @@
 
 import sys
 import argparse
+import statistics
 
 #############################################################################
 # Class contains whole functionality needed for completing deisred output tasks.
@@ -53,7 +54,15 @@ class CharacterFrequency:
   #############################################################################
   # Method returns list of average occurence of character (list because of equalities).
   def average(self):
-    return
+    avg_value     = statistics.mean(self.char_dict.values())
+    rounded_value = round(avg_value)
+    avg_keys      = []
+
+    for k, v in self.char_dict.items():
+      if v == rounded_value:
+        avg_keys.append(k)
+
+    return (avg_value, avg_keys)
 
   #############################################################################
   # Method returns list of alphabetic character with their frequency of occurence.
@@ -124,8 +133,13 @@ def parse_args():
 def main(args):
   characters = CharacterFrequency(args.i.name)
 
+  # Print most frequent value with corresponding characters.
   characters.output(characters.most_frequent())
+  # Print least frequent value with corresponding characters.
   characters.output(characters.least_frequent())
+  # Print average rate value with characters having rounded average rate.
+  characters.output(characters.average())
+
 
 if __name__ == "__main__":
   args = parse_args()
