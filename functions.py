@@ -84,10 +84,11 @@ def zkPravouhlosti(xa, xb, xc, ya, yb, yc):
 
 
 # Funkce pro otestování vstupu, zda je vstupní hodnota od uživatele číslo
-def souradniceJeCislo(xa, xb, xc, ya, yb, yc):
+def souradniceJeCislo():
     """Proměnná pro vrácení hodnoty funkce."""
+    global xa, xb, xc, ya, yb, yc
     zkouskaSouradnic = 0
-    """Zkouška jestli jsou vstupní hodnoty číslo."""
+    # Zkouška jestli jsou vstupní hodnoty číslo.
     try:
         xa = float(xa.replace(',', '.'))
         ya = float(ya.replace(',', '.'))
