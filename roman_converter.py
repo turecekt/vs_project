@@ -16,7 +16,7 @@ def toRoman(iArabicNum):
         sRomanNum (str): a string of Roman Numerals
 
     >>> toRoman(10)
-    X
+    'X'
     """
     value = [1000, 900, 500, 400,
              100, 90, 50, 40, 10,
