@@ -13,7 +13,7 @@ if __name__ == '__main__':
     xC = input("Zadej x-ovou souřadnici bodu C: ")
     yC = input("Zadej y-ovou souřadnici bodu C: ")
 
-    je_cislo, xA, xB, xC, yA, yB, yC = functions.souradniceJeCislo(xA, xB, xC, yA, yB, yC)
+    je_cislo = functions.souradniceJeCislo(xA, xB, xC, yA, yB, yC)
 
     # Podmínka pro zkontrolování vstupních hodnot
     if je_cislo == 1:
