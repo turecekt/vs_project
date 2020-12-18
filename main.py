@@ -40,23 +40,23 @@ def test_sestrojitelnost():
     assert sestrojitelnost(4, 5, 3) is True
 
 
-def test_sA():
-    """Test sA()."""
-    assert sA(9, 12, 12, 16) == 5
+def test_sAB():
+    """Test sAB()."""
+    assert sAB(9, 12, 12, 16) == 5
 
 
-def test_sB():
-    """Test sB()."""
-    assert sB(9, 12, 12, 16) == 5
+def test_sBC():
+    """Test sBC()."""
+    assert sBC(9, 12, 12, 16) == 5
 
 
-def test_sC():
-    """Test sC()."""
-    assert sC(9, 12, 12, 16) == 5
+def test_sCA():
+    """Test sCA()."""
+    assert sCA(9, 12, 12, 16) == 5
 # PyTest konec -----------------------------
 
 
-def sestrojitelnost(a, b, c):
+def sestrojitelnost(ab, bc, ca):
     """
     Funkce zjistuje jestli lze sestrojit trojuhelnik.
 
@@ -64,36 +64,34 @@ def sestrojitelnost(a, b, c):
     true = trojuhelnik lze sestrojit
     false = trojhelnik nelze sestrojit
     """
-    lze = a + b > c and b + c > a and a + c > b
+    lze = ab + bc > ca and bc + ca > ab and ab + ca > bc
 
     return lze
 
 
-def obsah(a, b, c):
+def obsah(ab, bc, ca):
     """
     Funkce pocita obsah trojuhelniku.
 
     Vraci:
     float s vypocitanou hodnotou
     """
-    s = (a + b + c) / 2
+    s = (ab + bc + ca) / 2
 
-    S = sqrt(s * (s - a) * (s - b) * (s - c))
-
-    return S
+    return sqrt(s * (s - ab) * (s - bc) * (s - ca))
 
 
-def obvod(a, b, c):
+def obvod(ab, bc, ca):
     """
     Funkce pocita obvod trojuhelniku.
 
     Vraci:
     float s vypocitanou hodnotou
     """
-    return a + b + c
+    return ab + bc + ca
 
 
-def pravouhelnost(a, b, c):
+def pravouhelnost(ab, bc, ca):
     """
     Funkce zjistuje jesli je trojuhelnik pravouhly.
 
@@ -101,21 +99,21 @@ def pravouhelnost(a, b, c):
     true = trojuhelnik je pravouhlu
     false = trojuhelnik neni pravouhlu
     """
-    nejdelsi = max(a, b, c)
+    nejdelsi = max(ab, bc, ca)
 
-    if nejdelsi == c:
-        je = c ** 2 == a ** 2 + b ** 2
-    elif nejdelsi == b:
-        je = b ** 2 == a ** 2 + c ** 2
-    elif nejdelsi == a:
-        je = a ** 2 == b ** 2 + c ** 2
+    if nejdelsi == ca:
+        je = float("{:.3f}".format(ca ** 2)) == float("{:.3f}".format(ab ** 2 + bc ** 2))
+    elif nejdelsi == bc:
+        je = float("{:.3f}".format(bc ** 2)) == float("{:.3f}".format(ab ** 2 + ca ** 2))
+    elif nejdelsi == ab:
+        je = float("{:.3f}".format(ab ** 2)) == float("{:.3f}".format(bc ** 2 + ca ** 2))
 
     return je
 
 
-def sA(ax, ay, bx, by):
+def sAB(ax, ay, bx, by):
     """
-    Funkce pocita delku strany A.
+    Funkce pocita delku strany AB.
 
     Vraci:
     float s vypocitanou hodnotou
@@ -123,9 +121,9 @@ def sA(ax, ay, bx, by):
     return sqrt(((int(bx) - int(ax)) ** 2) + ((int(by) - int(ay)) ** 2))
 
 
-def sB(bx, by, cx, cy):
+def sBC(bx, by, cx, cy):
     """
-    Funkce pocita delku strany B.
+    Funkce pocita delku strany BC.
 
     Vraci:
     float s vypocitanou hodnotou
@@ -133,9 +131,9 @@ def sB(bx, by, cx, cy):
     return sqrt(((int(cx) - int(bx)) ** 2) + ((int(cy) - int(by)) ** 2))
 
 
-def sC(ax, ay, cx, cy):
+def sCA(ax, ay, cx, cy):
     """
-    Funkce pocita delku strany C.
+    Funkce pocita delku strany CA.
 
     Vraci:
     float s vypocitanou hodnotou
@@ -158,23 +156,23 @@ if __name__ == '__main__':
         print('Cisla byla zadana ve spatnem tvaru! Zadej pouze cela cisla.')
     else:
         # Jsou ve spravnem tvaru.
-        # Zde se pocita delka sran A, B, C.
-        A = sA(Ax, Ay, Bx, By)
-        B = sB(Bx, By, Cx, Cy)
-        C = sC(Ax, Ay, Cx, Cy)
+        # Zde se pocita delka sran AB, BC, CA.
+        AB = sAB(Ax, Ay, Bx, By)
+        BC = sBC(Bx, By, Cx, Cy)
+        CA = sCA(Ax, Ay, Cx, Cy)
 
         # Vystup pozadovany v zadani.
-        if sestrojitelnost(A, B, C):
+        if sestrojitelnost(AB, BC, CA):
             print('Trojuhelnik lze sestrojit.')
 
-            print('Strana A je dlouha: ', A)
-            print('Strana B je dlouha: ', B)
-            print('Strana C je dlouha: ', C)
+            print('Strana AB je dlouha: ', AB)
+            print('Strana BC je dlouha: ', BC)
+            print('Strana CA je dlouha: ', CA)
 
-            print('Obsah je: ', obsah(A, B, C),
-                  ' a obvod je: ', obvod(A, B, C))
+            print('Obsah je: ', obsah(AB, BC, CA),
+                  ' a obvod je: ', obvod(AB, BC, CA))
 
-            if pravouhelnost(A, B, C):
+            if pravouhelnost(AB, BC, CA):
                 print('Trojuhelnik je pravouhly.')
             else:
                 print('Trojuhelnik neni pravouhly.')
