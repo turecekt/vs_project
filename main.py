@@ -102,11 +102,14 @@ def pravouhelnost(ab, bc, ca):
     nejdelsi = max(ab, bc, ca)
 
     if nejdelsi == ca:
-        je = float("{:.3f}".format(ca ** 2)) == float("{:.3f}".format(ab ** 2 + bc ** 2))
+        je = float("{:.3f}".format(ca ** 2)) == \
+             float("{:.3f}".format(ab ** 2 + bc ** 2))
     elif nejdelsi == bc:
-        je = float("{:.3f}".format(bc ** 2)) == float("{:.3f}".format(ab ** 2 + ca ** 2))
+        je = float("{:.3f}".format(bc ** 2)) == \
+             float("{:.3f}".format(ab ** 2 + ca ** 2))
     elif nejdelsi == ab:
-        je = float("{:.3f}".format(ab ** 2)) == float("{:.3f}".format(bc ** 2 + ca ** 2))
+        je = float("{:.3f}".format(ab ** 2)) == \
+             float("{:.3f}".format(bc ** 2 + ca ** 2))
 
     return je
 
