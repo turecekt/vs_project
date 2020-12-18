@@ -56,3 +56,13 @@ class TestPravouhlosti(unittest.TestCase):
         """Unittesty pro zkoušku pravoúhlosti."""
         self.assertEqual(functions.zkPravouhlosti(0, 3, 0, 4, 0, 0), 1)
         self.assertEqual(functions.zkPravouhlosti(-8, 24, 19, 0, -74, 67), 0)
+
+
+# Třída pro unittest na zkoušku vstupu
+class TestVstupu(unittest.TestCase):
+    """Unittest na zkoušku vstupu."""
+
+    def test_vstupy(self):
+        """Unittest pro zkoušku vstupu."""
+        self.assertEqual(functions.soJeCi("7", "8", "9", "7", "-8", "12"), 1)
+        self.assertEqual(functions.soJeCi("7", "", "ju", "*1s", "fk", "re"), 0)

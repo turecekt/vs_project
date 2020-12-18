@@ -13,7 +13,7 @@ if __name__ == '__main__':
     xC = input("Zadej x-ovou souřadnici bodu C: ")
     yC = input("Zadej y-ovou souřadnici bodu C: ")
 
-    je_cislo = functions.souradniceJeCislo(xA, xB, xC, yA, yB, yC)
+    je_cislo = functions.soJeCi(xA, xB, xC, yA, yB, yC)
 
     # Podmínka pro zkontrolování vstupních hodnot
     if je_cislo == 1:
@@ -27,7 +27,7 @@ if __name__ == '__main__':
 
         # Podmínka pro zkontolování jestli je daný objekt trojúhelník
         if functions.obsahTroj(xA, xB, xC, yA, yB, yC) != 0:
-            "Výpis výsledných hodnot volaných ze souboru functions.py"
+            """Výpis výsledných hodnot volaných ze souboru functions.py"""
             print('\nPodle zadaných souřadnic bodů se jedná o trojúhelník.\n')
             print('Souřadnice jednotlivých bodů trojúhelníku:')
             print(f'A[{xA},{yA}]\nB[{xB},{yB}]\nC[{xC},{yC}]\n')
