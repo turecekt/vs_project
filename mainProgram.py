@@ -40,7 +40,7 @@ if __name__ == '__main__':
                 """Výpis, pojud funkce vyhodnotí trojúhelník jako pravoúhlý."""
                 print('Trojuhelnik je pravoúhlý.')
             else:
-                """Výpis, pojud funkce nevyhodnotí trojúhelník jako pravoúhlý."""
+                """Výpis, pojud funkce vyhodnotí jako nepravoúhlý."""
                 print('Trojúhelník není pravoúhlý')
         else:
             """Zadané součadnice nevykreslí trojúhelník."""
