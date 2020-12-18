@@ -46,5 +46,7 @@ if __name__ == '__main__':
     q = sides(itr)
     turtle.ht()
     turtle.speed(0)
+    turtle.ht()
+    turtle.speed(0)
     turn_line(q)
     turtle.done()
