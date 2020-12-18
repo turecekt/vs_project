@@ -171,3 +171,4 @@ if __name__ == "__main__":
     test_getObsah()
     test_jeSestrojitelny()
     test_jePravouhly()
+    trojuhelnik()
