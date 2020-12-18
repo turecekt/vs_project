@@ -1,4 +1,4 @@
-"""Testing part of final project"""
+"""Testing part of final project."""
 
 #############################################################################
 # Project: AK1VS - Final project
@@ -14,6 +14,8 @@ import unittest
 
 
 class TestCharacterFrequency(unittest.TestCase):
+    """Testcase class for character frequency analyzer."""
+
     @classmethod
     def setUpClass(cls):
         """This is executed only once."""
@@ -22,16 +24,16 @@ class TestCharacterFrequency(unittest.TestCase):
 
     @classmethod
     def tearDownClass(cls):
-        """This is executed at the end."""
+        """Execute at the end."""
         pass
 
     def setUp(self):
-        """This is executed before every test-case."""
+        """Execute before every test-case."""
         self.chars.char_dict = self.test_dict
         pass
 
     def tearDown(self):
-        """This is executed after every test-case."""
+        """Execute after every test-case."""
         pass
 
     # @unittest.skip('Intentionally skipped for development purposes.')

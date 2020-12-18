@@ -1,4 +1,4 @@
-"""Project: AK1VS - Final project"""
+"""Project: AK1VS - Final project."""
 
 ##########################################################################
 # Description: This project should show how to work with versioning tool such
@@ -21,15 +21,18 @@ import statistics
 
 
 class CharacterFrequency:
-    """Class contains whole functionality needed for completing deisred tasks."""
+    """Class contains whole functionality for completing desired tasks."""
+
     def __init__(self, intput):
-        """Initialize class properties"""
+        """Initialize class properties."""
         self.input = intput
         self.char_dict = self._init_dictionary()
 
     def get_most_frequent(self):
-        """Method returns touple of most frequent character list
-        (list because of equalities)."""
+        """Return touple of most frequent character list.
+
+        *Returns list because of equalities.
+        """
         max_value = max(self.char_dict.values())
         max_keys = []
         for k, v in self.char_dict.items():
@@ -38,8 +41,10 @@ class CharacterFrequency:
         return (max_keys, max_value)
 
     def get_least_frequent(self):
-        """Method returns touple of least frequent character list
-        (list because of equalities)."""
+        """Return touple of least frequent character list.
+
+        *Returns list because of equalities.
+        """
         min_value = min(self.char_dict.values())
         min_keys = []
         for k, v in self.char_dict.items():
@@ -48,8 +53,10 @@ class CharacterFrequency:
         return (min_keys, min_value)
 
     def get_average(self):
-        """Method returns touple of average occurence of character list
-        (list because of equalities)."""
+        """Return touple of average occurence of character list.
+
+        *Returns list because of equalities).
+        """
         avg_value = statistics.mean(self.char_dict.values())
         rounded_value = round(avg_value)
         avg_keys = []
@@ -59,8 +66,7 @@ class CharacterFrequency:
         return (avg_value, avg_keys)
 
     def get_alpha_frequency(self):
-        """Method returns list of alphabetic character with their frequency
-        of occurence."""
+        """Return alphabetic characters with their occurence rate."""
         alpha_dict = {}
         for k, v in self.char_dict.items():
             if k.isalpha():
@@ -68,15 +74,20 @@ class CharacterFrequency:
         return alpha_dict
 
     def output(self, output_list):
-        """Method for printing lists with result."""
+        """Print given touples with analyzed results."""
         print(str(output_list))
 
     def _init_dictionary(self):
-        """Private method read input data and store them into dictionary.
+        """Private method.
+
+        Read input data and store them into dictionary.
+
         For stdin dictionary contains only characters until '#' is read.
         'DEBUG' option is for testing purposes, when tester can easily handle
         input. It can be only reached through code.
-        Tester has to define self.char_dict by him self."""
+
+        Tester has to define self.char_dict by him self.
+        """
         character_dict = {}
         if (self.input != 'DEBUG'):
             if (self.input == '<stdin>'):
