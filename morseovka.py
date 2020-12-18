@@ -1,4 +1,5 @@
-# morseovka
+"""Program na přeložení Morseovy abecedy."""
+
 abeceda = {
     'a': '.-',
     'b': '-...',
@@ -42,8 +43,10 @@ abeceda = {
 
 # příklady abecedy do morseovky
 def domorzeovky(preloz):
+    """Přeložení do Morseovy abecedy."""
     zprava = " "
     for pismeno in preloz:
+
         if pismeno != ' ':
 
             # podívá se a přidá
@@ -53,17 +56,15 @@ def domorzeovky(preloz):
             # 1 indikuje mezeru
             # a 2 indikuje  slova
             zprava += " "
-
-        # z morseovky do abecedy
+    return zprava
 
 
 def odmorzeovky(preloz):
-    # promene
-
+    """Přeložení z Morseovy abecedy."""
     global i
     preloz += ' '
     slovo = ''
-    citext = ''
+    x = ''
     for letter in preloz:  # zas loop
 
         #  bereme na rozlišovani nových slov
@@ -73,7 +74,7 @@ def odmorzeovky(preloz):
             i = 0
 
             #
-            citext += letter
+            x += letter
 
         # kdyz tam zustane mezera
         else:
@@ -89,13 +90,14 @@ def odmorzeovky(preloz):
 
                 # k vracene proměne se přípočíta pomocí value
                 # kde se hledá čárky tečky
-                slovo += list(abeceda.keys())[list(abeceda.values()).index(citext)]
-                citext = ''
+                slovo += list(abeceda.keys())[list(abeceda.values()).index(x)]
+                x = ''
 
     return slovo
 
 
 def main():
+    """Input charakteru."""
     moznost = input("do morseovky(1) z morseovky(2): ")
     if moznost == "1":
         prelozit = input(" ")
@@ -103,11 +105,11 @@ def main():
         print(vysledek)
 
     if moznost == "2":
-        print("přiklad:.-. .-.. -.-- ")
+        print("přiklad:-.-. .-.. -.- ")
         prelozit = input(" ")
         vysledek = odmorzeovky(prelozit)
         print(vysledek)
 
 
-if __name__ == '__main__':
+if _name_ == '_main_':
     main()
