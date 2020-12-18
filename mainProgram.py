@@ -33,6 +33,6 @@ if __name__ == '__main__':
             else:
                 print('Trojúhelník není pravoúhlý')
         else:
-            print('\nPodle zadaných souřadnic bodů se nejedná o trojúhelník.\n')
+            print('\nPodle souřadnic bodů se nejedná o trojúhelník.\n')
     else:
         print('Do souřadnic jste nezadali číslo.')
