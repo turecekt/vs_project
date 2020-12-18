@@ -5,9 +5,8 @@ import math
 
 
 # Funkce pro otestování vstupu, zda je vstupní hodnota od uživatele číslo
-def souradniceJeCislo():
+def souradniceJeCislo(xA, xB, xC, yA, yB, yC):
     """Proměnná pro vrácení hodnoty funkce."""
-    global xA, xB, xC, yA, yB, yC
     zkouskaSouradnic = 0
     # Zkouška jestli jsou vstupní hodnoty číslo.
     try:

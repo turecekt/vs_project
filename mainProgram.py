@@ -13,9 +13,17 @@ if __name__ == '__main__':
     xC = input("Zadej x-ovou souřadnici bodu C: ")
     yC = input("Zadej y-ovou souřadnici bodu C: ")
 
+    je_cislo, xA, xB, xC, yA, yB, yC = functions.souradniceJeCislo(xA, xB, xC, yA, yB, yC)
+
     # Podmínka pro zkontrolování vstupních hodnot
-    if functions.souradniceJeCislo() == 1:
+    if je_cislo == 1:
         """Podmínka kontroluje vstupní hodnoty."""
+        xA = float(xA.replace(',', '.'))
+        yA = float(yA.replace(',', '.'))
+        xB = float(xB.replace(',', '.'))
+        yB = float(yB.replace(',', '.'))
+        xC = float(xC.replace(',', '.'))
+        yC = float(yC.replace(',', '.'))
 
         # Podmínka pro zkontolování jestli je daný objekt trojúhelník
         if functions.obsahTroj(xA, xB, xC, yA, yB, yC) != 0:
