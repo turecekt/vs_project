@@ -84,7 +84,7 @@ def zmorse(preloz):
 
                 # k vracene proměne se přípočíta klíč pomocí value
                 # kde index hledá tečky čárky
-                slovo += list(abc.keys())[list(abc.values()).index(citext)]
+                slovo += list(abc.keys())[list(abc.values()).index(a)]
                 a = ''
 
     return slovo
