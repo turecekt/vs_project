@@ -1,4 +1,4 @@
-"""Test part of final project."""
+"""Project: AK1VS - Final project (testing part)."""
 
 #############################################################################
 # Project: AK1VS - Final project
