@@ -1,5 +1,8 @@
 """Hlavní program."""
 
+# Import souboru functions
+import functions
+
 if __name__ == '__main__':
     # Zadání vstupních hodnot uživatelem a uložení je do přoměnných
     xA = input("Zadej x-ovou souřadnici bodu A: ")
@@ -26,7 +29,7 @@ if __name__ == '__main__':
             print(f'Obvod = {functions.obvodTroj(xA, xB, xC, yA, yB, yC)}')
             print(f'Obsah = {functions.obsahTroj(xA, xB, xC, yA, yB, yC)}\n')
             print('Informace o pravoúhlosti:')
-            
+
             # Podmínka pro zkontrolování jestli je trojúhelník pravoúhlý
             if functions.zkPravouhlosti == 1:
                 print('Trojuhelnik je pravoúhlý.')
