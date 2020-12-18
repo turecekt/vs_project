@@ -132,30 +132,40 @@ def test_delkaStrany():
     """Unit test for delkaStrany() function."""
     assert delkaStrany(14, 8, 3, 65) == 58.05
     assert (delkaStrany(47, 65, 3, 12) == 68.88) is True
+    assert (delkaStrany(78, 63, 23, 14) == 0) is False
 
 
 def test_getObvod():
     """Unit test for getObvod() function."""
     assert getObvod(23.45, 32.01, 41.34) == 96.8
     assert (getObvod(1.01, 2.35, 9.87) == 13.23) is True
+    assert (getObvod(1.48, 7.63, 12.48) == 0) is False
 
 
 def test_getObsah():
     """Unit test for getObsah() function."""
     assert getObsah(14, 17, 23) == 118.49
     assert (getObsah(8, 15, 34) >= 0) is False
+    assert (getObsah(8, 15, 14) >= 0) is True
+    assert (getObsah(8, 15, 14) == 55.31) is True
 
 
 def test_jeSestrojitelny():
     """Unit test for jeSestrojitelny() function."""
     assert jeSestrojitelny(1, 88, 55) is False
+    assert jeSestrojitelny(33, 3, 77) is False
+    assert jeSestrojitelny(7777, 777, 7) is False
     assert jeSestrojitelny(76, 67, 55) is True
 
 
 def test_jePravouhly():
     """Unit test for jePravouhly() function."""
     assert jePravouhly(25, 16, 9) is False
+    assert jePravouhly(1, 7, 3) is False
+    assert jePravouhly(78, 87, 123) is False
     assert jePravouhly(5, 3, 4) is True
+    assert jePravouhly(3, 4, 5) is True
+    assert jePravouhly(4, 5, 3) is True
 
 
 if __name__ == "__main__":
