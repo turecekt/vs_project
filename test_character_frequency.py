@@ -18,7 +18,7 @@ class TestCharacterFrequency(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        """This is executed only once."""
+        """Execute only once at the begining of testcase."""
         cls.chars = CharacterFrequency("DEBUG")
         cls.test_dict = {'a': 42, 'b': 18, 'c': 6, '&': 1}
 
