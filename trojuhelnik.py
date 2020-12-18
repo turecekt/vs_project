@@ -122,8 +122,7 @@ def trojuhelnik():
         print("Trojúhelník je sestrojitelný")
     else:
         print("Trojúhelník není sestrojitelný")
-    obvod = getObvod(stra, strb, strc)
-    print("Obvod trojúhelníku je " + str(obvod) + " cm")
+    print("Obvod trojúhelníku je " + str(getObvod(stra, strb, strc)) + " cm")
     obsah = getObsah(stra, strb, strc)
     if obsah >= 0:
         print("Obsah trojúhelníku je " + str(obsah) + " cm")
