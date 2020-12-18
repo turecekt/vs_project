@@ -1,38 +1,37 @@
 import morseovka
 import pytest
 
-
-def test_Text_na_Morseovku():
+{
+def test_TnM():
     """Sifrovani do morseova kodu.
-    Funkce Text_na_Morseovku() porovnava
+    Funkce TnM() porovnava
     vraceny string s morseovym kodem.
     """
-    assert Text_na_Morseovku('A A') == '.- / .-'
-    assert Text_na_Morseovku('test') == '- . ... -'
-    assert Text_na_Morseovku('33 -  10 = 23') == \
-           '...-- ...-- / -....- / / .---- ----- / / ..--- ...--'
-    assert Text_na_Morseovku('/+-: .    .') == \
-           '-..-. .-.-. -....- ---...  .-.-.-     .-.-.-'
-    assert Text_na_Morseovku('1234567890') == \
-           '.---- ..--- ...-- ....- ..... -.... --... ---.. ----. -----'
-    assert Text_na_Morseovku(
-           'Pokud je zadán text, je přeložen do morseovky a naopak. ') == \
-           '.--. --- -.- ..- -.. / .--- . / --.. .- -.. -. / - . -..- - / .--- . / .--. . .-.. --- . -. / -.. --- / -- --- .-. ... . --- ...- -.- -.-- / .- / -. .- --- .--. .- -.- .-.-.-'
+    assert TnM('A A') == '.- / .-'
+    assert TnM('test') == '- . ... -'
+    assert TnM('33 -  10 = 23') == '...-- ...-- / -....- / / .---- ----- / / ..--- ...--'
+    assert TnM('/+-: .    .') == '-..-. .-.-. -....- ---...  .-.-.-     .-.-.-'
+    assert TnM('1234567890') == '.---- ..--- ...-- ....- ..... -.... --... ---.. ----. -----'
+    assert TnM('Pokud je zadán text, je přeložen do morseovky a naopak. ')
+               == '.--. --- -.- ..- -.. / .--- . / --.. .- -.. -. /
+                     ' - . -..- - / .--- . / .--. . .-.. --- . -. / -.. --- /
+                     ' -- --- .-. ... . --- ...- -.- -.-- /
+                     ' .- / -. .- --- .--. .- -.- .-.-.-'
            
 
 
-def test_Morseovka_na_Text():
+def test_MnT():
     """Desifrovani morseova kodu.
-    Funkce test_Morseovka_na_Text() porovnava
+    Funkce test_MnT() porovnava
     morseuv kod se stringem podle Morseovy abecedy.
     """
   
    
-    assert morseovka.Morseovka_na_Text('-..-. -....- / .-.-.- / .-.-.-') \
-           == '/+-: . .'
-    assert morseovka.Morseovka_na_Text('.---- ..--- ...-- ....- ..... -.... --... ---.. ----. -----') \
+    assert MnT('-..-. -....- / .-.-.- / .-.-.-') == '/+-: . .'
+    assert MnT('.---- ..--- ...-- ....- ..... -.... --... ---.. ----. -----') \
            == '1234567890'
-    assert morseovka.Morseovka_na_Text('.--. -.-- - .... --- -. / .--- . / -. . .--- .-.. . .--. ... .. / .--- .- --.. -.-- -.- / -. .- / ... ...- . - . .-.-.-') \
+    assert MnT('.--. -.-- - .... --- -. / .--- . / -. . .--- .-.. . .--. ... .. 
+               '/ .--- .- --.. -.-- -.- / -. .- / ... ...- . - . .-.-.-') \
            == 'PYTHON JE NEJLEPSI JAZYK NA SVETE.'
-
+}
         
