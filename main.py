@@ -58,7 +58,7 @@ def zmorse(preloz):
     global i
     preloz += ' '
     slovo = ''
-    citext = ''
+    a = ''
     for letter in preloz:  # zas loop
 
         # na rozlišovani nových slov bereme
@@ -68,7 +68,7 @@ def zmorse(preloz):
             i = 0
 
             #
-            citext += letter
+            a += letter
 
         # jestli tam nastane mezera
         else:
@@ -85,7 +85,7 @@ def zmorse(preloz):
                 # k vracene proměne se přípočíta klíč pomocí value
                 # kde index hledá tečky čárky
                 slovo += list(abc.keys())[list(abc.values()).index(citext)]
-                citext = ''
+                a = ''
 
     return slovo
 
