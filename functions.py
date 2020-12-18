@@ -7,16 +7,16 @@ import math
 # Funkce pro otestování vstupu, zda je vstupní hodnota od uživatele číslo
 def souradniceJeCislo():
     """Proměnná pro vrácení hodnoty funkce."""
-    global xa, xb, xc, ya, yb, yc
+    global xA, xB, xC, yA, yB, yC
     zkouskaSouradnic = 0
     # Zkouška jestli jsou vstupní hodnoty číslo.
     try:
-        xa = float(xa.replace(',', '.'))
-        ya = float(ya.replace(',', '.'))
-        xb = float(xb.replace(',', '.'))
-        yb = float(yb.replace(',', '.'))
-        xc = float(xc.replace(',', '.'))
-        yc = float(yc.replace(',', '.'))
+        xA = float(xA.replace(',', '.'))
+        yA = float(yA.replace(',', '.'))
+        xB = float(xB.replace(',', '.'))
+        yB = float(yB.replace(',', '.'))
+        xC = float(xC.replace(',', '.'))
+        yC = float(yC.replace(',', '.'))
         zkouskaSouradnic = 1
     except ValueError:
         zkouskaSouradnic = 0
@@ -29,39 +29,39 @@ def souradniceJeCislo():
 
 
 # Funkce pro výpočet délky strany AB trojúhelníku
-def delkaStranyAB(xa, xb, ya, yb):
+def delkaStranyAB(xA, xB, yA, yB):
     """Funkce vrátí velikost délky strany AB."""
-    return math.sqrt(((xb-xa)**2)+(yb-ya)**2)
+    return math.sqrt(((xB-xA)**2)+(yB-yA)**2)
 
 
 # Funkce pro výpočet délky strany BC trojúhelníku
-def delkaStranyBC(xb, xc, yb, yc):
+def delkaStranyBC(xB, xC, yB, yC):
     """Funkce vrátí velikost délky strany BA."""
-    return math.sqrt(((xc-xb)**2)+(yc-yb)**2)
+    return math.sqrt(((xC-xB)**2)+(yC-yB)**2)
 
 
 # Funkce pro výpočet délky strany AC trojúhelníku
-def delkaStranyAC(xa, xc, ya, yc):
+def delkaStranyAC(xA, xC, yA, yC):
     """Funkce vrátí velikost délky strany AC."""
-    return math.sqrt(((xc-xa)**2)+(yc-ya)**2)
+    return math.sqrt(((xC-xA)**2)+(yC-yA)**2)
 
 
 # Funkce pro výpočet obvodu trojůhelníku
-def obvodTroj(xa, xb, xc, ya, yb, yc):
+def obvodTroj(xA, xB, xC, yA, yB, yC):
     """Deklarace proměnných a vložení hodnot."""
-    stranaAB = math.sqrt(((xb-xa)**2)+(yb-ya)**2)
-    stranaBC = math.sqrt(((xc-xb)**2)+(yc-yb)**2)
-    stranaAC = math.sqrt(((xc-xa)**2)+(yc-ya)**2)
+    stranaAB = math.sqrt(((xB-xA)**2)+(yB-yA)**2)
+    stranaBC = math.sqrt(((xC-xB)**2)+(yC-yB)**2)
+    stranaAC = math.sqrt(((xC-xA)**2)+(yC-yA)**2)
     """Funkce vráti délku obvodu."""
     return stranaAB + stranaBC + stranaAC
 
 
 # Funkce pro výpočet obsahu trojůhelníku
-def obsahTroj(xa, xb, xc, ya, yb, yc):
+def obsahTroj(xA, xB, xC, yA, yB, yC):
     """Deklarace proměnných a vložení hodnot."""
-    strAB = math.sqrt(((xb-xa)**2)+(yb-ya)**2)
-    strBC = math.sqrt(((xc-xb)**2)+(yc-yb)**2)
-    strAC = math.sqrt(((xc-xa)**2)+(yc-ya)**2)
+    strAB = math.sqrt(((xB-xA)**2)+(yB-yA)**2)
+    strBC = math.sqrt(((xC-xB)**2)+(yC-yB)**2)
+    strAC = math.sqrt(((xC-xA)**2)+(yC-yA)**2)
     """Výpočet poloviny obvodu"""
     pulO = (strAB + strBC + strAC) / 2
     """Funkce vrátí velikost obsahu."""
@@ -69,11 +69,11 @@ def obsahTroj(xa, xb, xc, ya, yb, yc):
 
 
 # Funkce pro zkoušku, jestli je trojúhelník pravoúhlý
-def zkPravouhlosti(xa, xb, xc, ya, yb, yc):
+def zkPravouhlosti(xA, xB, xC, yA, yB, yC):
     """Deklarace proměnných a vložení hodnot."""
-    strAB = math.sqrt(((xb-xa)**2)+(yb-ya)**2)
-    strBC = math.sqrt(((xc-xb)**2)+(yc-yb)**2)
-    strAC = math.sqrt(((xc-xa)**2)+(yc-ya)**2)
+    strAB = math.sqrt(((xB-xA)**2)+(yB-yA)**2)
+    strBC = math.sqrt(((xC-xB)**2)+(yC-yB)**2)
+    strAC = math.sqrt(((xC-xA)**2)+(yC-yA)**2)
     """Podmínka, která zjistí, která strana trojúhelníku je přepona."""
     if strAB > strBC and strAB > strAC:
         """Vypočítání odmocnin součtu odvěsen podle pythagorova vzorce"""
