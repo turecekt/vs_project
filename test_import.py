@@ -21,7 +21,6 @@ class MyTestCase(unittest.TestCase):
         result = projectRom.intToRom(111)
         self.assertEqual(result, 'CXI')
 
-
     def test_devet(self):
         """Vytvoreni testu ktery tesne 9."""
         result = projectRom.intToRom(9)
@@ -31,6 +30,7 @@ class MyTestCase(unittest.TestCase):
         """Vytvoreni testu ktery tesne 0."""
         result = projectRom.intToRom(0)
         self.assertEqual(result, '')
+
 
 if __name__ == '__main__':
     unittest.main()
