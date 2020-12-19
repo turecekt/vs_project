@@ -1,65 +1,67 @@
 # -*- coding: utf-8 -*-
 
-"PROJECT MORSECODE TRANSLATOR"
+"""PROJECT MORSECODE TRANSLATOR"""
 
-"This program encodes and decodes latin alphabet to and from MorseCode"
+"""This program encodes and decodes latin alphabet to and from MorseCode"
 
-"dcipher -> strores translated from morsecode"
-"morsCharacter -> morse of single character"
-"i -> counts spaces betwees morse"
-"message -> string tob encoded or decoded"
+""""dcipher -> strores translated from morsecode"""
+"""morsCharacter -> morse of single character"""
+"""i -> counts spaces betwees morse"""
+"""message -> string tob encoded or decoded"""
 
-# Morsecode dictionary form Latin to Morse
-LAT_MORSE_DICT = {'A':'.-',
-              'B':'-...',
-              'C':'-.-.',
-              'D':'-..',
-              'E':'.',
-              'F':'..-.',
-              'G':'--.',
-              'H':'....',
-              'I':'..',
-              'J':'.---',
-              'K':'-.-',
-              'L':'.-..',
-              'M':'--',
-              'N':'-.',
-              'O':'---',
-              'P':'.--.',
-              'Q':'--.-',
-              'R':'.-.',
-              'S':'...',
-              'T':'-',
-              'U':'..-',
-              'V':'...-',
-              'W':'.--',
-              'X':'-..-',
-              'Y':'-.--',
-              'Z':'--..',
-              '1':'.----',
-              '2':'..---',
-              '3':'...--',
-              '4':'....-',
-              '5':'.....',
-              '6':'-....',
-              '7':'--...',
-              '8':'---..',
-              '9':'----.',
-              '0':'-----',
-              ',':'--..--',
-              '.':'.-.-.-',
-              '?':'..--..',
-              '/':'-..-.',
-              '-':'-....-',
-              '(':'-.--.',
-              ')':'-.--.-'}
+"""Morsecode dictionary form Latin to Morse"""
+LAT_MORSE_DICT = {'A': '.-',
+              'B': '-...',
+              'C': '-.-.',
+              'D': '-..',
+              'E': '.',
+              'F': '..-.',
+              'G': '--.',
+              'H': '....',
+              'I': '..',
+              'J': '.---',
+              'K': '-.-',
+              'L': '.-..',
+              'M': '--',
+              'N': '-.',
+              'O': '---',
+              'P': '.--.',
+              'Q': '--.-',
+              'R': '.-.',
+              'S': '...',
+              'T': '-',
+              'U': '..-',
+              'V': '...-',
+              'W': '.--',
+              'X': '-..-',
+              'Y': '-.--',
+              'Z': '--..',
+              '1': '.----',
+              '2': '..---',
+              '3': '...--',
+              '4': '....-',
+              '5': '.....',
+              '6': '-....',
+              '7': '--...',
+              '8': '---..',
+              '9': '----.',
+              '0': '-----',
+              ',': '--..--',
+              '.': '.-.-.-',
+              '?': '..--..',
+              '/': '-..-.',
+              '-': '-....-',
+              '(': '-.--.',
+              ')': '-.--.-'}
 
 
-"Funcion decrypts the string from Latin to Morsecode each morse character is devided by /, words by //" 
-"Args: Words in Latin dictionary"
-"Returns: Morse code"
+"""
+Funcion decrypts the string from Latin to Morsecode each morse character is devided by /, words by //" 
+Args: Words in Latin dictionary"
+Returns: Morse code
+"""
 def encrypt(message):
-   
+ 
     message = message.upper()
     mcipher = ''
 
@@ -70,16 +72,17 @@ def encrypt(message):
             mcipher += '/'
     return mcipher
 
-
-"Funcion to decrypt the string from Morsecode to Latin letters"
-"Args: Morse symbols"
-"Returns: Latin characters"
+"""
+"Funcion to decrypt the string from Morsecode to Latin letters
+Args: Morse symbols
+Returns: Latin characters
+"""
 def decrypt(message):
-     
+
     message += ' '
     dcipher = ''
     morsCharacter = ''
-  
+
     for letter in message:
         if(letter != '-' and letter != '.' and letter != ' '):
             dcipher = 'Bad format'
@@ -98,14 +101,14 @@ def decrypt(message):
                 morsCharacter = ''
     return dcipher
 
-
-
-"Chooses type of the translation"
-"Args: 1 fof ecnrypting Latin to MorseCode"
-"      2 for decrypting MorseCode to Latin Characters"
-"Returns: waiting for user input"
+"""
+Chooses type of the translation
+Args: 1 fof ecnrypting Latin to MorseCode
+      2 for decrypting MorseCode to Latin Characters
+Returns: waiting for user input
+"""
 def choice(choose):
-   
+
     if choose == 1:
         chooseTranslate = input("Your text: ")
         result = encrypt(chooseTranslate)
@@ -113,13 +116,14 @@ def choice(choose):
     elif choose == 2:
         choosTranslate2 = input("Morse: ")
         result = decrypt(choosTranslate2)
-    
+
     return result
 
-
-"Main definition"
+"""
+Main definition
+"""
 def main():
-    
+
     try:
         print("1 for Latin to Morse ")
         print("2 for Morse to Latin")
@@ -128,7 +132,6 @@ def main():
         print(volani)
     except ValueError:
         print("Must be symbol")
-
 
 if __name__ == '__main__':
     main()
