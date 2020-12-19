@@ -1,3 +1,5 @@
+"""Seminarni prace prekladac do Morseovy abecedy a zpet."""
+
 MORSEUV_SLOVNIK = {
                     ' ': '/', 'A': '.-', 'B': '-...',
                     'C': '-.-.', 'D': '-..', 'E': '.',
@@ -17,7 +19,9 @@ MORSEUV_SLOVNIK = {
                 }
 
 
+# urceni prekladace
 def Text_na_Morseovku():
+    """Přeložení do Morseovy abecedy."""
     text = input('Napis text pro Morseovo sifrovani : ')
     kod = [MORSEUV_SLOVNIK[i.upper()] + ' ' for i in text if i.upper()
            in MORSEUV_SLOVNIK.keys()]
@@ -25,7 +29,9 @@ def Text_na_Morseovku():
     print(morseovka)
 
 
+# desifrovani na text
 def Morseovka_na_Text():
+    """Přeložení z Morseovy abecedy."""
     text = input('Napis Morseuv kod pro desifrovani do textu: ')
     kod = [j for i in text.split()
            for j, k in MORSEUV_SLOVNIK.items() if i == k]
@@ -52,5 +58,5 @@ while True:
             break
         else:
             print('Spatne zadani, opakujte volbu')
-    except:
+    except ValueError:
         print('Zadna volba nevyhovuje pozadavkum, zkuste to znova.')
