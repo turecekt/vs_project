@@ -56,8 +56,8 @@ LAT_MORSE_DICT = {'A': '.-',
 
 
 """
-Funcion decrypts the string from Latin to Morsecode each morse character is devided by /, words by //" 
-Args: Words in Latin dictionary"
+Funcion decrypts the string from Latin to Morsecode each morse character is devided by /, words by // 
+Args: Words in Latin dictionary
 Returns: Morse code
 """
 def encrypt(message):
@@ -138,9 +138,4 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
-        
-            
-            
-            
-    
+    main()    
