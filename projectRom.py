@@ -1,4 +1,5 @@
-"""Program ktery prevede hodnotu (cele cislo) zandane uzivatwelem na rimske cislice"""
+"""Program ktery prevede hodnotu zandanou uzivatelem na Rim cislice."""
+
 
 def intToRom(userInp):
         """Vezme input a prevede na rimske."""
