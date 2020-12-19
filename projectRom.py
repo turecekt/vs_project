@@ -1,11 +1,4 @@
-"""Tohle vezme input od uzivatele."""
-userInput = 11
-
-# Tohle prevede input od uzivatele na int aby to program mohl zpracovat
-
-
-userInp = int(userInput)
-
+"""Program ktery prevede hodnotu (cele cislo) zandane uzivatwelem na rimske cislice"""
 
 def intToRom(userInp):
         """Vezme input a prevede na rimske."""
@@ -41,6 +34,11 @@ def intToRom(userInp):
         return transNum
 
 
-# Do konzole vypisu prevedenou hodnotu userInp.
-# V kozoli se ukaze hodnota cisla ktere zadal user v rimskych cislicih
-print(intToRom(userInp))
+if __name__ == '__main__':
+    # Tohle vezme input od uzivatele.
+    userInput = input('Zadejte celé číslo: ')
+    # Tohle prevede input od uzivatele na int aby to program mohl zpracovat
+    userInp = int(userInput)
+    # Do konzole vypisu prevedenou hodnotu userInp.
+    # V kozoli se ukaze hodnota cisla ktere zadal user v rimskych cislicih
+    print(intToRom(userInp))
