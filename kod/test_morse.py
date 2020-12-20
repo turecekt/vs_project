@@ -1,3 +1,5 @@
+"""Importovanie zdrojoveho kodu."""
+
 import morse
 
 
