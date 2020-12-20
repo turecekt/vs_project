@@ -54,7 +54,7 @@ def encrypt(message):
     for letter in message:
         if letter != ' ':
             
-            #Looking for corresponding morsecode in dictionary and adding space
+            # Looking for corresponding morsecode in dictionary and adding space
             cipher += MORSE_DICT[letter] + ' '
         else:
             # one space indicates different characters and two indicatates different words
@@ -62,39 +62,39 @@ def encrypt(message):
             
     return cipher
 
-#Funcion to decrypt the string from Morsecode to latin
+# Funcion to decrypt the string from Morsecode to latin
 def decrypt(message):
     
-    #Adding extra space at the end to acces the last morsecode
+    # Adding extra space at the end to acces the last morsecode
     message +=' '
     
     decipher = ' '
     citext = ' '
     for letter in message:
         
-        #Checks for space
+        # Checks for space
         if (letter != ' '):
             
-            #Counter to keep track of space
+            # Counter to keep track of space
             i = 0
             
-            #Storing morse code of a single character
+            # Storing morse code of a single character
             citext += letter
            
-        #In case of space    
+        # In case of space    
         else:
             
-            #If i=1 that indicates a new character
+            # If i=1 that indicates a new character
             i += 1
             
-            #If i=2 that indicates a new word
+            # If i=2 that indicates a new word
             if i == 2 :
                 
-                #Adding space to separate words
+                # Adding space to separate words
                 decipher +=' '
             else:
-                
-                #accesing the keys using their values (reverse of encryption)
+              
+                # accesing the keys using their values (reverse of encryption)
                 decipher += list(MORSE_DICT.keys())[list(MORSE_DICT.values()).index(citext)]
                 citext = ' '
     return decipher
