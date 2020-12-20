@@ -88,54 +88,55 @@ def testSelectionSort():
 
 
 # Řešení pro vstupní paramatery:
-pole = []
-obsahujeChybu = False
-if len(sys.argv) > 1:
-    sys.argv.pop(0)
-    if(path.exists(sys.argv[0])):
-        file = open(sys.argv[0], encoding='utf8')
-        words = file.read().splitlines()
-        file.close()
-        data = []
-        for x in words:
-            data = x.split()
-            for k in data:
+if __name__ == '__main__':
+    pole = []
+    obsahujeChybu = False
+    if len(sys.argv) > 1:
+        sys.argv.pop(0)
+        if(path.exists(sys.argv[0])):
+            file = open(sys.argv[0], encoding='utf8')
+            words = file.read().splitlines()
+            file.close()
+            data = []
+            for x in words:
+                data = x.split()
+                for k in data:
+                    try:
+                        TryParse = int(k)
+                        pole.append(TryParse)
+                    except ValueError:
+                        obsahujeChybu = True
+        else:
+            for x in sys.argv:
                 try:
-                    TryParse = int(k)
+                    TryParse = int(x)
                     pole.append(TryParse)
                 except ValueError:
                     obsahujeChybu = True
     else:
-        for x in sys.argv:
-            try:
-                TryParse = int(x)
-                pole.append(TryParse)
-            except ValueError:
-                obsahujeChybu = True
-else:
-    pole = [random.randint(1, 100) for _ in range(10)]
+        pole = [random.randint(1, 100) for _ in range(10)]
 
-# Zavolání funkce
-vysledek = minmax(pole)
+    # Zavolání funkce
+    vysledek = minmax(pole)
 
-print("Největší číslo: " + vysledek[0] + " a jeho index: " + vysledek[2])
-print("Největší číslo: " + vysledek[1] + " a jeho index: " + vysledek[3])
+    print("Největší číslo: " + vysledek[0] + " a jeho index: " + vysledek[2])
+    print("Největší číslo: " + vysledek[1] + " a jeho index: " + vysledek[3])
 
-# Volba řadících funkcí uživatelem
-# a = input("Zvolte, jakou řadící funkcí chcete vaše pole seřadit: \
-#    (1 = Bubblesort, 2 = Insertion sort, 3 = Selection sort)\n")
+    # Volba řadících funkcí uživatelem
+     a = input("Zvolte, jakou řadící funkcí chcete vaše pole seřadit: \
+        (1 = Bubblesort, 2 = Insertion sort, 3 = Selection sort)\n")
 
-# "Switch" pro volbu uživatele, vypnutý pro github pytest
-# if a == "1":
-#    pole = bubblesort(pole)
-# elif a == "2":
-#    pole = insertionSort(pole)
-# elif a == "3":
-#    pole = selectionSort(pole)
-# else:
-#    print("Nezadali jste správnou volbu!")
+     "Switch" pro volbu uživatele, vypnutý pro github pytest
+     if a == "1":
+        pole = bubblesort(pole)
+     elif a == "2":
+        pole = insertionSort(pole)
+     elif a == "3":
+        pole = selectionSort(pole)
+     else:
+        print("Nezadali jste správnou volbu!")
 
-pole = bubblesort(pole)
+    pole = bubblesort(pole)
 
-# Vypsání pole, vypíše se i při nesprávném zadání řadícího algoritmu
-print(pole)
+    # Vypsání pole, vypíše se i při nesprávném zadání řadícího algoritmu
+    print(pole)
