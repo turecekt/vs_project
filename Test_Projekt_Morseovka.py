@@ -1,7 +1,6 @@
 """Unit Testovani Projekt_Morseovka."""
 
 import unittest
-from Projekt_Morseovka import LAT_MORSE_DICT
 from Projekt_Morseovka import encrypt
 from Projekt_Morseovka import decrypt
 from Projekt_Morseovka import choice
