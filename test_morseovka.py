@@ -1,6 +1,6 @@
 """Testy na funkci Morseovka"""
 
-import unittest
+import pytest
 import morseovka.py
 
 
