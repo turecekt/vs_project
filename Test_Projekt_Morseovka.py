@@ -30,7 +30,7 @@ def test_encrypt_2():
 
 def test_decrypt_1():
     """Encrypting Morse to Latin Characters."""
-    assert(decrypt("--- -. -.. .-. .-")) == "ondra"
+    assert(decrypt("--- -. -.. .-. .-")) == "ONDRA"
 
     """
     Unit test - Morse to Latin Numbers function
