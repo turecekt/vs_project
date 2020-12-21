@@ -63,7 +63,7 @@ Returns: Morse code
 
 
 def encrypt(message):
-
+    """Encrypting to Morsecode."""
     message = message.upper()
     mcipher = ''
 
@@ -83,7 +83,7 @@ Returns: Latin characters
 
 
 def decrypt(message):
-
+    """Decrypting to Morsecode."""
     message += ' '
     dcipher = ''
     morsCharacter = ''
@@ -117,7 +117,7 @@ Returns: waiting for user input
 
 
 def choice(choose):
-
+    """Type of translation."""
     if choose == 1:
         chooseTranslate = input("Your text: ")
         result = encrypt(chooseTranslate)
@@ -135,7 +135,7 @@ Main definition
 
 
 def main():
-
+    """Main function."""
     try:
         print("1 for Latin to Morse ")
         print("2 for Morse to Latin")
