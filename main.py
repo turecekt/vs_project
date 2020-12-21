@@ -56,13 +56,14 @@ def morse(text):
     return preklad.strip()
 
 
-# Here is the input string, where the user can
-# freely input to encode/decode.
-inputstr = '"ahoj"'
+if __name__ == '__main__':
+    # Here is the input string, where the user can
+    # freely input to encode/decode.
+    inputstr = input('Enter text to encode/decode: ')
 
-# Call to method for encoding/decoding with the
-# input string as the parameter.
-print(morse(inputstr))
+    # Call to method for encoding/decoding with the
+    # input string as the parameter.
+    print(morse(inputstr))
 
 
 # Here are the unit tests.
