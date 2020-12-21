@@ -70,5 +70,5 @@ class Test(unittest.TestCase):
         self.assertEqual(1.0, main.art_freq(self.mylist))
         self.assertNotEqual(4.0, main.art_freq(self.mylist))
 
-    if __name__ == "__main__":
-        unittest.main()
+if __name__ == "__main__":
+    unittest.main()
