@@ -45,3 +45,4 @@ def test_decrypt_2(self):
     """
 def test_choice_1(self):    
     assert choice("1") == "1"
+  
