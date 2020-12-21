@@ -40,12 +40,4 @@ def test_decrypt_1():
 def test_decrypt_2():
     """Encrypting Morse to Latin Numbers."""
     assert (decrypt(".---- ..--- ...-- ....-")) == "1234"
-
-    """
-    Unit test - Choose translation function
-    """
-
-
-def test_choice_1():
-    """Test of choosing translation."""
-    assert (choice("1")) == "Your text: "
+    
