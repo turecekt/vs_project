@@ -12,7 +12,7 @@ class Morseovka_Test(unittest.TestCase):
 
 def test_encrypt_1():
     """Encrypting a word Morseovka."""
-    assert(encrypt("ondra")) == ".../-./-../.-./.- "
+    assert(encrypt("ondra")) == "---/-./-../.-./.- "
 
     """
     Unit test - Latin to Morse function
@@ -21,7 +21,7 @@ def test_encrypt_1():
 
 def test_encrypt_2():
     """Encrypting number Morseovka."""
-    assert(encrypt("1234")) == ".----/..---/...--/....-"
+    assert(encrypt("1234")) == ".---- ..--- ...-- ....-"
 
     """
     Unit test - Morse to Latin function
@@ -30,7 +30,7 @@ def test_encrypt_2():
 
 def test_decrypt_1():
     """Encrypting Morse to Latin Characters."""
-    assert(decrypt(".../-./-../.-./.-")) == "Ondra"
+    assert(decrypt("--- -. .. .-. .-")) == "ondra"
 
     """
     Unit test - Morse to Latin Numbers function
