@@ -123,8 +123,8 @@ def choice(choose):
         result = encrypt(chooseTranslate)
 
     elif choose == 2:
-        choosTranslate2 = input("Morse: ")
-        result = decrypt(choosTranslate2)
+        chooseTranslate2 = input("Morse: ")
+        result = decrypt(chooseTranslate2)
 
     return result
 
