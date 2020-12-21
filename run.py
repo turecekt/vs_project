@@ -2,15 +2,16 @@
 
 from morse import MorseCodeTranslator
 
-translator = MorseCodeTranslator()
+if __name__ == "__main__":
+    translator = MorseCodeTranslator()
 
-text = "Testovaci string na preklad do morseovky a zpet."
+    text = input("Zadej string na preklad do morseovky a zpet: ")
 
-# Prelozi text do morseovky
-morse = translator.translate_text(text)
+    # Prelozi text do morseovky
+    morse = translator.translate_text(text)
 
-# Prelozi morseovku na text
-translated_text = translator.translate_morse(morse)
+    # Prelozi morseovku na text
+    translated_text = translator.translate_morse(morse)
 
-print(morse)
-print(translated_text)
+    print(morse)
+    print(translated_text)
