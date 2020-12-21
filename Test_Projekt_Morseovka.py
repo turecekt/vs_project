@@ -10,38 +10,46 @@ class Morseovka_Test(unittest.TestCase):
     """
     Unit test - Latin to Morse function
     """
+    
+    
 def test_encrypt_1(self):
     # encrypting a word Morseovka
-  assert encrypt("Ondra") == ".../-./-../.-./.- "
+    assert encrypt("Ondra") == ".../-./-../.-./.- "
 
 
     """
     Unit test - Latin to Morse function
     """
+    
+    
 def test_encrypt_2(self):
     # encrypting number Morseovka
-  assert encrypt("1234") == ".----/..---/...--/....-"
+    assert encrypt("1234") == ".----/..---/...--/....-"
 
 
     """
     Unit test - Morse to Latin function
     """
+    
+    
 def test_decrypt_1(self):
     # encrypting Morse to Latin Characters
-  assert decrypt(".../-./-../.-./.-") == "Ondra"
+    assert decrypt(".../-./-../.-./.-") == "Ondra"
 
 
     """
     Unit test - Morse to Latin Numbers function
     """
+    
+    
 def test_decrypt_2(self):
     # encrypting Morse to Latin Numbers
-  assert decrypt(".---- ..--- ...-- ....-") == "1234"
+    assert decrypt(".---- ..--- ...-- ....-") == "1234"
 
 
     """
     Unit test - Choose translation function
     """
 def test_choice_1(self):
- assert choice("1") == "1"
+    assert choice("1") == "1"
  
