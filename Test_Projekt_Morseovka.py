@@ -3,7 +3,6 @@
 import unittest
 from Projekt_Morseovka import encrypt
 from Projekt_Morseovka import decrypt
-from Projekt_Morseovka import choice
 
 
 class Morseovka_Test(unittest.TestCase):
@@ -40,4 +39,3 @@ def test_decrypt_1():
 def test_decrypt_2():
     """Encrypting Morse to Latin Numbers."""
     assert (decrypt(".---- ..--- ...-- ....-")) == "1234"
-    
