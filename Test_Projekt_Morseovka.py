@@ -48,4 +48,4 @@ def test_decrypt_2():
 
 def test_choice_1():
     """Test of choosing translation."""
-    assert (choice("1")) == "1"
+    assert (choice("1")) == "Your text: "
