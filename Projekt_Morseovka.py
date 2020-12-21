@@ -114,6 +114,8 @@ Args: 1 fof ecnrypting Latin to MorseCode
       2 for decrypting MorseCode to Latin Characters
 Returns: waiting for user input
 """
+
+
 def choice(choose):
 
     if choose == 1:
@@ -130,6 +132,8 @@ def choice(choose):
 """
 Main definition
 """
+
+
 def main():
 
     try:
