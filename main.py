@@ -129,7 +129,24 @@ class Tris():
             return out
 
 
-class Gui(tk.Tk, Tris):
+class Uprava_jednotek():
+    def __init__(self, sA, sB, sC, uA, uB, uC, unsA, unsB, unsC, unuA, unuB,
+                 unuC):
+        self.sA = sA
+        self.sB = sB
+        self.sC = sC
+        self.uA = uA
+        self.uB = uB
+        self.uC = uC
+        self.unsA = unsA
+        self.unsB = unsB
+        self.unsC = unsC
+        self.unuA = unuA
+        self.unuB = unuB
+        self.unuC = unuC
+        print(self.sA)
+
+class Gui(tk.Tk):
     """Class pro gui."""
 
     def __init__(self):
@@ -153,12 +170,7 @@ class Gui(tk.Tk, Tris):
                       4: "Úhel \u03B1",
                       5: "Úhel \u03B2",
                       6: "Úhel \u03B3"}
-        self.sA = 0
-        self.sB = 0
-        self.sC = 0
-        self.uA = 0
-        self.uB = 0
-        self.uC = 0
+        
         # Definice proměnných pro metodu checkbox_render()
         # je strana A vybraná?
         self.issA = tk.BooleanVar()
@@ -181,6 +193,30 @@ class Gui(tk.Tk, Tris):
         # proměná pro metodu count_of_true()
         self.count = 0
         # volání metody checkbox_render()
+        self.sA = tk.DoubleVar()
+        self.sB = tk.DoubleVar()
+        self.sC = tk.DoubleVar()
+        self.uA = tk.DoubleVar()
+        self.uB = tk.DoubleVar()
+        self.uC = tk.DoubleVar()
+        self.unsA = tk.StringVar()
+        self.unsB = tk.StringVar()
+        self.unsC = tk.StringVar()
+        self.unuA = tk.StringVar()
+        self.unuB = tk.StringVar()
+        self.unuC = tk.StringVar()
+        self.sA.set(0)
+        self.sB.set(0)
+        self.sC.set(0)
+        self.uA.set(0)
+        self.uB.set(0)
+        self.uC.set(0)
+        self.unsA.set("")
+        self.unsB.set("")
+        self.unsC.set("")
+        self.unuA.set("")
+        self.unuB.set("")
+        self.unuC.set("")
         self.checkbox_render()
         self.value_render()
         self.image_render()
@@ -308,7 +344,7 @@ class Gui(tk.Tk, Tris):
             self.chbuC.configure(state="normal")
     
     def image_render(self):
-        trImg = tk.Canvas(self.app, bg="#1d1d1d", width=450, height=395)
+        trImg = tk.Canvas(self.app, bg="#1d1d1d", width=450, height=395, highlightbackground="#1d1d1d")
         trImg.grid(row=3, column=0, columnspan=3, sticky='we')
         trImg.create_text(35,360, anchor="w", text="A", fill="white",
                           font=("Helvetica","16", "bold"))
@@ -334,10 +370,10 @@ class Gui(tk.Tk, Tris):
                                extent=60, outline="white", width=1.5)
         uaC = trImg.create_arc(175,-10,275,90, start=240,
                                extent=60, outline="white", width=1.5)
-        slA = trImg.create_line(50, 343.109, 400, 343.109, fill="white",
+        slC = trImg.create_line(50, 343.109, 400, 343.109, fill="white",
                                 width=3)
-        slB = trImg.create_line(400, 343.109, 225, 40, fill="white", width=3)
-        slC = trImg.create_line(225, 40, 50, 343.109, fill="white", width=3)
+        slA = trImg.create_line(400, 343.109, 225, 40, fill="white", width=3)
+        slB = trImg.create_line(225, 40, 50, 343.109, fill="white", width=3)
         if self.issA.get():
             trImg.itemconfig(slA, fill="green")
         if self.issB.get():
@@ -351,7 +387,7 @@ class Gui(tk.Tk, Tris):
         if self.isuC.get():
             trImg.itemconfig(uaC, fill="green")
     
-    def input_render(self, var, txt, values, myrow, mycolumn):
+    def input_render(self, var, txt, values, myrow, mycolumn, unit):
         """
         generovaní inputu.
         
@@ -362,36 +398,44 @@ class Gui(tk.Tk, Tris):
         mycolumn = pocatecni sloupec
         """
         
-        label = tk.Label(self.frame, text=txt, bg="#1d1d1d", fg="white", 
-                         bd=5, anchor="n")
-        label.grid(row=myrow, column=mycolumn, sticky="ne")
-        entery = tk.Spinbox(self.frame, bg="green", fg="white", from_=0.1,
-                            to=10000, buttonbackground="#1d1d1d", 
-                            increment=0.05, width=10)
-        entery.grid(row=myrow, column=mycolumn+1,sticky="we")
+        tk.Label(self.frame, text=txt, bg="#1d1d1d", fg="white", bd=5,
+                 anchor="n").grid(row=myrow, column=mycolumn, sticky="ne")
+        tk.Spinbox(self.frame, bg="green", fg="white", from_=0.1,
+                   to=10000, buttonbackground="#1d1d1d", increment=0.05,
+                   width=10, textvariable=var).grid(row=myrow, sticky="we",
+                                                    column=mycolumn+1)
         if values == 0:
             ol = ("mm", "cm","dm","m", "km")
-            self.delka= tk.StringVar()
-            self.delka.set("m")
-            self.om = tk.OptionMenu(self.frame, self.delka, *ol)
+            unit.set("m")
+            self.om = tk.OptionMenu(self.frame, unit, *ol)
             self.om.config(bg="#1d1d1d", bd=5, fg="white", relief="flat",
                            highlightbackground="#1d1d1d", width=5,
                            activebackground="green", height=1,
                            activeforeground="white")
             self.om.grid(row=myrow, column=mycolumn+2, sticky="w")
+
         else:
             ol = ("\xb0", "rad","\u03c0 rad")
-            self.uhel= tk.StringVar()
-            self.uhel.set("\xb0")
-            self.om = tk.OptionMenu(self.frame, self.uhel, *ol)
+            unit.set("\xb0")
+            self.om = tk.OptionMenu(self.frame, unit, *ol)
             self.om.config(bg="#1d1d1d", bd=5, fg="white", relief="flat",
                            highlightbackground="#1d1d1d", width=5,
                            activebackground="green", height=1,
                            activeforeground="white")
             self.om.grid(row=myrow, column=mycolumn+2, sticky="w")
+        if self.count ==3:
+            tk.Button(self.frame,text="Vypočítej", bg ="green", fg="white",
+                      padx=185, pady=15, relief="flat",
+                      activebackground="#7daa7d", activeforeground="white",
+                      command=self.get_values, state="normal"
+                      ).grid(row=3, column=3, columnspan=3, sticky="wn")
+        else:
+            tk.Button(self.frame,text="Vypočítej", bg ="#2d2d2d", fg="white",
+                      padx=185, pady=15, relief="flat", state="disabled",
+                      command=self.get_values
+                      ).grid(row=3, column=3, columnspan=3, sticky="wn")
         
             
-    
     def right_panel_render(self):
         self.frame = tk.Frame(self.app, width=450, bg="#1d1d1d")
         self.frame.grid(column=4, row=0, columnspan=6, rowspan = 5, sticky="wn")
@@ -410,136 +454,193 @@ class Gui(tk.Tk, Tris):
     
     def input_render_choice(self):
         if self.issA.get():
-            self.input_render(self.sA, "strana a", 0, 0, 3)
+            self.mysA = self.input_render(self.sA, "strana a", 0, 0, 3,
+                                          self.unsA)
             if self.issB.get():
-                self.input_render(self.sB, "strana b", 0, 1, 3)
+                self.input_render(self.sB, "strana b", 0, 1, 3, self.unsB)
                 if self.issC.get():
-                    self.input_render(self.sC, "strana c", 0, 2, 3)
+                    self.input_render(self.sC, "strana c", 0, 2, 3, self.unsC)
+                    self.submit_button()
                 elif self.isuA.get():
-                    self.input_render(self.uA, "úhel \u03B1", 1, 2, 3)
+                    self.input_render(self.uC, "úhel \u03B3", 1, 2, 3, self.unuA)
+                    self.submit_button()
                 elif self.isuB.get():
-                    self.input_render(self.uB, "úhel \u03B2", 1, 2, 3)
+                    self.input_render(self.uC, "úhel \u03B3", 1, 2, 3, self.unuB)
+                    self.submit_button()
                 elif self.isuC.get():
-                    self.input_render(self.uC, "úhel \u03B3", 1, 2, 3)
+                    self.input_render(self.uC, "úhel \u03B3", 1, 2, 3, self.unuC)
+                    self.submit_button()
                 else:
                     self.blank(2, 3)
+                    
             elif self.issC.get():
-                self.input_render(self.sC, "strana c", 0, 1, 3)
+                self.input_render(self.sC, "strana c", 0, 1, 3, self.unsC)
                 if self.isuA.get():
-                    self.input_render(self.uA, "úhel \u03B1", 1, 2, 3)
+                    self.input_render(self.uC, "úhel \u03B3", 1, 2, 3, self.unuA)
+                    self.submit_button()
                 elif self.isuB.get():
-                    self.input_render(self.uB, "úhel \u03B2", 1, 2, 3)
+                    self.input_render(self.uC, "úhel \u03B3", 1, 2, 3, self.unuB)
+                    self.submit_button()
                 elif self.isuC.get():
-                    self.input_render(self.uC, "úhel \u03B3", 1, 2, 3)
+                    self.input_render(self.uC, "úhel \u03B3", 1, 2, 3, self.unuC)
+                    self.submit_button()
                 else:
                     self.blank(2, 3)
+                    
             elif self.isuA.get():
-                self.input_render(self.uA, "úhel \u03B1", 1, 1, 3)
+                self.input_render(self.uA, "úhel \u03B1", 1, 1, 3, self.unuA)
                 if self.isuB.get():
-                    self.input_render(self.uB, "úhel \u03B2", 1, 2, 3)
+                    self.input_render(self.uC, "úhel \u03B3", 1, 2, 3, self.unuB)
+                    self.submit_button()
                 elif self.isuC.get():
-                    self.input_render(self.uC, "úhel \u03B3", 1, 2, 3)
+                    self.input_render(self.uC, "úhel \u03B3", 1, 2, 3, self.unuC)
+                    self.submit_button()
                 else:
                     self.blank(2, 3)
+                    
             elif self.isuB.get():
-                self.input_render(self.uB, "úhel \u03B2", 1, 1, 3)
+                self.input_render(self.uB, "úhel \u03B2", 1, 1, 3, self.unuB)
+                self.submit_button()
                 if self.isuC.get():
-                    self.input_render(self.uC, "úhel \u03B3", 1, 2, 3)
+                    self.input_render(self.uC, "úhel \u03B3", 1, 2, 3, self.unuC)
+                    self.submit_button()
                 else:
                     self.blank(2, 3)
+                    
             elif self.isuC.get():
-                self.input_render(self.uC, "úhel \u03B3", 1, 1, 3)
+                self.input_render(self.uC, "úhel \u03B3", 1, 1, 3, self.unuC)
                 self.blank(2, 3)
+                
             else:
                 self.blank(1, 3)
                 self.blank(2, 3)
+                
         elif self.issB.get():
-            self.input_render(self.sB, "strana b", 0, 0, 3)
+            self.input_render(self.sB, "strana b", 0, 0, 3, self.unsB)
             if self.issC.get():
-                self.input_render(self.sC, "strana c", 0, 1, 3)
+                self.input_render(self.sC, "strana c", 0, 1, 3, self.unsC)
                 if self.isuA.get():
-                    self.input_render(self.uA, "úhel \u03B1", 1, 2, 3)
+                    self.input_render(self.uC, "úhel \u03B3", 1, 2, 3, self.unuA)
+                    self.submit_button()
                 elif self.isuB.get():
-                    self.input_render(self.uB, "úhel \u03B2", 1, 2, 3)
+                    self.input_render(self.uC, "úhel \u03B3", 1, 2, 3, self.unuB)
+                    self.submit_button()
                 elif self.isuC.get():
-                    self.input_render(self.uC, "úhel \u03B3", 1, 2, 3)
+                    self.input_render(self.uC, "úhel \u03B3", 1, 2, 3, self.unuC)
+                    self.submit_button()
                 else:
                     self.blank(2, 3)
+                    
             elif self.isuA.get():
-                self.input_render(self.uA, "úhel \u03B1", 1, 1, 3)
+                self.input_render(self.uA, "úhel \u03B1", 1, 1, 3, self.unuA)
                 if self.isuB.get():
-                    self.input_render(self.uB, "úhel \u03B2", 1, 2, 3)
+                    self.input_render(self.uC, "úhel \u03B3", 1, 2, 3,
+                                      self.unuB)
+                    self.submit_button()
                 elif self.isuC.get():
-                    self.input_render(self.uC, "úhel \u03B3", 1, 2, 3)
+                    self.input_render(self.uC, "úhel \u03B3", 1, 2, 3,
+                                      self.unuC)
+                    self.submit_button()
                 else:
                     self.blank(2, 3)
+                    
             elif self.isuB.get():
-                self.input_render(self.uB, "úhel \u03B2", 1, 1, 3)
+                self.input_render(self.uB, "úhel \u03B2", 1, 1, 3, self.unuB)
                 if self.isuC.get():
-                    self.input_render(self.uC, "úhel \u03B3", 1, 2, 3)
+                    self.input_render(self.uC, "úhel \u03B3", 1, 2, 3,
+                                      self.unuC)
+                    self.submit_button()
                 else:
                     self.blank(2, 3)
+                    
             elif self.isuC.get():
-                self.input_render(self.uC, "úhel \u03B3", 1, 1, 3)
+                self.input_render(self.uC, "úhel \u03B3", 1, 1, 3, self.unuC)
                 self.blank(2, 3)
+                
             else:
                 self.blank(1, 3)
                 self.blank(2, 3)
+                
         elif self.issC.get():
-            self.input_render(self.sC, "strana c", 0, 0, 3)
+            self.input_render(self.sC, "strana c", 0, 0, 3, self.unsC)
             if self.isuA.get():
-                self.input_render(self.uA, "úhel \u03B1", 1, 1, 3)
+                self.input_render(self.uA, "úhel \u03B1", 1, 1, 3, self.unuA)
                 if self.isuB.get():
-                    self.input_render(self.uB, "úhel \u03B2", 1, 2, 3)
+                    self.input_render(self.uC, "úhel \u03B3", 1, 2, 3, self.unuB)
+                    self.submit_button()
                 elif self.isuC.get():
-                    self.input_render(self.uC, "úhel \u03B3", 1, 2, 3)
+                    self.input_render(self.uC, "úhel \u03B3", 1, 2, 3, self.unuC)
+                    self.submit_button()
                 else:
                     self.blank(2, 3)
+                    
             elif self.isuB.get():
-                self.input_render(self.uB, "úhel \u03B2", 1, 1, 3)
+                self.input_render(self.uB, "úhel \u03B2", 1, 1, 3, self.unuB)
                 if self.isuC.get():
-                    self.input_render(self.uC, "úhel \u03B3", 1, 2, 3)
+                    self.input_render(self.uC, "úhel \u03B3", 1, 2, 3, self.unuC)
+                    self.submit_button()
                 else:
                     self.blank(2, 3)
+                    
             elif self.isuC.get():
-                self.input_render(self.uC, "úhel \u03B3", 1, 1, 3)
+                self.input_render(self.uC, "úhel \u03B3", 1, 1, 3, self.unuC)
                 self.blank(2, 3)
+                
             else:
                 self.blank(1, 3)
                 self.blank(2, 3)
+                
         elif self.isuA.get():
-            self.input_render(self.uA, "úhel \u03B1", 1, 0, 3)
+            self.input_render(self.uA, "úhel \u03B1", 1, 0, 3, self.unuA)
             if self.isuB.get():
-                self.input_render(self.uB, "úhel \u03B2", 1, 1, 3)
+                self.input_render(self.uB, "úhel \u03B2", 1, 1, 3, self.unuB)
                 if self.isuC.get():
-                    self.input_render(self.uC, "úhel \u03B3", 1, 2, 3)
+                    self.input_render(self.uC, "úhel \u03B3", 1, 2, 3, self.unuC)
+                    self.submit_button()
                 else:
                     self.blank(2, 3)
+                    
             elif self.isuC.get():
-                self.input_render(self.uC, "úhel \u03B3", 1, 1, 3)
+                self.input_render(self.uC, "úhel \u03B3", 1, 1, 3, self.unuC)
                 self.blank(2, 3)
             else:
                 self.blank(1, 3)
                 self.blank(2, 3)
+                
         elif self.isuB.get():
-            self.input_render(self.uB, "úhel \u03B2", 1, 0, 3)
+            self.input_render(self.uB, "úhel \u03B2", 1, 0, 3, self.unuB)
             if self.isuC.get():
-                self.input_render(self.uC, "úhel \u03B3", 1, 1, 3)
+                self.input_render(self.uC, "úhel \u03B3", 1, 1, 3, self.unuC)
                 self.blank(2, 3)
+                
             else:
                 self.blank(1, 3)
                 self.blank(2, 3)
+                
         elif self.isuC.get():
-            self.input_render(self.uC, "úhel \u03B3", 1, 0, 3)
+            self.input_render(self.uC, "úhel \u03B3", 1, 0, 3, self.unuC)
             self.blank(1, 3)
             self.blank(2, 3)
+            
         else:
             self.blank(0, 3)
             self.blank(1, 3)
             self.blank(2, 3)
             
-    
-                    
+
+            
+    def submit_button(self):
+        tk.Button(self.frame,text="Vypočítej", bg ="green", fg="white",
+                  padx=185, pady=15, relief="flat", activebackground="#7daa7d",
+                  activeforeground="white", command=self.get_values
+                  ).grid(row=3, column=3, columnspan=3, sticky="wn")
+        
+    def get_values(self):
+        Uprava_jednotek(self.sA.get(), self.sB, self.sC, self.uA, self.uB, self.uC,
+                        self.unsA, self.unsB, self.unsC, self.unuA, self.unuB,
+                        self.unuC)
+        return sA
+                
             
 
 if __name__ == "__main__":
