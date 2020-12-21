@@ -4,10 +4,15 @@ Created on Fri Dec 11 00:53:37 2020.
 
 @author: Tomas Adamek
 """
-import math
+from math import *
+import re
 import tkinter as tk
-from tkinter import ttk
 
+def toNumber(value):
+    value = value.replace(",", ".")
+    value = re.sub('[\w][^sqrt()0-9+.]', '', value)
+    value = eval(value)
+    return value
 
 class Tris():
     """
@@ -77,13 +82,13 @@ class Tris():
             sC = self.sC
             obvod = sA + sB + sC
             s = obvod / 2
-            obsah = math.sqrt(s * (s - sA) * (s - sB) * (s - sC))
+            obsah = sqrt(s * (s - sA) * (s - sB) * (s - sC))
             cosA = (sB ** 2 + sC ** 2 - sA ** 2) / (2 * sB * sC)
             cosB = (sA ** 2 + sC ** 2 - sB ** 2) / (2 * sA * sC)
             cosC = (sA ** 2 + sB ** 2 - sC ** 2) / (2 * sA * sB)
-            uA = round(math.degrees(math.acos(cosA)), 2)
-            uB = round(math.degrees(math.acos(cosB)), 2)
-            uC = round(math.degrees(math.acos(cosC)), 2)
+            uA = round(degrees(math.acos(cosA)), 2)
+            uB = round(degrees(math.acos(cosB)), 2)
+            uC = round(degrees(math.acos(cosC)), 2)
             obsah = round(obsah, 2)
             if uA == uB and uB == uC:
                 return {"obsah": str(obsah) + "cm\u00B2",
@@ -132,20 +137,134 @@ class Tris():
 class Uprava_jednotek():
     def __init__(self, sA, sB, sC, uA, uB, uC, unsA, unsB, unsC, unuA, unuB,
                  unuC):
-        self.sA = sA
-        self.sB = sB
-        self.sC = sC
-        self.uA = uA
-        self.uB = uB
-        self.uC = uC
+        self.sA = toNumber(sA)
+        self.sB = toNumber(sB)
+        self.sC = toNumber(sC)
+        self.uA = toNumber(uA)
+        self.uB = toNumber(uB)
+        self.uC = toNumber(uC)
         self.unsA = unsA
         self.unsB = unsB
         self.unsC = unsC
         self.unuA = unuA
         self.unuB = unuB
         self.unuC = unuC
-        print(self.sA)
+        print(self.prevod_delky())
+        self.vrat()   
+        
+    def vrat(self):
+        return self.prevod_delky() 
+    
+    def prevod_delky(self):
+        if self.unsA != "" and self.unsB != "" and self.unsC !="":
+            (self.unsA, self.unsB,
+            self.sA, self.sB) = self.dve_strany(self.unsA, self.unsB,
+                                               self.sA, self.sB)
+            if self.unitD != self.unsC:
+                (self.unsA, self.unsC,
+                self.sA, self.sC) = self.dve_strany(self.unsA, self.unsC,
+                                                   self.sA, self.sC)
+                (self.unsB, self.unsC,
+                self.sB, self.sC) = self.dve_strany(self.unsB, self.unsC,
+                                                   self.sB, self.sC)
+        elif self.unsA != "" and self.unsB != "":
+            (self.unsA, self.unsB,
+            self.sA, self.sB) = self.dve_strany(self.unsA, self.unsB,
+                                               self.sA, self.sB)
+        elif self.unsA != "" and self.unsC != "":
+            (self.unsA, self.unsC,
+                self.sA, self.sC) = self.dve_strany(self.unsA, self.unsC,
+                                                   self.sA, self.sC)
+        elif self.unsB != "" and self.unsC != "":
+            (self.unsB, self.unsC,
+                self.sB, self.sC) = self.dve_strany(self.unsB, self.unsC,
+                                                   self.sB, self.sC)
+        elif self.unsA == "" and self.unsB == "" and self.unsC != "":
+            self.unitD = self.unsC
+        elif self.unsA == "" and self.unsC == "" and self.unsB != "":
+            self.unitD = self.unsB
+        elif self.unsB == "" and self.unsC == "" and self.unsA != "":
+            self.unitD = self.unsA
+        else:
+            self.unitD = ""
+        i = 0
+        self.unitD = self.delka_to_int(self.unitD)
+        tmp = self.unitD
+        while i < 1:
+            if (not self.sA % 10) and (not self.sB % 10
+                                       ) and (not self.sC % 10):
+                if tmp < 3:
+                    self.unitD +=1
+                    self.sA /= 10
+                    self.sB /= 10
+                    self.sC /= 10
+                elif tmp == 6:
+                    self.unitD +=3
+                    self.sA /= 1000
+                    self.sB /= 1000
+                    self.sC /= 1000
+                elif tmp > 6:
+                    i += 1
+                tmp += 1
+                
+            else:
+                i += 1
+        self.unitD = self.int_to_delka(self.unitD)
+        return {0: (self.sA, self.unitD),
+                1: (self.sB, self.unitD),
+                2: (self.sC, self.unitD)}
+    
+                        
+    def dve_strany(self, strana1, strana2, s1, s2):
+        if strana1 != strana2:
+            strana1 = self.delka_to_int(strana1)
+            strana2 = self.delka_to_int(strana2)
+            if strana1 > strana2:
+                x = strana1 - strana2
+                for y in range(x):
+                    s1 *= 10
+                self.unitD = self.int_to_delka(strana2)
+            elif strana1 < strana2:
+                x = strana2 - strana1
+                for y in range(x):
+                    s2 *= 10
+                self.unitD = self.int_to_delka(strana1)
+            strana1 = self.unitD
+            strana2 = self.unitD
+        else:
+            self.unitD = self.int_to_delka(strana1)
+        
+        return strana1, strana2, s1, s2 
+            
 
+        
+
+    def delka_to_int(self, myunit):
+        if myunit == "mm":
+            myunit = 0                  
+        elif myunit == "cm":
+            myunit = 1
+        elif myunit == "dm":
+            myunit = 2
+        elif myunit == "m":
+            myunit = 3
+        elif myunit == "km":
+            myunit = 6
+        return myunit
+    
+    def int_to_delka(self, myunit):
+        if myunit == 0:
+            myunit = "mm"
+        elif myunit == 1:
+            myunit = "cm"
+        elif myunit == 2:
+            myunit = "dm"
+        elif myunit == 3:
+            myunit = "m"
+        elif myunit == 6:
+            myunit = "km"
+        return myunit
+        
 class Gui(tk.Tk):
     """Class pro gui."""
 
@@ -193,12 +312,12 @@ class Gui(tk.Tk):
         # proměná pro metodu count_of_true()
         self.count = 0
         # volání metody checkbox_render()
-        self.sA = tk.DoubleVar()
-        self.sB = tk.DoubleVar()
-        self.sC = tk.DoubleVar()
-        self.uA = tk.DoubleVar()
-        self.uB = tk.DoubleVar()
-        self.uC = tk.DoubleVar()
+        self.sA = tk.StringVar()
+        self.sB = tk.StringVar()
+        self.sC = tk.StringVar()
+        self.uA = tk.StringVar()
+        self.uB = tk.StringVar()
+        self.uC = tk.StringVar()
         self.unsA = tk.StringVar()
         self.unsB = tk.StringVar()
         self.unsC = tk.StringVar()
@@ -344,7 +463,8 @@ class Gui(tk.Tk):
             self.chbuC.configure(state="normal")
     
     def image_render(self):
-        trImg = tk.Canvas(self.app, bg="#1d1d1d", width=450, height=395, highlightbackground="#1d1d1d")
+        trImg = tk.Canvas(self.app, bg="#1d1d1d", width=450, height=395,
+                          highlightbackground="#1d1d1d")
         trImg.grid(row=3, column=0, columnspan=3, sticky='we')
         trImg.create_text(35,360, anchor="w", text="A", fill="white",
                           font=("Helvetica","16", "bold"))
@@ -402,27 +522,33 @@ class Gui(tk.Tk):
                  anchor="n").grid(row=myrow, column=mycolumn, sticky="ne")
         tk.Spinbox(self.frame, bg="green", fg="white", from_=0.1,
                    to=10000, buttonbackground="#1d1d1d", increment=0.05,
-                   width=10, textvariable=var).grid(row=myrow, sticky="we",
-                                                    column=mycolumn+1)
+                   width=10, textvariable=var
+                   ).grid(row=myrow, sticky="we", column=mycolumn+1)
         if values == 0:
             ol = ("mm", "cm","dm","m", "km")
             unit.set("m")
             self.om = tk.OptionMenu(self.frame, unit, *ol)
             self.om.config(bg="#1d1d1d", bd=5, fg="white", relief="flat",
-                           highlightbackground="#1d1d1d", width=5,
+                           highlightthickness=0, width=5,
                            activebackground="green", height=1,
                            activeforeground="white")
-            self.om.grid(row=myrow, column=mycolumn+2, sticky="w")
+            self.om["menu"].config(bg="#1d1d1d", fg="white", 
+                                   activebackground="green",
+                                   activeforeground="white")
+            self.om.grid(row=myrow, column=mycolumn+2, sticky="w", pady=2)
 
         else:
-            ol = ("\xb0", "rad","\u03c0 rad")
+            ol = ("\xb0", "rad", "\u03C0 rad")
             unit.set("\xb0")
             self.om = tk.OptionMenu(self.frame, unit, *ol)
             self.om.config(bg="#1d1d1d", bd=5, fg="white", relief="flat",
-                           highlightbackground="#1d1d1d", width=5,
+                           highlightthickness=0, width=5,
                            activebackground="green", height=1,
                            activeforeground="white")
-            self.om.grid(row=myrow, column=mycolumn+2, sticky="w")
+            self.om["menu"].config(bg="#1d1d1d", fg="white", 
+                                   activebackground="green",
+                                   activeforeground="white")
+            self.om.grid(row=myrow, column=mycolumn+2, sticky="w", pady=2)
         if self.count ==3:
             tk.Button(self.frame,text="Vypočítej", bg ="green", fg="white",
                       padx=185, pady=15, relief="flat",
@@ -438,7 +564,8 @@ class Gui(tk.Tk):
             
     def right_panel_render(self):
         self.frame = tk.Frame(self.app, width=450, bg="#1d1d1d")
-        self.frame.grid(column=4, row=0, columnspan=6, rowspan = 5, sticky="wn")
+        self.frame.grid(column=4, row=0, columnspan=6, rowspan = 5,
+                        sticky="wn")
         self.frame.grid_columnconfigure(3, minsize=250)
         self.frame.grid_columnconfigure(4, minsize=50)
         self.frame.grid_columnconfigure(5, minsize=50)
@@ -462,13 +589,16 @@ class Gui(tk.Tk):
                     self.input_render(self.sC, "strana c", 0, 2, 3, self.unsC)
                     self.submit_button()
                 elif self.isuA.get():
-                    self.input_render(self.uC, "úhel \u03B3", 1, 2, 3, self.unuA)
+                    self.input_render(self.uC, "úhel \u03B3", 1, 2, 3,
+                                      self.unuA)
                     self.submit_button()
                 elif self.isuB.get():
-                    self.input_render(self.uC, "úhel \u03B3", 1, 2, 3, self.unuB)
+                    self.input_render(self.uC, "úhel \u03B3", 1, 2, 3,
+                                      self.unuB)
                     self.submit_button()
                 elif self.isuC.get():
-                    self.input_render(self.uC, "úhel \u03B3", 1, 2, 3, self.unuC)
+                    self.input_render(self.uC, "úhel \u03B3", 1, 2, 3,
+                                      self.unuC)
                     self.submit_button()
                 else:
                     self.blank(2, 3)
@@ -476,13 +606,16 @@ class Gui(tk.Tk):
             elif self.issC.get():
                 self.input_render(self.sC, "strana c", 0, 1, 3, self.unsC)
                 if self.isuA.get():
-                    self.input_render(self.uC, "úhel \u03B3", 1, 2, 3, self.unuA)
+                    self.input_render(self.uC, "úhel \u03B3", 1, 2, 3,
+                                      self.unuA)
                     self.submit_button()
                 elif self.isuB.get():
-                    self.input_render(self.uC, "úhel \u03B3", 1, 2, 3, self.unuB)
+                    self.input_render(self.uC, "úhel \u03B3", 1, 2, 3,
+                                      self.unuB)
                     self.submit_button()
                 elif self.isuC.get():
-                    self.input_render(self.uC, "úhel \u03B3", 1, 2, 3, self.unuC)
+                    self.input_render(self.uC, "úhel \u03B3", 1, 2, 3,
+                                      self.unuC)
                     self.submit_button()
                 else:
                     self.blank(2, 3)
@@ -490,25 +623,30 @@ class Gui(tk.Tk):
             elif self.isuA.get():
                 self.input_render(self.uA, "úhel \u03B1", 1, 1, 3, self.unuA)
                 if self.isuB.get():
-                    self.input_render(self.uC, "úhel \u03B3", 1, 2, 3, self.unuB)
+                    self.input_render(self.uC, "úhel \u03B3", 1, 2, 3,
+                                      self.unuB)
                     self.submit_button()
                 elif self.isuC.get():
-                    self.input_render(self.uC, "úhel \u03B3", 1, 2, 3, self.unuC)
+                    self.input_render(self.uC, "úhel \u03B3", 1, 2, 3,
+                                      self.unuC)
                     self.submit_button()
                 else:
                     self.blank(2, 3)
                     
             elif self.isuB.get():
-                self.input_render(self.uB, "úhel \u03B2", 1, 1, 3, self.unuB)
+                self.input_render(self.uB, "úhel \u03B2", 1, 1, 3,
+                                  self.unuB)
                 self.submit_button()
                 if self.isuC.get():
-                    self.input_render(self.uC, "úhel \u03B3", 1, 2, 3, self.unuC)
+                    self.input_render(self.uC, "úhel \u03B3", 1, 2, 3,
+                                      self.unuC)
                     self.submit_button()
                 else:
                     self.blank(2, 3)
                     
             elif self.isuC.get():
-                self.input_render(self.uC, "úhel \u03B3", 1, 1, 3, self.unuC)
+                self.input_render(self.uC, "úhel \u03B3", 1, 1, 3,
+                                  self.unuC)
                 self.blank(2, 3)
                 
             else:
@@ -516,17 +654,22 @@ class Gui(tk.Tk):
                 self.blank(2, 3)
                 
         elif self.issB.get():
-            self.input_render(self.sB, "strana b", 0, 0, 3, self.unsB)
+            self.input_render(self.sB, "strana b", 0, 0, 3,
+                              self.unsB)
             if self.issC.get():
-                self.input_render(self.sC, "strana c", 0, 1, 3, self.unsC)
+                self.input_render(self.sC, "strana c", 0, 1, 3,
+                                  self.unsC)
                 if self.isuA.get():
-                    self.input_render(self.uC, "úhel \u03B3", 1, 2, 3, self.unuA)
+                    self.input_render(self.uC, "úhel \u03B3", 1, 2, 3,
+                                      self.unuA)
                     self.submit_button()
                 elif self.isuB.get():
-                    self.input_render(self.uC, "úhel \u03B3", 1, 2, 3, self.unuB)
+                    self.input_render(self.uC, "úhel \u03B3", 1, 2, 3,
+                                      self.unuB)
                     self.submit_button()
                 elif self.isuC.get():
-                    self.input_render(self.uC, "úhel \u03B3", 1, 2, 3, self.unuC)
+                    self.input_render(self.uC, "úhel \u03B3", 1, 2, 3,
+                                      self.unuC)
                     self.submit_button()
                 else:
                     self.blank(2, 3)
@@ -564,12 +707,15 @@ class Gui(tk.Tk):
         elif self.issC.get():
             self.input_render(self.sC, "strana c", 0, 0, 3, self.unsC)
             if self.isuA.get():
-                self.input_render(self.uA, "úhel \u03B1", 1, 1, 3, self.unuA)
+                self.input_render(self.uA, "úhel \u03B1", 1, 1, 3,
+                                  self.unuA)
                 if self.isuB.get():
-                    self.input_render(self.uC, "úhel \u03B3", 1, 2, 3, self.unuB)
+                    self.input_render(self.uC, "úhel \u03B3", 1, 2, 3,
+                                      self.unuB)
                     self.submit_button()
                 elif self.isuC.get():
-                    self.input_render(self.uC, "úhel \u03B3", 1, 2, 3, self.unuC)
+                    self.input_render(self.uC, "úhel \u03B3", 1, 2, 3,
+                                      self.unuC)
                     self.submit_button()
                 else:
                     self.blank(2, 3)
@@ -577,13 +723,15 @@ class Gui(tk.Tk):
             elif self.isuB.get():
                 self.input_render(self.uB, "úhel \u03B2", 1, 1, 3, self.unuB)
                 if self.isuC.get():
-                    self.input_render(self.uC, "úhel \u03B3", 1, 2, 3, self.unuC)
+                    self.input_render(self.uC, "úhel \u03B3", 1, 2, 3,
+                                      self.unuC)
                     self.submit_button()
                 else:
                     self.blank(2, 3)
                     
             elif self.isuC.get():
-                self.input_render(self.uC, "úhel \u03B3", 1, 1, 3, self.unuC)
+                self.input_render(self.uC, "úhel \u03B3", 1, 1, 3,
+                                  self.unuC)
                 self.blank(2, 3)
                 
             else:
@@ -595,7 +743,8 @@ class Gui(tk.Tk):
             if self.isuB.get():
                 self.input_render(self.uB, "úhel \u03B2", 1, 1, 3, self.unuB)
                 if self.isuC.get():
-                    self.input_render(self.uC, "úhel \u03B3", 1, 2, 3, self.unuC)
+                    self.input_render(self.uC, "úhel \u03B3", 1, 2, 3,
+                                      self.unuC)
                     self.submit_button()
                 else:
                     self.blank(2, 3)
@@ -636,10 +785,12 @@ class Gui(tk.Tk):
                   ).grid(row=3, column=3, columnspan=3, sticky="wn")
         
     def get_values(self):
-        Uprava_jednotek(self.sA.get(), self.sB, self.sC, self.uA, self.uB, self.uC,
-                        self.unsA, self.unsB, self.unsC, self.unuA, self.unuB,
-                        self.unuC)
-        return sA
+        self.delky = Uprava_jednotek(self.sA.get(), self.sB.get(),
+                                     self.sC.get(), self.uA.get(),
+                                     self.uB.get(), self.uC.get(),
+                                     self.unsA.get(), self.unsB.get(),
+                                     self.unsC.get(), self.unuA.get(),
+                                     self.unuB.get(), self.unuC.get())
                 
             
 
