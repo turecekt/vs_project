@@ -21,7 +21,7 @@ def test_encrypt_1():
 
 def test_encrypt_2():
     """Encrypting number Morseovka."""
-    assert(encrypt("1234")) == ".---- ..--- ...-- ....-"
+    assert(encrypt("1234")) == ".----/..---/...--/....-"
 
     """
     Unit test - Morse to Latin function
