@@ -10,7 +10,7 @@ class Morseovka_Test(unittest.TestCase):
     """Unit test - Latin to Morse function."""
 
 
-def test_encrypt_1(self):
+def test_encrypt_1(TestCase):
     """Encrypting a word Morseovka."""
     assert encrypt("Ondra") == ".../-./-../.-./.- "
 
@@ -19,7 +19,7 @@ def test_encrypt_1(self):
     """
 
 
-def test_encrypt_2(self):
+def test_encrypt_2(TestCase):
     """Encrypting number Morseovka."""
     assert encrypt("1234") == ".----/..---/...--/....-"
 
@@ -28,7 +28,7 @@ def test_encrypt_2(self):
     """
 
 
-def test_decrypt_1(self):
+def test_decrypt_1(TestCase):
     """Encrypting Morse to Latin Characters."""
     assert decrypt(".../-./-../.-./.-") == "Ondra"
 
@@ -37,7 +37,7 @@ def test_decrypt_1(self):
     """
 
 
-def test_decrypt_2(self):
+def test_decrypt_2(TestCase):
     """Encrypting Morse to Latin Numbers."""
     assert decrypt(".---- ..--- ...-- ....-") == "1234"
 
@@ -46,6 +46,6 @@ def test_decrypt_2(self):
     """
 
 
-def test_choice_1(self):
+def test_choice_1(TestCase):
     """Test of choosing translation."""
     assert choice("1") == "1"
