@@ -102,8 +102,7 @@ def decrypt(message):
             if i == 2:
                 dcipher += ' '
             else:
-                dcipher += list(LAT_MORSE_DICT.keys())
-                [list(LAT_MORSE_DICT.values()).index(morsCharacter)]
+                dcipher += list(LAT_MORSE_DICT.keys())[list(LAT_MORSE_DICT.values()).index(morsCharacter)]
                 morsCharacter = ''
     return dcipher
 
