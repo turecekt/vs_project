@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 """PROJECT MORSECODE TRANSLATOR"""
 
 """This program encodes and decodes latin alphabet to and from MorseCode"
@@ -138,4 +136,4 @@ def main():
 
 
 if __name__ == '__main__':
-    main()    
+    main()
