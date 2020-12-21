@@ -1,6 +1,6 @@
 """PROJECT MORSECODE TRANSLATOR"""
 
-"""This program encodes and decodes latin alphabet 
+"""This program encodes and decodes latin alphabet
 to and from MorseCode
 
 """"dcipher -> strores translated from morsecode"""
@@ -55,12 +55,15 @@ LAT_MORSE_DICT = {'A': '.-',
 
 
 """
-Funcion decrypts the string from Latin to Morsecode each morse character is devided by /, words by // 
+Funcion decrypts the string from Latin to Morsecode
+each morse character is devided by /, words by //
 Args: Words in Latin dictionary
 Returns: Morse code
 """
+
+
 def encrypt(message):
- 
+
     message = message.upper()
     mcipher = ''
 
@@ -77,6 +80,8 @@ def encrypt(message):
 Args: Morse symbols
 Returns: Latin characters
 """
+
+
 def decrypt(message):
 
     message += ' '
