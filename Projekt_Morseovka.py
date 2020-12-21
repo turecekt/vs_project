@@ -135,7 +135,7 @@ Main definition
 
 
 def main():
-    """Main function."""
+    """Processes the user input."""
     try:
         print("1 for Latin to Morse ")
         print("2 for Morse to Latin")
