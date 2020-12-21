@@ -1,14 +1,14 @@
-"""PROJECT MORSECODE TRANSLATOR"""
+"""PROJECT MORSECODE TRANSLATOR."""
 
 """This program encodes and decodes latin alphabet
-to and from MorseCode
+to and from MorseCode.
 
-""""dcipher -> strores translated from morsecode"""
-"""morsCharacter -> morse of single character"""
-"""i -> counts spaces betwees morse"""
-"""message -> string tob encoded or decoded"""
+""""dcipher -> strores translated from morsecode."""
+"""morsCharacter -> morse of single character."""
+"""i -> counts spaces betwees morse."""
+"""message -> string tob encoded or decoded."""
 
-"""Morsecode dictionary form Latin to Morse"""
+"""Morsecode dictionary form Latin to Morse."""
 LAT_MORSE_DICT = {'A': '.-',
                   'B': '-...',
                   'C': '-.-.',
@@ -56,7 +56,7 @@ LAT_MORSE_DICT = {'A': '.-',
 
 """
 Funcion decrypts the string from Latin to Morsecode
-each morse character is devided by /, words by //
+each morse character is devided by /, words by //.
 Args: Words in Latin dictionary
 Returns: Morse code
 """
