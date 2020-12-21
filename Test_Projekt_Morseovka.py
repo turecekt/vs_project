@@ -1,4 +1,4 @@
-"""Unit Testovani Projekt_Morseovka"""
+"""Unit Testovani Projekt_Morseovka."""
 
 import unittest
 from Projekt_Morseovka import encrypt
@@ -7,13 +7,11 @@ from Projekt_Morseovka import choice
 
 
 class Morseovka_Test(unittest.TestCase):
-    """
-    Unit test - Latin to Morse function
-    """
+    """Unit test - Latin to Morse function"""
 
 
 def test_encrypt_1(self):
-    # encrypting a word Morseovka
+    """encrypting a word Morseovka"""
     assert encrypt("Ondra") == ".../-./-../.-./.- "
 
     """
@@ -22,7 +20,7 @@ def test_encrypt_1(self):
 
 
 def test_encrypt_2(self):
-    # encrypting number Morseovka
+    """encrypting number Morseovka"""
     assert encrypt("1234") == ".----/..---/...--/....-"
 
     """
@@ -31,7 +29,7 @@ def test_encrypt_2(self):
 
 
 def test_decrypt_1(self):
-    # encrypting Morse to Latin Characters
+    """encrypting Morse to Latin Characters"""
     assert decrypt(".../-./-../.-./.-") == "Ondra"
 
     """
@@ -40,7 +38,7 @@ def test_decrypt_1(self):
 
 
 def test_decrypt_2(self):
-    # encrypting Morse to Latin Numbers
+    """encrypting Morse to Latin Numbers"""
     assert decrypt(".---- ..--- ...-- ....-") == "1234"
 
     """
@@ -49,5 +47,5 @@ def test_decrypt_2(self):
 
 
 def test_choice_1(self):
-    
+    """test choosing translation"""
     assert choice("1") == "1"
