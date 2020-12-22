@@ -1,4 +1,6 @@
 """Morse encoder/decoder tests."""
+from io import StringIO
+
 import morse
 
 
@@ -106,10 +108,10 @@ def test_morse_dec0():
     """
     Decoding test 0.
 
-    Input: ".- .... --- .---"
-    Output: "ahoj"
+    Input: ".- .... --- .--- ..--.."
+    Output: "ahoj?"
     """
-    assert morse.morse_decode(".- .... --- .---") == "ahoj"
+    assert morse.morse_decode(".- .... --- .--- ..--..") == "ahoj?"
 
 
 def test_morse_dec1():
@@ -176,10 +178,10 @@ def test_morse_dec9():
     """
     Decoding test 9.
 
-    Input: ".-- -..- .-.. -. -....-"
-    Output: "wxln-"
+    Input: ".-- -..- .-.. -. -....- /"
+    Output: "wxln- "
     """
-    assert morse.morse_decode(".-- -..- .-.. -. -....-") == "wxln-"
+    assert morse.morse_decode(".-- -..- .-.. -. -....- /") == "wxln- "
 
 
 def test_morse_dec10():
@@ -190,3 +192,53 @@ def test_morse_dec10():
     Output: "izy=.,"
     """
     assert morse.morse_decode(".. --.. -.-- -...- .-.-.- --..--") == "izy=.,"
+
+
+def test_main_encode(monkeypatch, capsys):
+    """
+    Encode test for main fcion.
+
+    Input (1 - choice):   "e"
+    Input (2 - txtInput): "Test" (Virtual input)
+    Output:               "- . ... -"
+    """
+    monkeypatch.setattr('sys.stdin', StringIO('e\nTest\n'))
+
+    morse.main()
+    output = capsys.readouterr().out
+    output = output.split('\n')
+
+    assert output[5] == '- . ... -'
+
+
+def test_main_decode(monkeypatch, capsys):
+    """
+    Decode test for main fcion.
+
+    Input (1 - choice):     "d"
+    Input (2 - txtInput):   "- . ... -" (Virtual input)
+    Output:                 "test"
+    """
+    monkeypatch.setattr('sys.stdin', StringIO('d\n- . ... -\n'))
+
+    morse.main()
+    output = capsys.readouterr().out
+    output = output.split('\n')
+
+    assert output[5] == 'test'
+
+
+def test_main_error(monkeypatch, capsys):
+    """
+    Fail test for main fcion.
+
+    Input (1 - choice):     "z" (Intentionally wrong)
+    Output:                 "Exiting..."
+    """
+    monkeypatch.setattr('sys.stdin', StringIO('z\n'))
+
+    morse.main()
+    output = capsys.readouterr().out
+    output = output.split('\n')
+
+    assert output[5] == 'Exiting...'
