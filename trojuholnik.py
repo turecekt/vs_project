@@ -103,7 +103,7 @@ def vypis(x1, y1, x2, y2, x3, y3):
     a = vypocetStrany(x1, y1, x2, y2)
     b = vypocetStrany(x2, y2, x3, y3)
     c = vypocetStrany(x3, y3, x1, y1)
-    print("Dlzky stran: ")
+    print("Dlzky stran:")
     print("{:.2f}".format(a))
     print("{:.2f}".format(b))
     print("{:.2f}".format(c))
