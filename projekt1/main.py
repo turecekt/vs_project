@@ -6,6 +6,8 @@ Uživatel může zadat velká i malá písmena bez diakritiky, čísla i jiné z
 Na výstupu uživatel získá zašifrovaný nebo rozšifrovaný text.
 """
 # Knihovna Morseovy Abecedy
+import string
+
 MORSE_CODE = {'A': '.-', 'B': '-...',
               'C': '-.-.', 'D': '-..', 'E': '.',
               'F': '..-.', 'G': '--.', 'H': '....',
@@ -18,7 +20,7 @@ MORSE_CODE = {'A': '.-', 'B': '-...',
               '1': '.----', '2': '..---', '3': '...--',
               '4': '....-', '5': '.....', '6': '-....',
               '7': '--...', '8': '---..', '9': '----.',
-              '0': '-----', ', ': '--..--', '.': '.-.-.-',
+              '0': '-----', ',': '--..--', '.': '.-.-.-',
               '?': '..--..', '/': '-..-.', '-': '-....-',
               '(': '-.--.', ')': '-.--.-'}
 
@@ -61,22 +63,32 @@ def rozsifrovani(zprava):
                 text += ' '
             else:
                 # Přístup ke knihovně morseovy abecedy přes hodnoty znaku
-                text += list(MORSE_CODE.keys())[list(MORSE_CODE.values()).index(citext)]
+                text += list(MORSE_CODE.keys())[
+                            list(MORSE_CODE.values()).index(citext)
+                        ]
                 citext = ''
 
-    return text  # Funkce vrátí přeloženou zprávu
+    return text  # Funkce vrátí přeloženou zprávuS
 
 
 def main():
-    print("Vlož text (bez diakritiky):")    # Vypsání zprávy na konzoli
-    zprava = input()    #Načtení zprávy z konzole a přiřazení
-    if zprava[0] in (".", "-"): # Pokud zpráva začíná "." nebo "-" program zavolá funkci rozsifrovani
+    print("Vlož text (bez diakritiky):")  # Vypsání zprávy na konzoli
+    zprava = input()  # Načtení zprávy z konzole a přiřazení
+    if zprava[0] in (".", "-"):  # Pokud zpráva začíná "." nebo "-" program zavolá funkci rozsifrovani
         result = rozsifrovani(zprava)
-    else:   #Pokud zprána nezačíná "." nebo "-" znamená to že je zpráva napsáná klasickou abecedou a program zavolá funkci zasifrovani
-        zprava = zprava.upper() # Převede zprávu z konzole na velká písmena
+    else:  # Pokud zprána nezačíná "." nebo "-" znamená to že je zpráva napsáná klasickou abecedou a program zavolá funkci zasifrovani
+        zprava = zprava.upper()  # Převede zprávu z konzole na velká písmena
         result = zasifrovani(zprava)
 
-    print(result)   # Program vypíše výsledek na konzoli
+    print(result)  # Program vypíše výsledek na konzoli
+
+
+def testMorseDoTextu(zprava):
+    zprava = "SOS"
+    zprava = zprava.upper()
+    result = zasifrovani(zprava)
+    assert result == "... --- ..", "SOS je ... --- ..."
+
 
 # Ukončení main funkce
 if __name__ == '__main__':
