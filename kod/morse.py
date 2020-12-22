@@ -19,7 +19,7 @@ code = {' ': '|', 'A': '.-', 'B': '-...',
 
 
 def encryptor(text):
-    """Zadefinovanie premennej"""
+    """Zadefinovanie premennej."""
     encrypted_text = ""
 
     """Prekladanie individualnych charakterov klasickej
@@ -36,7 +36,7 @@ def encryptor(text):
 
 def decryptor(text):
     """Zadefinovanie premennej + ziskanie klucu a
-    hodnoty zo slovniku"""
+    hodnoty zo slovniku."""
     text += " "
     key_list = list(code.keys())
     value_list = list(code.values())
@@ -44,7 +44,7 @@ def decryptor(text):
     normal = ""
     """Preklad individualnych Morseovych znakov
     do regularnej abecedy vratane podmienok pre
-    oddelovanie"""
+    oddelovanie."""
     for x in text:
         if x != " ":
             morse += x
@@ -61,7 +61,7 @@ def decryptor(text):
 
 
 """Otvorenie dialogu, uzivatel pomocou klavesy 1 a 2
-zvoli, ci chce prekladat z, alebo do Morseoveho kodu"""
+zvoli, ci chce prekladat z, alebo do Morseoveho kodu."""
 if __name__ == '__main__':
     ch = input("\nAk chcete prekladat text do Morseovky, stlačte '1'."
                "\n\nAk chcete preložiť Morse Code stlačte '2'.\n")
