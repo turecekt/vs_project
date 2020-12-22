@@ -48,7 +48,8 @@ def morse_decode(var_inp2):
         if char_inp != ' ':
             tmpWord += char_inp
         else:
-            strInpMorse += list(morseList.keys())[list(morseList.values()).index(tmpWord)]
+            strInpMorse += list(morseList.keys())[
+                list(morseList.values()).index(tmpWord)]
             tmpWord = ''
 
         charCnt += 1
@@ -60,8 +61,6 @@ def main():
     """
     Main function.
 
-    Asking user to select (encode/decode)
-    Asking user to input text (to encode/decode)
     Without return value
     """
     strChoice = input('Morse Encoder/Decoder\n'
