@@ -99,6 +99,18 @@ def vypis(x1, y1, x2, y2, x3, y3):
     1.41
     2.83
     Trojuholnik sa neda zostrojit
+    
+    >>> vypis(0, 0, 1, 0, 0, 1)
+    Dlzky stran:
+    1.00
+    1.41
+    1.00
+    Trojuholnik sa da zostrojit
+    Obvod: 
+    3.41
+    Obsah: 
+    0.50
+    Nie je pravouhly
     """
     a = vypocetStrany(x1, y1, x2, y2)
     b = vypocetStrany(x2, y2, x3, y3)
