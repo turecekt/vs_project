@@ -32,12 +32,7 @@ def zostrojitelnost(a, b, c):
 
 
 def pravouhlost(a, b, c):
-    """
-    Zisti pravouhlost trojuholnika zo zadanych troch stran.
-
-    >>> pravouhlost(5, 8, 9)
-    Nie je pravouhly
-    """
+    """Zisti pravouhlost trojuholnika zo zadanych troch stran."""
     if((a > 0 and b > 0 and c > 0)
        and (a**2 == b**2+c**2 or b**2 == c**2+a**2 or c**2 == a**2+b**2)):
         return "Je pravouhly"
