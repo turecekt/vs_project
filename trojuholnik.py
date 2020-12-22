@@ -128,3 +128,8 @@ def test_obvod():
 def test_obsah():
     """Testuje funkciu obsah."""
     assert obsah(1.00, 1.41, 1.0) == 0.50
+
+
+def test_pravouhlost():
+    """Testuje funkciu pravouhlost."""
+    assert pravouhlost(1.00, 1.41, 1.3) == "Nie je pravouhly"
