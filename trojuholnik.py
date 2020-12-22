@@ -99,16 +99,16 @@ def vypis(x1, y1, x2, y2, x3, y3):
     1.41
     2.83
     Trojuholnik sa neda zostrojit
-    
+
     >>> vypis(0, 0, 1, 0, 0, 1)
     Dlzky stran:
     1.00
     1.41
     1.00
     Trojuholnik sa da zostrojit
-    Obvod: 
+    Obvod:
     3.41
-    Obsah: 
+    Obsah:
     0.50
     Nie je pravouhly
     """
@@ -121,9 +121,9 @@ def vypis(x1, y1, x2, y2, x3, y3):
     print("{:.2f}".format(c))
     if(zostrojitelnost(a, b, c)):
         print("Trojuholnik sa da zostrojit")
-        print("Obvod: ")
+        print("Obvod:")
         print("{:.2f}".format(obvod(a, b, c)))
-        print("Obsah: ")
+        print("Obsah:")
         print("{:.2f}".format(obsah(a, b, c)))
         print(pravouhlost(a, b, c))
     else:
