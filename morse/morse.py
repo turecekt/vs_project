@@ -1,5 +1,5 @@
 """Morse encoder/decoder."""
-from unidecode import unidecode
+import unidecode
 
 morseList = {'a': ".-", 'b': "-...", 'c': "-.-.", 'd': "-..",
              'e': ".", 'f': "..-.", 'g': "--.", 'h': "....",
@@ -22,7 +22,7 @@ def morse_code(var_inp):
     Returns encoded string
     """
     var_inp = var_inp.lower()
-    var_inp = unidecode(var_inp)
+    var_inp = unidecode.unidecode(var_inp)
     strInpMorse = ""
 
     for char_inp in var_inp:
