@@ -55,8 +55,7 @@ def decryptor(text):
             else:
                 normal = normal + key_list[value_list.index(morse)]
                 morse = ""
-    """Vypis textu"""
-    print("\nText prelozeny z Morseovky je:", normal)
+    return normal
 
 
 """Otvorenie dialogu, uzivatel pomocou klavesy 1 a 2
@@ -68,9 +67,11 @@ if __name__ == '__main__':
         text_to_encrypt = input("Zadajte text, ktorý chcete "
                                 "preložiť do Morseovky: ")
         encryptor(text_to_encrypt)
-        text2 = encryptor(text_to_encrypt)
-        print("\nText prelozeny do Morseovky je:", text2)
+        textenc = encryptor(text_to_encrypt)
+        print("\nText prelozeny do Morseovky je:", textenc)
     else:
         text_to_decrypt = input("Zadajte text, ktorý chcete "
                                 "preložiť z Morseovky: ")
         decryptor(text_to_decrypt)
+        textdec = decryptor(text_to_decrypt)
+        print("\nText prelozeny z Morseovky je:", textdec)
