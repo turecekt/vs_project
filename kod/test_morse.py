@@ -25,14 +25,11 @@ def test_encrypt():
 
 
 def test_decrypt():
-    """Overenie toho, ze prekladac dokaze prelozit znaky
-    z Morse Kodu do abecedy."""
+    """Preklad znakov z Morse Kodu do abecedy."""
     assert morse.decryptor('.-') == 'A'
 
-    """Overenie toho, ze prekladac dokaze prelozit slova
-    z Morse Kodu do abecedy."""
+    """Preklad slov z Morse Kodu do abecedy."""
     assert morse.decryptor('... .-.. --- ...- ---') == 'SLOVO'
 
-    """Overenie toho, ze prekladac dokaze prelozit symboly
-    z Morse Kodu do abecedy."""
+    """Preklad symbolov z Morse Kodu do abecedy."""
     assert morse.decryptor('..--.. -..-. -....- .-.-.-') == '?/-.'
