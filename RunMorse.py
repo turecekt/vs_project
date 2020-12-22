@@ -32,7 +32,8 @@ def encrypt(translate):
 
 def decrypt(translate):
     """Dekodovani morseovky do textu."""
-    global n
+    n = 0
+
     promena = ''
     translate += ' '
     word = ''
