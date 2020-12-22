@@ -49,4 +49,3 @@ class Test(TestCase):
                          ("-.. --- -... .-. -.--  -.. . -. --..--"
                           "  .--- .- -.-  ... .  -- .- - . ..--.. "),
                            "DOBRY DEN, JAK SE MATE? ", "OK")
-    # KONEC testu.
