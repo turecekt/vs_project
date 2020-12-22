@@ -22,3 +22,17 @@ def test_encrypt():
     pomocou malych pismen)"""
     assert morse.encryptor('male na velke') \
            == '-- .- .-.. . | -. .- | ...- . .-.. -.- . '
+
+
+def test_decrypt():
+    """Overenie toho, ze prekladac dokaze prelozit znaky
+    z Morse Kodu do abecedy."""
+    assert morse.decryptor('.-') == 'A'
+
+    """Overenie toho, ze prekladac dokaze prelozit slova
+    z Morse Kodu do abecedy."""
+    assert morse.decryptor('... .-.. --- ...- ---') == 'SLOVO'
+
+    """Overenie toho, ze prekladac dokaze prelozit symboly
+    z Morse Kodu do abecedy."""
+    assert morse.decryptor('..--.. -..-. -....- .-.-.-') == '?/-.'
