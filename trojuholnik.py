@@ -58,7 +58,7 @@ def obvod(a, b, c):
 def obsah(a, b, c):
     """
     Vypocita obsah trojuholnika.
-    
+
     Pouzijeme Heronov vzorec.
     """
     if(zostrojitelnost(a, b, c)):
