@@ -1,12 +1,12 @@
-"""
-Tento Program slouží k překládání textu do morseovy abecedy a zpět.
-Uživatel zadá libovolný text do konzole, algoritmus rozpozná jestli je
-na vstupu zadána zpráva v morseově abecedě nebo pomocí znaků klasické abecedy.
-Uživatel může zadat velká i malá písmena bez diakritiky, čísla i jiné znaky.
-Na výstupu uživatel získá zašifrovaný nebo rozšifrovaný text.
-"""
+"""MORSEOVA ABECEDA."""
+# Tento Program slouží k překládání textu do morseovy abecedy a zpět.
+# Uživatel zadá libovolný text do konzole, algoritmus rozpozná jestli je
+# na vstupu zadána zpráva v morseově abecedě nebo pomocí znaků klasické abecedy
+# Uživatel může zadat velká i malá písmena bez diakritiky, čísla i jiné znaky.
+# Na výstupu uživatel získá zašifrovaný nebo rozšifrovaný text.
+
 # Knihovna Morseovy Abecedy
-import string
+# import string
 
 MORSE_CODE = {'A': '.-', 'B': '-...',
               'C': '-.-.', 'D': '-..', 'E': '.',
@@ -25,21 +25,25 @@ MORSE_CODE = {'A': '.-', 'B': '-...',
               '(': '-.--.', ')': '-.--.-'}
 
 
-# Funkce, která zajištuje zašifrování prostého textu do Morseovy abecedy
 def zasifrovani(zprava):
+    """Funkce, která zašifruje prostý text do Morseovy abecedy."""
+    zprava = zprava.upper()  # Převede zprávu z konzole na velká písmena
     sifra = ''
     for pismeno in zprava:
         if pismeno != ' ':  # Pokud je ve zprávě písmeno,
-            sifra += MORSE_CODE[pismeno] + ' '  # program vloží příslušný kod z Morseovy abecedy
+            sifra += MORSE_CODE[pismeno] + ' '
+            # program vloží příslušný kod z Morseovy abecedy
         else:
 
-            sifra += ' '  # Pokud je ve zprávě mezera, program vloží mezeru mezi znaky
+            sifra += ' '
+            # Pokud je ve zprávě mezera, program vloží mezeru mezi znaky
 
     return sifra  # Funkce vrátí přeloženou zprávu
 
 
-# Funkce která zajištuje rozšifrování textu z Morseovy abecedy
 def rozsifrovani(zprava):
+    """Funkce která zajištuje rozšifrování textu z Morseovy abecedy."""
+    global i
     zprava += ' '  # Přidána mezera na konec zprávy,
 
     text = ''
@@ -52,7 +56,6 @@ def rozsifrovani(zprava):
 
             citext += pismeno  # Ukládání morseovky po jednom znaku
 
-
         else:
             # Pokud i=1, znamená to nový znak
             # Pokud i=2, znamená to nové slovo
@@ -63,6 +66,7 @@ def rozsifrovani(zprava):
                 text += ' '
             else:
                 # Přístup ke knihovně morseovy abecedy přes hodnoty znaku
+# HEAD
                 text += list(MORSE_CODE.keys())[
                             list(MORSE_CODE.values()).index(citext)
                         ]
@@ -82,12 +86,45 @@ def main():
 
     print(result)  # Program vypíše výsledek na konzoli
 
-
+"""
 def testMorseDoTextu(zprava):
     zprava = "SOS"
     zprava = zprava.upper()
     result = zasifrovani(zprava)
     assert result == "... --- ..", "SOS je ... --- ..."
+
+                text += list(MORSE_CODE.keys())[
+                             list(MORSE_CODE.values()).index(citext)
+                        ]
+                citext = ''
+
+    return text
+    # Funkce vrátí přeloženou zprávu
+"""
+
+def main():
+    """Hlavni funkce, ktera slouzi k vypisu."""
+    print("Vlož text (bez diakritiky):")  # Vypsání zprávy na konzoli
+    zprava = input()  # Načtení zprávy z konzole a přiřazení
+    if not zprava:
+        print("Musite zadat zpravu")
+        # Kdyz uzivatel nic nevypise do kodu, vypise mu chybnou zpravu
+    else:
+
+        if zprava[0] in (".", "-"):
+            # Pokud zpráva začíná "." nebo "-"
+            # program zavolá funkci rozsifrovani
+            result = rozsifrovani(zprava)
+
+        else:
+            # Pokud zpráva nezačíná "." nebo "-"
+            # znamená to že je zpráva napsáná klasickou abecedou
+            # a program zavolá funkci zasifrovani
+            result = zasifrovani(zprava)
+
+        print(result)
+        # Program vypíše výsledek na konzoli
+
 
 
 # Ukončení main funkce
