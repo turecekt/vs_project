@@ -123,3 +123,8 @@ if __name__ == '__main__':
 def test_obvod():
     """Testuje funkciu obvod."""
     assert obvod(6, 3, 4) == 13
+
+
+def test_obsah():
+    """Testuje funkciu obsah."""
+    assert obsah(1.00, 1.41, 1.0) == 0.50
