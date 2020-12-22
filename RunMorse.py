@@ -76,7 +76,7 @@ def main():
         result = encrypt(translate.lower())
         print(result)
 
-    if choice == "2":
+    elif choice == "2":
         print("Tip: Copy a code from the last word/sentence")
         translate = input("Add morse code: ")
         result = decrypt(translate)
