@@ -60,11 +60,11 @@ def obsah(a, b, c):
     Vypocita obsah trojuholnika pomocou Heronovho vzorca.
 
     >>> obsah(6,7,8)
-    15.491933384829668
+    15.492
     """
     if(zostrojitelnost(a, b, c)):
         p = (a + b + c) / 2
-        obsah = math.sqrt(p * (p - a) * (p - b) * (p - c))
+        obsah = round(math.sqrt(p * (p - a) * (p - b) * (p - c)), 3)
         return obsah
 
 
