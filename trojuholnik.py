@@ -132,4 +132,4 @@ def test_obsah():
 
 def test_pravouhlost():
     """Testuje funkciu pravouhlost."""
-    assert pravouhlost(1.00, 1.41, 1.3) == "Nie je pravouhly"
+    assert pravouhlost(1.00, 1.41, 2) == "Nie je pravouhly"
