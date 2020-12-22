@@ -40,9 +40,9 @@ def pravouhlost(a, b, c):
     """
     if((a > 0 and b > 0 and c > 0)
        and (a**2 == b**2+c**2 or b**2 == c**2+a**2 or c**2 == a**2+b**2)):
-        print("Je pravouhly")
+        return "Je pravouhly"
     else:
-        print("Nie je pravouhly")
+        return "Nie je pravouhly"
 
 
 def obvod(a, b, c):
@@ -111,7 +111,7 @@ def vypis(x1, y1, x2, y2, x3, y3):
         print("{:.2f}".format(obvod(a, b, c)))
         print("Obsah: ")
         print("{:.2f}".format(obsah(a, b, c)))
-        pravouhlost(a, b, c)
+        print(pravouhlost(a, b, c))
     else:
         print("Trojuholnik sa neda zostrojit")
 
