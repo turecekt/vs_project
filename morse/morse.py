@@ -59,7 +59,7 @@ def morse_decode(var_inp2):
 
 def main():
     """
-    Main function.
+    Function for main.
 
     Without return value
     """
