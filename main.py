@@ -14,9 +14,7 @@ def toNumber(value):
     value = "(" + value + ")+0"
     value = value.replace(",", ".")
     value = re.sub('[\w ][^sqrt()0-9+./*-]', '', value)
-    print(value+"pred")
     value = eval(value)
-    print(str(value)+"po")
     return value
 
 class Tris():
@@ -32,19 +30,21 @@ class Tris():
     uhel \u03B3 = uC
     """
 
-    def __init__(self, sA=0, sB=0, sC=0, uA=0, uB=0, uC=0):
+    def __init__(self, hodnoty):
         """
         Konsruktor.
 
         Vytvori promene pro metody a rozhodne jakou metodu vyuzit
         pro vypocitani dalsich promenych
         """
-        self.sA = sA
-        self.sB = sB
-        self.sC = sC
-        self.uA = uA
-        self.uB = uB
-        self.uC = uC
+        self.sA = hodnoty[0][0]
+        self.sB = hodnoty[1][0]
+        self.sC = hodnoty[2][0]
+        self.uA = hodnoty[3][0]
+        self.uB = hodnoty[4][0]
+        self.uC = hodnoty[5][0]
+        self.unitD = hodnoty[0][1]
+        self.unitU = hodnoty[3][1]
 
         if self.sA > 0 and self.sB > 0 and self.sC > 0:
             self.result = self.tris_sss()
@@ -91,9 +91,9 @@ class Tris():
             cosA = (sB ** 2 + sC ** 2 - sA ** 2) / (2 * sB * sC)
             cosB = (sA ** 2 + sC ** 2 - sB ** 2) / (2 * sA * sC)
             cosC = (sA ** 2 + sB ** 2 - sC ** 2) / (2 * sA * sB)
-            uA = round(degrees(math.acos(cosA)), 2)
-            uB = round(degrees(math.acos(cosB)), 2)
-            uC = round(degrees(math.acos(cosC)), 2)
+            uA = round(degrees(acos(cosA)), 2)
+            uB = round(degrees(acos(cosB)), 2)
+            uC = round(degrees(acos(cosC)), 2)
             obsah = round(obsah, 2)
             if uA == uB and uB == uC:
                 return {"obsah": str(obsah) + "cm\u00B2",
@@ -101,23 +101,44 @@ class Tris():
                         "úhel \u03B1, \u03B2, \u03B3": str(uA) + "°",
                         "typ trojúhelníku": "rovnostranný"}
             elif uA == uB:
-                return {"obsah": str(obsah) + "cm\u00B2",
-                        "obvod": str(obvod) + "cm",
-                        "úhel \u03B1, \u03B2": str(uA) + "°",
-                        "úhel \u03B3": str(uC) + "°",
-                        "typ trojúhelníku": "rovnoramenný"}
+                if uC == 90:
+                    return {"obsah": str(obsah) + "cm\u00B2",
+                            "obvod": str(obvod) + "cm",
+                            "úhel \u03B1, \u03B2": str(uA) + "°",
+                            "úhel \u03B3": str(uC) + "°",
+                            "typ trojúhelníku": "rovnoramenný, pravoúhlý"}
+                else:
+                    return {"obsah": str(obsah) + "cm\u00B2",
+                            "obvod": str(obvod) + "cm",
+                            "úhel \u03B1, \u03B2": str(uA) + "°",
+                            "úhel \u03B3": str(uC) + "°",
+                            "typ trojúhelníku": "rovnoramenný"}
             elif uA == uC:
-                return {"obsah": str(obsah) + "cm\u00B2",
-                        "obvod": str(obvod) + "cm",
-                        "úhel \u03B1, \u03B3": str(uA) + "°",
-                        "úhel \u03B2": str(uB) + "°",
-                        "typ trojúhelníku": "rovnoramenný"}
+                if uB == 90:
+                    return {"obsah": str(obsah) + "cm\u00B2",
+                            "obvod": str(obvod) + "cm",
+                            "úhel \u03B1, \u03B3": str(uA) + "°",
+                            "úhel \u03B2": str(uB) + "°",
+                            "typ trojúhelníku": "rovnoramenný, pravoúhlý"}
+                else:
+                    return {"obsah": str(obsah) + "cm\u00B2",
+                            "obvod": str(obvod) + "cm",
+                            "úhel \u03B1, \u03B3": str(uA) + "°",
+                            "úhel \u03B2": str(uB) + "°",
+                            "typ trojúhelníku": "rovnoramenný"}
             elif uB == uC:
-                return {"obsah": str(obsah) + "cm\u00B2",
-                        "obvod": str(obvod) + "cm",
-                        "úhel \u03B1": str(uA) + "°",
-                        "úhel \u03B2, \u03B3": str(uB) + "°",
-                        "typ trojúhelníku": "rovnoramenný"}
+                if uA == 90:
+                    return {"obsah": str(obsah) + "cm\u00B2",
+                            "obvod": str(obvod) + "cm",
+                            "úhel \u03B1": str(uA) + "°",
+                            "úhel \u03B2, \u03B3": str(uB) + "°",
+                            "typ trojúhelníku": "rovnoramenný, pravoúhlý"}
+                else:
+                    return {"obsah": str(obsah) + "cm\u00B2",
+                            "obvod": str(obvod) + "cm",
+                            "úhel \u03B1": str(uA) + "°",
+                            "úhel \u03B2, \u03B3": str(uB) + "°",
+                            "typ trojúhelníku": "rovnoramenný"}
             elif uA == 90 or uB == 90 or uC == 90:
                 return {"obsah": str(obsah) + "cm\u00B2",
                         "obvod": str(obvod) + "cm",
@@ -156,10 +177,10 @@ class Uprava_jednotek():
         self.unuC = unuC
         self.prevod_delky()
         self.prevod_stupne()
+       
         self.__dict__()   
         
     def __dict__(self):
-        
         return {0: (self.sA, self.unitD),
                 1: (self.sB, self.unitD),
                 2: (self.sC, self.unitD),
@@ -198,7 +219,7 @@ class Uprava_jednotek():
         elif self.unsB == "" and self.unsC == "" and self.unsA != "":
             self.unitD = self.unsA
         else:
-            self.unitD = ""
+            self.unitD = "m"
         i = 0
         self.unitD = self.delka_to_int(self.unitD)
         tmp = self.unitD
@@ -306,6 +327,8 @@ class Uprava_jednotek():
             self.unitU = self.unuB
         elif self.unuB == "" and self.unuC == "" and self.unuA != "":
             self.unitU = self.unuA
+        else:
+            self.unitU = "\xb0"
         
             
     def dva_uhly(self, uhel1, uhel2, u1, u2):
@@ -405,6 +428,7 @@ class Gui(tk.Tk):
         self.value_render()
         self.image_render()
         self.app.mainloop()
+        
 
     def checkbox_render(self):
         """Stylování a vykreslování checkboxu."""
@@ -582,13 +606,12 @@ class Gui(tk.Tk):
         myrow = radek
         mycolumn = pocatecni sloupec
         """
-        
         tk.Label(self.frame, text=txt, bg="#1d1d1d", fg="white", bd=5,
-                 anchor="n").grid(row=myrow, column=mycolumn, sticky="ne")
+                 anchor="n").grid(row=myrow, column=mycolumn, sticky="w")
         tk.Spinbox(self.frame, bg="green", fg="white", from_=0.1,
                    to=10000, buttonbackground="#1d1d1d", increment=0.05,
-                   width=10, textvariable=var
-                   ).grid(row=myrow, sticky="we", column=mycolumn+1)
+                   width=30, textvariable=var
+                   ).grid(row=myrow, sticky="w", column=mycolumn+1)
         if values == 0:
             ol = ("mm", "cm","dm","m", "km")
             unit.set("m")
@@ -616,27 +639,24 @@ class Gui(tk.Tk):
             self.om.grid(row=myrow, column=mycolumn+2, sticky="w", pady=2)
         if self.count ==3:
             tk.Button(self.frame,text="Vypočítej", bg ="green", fg="white",
-                      padx=185, pady=15, relief="flat",
+                      padx=190, pady=15, relief="flat",
                       activebackground="#7daa7d", activeforeground="white",
                       command=self.get_values, state="normal"
-                      ).grid(row=3, column=3, columnspan=3, sticky="wn")
+                      ).grid(row=3, column=3, columnspan=3, sticky="w")
         else:
             tk.Button(self.frame,text="Vypočítej", bg ="#2d2d2d", fg="white",
-                      padx=185, pady=15, relief="flat", state="disabled",
+                      padx=190, pady=15, relief="flat", state="disabled",
                       command=self.get_values
-                      ).grid(row=3, column=3, columnspan=3, sticky="wn")
+                      ).grid(row=3, column=3, columnspan=3, sticky="w")
         
             
     def right_panel_render(self):
         self.frame = tk.Frame(self.app, width=450, bg="#1d1d1d")
-        self.frame.grid(column=4, row=0, columnspan=6, rowspan = 5,
+        self.frame.grid(column=0, row=4, columnspan=6, rowspan = 5,
                         sticky="wn")
-        self.frame.grid_columnconfigure(3, minsize=250)
-        self.frame.grid_columnconfigure(4, minsize=50)
-        self.frame.grid_columnconfigure(5, minsize=50)
         if self.count > 0:
-            self.app.minsize(900, 502)
-            self.app.maxsize(900, 502)
+            self.app.minsize(450, 680)
+            self.app.maxsize(450, 700)
         
             
             
@@ -862,17 +882,15 @@ class Gui(tk.Tk):
                   ).grid(row=3, column=3, columnspan=3, sticky="wn")
         
     def get_values(self):
-        self.myinput = Uprava_jednotek(self.sA.get(), self.sB.get(),
+        myInput = Uprava_jednotek(self.sA.get(), self.sB.get(),
                                      self.sC.get(), self.uA.get(),
                                      self.uB.get(), self.uC.get(),
                                      self.unsA.get(), self.unsB.get(),
                                      self.unsC.get(), self.unuA.get(),
                                      self.unuB.get(), self.unuC.get())
-        self.myinput = self.myinput.__dict__()
-        for x in self.myinput:
-            print(self.myinput[x][0], end = "")
-            print(self.myinput[x][1],)    
-            
+        myInput = myInput.__dict__()
+        myOutput = Tris(myInput)  
+        print(myOutput)     
 
 if __name__ == "__main__":
     Gui()
