@@ -3,22 +3,22 @@
 import morse
 
 
-def test_skuska1():
+def test_encrypt():
     """Overenie toho, ze prekladac dokaze prelozit individualne znaky."""
-    assert morse.prekladac('A') == '.- '
+    assert morse.encryptor('A') == '.- '
 
     """Overenie toho, ze prekladac dokaze prelozit cele slova."""
-    assert morse.prekladac('SKUSKA2') == '... -.- ..- ... -.- .- ..--- '
+    assert morse.encryptor('SKUSKA2') == '... -.- ..- ... -.- .- ..--- '
 
     """Overenie toho, ze prekladac dokaze prelozit medzery v texte."""
-    assert morse.prekladac('M E D Z E R E') \
+    assert morse.encryptor('M E D Z E R E') \
            == '-- | . | -.. | --.. | . | .-. | . '
 
     """Overenie toho, ze prekladac dokaze prelozit symboly v texte."""
-    assert morse.prekladac(',?YM80LY/') \
+    assert morse.encryptor(',?YM80LY/') \
            == '--..-- ..--.. -.-- -- ---.. ----- .-.. -.-- -..-. '
 
     """Overenie toho, ze prekladac dokaze prelozit cele vety pisane
     pomocou malych pismen)"""
-    assert morse.prekladac('male na velke') \
+    assert morse.encryptor('male na velke') \
            == '-- .- .-.. . | -. .- | ...- . .-.. -.- . '
