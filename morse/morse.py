@@ -56,24 +56,27 @@ def morse_decode(var_inp2):
     return strInpMorse
 
 
-if __name__ == '__main__':
-    print('Morse Encoder/Decoder')
-    print('d for decode')
-    print('e for encode')
-    print('Enter what you want to do: ')
-    strChoice = input()
+def main():
+    """
+    Main function.
+
+    Asking user to select (encode/decode)
+    Asking user to input text (to encode/decode)
+    Without return value
+    """
+    strChoice = input('Morse Encoder/Decoder\n'
+                      ' d for decode \n'
+                      ' e for encode \n'
+                      'Enter what you want to do: \n')
     if strChoice == 'e':
-        print('Enter text to encode: ')
-        strInp = input()
-        strInpOrg = strInp
-        var = morse_code(strInp)
-        print(var)
+        strInp = input('Enter text to encode: \n')
+        print(morse_code(strInp))
     elif strChoice == 'd':
-        print('Enter text to decode: ')
-        strInp = input()
-        strInpOrg = strInp
-        var = morse_decode(strInp)
-        print(var)
+        strInp = input('Enter text to decode: \n')
+        print(morse_decode(strInp))
     else:
-        print('Wrong choice...')
-        print('Exiting...')
+        print('Wrong choice...\nExiting...')
+
+
+if __name__ == '__main__':
+    main()
