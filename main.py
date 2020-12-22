@@ -9,9 +9,14 @@ import re
 import tkinter as tk
 
 def toNumber(value):
+    if value == "":
+        value = "0"
+    value = "(" + value + ")+0"
     value = value.replace(",", ".")
-    value = re.sub('[\w][^sqrt()0-9+.]', '', value)
+    value = re.sub('[\w ][^sqrt()0-9+./*-]', '', value)
+    print(value+"pred")
     value = eval(value)
+    print(str(value)+"po")
     return value
 
 class Tris():
@@ -149,18 +154,25 @@ class Uprava_jednotek():
         self.unuA = unuA
         self.unuB = unuB
         self.unuC = unuC
-        print(self.prevod_delky())
-        self.vrat()   
+        self.prevod_delky()
+        self.prevod_stupne()
+        self.__dict__()   
         
-    def vrat(self):
-        return self.prevod_delky() 
+    def __dict__(self):
+        
+        return {0: (self.sA, self.unitD),
+                1: (self.sB, self.unitD),
+                2: (self.sC, self.unitD),
+                3: (self.uA, self.unitU),
+                4: (self.uB, self.unitU),
+                5: (self.uC, self.unitU)}
     
     def prevod_delky(self):
         if self.unsA != "" and self.unsB != "" and self.unsC !="":
             (self.unsA, self.unsB,
             self.sA, self.sB) = self.dve_strany(self.unsA, self.unsB,
                                                self.sA, self.sB)
-            if self.unitD != self.unsC:
+            if self.unsA != self.unsC:
                 (self.unsA, self.unsC,
                 self.sA, self.sC) = self.dve_strany(self.unsA, self.unsC,
                                                    self.sA, self.sC)
@@ -193,12 +205,12 @@ class Uprava_jednotek():
         while i < 1:
             if (not self.sA % 10) and (not self.sB % 10
                                        ) and (not self.sC % 10):
-                if tmp < 3:
+                if tmp < 4:
                     self.unitD +=1
                     self.sA /= 10
                     self.sB /= 10
                     self.sC /= 10
-                elif tmp == 6:
+                elif tmp == 7:
                     self.unitD +=3
                     self.sA /= 1000
                     self.sB /= 1000
@@ -210,9 +222,7 @@ class Uprava_jednotek():
             else:
                 i += 1
         self.unitD = self.int_to_delka(self.unitD)
-        return {0: (self.sA, self.unitD),
-                1: (self.sB, self.unitD),
-                2: (self.sC, self.unitD)}
+        
     
                         
     def dve_strany(self, strana1, strana2, s1, s2):
@@ -235,35 +245,113 @@ class Uprava_jednotek():
             self.unitD = self.int_to_delka(strana1)
         
         return strana1, strana2, s1, s2 
-            
-
-        
 
     def delka_to_int(self, myunit):
         if myunit == "mm":
-            myunit = 0                  
+            myunit = 1                  
         elif myunit == "cm":
-            myunit = 1
-        elif myunit == "dm":
             myunit = 2
-        elif myunit == "m":
+        elif myunit == "dm":
             myunit = 3
+        elif myunit == "m":
+            myunit = 4
         elif myunit == "km":
-            myunit = 6
+            myunit = 7
+        elif myunit == "":
+            myunit = 0
         return myunit
     
     def int_to_delka(self, myunit):
-        if myunit == 0:
+        if myunit == 1:
             myunit = "mm"
-        elif myunit == 1:
-            myunit = "cm"
         elif myunit == 2:
-            myunit = "dm"
+            myunit = "cm"
         elif myunit == 3:
+            myunit = "dm"
+        elif myunit == 4:
             myunit = "m"
-        elif myunit == 6:
+        elif myunit == 7:
             myunit = "km"
+        elif myunit == 0:
+            myunit == ""
         return myunit
+    
+    def prevod_stupne(self):
+        if self.unuA != "" and self.unuB != "" and self.unuC != "":
+            (self.unuA, self.unuB,
+             self.uA, self.uB)= self.dva_uhly(self.unuA, self.unuB,
+                                              self.uA, self.uB)
+            if self.unitU != self.unuC:
+                (self.unuA, self.unuC,
+                 self.uA, self.uC)= self.dva_uhly(self.unuA, self.unuC,
+                                                  self.uA, self.uC)
+                (self.unuB, self.unuC,
+                 self.uB, self.uC)= self.dva_uhly(self.unuB, self.unuC,
+                                                  self.uB, self.uC)
+        elif self.unuA != "" and self.unuB != "":
+            (self.unuA, self.unuB,
+             self.uA, self.uB)= self.dva_uhly(self.unuA, self.unuB,
+                                              self.uA, self.uB)
+        elif self.unuA != "" and self.unuC != "":
+            (self.unuA, self.unuC,
+             self.uA, self.uC)= self.dva_uhly(self.unuA, self.unuC,
+                                              self.uA, self.uC)
+        elif self.unuB != "" and self.unuC != "":
+            (self.unuB, self.unuC,
+             self.uB, self.uC)= self.dva_uhly(self.unuB, self.unuC,
+                                              self.uB, self.uC)
+        elif self.unuA == "" and self.unuB == "" and self.unuC != "":
+            self.unitU = self.unuC
+        elif self.unuA == "" and self.unuC == "" and self.unuB != "":
+            self.unitU = self.unuB
+        elif self.unuB == "" and self.unuC == "" and self.unuA != "":
+            self.unitU = self.unuA
+        
+            
+    def dva_uhly(self, uhel1, uhel2, u1, u2):
+        if uhel1 !=uhel2:
+            uhel1 = self.uhel_to_int(uhel1)
+            uhel2 = self.uhel_to_int(uhel2)
+            if uhel1 == 3:
+                u1 *= pi
+                uhel1 = 2
+            elif uhel2 == 3:
+                u2 *= pi
+                uhel2 = 2
+            if uhel1 == 2 and uhel2 == 1:
+                u1 = degrees(u1)
+                uhel1 = 1
+            elif uhel1 == 1 and uhel2 == 2:
+                u2 = degrees(u2)
+                uhel2 = 1
+            uhel1 = self.int_to_uhel(uhel1)
+            uhel2 = self.int_to_uhel(uhel2)
+        self.unitU = uhel1
+        
+        return uhel1, uhel2, u1, u2
+        
+    def uhel_to_int(self, myunit):
+        if myunit == "\xb0":
+            myunit = 1
+        elif myunit == "rad":
+            myunit = 2
+        elif myunit == "\u03C0 rad":
+            myunit = 3
+        elif myunit == "":
+            myunit = 0
+        return myunit
+    
+    def int_to_uhel(self, myunit):
+        if myunit == 1:
+            myunit = "\xb0"
+        elif myunit == 2:
+            myunit = "rad"
+        elif myunit == 3:
+            myunit = "\u03C0 rad"
+        elif myunit == 0:
+            myunit = ""
+        return myunit
+        
         
 class Gui(tk.Tk):
     """Class pro gui."""
@@ -312,30 +400,7 @@ class Gui(tk.Tk):
         # proměná pro metodu count_of_true()
         self.count = 0
         # volání metody checkbox_render()
-        self.sA = tk.StringVar()
-        self.sB = tk.StringVar()
-        self.sC = tk.StringVar()
-        self.uA = tk.StringVar()
-        self.uB = tk.StringVar()
-        self.uC = tk.StringVar()
-        self.unsA = tk.StringVar()
-        self.unsB = tk.StringVar()
-        self.unsC = tk.StringVar()
-        self.unuA = tk.StringVar()
-        self.unuB = tk.StringVar()
-        self.unuC = tk.StringVar()
-        self.sA.set(0)
-        self.sB.set(0)
-        self.sC.set(0)
-        self.uA.set(0)
-        self.uB.set(0)
-        self.uC.set(0)
-        self.unsA.set("")
-        self.unsB.set("")
-        self.unsC.set("")
-        self.unuA.set("")
-        self.unuB.set("")
-        self.unuC.set("")
+        
         self.checkbox_render()
         self.value_render()
         self.image_render()
@@ -580,6 +645,18 @@ class Gui(tk.Tk):
                  ).grid(row=myrow, column=mycolumn, columnspan=6, sticky="we")
     
     def input_render_choice(self):
+        self.sA = tk.StringVar()
+        self.sB = tk.StringVar()
+        self.sC = tk.StringVar()
+        self.uA = tk.StringVar()
+        self.uB = tk.StringVar()
+        self.uC = tk.StringVar()
+        self.unsA = tk.StringVar()
+        self.unsB = tk.StringVar()
+        self.unsC = tk.StringVar()
+        self.unuA = tk.StringVar()
+        self.unuB = tk.StringVar()
+        self.unuC = tk.StringVar()
         if self.issA.get():
             self.mysA = self.input_render(self.sA, "strana a", 0, 0, 3,
                                           self.unsA)
@@ -710,7 +787,7 @@ class Gui(tk.Tk):
                 self.input_render(self.uA, "úhel \u03B1", 1, 1, 3,
                                   self.unuA)
                 if self.isuB.get():
-                    self.input_render(self.uC, "úhel \u03B3", 1, 2, 3,
+                    self.input_render(self.uB, "úhel \u03B2", 1, 2, 3,
                                       self.unuB)
                     self.submit_button()
                 elif self.isuC.get():
@@ -785,13 +862,16 @@ class Gui(tk.Tk):
                   ).grid(row=3, column=3, columnspan=3, sticky="wn")
         
     def get_values(self):
-        self.delky = Uprava_jednotek(self.sA.get(), self.sB.get(),
+        self.myinput = Uprava_jednotek(self.sA.get(), self.sB.get(),
                                      self.sC.get(), self.uA.get(),
                                      self.uB.get(), self.uC.get(),
                                      self.unsA.get(), self.unsB.get(),
                                      self.unsC.get(), self.unuA.get(),
                                      self.unuB.get(), self.unuC.get())
-                
+        self.myinput = self.myinput.__dict__()
+        for x in self.myinput:
+            print(self.myinput[x][0], end = "")
+            print(self.myinput[x][1],)    
             
 
 if __name__ == "__main__":
