@@ -19,6 +19,7 @@ code = {' ': '|', 'A': '.-', 'B': '-...',
 
 
 def encryptor(text):
+    """Zadefinovanie premennej"""
     encrypted_text = ""
 
     """Prekladanie individualnych charakterov klasickej
@@ -34,6 +35,8 @@ def encryptor(text):
 
 
 def decryptor(text):
+    """Zadefinovanie premennej + ziskanie klucu a
+    hodnoty zo slovniku"""
     text += " "
     key_list = list(code.keys())
     value_list = list(code.values())
