@@ -48,4 +48,5 @@ class Test(TestCase):
         self.assertEqual(rozsifrovani
                          ("-.. --- -... .-. -.--  -.. . -. --..--"
                           "  .--- .- -.-  ... .  -- .- - . ..--.. "),
-                          "DOBRY DEN, JAK SE MATE? ", "OK")
+                           "DOBRY DEN, JAK SE MATE? ", "OK")
+        # KONEC testu
