@@ -1,13 +1,3 @@
-<<<<<<< HEAD
-from unittest import TestCase
-
-from main import zasifrovani
-
-
-class Test(TestCase):
-    def test_main(self):
-        self.assertEqual(zasifrovani("SOS"),"... --- ... ", "OK")
-=======
 """Unit testy pro morseovu abecedu."""
 
 from unittest import TestCase
@@ -59,4 +49,3 @@ class Test(TestCase):
                          ("-.. --- -... .-. -.--  -.. . -. --..--"
                           "  .--- .- -.-  ... .  -- .- - . ..--.. "),
                          "DOBRY DEN, JAK SE MATE? ", "OK")
->>>>>>> f294016d06c3d77df6e2f7c6a4ca847ff3c15dfd

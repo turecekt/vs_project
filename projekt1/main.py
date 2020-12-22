@@ -6,8 +6,6 @@
 # Na výstupu uživatel získá zašifrovaný nebo rozšifrovaný text.
 
 # Knihovna Morseovy Abecedy
-# import string
-
 MORSE_CODE = {'A': '.-', 'B': '-...',
               'C': '-.-.', 'D': '-..', 'E': '.',
               'F': '..-.', 'G': '--.', 'H': '....',
@@ -66,41 +64,13 @@ def rozsifrovani(zprava):
                 text += ' '
             else:
                 # Přístup ke knihovně morseovy abecedy přes hodnoty znaku
-# HEAD
-                text += list(MORSE_CODE.keys())[
-                            list(MORSE_CODE.values()).index(citext)
-                        ]
-                citext = ''
-
-    return text  # Funkce vrátí přeloženou zprávuS
-
-
-def main():
-    print("Vlož text (bez diakritiky):")  # Vypsání zprávy na konzoli
-    zprava = input()  # Načtení zprávy z konzole a přiřazení
-    if zprava[0] in (".", "-"):  # Pokud zpráva začíná "." nebo "-" program zavolá funkci rozsifrovani
-        result = rozsifrovani(zprava)
-    else:  # Pokud zprána nezačíná "." nebo "-" znamená to že je zpráva napsáná klasickou abecedou a program zavolá funkci zasifrovani
-        zprava = zprava.upper()  # Převede zprávu z konzole na velká písmena
-        result = zasifrovani(zprava)
-
-    print(result)  # Program vypíše výsledek na konzoli
-
-"""
-def testMorseDoTextu(zprava):
-    zprava = "SOS"
-    zprava = zprava.upper()
-    result = zasifrovani(zprava)
-    assert result == "... --- ..", "SOS je ... --- ..."
-
-                text += list(MORSE_CODE.keys())[
-                             list(MORSE_CODE.values()).index(citext)
-                        ]
+                text += list(MORSE_CODE.keys())\
+                        [list(MORSE_CODE.values()).index(citext)]
                 citext = ''
 
     return text
     # Funkce vrátí přeloženou zprávu
-"""
+
 
 def main():
     """Hlavni funkce, ktera slouzi k vypisu."""
@@ -124,7 +94,6 @@ def main():
 
         print(result)
         # Program vypíše výsledek na konzoli
-
 
 
 # Ukončení main funkce
