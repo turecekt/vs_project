@@ -35,8 +35,7 @@ def encryptor(text):
 
 
 def decryptor(text):
-    """Zadefinovanie premennej a ziskanie klucu a
-    hodnoty zo slovniku."""
+    """Ziskanie klucu a hodnoty zo slovniku."""
     text += " "
     key_list = list(code.keys())
     value_list = list(code.values())
