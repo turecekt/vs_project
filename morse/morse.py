@@ -1,5 +1,5 @@
 """Morse encoder/decoder."""
-
+from unidecode import unidecode
 
 def morse_code(var_inp):
     """
@@ -8,44 +8,9 @@ def morse_code(var_inp):
     Returns encoded string
     """
     var_inp = var_inp.lower()
-
-    charInp = list(var_inp)
+    var_inp = unidecode(var_inp)
 
     strLen = len(charInp)
-
-    for y in range(strLen):
-        if charInp[y] == 'á':
-            charInp[y] = "a"
-        elif charInp[y] == 'č':
-            charInp[y] = "c"
-        elif charInp[y] == 'ď':
-            charInp[y] = "d"
-        elif charInp[y] == 'ě':
-            charInp[y] = "e"
-        elif charInp[y] == 'é':
-            charInp[y] = "e"
-        elif charInp[y] == 'í':
-            charInp[y] = "i"
-        elif charInp[y] == 'ň':
-            charInp[y] = "n"
-        elif charInp[y] == 'ó':
-            charInp[y] = "o"
-        elif charInp[y] == 'ř':
-            charInp[y] = "r"
-        elif charInp[y] == 'š':
-            charInp[y] = "s"
-        elif charInp[y] == 'ť':
-            charInp[y] = "t"
-        elif charInp[y] == 'ú':
-            charInp[y] = "u"
-        elif charInp[y] == 'ů':
-            charInp[y] = "u"
-        elif charInp[y] == 'ý':
-            charInp[y] = "y"
-        elif charInp[y] == 'ž':
-            charInp[y] = "z"
-        elif charInp[y] == '"':
-            charInp[y] = ''
 
     for x in range(strLen):
         if charInp[x] == 'a':
@@ -251,7 +216,6 @@ def morse_decode(var_inp2):
             var_inp2 = var_inp2.replace("- ", 't')
         elif "/ " in var_inp2:
             var_inp2 = var_inp2.replace("/ ", ' ')
-
     return var_inp2
 
 
