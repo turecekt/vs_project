@@ -92,6 +92,13 @@ def vypis(x1, y1, x2, y2, x3, y3):
     Vypise vypocitane hodnoty a vlastnosti potencialneho trojuholnika.
 
     Dlzky stran, Zostrojitelnost, Obvod, Obsah, Pravouhlost
+    
+    >>> vypis(0, 0, 1, 1, 2, 2)
+    Dlzky stran:
+    1.41
+    1.41
+    2.83
+    Trojuholnik sa neda zostrojit
     """
     a = vypocetStrany(x1, y1, x2, y2)
     b = vypocetStrany(x2, y2, x3, y3)
