@@ -4,7 +4,7 @@ Created on Fri Dec 11 00:53:37 2020.
 
 @author: Tomas Adamek
 """
-from math import *
+import math
 import re
 import tkinter as tk
 
@@ -14,6 +14,7 @@ def toNumber(value):
     value = "(" + value + ")+0"
     value = value.replace(",", ".")
     value = re.sub('[\w ][^sqrt()0-9+./*-]', '', value)
+    value = value.replace("sqrt", "math.sqrt")
     value = eval(value)
     return value
 
@@ -45,9 +46,13 @@ class Tris():
         self.uC = hodnoty[5][0]
         self.unitD = hodnoty[0][1]
         self.unitU = hodnoty[3][1]
-
         if self.sA > 0 and self.sB > 0 and self.sC > 0:
             self.result = self.tris_sss()
+        elif ((self.sA > 0 and self.sB > 0 or self.sA > 0 and self.sC > 0 or
+              self.sB > 0 and self.sC > 0) and (self.uA > 0 or self.uB > 0 or
+                                                self.uC > 0)):
+            self.result = self.tris_sus()
+        
 
     def __str__(self):
         """Pripravuje data pro funkci print.
@@ -71,95 +76,153 @@ class Tris():
         sA = self.sA
         sB = self.sB
         sC = self.sC
-        if sA + sB > sC and sA + sC > sB and sB + sC > sA:
-            return True
+        unitU = self.unitU
+        uA = self.uA
+        uB = self.uB
+        uC = self.uC
+        if sA > 0 and sB > 0 and sC > 0:
+            if sA + sB > sC and sA + sC > sB and sB + sC > sA:
+                return True
+            else:
+                return False
+        elif uA > 0 and uB > 0 and uC > 0:
+            if unitU =="\xb0" and round(uA + uB + uC, 2) == 360:
+                return True
+            elif unitU == "rad" and round(uA + uB + uC, 2) == 3.14:
+                return True
+            elif unitU == "u03C0 rad" and round(uA + uB + uC, 2) == 1:
+                return True
+            else:
+                return False
+    
+    def sin_veta(self, arg):
+        """
+        Sinova veta pro vypocet uhlu ze stran.
+        
+        arg = <str> uA / uB / uC (zadané se počítá)
+        """
+        sA = self.sA
+        sB = self.sB
+        sC = self.sC
+        if arg == "uA":
+            uA = math.acos((sB ** 2 + sC ** 2 - sA ** 2) / (2 * sB * sC))
+            return uA
+        elif arg == "uB":
+            uB = math.acos((sA ** 2 + sC ** 2 - sB ** 2) / (2 * sA * sC))
+            return uB
+        elif arg =="uC":
+            uC = math.acos((sA ** 2 + sB ** 2 - sC ** 2) / (2 * sA * sB))
+            return uC
         else:
-            return False
-
+            print("argument musí být 'uA', nebo 'uB', nebo 'uC")
+        
+        
+        
+    def tris_uuu(self):
+        if self.is_triss():
+            print("fuck")
+    def tris_usu(self):
+        print("usu")
+    def tris_sus(self):
+        sA = self.sA
+        sB = self.sB
+        sC = self.sC
+        uA = self.uA
+        uB = self.uB
+        uC = self.uC
+        if sB > 0 and sC > 0 and uA > 0:
+            self.sA = math.sqrt(sB ** 2 + sC ** 2 
+                                - (2 * sB * sC * math.cos(uA)))
+            self.uB = self.sin_veta("uB")
+            self.uC = self.sin_veta("uC")
+        elif sA > 0 and sC > 0 and uB > 0:
+            self.sB = math.sqrt(sA ** 2 + sC ** 2
+                                - (2 * sA * sC * math.cos(uB)))
+            self.uA = self.sin_veta("uA")
+            self.uC = self.sin_veta("uC")
+        return self.output()
+    
     def tris_sss(self):
         """Metoda pro vypocet podle vety sss.
 
         Vraci slovnik ci string
         """
+        
+        return self.output()
+    def output(self):
         if self.is_tris():
             sA = self.sA
             sB = self.sB
             sC = self.sC
+            uA = self.uA
+            uB = self.uB
+            uC = self.uC
             obvod = sA + sB + sC
             s = obvod / 2
-            obsah = sqrt(s * (s - sA) * (s - sB) * (s - sC))
-            cosA = (sB ** 2 + sC ** 2 - sA ** 2) / (2 * sB * sC)
-            cosB = (sA ** 2 + sC ** 2 - sB ** 2) / (2 * sA * sC)
-            cosC = (sA ** 2 + sB ** 2 - sC ** 2) / (2 * sA * sB)
-            uA = round(degrees(acos(cosA)), 2)
-            uB = round(degrees(acos(cosB)), 2)
-            uC = round(degrees(acos(cosC)), 2)
-            obsah = round(obsah, 2)
+            obsah = math.sqrt(s * (s - sA) * (s - sB) * (s - sC))
             if uA == uB and uB == uC:
-                return {"obsah": str(obsah) + "cm\u00B2",
-                        "obvod": str(obvod) + "cm",
-                        "úhel \u03B1, \u03B2, \u03B3": str(uA) + "°",
+                return {"obsah": str(obsah) + self.unitD + "\u00B2",
+                        "obvod": str(obvod) + self.unitD,
+                        "úhel \u03B1, \u03B2, \u03B3": str(uA) + self.unitU,
                         "typ trojúhelníku": "rovnostranný"}
             elif uA == uB:
                 if uC == 90:
-                    return {"obsah": str(obsah) + "cm\u00B2",
-                            "obvod": str(obvod) + "cm",
-                            "úhel \u03B1, \u03B2": str(uA) + "°",
-                            "úhel \u03B3": str(uC) + "°",
+                    return {"obsah": str(obsah) + self.unitD + "\u00B2",
+                            "obvod": str(obvod) + self.unitD,
+                            "úhel \u03B1, \u03B2": str(uA) + self.unitU,
+                            "úhel \u03B3": str(uC) + self.unitU,
                             "typ trojúhelníku": "rovnoramenný, pravoúhlý"}
                 else:
-                    return {"obsah": str(obsah) + "cm\u00B2",
-                            "obvod": str(obvod) + "cm",
-                            "úhel \u03B1, \u03B2": str(uA) + "°",
-                            "úhel \u03B3": str(uC) + "°",
+                    return {"obsah": str(obsah) + self.unitD + "\u00B2",
+                            "obvod": str(obvod) + self.unitD,
+                            "úhel \u03B1, \u03B2": str(uA) + self.unitU,
+                            "úhel \u03B3": str(uC) + self.unitU,
                             "typ trojúhelníku": "rovnoramenný"}
             elif uA == uC:
                 if uB == 90:
-                    return {"obsah": str(obsah) + "cm\u00B2",
+                    return {"obsah": str(obsah) + self.unitD + "\u00B2",
                             "obvod": str(obvod) + "cm",
-                            "úhel \u03B1, \u03B3": str(uA) + "°",
-                            "úhel \u03B2": str(uB) + "°",
+                            "úhel \u03B1, \u03B3": str(uA) + self.unitU,
+                            "úhel \u03B2": str(uB) + self.unitU,
                             "typ trojúhelníku": "rovnoramenný, pravoúhlý"}
                 else:
-                    return {"obsah": str(obsah) + "cm\u00B2",
-                            "obvod": str(obvod) + "cm",
-                            "úhel \u03B1, \u03B3": str(uA) + "°",
-                            "úhel \u03B2": str(uB) + "°",
+                    return {"obsah": str(obsah) + self.unitD + "\u00B2",
+                            "obvod": str(obvod) + self.unitD,
+                            "úhel \u03B1, \u03B3": str(uA) + self.unitU,
+                            "úhel \u03B2": str(uB) + self.unitU,
                             "typ trojúhelníku": "rovnoramenný"}
             elif uB == uC:
                 if uA == 90:
-                    return {"obsah": str(obsah) + "cm\u00B2",
-                            "obvod": str(obvod) + "cm",
-                            "úhel \u03B1": str(uA) + "°",
-                            "úhel \u03B2, \u03B3": str(uB) + "°",
+                    return {"obsah": str(obsah) + self.unitD + "\u00B2",
+                            "obvod": str(obvod) + self.unitD,
+                            "úhel \u03B1": str(uA) + self.unitU,
+                            "úhel \u03B2, \u03B3": str(uB) + self.unitU,
                             "typ trojúhelníku": "rovnoramenný, pravoúhlý"}
                 else:
-                    return {"obsah": str(obsah) + "cm\u00B2",
-                            "obvod": str(obvod) + "cm",
-                            "úhel \u03B1": str(uA) + "°",
-                            "úhel \u03B2, \u03B3": str(uB) + "°",
+                    return {"obsah": str(obsah) + self.unitD + "\u00B2",
+                            "obvod": str(obvod) + self.unitD,
+                            "úhel \u03B1": str(uA) + self.unitU,
+                            "úhel \u03B2, \u03B3": str(uB) + self.unitU,
                             "typ trojúhelníku": "rovnoramenný"}
             elif uA == 90 or uB == 90 or uC == 90:
-                return {"obsah": str(obsah) + "cm\u00B2",
-                        "obvod": str(obvod) + "cm",
-                        "úhel \u03B1": str(uA) + "°",
-                        "úhel \u03B2": str(uB) + "°",
-                        "úhel \u03B3": str(uC) + "°",
+                return {"obsah": str(obsah) + self.unitD + "\u00B2",
+                        "obvod": str(obvod) + self.unitD,
+                        "úhel \u03B1": str(uA) + self.unitU,
+                        "úhel \u03B2": str(uB) + self.unitU,
+                        "úhel \u03B3": str(uC) + self.unitU,
                         "typ trojúhelníku": "pravoúhlý"}
             else:
-                return {"obsah": str(obsah) + "cm\u00B2",
-                        "obvod": str(obvod) + "cm",
-                        "úhel \u03B1": str(uA) + "°",
-                        "úhel \u03B2": str(uB) + "°",
-                        "úhel \u03B3": str(uC) + "°",
+                return {"obsah": str(obsah) + self.unitD + "\u00B2",
+                        "obvod": str(obvod) + self.unitD,
+                        "úhel \u03B1": str(uA) + self.unitU,
+                        "úhel \u03B2": str(uB) + self.unitU,
+                        "úhel \u03B3": str(uC) + self.unitU,
                         "typ trojúhelníku": "obecný"}
 
         else:
             out = "Nejedná se o trojúhelník."
             out += " Součet dvou stran musí být větší než stranatřetí."
-            return out
-
-
+        
 class Uprava_jednotek():
     def __init__(self, sA, sB, sC, uA, uB, uC, unsA, unsB, unsC, unuA, unuB,
                  unuC):
@@ -177,8 +240,6 @@ class Uprava_jednotek():
         self.unuC = unuC
         self.prevod_delky()
         self.prevod_stupne()
-       
-        self.__dict__()   
         
     def __dict__(self):
         return {0: (self.sA, self.unitD),
@@ -298,60 +359,22 @@ class Uprava_jednotek():
         return myunit
     
     def prevod_stupne(self):
-        if self.unuA != "" and self.unuB != "" and self.unuC != "":
-            (self.unuA, self.unuB,
-             self.uA, self.uB)= self.dva_uhly(self.unuA, self.unuB,
-                                              self.uA, self.uB)
-            if self.unitU != self.unuC:
-                (self.unuA, self.unuC,
-                 self.uA, self.uC)= self.dva_uhly(self.unuA, self.unuC,
-                                                  self.uA, self.uC)
-                (self.unuB, self.unuC,
-                 self.uB, self.uC)= self.dva_uhly(self.unuB, self.unuC,
-                                                  self.uB, self.uC)
-        elif self.unuA != "" and self.unuB != "":
-            (self.unuA, self.unuB,
-             self.uA, self.uB)= self.dva_uhly(self.unuA, self.unuB,
-                                              self.uA, self.uB)
-        elif self.unuA != "" and self.unuC != "":
-            (self.unuA, self.unuC,
-             self.uA, self.uC)= self.dva_uhly(self.unuA, self.unuC,
-                                              self.uA, self.uC)
-        elif self.unuB != "" and self.unuC != "":
-            (self.unuB, self.unuC,
-             self.uB, self.uC)= self.dva_uhly(self.unuB, self.unuC,
-                                              self.uB, self.uC)
-        elif self.unuA == "" and self.unuB == "" and self.unuC != "":
-            self.unitU = self.unuC
-        elif self.unuA == "" and self.unuC == "" and self.unuB != "":
-            self.unitU = self.unuB
-        elif self.unuB == "" and self.unuC == "" and self.unuA != "":
-            self.unitU = self.unuA
-        else:
-            self.unitU = "\xb0"
-        
+        self.uA = self.to_rad(self.unuA, self.uA)
+        self.uB = self.to_rad(self.unuB, self.uB)
+        self.uC = self.to_rad(self.unuC, self.uC)
+        self.unitU = "rad"
             
-    def dva_uhly(self, uhel1, uhel2, u1, u2):
-        if uhel1 !=uhel2:
+    def to_rad(self, uhel1, u1):
+        if uhel1 != "rad":
             uhel1 = self.uhel_to_int(uhel1)
-            uhel2 = self.uhel_to_int(uhel2)
             if uhel1 == 3:
-                u1 *= pi
+                u1 *= math.pi
                 uhel1 = 2
-            elif uhel2 == 3:
-                u2 *= pi
-                uhel2 = 2
-            if uhel1 == 2 and uhel2 == 1:
-                u1 = degrees(u1)
-                uhel1 = 1
-            elif uhel1 == 1 and uhel2 == 2:
-                u2 = degrees(u2)
-                uhel2 = 1
-            uhel1 = self.int_to_uhel(uhel1)
-            uhel2 = self.int_to_uhel(uhel2)
-        self.unitU = uhel1
-        
-        return uhel1, uhel2, u1, u2
+            elif uhel1 == 1:
+                u1 = math.radians(u1)
+                uhel1 = 2
+            uhel1 =self.int_to_uhel(uhel1)
+        return u1
         
     def uhel_to_int(self, myunit):
         if myunit == "\xb0":
@@ -686,11 +709,11 @@ class Gui(tk.Tk):
                     self.input_render(self.sC, "strana c", 0, 2, 3, self.unsC)
                     self.submit_button()
                 elif self.isuA.get():
-                    self.input_render(self.uC, "úhel \u03B3", 1, 2, 3,
+                    self.input_render(self.uA, "úhel \u03B1", 1, 2, 3,
                                       self.unuA)
                     self.submit_button()
                 elif self.isuB.get():
-                    self.input_render(self.uC, "úhel \u03B3", 1, 2, 3,
+                    self.input_render(self.uB, "úhel \u03B2", 1, 2, 3,
                                       self.unuB)
                     self.submit_button()
                 elif self.isuC.get():
@@ -703,11 +726,11 @@ class Gui(tk.Tk):
             elif self.issC.get():
                 self.input_render(self.sC, "strana c", 0, 1, 3, self.unsC)
                 if self.isuA.get():
-                    self.input_render(self.uC, "úhel \u03B3", 1, 2, 3,
+                    self.input_render(self.uA, "úhel \u03B1", 1, 2, 3,
                                       self.unuA)
                     self.submit_button()
                 elif self.isuB.get():
-                    self.input_render(self.uC, "úhel \u03B3", 1, 2, 3,
+                    self.input_render(self.uB, "úhel \u03B2", 1, 2, 3,
                                       self.unuB)
                     self.submit_button()
                 elif self.isuC.get():
@@ -720,7 +743,7 @@ class Gui(tk.Tk):
             elif self.isuA.get():
                 self.input_render(self.uA, "úhel \u03B1", 1, 1, 3, self.unuA)
                 if self.isuB.get():
-                    self.input_render(self.uC, "úhel \u03B3", 1, 2, 3,
+                    self.input_render(self.uB, "úhel \u03B2", 1, 2, 3,
                                       self.unuB)
                     self.submit_button()
                 elif self.isuC.get():
@@ -757,11 +780,11 @@ class Gui(tk.Tk):
                 self.input_render(self.sC, "strana c", 0, 1, 3,
                                   self.unsC)
                 if self.isuA.get():
-                    self.input_render(self.uC, "úhel \u03B3", 1, 2, 3,
+                    self.input_render(self.uA, "úhel \u03B1", 1, 2, 3,
                                       self.unuA)
                     self.submit_button()
                 elif self.isuB.get():
-                    self.input_render(self.uC, "úhel \u03B3", 1, 2, 3,
+                    self.input_render(self.uB, "úhel \u03B2", 1, 2, 3,
                                       self.unuB)
                     self.submit_button()
                 elif self.isuC.get():
@@ -774,7 +797,7 @@ class Gui(tk.Tk):
             elif self.isuA.get():
                 self.input_render(self.uA, "úhel \u03B1", 1, 1, 3, self.unuA)
                 if self.isuB.get():
-                    self.input_render(self.uC, "úhel \u03B3", 1, 2, 3,
+                    self.input_render(self.uB, "úhel \u03B2", 1, 2, 3,
                                       self.unuB)
                     self.submit_button()
                 elif self.isuC.get():
