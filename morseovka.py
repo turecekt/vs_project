@@ -1,4 +1,4 @@
-"""Seminarni prace prekladac do Morseovy abecedy a zpet."""
+"""Seminarni prace - prekladac do Morseovy abecedy a zpet."""
 
 MORSEUV_SLOVNIK = {
                     ' ': '/', 'A': '.-', 'B': '-...',
@@ -20,7 +20,7 @@ MORSEUV_SLOVNIK = {
 
 
 # urceni prekladace
-def Text_na_Morseovku():
+def sifrovani():
     """Přeložení do Morseovy abecedy."""
     text = input('Napis text pro Morseovo sifrovani : ')
     kod = [MORSEUV_SLOVNIK[i.upper()] + ' ' for i in text if i.upper()
@@ -30,7 +30,7 @@ def Text_na_Morseovku():
 
 
 # desifrovani na text
-def Morseovka_na_Text():
+def desifrovani():
     """Přeložení z Morseovy abecedy."""
     text = input('Napis Morseuv kod pro desifrovani do textu: ')
     kod = [j for i in text.split()
@@ -44,19 +44,20 @@ print('''\n1 - Napis text pro Morseovo sifrovani
         \n2 - Napis Morseuv kod pro desifrovani do textu\n3 - Konec\n ''')
 
 
-while True:
-    try:
-        vyber = int(input('Zvol moznost 1-3 a potvrd klavesou ENTER: '))
-        if vyber == 1:
-            print(Text_na_Morseovku())
-            break
-        elif vyber == 2:
-            print(Morseovka_na_Text())
-            break
-        elif vyber == 3:
-            print('Ukonceni')
-            break
-        else:
-            print('Spatne zadani, opakujte volbu')
-    except ValueError:
-        print('Zadna volba nevyhovuje pozadavkum, zkuste to znova.')
+if __name__ == '__main__':
+
+    vyber = int(input('Zvol moznost 1-3 a potvrd klavesou ENTER: '))
+    if vyber == 1:
+        print(sifrovani())
+
+    elif vyber == 2:
+        print(desifrovani())
+
+    elif vyber == 3:
+        print('Ukonceni')
+
+    else:
+        print('Spatne zadani, opakujte volbu')
+
+else:
+    print('Zadna volba nevyhovuje pozadavkum, zkuste to znova.')
