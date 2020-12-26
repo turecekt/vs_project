@@ -1283,93 +1283,95 @@ def test_toNumber():
     test = toNumber(test)
     assert test == result
 
+class test(Tris)
+    def test_tris_sss():
+        """Testuje třídu Tris(), pro trojúhelník sss."""
+        test = {0: ('500', 'cm'),
+                1: ('40', 'dm'),
+                2: ('3', 'm'),
+                3: ('', ''),
+                4: ('', ''),
+                5: ('', '')}
+        result = {0: 'strana a – 5.0m',
+                  1: 'strana b – 4.0m',
+                  2: 'strana c – 3.0m',
+                  3: 'úhel α – 1.5708rad, 90.0°',
+                  4: 'úhel β – 0.9273rad, 53.1301°',
+                  5: 'úhel γ – 0.6435rad, 36.8699°',
+                  6: 'výška a – 2.4m',
+                  7: 'výška b – 3.0m',
+                  8: 'výška c – 4.0m',
+                  9: 'obvod  – 12.0m',
+                  10: 'obsah – 6.0m²',
+                  11: 'typ – pravoúhlý'}
+        test = Tris(test)
+        assert test.result == result and test.tris_sss == result
+    
+    
+    def test_tris_sus():
+        """Testuje třídu Tris(), pro trojúhelník sus."""
+        test = {0: ('', ''),
+                1: ('40', 'dm'),
+                2: ('3', 'm'),
+                3: ('2**6', '°'),
+                4: ('', ''),
+                5: ('', '')}
+        result = {0: 'strana a – 38.0514dm',
+                  1: 'strana b – 40dm',
+                  2: 'strana c – 30dm',
+                  3: 'úhel α – 1.11701rad, 64.0°',
+                  4: 'úhel β – 1.23705rad, 70.8776°',
+                  5: 'úhel γ – 0.78753rad, 45.1224°',
+                  6: 'výška a – 28.34463dm',
+                  7: 'výška b – 26.96382dm',
+                  8: 'výška c – 35.95176dm',
+                  9: 'obvod  – 108.0514dm',
+                  10: 'obsah – 539.28dm²',
+                  11: 'typ – obecný'}
+        test = Tris(test)
+        assert test.result == result and test.tris_sus == result
+    
+    
+    def test_tris_usu():
+        """Testuje třídu Tris(), pro trojúhelník sus."""
+        test = {0: ('', ''),
+                1: ('40', 'cm'),
+                2: ('', ''),
+                3: ('2**6', '°'),
+                4: ('', ''),
+                5: ('1', 'rad')}
+        result = {0: 'strana a – 42.07359cm',
+                  1: 'strana b – 40cm',
+                  2: 'strana c – 39.39023cm',
+                  3: 'úhel α – 1.11701rad, 64.0°',
+                  4: 'úhel β – 1.02458rad, 58.70422°',
+                  5: 'úhel γ – 1rad, 57.29578°',
+                  6: 'výška a – 33.65884cm',
+                  7: 'výška b – 35.40371cm',
+                  8: 'výška c – 35.95176cm',
+                  9: 'obvod  – 121.46382cm',
+                  10: 'obsah – 708.07cm²',
+                  11: 'typ – obecný'}
+        test = Tris(test)
+        assert test.result == result and test.tris_usu == result
 
-def test_tris_sss():
-    """Testuje třídu Tris(), pro trojúhelník sss."""
-    test = {0: ('500', 'cm'),
-            1: ('40', 'dm'),
-            2: ('3', 'm'),
-            3: ('', ''),
-            4: ('', ''),
-            5: ('', '')}
-    result = {0: 'strana a – 5.0m',
-              1: 'strana b – 4.0m',
-              2: 'strana c – 3.0m',
-              3: 'úhel α – 1.5708rad, 90.0°',
-              4: 'úhel β – 0.9273rad, 53.1301°',
-              5: 'úhel γ – 0.6435rad, 36.8699°',
-              6: 'výška a – 2.4m',
-              7: 'výška b – 3.0m',
-              8: 'výška c – 4.0m',
-              9: 'obvod  – 12.0m',
-              10: 'obsah – 6.0m²',
-              11: 'typ – pravoúhlý'}
-    test = Tris(test)
-    assert test.result == result and test.tris_sss == result
 
+    def test_tris_error():
+        """Testuje třídu Tris(), pro error."""
+        test = {0: ('20', 'dm'),
+                1: ('40', 'cm'),
+                2: ('5', 'm'),
+                3: ('', ''),
+                4: ('', ''),
+                5: ('', '')}
+        result = "Nejedná se o trojúhelník.\n"
+        result += "Součet dvou stran musí být větší než strana třetí.\n"
+        result += "Součet dvou úhlů musí být menší než 180\xb0 nebo "
+        result += "\u03C0 rad. Nejmenší možný úhel je 0,013\xb0"
+        test = Tris(test)
+        assert test.result == result and test.output == result
+        assert test.__str__ == result
 
-def test_tris_sus():
-    """Testuje třídu Tris(), pro trojúhelník sus."""
-    test = {0: ('', ''),
-            1: ('40', 'dm'),
-            2: ('3', 'm'),
-            3: ('2**6', '°'),
-            4: ('', ''),
-            5: ('', '')}
-    result = {0: 'strana a – 38.0514dm',
-              1: 'strana b – 40dm',
-              2: 'strana c – 30dm',
-              3: 'úhel α – 1.11701rad, 64.0°',
-              4: 'úhel β – 1.23705rad, 70.8776°',
-              5: 'úhel γ – 0.78753rad, 45.1224°',
-              6: 'výška a – 28.34463dm',
-              7: 'výška b – 26.96382dm',
-              8: 'výška c – 35.95176dm',
-              9: 'obvod  – 108.0514dm',
-              10: 'obsah – 539.28dm²',
-              11: 'typ – obecný'}
-    test = Tris(test)
-    assert test.result == result and test.tris_sus == result
-
-
-def test_tris_usu():
-    """Testuje třídu Tris(), pro trojúhelník sus."""
-    test = {0: ('', ''),
-            1: ('40', 'cm'),
-            2: ('', ''),
-            3: ('2**6', '°'),
-            4: ('', ''),
-            5: ('1', 'rad')}
-    result = {0: 'strana a – 42.07359cm',
-              1: 'strana b – 40cm',
-              2: 'strana c – 39.39023cm',
-              3: 'úhel α – 1.11701rad, 64.0°',
-              4: 'úhel β – 1.02458rad, 58.70422°',
-              5: 'úhel γ – 1rad, 57.29578°',
-              6: 'výška a – 33.65884cm',
-              7: 'výška b – 35.40371cm',
-              8: 'výška c – 35.95176cm',
-              9: 'obvod  – 121.46382cm',
-              10: 'obsah – 708.07cm²',
-              11: 'typ – obecný'}
-    test = Tris(test)
-    assert test.result == result and test.tris_usu == result
-
-def test_tris_error():
-    """Testuje třídu Tris(), pro error."""
-    test = {0: ('20', 'dm'),
-            1: ('40', 'cm'),
-            2: ('5', 'm'),
-            3: ('', ''),
-            4: ('', ''),
-            5: ('', '')}
-    result = "Nejedná se o trojúhelník.\n"
-    result += "Součet dvou stran musí být větší než strana třetí.\n"
-    result += "Součet dvou úhlů musí být menší než 180\xb0 nebo "
-    result += "\u03C0 rad. Nejmenší možný úhel je 0,013\xb0"
-    test = Tris(test)
-    assert test.result == result and test.output == result
-    assert test.__str__ == result
 
 
 if __name__ == "__main__":
