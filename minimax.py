@@ -123,17 +123,15 @@ if __name__ == '__main__':
     print("Největší číslo: " + vysledek[1] + " a jeho index: " + vysledek[3])
 
     # Volba řadících funkcí uživatelem
-     a = input("Zvolte, jakou řadící funkcí chcete vaše pole seřadit: \
+    a = input("Zvolte, jakou řadící funkcí chcete vaše pole seřadit: \
         (1 = Bubblesort, 2 = Insertion sort, 3 = Selection sort)\n")
-
-     "Switch" pro volbu uživatele, vypnutý pro github pytest
-     if a == "1":
+    if a == "1":
         pole = bubblesort(pole)
-     elif a == "2":
+    elif a == "2":
         pole = insertionSort(pole)
-     elif a == "3":
+    elif a == "3":
         pole = selectionSort(pole)
-     else:
+    else:
         print("Nezadali jste správnou volbu!")
 
     pole = bubblesort(pole)
