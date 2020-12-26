@@ -1305,7 +1305,7 @@ def test_tris_sss():
               10: 'obsah – 6.0m²',
               11: 'typ – pravoúhlý'}
     test = Tris(test)
-    assert test.result == result
+    assert test.result == result and test.tris_sss == result
 
 
 def test_tris_sus():
@@ -1329,7 +1329,7 @@ def test_tris_sus():
               10: 'obsah – 539.28dm²',
               11: 'typ – obecný'}
     test = Tris(test)
-    assert test.result == result
+    assert test.result == result and test.tris_sus == result
 
 
 def test_tris_usu():
@@ -1353,8 +1353,7 @@ def test_tris_usu():
               10: 'obsah – 708.07cm²',
               11: 'typ – obecný'}
     test = Tris(test)
-    assert test.result == result
-
+    assert test.result == result and test.tris_usu == result
 
 def test_tris_error():
     """Testuje třídu Tris(), pro error."""
@@ -1369,7 +1368,8 @@ def test_tris_error():
     result += "Součet dvou úhlů musí být menší než 180\xb0 nebo "
     result += "\u03C0 rad. Nejmenší možný úhel je 0,013\xb0"
     test = Tris(test)
-    assert test.result == result
+    assert test.result == result and test.output == result
+    assert test.__str__ == result
 
 
 if __name__ == "__main__":
