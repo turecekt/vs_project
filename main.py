@@ -7,6 +7,7 @@ Created on Fri Dec 11 00:53:37 2020.
 import math
 import re
 import tkinter as tk
+import turtle
 
 
 def toNumber(value):
@@ -22,8 +23,13 @@ def toNumber(value):
     value = value.replace(",", ".")
     value = re.sub(r'[\w ][^sqrt()0-9+./*-]', '', value)
     value = value.replace("sqrt", "math.sqrt")
-    value = eval(value)
-    return value
+    try:
+        value = eval(value)
+        return value
+    except value.isstring:
+        x = "Něco je špatně, zadejte čísla znovu."
+        print(x)
+        tk.messagebox.showerror(title="Chyba vstupu", message=x)
 
 
 class Uprava_jednotek():
@@ -35,7 +41,7 @@ class Uprava_jednotek():
             (self.unsA, self.unsB,
              self.sA, self.sB) = self.dve_strany(self.unsA, self.unsB,
                                                  self.sA, self.sB)
-            if self.unsA != self.unsC:
+            if self.unitD != self.unsC:
                 (self.unsA, self.unsC,
                  self.sA, self.sC) = self.dve_strany(self.unsA, self.unsC,
                                                      self.sA, self.sC)
@@ -192,48 +198,61 @@ class Tris(Uprava_jednotek):
                 (self.uB + self.uC < math.pi)):
             if self.sA > 0 and self.sB > 0 and self.sC > 0:
                 self.result = self.tris_sss()
-            elif ((self.sA > 0 and self.sB > 0 or self.sA > 0 and self.sC > 0 or
-                  self.sB > 0 and self.sC > 0) and (self.uA > 0 or self.uB > 0 or
-                                                    self.uC > 0)):
+            elif ((self.sA > 0 and self.sB > 0 or self.sA > 0 and
+                   self.sC > 0 or self.sB > 0 and self.sC > 0) and
+                  (self.uA > 0 or self.uB > 0 or self.uC > 0)):
                 self.result = self.tris_sus()
-            elif ((self.uA > 0 and self.uB > 0 or self.uA > 0 and self.uC > 0 or
-                  self.uB > 0 and self.uC > 0) and (self.sA > 0 or self.sB > 0 or
-                                                    self.sC > 0)):
+            elif ((self.uA > 0 and self.uB > 0 or self.uA > 0 and
+                   self.uC > 0 or self.uB > 0 and self.uC > 0) and
+                  (self.sA > 0 or self.sB > 0 or self.sC > 0)):
                 self.result = self.tris_usu()
+            else:
+                self.result = self.output()
         else:
             self.result = self.output()
 
     def __str__(self):
-        """Pripravuje data pro funkci print.
-
-        Slovníky upravý do pěkného tvaru,
-        text vrátí
-        """
-        if isinstance(self.result, dict):
-            out = ""
-            for x, y in self.result.items():
-                out += "{} – {}\n".format(x, y)
+        """Připravý string pro volání."""
+        if isinstance(self.result, str):
+            return self.result
         else:
-            out = str(self.result)
-        return out
+            self.__dict__()
+
+    def __dict__(self):
+        """Připravý slovník pro volání."""
+        return self.result
 
     def is_tris(self):
-        """Zjisti jestli je mozne trojuhelnik slozit.
+        """Spojije dvě funkce pro ověření trojúhelníku."""
+        if self.is_tris_U() and self.is_tris_S():
+            return True
+        else:
+            return False
+
+    def is_tris_S(self):
+        """Zjistí jestli je možné, trojuhelnik složit, na základě stran.
 
         vraci True nebo False
         """
-        sA = self.sA
-        sB = self.sB
-        sC = self.sC
-        uA = self.uA
-        uB = self.uB
-        uC = self.uC
+        sA = round(self.sA, 8)
+        sB = round(self.sB, 8)
+        sC = round(self.sC, 8)
+
         if sA > 0 and sB > 0 and sC > 0:
             if sA + sB > sC and sA + sC > sB and sB + sC > sA:
                 return True
             else:
                 return False
-        elif not (uA + uB < math.pi or uA + uC < math.pi or uB + uC < math.pi):
+
+    def is_tris_U(self):
+        """Zjistí jestli je možné, trojuhelnik složit, na základě úhlů.
+
+        vraci True nebo False
+        """
+        uA = round(self.uA, 8)
+        uB = round(self.uB, 8)
+        uC = round(self.uC, 8)
+        if uA > 0 and uB > 0 and uC > 0:
             return True
         else:
             return False
@@ -281,7 +300,7 @@ class Tris(Uprava_jednotek):
                 return math.asin(sB / (sC / math.sin(uC)))
         elif arg == "uC":
             if sA > 0 and uA > 0 and sC > 0:
-                return math.asin(sC / (sA / math.sin(sA)))
+                return math.asin(sC / (sA / math.sin(uA)))
             elif sB > 0 and uB > 0 and sC > 0:
                 return math.asin(sC / (sB / math.sin(uB)))
         elif arg == "sA":
@@ -304,21 +323,23 @@ class Tris(Uprava_jednotek):
 
     def tris_usu(self):
         """Vypocita strany a uhly podle vety usu."""
-        if self.uA > 0 and self.uB > 0:
-            self.uC = math.pi - (self.uB + self.uA)
-        elif self.uA > 0 and self.uC > 0:
-            self.uB = math.pi - (self.uA + self.uC)
-        elif self.uB > 0 and self.uC > 0:
-            self.uA = math.pi - (self.uB + self.uC)
-        if self.sA > 0:
-            self.sB = self.sin_veta("sB")
-            self.sC = self.sin_veta("sC")
-        elif self.sB > 0:
-            self.sA = self.sin_veta("sA")
-            self.sC = self.sin_veta("sC")
-        elif self.sC > 0:
-            self.sA = self.sin_veta("sA")
-            self.sB = self.sin_veta("sB")
+        if (self.uA + self.uB < math.pi and self.uB + self.uC < math.pi and
+                self.uB + self.uC < math.pi):
+            if self.uA > 0 and self.uB > 0:
+                self.uC = math.pi - (self.uB + self.uA)
+            elif self.uA > 0 and self.uC > 0:
+                self.uB = math.pi - (self.uA + self.uC)
+            elif self.uB > 0 and self.uC > 0:
+                self.uA = math.pi - (self.uB + self.uC)
+            if self.sA > 0:
+                self.sB = self.sin_veta("sB")
+                self.sC = self.sin_veta("sC")
+            elif self.sB > 0:
+                self.sA = self.sin_veta("sA")
+                self.sC = self.sin_veta("sC")
+            elif self.sC > 0:
+                self.sA = self.sin_veta("sA")
+                self.sB = self.sin_veta("sB")
         return self.output()
 
     def tris_sus(self):
@@ -330,66 +351,92 @@ class Tris(Uprava_jednotek):
         uB = self.uB
         uC = self.uC
         # zakladni cosinové věty
-        if sB > 0 and sC > 0 and uA > 0:
-            self.sA = math.sqrt(sB ** 2 + sC ** 2
-                                - (2 * sB * sC * math.cos(uA)))
-            self.uB = self.cos_veta("uB")
-            self.uC = self.cos_veta("uC")
-        elif sB > 0 and sC > 0 and uB > 0:
-            self.uC = self.sin_veta("uC")
-            self.uA = math.pi - (self.uB + self.uC)
-            self.sA = math.sqrt(sB ** 2 + sC ** 2
-                                - (2 * sB * sC * math.cos(self.uA)))
-        elif sB > 0 and sC > 0 and uC > 0:
-            self.uB = self.sin_veta("uB")
-            self.uA = math.pi - (self.uB + self.uC)
-            self.sA = math.sqrt(sB ** 2 + sC ** 2
-                                - (2 * sB * sC * math.cos(self.uA)))
-        elif sA > 0 and sC > 0 and uA > 0:
-            self.uC = self.sin_veta("uC")
-            self.uB = math.pi - (self.uA + self.uC)
-            self.sB = self.sB = math.sqrt(sA ** 2 + sC ** 2
-                                          - (2 * sA * sC * math.cos(self.uB)))
-        # zakladni cosinové věty
-        elif sA > 0 and sC > 0 and uB > 0:
-            self.sB = math.sqrt(sA ** 2 + sC ** 2
-                                - (2 * sA * sC * math.cos(uB)))
-            self.uA = self.cos_veta("uA")
-            self.uC = self.cos_veta("uC")
-        elif sA > 0 and sC > 0 and uC > 0:
-            self.uA = self.sin_veta("uA")
-            self.uB = math.pi - (self.uA + self.uC)
-            self.sB = math.sqrt(sA ** 2 + sC ** 2
-                                - (2 * sA * sC * math.cos(self.uB)))
-        elif sA > 0 and sB > 0 and uA > 0:
-            self.uB = self.sin_veta("uB")
-            self.uC = math.pi - (self.uA + self.uB)
-            self.sC = math.sqrt(sA ** 2 + sB ** 2
-                                - (2 * sA * sC * math.cos(self.uC)))
-        elif sA > 0 and sB > 0 and uB > 0:
-            self.uA = self.sin_veta("uA")
-            self.uC = math.pi - (self.uA + self.uB)
-            self.sC = math.sqrt(sA ** 2 + sB ** 2
-                                - (2 * sA * sC * math.cos(self.uC)))
-        # zakladni cosinové věty
-        elif sA > 0 and sB > 0 and uC > 0:
-            self.sC = math.sqrt(sA ** 2 + sB ** 2
-                                - (2 * sA * sC * math.cos(uC)))
-            self.uA = self.cos_veta("uA")
-            self.uB = self.cos_veta("uB")
+        if uA < math.pi and uB < math.pi and uC < math.pi:
+            if sB > 0 and sC > 0 and uA > 0:
+                try:
+                    self.sA = math.sqrt(sB ** 2 + sC ** 2
+                                        - 2 * sB * sC * math.cos(uA))
+                    self.uB = self.sin_veta("uB")
+                    self.uC = self.sin_veta("uC")
+                except self.sA.error:
+                    return self.output()
+            elif sB > 0 and sC > 0 and uB > 0:
+                try:
+                    self.uC = self.sin_veta("uC")
+                    self.uA = math.pi - (self.uB + self.uC)
+                    self.sA = self.sin_veta("sA")
+                except self.uC.error:
+                    return self.output()
+            elif sB > 0 and sC > 0 and uC > 0:
+                try:
+                    self.uB = self.sin_veta("uB")
+                    self.uA = math.pi - (self.uB + self.uC)
+                    self.sA = self.sin_veta("sA")
+                except self.uB.error:
+                    return self.output()
+            elif sA > 0 and sC > 0 and uA > 0:
+                try:
+                    self.uC = self.sin_veta("uC")
+                    self.uB = math.pi - (self.uA + self.uC)
+                    self.sB = self.sin_veta("sB")
+                except self.uC.error:
+                    return self.output()
+            # zakladni cosinové věty
+            elif sA > 0 and sC > 0 and uB > 0:
+                try:
+                    self.sB = math.sqrt(sA ** 2 + sC ** 2
+                                        - 2 * sA * sC * math.cos(uB))
+                    self.uA = self.sin_veta("uA")
+                    self.uC = self.sin_veta("uC")
+                except self.sB.error:
+                    return self.output()
+            elif sA > 0 and sC > 0 and uC > 0:
+                try:
+                    self.uA = self.sin_veta("uA")
+                    self.uB = math.pi - (self.uA + self.uC)
+                    self.sB = self.sin_veta("sB")
+                except self.uA.error:
+                    return self.output()
+            elif sA > 0 and sB > 0 and uA > 0:
+                try:
+                    self.uB = self.sin_veta("uB")
+                    self.uC = math.pi - (self.uA + self.uB)
+                    self.sC = self.sin_veta("sC")
+                except self.uB.error:
+                    return self.output()
+            elif sA > 0 and sB > 0 and uB > 0:
+                try:
+                    self.uA = self.sin_veta("uA")
+                    self.uC = math.pi - (self.uA + self.uB)
+                    self.sC = self.sin_veta("SC")
+                except self.uA.error:
+                    return self.output()
+            # zakladni cosinové věty
+            elif sA > 0 and sB > 0 and uC > 0:
+                try:
+                    self.sC = math.sqrt(sA ** 2 + sB ** 2
+                                        - 2 * sA * sB * math.cos(uC))
+                    self.uA = self.sin_veta("uA")
+                    self.uB = self.sin_veta("uB")
+                except self.sC.error:
+                    return self.output()
         return self.output()
 
     def tris_sss(self):
         """Výpočet podle vetey sss."""
-        self.uA = self.cos_veta("uA")
-        self.uB = self.cos_veta("uB")
-        self.uC = self.cos_veta("uC")
+        if self.is_tris_S():
+            self.uA = self.cos_veta("uA")
+            self.uB = self.cos_veta("uB")
+            self.uC = self.cos_veta("uC")
         return self.output()
 
     def output(self):
         """Výstup z třídy."""
         tmp = self.delka_to_int(self.unitD)
         if self.is_tris():
+            print(self.sA)
+            print(self.sB)
+            print(self.sC)
             if self.sA < 1 and self.sB < 1 and self.sC < 1:
                 while True:
                     if (tmp == 7 and self.sA < 1 and self.sB < 1 and
@@ -408,19 +455,21 @@ class Tris(Uprava_jednotek):
                         self.unitD = self.int_to_delka(tmp)
                     else:
                         break
-            elif ((self.sA % 10 and isinstance(self.sA, int)) or
-                  (self.sB % 10 and isinstance(self.sB, int)) or
-                  (self.sC % 10 and isinstance(self.sC, int))):
+                        break
+            elif not self.sA % 10 or not self.sB % 10 or not self.sC % 10:
                 while True:
-                    if tmp < 4 and tmp > 1: 
-                        if ((self.sA % 10 and isinstance(self.sA, int)) and
-                              (self.sB % 10 and isinstance(self.sB, int)) and
-                              (self.sC % 10 and isinstance(self.sC, int))):
+                    if tmp < 4 and tmp >= 1:
+                        if ((not self.sA % 10 or isinstance(self.sA, int)) and
+                            (not self.sB % 10 or isinstance(self.sB, int)) and
+                            (not self.sC % 10 or
+                             isinstance(self.sC, int))):
                             tmp += 1
                             self.sA /= 10
                             self.sB /= 10
                             self.sC /= 10
                             self.unitD = self.int_to_delka(tmp)
+                        else:
+                            break
                     else:
                         break
             sA = self.sA
@@ -434,41 +483,104 @@ class Tris(Uprava_jednotek):
             uCd = round(math.degrees(self.uC), 5)
             obvod = sA + sB + sC
             s = obvod / 2
-            obsah = round(math.sqrt(s * (s - sA) * (s - sB) * (s - sC)), 2)
+            obsah = math.sqrt(s * (s - sA) * (s - sB) * (s - sC))
+            vA = (2 * obsah) / sA
+            vB = (2 * obsah) / sB
+            vC = (2 * obsah) / sC
+            self.vC = vC
+            vA = round(vA, 5)
+            vB = round(vB, 5)
+            vC = round(vC, 5)
+            obsah = round(obsah, 2)
             obvod = round(obvod, 5)
             sA = round(sA, 5)
             sB = round(sB, 5)
             sC = round(sC, 5)
+            self.draw()
             tpTris = {0: "typ – rovnostranný",
                       1: "typ – rovnoramenný, pravoúhlý",
                       2: "typ – rovnoramenný",
                       3: "typ – pravoúhlý",
                       4: "typ – obecný"}
-            out  = {0: "strana a – " + str(sA) + self.unitD,
-                    1: "strana b – " + str(sB) + self.unitD,
-                    2: "strana c – " + str(sC) + self.unitD,
-                    3: "úhel \u03B1 – " + str(uA) + self.unitU,
-                    4: "úhel \u03B2 – " + str(uB) + self.unitU,
-                    5: "úhel \u03B3 – " + str(uC) + self.unitU,
-                    6: "obvod  – " + str(obvod) + self.unitD,
-                    7: "obsah – " + str(obsah) + self.unitD + "\u00B2"}
+            out = {0: "strana a – " + str(sA) + self.unitD,
+                   1: "strana b – " + str(sB) + self.unitD,
+                   2: "strana c – " + str(sC) + self.unitD,
+                   3: "úhel \u03B1 – " + (str(uA) + self.unitU + ", " +
+                                          str(uAd) + "\xb0"),
+                   4: "úhel \u03B2 – " + (str(uB) + self.unitU + ", " +
+                                          str(uBd) + "\xb0"),
+                   5: "úhel \u03B3 – " + (str(uC) + self.unitU + ", " +
+                                          str(uCd) + "\xb0"),
+                   6: "výška a – " + str(vA) + self.unitD,
+                   7: "výška b – " + str(vB) + self.unitD,
+                   8: "výška c – " + str(vC) + self.unitD,
+                   9: "obvod  – " + str(obvod) + self.unitD,
+                   10: "obsah – " + str(obsah) + self.unitD + "\u00B2"}
             if uA == uB and uB == uC:
-                out[8] = tpTris[0]
-            elif ((uA == uB and uCd == 90) or (uA == uC and uBd ==90) 
+                out[11] = tpTris[0]
+            elif ((uA == uB and uCd == 90) or (uA == uC and uBd == 90)
                   or (uB == uC and uAd == 90)):
-                out[8] = tpTris[1]
+                out[11] = tpTris[1]
             elif uA == uB or uA == uC or uB == uC:
-                out[8] = tpTris[2]
+                out[11] = tpTris[2]
             elif uAd == 90 or uBd == 90 or uCd == 90:
-                out[8] = tpTris[3]
+                out[11] = tpTris[3]
             else:
-                out[8] = tpTris[4]
+                out[11] = tpTris[4]
         else:
             out = "Nejedná se o trojúhelník.\n"
             out += "Součet dvou stran musí být větší než strana třetí.\n"
-            out += "Součet dvou úhlů musí být menší než 360\xb0 nebo "
-            out += "\u03C0 rad."
+            out += "Součet dvou úhlů musí být menší než 180\xb0 nebo "
+            out += "\u03C0 rad. Nejmenší možný úhel je 0,013\xb0"
         return out
+
+    def draw(self):
+        """Metoda pripravuje data pro vykreslení trojúhelníku."""
+        sA = self.sA
+        sB = self.sB
+        sC = self.sC
+        uA = math.degrees(self.uA)
+        uB = math.degrees(self.uB)
+        uC = math.degrees(self.uC)
+        vC = self.vC
+        if sA + sB + sC < 2000:
+            while True:
+                if uA > 100 or uB > 100:
+                    if sA + sB < 620 or sA + sC < 620 or sB + sC < 620:
+                        sA *= 1.1
+                        sB *= 1.1
+                        sC *= 1.1
+                        vC *= 1.1
+                    else:
+                        break
+                elif (sA + sB + sC < 2000 and sA < 620 and
+                      sB < 620 and sC < 620):
+                    sA *= 1.1
+                    sB *= 1.1
+                    sC *= 1.1
+                    vC *= 1.1
+                else:
+                    break
+        elif sA + sB + sC > 2000:
+            while True:
+                if uA > 90 or uB > 90:
+                    if sA + sB > 750 or sA + sC > 750 or sB + sC > 750:
+                        sA /= 1.1
+                        sB /= 1.1
+                        sC /= 1.1
+                        vC /= 1.1
+                    else:
+                        break
+                elif sA + sB + sC > 2000 or (sA > 750 or
+                                             sB > 750 or sC > 750):
+                    sA /= 1.1
+                    sB /= 1.1
+                    sC /= 1.1
+                    vC /= 1.1
+                else:
+                    break
+        return (sC, uB, sA, uC, sB, uA, vC)
+
 
 class Gui(tk.Tk):
     """Class pro gui."""
@@ -484,8 +596,8 @@ class Gui(tk.Tk):
         self.app.columnconfigure(3, weight=2)
         self.app.columnconfigure(4, weight=2)
         self.app.columnconfigure(5, weight=2)
-        self.app.minsize(450, 577)
-        self.app.maxsize(450, 577)
+        self.app.minsize(449, 502)
+        self.app.maxsize(449, 502)
         self.app.option_add("*font", "Helvetica 10 bold")
         self.canvas = tk.Canvas()
         self.nazvy = {1: "Strana a",
@@ -507,6 +619,7 @@ class Gui(tk.Tk):
         self.isuC = tk.BooleanVar()
         self.isuC.set(False)
         self.count = 0
+        self.myOutput = ""
         self.checkbox_render()
         self.value_render()
         self.image_render()
@@ -584,7 +697,7 @@ class Gui(tk.Tk):
         self.input_render_choice()
 
     def value_render(self):
-        """Vypisuje pokyni."""
+        """Vypisuje pokyny."""
         self.stav = {0: "Vyberte, které veličiny zadáte.\n",
                      1: "Pokracujte ve vybírání. Vyberte další {} "
                      "veličiny.\n".format(self.count*-1+3),
@@ -606,7 +719,6 @@ class Gui(tk.Tk):
 
     def turn_off_checkbox(self):
         """Vypíná checkboxy po té co jsou vybrané 3, nebo dva uhly."""
-        
         if self.count == 3:
             if not self.issA.get():
                 self.chbsA.configure(state="disabled")
@@ -656,12 +768,12 @@ class Gui(tk.Tk):
                           font=("Helvetica", "16", "bold"))
         trImg.create_text(225, 25, anchor="center", text="C", fill="white",
                           font=("Helvetica", "16", "bold"))
-        trImg.create_text(225, 360, anchor="center", text="strana c",
+        trImg.create_text(225, 360, anchor="center", text=self.nazvy[3],
                           fill="white", font=("Helvetica", "12", "bold"))
-        trImg.create_text(120, 185, anchor="center", text="strana b",
+        trImg.create_text(120, 185, anchor="center", text=self.nazvy[2],
                           angle=60, fill="white",
                           font=("Helvetica", "12", "bold"))
-        trImg.create_text(330, 185, anchor="center", text="strana a",
+        trImg.create_text(330, 185, anchor="center", text=self.nazvy[1],
                           angle=-60, fill="white",
                           font=("Helvetica", "12", "bold"))
         trImg.create_text(105, 310, anchor="center", text="\u03B1",
@@ -703,12 +815,15 @@ class Gui(tk.Tk):
         values = 0 je délka, 1 jsou uhly, myrow = radek, mycolumn = pocatecni
         sloupec
         """
+        # Nadpisek
         tk.Label(self.frame, text=txt, bg="#1d1d1d", fg="white", bd=5,
                  anchor="n").grid(row=myrow, column=mycolumn, sticky="w")
+        # Input
         tk.Spinbox(self.frame, bg="green", fg="white", from_=0.1,
                    to=10000, buttonbackground="#1d1d1d", increment=0.05,
                    width=30, textvariable=var
                    ).grid(row=myrow, sticky="w", column=mycolumn+1)
+        # Jednotky
         if values == 0:
             ol = ("mm", "cm", "dm", "m", "km")
             unit.set("m")
@@ -751,9 +866,9 @@ class Gui(tk.Tk):
         self.frame = tk.Frame(self.app, width=450, bg="#1d1d1d")
         self.frame.grid(column=0, row=4, columnspan=6, rowspan=5,
                         sticky="wn")
-        if self.count > 0:
-            self.app.minsize(450, 735)
-            self.app.maxsize(450, 735)
+        if self.count > 0 and self.myOutput == "":
+            self.app.minsize(449, 735)
+            self.app.maxsize(449, 735)
 
     def blank(self, myrow, mycolumn):
         """Vykresluje prázdné místonamísto inputu."""
@@ -775,153 +890,154 @@ class Gui(tk.Tk):
         self.unuB = tk.StringVar()
         self.unuC = tk.StringVar()
         if self.issA.get():
-            self.mysA = self.input_render(self.sA, "strana a", 0, 0, 3,
+            self.mysA = self.input_render(self.sA, self.nazvy[1], 0, 0, 3,
                                           self.unsA)
             if self.issB.get():
-                self.input_render(self.sB, "strana b", 0, 1, 3, self.unsB)
+                self.input_render(self.sB, self.nazvy[2], 0, 1, 3, self.unsB)
                 if self.issC.get():
-                    self.input_render(self.sC, "strana c", 0, 2, 3, self.unsC)
+                    self.input_render(self.sC, self.nazvy[3], 0, 2, 3,
+                                      self.unsC)
                 elif self.isuA.get():
-                    self.input_render(self.uA, "úhel \u03B1", 1, 2, 3,
+                    self.input_render(self.uA, self.nazvy[4], 1, 2, 3,
                                       self.unuA)
                 elif self.isuB.get():
-                    self.input_render(self.uB, "úhel \u03B2", 1, 2, 3,
+                    self.input_render(self.uB, self.nazvy[5], 1, 2, 3,
                                       self.unuB)
                 elif self.isuC.get():
-                    self.input_render(self.uC, "úhel \u03B3", 1, 2, 3,
+                    self.input_render(self.uC, self.nazvy[6], 1, 2, 3,
                                       self.unuC)
                 else:
                     self.blank(2, 3)
             elif self.issC.get():
-                self.input_render(self.sC, "strana c", 0, 1, 3, self.unsC)
+                self.input_render(self.sC, self.nazvy[3], 0, 1, 3, self.unsC)
                 if self.isuA.get():
-                    self.input_render(self.uA, "úhel \u03B1", 1, 2, 3,
+                    self.input_render(self.uA, self.nazvy[4], 1, 2, 3,
                                       self.unuA)
                 elif self.isuB.get():
-                    self.input_render(self.uB, "úhel \u03B2", 1, 2, 3,
+                    self.input_render(self.uB, self.nazvy[5], 1, 2, 3,
                                       self.unuB)
                 elif self.isuC.get():
-                    self.input_render(self.uC, "úhel \u03B3", 1, 2, 3,
+                    self.input_render(self.uC, self.nazvy[6], 1, 2, 3,
                                       self.unuC)
                 else:
                     self.blank(2, 3)
             elif self.isuA.get():
-                self.input_render(self.uA, "úhel \u03B1", 1, 1, 3, self.unuA)
+                self.input_render(self.uA, self.nazvy[4], 1, 1, 3, self.unuA)
                 if self.isuB.get():
-                    self.input_render(self.uB, "úhel \u03B2", 1, 2, 3,
+                    self.input_render(self.uB, self.nazvy[5], 1, 2, 3,
                                       self.unuB)
                 elif self.isuC.get():
-                    self.input_render(self.uC, "úhel \u03B3", 1, 2, 3,
+                    self.input_render(self.uC, self.nazvy[6], 1, 2, 3,
                                       self.unuC)
                 else:
                     self.blank(2, 3)
             elif self.isuB.get():
-                self.input_render(self.uB, "úhel \u03B2", 1, 1, 3,
+                self.input_render(self.uB, self.nazvy[5], 1, 1, 3,
                                   self.unuB)
                 if self.isuC.get():
-                    self.input_render(self.uC, "úhel \u03B3", 1, 2, 3,
+                    self.input_render(self.uC, self.nazvy[6], 1, 2, 3,
                                       self.unuC)
                 else:
                     self.blank(2, 3)
             elif self.isuC.get():
-                self.input_render(self.uC, "úhel \u03B3", 1, 1, 3,
+                self.input_render(self.uC, self.nazvy[6], 1, 1, 3,
                                   self.unuC)
                 self.blank(2, 3)
             else:
                 self.blank(1, 3)
                 self.blank(2, 3)
         elif self.issB.get():
-            self.input_render(self.sB, "strana b", 0, 0, 3,
+            self.input_render(self.sB, self.nazvy[2], 0, 0, 3,
                               self.unsB)
             if self.issC.get():
-                self.input_render(self.sC, "strana c", 0, 1, 3,
+                self.input_render(self.sC, self.nazvy[3], 0, 1, 3,
                                   self.unsC)
                 if self.isuA.get():
-                    self.input_render(self.uA, "úhel \u03B1", 1, 2, 3,
+                    self.input_render(self.uA, self.nazvy[4], 1, 2, 3,
                                       self.unuA)
                 elif self.isuB.get():
-                    self.input_render(self.uB, "úhel \u03B2", 1, 2, 3,
+                    self.input_render(self.uB, self.nazvy[5], 1, 2, 3,
                                       self.unuB)
                 elif self.isuC.get():
-                    self.input_render(self.uC, "úhel \u03B3", 1, 2, 3,
+                    self.input_render(self.uC, self.nazvy[6], 1, 2, 3,
                                       self.unuC)
                 else:
                     self.blank(2, 3)
             elif self.isuA.get():
-                self.input_render(self.uA, "úhel \u03B1", 1, 1, 3, self.unuA)
+                self.input_render(self.uA, self.nazvy[4], 1, 1, 3, self.unuA)
                 if self.isuB.get():
-                    self.input_render(self.uB, "úhel \u03B2", 1, 2, 3,
+                    self.input_render(self.uB, self.nazvy[5], 1, 2, 3,
                                       self.unuB)
                 elif self.isuC.get():
-                    self.input_render(self.uC, "úhel \u03B3", 1, 2, 3,
+                    self.input_render(self.uC, self.nazvy[6], 1, 2, 3,
                                       self.unuC)
                 else:
                     self.blank(2, 3)
             elif self.isuB.get():
-                self.input_render(self.uB, "úhel \u03B2", 1, 1, 3, self.unuB)
+                self.input_render(self.uB, self.nazvy[5], 1, 1, 3, self.unuB)
                 if self.isuC.get():
-                    self.input_render(self.uC, "úhel \u03B3", 1, 2, 3,
+                    self.input_render(self.uC, self.nazvy[6], 1, 2, 3,
                                       self.unuC)
                 else:
                     self.blank(2, 3)
             elif self.isuC.get():
-                self.input_render(self.uC, "úhel \u03B3", 1, 1, 3, self.unuC)
+                self.input_render(self.uC, self.nazvy[6], 1, 1, 3, self.unuC)
                 self.blank(2, 3)
             else:
                 self.blank(1, 3)
                 self.blank(2, 3)
         elif self.issC.get():
-            self.input_render(self.sC, "strana c", 0, 0, 3, self.unsC)
+            self.input_render(self.sC, self.nazvy[3], 0, 0, 3, self.unsC)
             if self.isuA.get():
-                self.input_render(self.uA, "úhel \u03B1", 1, 1, 3,
+                self.input_render(self.uA, self.nazvy[4], 1, 1, 3,
                                   self.unuA)
                 if self.isuB.get():
-                    self.input_render(self.uB, "úhel \u03B2", 1, 2, 3,
+                    self.input_render(self.uB, self.nazvy[5], 1, 2, 3,
                                       self.unuB)
                 elif self.isuC.get():
-                    self.input_render(self.uC, "úhel \u03B3", 1, 2, 3,
+                    self.input_render(self.uC, self.nazvy[6], 1, 2, 3,
                                       self.unuC)
                 else:
                     self.blank(2, 3)
             elif self.isuB.get():
-                self.input_render(self.uB, "úhel \u03B2", 1, 1, 3, self.unuB)
+                self.input_render(self.uB, self.nazvy[5], 1, 1, 3, self.unuB)
                 if self.isuC.get():
-                    self.input_render(self.uC, "úhel \u03B3", 1, 2, 3,
+                    self.input_render(self.uC, self.nazvy[6], 1, 2, 3,
                                       self.unuC)
                 else:
                     self.blank(2, 3)
             elif self.isuC.get():
-                self.input_render(self.uC, "úhel \u03B3", 1, 1, 3,
+                self.input_render(self.uC, self.nazvy[6], 1, 1, 3,
                                   self.unuC)
                 self.blank(2, 3)
             else:
                 self.blank(1, 3)
                 self.blank(2, 3)
         elif self.isuA.get():
-            self.input_render(self.uA, "úhel \u03B1", 1, 0, 3, self.unuA)
+            self.input_render(self.uA, self.nazvy[4], 1, 0, 3, self.unuA)
             if self.isuB.get():
-                self.input_render(self.uB, "úhel \u03B2", 1, 1, 3, self.unuB)
+                self.input_render(self.uB, self.nazvy[5], 1, 1, 3, self.unuB)
                 if self.isuC.get():
-                    self.input_render(self.uC, "úhel \u03B3", 1, 2, 3,
+                    self.input_render(self.uC, self.nazvy[6], 1, 2, 3,
                                       self.unuC)
                 else:
                     self.blank(2, 3)
             elif self.isuC.get():
-                self.input_render(self.uC, "úhel \u03B3", 1, 1, 3, self.unuC)
+                self.input_render(self.uC, self.nazvy[6], 1, 1, 3, self.unuC)
                 self.blank(2, 3)
             else:
                 self.blank(1, 3)
                 self.blank(2, 3)
         elif self.isuB.get():
-            self.input_render(self.uB, "úhel \u03B2", 1, 0, 3, self.unuB)
+            self.input_render(self.uB, self.nazvy[5], 1, 0, 3, self.unuB)
             if self.isuC.get():
-                self.input_render(self.uC, "úhel \u03B3", 1, 1, 3, self.unuC)
+                self.input_render(self.uC, self.nazvy[6], 1, 1, 3, self.unuC)
                 self.blank(2, 3)
             else:
                 self.blank(1, 3)
                 self.blank(2, 3)
         elif self.isuC.get():
-            self.input_render(self.uC, "úhel \u03B3", 1, 0, 3, self.unuC)
+            self.input_render(self.uC, self.nazvy[6], 1, 0, 3, self.unuC)
             self.blank(1, 3)
             self.blank(2, 3)
         else:
@@ -931,13 +1047,209 @@ class Gui(tk.Tk):
 
     def get_values(self):
         """Ziska hodnoty z inputu a pošle je logice."""
-        myOutput = Tris({0: (self.sA.get(), self.unsA.get()),
-                         1: (self.sB.get(), self.unsB.get()),
-                         2: (self.sC.get(), self.unsC.get()),
-                         3: (self.uA.get(), self.unuA.get()),
-                         4: (self.uB.get(), self.unuB.get()),
-                         5: (self.uC.get(), self.unuC.get())})
-        print(myOutput)
+        # Vložení promených z inputu do logiky programu
+        self.myOutput = Tris({0: (self.sA.get(), self.unsA.get()),
+                              1: (self.sB.get(), self.unsB.get()),
+                              2: (self.sC.get(), self.unsC.get()),
+                              3: (self.uA.get(), self.unuA.get()),
+                              4: (self.uB.get(), self.unuB.get()),
+                              5: (self.uC.get(), self.unuC.get())})
+        # Získání hodnot z logiky
+        self.myResult = self.myOutput.output()
+        try:
+            self.draw = self.myOutput.draw()
+            self.result()
+        except self.draw.DoesNotExist:
+            self.result()
+
+    def result(self):
+        """Metoda pro vykreslení výsledků logiky."""
+        if isinstance(self.myResult, dict):
+            self.app.minsize(1185, 735)
+            self.app.maxsize(1185, 735)
+            # vytvoření stringu ze slovníku
+            render = ""
+            for x in self.myResult.values():
+                render += x
+                render += "\n"
+            pozXC = math.sqrt(self.draw[4] ** 2 - self.draw[6] ** 2)
+            # vytvoření kreslící ploch a vložení modulu želvy
+            result = tk.Canvas()
+            result.config(width=735, height=731)
+            t_s = turtle.TurtleScreen(result)
+            t_s.bgcolor("#1d1d1d")
+            result.grid(row=0, column=3, rowspan=8)
+            t = turtle.RawTurtle(t_s)
+            t.reset()
+            t.ht()
+            t.speed(10)
+            t.pu()
+            # úhel alfa je v rozmezí 70 až 105°
+            if self.draw[5] <= 105 and self.draw[5] >= 70:
+                t.setpos(((self.draw[0] / 2) * -1), ((self.draw[6] / 2) * -1))
+                t.pd()
+                t.pencolor("#fff")
+                t.pensize(3)
+                for x in range(6):
+                    if not x % 2:
+                        t.fd(self.draw[x])
+                        t.lt(180 - self.draw[x+1])
+                    else:
+                        continue
+                result.create_text(150, -360, anchor="nw", text=render,
+                                   fill="white",
+                                   font=("Helvetica", "10", "bold"))
+                result.create_text(self.draw[0] / 2 * -1 - 15,
+                                   self.draw[6] / 2 + 15,
+                                   anchor="w", text="A",
+                                   fill="white",
+                                   font=("Helvetica", "16", "bold"))
+                result.create_text(self.draw[0] / 2 + 5,
+                                   self.draw[6] / 2 + 15,
+                                   anchor="w", text="B",
+                                   fill="white",
+                                   font=("Helvetica", "16", "bold"))
+                if self.draw[5] <= 90:
+                    result.create_text(pozXC - self.draw[0] / 2,
+                                       self.draw[6] / 2 * -1 - 15,
+                                       anchor="center", text="C",
+                                       fill="white",
+                                       font=("Helvetica", "16", "bold"))
+                else:
+                    result.create_text((self.draw[0]/2 + pozXC) * -1,
+                                       self.draw[6] / 2 * -1 - 15,
+                                       anchor="center", text="C",
+                                       fill="white",
+                                       font=("Helvetica", "16", "bold"))
+            # úhel alfa je vetší než 105°
+            elif self.draw[5] > 105:
+                t.setpos(0, ((self.draw[6] / 2) * -1))
+                t.pd()
+                t.pencolor("#fff")
+                t.pensize(3)
+                for x in range(6):
+                    if not x % 2:
+                        t.fd(self.draw[x])
+                        t.lt(180 - self.draw[x+1])
+                    else:
+                        continue
+                result.create_text(150, -360, anchor="nw", text=render,
+                                   fill="white",
+                                   font=("Helvetica", "10", "bold"))
+                result.create_text(0, self.draw[6] / 2 + 15,
+                                   anchor="w", text="A",
+                                   fill="white",
+                                   font=("Helvetica", "16", "bold"))
+                result.create_text(self.draw[0] + 5,
+                                   self.draw[6] / 2 + 15,
+                                   anchor="w", text="B",
+                                   fill="white",
+                                   font=("Helvetica", "16", "bold"))
+                result.create_text(pozXC * -1,
+                                   self.draw[6] / 2 * -1 - 15,
+                                   anchor="center", text="C",
+                                   fill="white",
+                                   font=("Helvetica", "16", "bold"))
+            # úhel beta je v rozmezí 70 až 105°
+            elif self.draw[1] <= 105 and self.draw[1] >= 80:
+                t.setpos(((self.draw[0] / 2) * -1), ((self.draw[6] / 2) * -1))
+                t.pd()
+                t.pencolor("#fff")
+                t.pensize(3)
+                for x in range(6):
+                    if not x % 2:
+                        t.fd(self.draw[x])
+                        t.lt(180 - self.draw[x+1])
+                    else:
+                        continue
+                result.create_text(-340, -360, anchor="nw", text=render,
+                                   fill="white",
+                                   font=("Helvetica", "10", "bold"))
+                result.create_text(self.draw[0] / 2 * -1 - 15,
+                                   self.draw[6] / 2 + 15,
+                                   anchor="w", text="A",
+                                   fill="white",
+                                   font=("Helvetica", "16", "bold"))
+                result.create_text(self.draw[0] / 2 + 5,
+                                   self.draw[6] / 2 + 15,
+                                   anchor="w", text="B",
+                                   fill="white",
+                                   font=("Helvetica", "16", "bold"))
+                if self.draw[5] <= 90:
+                    result.create_text(pozXC - self.draw[0] / 2,
+                                       self.draw[6] / 2 * -1 - 15,
+                                       anchor="center", text="C",
+                                       fill="white",
+                                       font=("Helvetica", "16", "bold"))
+                else:
+                    result.create_text((self.draw[0]/2 + pozXC) * -1,
+                                       self.draw[6] / 2 * -1 - 15,
+                                       anchor="center", text="C",
+                                       fill="white",
+                                       font=("Helvetica", "16", "bold"))
+            # úhel beta je vetší než 105°
+            elif self.draw[1] > 105:
+                t.setpos(self.draw[0] * -1, (self.draw[6] / 2) * -1)
+                t.pd()
+                t.pencolor("#fff")
+                t.pensize(3)
+                for x in range(6):
+                    if not x % 2:
+                        t.fd(self.draw[x])
+                        t.lt(180 - self.draw[x+1])
+                    else:
+                        continue
+                result.create_text(-340, -360, anchor="nw", text=render,
+                                   fill="white",
+                                   font=("Helvetica", "10", "bold"))
+                result.create_text(self.draw[0] * -1 - 15,
+                                   self.draw[6] / 2 + 15,
+                                   anchor="w", text="A",
+                                   fill="white",
+                                   font=("Helvetica", "16", "bold"))
+                result.create_text(0, self.draw[6] / 2 + 15,
+                                   anchor="w", text="B",
+                                   fill="white",
+                                   font=("Helvetica", "16", "bold"))
+                result.create_text(pozXC - self.draw[0],
+                                   self.draw[6] / 2 * -1 - 15,
+                                   anchor="center", text="C",
+                                   fill="white",
+                                   font=("Helvetica", "16", "bold"))
+            # úhel alfa má méně než 70 a beta méně než 80
+            else:
+                t.setpos(((self.draw[0] / 2) * -1), ((self.draw[6] / 2) * -1))
+                t.pd()
+                t.pencolor("#fff")
+                t.pensize(3)
+                for x in range(6):
+                    if not x % 2:
+                        t.fd(self.draw[x])
+                        t.lt(180 - self.draw[x+1])
+                    else:
+                        continue
+                result.create_text(-340, -360, anchor="nw", text=render,
+                                   fill="white",
+                                   font=("Helvetica", "10", "bold"))
+                result.create_text(self.draw[0] / 2 * -1 - 15,
+                                   self.draw[6] / 2 + 15,
+                                   anchor="w", text="A",
+                                   fill="white",
+                                   font=("Helvetica", "16", "bold"))
+                result.create_text(self.draw[0] / 2 + 5,
+                                   self.draw[6] / 2 + 15,
+                                   anchor="w", text="B",
+                                   fill="white",
+                                   font=("Helvetica", "16", "bold"))
+                result.create_text(pozXC - self.draw[0] / 2,
+                                   self.draw[6] / 2 * -1 - 15,
+                                   anchor="center", text="C",
+                                   fill="white",
+                                   font=("Helvetica", "16", "bold"))
+        else:
+            # chyba - trojúhelník nelze zkonstruovat
+            tk.messagebox.showerror(title="Chyba výpočtu",
+                                    message=self.myOutput)
 
 
 if __name__ == "__main__":
