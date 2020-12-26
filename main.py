@@ -1283,7 +1283,10 @@ def test_toNumber():
     test = toNumber(test)
     assert test == result
 
-class test(Tris)
+
+class test(Tris):
+    """Testovací třída."""
+
     def test_tris_sss():
         """Testuje třídu Tris(), pro trojúhelník sss."""
         test = {0: ('500', 'cm'),
@@ -1306,8 +1309,7 @@ class test(Tris)
                   11: 'typ – pravoúhlý'}
         test = Tris(test)
         assert test.result == result and test.tris_sss == result
-    
-    
+
     def test_tris_sus():
         """Testuje třídu Tris(), pro trojúhelník sus."""
         test = {0: ('', ''),
@@ -1330,8 +1332,7 @@ class test(Tris)
                   11: 'typ – obecný'}
         test = Tris(test)
         assert test.result == result and test.tris_sus == result
-    
-    
+
     def test_tris_usu():
         """Testuje třídu Tris(), pro trojúhelník sus."""
         test = {0: ('', ''),
@@ -1355,7 +1356,6 @@ class test(Tris)
         test = Tris(test)
         assert test.result == result and test.tris_usu == result
 
-
     def test_tris_error():
         """Testuje třídu Tris(), pro error."""
         test = {0: ('20', 'dm'),
@@ -1371,7 +1371,6 @@ class test(Tris)
         test = Tris(test)
         assert test.result == result and test.output == result
         assert test.__str__ == result
-
 
 
 if __name__ == "__main__":
