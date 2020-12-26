@@ -17,16 +17,17 @@ def toNumber(value):
     V případě že dostane prázdný string vloží do něj nulu. smaže všechn
     nežádoucí znaky. Změní desetinou čárku na opovídající tvar.
     """
+    # pokud je string prázdný, vloží nulu
     if value == "":
         value = "0"
     value = "(" + value + ")+0"
     value = value.replace(",", ".")
-    value = re.sub(r'[\w ][^sqrt()0-9+./*-]', '', value)
+    value = re.sub(r'[\w ][^sqrt()0-9()./*-+]', '', value)
     value = value.replace("sqrt", "math.sqrt")
     try:
         value = eval(value)
         return value
-    except value.isstring:
+    except value.NotImplementedError:
         x = "Něco je špatně, zadejte čísla znovu."
         print(x)
         tk.messagebox.showerror(title="Chyba vstupu", message=x)
@@ -36,7 +37,7 @@ class Uprava_jednotek():
     """Třída pro úpravu inputu pro logiku."""
 
     def prevod_delky(self):
-        """Metoda pro prevod delek na jednotnou variantu."""
+        """Metoda pro převod délek na jednotnou variantu."""
         if self.unsA != "" and self.unsB != "" and self.unsC != "":
             (self.unsA, self.unsB,
              self.sA, self.sB) = self.dve_strany(self.unsA, self.unsB,
@@ -70,7 +71,7 @@ class Uprava_jednotek():
             self.unitD = "m"
 
     def dve_strany(self, strana1, strana2, s1, s2):
-        """Prevadí dve delky na stejnou jednotku."""
+        """Převádí dvě délky na stejnou jednotku."""
         if strana1 != strana2:
             strana1 = self.delka_to_int(strana1)
             strana2 = self.delka_to_int(strana2)
@@ -91,7 +92,7 @@ class Uprava_jednotek():
         return strana1, strana2, s1, s2
 
     def delka_to_int(self, myunit):
-        """Prevede text na cislo."""
+        """Převede text na číslo."""
         if myunit == "mm":
             myunit = 1
         elif myunit == "cm":
@@ -107,7 +108,7 @@ class Uprava_jednotek():
         return myunit
 
     def int_to_delka(self, myunit):
-        """Prevede cisla na text."""
+        """Převede čísla na text."""
         if myunit == 1:
             myunit = "mm"
         elif myunit == 2:
@@ -123,7 +124,7 @@ class Uprava_jednotek():
         return myunit
 
     def to_rad(self, uhel1, u1):
-        """Převede uhly na radiany."""
+        """Převede úhly na radiany."""
         if uhel1 != "rad":
             uhel1 = self.uhel_to_int(uhel1)
             if uhel1 == 3:
@@ -136,7 +137,7 @@ class Uprava_jednotek():
         return u1
 
     def uhel_to_int(self, myunit):
-        """Zmení text na čísla."""
+        """Změní text na čísla."""
         if myunit == "\xb0":
             myunit = 1
         elif myunit == "rad":
@@ -148,7 +149,7 @@ class Uprava_jednotek():
         return myunit
 
     def int_to_uhel(self, myunit):
-        """Zmení čísla zpet na text."""
+        """Změní čísla zpět na text."""
         if myunit == 1:
             myunit = "\xb0"
         elif myunit == 2:
@@ -162,23 +163,23 @@ class Uprava_jednotek():
 
 class Tris(Uprava_jednotek):
     """
-    Funkce pro vypocet vsech hodnot trojuhelniku.
+    Funkce pro výpočet všech hodnot trojúhelníku.
 
-    Je nutne vlozit 3 hodnoty.
-    strana a = sA
-    strana b = sB
-    strana c = sC
-    uhel \u03B1 = uA
-    uhel \u03B2 = uB
-    uhel \u03B3 = uC
+    Je nutné vložit slovník ve formátu:
+    {0: ('strana a', 'jednotka strany a'), # jednotky – mm, cm, dm, m, km
+     1: ('strana b', 'jednotka strany b'), # jednotky – mm, cm, dm, m, km
+     2: ('strana c', 'jednotka strany c'), # jednotky – mm, cm, dm, m, km
+     3: ('úhel A', 'jednotka úhlu A'), # jednotky – °, rad, π
+     4: ('úhel B', 'jednotka úhlu B'), # jednotky – °, rad, π
+     5: ('úhel C', 'jednotka úhlu C')} # jednotky – °, rad, π
     """
 
     def __init__(self, hodnoty):
         """
         Konsruktor.
 
-        Vytvori promene pro metody a rozhodne jakou metodu vyuzit
-        pro vypocitani dalsich promenych
+        Vytvoři promene pro metody a rozhodne jakou metodu využít
+        pro vypočitani dalšich proměných
         """
         self.unsA = hodnoty[0][1]
         self.unsB = hodnoty[1][1]
@@ -192,6 +193,7 @@ class Tris(Uprava_jednotek):
         self.uA = self.to_rad(self.unuA, toNumber(hodnoty[3][0]))
         self.uB = self.to_rad(self.unuB, toNumber(hodnoty[4][0]))
         self.uC = self.to_rad(self.unuC, toNumber(hodnoty[5][0]))
+        self.vC = 0
         self.prevod_delky()
         self.unitU = "rad"
         if ((self.uA + self.uB < math.pi) or (self.uA + self.uC < math.pi) or
@@ -259,7 +261,7 @@ class Tris(Uprava_jednotek):
 
     def cos_veta(self, arg):
         """
-        Cosinova veta pro vypocet uhlu ze stran.
+        Cosinová věta pro výpočet úhlů ze stran.
 
         arg = <str> uA / uB / uC / (zadané se počítá)
         """
@@ -278,7 +280,7 @@ class Tris(Uprava_jednotek):
 
     def sin_veta(self, arg):
         """
-        Sinova veta pro vypocet uhlu ze stran.
+        Sinová veta pro výpocet úhlu a stray.
 
         arg = <str> uA / uB / uC / sA / sB / sC (zadané se počítá)
         """
@@ -322,7 +324,7 @@ class Tris(Uprava_jednotek):
             print("argument musí být 'uA', 'uB', 'uC', 'sA', 'sB', nebo 'sC'")
 
     def tris_usu(self):
-        """Vypocita strany a uhly podle vety usu."""
+        """Vypočítá strany a úhly podle věty usu."""
         if (self.uA + self.uB < math.pi and self.uB + self.uC < math.pi and
                 self.uB + self.uC < math.pi):
             if self.uA > 0 and self.uB > 0:
@@ -343,21 +345,20 @@ class Tris(Uprava_jednotek):
         return self.output()
 
     def tris_sus(self):
-        """Vypocita strany a uhly podle vety sus."""
+        """Vypočíta strany a úhly podle věty sus."""
         sA = self.sA
         sB = self.sB
         sC = self.sC
         uA = self.uA
         uB = self.uB
         uC = self.uC
-        # zakladni cosinové věty
         if uA < math.pi and uB < math.pi and uC < math.pi:
             if sB > 0 and sC > 0 and uA > 0:
                 try:
                     self.sA = math.sqrt(sB ** 2 + sC ** 2
                                         - 2 * sB * sC * math.cos(uA))
-                    self.uB = self.sin_veta("uB")
-                    self.uC = self.sin_veta("uC")
+                    self.uB = self.cos_veta("uB")
+                    self.uC = self.cos_veta("uC")
                 except self.sA.error:
                     return self.output()
             elif sB > 0 and sC > 0 and uB > 0:
@@ -381,13 +382,12 @@ class Tris(Uprava_jednotek):
                     self.sB = self.sin_veta("sB")
                 except self.uC.error:
                     return self.output()
-            # zakladni cosinové věty
             elif sA > 0 and sC > 0 and uB > 0:
                 try:
                     self.sB = math.sqrt(sA ** 2 + sC ** 2
                                         - 2 * sA * sC * math.cos(uB))
-                    self.uA = self.sin_veta("uA")
-                    self.uC = self.sin_veta("uC")
+                    self.uA = self.cos_veta("uA")
+                    self.uC = self.cos_veta("uC")
                 except self.sB.error:
                     return self.output()
             elif sA > 0 and sC > 0 and uC > 0:
@@ -411,19 +411,18 @@ class Tris(Uprava_jednotek):
                     self.sC = self.sin_veta("SC")
                 except self.uA.error:
                     return self.output()
-            # zakladni cosinové věty
             elif sA > 0 and sB > 0 and uC > 0:
                 try:
                     self.sC = math.sqrt(sA ** 2 + sB ** 2
                                         - 2 * sA * sB * math.cos(uC))
-                    self.uA = self.sin_veta("uA")
-                    self.uB = self.sin_veta("uB")
+                    self.uA = self.cos_veta("uA")
+                    self.uB = self.cos_veta("uB")
                 except self.sC.error:
                     return self.output()
         return self.output()
 
     def tris_sss(self):
-        """Výpočet podle vetey sss."""
+        """Výpočet podle věty sss."""
         if self.is_tris_S():
             self.uA = self.cos_veta("uA")
             self.uB = self.cos_veta("uB")
@@ -432,11 +431,10 @@ class Tris(Uprava_jednotek):
 
     def output(self):
         """Výstup z třídy."""
-        tmp = self.delka_to_int(self.unitD)
+        # pošle output podle toho jestli je výsledek troujúhelník
         if self.is_tris():
-            print(self.sA)
-            print(self.sB)
-            print(self.sC)
+            tmp = self.delka_to_int(self.unitD)
+            # pokud jsou strany menší než 1 přizpusobí jednotky
             if self.sA < 1 and self.sB < 1 and self.sC < 1:
                 while True:
                     if (tmp == 7 and self.sA < 1 and self.sB < 1 and
@@ -456,7 +454,10 @@ class Tris(Uprava_jednotek):
                     else:
                         break
                         break
-            elif not self.sA % 10 or not self.sB % 10 or not self.sC % 10:
+            # pokud lze změnit jednotku na vštší, provede se
+            elif ((not self.sA % 10 or isinstance(self.sA, int)) and
+                  (not self.sB % 10 or isinstance(self.sB, int)) and
+                  (not self.sC % 10 or isinstance(self.sC, int))):
                 while True:
                     if tmp < 4 and tmp >= 1:
                         if ((not self.sA % 10 or isinstance(self.sA, int)) and
@@ -496,7 +497,9 @@ class Tris(Uprava_jednotek):
             sA = round(sA, 5)
             sB = round(sB, 5)
             sC = round(sC, 5)
+            # volání metody pro výstup pro želvu
             self.draw()
+            # uložení outputu pro trojúhelník
             tpTris = {0: "typ – rovnostranný",
                       1: "typ – rovnoramenný, pravoúhlý",
                       2: "typ – rovnoramenný",
@@ -516,6 +519,7 @@ class Tris(Uprava_jednotek):
                    8: "výška c – " + str(vC) + self.unitD,
                    9: "obvod  – " + str(obvod) + self.unitD,
                    10: "obsah – " + str(obsah) + self.unitD + "\u00B2"}
+            # přidání typu trojúhelníku
             if uA == uB and uB == uC:
                 out[11] = tpTris[0]
             elif ((uA == uB and uCd == 90) or (uA == uC and uBd == 90)
@@ -527,11 +531,13 @@ class Tris(Uprava_jednotek):
                 out[11] = tpTris[3]
             else:
                 out[11] = tpTris[4]
+        # uložení outputu pro error
         else:
             out = "Nejedná se o trojúhelník.\n"
             out += "Součet dvou stran musí být větší než strana třetí.\n"
             out += "Součet dvou úhlů musí být menší než 180\xb0 nebo "
             out += "\u03C0 rad. Nejmenší možný úhel je 0,013\xb0"
+        # vrací sting ,nebo slovník
         return out
 
     def draw(self):
@@ -543,10 +549,11 @@ class Tris(Uprava_jednotek):
         uB = math.degrees(self.uB)
         uC = math.degrees(self.uC)
         vC = self.vC
+        # zvetšuje strany na odpovídající velikost pro kresbu
         if sA + sB + sC < 2000:
             while True:
                 if uA > 100 or uB > 100:
-                    if sA + sB < 620 or sA + sC < 620 or sB + sC < 620:
+                    if sA < 310 and sB < 310 and sC < 310:
                         sA *= 1.1
                         sB *= 1.1
                         sC *= 1.1
@@ -561,6 +568,7 @@ class Tris(Uprava_jednotek):
                     vC *= 1.1
                 else:
                     break
+        # zmenšuje strany na odpovídající velikost pro kresbu
         elif sA + sB + sC > 2000:
             while True:
                 if uA > 90 or uB > 90:
@@ -627,6 +635,7 @@ class Gui(tk.Tk):
 
     def checkbox_render(self):
         """Stylování a vykreslování checkboxu."""
+        # vykreslení checkboxu strany a
         self.chbsA = tk.Checkbutton(self.app, text=self.nazvy[1],
                                     variable=self.issA,
                                     command=self.count_of_true,
@@ -635,6 +644,7 @@ class Gui(tk.Tk):
                                     activebackground="#1d1d1d",
                                     selectcolor="green", bd=5)
         self.chbsA.grid(row=0, column=0, sticky="W")
+        # vykreslení checkboxu strany b
         self.chbsB = tk.Checkbutton(self.app, text=self.nazvy[2],
                                     variable=self.issB,
                                     command=self.count_of_true,
@@ -643,6 +653,7 @@ class Gui(tk.Tk):
                                     activebackground="#1d1d1d",
                                     selectcolor="green", bd=5)
         self.chbsB.grid(row=0, column=1, sticky="W")
+        # vykreslení checkboxu strany c
         self.chbsC = tk.Checkbutton(self.app, text=self.nazvy[3],
                                     variable=self.issC,
                                     command=self.count_of_true,
@@ -651,6 +662,7 @@ class Gui(tk.Tk):
                                     activebackground="#1d1d1d",
                                     selectcolor="green", bd=5)
         self.chbsC.grid(row=0, column=2, sticky="W")
+        # vykreslení checkboxu úhlu A
         self.chbuA = tk.Checkbutton(self.app, text=self.nazvy[4],
                                     variable=self.isuA,
                                     command=self.count_of_true,
@@ -659,6 +671,7 @@ class Gui(tk.Tk):
                                     activebackground="#1d1d1d",
                                     selectcolor="green", bd=5)
         self.chbuA.grid(row=1, column=0, sticky="W")
+        # vykreslení checkboxu úhlu B
         self.chbuB = tk.Checkbutton(self.app, text=self.nazvy[5],
                                     variable=self.isuB,
                                     command=self.count_of_true,
@@ -667,6 +680,7 @@ class Gui(tk.Tk):
                                     activebackground="#1d1d1d",
                                     selectcolor="green", bd=5)
         self.chbuB.grid(row=1, column=1, sticky="W")
+        # vykreslení checkboxu úhlu C
         self.chbuC = tk.Checkbutton(self.app, text=self.nazvy[6],
                                     variable=self.isuC,
                                     command=self.count_of_true,
@@ -758,7 +772,9 @@ class Gui(tk.Tk):
     def image_render(self):
         """Vykresluje interaktivní obrázek trojúhelníku."""
         myhelp = "Do polí je možné vkládat matematické operátory.\n"
-        myhelp += "\u221a = sqrt(zde cislo),\n\u00d7 = * ,\n\u00f7 = /"
+        myhelp += "Je možné také používat kulaté závorky.\n"
+        myhelp += "\u221a = sqrt(x), umocnění = x**y , násobení = x*y,\n"
+        myhelp += " dělení = x/y , čítání = x+y , odčítání = x-y"
         trImg = tk.Canvas(self.app, bg="#1d1d1d", width=450, height=445,
                           highlightbackground="#1d1d1d")
         trImg.grid(row=3, column=0, columnspan=3, sticky='we')
@@ -792,7 +808,7 @@ class Gui(tk.Tk):
                                 width=3)
         slA = trImg.create_line(400, 343.109, 225, 40, fill="white", width=3)
         slB = trImg.create_line(225, 40, 50, 343.109, fill="white", width=3)
-        trImg.create_text(40, 420, anchor="w", text=myhelp, fill="yellow",
+        trImg.create_text(70, 410, anchor="w", text=myhelp, fill="yellow",
                           font=("Helvetica", "10", "bold"))
         if self.issA.get():
             trImg.itemconfig(slA, fill="green")
@@ -1059,7 +1075,7 @@ class Gui(tk.Tk):
         try:
             self.draw = self.myOutput.draw()
             self.result()
-        except self.draw.DoesNotExist:
+        except self.result():
             self.result()
 
     def result(self):
@@ -1250,6 +1266,110 @@ class Gui(tk.Tk):
             # chyba - trojúhelník nelze zkonstruovat
             tk.messagebox.showerror(title="Chyba výpočtu",
                                     message=self.myOutput)
+
+
+def test_toNumber():
+    """Testuje funkci toNumber()."""
+    test = "2**5"
+    result = 32
+    test = toNumber(test)
+    assert test == result
+    test = "sqrt(625)"
+    result = 25
+    test = toNumber(test)
+    assert test == result
+    test = "(5+3)/2"
+    result = 4
+    test = toNumber(test)
+    assert test == result
+
+
+def test_tris_sss():
+    """Testuje třídu Tris(), pro trojúhelník sss."""
+    test = {0: ('500', 'cm'),
+            1: ('40', 'dm'),
+            2: ('3', 'm'),
+            3: ('', ''),
+            4: ('', ''),
+            5: ('', '')}
+    result = {0: 'strana a – 5.0m',
+              1: 'strana b – 4.0m',
+              2: 'strana c – 3.0m',
+              3: 'úhel α – 1.5708rad, 90.0°',
+              4: 'úhel β – 0.9273rad, 53.1301°',
+              5: 'úhel γ – 0.6435rad, 36.8699°',
+              6: 'výška a – 2.4m',
+              7: 'výška b – 3.0m',
+              8: 'výška c – 4.0m',
+              9: 'obvod  – 12.0m',
+              10: 'obsah – 6.0m²',
+              11: 'typ – pravoúhlý'}
+    test = Tris(test)
+    assert test.result == result
+
+
+def test_tris_sus():
+    """Testuje třídu Tris(), pro trojúhelník sus."""
+    test = {0: ('', ''),
+            1: ('40', 'dm'),
+            2: ('3', 'm'),
+            3: ('2**6', '°'),
+            4: ('', ''),
+            5: ('', '')}
+    result = {0: 'strana a – 38.0514dm',
+              1: 'strana b – 40dm',
+              2: 'strana c – 30dm',
+              3: 'úhel α – 1.11701rad, 64.0°',
+              4: 'úhel β – 1.23705rad, 70.8776°',
+              5: 'úhel γ – 0.78753rad, 45.1224°',
+              6: 'výška a – 28.34463dm',
+              7: 'výška b – 26.96382dm',
+              8: 'výška c – 35.95176dm',
+              9: 'obvod  – 108.0514dm',
+              10: 'obsah – 539.28dm²',
+              11: 'typ – obecný'}
+    test = Tris(test)
+    assert test.result == result
+
+
+def test_tris_usu():
+    """Testuje třídu Tris(), pro trojúhelník sus."""
+    test = {0: ('', ''),
+            1: ('40', 'cm'),
+            2: ('', ''),
+            3: ('2**6', '°'),
+            4: ('', ''),
+            5: ('1', 'rad')}
+    result = {0: 'strana a – 42.07359cm',
+              1: 'strana b – 40cm',
+              2: 'strana c – 39.39023cm',
+              3: 'úhel α – 1.11701rad, 64.0°',
+              4: 'úhel β – 1.02458rad, 58.70422°',
+              5: 'úhel γ – 1rad, 57.29578°',
+              6: 'výška a – 33.65884cm',
+              7: 'výška b – 35.40371cm',
+              8: 'výška c – 35.95176cm',
+              9: 'obvod  – 121.46382cm',
+              10: 'obsah – 708.07cm²',
+              11: 'typ – obecný'}
+    test = Tris(test)
+    assert test.result == result
+
+
+def test_tris_error():
+    """Testuje třídu Tris(), pro error."""
+    test = {0: ('20', 'dm'),
+            1: ('40', 'cm'),
+            2: ('5', 'm'),
+            3: ('', ''),
+            4: ('', ''),
+            5: ('', '')}
+    result = "Nejedná se o trojúhelník.\n"
+    result += "Součet dvou stran musí být větší než strana třetí.\n"
+    result += "Součet dvou úhlů musí být menší než 180\xb0 nebo "
+    result += "\u03C0 rad. Nejmenší možný úhel je 0,013\xb0"
+    test = Tris(test)
+    assert test.result == result
 
 
 if __name__ == "__main__":
