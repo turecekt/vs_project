@@ -48,3 +48,14 @@ MORSEOVKA = {
     'Y': '-.--',
     'Z': '--..',
 }
+
+def prevodDoMorseovky(veta):
+    veta = veta.upper()
+    vystup = ""
+    for znak in veta:
+        vystup += MORSEOVKA[znak] + "/"
+    return vystup
+
+veta = input("Zadej text pro převod do Morseovy abecedy: ")
+vystup = prevodDoMorseovky(veta)
+print(vystup)
