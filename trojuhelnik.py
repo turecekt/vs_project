@@ -191,6 +191,23 @@ def test_jePravouhly():
     assert jePravouhly(3, 4, 5) is True
     assert jePravouhly(4, 5, 3) is True
 
+def test_jeRovnostranny():
+    """Unit test for jeRovnostranny() function."""
+    assert jeRovnostranny(5, 4, 5) is False
+    assert jeRovnostranny(7, 2, 3) is False
+    assert jeRovnostranny(26, 58, 257) is False
+    assert jeRovnostranny(5, 5, 5) is True
+    assert jeRovnostranny(3, 3, 3) is True
+    assert jeRovnostranny(25, 25, 25) is True
+
+def test_jeRovnoramenny():
+    """Unit test for jeRovnoramenny() function."""
+    assert jeRovnoramenny(5, 1, 8) is False
+    assert jeRovnoramenny(1, 2, 3) is False
+    assert jeRovnoramenny(55, 88, 222) is False
+    assert jeRovnoramenny(5, 5, 2) is True
+    assert jeRovnoramenny(8, 4, 8) is True
+    assert jeRovnoramenny(10, 10, 25) is True
 
 if __name__ == "__main__":
     test_delkaStrany()
