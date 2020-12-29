@@ -92,12 +92,18 @@ def jePravouhly(a, b, c):
         return False
 
 def jeRovnostranny(a, b, c):
+"""
+Calculate if a triangle is Equilateral.
+"""
     if a == b == c:
         return True
     else:
         return False
 
 def jeRovnoramenny(a, b, c)
+"""
+Calculate if a triangle is Isosceles.
+"""
     if a == b or b == c or c == a:
         return True
     else:
