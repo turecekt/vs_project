@@ -97,6 +97,12 @@ def jeRovnostranny(a, b, c):
     else:
         return False
 
+def jeRovnoramenny(a, b, c)
+    if a == b or b == c or c == a:
+        return True
+    else:
+        return False
+
 def trojuhelnik():
     """Calculate various properties of a triangle.
 
@@ -135,7 +141,10 @@ def trojuhelnik():
         print("Trojúhelník je rovnostranný")
     else:
         print("Trojúhelník není rovnostranný")
-
+    if jeRovnoramenny(stra, strb, strc):
+        print("Trojúhelník je rovnoramenný")
+    else:
+        print("Trojúhelník není rovnoramenný")
 
 def test_delkaStrany():
     """Unit test for delkaStrany() function."""
