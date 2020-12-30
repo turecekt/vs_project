@@ -91,6 +91,7 @@ def jePravouhly(a, b, c):
     else:
         return False
 
+
 def jeRovnostranny(a, b, c):
     """Calculate if a triangle is Equilateral.
 
@@ -105,6 +106,7 @@ def jeRovnostranny(a, b, c):
     else:
         return False
 
+
 def jeRovnoramenny(a, b, c):
     """Calculate if a triangle is Isosceles.
 
@@ -118,6 +120,7 @@ def jeRovnoramenny(a, b, c):
         return True
     else:
         return False
+
 
 def trojuhelnik():
     """Calculate various properties of a triangle.
@@ -162,6 +165,7 @@ def trojuhelnik():
     else:
         print("Trojúhelník není rovnoramenný")
 
+
 def test_delkaStrany():
     """Unit test for delkaStrany() function."""
     assert delkaStrany(14, 8, 3, 65) == 58.05
@@ -201,6 +205,7 @@ def test_jePravouhly():
     assert jePravouhly(3, 4, 5) is True
     assert jePravouhly(4, 5, 3) is True
 
+
 def test_jeRovnostranny():
     """Unit test for jeRovnostranny() function."""
     assert jeRovnostranny(5, 4, 5) is False
@@ -210,6 +215,7 @@ def test_jeRovnostranny():
     assert jeRovnostranny(3, 3, 3) is True
     assert jeRovnostranny(25, 25, 25) is True
 
+
 def test_jeRovnoramenny():
     """Unit test for jeRovnoramenny() function."""
     assert jeRovnoramenny(5, 1, 8) is False
@@ -218,6 +224,7 @@ def test_jeRovnoramenny():
     assert jeRovnoramenny(5, 5, 2) is True
     assert jeRovnoramenny(8, 4, 8) is True
     assert jeRovnoramenny(10, 10, 25) is True
+
 
 if __name__ == "__main__":
     test_delkaStrany()
