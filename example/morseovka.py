@@ -1,4 +1,3 @@
-import sys
 """Projekt MORSEOVKA.
 Zadani
 Vytvořte program, který umí kódovat i dekódovat Morseovu abecedu.
@@ -125,4 +124,4 @@ if __name__ == '__main__':
         prevodZMorseovky(vstup)
 
     else:
-        sys.exit("nezvolil jsi správnou klávesu (1 nebo 2), program končí")
+        print("nezvolil jsi správnou klávesu (1 nebo 2), program končí")
