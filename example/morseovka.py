@@ -1,13 +1,16 @@
-"""Projekt MORSEOVKA - Radim Žaluda
-Zadani:
+import sys
+"""Projekt MORSEOVKA.
+Zadani
 Vytvořte program, který umí kódovat i dekódovat Morseovu abecedu.
 VSTUP
-• Textový řetězec
-• Bude čistě na řešitelském týmu, aby vymyslelo vhodný způsob zadávání vstupu.
+Textový řetězec
+Bude čistě na řešitelském týmu, aby vymyslelo vhodný způsob zadávání vstupu.
 VÝSTUP
-• Zakódovaná, případně dekódovaná morseovka
+Zakódovaná, případně dekódovaná morseovka
 """
-MORSEOVKA = {                           #prevodni slovnik (dictionary)
+
+
+MORSEOVKA = {
     '1': '.----',
     '2': '..---',
     '3': '...--',
@@ -45,47 +48,76 @@ MORSEOVKA = {                           #prevodni slovnik (dictionary)
     'Y': '-.--',
     'Z': '--..',
 }
-import sys                                              #import sys modulu
 
-"""Deklarace funkce prevodDoMorseovky s parametrem vstup, for cyklus pro prochazeni jednotlivych znaku zadaneho vstupniho rezetezce,nacitani znaku do promenne vystup s pripojenim lomitka (pro lepsi citelnost morseovy abecedy na konzoli)"""
+
+"""Deklarace funkce prevodDoMorseovky s parametrem vstup.
+for cyklus pro prochazeni jednotlivych znaku zadaneho vstupniho rezetezce
+nacitani znaku do promenne vystup s pripojenim lomitka
+(pro lepsi citelnost morseovy abecedy na konzoli)
+"""
+
+
 def prevodDoMorseovky(vstup):
     vystup = ""
     for znak in vstup:
-            vystup = vystup + MORSEOVKA[znak] + "/"
+        vystup = vystup + MORSEOVKA[znak] + "/"
     print(vystup)
 
-"""Deklarace funkce prevodZMorseovky s parametrem vstup, pridani mezery na konec vstupniho retezce Morseovy abecedy, for cyklus pro prochazeni jednotlivych znaku vstupního retezce(Morseovy abecedy), pokud nalezne mezeru ulozi do promenne, pokud nalezne 2 po sobe jdouci mezery, prida treti nakonec, jakmile nelezne posledni mezeru, jedna se o posledni znak """
+
+"""Deklarace funkce prevodZMorseovky s parametrem vstup
+pridani mezery na konec vstupniho retezce Morseovy abecedy.
+for cyklus pro prochazeni jednotlivych znaku vstupního retezce
+pokud nalezne mezeru ulozi do promenne
+pokud nalezne 2 po sobe jdouci mezery, prida treti nakonec,
+ jakmile nelezne posledni mezeru, jedna se o posledni znak
+"""
+
+
 def prevodZMorseovky(vstup):
-        vstup += ' '
-        vystup = ''
-        pomocna = ''
-        for znak in vstup:
-            if (znak != ' '):
-                i = 0
-                pomocna += znak
+    vstup += ' '
+    vystup = ''
+    pomocna = ''
+    for znak in vstup:
+        if (znak != ' '):
+            i = 0
+            pomocna += znak
+        else:
+            i += 1
+            if i == 2:
+                vystup += ' '
             else:
-                i += 1
-                if i == 2:
-                    vystup += ' '
-                else:
-                    vystup += list(MORSEOVKA.keys())[list(MORSEOVKA.values()).index(pomocna)]
-                    pomocna = ''
+                vystup += list(
+                    MORSEOVKA.keys())[list(MORSEOVKA.values()).index(pomocna)]
+                pomocna = ''
         print(vystup)
 
-"""Unit test pro zakodovani do morseovky"""
+
+"""Unit test pro zakodovani do morseovky
+"""
+
+
 def test_prevodDoMorseovky():
-    assert test_prevodDoMorseovky("RADIM13578") == ".-. .- -.. .. -- .---- ...-- ..... --... ---.."
+    assert test_prevodDoMorseovky(
+        "RADIM13578") == ".-. .- -.. .. -- .---- ...-- ..... --... ---.."
 
-"""Unit test pro dekodovani z morseovky"""
+
+"""Unit test pro dekodovani z morseovky
+"""
+
+
 def test_prevodZMorseovky():
-    assert test_prevodZMorseovky(".-. .- -.. .. -- .---- ...-- ..... --... ---..") == "RADIM13578"
+    assert test_prevodZMorseovky(
+        ".-. .- -.. .. -- .---- ...-- ..... --... ---..") == "RADIM13578"
 
 
-"""podminkou if - elif (stisknutim klavesy 1 nebo 2) se uzivatele zeptame, zda-li chce text zakodovat nebo dekodovat"""
+"""podminkou if - elif (stisknutim klavesy 1 nebo 2) zakodovat nebo dekodovat
+"""
+
+
 if __name__ == '__main__':
-    volba = input("Zmáčkni klávesu 1 pro zakódování do Morseovy abecedy nebo zmáčkni klávesu 2 pro dekódování z Morseovy abecedy:  ")
+    volba = input("1 pro zakódování, 2 pro dekódování z Morseovy abecedy: ")
     if volba == '1':
-        vstup = input( "Zadej text pro převod do Morseovy abecedy: ").upper()
+        vstup = input("Zadej text pro převod do Morseovy abecedy: ").upper()
         prevodDoMorseovky(vstup)
 
     elif volba == '2':
@@ -94,4 +126,4 @@ if __name__ == '__main__':
 
     else:
         sys.exit("nezvolil jsi správnou klávesu (1 nebo 2), program končí")
-
+# KONEC
