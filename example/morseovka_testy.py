@@ -1,15 +1,16 @@
 """Otestovani kodu pomoci unit testů."""
 
-from morseovka import *
+from morseovka import prevodDoMorseovky
+from morseovka import prevodZMorseovky
 
 
 def test_prevodDoMorseovky():
     """Unit test pro zakodovani do morseovky."""
-    assert test_prevodDoMorseovky(
+    assert prevodDoMorseovky(
         "RADIM13578") == ".-. .- -.. .. -- .---- ...-- ..... --... ---.."
 
 
 def test_prevodZMorseovky():
     """Unit test pro dekodovani z morseovky."""
-    assert test_prevodZMorseovky(
+    assert prevodZMorseovky(
         ".-. .- -.. .. -- .---- ...-- ..... --... ---..") == "RADIM13578"
