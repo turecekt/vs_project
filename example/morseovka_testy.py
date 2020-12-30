@@ -1,6 +1,6 @@
 """Otestovani kodu pomoci unit testů."""
 
-import * from morseovka 
+from morseovka import *
 
 
 def test_prevodDoMorseovky():
