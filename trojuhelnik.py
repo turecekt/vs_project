@@ -105,7 +105,7 @@ def jeRovnostranny(a, b, c):
     else:
         return False
 
-def jeRovnoramenny(a, b, c)
+def jeRovnoramenny(a, b, c):
     """Calculate if a triangle is Isosceles.
 
     Return true if the triangle is isosceles or false if it is not
