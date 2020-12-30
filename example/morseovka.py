@@ -101,4 +101,4 @@ if __name__ == '__main__':
         prevodZMorseovky(vstup)
 
     else:
-        print("nezvolil jsi správnou klávesu (1 nebo 2), program končí") 
+        print("nezvolil jsi správnou klávesu (1 nebo 2), program končí")
