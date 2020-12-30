@@ -126,4 +126,3 @@ if __name__ == '__main__':
 
     else:
         sys.exit("nezvolil jsi správnou klávesu (1 nebo 2), program končí")
-# KONEC
