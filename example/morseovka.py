@@ -51,13 +51,13 @@ MORSEOVKA = {
 
 
 def prevodDoMorseovky(vstup):
-    """Funkce pro převod zadaneho textu do Morseovy abecedy."""    
+    """Funkce pro převod zadaneho textu do Morseovy abecedy."""
     vystup = ""
     for znak in vstup:
         vystup = vystup + MORSEOVKA[znak] + "/"
     print(vystup)
 
-    
+
 def prevodZMorseovky(vstup):
     """Funkce pro převod z Morseovy abecedy do Morseovy abecedy."""
     vstup += ' '
@@ -69,7 +69,7 @@ def prevodZMorseovky(vstup):
             pomocna += znak
         else:
             i += 1
-            if i == 2: 
+            if i == 2:
                 vystup += ' '
             else:
                 vystup += list(
@@ -77,12 +77,13 @@ def prevodZMorseovky(vstup):
                 pomocna = ''
         print(vystup)
 
+
 def test_prevodDoMorseovky():
     """Unit test pro zakodovani do morseovky."""
     assert test_prevodDoMorseovky(
         "RADIM13578") == ".-. .- -.. .. -- .---- ...-- ..... --... ---.."
 
-    
+
 def test_prevodZMorseovky():
     """Unit test pro dekodovani z morseovky."""
     assert test_prevodZMorseovky(
@@ -101,3 +102,4 @@ if __name__ == '__main__':
 
     else:
         print("nezvolil jsi správnou klávesu (1 nebo 2), program končí")
+        
