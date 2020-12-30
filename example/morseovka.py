@@ -51,14 +51,15 @@ MORSEOVKA = {
 
 
 def prevodDoMorseovky(vstup):
-    """funkce pro převod zadaneho textu do Morseovy abecedy."""    
+    """Funkce pro převod zadaneho textu do Morseovy abecedy."""    
     vystup = ""
     for znak in vstup:
         vystup = vystup + MORSEOVKA[znak] + "/"
     print(vystup)
 
+    
 def prevodZMorseovky(vstup):
-    """funkce pro převod z Morseovy abecedy do Morseovy abecedy."""
+    """Funkce pro převod z Morseovy abecedy do Morseovy abecedy."""
     vstup += ' '
     vystup = ''
     pomocna = ''
@@ -76,14 +77,12 @@ def prevodZMorseovky(vstup):
                 pomocna = ''
         print(vystup)
 
-
-
 def test_prevodDoMorseovky():
     """Unit test pro zakodovani do morseovky."""
-
     assert test_prevodDoMorseovky(
         "RADIM13578") == ".-. .- -.. .. -- .---- ...-- ..... --... ---.."
 
+    
 def test_prevodZMorseovky():
     """Unit test pro dekodovani z morseovky."""
     assert test_prevodZMorseovky(
