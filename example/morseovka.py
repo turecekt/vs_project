@@ -55,6 +55,8 @@ for cyklus pro prochazeni jednotlivych znaku zadaneho vstupniho rezetezce
 nacitani znaku do promenne vystup s pripojenim lomitka
 (pro lepsi citelnost morseovy abecedy na konzoli)
 """
+
+
 def prevodDoMorseovky(vstup):
     vystup = ""
     for znak in vstup:
@@ -69,6 +71,8 @@ pokud nalezne mezeru ulozi do promenne
 pokud nalezne 2 po sobe jdouci mezery, prida treti nakonec,
  jakmile nelezne posledni mezeru, jedna se o posledni znak
 """
+
+
 def prevodZMorseovky(vstup):
     vstup += ' '
     vystup = ''
@@ -90,6 +94,8 @@ def prevodZMorseovky(vstup):
 
 """Unit test pro zakodovani do morseovky
 """
+
+
 def test_prevodDoMorseovky():
     assert test_prevodDoMorseovky(
         "RADIM13578") == ".-. .- -.. .. -- .---- ...-- ..... --... ---.."
@@ -97,6 +103,8 @@ def test_prevodDoMorseovky():
 
 """Unit test pro dekodovani z morseovky
 """
+
+
 def test_prevodZMorseovky():
     assert test_prevodZMorseovky(
         ".-. .- -.. .. -- .---- ...-- ..... --... ---..") == "RADIM13578"
@@ -104,6 +112,8 @@ def test_prevodZMorseovky():
 
 """podminkou if - elif (stisknutim klavesy 1 nebo 2) zakodovat nebo dekodovat
 """
+
+
 if __name__ == '__main__':
     volba = input("1 pro zakódování, 2 pro dekódování z Morseovy abecedy: ")
     if volba == '1':
