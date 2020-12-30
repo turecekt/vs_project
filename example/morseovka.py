@@ -77,6 +77,7 @@ def prevodZMorseovky(vstup):
                 pomocna = ''
         print(vystup)
 
+        
 if __name__ == '__main__':
     volba = input("1 pro zakódování, 2 pro dekódování z Morseovy abecedy: ")
     if volba == '1':
