@@ -69,6 +69,14 @@ def prevodZMorseovky(vstup):                            #deklarace funkce prevod
                     pomocna = ''                        #vynulovani pomocne promenne
         print(vystup)
 
+def test_prevodDoMorseovky():
+    assert test_prevodDoMorseovky("RADIM13578") == ".-. .- -.. .. -- .---- ...-- ..... --... ---.."
+
+def test_prevodZMorseovky():
+    assert test_prevodZMorseovky(".-. .- -.. .. -- .---- ...-- ..... --... ---..") == "RADIM13578"
+
+
+
 if __name__ == '__main__':
     volba = input("Zmáčkni klávesu 1 pro zakódování do Morseovy abecedy nebo zmáčkni klávesu 2 pro dekódování z Morseovy abecedy:  ")
     if volba == '1':                                                                #podminkou if - elif (stisknutim klavesy 1 nebo 2) se uzivatele zeptame, zda-li chce text zakodovat nebo dekodovat
