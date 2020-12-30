@@ -51,24 +51,14 @@ MORSEOVKA = {
 
 
 def prevodDoMorseovky(vstup):
-    """Deklarace funkce prevodDoMorseovky s parametrem vstup.
-      for cyklus pro prochazeni jednotlivych znaku zadaneho vstupniho rezetezce
-      nacitani znaku do promenne vystup s pripojenim lomitka
-      (pro lepsi citelnost morseovy abecedy na konzoli)
-    """    
+    #funkce pro převod zadaneho textu do Morseovy abecedy.    
     vystup = ""
     for znak in vstup:
         vystup = vystup + MORSEOVKA[znak] + "/"
     print(vystup)
 
 def prevodZMorseovky(vstup):
-    """Deklarace funkce prevodZMorseovky s parametrem vstup
-        pridani mezery na konec vstupniho retezce Morseovy abecedy.
-        for cyklus pro prochazeni jednotlivych znaku vstupního retezce
-        pokud nalezne mezeru ulozi do promenne
-        pokud nalezne 2 po sobe jdouci mezery, prida treti nakonec,
-        jakmile nelezne posledni mezeru, jedna se o posledni znak
-    """
+    #funkce pro převod z Morseovy abecedy do Morseovy abecedy. 
     vstup += ' '
     vystup = ''
     pomocna = ''
@@ -78,7 +68,7 @@ def prevodZMorseovky(vstup):
             pomocna += znak
         else:
             i += 1
-            if i == 2:
+            if i == 2: 
                 vystup += ' '
             else:
                 vystup += list(
