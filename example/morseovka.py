@@ -46,6 +46,8 @@ MORSEOVKA = {                           #prevodni slovnik (dictionary)
     'Z': '--..',
 }
 import sys                                              #import sys modulu
+import pytest                                           #import knihovny pytest
+
 def prevodDoMorseovky(vstup):                           #Deklarace funkce prevodDoMorseovky s parametrem vstup
     vystup = ""                                         #nastaveni prommene na prazdny retezec
     for znak in vstup:                                  #for cyklus pro prochazeni jednotlivych znaku zadaneho vstupniho rezetezce
