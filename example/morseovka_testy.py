@@ -6,14 +6,13 @@ from morseovka import prevodZMorseovky
 
 def test_prevodDoMorseovky():
     """Unit test pro zakodovani do morseovky."""
-    assert prevodDoMorseovky("RADIM") == ".-. .- -.. .. -"
+    assert prevodDoMorseovky("RADIM") == ".-. .- -.. .. --"
     assert prevodDoMorseovky("13578") == ".---- ...-- ..... --... ---.."
-    assert prevodDoMorseovky("ahoj").upper == ".- .... --- .---"
-    assert prevodDoMorseovky("radim").upper == ".-. .- -.. .. -"
+    assert prevodDoMorseovky("AHOJ1145") == ".- .... --- .--- .---- .---- ....- ....."
 
 
 def test_prevodZMorseovky():
     """Unit test pro dekodovani z morseovky."""
-    assert prevodZMorseovky(".-. .- -.. .. -- ") == "radim"
+    assert prevodZMorseovky(".-. .- -.. .. --") == "RADIM"
     assert prevodDoMorseovky(".---- ...-- ..... --... ---..") == "13578"
-    assert prevodDoMorseovky(".- .... --- .---") == "ahoj"
+    assert prevodDoMorseovky(".- .... --- .---") == "AHOJ"
