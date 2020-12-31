@@ -1,5 +1,3 @@
-import pytest
-
 """Otestovani kodu pomoci unit testů."""
 
 from morseovka import prevodDoMorseovky
