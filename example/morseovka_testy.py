@@ -8,7 +8,7 @@ def test_prevodDoMorseovky():
     """Unit test pro zakodovani do morseovky."""
     assert prevodDoMorseovky("RADIM") == ".-. .- -.. .. --"
     assert prevodDoMorseovky("13578") == ".---- ...-- ..... --... ---.."
-    assert prevodDoMorseovky("AHOJ1145") == ".- .... --- .--- .---- .---- ....- ....."
+    assert prevodDoMorseovky("AHOJ114") == ".- .... --- .--- .---- .---- ....-"
 
 
 def test_prevodZMorseovky():
