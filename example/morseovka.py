@@ -54,7 +54,7 @@ def prevodDoMorseovky(vstup):
     """Funkce pro převod zadaneho textu do Morseovy abecedy."""
     vystup = ""
     for znak in vstup:
-        vystup = vystup + MORSEOVKA[znak] + "/"
+        vystup = vystup + MORSEOVKA[znak] + " "
     print(vystup)
 
 
