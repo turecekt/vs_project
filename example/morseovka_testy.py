@@ -6,9 +6,9 @@ from morseovka import prevodZMorseovky
 
 def test_prevodDoMorseovky():
     """Unit test pro zakodovani do morseovky."""
-    assert prevodDoMorseovky("radim") == ".-. .- -.. .. -- "
+    assert prevodDoMorseovky("radim").upper == ".-. .- -.. .. -- "
     assert prevodDoMorseovky("13578") == ".---- ...-- ..... --... ---.. "
-    assert prevodDoMorseovky("ahoj") == ".- .... --- .--- "
+    assert prevodDoMorseovky("ahoj").upper == ".- .... --- .--- "
 
 
 def test_prevodZMorseovky():
