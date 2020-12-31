@@ -93,15 +93,17 @@ if __name__ == '__main__':
         print("nezvolil jsi správnou klávesu (1 nebo 2), program končí")
 
 """Otestovani kodu pomoci unit testů."""
+
+
 def test_prevodDoMorseovky():
     """Unit test pro zakodovani do morseovky."""
     assert(prevodDoMorseovky("RADIM") == ".-. .- -.. .. -- ")
     assert(prevodDoMorseovky("13578") == ".---- ...-- ..... --... ---.. ")
-    assert(prevodDoMorseovky("AHOJ114") == ".- .... --- .--- .---- .---- ....- ")
+    assert(prevodDoMorseovky("AHOJ14") == ".- .... --- .--- .---- ....- ")
 
 
 def test_prevodZMorseovky():
     """Unit test pro dekodovani z morseovky."""
     assert(prevodDoMorseovky(".-. .- -.. .. -- ") == "RADIM")
     assert(prevodDoMorseovky(".---- ...-- ..... --... ---.. ") == "13578")
-    assert(prevodDoMorseovky(".- .... --- .--- .---- .---- ....-") == "AHOJ114")
+    assert(prevodDoMorseovky(".- .... --- .--- .---- ....-") == "AHOJ14")
