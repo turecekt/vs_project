@@ -47,6 +47,7 @@ MORSEOVKA = {
     'X': '-..-',
     'Y': '-.--',
     'Z': '--..',
+    ' ': ' ',
 }
 
 
@@ -55,7 +56,6 @@ def prevodDoMorseovky(vstup):
     vystup = ''
     for znak in vstup:
         vystup = vystup + MORSEOVKA[znak] + ' '
-        print(znak)
     print(vystup)
 
 
@@ -76,7 +76,7 @@ def prevodZMorseovky(vstup):
                 vystup += list(
                     MORSEOVKA.keys())[list(MORSEOVKA.values()).index(pomocna)]
                 pomocna = ''
-        print(vystup)
+    print(vystup)
 
 
 if __name__ == '__main__':
@@ -97,13 +97,13 @@ if __name__ == '__main__':
 
 def test_prevodDoMorseovky():
     """Unit test pro zakodovani do morseovky."""
-    assert(prevodDoMorseovky("RADIM") == ".-. .- -.. .. -- ")
-    assert(prevodDoMorseovky("13578") == ".---- ...-- ..... --... ---.. ")
-    assert(prevodDoMorseovky("AHOJ14") == ".- .... --- .--- .---- ....- ")
+    assert(prevodDoMorseovky("RADIM") == ".-. .- -.. .. --")
+    assert(prevodDoMorseovky("13578") == ".---- ...-- ..... --... ---..")
+    assert(prevodDoMorseovky("AHOJ14") == ".- .... --- .--- .---- ....-")
 
 
 def test_prevodZMorseovky():
     """Unit test pro dekodovani z morseovky."""
-    assert(prevodDoMorseovky(".-. .- -.. .. -- ") == "RADIM")
+    assert(prevodDoMorseovky(".-. .- -.. .. --") == "RADIM")
     assert(prevodDoMorseovky(".---- ...-- ..... --... ---.. ") == "13578")
     assert(prevodDoMorseovky(".- .... --- .--- .---- ....-") == "AHOJ14")
