@@ -95,15 +95,15 @@ if __name__ == '__main__':
 """Otestovani kodu pomoci unit testů."""
 
 
-def test_prevodDoMorseovky():
+def test_prevodDoMorseovky(self):
     """Unit test pro zakodovani do morseovky."""
-    assert(prevodDoMorseovky("RADIM") == ".-. .- -.. .. --")
-    assert(prevodDoMorseovky("13578") == ".---- ...-- ..... --... ---..")
-    assert(prevodDoMorseovky("AHOJ14") == ".- .... --- .--- .---- ....-")
+    assert prevodDoMorseovky("RADIM") == ".-. .- -.. .. --"
+    assert prevodDoMorseovky("13578") == ".---- ...-- ..... --... ---.."
+    assert prevodDoMorseovky("AHOJ14") == ".- .... --- .--- .---- ....-"
 
 
 def test_prevodZMorseovky():
     """Unit test pro dekodovani z morseovky."""
-    assert(prevodDoMorseovky(".-. .- -.. .. --") == "RADIM")
-    assert(prevodDoMorseovky(".---- ...-- ..... --... ---.. ") == "13578")
-    assert(prevodDoMorseovky(".- .... --- .--- .---- ....-") == "AHOJ14")
+    assert prevodDoMorseovky(".-. .- -.. .. --") == "RADIM"
+    assert prevodDoMorseovky(".---- ...-- ..... --... ---.. ") == "13578"
+    assert prevodDoMorseovky(".- .... --- .--- .---- ....-") == "AHOJ14"
