@@ -59,6 +59,7 @@ def prevodDoMorseovky(vstup):
 
     return vystup
 
+
 def prevodZMorseovky(vstup):
     """Funkce pro převod z Morseovy abecedy do Morseovy abecedy."""
     vstup += ' '
