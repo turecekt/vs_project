@@ -15,9 +15,11 @@ def test_parseToRomanNumeral_fail():
         assert main.parseToRomanNumeral("invalidni text")
 
 
-def test_checkInputAndPrintRomanNumeral_success():
+def test_checkInputAndPrintRomanNumeral_success(capfd):
     """Test for valid input and parsing to roman numerals."""
-    assert main.checkInputAndPrintRomanNumeral("1994") == "MCMXCIV"
+    main.checkInputAndPrintRomanNumeral("1994")
+    out, err = capfd.readouterr()
+    assert out == "MCMXCIV\n"
 
 
 def test_checkInputAndPrintRomanNumeral_invalidInput():
