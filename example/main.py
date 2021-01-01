@@ -1,9 +1,10 @@
-"""Rimske cislice"""
+"""Rimske cislice."""
 
 __author__ = 'Soňa Palatá'
 __version__ = '1.0.0'
 __email__ = 's_palata@utb.cz'
 __status__ = 'Done'
+
 
 def parseToRomanNumeral(number):
     """Returns the parsed inserted int as Roman Numeral.
@@ -85,7 +86,7 @@ def parseToRomanNumeral(number):
 
 
 def checkInputAndPrintRomanNumeral(input):
-    """Checks input and prints out Roman Numeral
+    """Checks input and prints out Roman Numeral.
 
     Validates input and in case of invalid string that can't be parsed to int returns error.
     After validation prints out parsed Roman Numeral to console.
@@ -100,10 +101,11 @@ def checkInputAndPrintRomanNumeral(input):
     except ValueError:
         print("Vyraz neni validni, nelze parsovat na int...")
 
+
 def main():
     """Run main method that requires an input as param for checkInputAndPrintRomanNumeral function."""
     checkInputAndPrintRomanNumeral(input("Zadej cislo pro prevedeni na rimske cislice: "))
 
 
 if __name__ == '__main__':
-        main()
+    main()
