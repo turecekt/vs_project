@@ -53,9 +53,9 @@ MORSEOVKA = {
 
 def prevodDoMorseovky(vstup):
     """Funkce pro převod zadaneho textu do Morseovy abecedy.
-
-    >>> prevodZMorseovky(".-. .- -.. .. ---") == "RADIM"
-    False
+    
+    >>> prevodDoMorseovky("RADIM") == ".-. .- -.. .. -- "
+    True
     """
     vystup = ''
     for znak in vstup:
@@ -66,9 +66,11 @@ def prevodDoMorseovky(vstup):
 
 def prevodZMorseovky(vstup):
     """Funkce pro převod z Morseovy abecedy do Morseovy abecedy.
-
-    >>> prevodZMorseovky("RADIM") == ".-. .- -.. .. -- "
+    
+    >>> prevodZMorseovky(".-. .- -.. .. --") == "RADIM"
     True
+    >>> prevodZMorseovky(".-. .- -.. .. --") == "RDI"
+    False
     """
     vstup += ' '
     vystup = ''
@@ -121,4 +123,4 @@ def test_prevodZMorseovky():
     """Unit test pro dekodovani z morseovky."""
     assert prevodZMorseovky(".-. .- -.. .. --") == "RADIM"
     assert prevodZMorseovky(".---- ...-- ..... --... ---..") == "13578"
-    assert prevodZMorseovky(".- .... --- .--- .---- ....-") == "AHOJ14"
+    assert prevodZMorseovky(".- .... --- .--- .---- ....-") == "AHOJ14"        
