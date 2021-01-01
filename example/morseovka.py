@@ -61,8 +61,8 @@ def prevodDoMorseovky(vstup):
 
 
 def prevodZMorseovky(vstup):
-
     """Funkce pro převod z Morseovy abecedy do Morseovy abecedy.
+
     >>> prevodZMorseovky("RADIM") == ".-. .- -.. .. -- "
     True
     """
