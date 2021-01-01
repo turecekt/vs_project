@@ -1,27 +1,18 @@
-def checkInputAndPrintRomanNumeral(input):
-    """
-            Validates input and in case of invalid string that can't be parsed to int returns error.
-            After validation prints out parsed Roman Numeral to console.
+"""Rimske cislice"""
 
-                Parameters:
-                    input (str): An input string
-        """
-    try:
-        num = int(input)
-        text = parseToRomanNumeral(num)
-        print(text)
-    except ValueError:
-        print("Vyraz neni validni, nelze parsovat na int...")
+__author__ = 'Soňa Palatá'
+__version__ = '1.0.0'
+__email__ = 's_palata@utb.cz'
+__status__ = 'Done'
 
 def parseToRomanNumeral(number):
-    """
-        Returns the parsed inserted int as Roman Numeral.
+    """Returns the parsed inserted int as Roman Numeral.
 
-            Parameters:
-                number (int): An input number
+    Parameters:
+    number (int): An input number
 
-            Returns:
-                result_string (str): Parsed number as Roman Numerals in string format
+    Returns:
+    result_string (str): Parsed number as Roman Numerals in string format
     """
     result_string = ""
     number_as_int = int(number)
@@ -92,10 +83,25 @@ def parseToRomanNumeral(number):
 
     return result_string
 
+
+def checkInputAndPrintRomanNumeral(input):
+    """Checks input and prints out Roman Numeral
+
+    Validates input and in case of invalid string that can't be parsed to int returns error.
+    After validation prints out parsed Roman Numeral to console.
+
+    Parameters:
+    input (str): An input string
+    """
+    try:
+        num = int(input)
+        text = parseToRomanNumeral(num)
+        print(text)
+    except ValueError:
+        print("Vyraz neni validni, nelze parsovat na int...")
+
 def main():
-    """
-        Run main method that requires an input as param for checkInputAndPrintRomanNumeral function.
-    """
+    """Run main method that requires an input as param for checkInputAndPrintRomanNumeral function."""
     checkInputAndPrintRomanNumeral(input("Zadej cislo pro prevedeni na rimske cislice: "))
 
 

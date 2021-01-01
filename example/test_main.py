@@ -1,3 +1,5 @@
+"""Pytest pro main.py"""
+
 from main import checkInputAndPrintRomanNumeral
 import pytest
 
