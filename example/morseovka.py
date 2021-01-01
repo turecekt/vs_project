@@ -54,7 +54,8 @@ MORSEOVKA = {
 def prevodDoMorseovky(vstup):
     """Funkce pro převod zadaneho textu do Morseovy abecedy.
 
-    >>> prevodZMorseovky(".- .... --- .--- .---- ....-") == "AHOJ14"
+    >>> prevodZMorseovky(".-. .- -.. .. ---") == "RADIM"
+    False
     """
     vystup = ''
     for znak in vstup:
