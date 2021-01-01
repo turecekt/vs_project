@@ -63,6 +63,32 @@ def selectionSort(_list):
     return _list
 
 
+# Funkce pro vstupní parametry
+def vstupniParametry(_vstupniPole):
+    """Vstupniparametry funkce."""
+    if(path.exists(_vstupniPole[0])):
+        file = open(_vstupniPole[0], encoding='utf8')
+        words = file.read().splitlines()
+        file.close()
+        data = []
+        for x in words:
+            data = x.split()
+            for k in data:
+                try:
+                    TryParse = int(k)
+                    pole.append(TryParse)
+                except ValueError:
+                    obsahujeChybu = True
+    else:
+        for x in _vstupniPole:
+            try:
+                TryParse = int(x)
+                pole.append(TryParse)
+            except ValueError:
+                obsahujeChybu = True
+    return obsahujeChybu
+
+
 def testMinMax():
     """Pytest test."""
     poleProTest = [1, 2, 3]
@@ -87,32 +113,18 @@ def testSelectionSort():
     assert selectionSort(poleProTest) == [3, 5, 10]
 
 
+def testVstupniParametry():
+    """Vstupniparametry test."""
+    assert vstupniParametry(sys.argv) is True
+
+
 # Řešení pro vstupní paramatery:
 if __name__ == '__main__':
     pole = []
     obsahujeChybu = False
     if len(sys.argv) > 1:
         sys.argv.pop(0)
-        if(path.exists(sys.argv[0])):
-            file = open(sys.argv[0], encoding='utf8')
-            words = file.read().splitlines()
-            file.close()
-            data = []
-            for x in words:
-                data = x.split()
-                for k in data:
-                    try:
-                        TryParse = int(k)
-                        pole.append(TryParse)
-                    except ValueError:
-                        obsahujeChybu = True
-        else:
-            for x in sys.argv:
-                try:
-                    TryParse = int(x)
-                    pole.append(TryParse)
-                except ValueError:
-                    obsahujeChybu = True
+        obsahujeChybu = vstupniParametry(sys.argv)
     else:
         pole = [random.randint(1, 100) for _ in range(10)]
 
@@ -133,8 +145,6 @@ if __name__ == '__main__':
         pole = selectionSort(pole)
     else:
         print("Nezadali jste správnou volbu!")
-
-    pole = bubblesort(pole)
 
     # Vypsání pole, vypíše se i při nesprávném zadání řadícího algoritmu
     print(pole)
