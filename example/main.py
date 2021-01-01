@@ -7,7 +7,7 @@ __status__ = 'Done'
 
 
 def parseToRomanNumeral(number):
-    """Returns the parsed inserted int as Roman Numeral.
+    """Return parsed inserted int as Roman Numeral.
 
     Parameters:
     number (int): An input number
@@ -86,9 +86,10 @@ def parseToRomanNumeral(number):
 
 
 def checkInputAndPrintRomanNumeral(input):
-    """Checks input and prints out Roman Numeral.
+    """Check input and prints out Roman Numeral.
 
-    Validates input and in case of invalid string that can't be parsed to int returns error.
+    Validates input and in case of invalid string
+    that can't be parsed to int returns error.
     After validation prints out parsed Roman Numeral to console.
 
     Parameters:
@@ -103,8 +104,11 @@ def checkInputAndPrintRomanNumeral(input):
 
 
 def main():
-    """Run main method that requires an input as param for checkInputAndPrintRomanNumeral function."""
-    checkInputAndPrintRomanNumeral(input("Zadej cislo pro prevedeni na rimske cislice: "))
+    """Run main method.
+
+    Requires an input as param for checkInputAndPrintRomanNumeral function
+    """
+    checkInputAndPrintRomanNumeral(input("Zadej cislo: "))
 
 
 if __name__ == '__main__':
