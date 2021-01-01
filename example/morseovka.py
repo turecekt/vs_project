@@ -56,8 +56,8 @@ def prevodDoMorseovky(vstup):
     vystup = ''
     for znak in vstup:
         vystup = vystup + MORSEOVKA[znak] + ' '
-    print(vystup)
 
+    return vystup
 
 def prevodZMorseovky(vstup):
     """Funkce pro převod z Morseovy abecedy do Morseovy abecedy."""
@@ -76,18 +76,24 @@ def prevodZMorseovky(vstup):
                 vystup += list(
                     MORSEOVKA.keys())[list(MORSEOVKA.values()).index(pomocna)]
                 pomocna = ''
-    print(vystup)
+
+    return vystup
 
 
 if __name__ == '__main__':
     volba = input("1 pro zakódování, 2 pro dekódování z Morseovy abecedy: ")
     if volba == '1':
         vstup = input("Zadej text pro převod do Morseovy abecedy: ").upper()
-        prevodDoMorseovky(vstup)
+        vypis = prevodDoMorseovky(vstup)
+        print(vypis)
+        vstup = ''
 
     elif volba == '2':
         vstup = input("Zadej znaky morseovy abecedy pro převod : ")
         prevodZMorseovky(vstup)
+        vypis = prevodDoMorseovky(vstup)
+        print(vypis)
+        vstup = ''
 
     else:
         print("nezvolil jsi správnou klávesu (1 nebo 2), program končí")
@@ -95,15 +101,15 @@ if __name__ == '__main__':
 """Otestovani kodu pomoci unit testů."""
 
 
-def test_prevodDoMorseovky(self):
+def test_prevodDoMorseovky():
     """Unit test pro zakodovani do morseovky."""
-    assert prevodDoMorseovky("RADIM") == ".-. .- -.. .. --"
-    assert prevodDoMorseovky("13578") == ".---- ...-- ..... --... ---.."
-    assert prevodDoMorseovky("AHOJ14") == ".- .... --- .--- .---- ....-"
+    assert prevodDoMorseovky("RADIM") == ".-. .- -.. .. -- "
+    assert prevodDoMorseovky("13578") == ".---- ...-- ..... --... ---.. "
+    assert prevodDoMorseovky("AHOJ14") == ".- .... --- .--- .---- ....- "
 
 
 def test_prevodZMorseovky():
     """Unit test pro dekodovani z morseovky."""
-    assert prevodDoMorseovky(".-. .- -.. .. --") == "RADIM"
-    assert prevodDoMorseovky(".---- ...-- ..... --... ---.. ") == "13578"
-    assert prevodDoMorseovky(".- .... --- .--- .---- ....-") == "AHOJ14"
+    assert prevodZMorseovky(".-. .- -.. .. --") == "RADIM"
+    assert prevodZMorseovky(".---- ...-- ..... --... ---..") == "13578"
+    assert prevodZMorseovky(".- .... --- .--- .---- ....-") == "AHOJ14"
