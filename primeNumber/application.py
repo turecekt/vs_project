@@ -1,5 +1,5 @@
 """Test."""
-from prime_number import is_prime_number, check_input
+from prime_number import check_input
 
 user_input = input("Zadej cislo: ")
 print("\n")
