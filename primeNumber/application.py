@@ -1,10 +1,6 @@
+"""Test."""
 from prime_number import is_prime_number
 
-"""
-//
-//
-//
-"""
 
 user_input = input("Zadej cislo: ")
 print("\n")
