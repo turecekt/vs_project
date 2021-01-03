@@ -12,3 +12,21 @@ def is_prime_number(num):
             else:
                 return str(num) + " je prvocislo"
                 break
+
+
+def check_input(user_input):
+    """Ahoj."""
+    try:
+        """Ahoj."""
+        num = int(user_input)
+        return is_prime_number(num)
+
+    except ValueError:
+        try:
+            """Ahoj."""
+            num = float(user_input)
+            return is_prime_number(num)
+
+        except ValueError:
+            """Ahoj."""
+            return "Toto neni cislo"
