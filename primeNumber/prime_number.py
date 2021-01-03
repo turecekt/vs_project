@@ -1,4 +1,4 @@
-"""Main logic of program."""
+"""Main run file."""
 
 
 def is_prime_number(num):
