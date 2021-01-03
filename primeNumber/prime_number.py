@@ -1,8 +1,8 @@
-"""Main run file."""
+"""Main code."""
 
 
 def is_prime_number(num):
-    """Checking if number is prime number or not."""
+    """Return result."""
     if num > 1:
 
         for i in range(2, num):
@@ -15,7 +15,7 @@ def is_prime_number(num):
 
 
 def check_input(user_input):
-    """Check if user put allowed input."""
+    """Check allowed input."""
     try:
         """Check if input is integer."""
         num = int(user_input)
