@@ -1,4 +1,4 @@
-"""Test."""
+"""Here application starts."""
 from prime_number import check_input
 
 user_input = float(3.2)
