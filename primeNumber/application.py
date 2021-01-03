@@ -21,4 +21,5 @@ except ValueError:
         is_prime_number(num)
 
     except ValueError:
+        """Ahoj."""
         print("Toto neni cislo")

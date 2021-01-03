@@ -1,6 +1,10 @@
 from prime_number import is_prime_number
 
-"""Ahoj."""
+"""
+Ahoj.
+//
+//
+"""
 
 
 def test_is_prime_number_input_int():

@@ -1,4 +1,8 @@
-"""Testovaci komentar v3."""
+"""
+Testovaci komentar v3.
+//
+//
+"""
 
 
 def is_prime_number(num):
@@ -6,7 +10,7 @@ def is_prime_number(num):
     if num > 1:
 
         for i in range(2, num):
-
+            """Ahoj."""
             if (num % i) == 0:
                 return str(num) + " neni prvnocislo"
                 break
