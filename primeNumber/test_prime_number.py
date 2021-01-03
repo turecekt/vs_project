@@ -1,10 +1,10 @@
 from prime_number import is_prime_number
 
-""" ahoj """
+"""Ahoj."""
 
 
 def test_is_prime_number_input_int():
-    """ ahoj """
+    """Ahoj."""
     desired_result = "3 je prvocislo"
     result = is_prime_number(3)
     assert result == desired_result

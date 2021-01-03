@@ -10,13 +10,13 @@ user_input = input("Zadej cislo: ")
 print("\n")
 
 try:
-    """ahoj"""
+    """Ahoj."""
     num = int(user_input)
     is_prime_number(num)
 
 except ValueError:
     try:
-        """ahoj"""
+        """Ahoj."""
         num = float(user_input)
         is_prime_number(num)
 
