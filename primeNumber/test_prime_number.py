@@ -11,8 +11,8 @@ def test_is_prime_number_input_int():
 
 def test_is_prime_number_input_float():
     """Ahoj."""
-    desired_result = "3.0 je prvocislo"
-    result = is_prime_number(3.0)
+    desired_result = "3 je prvocislo"
+    result = is_prime_number(float(3.2))
     assert result == desired_result
 
 
@@ -23,10 +23,10 @@ def test_is_prime_number_input_string():
     assert result == desired_result
 
 
-def test_is_prime_number_input_null():
+def test_is_prime_number_input_no():
     """Ahoj."""
     desired_result = "Toto neni cislo"
-    result = check_input()
+    result = check_input("")
     assert result == desired_result
 
 
