@@ -46,25 +46,25 @@ def prepona(a, b, c):
     if (a > b):
         if (a > c):
             if (pveta(a, b, c)):
-                return prav
+                return 1
             else:
-                return neprav
+                return 0
         else:
             if (pveta(c, a, b)):
-                return prav
+                return 1
             else:
-                return neprav
+                return 0
     else:
         if (b > c):
             if (pveta(b, a, c)):
-                return prav
+                return 1
             else:
-                return neprav
+                return 0
         else:
             if (pveta(c, a, b)):
-                return prav
+                return 1
             else:
-                return neprav
+                return 0
 
 
 def trojuhelnik(ax, ay, bx, by, cx, cy):
@@ -116,4 +116,4 @@ def test_pveta():
 
 def test_prepona():
     """Ověří funčnost metody prepona."""
-    assert prepona(2.24, 1.0, 1.41) == "Trojuhelnik neni pravoúhly"
+    assert prepona(2.24, 1.0, 1.41) == 0
