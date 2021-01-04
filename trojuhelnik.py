@@ -41,30 +41,30 @@ def pveta(c, b, a):
 
 def prepona(a, b, c):
     """Urci nejdelsi stranu trojuhelniku."""
-    1 = "Trojuhelnik je pravouhly"
-    0 = "Trojuhelnik neni pravoúhly"
+    prav = "Trojuhelnik je pravouhly"
+    neprav = "Trojuhelnik neni pravoúhly"
     if (a > b):
         if (a > c):
             if (pveta(a, b, c)):
-                return 1
+                return prav
             else:
-                return 0
+                return neprav
         else:
             if (pveta(c, a, b)):
-                return 1
+                return prav
             else:
-                return 0
+                return neprav
     else:
         if (b > c):
             if (pveta(b, a, c)):
-                return 1
+                return prav
             else:
-                return 0
+                return neprav
         else:
             if (pveta(c, a, b)):
-                return 1
+                return prav
             else:
-                return 0
+                return neprav
 
 
 def trojuhelnik(ax, ay, bx, by, cx, cy):
