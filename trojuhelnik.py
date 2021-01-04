@@ -67,11 +67,16 @@ def prepona(a, b, c):
                 return neprav
 
 
+def delkastrany(x1, y1, x2, y2):
+    """Metoda na výpočet délky strany trojúhelníku."""
+    return math.sqrt(((y2-y1)**2) + ((x2-x1)**2))
+
+
 def trojuhelnik(ax, ay, bx, by, cx, cy):
     """Postupně provede všechny potřebné kroky k vypočítání trojúhelníku."""
-    c = math.sqrt(((by-ay)**2) + ((bx-ax)**2))  # délka strany c
-    b = math.sqrt(((cy-ay)**2) + ((cx-ax)**2))  # délka strany b
-    a = math.sqrt(((by-cy)**2) + ((bx-cx)**2))  # délka strany a
+    c = delkastrany(ax, ay, bx, by)  # délka strany c
+    b = delkastrany(ax, ay, cx, cy)  # délka strany b
+    a = delkastrany(bx, by, cx, cy)  # délka strany a
     print("Delka strany a: ", a)    # výpis délky strany a
     print("Delka strany b: ", b)    # výpis délky strany b
     print("Delka strany c: ", c)    # výpis délky strany c
@@ -117,3 +122,8 @@ def test_pveta():
 def test_prepona():
     """Ověří funčnost metody prepona."""
     assert prepona(2.24, 1.0, 1.41) == "Trojuhelnik neni pravoúhly"
+
+
+def test_delkastrany():
+    """Ověří funčnost metody delkastrany."""
+    assert delkastrany(1, 2, 1, 6) == 4
