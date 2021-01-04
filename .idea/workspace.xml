@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="cc3068fb-c70f-40c0-b595-1b907f4b64f9" name="Default Changelist" comment="UNIT testy - doctest" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1mOhx8WnUWEbNmfWYPiIiHbk25s" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="RunManager" selected="Python.morseovka">
+    <configuration name="morseovka" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="morseovka_prekladac" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Program Files\Python39\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/example" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/example/morseovka.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="morseovka_testy" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="morseovka_prekladac" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Program Files\Python39\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/example" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/example/morseovka_testy.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.morseovka" />
+        <item itemvalue="Python.morseovka_testy" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cc3068fb-c70f-40c0-b595-1b907f4b64f9" name="Default Changelist" comment="" />
+      <created>1609370788243</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1609370788243</updated>
+    </task>
+    <task id="LOCAL-00001" summary="- promazani">
+      <created>1609371449286</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1609371449286</updated>
+    </task>
+    <task id="LOCAL-00002" summary="- promazani">
+      <created>1609371555189</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1609371555189</updated>
+    </task>
+    <task id="LOCAL-00003" summary="-optimalizace kodu pomoci flake8">
+      <created>1609372043045</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1609372043045</updated>
+    </task>
+    <task id="LOCAL-00004" summary="-optimalizace kodu">
+      <created>1609372596849</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1609372596849</updated>
+    </task>
+    <task id="LOCAL-00005" summary="-optimalizace kodu">
+      <created>1609372770136</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1609372770136</updated>
+    </task>
+    <task id="LOCAL-00006" summary="-UNIT testy">
+      <created>1609373004050</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1609373004050</updated>
+    </task>
+    <task id="LOCAL-00007" summary="-UNIT testy">
+      <created>1609435539868</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1609435539868</updated>
+    </task>
+    <task id="LOCAL-00008" summary="-UNIT testy">
+      <created>1609435690480</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1609435690480</updated>
+    </task>
+    <task id="LOCAL-00009" summary="-UNIT testy">
+      <created>1609436613496</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1609436613496</updated>
+    </task>
+    <task id="LOCAL-00010" summary="-UNIT testy">
+      <created>1609438103243</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1609438103243</updated>
+    </task>
+    <task id="LOCAL-00011" summary="-UNIT testy">
+      <created>1609438605261</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1609438605261</updated>
+    </task>
+    <task id="LOCAL-00012" summary="-UNIT testy">
+      <created>1609438904149</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1609438904149</updated>
+    </task>
+    <task id="LOCAL-00013" summary="-UNIT testy">
+      <created>1609455158619</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1609455158619</updated>
+    </task>
+    <task id="LOCAL-00014" summary="-UNIT testy">
+      <created>1609455329909</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1609455329909</updated>
+    </task>
+    <task id="LOCAL-00015" summary="-UNIT testy&#10;-optimalizace kodu">
+      <created>1609456524066</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1609456524066</updated>
+    </task>
+    <task id="LOCAL-00016" summary="-UNIT testy&#10;-optimalizace kodu">
+      <created>1609459285677</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1609459285677</updated>
+    </task>
+    <task id="LOCAL-00017" summary="-optimalizace kodu kvuli nefunkcnosti UNIT testu">
+      <created>1609517295741</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1609517295741</updated>
+    </task>
+    <task id="LOCAL-00018" summary="-optimalizace kodu kvuli nefunkcnosti UNIT testu">
+      <created>1609517376339</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1609517376339</updated>
+    </task>
+    <task id="LOCAL-00019" summary="-optimalizace kodu kvuli nepokryti UNIT testu">
+      <created>1609529160589</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1609529160589</updated>
+    </task>
+    <task id="LOCAL-00020" summary="-optimalizace kodu kvuli nepokryti UNIT testu">
+      <created>1609529370298</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1609529370298</updated>
+    </task>
+    <task id="LOCAL-00021" summary="-optimalizace kodu kvuli nepokryti UNIT testu">
+      <created>1609529469067</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1609529469067</updated>
+    </task>
+    <task id="LOCAL-00022" summary="-optimalizace kodu kvuli nepokryti UNIT testu">
+      <created>1609530108640</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1609530108640</updated>
+    </task>
+    <task id="LOCAL-00023" summary="UNIT testy - doctest">
+      <created>1609530289540</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1609530289540</updated>
+    </task>
+    <task id="LOCAL-00024" summary="UNIT testy - doctest">
+      <created>1609531705368</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1609531705368</updated>
+    </task>
+    <task id="LOCAL-00025" summary="UNIT testy - doctest">
+      <created>1609531813749</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1609531813749</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="- promazani" />
+    <MESSAGE value="-optimalizace kodu pomoci flake8" />
+    <MESSAGE value="-optimalizace kodu" />
+    <MESSAGE value="-UNIT testy" />
+    <MESSAGE value="-UNIT testy&#10;-optimalizace kodu" />
+    <MESSAGE value="-optimalizace kodu kvuli nefunkcnosti UNIT testu" />
+    <MESSAGE value="-optimalizace kodu kvuli nepokryti UNIT testu" />
+    <MESSAGE value="UNIT testy - doctest" />
+    <option name="LAST_COMMIT_MESSAGE" value="UNIT testy - doctest" />
+  </component>
+</project>
