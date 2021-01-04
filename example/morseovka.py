@@ -94,11 +94,7 @@ def prevodZMorseovky(vstup):
 if __name__ == '__main__':
     volba = input("1 pro zakódování, 2 pro dekódování z Morseovy abecedy: ")
     if volba == '1':
-        vstup = input("Zadej text pro převod do Morseovy abecedy: ").upper()
-        vypis = prevodDoMorseovky(vstup)
-        print(vypis)
-        vstup = ''
-
+        print(prevodDoMorseovky(input("Zadej text pro převod do Morseovy abecedy: ").upper()))
     elif volba == '2':
         vstup = input("Zadej znaky morseovy abecedy pro převod : ")
         prevodZMorseovky(vstup)
