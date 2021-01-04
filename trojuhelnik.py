@@ -116,4 +116,3 @@ def test_prepona():
     """Ověří funčnost metody prepona."""
     print("Trojuhelnik neni pravoúhly")
     assert True
-
