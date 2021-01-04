@@ -116,5 +116,4 @@ def test_pveta():
 
 def test_prepona():
     """Ověří funčnost metody prepona."""
-    print("Trojuhelnik neni pravoúhly")
-    assert True
+    assert prepona(2.24, 1.0, 1.41) == "Trojuhelnik neni pravoúhly"
