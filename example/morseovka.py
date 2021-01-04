@@ -96,12 +96,7 @@ if __name__ == '__main__':
     if volba == '1':
         print(prevodDoMorseovky(input("Zadej text pro převod do Morseovy abecedy: ").upper()))
     elif volba == '2':
-        vstup = input("Zadej znaky morseovy abecedy pro převod : ")
-        prevodZMorseovky(vstup)
-        vypis = prevodDoMorseovky(vstup)
-        print(vypis)
-        vstup = ''
-
+        print(prevodZMorseovky(input("Zadej znaky morseovy abecedy pro převod : ")))
     else:
         print("nezvolil jsi správnou klávesu (1 nebo 2), program končí")
 
