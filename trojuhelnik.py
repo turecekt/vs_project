@@ -41,8 +41,8 @@ def pveta(c, b, a):
 
 def prepona(a, b, c):
     """Urci nejdelsi stranu trojuhelniku."""
-    prav = "Trojuhelnik je pravouhly"
-    neprav = "Trojuhelnik neni pravoúhly"
+    1 = "Trojuhelnik je pravouhly"
+    0 = "Trojuhelnik neni pravoúhly"
     if (a > b):
         if (a > c):
             if (pveta(a, b, c)):
