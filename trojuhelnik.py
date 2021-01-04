@@ -118,12 +118,3 @@ def test_prepona():
     """Ověří funčnost metody prepona."""
     print("Trojuhelnik neni pravoúhly")
     assert True
-
-
-def test_trojuhelnik():
-    """Ověří funčnost metody trojuhelnik."""
-    print("Delka strany a:  4.242640687119285")
-    print("Delka strany b:  3.0")
-    print("Delka strany c:  3.0")
-    print("Lze setrojit")
-    assert True
