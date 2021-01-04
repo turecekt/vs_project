@@ -95,10 +95,10 @@ if __name__ == '__main__':
     volba = input("1 pro zakódování, 2 pro dekódování z Morseovy abecedy: ")
     if volba == '1':
         print(prevodDoMorseovky(input
-                                ("Zadej text pro převod do Morseovy abecedy: ").upper()))
+                ("Zadej text pro převod do Morseovy abecedy: ").upper()))
     elif volba == '2':
         print(prevodZMorseovky(input
-                               ("Zadej znaky morseovy abecedy pro převod : ")))
+                ("Zadej znaky morseovy abecedy pro převod : ")))
     else:
         print("nezvolil jsi správnou klávesu (1 nebo 2), program končí")
 
