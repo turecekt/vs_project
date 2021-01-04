@@ -41,28 +41,30 @@ def pveta(c, b, a):
 
 def prepona(a, b, c):
     """Urci nejdelsi stranu trojuhelniku."""
+    prav = "Trojuhelnik je pravouhly"
+    neprav = "Trojuhelnik neni pravoúhly"
     if (a > b):
         if (a > c):
             if (pveta(a, b, c)):
-                print("Trojuhelnik je pravouhly")
+                return prav
             else:
-                print("Trojuhelnik neni pravoúhly")
+                return neprav
         else:
             if (pveta(c, a, b)):
-                print("Trojuhelnik je pravouhly")
+                return prav
             else:
-                print("Trojuhelnik neni pravoúhly")
+                return neprav
     else:
         if (b > c):
             if (pveta(b, a, c)):
-                print("Trojuhelnik je pravouhly")
+                return prav
             else:
-                print("Trojuhelnik neni pravoúhly")
+                return neprav
         else:
             if (pveta(c, a, b)):
-                print("Trojuhelnik je pravouhly")
+                return prav
             else:
-                print("Trojuhelnik neni pravoúhly")
+                return neprav
 
 
 def trojuhelnik(ax, ay, bx, by, cx, cy):
@@ -77,7 +79,7 @@ def trojuhelnik(ax, ay, bx, by, cx, cy):
         print("Lze setrojit")
         print("Obvod trojuhelniku je: ", obvod(a, b, c))
         print("Obsah trojuhelniku je: ", obsah(a, b, c))
-        prepona(a, b, c)
+        print(prepona(a, b, c))
     else:
         print("Trojuhelnik nelze sestrojit")
 
