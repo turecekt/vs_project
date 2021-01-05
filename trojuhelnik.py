@@ -157,5 +157,5 @@ def test_prepona_info():
 
 
 def test_kontrola():
-    """Ověří funkčnost metody kontrola.""" 
-        assert kontrola("5") == 5
+    """Ověří funkčnost metody kontrola."""
+    assert kontrola("5") == 5
