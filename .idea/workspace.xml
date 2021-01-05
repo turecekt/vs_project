@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cc3068fb-c70f-40c0-b595-1b907f4b64f9" name="Default Changelist" comment="UNIT testy - doctest" />
+    <list default="true" id="cc3068fb-c70f-40c0-b595-1b907f4b64f9" name="Default Changelist" comment="UNIT testy - doctest">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -253,7 +255,35 @@
       <option name="project" value="LOCAL" />
       <updated>1609531813749</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="UNIT testy - doctest">
+      <created>1609786862934</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1609786862934</updated>
+    </task>
+    <task id="LOCAL-00027" summary="UNIT testy - doctest">
+      <created>1609787097539</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1609787097539</updated>
+    </task>
+    <task id="LOCAL-00028" summary="UNIT testy - doctest">
+      <created>1609787447978</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1609787447978</updated>
+    </task>
+    <task id="LOCAL-00029" summary="UNIT testy - doctest">
+      <created>1609787613113</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1609787613113</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
