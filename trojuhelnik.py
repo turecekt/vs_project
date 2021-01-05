@@ -41,30 +41,28 @@ def pveta(c, b, a):
 
 def prepona(a, b, c):
     """Urci nejdelsi stranu trojuhelniku."""
-    prav = "Trojuhelnik je pravouhly"
-    neprav = "Trojuhelnik neni pravoúhly"
     if (a > b):
         if (a > c):
             if (pveta(a, b, c)):
-                return prav
+                return True
             else:
-                return neprav
+                return False
         else:
             if (pveta(c, a, b)):
-                return prav
+                return True
             else:
-                return neprav
+                return False
     else:
         if (b > c):
             if (pveta(b, a, c)):
-                return prav
+                return True
             else:
-                return neprav
+                return False
         else:
             if (pveta(c, a, b)):
-                return prav
+                return True
             else:
-                return neprav
+                return False
 
 
 def delkastrany(x1, y1, x2, y2):
@@ -128,7 +126,7 @@ def test_pveta():
 
 def test_prepona():
     """Ověří funčnost metody prepona."""
-    assert prepona(2.24, 1.0, 1.41) == "Trojuhelnik neni pravoúhly"
+    assert prepona(2.24, 1.0, 1.41) is False
 
 
 def test_delkastrany():
