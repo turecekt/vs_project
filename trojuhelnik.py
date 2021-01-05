@@ -22,6 +22,15 @@ def obvod(a, b, c):
     return a + b + c
 
 
+def kontrola(num):
+    """Zkontroluje a prevede vlozenou hodnotu."""
+    try:
+        return int(num)
+
+    except ValueError:  # ošetření zadání nečíselné hodnoty
+        print("Zadali jste špatnou hodnotu!")
+
+
 def obsah(a, b, c):
     """Vypočítá obsah trojúhelníku."""
     s = (a + b + c)/2
@@ -97,22 +106,19 @@ def trojuhelnik(ax, ay, bx, by, cx, cy):
 
 if __name__ == '__main__':
     """Vstup dat od uzivatele."""
-    try:
-        trojuhelnik(
-                # x souřadnice bodu A
-                int(input("Zadejte x souřadnici bodu A: ")),
-                # y souřadnice bodu A
-                int(input("Zadejte y souřadnici bodu A: ")),
-                # x souřadnice bodu B
-                int(input("Zadejte x souřadnici bodu B: ")),
-                # y souřadnice bodu B
-                int(input("Zadejte y souřadnici bodu B: ")),
-                # x souřadnice bodu C
-                int(input("Zadejte x souřadnici bodu C: ")),
-                # y souřadnice bodu C
-                int(input("Zadejte y souřadnici bodu C: ")))
-    except ValueError:  # ošetření zadání nečíselné hodnoty
-        print("Zadali jste špatnou hodnotu!")
+    trojuhelnik(
+            # x souřadnice bodu A
+            int(input("Zadejte x souřadnici bodu A: ")),
+            # y souřadnice bodu A
+            int(input("Zadejte y souřadnici bodu A: ")),
+            # x souřadnice bodu B
+            int(input("Zadejte x souřadnici bodu B: ")),
+            # y souřadnice bodu B
+            int(input("Zadejte y souřadnici bodu B: ")),
+            # x souřadnice bodu C
+            int(input("Zadejte x souřadnici bodu C: ")),
+            # y souřadnice bodu C
+            int(input("Zadejte y souřadnici bodu C: ")))
 
 
 def test_sestrojitelnost():
@@ -148,3 +154,8 @@ def test_delkastrany():
 def test_prepona_info():
     """Ověří funkčnost metody prepona_info."""
     assert prepona_info(True) == "Trojuhelnik je pravouhly"
+
+
+def test_kontrola():
+    """Ověří funkčnost metody kontrola.""" 
+        assert kontrola("5") == 5
