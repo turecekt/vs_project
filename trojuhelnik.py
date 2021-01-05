@@ -81,7 +81,7 @@ def trojuhelnik(ax, ay, bx, by, cx, cy):
     print("Delka strany a: ", a, "Delka strany b: ", b, "Delka strany c: ", c)
     if sestrojitelnost(a, b, c):    # overeni sestrojitelnosti trouhelniku
         print("Lze setrojit", "Obvod trojuhelniku je: ", obvod(a, b, c),
-	"Obsah trojuhelniku je: ", obsah(a, b, c), prepona(a, b, c))
+              "Obsah trojuhelniku je: ", obsah(a, b, c), prepona(a, b, c))
     else:
         print("Trojuhelnik nelze sestrojit")
 
@@ -90,17 +90,17 @@ if __name__ == '__main__':
     """Vstup dat od uzivatele."""
     try:
         trojuhelnik(
-		# x souřadnice bodu A
+                # x souřadnice bodu A
                 int(input("Zadejte x souřadnici bodu A: ")),
-		# y souřadnice bodu A
+                # y souřadnice bodu A
                 int(input("Zadejte y souřadnici bodu A: ")),
-		# x souřadnice bodu B
+                # x souřadnice bodu B
                 int(input("Zadejte x souřadnici bodu B: ")),
-		# y souřadnice bodu B
+                # y souřadnice bodu B
                 int(input("Zadejte y souřadnici bodu B: ")),
-		# x souřadnice bodu C
+                # x souřadnice bodu C
                 int(input("Zadejte x souřadnici bodu C: ")),
-		# y souřadnice bodu C
+                # y souřadnice bodu C
                 int(input("Zadejte y souřadnici bodu C: ")))
     except ValueError:  # ošetření zadání nečíselné hodnoty
         print("Zadali jste špatnou hodnotu!")
