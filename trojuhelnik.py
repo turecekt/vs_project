@@ -40,7 +40,7 @@ def pveta(c, b, a):
 
 
 def prepona(a, b, c):
-    """Urci nejdelsi stranu trojuhelniku."""
+    """Určení nejdelší strany trojúhelníku, část I."""
     if (a > b):
         if (a > c):
             if (pveta(a, b, c)):
@@ -65,6 +65,16 @@ def prepona(a, b, c):
                 return False
 
 
+def prepona_info(test):
+    """Určení nejdelší strany trojúhelníku, část II."""
+    prav = "Trojuhelnik je pravouhly"
+    neprav = "Trojuhelnik neni pravouhly"
+    if test:
+        return prav
+    else:
+        return neprav
+
+
 def delkastrany(x1, y1, x2, y2):
     """Metoda na výpočet délky strany trojúhelníku."""
     return math.sqrt(((y2-y1)**2) + ((x2-x1)**2))
@@ -79,7 +89,8 @@ def trojuhelnik(ax, ay, bx, by, cx, cy):
     print("Delka strany a: ", a, "Delka strany b: ", b, "Delka strany c: ", c)
     if sestrojitelnost(a, b, c):    # overeni sestrojitelnosti trouhelniku
         print("Lze setrojit", "Obvod trojuhelniku je: ", obvod(a, b, c),
-              "Obsah trojuhelniku je: ", obsah(a, b, c), prepona(a, b, c))
+              "Obsah trojuhelniku je: ", obsah(a, b, c),
+              prepona_info(prepona(a, b, c)))
     else:
         print("Trojuhelnik nelze sestrojit")
 
@@ -132,3 +143,8 @@ def test_prepona():
 def test_delkastrany():
     """Ověří funčnost metody delkastrany."""
     assert delkastrany(1, 2, 1, 6) == 4
+
+
+def test_prepona_info():
+    """Ověří funkčnost metody prepona_info."""
+    assert prepona_info(True) == "Trojuhelnik je pravouhly"
