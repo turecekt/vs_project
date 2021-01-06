@@ -108,17 +108,17 @@ if __name__ == '__main__':
     """Vstup dat od uzivatele."""
     trojuhelnik(
             # x souřadnice bodu A
-            int(input("Zadejte x souřadnici bodu A: ")),
+            input("Zadejte x souřadnici bodu A: "),
             # y souřadnice bodu A
-            int(input("Zadejte y souřadnici bodu A: ")),
+            input("Zadejte y souřadnici bodu A: "),
             # x souřadnice bodu B
-            int(input("Zadejte x souřadnici bodu B: ")),
+            input("Zadejte x souřadnici bodu B: "),
             # y souřadnice bodu B
-            int(input("Zadejte y souřadnici bodu B: ")),
+            input("Zadejte y souřadnici bodu B: "),
             # x souřadnice bodu C
-            int(input("Zadejte x souřadnici bodu C: ")),
+            input("Zadejte x souřadnici bodu C: "),
             # y souřadnice bodu C
-            int(input("Zadejte y souřadnici bodu C: ")))
+            input("Zadejte y souřadnici bodu C: "))
 
 
 def test_sestrojitelnost():
