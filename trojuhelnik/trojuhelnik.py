@@ -12,6 +12,7 @@ c = 0
 
 def isConstructable():
     """Check triangle constructability.
+
     Return True if thi triangle is constructable
     >>> isConstructable()
     true
