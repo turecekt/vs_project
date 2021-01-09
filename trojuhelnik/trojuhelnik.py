@@ -12,12 +12,18 @@ class Triangle:
     """Constructability triangle."""
 
     def __init__(self, ax, ay, bx, by, cx, cy):
-        a = lengthOfSide("a", ax, bx)
-        b = lengthOfSide("b", bx, by)
-        c = lengthOfSide("c", cx, cy)
+        print("Aplikace trojúhelník.")
+        print("Informace o sestrojitelnosti trojúhelníku.")
+        print("Pokud je to možné, tak obvodu, obsahu a pravoúhlosti.")
+
+        a = lengthOfSide(ax, ay)
+        b = lengthOfSide(bx, by)
+        c = lengthOfSide(cx, cy)
 
         if isConstructable(a, b, c):
-            print("Trojúhelník je sestrojitelný.")
+            p = perimeter(a, b, c)
+            c = content(a, b, c)
+
         else:
             print("Trojúhleník dle zadaných souřadnic nelze sestavit.")
 
@@ -31,18 +37,57 @@ def isConstructable(a, b, c):
     """
     triangleIsConstructable = False
 
-    if a + b > c and b + c > a and c + a > b:
-        triangleIsConstructable = True
+    if (a > 0) and (b > 0) and (c > 0):
+        if (a + b > c) and (b + c > a) and (c + a > b):
+            triangleIsConstructable = True
+
+    if triangleIsConstructable is True:
+        print("Trojúhelník je sestrojitelný.")
+        print("Délka strany a:")
+        print(a)
+        print("Délka strany b:")
+        print(b)
+        print("Délka strany c:")
+        print(c)
 
     return triangleIsConstructable
 
 
-def lengthOfSide(sideName, x, y):
-    """Compute lenght of side.
+def lengthOfSide(x, y):
+    """Compute length of side.
 
-    Return lenght of side.
+    Return length of side.
     >>> lengthOfSide(1, 1)
-    2
+    1.41421356237
     """
     sideLength = math.sqrt((x * x) + (y * y))
-    print("Délka strany " + sideName + " je " + sideLength + ".")
+    return sideLength
+
+
+def perimeter(a, b, c):
+    """Compute perimeter of triangle.
+
+    Return perimeter of triangle.
+    >>> lengthOfSide(1.41421356237, 1.41421356237, 1.41421356237)
+    4.242640687119286
+    """
+    result = a + b + c
+
+    print("Obvod trojúhelníku je:")
+    print(result)
+    return result
+
+
+def content(a, b, c):
+    """Compute content of triangle.
+
+    Return content of triangle.
+    >>> lengthOfSide(1.41421356237, 1.41421356237, 1.41421356237)
+    0.8660254037844389
+    """
+    s = (a + b + c) / 2
+    result = math.sqrt(s * (s - a) * (s - b) * (s - c))
+
+    print("Obsah trojúhelníku je:")
+    print(result)
+    return result
