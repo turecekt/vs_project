@@ -94,4 +94,4 @@ def tempContent(a, b, c):
     >>> tempContent(1.41, 1.41, 1.41)
     2.115
     """
-    return (a + b + c) / 2
+    return round((a + b + c) / 2, 3)
