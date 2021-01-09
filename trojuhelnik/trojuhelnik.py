@@ -1,9 +1,8 @@
-"""Triangle.
-"""
+"""Triangle."""
 
 
 class Triangle:
-    """Constructability triangle"""
+    "Constructability triangle"
 
 
 a = 0
@@ -12,8 +11,10 @@ c = 0
 
 
 def isConstructable():
-    """Check triangle constructability
+    """Check triangle constructability.
+
     Return True if thi triangle is constructable
+
     >>> isConstructable()
     true
     """
