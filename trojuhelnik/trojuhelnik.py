@@ -22,6 +22,13 @@ class Triangle:
         c = lengthOfSide(cx, cy)
 
         if isConstructable(a, b, c):
+            print("Trojúhelník je sestrojitelný.")
+            print("Délka strany a:")
+            print(a)
+            print("Délka strany b:")
+            print(b)
+            print("Délka strany c:")
+            print(c)
             p = perimeter(a, b, c)
             print("Obvod trojúhelníku je:")
             print(p)
@@ -46,15 +53,6 @@ def isConstructable(a, b, c):
         if (a + b > c) and (b + c > a) and (c + a > b):
             triangleIsConstructable = True
 
-    if triangleIsConstructable is True:
-        print("Trojúhelník je sestrojitelný.")
-        print("Délka strany a:")
-        print(a)
-        print("Délka strany b:")
-        print(b)
-        print("Délka strany c:")
-        print(c)
-
     return triangleIsConstructable
 
 
@@ -74,7 +72,7 @@ def perimeter(a, b, c):
 
     Return perimeter of triangle.
     >>> perimeter(1.41, 1.41, 1.41)
-    4.24
+    4.23
     """
     return round(a + b + c, 2)
 
@@ -84,7 +82,7 @@ def content(a, b, c):
 
     Return content of triangle.
     >>> content(1.41, 1.41, 1.41)
-    0.87
+    0.86
     """
     s = (a + b + c) / 2
     return round(math.sqrt(s * (s - a) * (s - b) * (s - c)), 2)
