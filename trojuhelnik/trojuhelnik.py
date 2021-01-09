@@ -1,4 +1,4 @@
-"""Triangle"""
+"""Triangle."""
 
 
 class Triangle():
