@@ -22,7 +22,11 @@ class Triangle:
 
         if isConstructable(a, b, c):
             p = perimeter(a, b, c)
+            print("Obvod trojúhelníku je:")
+            print(p)
             c = content(a, b, c)
+            print("Obsah trojúhelníku je:")
+            print(c)
 
         else:
             print("Trojúhleník dle zadaných souřadnic nelze sestavit.")
@@ -71,11 +75,7 @@ def perimeter(a, b, c):
     >>> lengthOfSide(1.41421356237, 1.41421356237, 1.41421356237)
     4.242640687119286
     """
-    result = a + b + c
-
-    print("Obvod trojúhelníku je:")
-    print(result)
-    return result
+    return a + b + c
 
 
 def content(a, b, c):
@@ -86,8 +86,4 @@ def content(a, b, c):
     0.8660254037844389
     """
     s = (a + b + c) / 2
-    result = math.sqrt(s * (s - a) * (s - b) * (s - c))
-
-    print("Obsah trojúhelníku je:")
-    print(result)
-    return result
+    return math.sqrt(s * (s - a) * (s - b) * (s - c))
