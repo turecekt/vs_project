@@ -12,6 +12,8 @@ class Triangle:
     """Constructability triangle."""
 
     def __init__(self, ax, ay, bx, by, cx, cy):
+        """Constructor."""
+
         print("Aplikace trojúhelník.")
         print("Informace o sestrojitelnosti trojúhelníku.")
         print("Pokud je to možné, tak obvodu, obsahu a pravoúhlosti.")
