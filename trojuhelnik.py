@@ -44,44 +44,35 @@ def pravouhlost(a1, b1, c1):
 # Program začíná v tomto místě.
 # Uživatel je vyzván, aby zadal souřadnice bodů.
 
-# Hodnoty bodů jsou zadány "natvrdo" kvůli testování.
-"""
-ax = int(input("Zadej souřadnici x bodu A: "))
-ay = int(input("Zadej souřadnici y bodu A: "))
-bx = int(input("Zadej souřadnici x bodu B: "))
-by = int(input("Zadej souřadnici y bodu B: "))
-cx = int(input("Zadej souřadnici x bodu C: "))
-cy = int(input("Zadej souřadnici y bodu C: "))
-"""
+if __name__ == '__main__':
+    ax = int(input("Zadej souřadnici x bodu A: "))
+    ay = int(input("Zadej souřadnici y bodu A: "))
+    bx = int(input("Zadej souřadnici x bodu B: "))
+    by = int(input("Zadej souřadnici y bodu B: "))
+    cx = int(input("Zadej souřadnici x bodu C: "))
+    cy = int(input("Zadej souřadnici y bodu C: "))
 
-ax = 1
-ay = 1
-bx = 2
-by = 5
-cx = 7
-cy = 3
+    # Výpočet délek stran. Proměnné budou použity pro další výpočty.
+    a = delka_strany(bx, by, cx, cy)
+    b = delka_strany(ax, ay, cx, cy)
+    c = delka_strany(ax, ay, bx, by)
 
-# Výpočet délek stran. Proměnné budou použity pro další výpočty.
-a = delka_strany(bx, by, cx, cy)
-b = delka_strany(ax, ay, cx, cy)
-c = delka_strany(ax, ay, bx, by)
+    print()
+    print("Délky stran:")
+    print("Délka strany a je ", "{:.2f}".format(a))
+    print("Délka strany b je ", "{:.2f}".format(b))
+    print("Délka strany c je ", "{:.2f}".format(c))
+    print()
 
-print()
-print("Délky stran:")
-print("Délka strany a je ", "{:.2f}".format(a))
-print("Délka strany b je ", "{:.2f}".format(b))
-print("Délka strany c je ", "{:.2f}".format(c))
-print()
-
-if sestrojitelnost(a, b, c):
-    print("Zadaný trojúhelník lze setrojit.")
-    print("Obvod trojúhelníku je ", "{:.2f}".format(obvod(a, b, c)))
-    print("Obsah trojúhelníku je ", "{:.2f}".format(obsah(a, b, c)))
-else:
-    print("Zadaný trojúhelník neexistuje - nelze spočítat" +
-          "obvod a obsah ani určit pravoúhlost.")
-if pravouhlost(a, b, c):
-    print("Trojúhelník je pravoúhlý.")
+    if sestrojitelnost(a, b, c):
+        print("Zadaný trojúhelník lze setrojit.")
+        print("Obvod trojúhelníku je ", "{:.2f}".format(obvod(a, b, c)))
+        print("Obsah trojúhelníku je ", "{:.2f}".format(obsah(a, b, c)))
+    else:
+        print("Zadaný trojúhelník neexistuje - nelze spočítat" +
+              "obvod a obsah ani určit pravoúhlost.")
+    if pravouhlost(a, b, c):
+        print("Trojúhelník je pravoúhlý.")
 
 
 def test_obvod():
