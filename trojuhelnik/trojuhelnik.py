@@ -63,9 +63,8 @@ def lengthOfSide(x, y):
     >>> lengthOfSide(1, 1)
     1.41
     """
-    sideLength = math.sqrt((x * x) + (y * y))
-    return round(sideLength, 2)
-
+    return round(math.sqrt((x * x) + (y * y), 2)
+    
 
 def perimeter(a, b, c):
     """Compute perimeter of triangle.
@@ -84,5 +83,15 @@ def content(a, b, c):
     >>> content(1.41, 1.41, 1.41)
     0.86
     """
-    s = (a + b + c) / 2
+    s = tempContent(a, b, c)
     return round(math.sqrt(s * (s - a) * (s - b) * (s - c)), 2)
+
+
+def tempContent(a, b, c):
+    """Temporary number to compute.
+
+    Return temporary number.
+    >>> temp(1.41, 1.41, 1.41)
+    2.115
+    """
+    return (a + b + c) / 2
