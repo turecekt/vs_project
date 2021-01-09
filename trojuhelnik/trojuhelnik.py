@@ -63,8 +63,8 @@ def lengthOfSide(x, y):
     >>> lengthOfSide(1, 1)
     1.41
     """
-    return round(math.sqrt((x * x) + (y * y), 2)
-    
+    return round(math.sqrt((x * x) + (y * y), 2))
+
 
 def perimeter(a, b, c):
     """Compute perimeter of triangle.
