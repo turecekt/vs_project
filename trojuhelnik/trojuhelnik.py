@@ -73,7 +73,7 @@ def perimeter(a, b, c):
     """Compute perimeter of triangle.
 
     Return perimeter of triangle.
-    >>> lengthOfSide(1.41421356237, 1.41421356237, 1.41421356237)
+    >>> perimeter(1.41421356237, 1.41421356237, 1.41421356237)
     4.242640687119286
     """
     return a + b + c
@@ -83,7 +83,7 @@ def content(a, b, c):
     """Compute content of triangle.
 
     Return content of triangle.
-    >>> lengthOfSide(1.41421356237, 1.41421356237, 1.41421356237)
+    >>> content(1.41421356237, 1.41421356237, 1.41421356237)
     0.8660254037844389
     """
     s = (a + b + c) / 2
