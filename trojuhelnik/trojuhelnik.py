@@ -91,7 +91,7 @@ def tempContent(a, b, c):
     """Temporary number to compute.
 
     Return temporary number.
-    >>> temp(1.41, 1.41, 1.41)
+    >>> tempContent(1.41, 1.41, 1.41)
     2.115
     """
     return (a + b + c) / 2
