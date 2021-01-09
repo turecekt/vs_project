@@ -1,7 +1,8 @@
-"""Triangle."""
+"""Triangle.
+"""
 
 
-class Triangle():
+class Triangle:
     """Constructability triangle"""
 
 
