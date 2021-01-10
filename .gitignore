@@ -1,1 +1,5 @@
 settings.json
+/trojuhelnik/.pytest_cache
+/trojuhelnik/__pycache__
+/trojuhelnik/.coverage
+*.coverage

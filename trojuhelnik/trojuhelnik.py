@@ -1,3 +1,5 @@
+import math
+
 """Triangle.
 
 1. Information about constructability of the triangle.
@@ -5,14 +7,36 @@
 3. Information about perimeter and content of the triangle.
 4. Information about right angle of the triangle.
 """
-import math
 
 
 class Triangle:
     """Constructability triangle."""
 
     def __init__(self, ax, ay, bx, by, cx, cy):
-        """Triangle constructor."""
+        """Triangle constructor.
+
+        >>> test=Triangle(1, 1, 1, 1, 1, 1)
+        Aplikace trojúhelník.
+        Informace o sestrojitelnosti trojúhelníku.
+        Pokud je to možné, tak obvodu, obsahu a pravoúhlosti.
+        Trojúhelník je sestrojitelný.
+        Délka strany a:
+        1.41
+        Délka strany b:
+        1.41
+        Délka strany c:
+        1.41
+        Obvod trojúhelníku je:
+        4.23
+        Obsah trojúhelníku je:
+        0.86
+        Trojúhelník je pravoúhlý:
+        >>> test=Triangle(0, 0, 0, 0, 0, 0)
+        Aplikace trojúhelník.
+        Informace o sestrojitelnosti trojúhelníku.
+        Pokud je to možné, tak obvodu, obsahu a pravoúhlosti.
+        Trojúhleník dle zadaných souřadnic nelze sestavit.
+        """
         print("Aplikace trojúhelník.")
         print("Informace o sestrojitelnosti trojúhelníku.")
         print("Pokud je to možné, tak obvodu, obsahu a pravoúhlosti.")
@@ -29,12 +53,11 @@ class Triangle:
             print(b)
             print("Délka strany c:")
             print(c)
-            p = perimeter(a, b, c)
             print("Obvod trojúhelníku je:")
-            print(p)
-            c = content(a, b, c)
+            print(perimeter(a, b, c))
             print("Obsah trojúhelníku je:")
-            print(c)
+            print(content(a, b, c))
+            print("Trojúhelník je pravoúhlý:")
 
         else:
             print("Trojúhleník dle zadaných souřadnic nelze sestavit.")
@@ -95,3 +118,15 @@ def tempContent(a, b, c):
     2.115
     """
     return round((a + b + c) / 2, 3)
+
+
+def hasRightAngle(a, b, c):
+    """Compute right angle of triagle.
+
+    Return True if the triangle has right angle.
+    >>> hasRightAngle(3, 4, 5)
+    True
+    """
+    sides = [a, b, c]
+    sides.sort(reverse=True)
+    return sides[0] * sides[0] == (sides[1] * sides[1]) + (sides[2] * sides[2])
