@@ -6,61 +6,69 @@
 4. Information about right angle of the triangle.
 """
 import math
+import trojuhelnik
 
 
-class Triangle:
-    """Constructability triangle."""
+if __name__ == "__main__":
+    ax = float(input("Zadejte souřadnice ax: "))
+    ay = float(input("Zadejte souřadnice ay: "))
+    bx = float(input("Zadejte souřadnice bx: "))
+    by = float(input("Zadejte souřadnice by: "))
+    cx = float(input("Zadejte souřadnice cx: "))
+    cy = float(input("Zadejte souřadnice cy: "))
+    trojuhelnik.triangle(ax, ay, bx, by, cx, cy)
 
-    def __init__(self, ax, ay, bx, by, cx, cy):
-        """Triangle constructor.
 
-        >>> test=Triangle(1, 1, 1, 1, 1, 1)
-        Aplikace trojúhelník.
-        Informace o sestrojitelnosti trojúhelníku.
-        Pokud je to možné, tak obvodu, obsahu a pravoúhlosti.
-        Trojúhelník je sestrojitelný.
-        Délka strany a:
-        1.41
-        Délka strany b:
-        1.41
-        Délka strany c:
-        1.41
-        Obvod trojúhelníku je:
-        4.23
-        Obsah trojúhelníku je:
-        0.86
-        Trojúhelník je pravoúhlý:
-        NE
-        >>> test=Triangle(0, 0, 0, 0, 0, 0)
-        Aplikace trojúhelník.
-        Informace o sestrojitelnosti trojúhelníku.
-        Pokud je to možné, tak obvodu, obsahu a pravoúhlosti.
-        Trojúhleník dle zadaných souřadnic nelze sestavit.
-        """
-        print("Aplikace trojúhelník.")
-        print("Informace o sestrojitelnosti trojúhelníku.")
-        print("Pokud je to možné, tak obvodu, obsahu a pravoúhlosti.")
+def triangle(ax, ay, bx, by, cx, cy):
+    """Triangle main method.
 
-        a = lengthOfSide(ax, ay)
-        b = lengthOfSide(bx, by)
-        c = lengthOfSide(cx, cy)
+    >>> triangle(1, 1, 1, 1, 1, 1)
+    Aplikace trojúhelník.
+    Informace o sestrojitelnosti trojúhelníku.
+    Pokud je to možné, tak obvodu, obsahu a pravoúhlosti.
+    Trojúhelník je sestrojitelný.
+    Délka strany a:
+    1.41
+    Délka strany b:
+    1.41
+    Délka strany c:
+    1.41
+    Obvod trojúhelníku je:
+    4.23
+    Obsah trojúhelníku je:
+    0.86
+    Trojúhelník je pravoúhlý:
+    NE
+    >>> triangle(0, 0, 0, 0, 0, 0)
+    Aplikace trojúhelník.
+    Informace o sestrojitelnosti trojúhelníku.
+    Pokud je to možné, tak obvodu, obsahu a pravoúhlosti.
+    Trojúhleník dle zadaných souřadnic nelze sestavit.
+    """
+    print("Aplikace trojúhelník.")
+    print("Informace o sestrojitelnosti trojúhelníku.")
+    print("Pokud je to možné, tak obvodu, obsahu a pravoúhlosti.")
 
-        if isConstructable(a, b, c):
-            print("Trojúhelník je sestrojitelný.")
-            print("Délka strany a:")
-            print(a)
-            print("Délka strany b:")
-            print(b)
-            print("Délka strany c:")
-            print(c)
-            print("Obvod trojúhelníku je:")
-            print(perimeter(a, b, c))
-            print("Obsah trojúhelníku je:")
-            print(content(a, b, c))
-            print("Trojúhelník je pravoúhlý:")
-            print(hasRightAngle(a, b, c))
-        else:
-            print("Trojúhleník dle zadaných souřadnic nelze sestavit.")
+    a = lengthOfSide(ax, ay)
+    b = lengthOfSide(bx, by)
+    c = lengthOfSide(cx, cy)
+
+    if isConstructable(a, b, c):
+        print("Trojúhelník je sestrojitelný.")
+        print("Délka strany a:")
+        print(a)
+        print("Délka strany b:")
+        print(b)
+        print("Délka strany c:")
+        print(c)
+        print("Obvod trojúhelníku je:")
+        print(perimeter(a, b, c))
+        print("Obsah trojúhelníku je:")
+        print(content(a, b, c))
+        print("Trojúhelník je pravoúhlý:")
+        print(hasRightAngle(a, b, c))
+    else:
+        print("Trojúhleník dle zadaných souřadnic nelze sestavit.")
 
 
 def isConstructable(a, b, c):
