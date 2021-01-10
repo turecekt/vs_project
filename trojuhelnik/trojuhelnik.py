@@ -30,6 +30,7 @@ class Triangle:
         Obsah trojúhelníku je:
         0.86
         Trojúhelník je pravoúhlý:
+        NE
         >>> test=Triangle(0, 0, 0, 0, 0, 0)
         Aplikace trojúhelník.
         Informace o sestrojitelnosti trojúhelníku.
@@ -57,7 +58,7 @@ class Triangle:
             print("Obsah trojúhelníku je:")
             print(content(a, b, c))
             print("Trojúhelník je pravoúhlý:")
-
+            print(hasRightAngle(a, b, c))
         else:
             print("Trojúhleník dle zadaných souřadnic nelze sestavit.")
 
@@ -120,12 +121,17 @@ def tempContent(a, b, c):
 
 
 def hasRightAngle(a, b, c):
-    """Compute right angle of triagle.
+    """Compute right angle of triangle.
 
     Return True if the triangle has right angle.
     >>> hasRightAngle(3, 4, 5)
-    True
+    'ANO'
+    >>> hasRightAngle(1, 1, 1)
+    'NE'
     """
     sides = [a, b, c]
     sides.sort(reverse=True)
-    return sides[0] * sides[0] == (sides[1] * sides[1]) + (sides[2] * sides[2])
+    if sides[0] * sides[0] == (sides[1] * sides[1]) + (sides[2] * sides[2]):
+        return "ANO"
+    else:
+        return "NE"
