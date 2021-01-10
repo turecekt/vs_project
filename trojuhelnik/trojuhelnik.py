@@ -1,5 +1,3 @@
-import math
-
 """Triangle.
 
 1. Information about constructability of the triangle.
@@ -7,6 +5,7 @@ import math
 3. Information about perimeter and content of the triangle.
 4. Information about right angle of the triangle.
 """
+import math
 
 
 class Triangle:
