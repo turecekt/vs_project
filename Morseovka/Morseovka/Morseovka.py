@@ -94,15 +94,31 @@ if __name__ == '__main__':
 """Unittesty."""
 
 
-# text na Moresuv kod
+# text na Moresuv kod1
 
-def test_prelozeni():
+def test_prelozeni1():
     """Test prevodu textu do kodu morse."""
     assert texttomorse("asd") == " .- ... -.."
 
 
+def test_prelozeni2():
+    """Test prevodu textu do kodu morse."""
+    assert texttomorse("sos") == " ... --- ..."
+
+
+def test_prelozeni3():
+    """Test prevodu textu do kodu morse."""
+    assert texttomorse("dfg") == " -.. ..-. --."
+
+
 # Moresuv kod na text
 
-def test_prelozeni1():
+
+def test_prelozeni4():
     """Test na prelozeni kodu morse do textu."""
     assert morsetotext(['...', '---', '...']) == 'sos'
+
+
+def test_prelozeni5():
+    """Test na prelozeni kodu morse do textu."""
+    assert morsetotext(['.-', '...', '-..']) == 'asd'
