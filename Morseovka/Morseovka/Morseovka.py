@@ -99,13 +99,6 @@ if __name__ == '__main__':
 def test_prelozeni():
     """Test prevodu textu do kodu morse."""
     assert texttomorse("asd") == " .- ... -.."
-    assert texttomorse("qwerty") == " --.- .-- . .-. - -.--"
-    assert texttomorse("QWERTY") == " --.- .-- . .-. - -.--"
-    assert texttomorse("QWErty") == " --.- .-- . .-. - -.--"
-    assert texttomorse("123") == " .---- ..--- ...--"
-    assert texttomorse("1jkl234") == " .---- .--- -.- .-.. ..--- ...-- ....-"
-    assert texttomorse("859QGm3z") == \
-           " ---.. ..... ----. --.- --. -- ...-- --.."
 
 
 # Moresuv kod na text
