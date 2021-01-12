@@ -108,37 +108,8 @@ def test_prelozeni():
            " ---.. ..... ----. --.- --. -- ...-- --.."
 
 
-def test_spravnych_symbolu():
-    """Test na zobrazeni spatnych symbolu."""
-    assert texttomorse("!`@#$%^&()+=") == "nespravne znaky"
-    assert texttomorse("!adc!") == "nespravne znaky"
-    assert texttomorse("1d4$$") == "nespravne znaky"
-    assert texttomorse("fg^&Dd***") == "nespravne znaky"
-    assert texttomorse("*&^%Kk$") == "nespravne znaky"
-
-
-def test_prazdneho_pole():
-    """Test na kontrolu prazdneho pole."""
-    assert texttomorse("") == "prazdne pole"
-
-
 # Moresuv kod na text
 
 def test_prelozeni1():
     """Test na prelozeni kodu morse do textu."""
     assert morsetotext(['...', '---', '...']) == 'sos'
-
-
-def test_textu_v_sp():
-    """Test na srovnani morse kodu se slovnikem."""
-    assert morsetotext(['----------']) == 'chyba pri zadavani znaku'
-
-
-def test_spravnych_symbolu1():
-    """Test na zobrazeni spatnych symbolu."""
-    assert morsetotext(['!@#$%^&()+']) == 'nespravne znaky'
-
-
-def test_prazdneho_pole1():
-    """Test na kontrolu prazdneho pole."""
-    assert morsetotext('') == 'prazdne pole'
