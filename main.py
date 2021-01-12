@@ -36,6 +36,19 @@ def toNumber(value):
 class Uprava_jednotek():
     """Třída pro úpravu inputu pro logiku."""
 
+    def __init__(self, sA=0, sB=0, sC=0, unsA="", unsB="", unsC="", unuA="",
+                 unuB="", unuC=""):
+        """Konstruktor třídy uprava jednotek."""
+        self.sA = sA
+        self.sB = sB
+        self.sC = sC
+        self.unsA = unsA
+        self.unsB = unsB
+        self.unsC = unsC
+        self.unuA = unuA
+        self.unuB = unuB
+        self.unuC = unuC
+
     def prevod_delky(self):
         """Metoda pro převod délek na jednotnou variantu."""
         if self.unsA != "" and self.unsB != "" and self.unsC != "":
@@ -408,7 +421,7 @@ class Tris(Uprava_jednotek):
                 try:
                     self.uA = self.sin_veta("uA")
                     self.uC = math.pi - (self.uA + self.uB)
-                    self.sC = self.sin_veta("SC")
+                    self.sC = self.sin_veta("sC")
                 except self.uA.error:
                     return self.output()
             elif sA > 0 and sB > 0 and uC > 0:
@@ -598,6 +611,7 @@ class Gui(tk.Tk):
         self.app = tk.Tk()
         self.app.configure(bg="#1d1d1d")
         self.app.title("Výpočet troúhelníků")
+        self.app.iconbitmap('favicon.ico')
         self.app.columnconfigure(0, weight=2)
         self.app.columnconfigure(1, weight=2)
         self.app.columnconfigure(2, weight=2)
@@ -808,7 +822,7 @@ class Gui(tk.Tk):
                                 width=3)
         slA = trImg.create_line(400, 343.109, 225, 40, fill="white", width=3)
         slB = trImg.create_line(225, 40, 50, 343.109, fill="white", width=3)
-        trImg.create_text(70, 410, anchor="w", text=myhelp, fill="yellow",
+        trImg.create_text(70, 415, anchor="w", text=myhelp, fill="yellow",
                           font=("Helvetica", "10", "bold"))
         if self.issA.get():
             trImg.itemconfig(slA, fill="green")
@@ -1266,111 +1280,6 @@ class Gui(tk.Tk):
             # chyba - trojúhelník nelze zkonstruovat
             tk.messagebox.showerror(title="Chyba výpočtu",
                                     message=self.myOutput)
-
-
-def test_toNumber():
-    """Testuje funkci toNumber()."""
-    test = "2**5"
-    result = 32
-    test = toNumber(test)
-    assert test == result
-    test = "sqrt(625)"
-    result = 25
-    test = toNumber(test)
-    assert test == result
-    test = "(5+3)/2"
-    result = 4
-    test = toNumber(test)
-    assert test == result
-
-
-class test(Tris):
-    """Testovací třída."""
-
-    def test_tris_sss():
-        """Testuje třídu Tris(), pro trojúhelník sss."""
-        test = {0: ('500', 'cm'),
-                1: ('40', 'dm'),
-                2: ('3', 'm'),
-                3: ('', ''),
-                4: ('', ''),
-                5: ('', '')}
-        result = {0: 'strana a – 5.0m',
-                  1: 'strana b – 4.0m',
-                  2: 'strana c – 3.0m',
-                  3: 'úhel α – 1.5708rad, 90.0°',
-                  4: 'úhel β – 0.9273rad, 53.1301°',
-                  5: 'úhel γ – 0.6435rad, 36.8699°',
-                  6: 'výška a – 2.4m',
-                  7: 'výška b – 3.0m',
-                  8: 'výška c – 4.0m',
-                  9: 'obvod  – 12.0m',
-                  10: 'obsah – 6.0m²',
-                  11: 'typ – pravoúhlý'}
-        test = Tris(test)
-        assert test.result == result and test.tris_sss == result
-
-    def test_tris_sus():
-        """Testuje třídu Tris(), pro trojúhelník sus."""
-        test = {0: ('', ''),
-                1: ('40', 'dm'),
-                2: ('3', 'm'),
-                3: ('2**6', '°'),
-                4: ('', ''),
-                5: ('', '')}
-        result = {0: 'strana a – 38.0514dm',
-                  1: 'strana b – 40dm',
-                  2: 'strana c – 30dm',
-                  3: 'úhel α – 1.11701rad, 64.0°',
-                  4: 'úhel β – 1.23705rad, 70.8776°',
-                  5: 'úhel γ – 0.78753rad, 45.1224°',
-                  6: 'výška a – 28.34463dm',
-                  7: 'výška b – 26.96382dm',
-                  8: 'výška c – 35.95176dm',
-                  9: 'obvod  – 108.0514dm',
-                  10: 'obsah – 539.28dm²',
-                  11: 'typ – obecný'}
-        test = Tris(test)
-        assert test.result == result and test.tris_sus == result
-
-    def test_tris_usu():
-        """Testuje třídu Tris(), pro trojúhelník sus."""
-        test = {0: ('', ''),
-                1: ('40', 'cm'),
-                2: ('', ''),
-                3: ('2**6', '°'),
-                4: ('', ''),
-                5: ('1', 'rad')}
-        result = {0: 'strana a – 42.07359cm',
-                  1: 'strana b – 40cm',
-                  2: 'strana c – 39.39023cm',
-                  3: 'úhel α – 1.11701rad, 64.0°',
-                  4: 'úhel β – 1.02458rad, 58.70422°',
-                  5: 'úhel γ – 1rad, 57.29578°',
-                  6: 'výška a – 33.65884cm',
-                  7: 'výška b – 35.40371cm',
-                  8: 'výška c – 35.95176cm',
-                  9: 'obvod  – 121.46382cm',
-                  10: 'obsah – 708.07cm²',
-                  11: 'typ – obecný'}
-        test = Tris(test)
-        assert test.result == result and test.tris_usu == result
-
-    def test_tris_error():
-        """Testuje třídu Tris(), pro error."""
-        test = {0: ('20', 'dm'),
-                1: ('40', 'cm'),
-                2: ('5', 'm'),
-                3: ('', ''),
-                4: ('', ''),
-                5: ('', '')}
-        result = "Nejedná se o trojúhelník.\n"
-        result += "Součet dvou stran musí být větší než strana třetí.\n"
-        result += "Součet dvou úhlů musí být menší než 180\xb0 nebo "
-        result += "\u03C0 rad. Nejmenší možný úhel je 0,013\xb0"
-        test = Tris(test)
-        assert test.result == result and test.output == result
-        assert test.__str__ == result
 
 
 if __name__ == "__main__":
