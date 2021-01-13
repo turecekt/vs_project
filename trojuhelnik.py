@@ -56,14 +56,11 @@ if __name__ == '__main__':
     a = delka_strany(bx, by, cx, cy)
     b = delka_strany(ax, ay, cx, cy)
     c = delka_strany(ax, ay, bx, by)
-
-    print("Délky stran:")
     print("Délka strany a je ", "{:.2f}".format(a))
     print("Délka strany b je ", "{:.2f}".format(b))
     print("Délka strany c je ", "{:.2f}".format(c))
 
     if sestrojitelnost(a, b, c):
-        print("Zadaný trojúhelník lze setrojit.")
         print("Obvod trojúhelníku je ", "{:.2f}".format(obvod(a, b, c)))
         print("Obsah trojúhelníku je ", "{:.2f}".format(obsah(a, b, c)))
     else:
