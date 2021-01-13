@@ -58,8 +58,7 @@ if __name__ == '__main__':
         print("Obvod trojúhelníku je ", "{:.2f}".format(obvod(a, b, c)))
         print("Obsah trojúhelníku je ", "{:.2f}".format(obsah(a, b, c)))
     else:
-        print("Zadaný trojúhelník neexistuje - nelze spočítat" +
-              "obvod a obsah ani určit pravoúhlost.")
+        print("Zadaný trojúhelník neexistuje.")
     if pravouhlost(a, b, c):
         print("Trojúhelník je pravoúhlý.")
 
