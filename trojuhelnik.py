@@ -40,6 +40,7 @@ def pravouhlost(a1, b1, c1):
     else:
         return 0
 
+
 if __name__ == '__main__':
     ax = int(input("Zadej souřadnici x bodu A: "))
     ay = int(input("Zadej souřadnici y bodu A: "))
@@ -47,14 +48,12 @@ if __name__ == '__main__':
     by = int(input("Zadej souřadnici y bodu B: "))
     cx = int(input("Zadej souřadnici x bodu C: "))
     cy = int(input("Zadej souřadnici y bodu C: "))
-
     a = delka_strany(bx, by, cx, cy)
     b = delka_strany(ax, ay, cx, cy)
     c = delka_strany(ax, ay, bx, by)
     print("Délka strany a je ", "{:.2f}".format(a))
     print("Délka strany b je ", "{:.2f}".format(b))
     print("Délka strany c je ", "{:.2f}".format(c))
-
     if sestrojitelnost(a, b, c):
         print("Obvod trojúhelníku je ", "{:.2f}".format(obvod(a, b, c)))
         print("Obsah trojúhelníku je ", "{:.2f}".format(obsah(a, b, c)))
