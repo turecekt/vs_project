@@ -35,7 +35,7 @@ def obsah(a1, b1, c1):
 
 def pravouhlost(a1, b1, c1):
     """Pythagorovou větou určí pravoúhlost, pokud je pravoúhlý, vrací 1."""
-    if c1 ** 2 == (a1 ** 2 + b1 ** 2) and (a != 0 and b != 0 and c != 0):
+    if c1 ** 2 == (a1 ** 2 + b1 ** 2) and (delka_strany(bx, by, cx, cy) != 0 and delka_strany(ax, ay, cx, cy) != 0 and delka_strany(ax, ay, bx, by) != 0):
         return 1
     else:
         return 0
