@@ -40,10 +40,6 @@ def pravouhlost(a1, b1, c1):
     else:
         return 0
 
-
-# Program začíná v tomto místě.
-# Uživatel je vyzván, aby zadal souřadnice bodů.
-
 if __name__ == '__main__':
     ax = int(input("Zadej souřadnici x bodu A: "))
     ay = int(input("Zadej souřadnici y bodu A: "))
@@ -52,7 +48,6 @@ if __name__ == '__main__':
     cx = int(input("Zadej souřadnici x bodu C: "))
     cy = int(input("Zadej souřadnici y bodu C: "))
 
-    # Výpočet délek stran. Proměnné budou použity pro další výpočty.
     a = delka_strany(bx, by, cx, cy)
     b = delka_strany(ax, ay, cx, cy)
     c = delka_strany(ax, ay, bx, by)
