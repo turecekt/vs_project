@@ -7,6 +7,10 @@ Dvě funkce. Jedna pro zakódování(encrypt), jedna pro překlad(decrypt).
 """
 
 def encrypt(zprava):
+    """Snad už to bude fungovat.
+   
+    Dvě funkce. Jedna pro zakódování(encrypt), jedna pro překlad(decrypt).
+    """
     encrypt = {'A':'.-', 'B':'-...',
                'C':'-.-.', 'D':'-..',
                'E':'.', 'F':'..-.',
@@ -26,13 +30,14 @@ def encrypt(zprava):
         result = ' '.join(encrypt[i] for i in zprava.upper())
     return result
 
-"""
-Snad už to bude fungovat.
-
-Dvě funkce. Jedna pro zakódování(encrypt), jedna pro překlad(decrypt).
-"""
 
 def decrypt(text):
+    """
+    Snad už to bude fungovat.
+    
+    Dvě funkce. Jedna pro zakódování(encrypt), jedna pro překlad(decrypt).
+    """
+    
     decrypt = {'.-':'A', '-...':'B',
                '-.-.':'C', '-..':'D',
                '.':'E', '..-.':'F',
