@@ -1,5 +1,8 @@
-# vytvoření funkce pro zakódování textu
+# coding=utf-8
+
 """
+Snad už to bude fungovat.
+
 Dvě funkce. Jedna pro zakódování(encrypt), jedna pro překlad(decrypt).
 """
 
@@ -23,7 +26,7 @@ def encrypt(zprava):
         result = ' '.join(encrypt[i] for i in zprava.upper())
     return result
 
-# vytvoření funkce pro přeložení textu
+
 def decrypt(text):
     decrypt = {'.-':'A', '-...':'B',
                '-.-.':'C', '-..':'D',
