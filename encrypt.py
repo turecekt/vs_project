@@ -1,3 +1,8 @@
+"""
+Snad už to bude fungovat.
+
+Dvě funkce. Jedna pro zakódování(encrypt), jedna pro překlad(decrypt).
+"""
 import morse1
 import unittest
 
@@ -17,6 +22,11 @@ class Check(unittest.TestCase):
                     ('Y','-.--'), ('Z','--..'),
                     (' ', ''))
     
+    """
+    Snad už to bude fungovat.
+    
+    Dvě funkce. Jedna pro zakódování(encrypt), jedna pro překlad(decrypt).
+    """
     def test_encrypt_known_values(self):
         for char, string in self.known_values:
             result = morse1.encrypt(char)
