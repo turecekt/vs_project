@@ -26,6 +26,11 @@ def encrypt(zprava):
         result = ' '.join(encrypt[i] for i in zprava.upper())
     return result
 
+"""
+Snad už to bude fungovat.
+
+Dvě funkce. Jedna pro zakódování(encrypt), jedna pro překlad(decrypt).
+"""
 
 def decrypt(text):
     decrypt = {'.-':'A', '-...':'B',
