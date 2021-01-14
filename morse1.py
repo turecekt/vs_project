@@ -1,4 +1,8 @@
 # vytvoření funkce pro zakódování textu
+"""
+Dvě funkce. Jedna pro zakódování(encrypt), jedna pro překlad(decrypt).
+"""
+
 def encrypt(zprava):
     encrypt = {'A':'.-', 'B':'-...',
                'C':'-.-.', 'D':'-..',
