@@ -9,7 +9,6 @@ Dvě funkce. Jedna pro zakódování(encrypt), jedna pro překlad(decrypt).
 
 def encrypt(zprava):
     """Snad už to bude fungovat.
-    
     Dvě funkce. Jedna pro zakódování(encrypt), jedna pro překlad(decrypt).
     """
     encrypt = {'A':'.-', 'B':'-...',
