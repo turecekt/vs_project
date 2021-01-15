@@ -31,8 +31,9 @@ class Check2(unittest.TestCase):
                     ('..-', 'U'), ('...-', 'V'),
                     ('.--', 'W'), ('-..-', 'X'),
                     ('-.--', 'Y'), ('--..', 'Z'))
-  
+
     def test_decrypt_known_values(self):
+        """Test."""
         for string, char in self.known_values:
             result = morse1.decrypt(string)
             self.assertEqual(char, result)
