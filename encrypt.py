@@ -7,6 +7,11 @@ import morse1
 import unittest
 
 
+"""
+Snad už to bude fungovat.
+
+Dvě funkce. Jedna pro zakódování(encrypt), jedna pro překlad(decrypt).
+"""
 class Check(unittest.TestCase):
     known_values = (('A','.-'), ('B','-...'),
                     ('C','-.-.'), ('D','-..'),
