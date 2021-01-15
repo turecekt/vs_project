@@ -14,7 +14,10 @@ Snad už to bude fungovat.
 Dvě funkce. Jedna pro zakódování(encrypt), jedna pro překlad(decrypt).
 """
 
+
 class Check2(unittest.TestCase):
+    """Slovník."""
+
     known_values = (('.-', 'A'), ('-...', 'B'),
                     ('-.-.', 'C'), ('-..', 'D'),
                     ('.', 'E'), ('..-.', 'F'),
