@@ -32,8 +32,8 @@ class Check(unittest.TestCase):
                     ('Y', '-.--'), ('Z', '--..'),
                     (' ', ''))
 
-
     def test_encrypt_known_values(self):
+        """"Test"""
         for char, string in self.known_values:
             result = morse1.encrypt(char)
             self.assertEqual(string, result)
