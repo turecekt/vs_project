@@ -31,7 +31,7 @@ class Check(unittest.TestCase):
                     ('W', '.--'), ('X', '-..-'),
                     ('Y', '-.--'), ('Z', '--..'),
                     (' ', ''))
-   
+
 
     def test_encrypt_known_values(self):
         for char, string in self.known_values:
