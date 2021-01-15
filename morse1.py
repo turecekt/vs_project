@@ -1,18 +1,14 @@
 # coding=utf-8
 
 """
-Snad už to bude fungovat.
+Hlavní program.
 
 Dvě funkce. Jedna pro zakódování(encrypt), jedna pro překlad(decrypt).
 """
 
 
 def encrypt(zprava):
-    """
-    Snad už to bude fungovat.
-
-    Dvě funkce. Jedna pro zakódování(encrypt), jedna pro překlad(decrypt).
-    """
+    """Vytvoření slovníku a funkce pro zakódování zprávy."""
     encrypt = {'A': '.-', 'B': '-...',
                'C': '-.-.', 'D': '-..',
                'E': '.', 'F': '..-.',
@@ -34,11 +30,7 @@ def encrypt(zprava):
 
 
 def decrypt(text):
-    """
-    Snad už to bude fungovat.
-
-    Dvě funkce. Jedna pro zakódování(encrypt), jedna pro překlad(decrypt).
-    """
+    """ Vytvoření slovníku pro překlad z morseova kódu a funkce pro překlad."""
     decrypt = {'.-': 'A', '-...': 'B',
                '-.-.': 'C', '-..': 'D',
                '.': 'E', '..-.': 'F',
