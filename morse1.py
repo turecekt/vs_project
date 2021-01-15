@@ -48,3 +48,22 @@ def decrypt(text):
     if '-' or '.' in text:
         result = ''.join(decrypt[i] for i in text.split())
     return result
+
+def main():
+    """Výběr ze dvou možností."""
+    moznost = input("Zakodovat(1) Preloz(2)")
+    if moznost == "1":
+        preloz = input("")
+        result = encrypt(preloz.lower())
+        print(result)
+        input("")
+
+    if moznost == "2":
+        preloz = input(" ")
+        result = decrypt(preloz)
+        print(result.capitalize())
+        input("")
+
+
+if __name__ == '__main__':
+    main()
