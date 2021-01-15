@@ -21,7 +21,7 @@ class Check2(unittest.TestCase):
     known_values = (('.-', 'A'), ('-...', 'B'),
                     ('-.-.', 'C'), ('-..', 'D'),
                     ('.', 'E'), ('..-.', 'F'),
-                    ('--.', 'G'),('....', 'H'),
+                    ('--.', 'G'), ('....', 'H'),
                     ('..', 'I'), ('.---', 'J'),
                     ('-.-', 'K'), ('.-..', 'L'),
                     ('--', 'M'), ('-.', 'N'),
@@ -31,7 +31,7 @@ class Check2(unittest.TestCase):
                     ('..-', 'U'), ('...-', 'V'),
                     ('.--', 'W'), ('-..-', 'X'),
                     ('-.--', 'Y'), ('--..', 'Z'))
-    
+  
     def test_decrypt_known_values(self):
         for string, char in self.known_values:
             result = morse1.decrypt(string)
