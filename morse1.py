@@ -39,7 +39,7 @@ def decrypt(text):
 
     Dvě funkce. Jedna pro zakódování(encrypt), jedna pro překlad(decrypt).
     """
-     decrypt = {'.-': 'A', '-...': 'B',
+    decrypt = {'.-': 'A', '-...': 'B',
                '-.-.': 'C', '-..': 'D',
                '.': 'E', '..-.': 'F',
                '--.': 'G', '....': 'H',
