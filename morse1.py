@@ -13,7 +13,7 @@ def encrypt(zprava):
 
     Dvě funkce. Jedna pro zakódování(encrypt), jedna pro překlad(decrypt).
     """
-    encrypt = {'A':'.-', 'B':'-...',
+    encrypt = {'A': '.-', 'B': '-...',
                'C':'-.-.', 'D':'-..',
                'E':'.', 'F':'..-.',
                'G':'--.',
