@@ -611,7 +611,6 @@ class Gui(tk.Tk):
         self.app = tk.Tk()
         self.app.configure(bg="#1d1d1d")
         self.app.title("Výpočet troúhelníků")
-        self.app.iconbitmap('favicon.ico')
         self.app.columnconfigure(0, weight=2)
         self.app.columnconfigure(1, weight=2)
         self.app.columnconfigure(2, weight=2)
