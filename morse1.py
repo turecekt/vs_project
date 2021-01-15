@@ -49,6 +49,7 @@ def decrypt(text):
         result = ''.join(decrypt[i] for i in text.split())
     return result
 
+
 def main():
     """Výběr ze dvou možností."""
     moznost = input("Zakodovat(1) Preloz(2)")
