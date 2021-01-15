@@ -36,7 +36,7 @@ def encrypt(zprava):
 def decrypt(text):
     """
     Snad už to bude fungovat.
-    
+
     Dvě funkce. Jedna pro zakódování(encrypt), jedna pro překlad(decrypt).
     """
      decrypt = {'.-': 'A', '-...': 'B',
