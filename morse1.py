@@ -30,7 +30,7 @@ def encrypt(zprava):
 
 
 def decrypt(text):
-    """ Vytvoření slovníku pro překlad z morseova kódu a funkce pro překlad."""
+    """Vytvoření slovníku pro překlad z morseova kódu a funkce pro překlad."""
     decrypt = {'.-': 'A', '-...': 'B',
                '-.-.': 'C', '-..': 'D',
                '.': 'E', '..-.': 'F',
