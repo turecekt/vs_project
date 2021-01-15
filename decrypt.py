@@ -1,7 +1,7 @@
 """
-Snad už to bude fungovat.
+Test funkce decrypt.
 
-Dvě funkce. Jedna pro zakódování(encrypt), jedna pro překlad(decrypt).
+Import kódu morse1, který obsahuje testovanou funkci a unittestu.
 """
 
 import morse1
@@ -9,9 +9,9 @@ import unittest
 
 
 """
-Snad už to bude fungovat.
+Test funkce decrypt.
 
-Dvě funkce. Jedna pro zakódování(encrypt), jedna pro překlad(decrypt).
+Testování správnosti překladu z morseova kódu.
 """
 
 
