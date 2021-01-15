@@ -16,8 +16,7 @@ Dvě funkce. Jedna pro zakódování(encrypt), jedna pro překlad(decrypt).
 
 class Check(unittest.TestCase):
 
-    """
-    Snad už to bude fungovat.
+    """Snad už to bude fungovat.
 
     Dvě funkce. Jedna pro zakódování(encrypt), jedna pro překlad(decrypt).
     """
