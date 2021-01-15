@@ -38,5 +38,6 @@ class Check(unittest.TestCase):
             result = morse1.encrypt(char)
             self.assertEqual(string, result)
 
+
 if __name__ == '__main__':
     unittest.main()
