@@ -45,7 +45,7 @@ def decrypt(text):
                '.--': 'W', '-..-': 'X',
                '-.--': 'Y', '--..': 'Z'}
     result = ''
-    if '-' or '.' in text:
+    if '-' in text or '.' in text:
         result = ''.join(decrypt[i] for i in text.split())
     return result
 
