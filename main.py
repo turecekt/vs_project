@@ -54,6 +54,6 @@ class Test(unittest.TestCase):
         self.assertEqual(prevod(1), "I")
         self.assertEqual(prevod(10), "X")
         self.assertEqual(prevod(24), "XXIV")
-        self.assertEqual(prevod(24998), "XXIVCMXCVIII")
+        self.assertEqual(prevod(24998), "MMMMMMMMMMMMMMMMMMMMMMMMCMXCVIII")
         self.assertEqual(prevod(19), "XIX")
         self.assertNotEqual(prevod(19), "XI")
