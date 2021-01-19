@@ -3,7 +3,11 @@ from math import sqrt
 
 
 def kontrola_vstupu(vstup):
-    """Kontroluje, jestli je vstup int. Pokud ne, vyzve k novému zadání."""
+    """Kontroluje, jestli je vstup int. Pokud ne, vyzve k novému zadání.
+
+    Argumenty:
+        vstup - vstup od uživatele
+    """
     try:
         return int(vstup)
     except ValueError:
