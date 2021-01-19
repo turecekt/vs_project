@@ -9,8 +9,8 @@ def kontrola_vstupu(vstup):
     except ValueError:
         while True:
             try:
-               vstup = input("Zadej celé číslo: ")
-               return int(vstup)
+                vstup = input("Zadej celé číslo: ")
+                return int(vstup)
             except ValueError:
                 continue
             else:
@@ -77,7 +77,6 @@ if __name__ == '__main__':
             print("Trojúhelník je pravoúhlý.")
     else:
         print("Zadaný trojúhelník neexistuje.")
-    
 
 
 def test_obvod():
