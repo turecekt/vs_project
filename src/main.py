@@ -152,3 +152,7 @@ def run():
         exitCode = input("\nDo you want exit program (y/n): ").lower()
         print()
         isRepeat = True
+
+
+if __name__ == '__main__':
+    run()
