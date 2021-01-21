@@ -55,7 +55,7 @@ def prelozit_do(text):
     # výše zadefinovaných znaků a následný převod malých písmen na velké.
     for i in text:
         encrypted_text += znaky[i.upper()] + ' '
-        
+
     return encrypted_text
 
 
@@ -88,13 +88,13 @@ if __name__ == '__main__':
     j = input("\nPro překlad do Morseovy abecedy, stiskněte 'A'."
               "\n\nPro překlad z Morseovy abecedy, stiskněte 'B'.\n")
     if j == 'A' or 'a':
-        text_to_encrypt = input("Zadejte text, který chcete "+
+        text_to_encrypt = input("Zadejte text, který chcete " +
                                 "přeložit do Morseovy abecedy: ")
         prelozit_do(text_to_encrypt)
         textenc = prelozit_do(text_to_encrypt)
         print("\n Text přeložený do Morseovy abecedy je:", textenc)
     else:
-        text_to_decrypt = input("Zadejte text, který chcete "+
+        text_to_decrypt = input("Zadejte text, který chcete " +
                                 "preložit z Morseovy abecedy: ")
         prelozit_z(text_to_decrypt)
         textdec = prelozit_z(text_to_decrypt)
