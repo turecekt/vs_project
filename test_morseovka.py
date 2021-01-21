@@ -2,6 +2,7 @@
 
 import morseovka
 
+
 def test_prelozit_do():
     """ Test na ověření funkčnosti programu pro překlad z klasické
     abecedy do Morseovy. """
@@ -9,30 +10,31 @@ def test_prelozit_do():
     assert morseovka.prelozit_do('A') == '.- '
     # ověření překladače, jestli zvládne přeložit slova s mezerou
     assert morseovka.prelozit_do('tomas hnanicek') == '- --- -- .- ... | ' +
-    '.... -. .- -. .. -.-. . -.- '
+'.... -. .- -. .. -.-. . -.- '
     # ověření překladače, jestli zvládne přeložit jednotlivé znaky oddělené
-    #mezerami
+    # mezerami
     assert morseovka.prelozit_do('A H O J') == '.- | .... | --- | .--- '
     # ověření překladače, jestli zvládne přeložit symboly#
     assert morseovka.prelozit_do('/,?)(') == '-..-. --..-- ..--.. -.--.- ' +
     '-.--. '
     # ověření překladače, jestli zvládne přeložit různé symboly,
-    #čísla a znaky ve větě
+    # čísla a znaky ve větě
     assert morseovka.prelozit_do('Lo(rem 4 ipsum dolor sit amet, ' +
-                                 '6 consecte/tuer adipiscing elit? Cras el)' +
-                                 'ementum. Nulla accumsan, 5') == '.-.. --- ' +
-                                 '-.--. .-. . -- | ....- | .. .--. ... ' +
-                                 '..- -- | -.. --- .-.. --- .-. | ... .. ' +
-                                 '- | .- -- . - --..-- | -.... | -.-. --- ' +
-                                 '-. ... . -.-. - . -..-. - ..- . .-. | .- -.' +
-                                 '. .. .--. .. ... -.-. .. -. --. | . .-.. .. ' +
-                                 '- ..--.. | -.-. .-. .- ... | . .-.. -.--.-' +
-                                 '. -- . -. - ..- -- .-.-.- | -. ..- .-.. ' +
-                                 '.-.. .- | .- -.-. -.-. ..- -- ... ' +
-                                 '.- -. --..-- | ..... '
+'6 consecte/tuer adipiscing elit? Cras el)' +
+'ementum. Nulla accumsan, 5') == '.-.. --- ' +
+'-.--. .-. . -- | ....- | .. .--. ... ' +
+'..- -- | -.. --- .-.. --- .-. | ... .. ' +
+'- | .- -- . - --..-- | -.... | -.-. --- ' +
+'-. ... . -.-. - . -..-. - ..- . .-. | .- -.' +
+'. .. .--. .. ... -.-. .. -. --. | . .-.. .. ' +
+'- ..--.. | -.-. .-. .- ... | . .-.. -.--.-' +
+'. -- . -. - ..- -- .-.-.- | -. ..- .-.. ' +
+'.-.. .- | .- -.-. -.-. ..- -- ... ' +
+'.- -. --..-- | ..... '
     # ověření překladače, jestli zvládne přeložit čísla oddělené mezerami
     assert morseovka.prelozit_do('1 2 3 4') == '.---- | ..--- | ...-- | ....- '
-  
+
+
 def test_prelozit_z():
     """ Test na ověření funkčnosti programu pro překlad do klasické
     abecedy z Morseovy. """
