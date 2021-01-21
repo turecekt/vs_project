@@ -48,7 +48,6 @@ znaky = {
 }
 
 
-
 def prelozit_do(text):
     """Kodovaní do Morseovky."""
     encrypted_text = ""  # Proměnná do které budeme dosazovat hodnoty.
@@ -60,16 +59,15 @@ def prelozit_do(text):
     return encrypted_text
 
 
-
-
 def prelozit_z(text):
-    """Získání klíče a hodnoty ze slovníku. Dekodování Morseovky"""
+    """Získání klíče a hodnoty ze slovníku. Dekodování Morseovky."""
     text += " "
     key_list = list(znaky.keys())
     value_list = list(znaky.values())
     morse = ""
     normal = ""
-    #Překlad jednotlivých znaků Morseovy abecedy do klasické abecedy včetně podmínek pro oddělování.
+    # Překlad jednotlivých znaků Morseovy abecedy do klasické abecedy
+    # včetně podmínek pro oddělování.
     for i in text:
         if i != " ":
             morse += i
@@ -77,27 +75,27 @@ def prelozit_z(text):
         else:
             space += 1
             if space == 2:
-                normal += " "  
+                normal += " "
             else:
                 normal = normal + key_list[value_list.index(morse)]
                 morse = ""
     return normal
 
 
-
-
 if __name__ == '__main__':
-    """Uživatel pomocí kláves A a B zvolí, jestli chce text přeložit z nebo do Morseovy abecedy."""
+    """Uživatel pomocí kláves A a B zvolí, jestli chce text
+    přeložit z nebo do Morseovy abecedy."""
     j = input("\nPro překlad do Morseovy abecedy, stiskněte 'A'."
               "\n\nPro překlad z Morseovy abecedy, stiskněte 'B'.\n")
     if j == 'A' or 'a':
-        text_to_encrypt = input("Zadejte text, který chcete přeložit do Morseovy abecedy: ")
+        text_to_encrypt = input("Zadejte text, který chcete "+
+                                "přeložit do Morseovy abecedy: ")
         prelozit_do(text_to_encrypt)
         textenc = prelozit_do(text_to_encrypt)
         print("\n Text přeložený do Morseovy abecedy je:", textenc)
     else:
-        text_to_decrypt = input("Zadejte text, který chcete preložit z Morseovy abecedy: ")
+        text_to_decrypt = input("Zadejte text, který chcete "+
+                                "preložit z Morseovy abecedy: ")
         prelozit_z(text_to_decrypt)
         textdec = prelozit_z(text_to_decrypt)
         print("\nText přeložený z Morseovy abecedy je:", textdec)
-        
