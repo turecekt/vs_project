@@ -1,11 +1,10 @@
-""" Import zdrojového souboru. """
+"""Import zdrojového souboru."""
 
 import morseovka
 
 
 def test_prelozit_do():
-    """ Test na ověření funkčnosti programu pro překlad z abecedy do Mors."""
-
+    """Test na ověření funkčnosti programu pro překlad z abecedy do Mors."""
     # ověření překladače, jestli zvládne přeložit jednotlivé znaky
     assert morseovka.prelozit_do('A') == '.- '
     # ověření překladače, jestli zvládne přeložit slova s mezerou
@@ -41,8 +40,7 @@ def test_prelozit_do():
 
 
 def test_prelozit_z():
-    """ Test na ověření funkčnosti programu pro překlad do abecedy."""
-
+    """Test na ověření funkčnosti programu pro překlad do abecedy."""
     # ověření překladače, jestli zvládne přeložit jednotlivé
     # znaky z Morseovy abecedy
     assert morseovka.prelozit_z('.-') == 'A'
