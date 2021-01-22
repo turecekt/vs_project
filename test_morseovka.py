@@ -8,7 +8,7 @@ def test_prelozit_do():
     # ověření překladače, jestli zvládne přeložit jednotlivé znaky
     assert morseovka.prelozit_do('A') == '.- '
     # ověření překladače, jestli zvládne přeložit slova s mezerou
-    assert morseovka.prelozit_do('tomas hnanicek') == ('- --- -- .- ... | ....'    
+    assert morseovka.prelozit_do('tomas hnanicek') == ('- --- -- .- ... | ....'
                                                        ' -. .- -. .. -.-. .'
                                                        ' -.- ')
     # ověření překladače, jestli zvládne přeložit jednotlivé znaky oddělené
@@ -16,7 +16,7 @@ def test_prelozit_do():
     assert morseovka.prelozit_do('A H O J') == '.- | .... | --- | .--- '
     # ověření překladače, jestli zvládne přeložit symboly#
     assert morseovka.prelozit_do('/,?)(') == ('-..-. --..-- ..--.. '
-                                             '-.--.- -.--. ')
+                                              '-.--.- -.--. ')
     # ověření překladače, jestli zvládne přeložit různé symboly,
     # čísla a znaky ve větě
     assert morseovka.prelozit_do('Lo(rem 4 ipsum dolor sit amet, '
