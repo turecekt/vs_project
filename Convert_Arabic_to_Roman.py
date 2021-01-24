@@ -1,8 +1,4 @@
-"""
-
-AUTOR: LADISLAV ŘEHÁK
-TÉMA: ŘÍMSKÉ ČÍSLICE
-"""
+"""AUTOR: LADISLAV ŘEHÁK; TÉMA: ŘÍMSKÉ ČÍSLICE."""
 import unittest
 
 
@@ -36,8 +32,8 @@ class TestMethods(unittest.TestCase):
     def test7(self):
         """Test správnosti č.7."""
         assert arabic_to_roman(2205) == 'X'
-        
-        
+
+
 def arabic_to_roman(number):
     """Def."""
     arabic = [1000, 900, 500, 400, 100,
