@@ -23,15 +23,15 @@ class TestMethods(unittest.TestCase):
 
     def test5(self):
         """Test správnosti č.5."""
-        assert arabic_to_roman(1111) == 'V'
+        assert arabic_to_roman(1111) == 'MCI'
 
     def test6(self):
         """Test správnosti č.6."""
-        assert arabic_to_roman(1888) == 'IX'
+        assert arabic_to_roman(1888) == 'MDCCC'
 
     def test7(self):
         """Test správnosti č.7."""
-        assert arabic_to_roman(2205) == 'X'
+        assert arabic_to_roman(2205) == 'MMV'
 
 
 def arabic_to_roman(number):
