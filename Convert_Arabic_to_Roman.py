@@ -1,8 +1,32 @@
-"""
+""".
 AUTOR: LADISLAV ŘEHÁK
 TÉMA: ŘÍMSKÉ ČÍSLICE
 """
+import unittest
 
+
+class TestMethods(unittest.TestCase):
+
+    def test1(self):
+        assert arabic_to_roman(9) == 'IX'
+
+    def test2(self):
+        assert arabic_to_roman(99) == 'XCIX'
+
+    def test3(self):
+        assert arabic_to_roman(499) == 'CDXCIX'
+
+    def test4(self):
+        assert arabic_to_roman(999) == 'CMXCIX'
+
+    def test5(self):
+        assert arabic_to_roman(1111) == 'V'
+
+    def test6(self):
+        assert arabic_to_roman(1888) == 'IX'
+
+    def test7(self):
+        assert arabic_to_roman(2205) == 'X'
 
 def arabic_to_roman(number):
     arabic = [1000, 900, 500, 400, 100,
