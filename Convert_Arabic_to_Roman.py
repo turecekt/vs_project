@@ -1,4 +1,5 @@
-""".
+"""
+
 AUTOR: LADISLAV ŘEHÁK
 TÉMA: ŘÍMSKÉ ČÍSLICE
 """
@@ -8,27 +9,36 @@ import unittest
 class TestMethods(unittest.TestCase):
 
     def test1(self):
+        """test správnosti přiřazeného čísla"""
         assert arabic_to_roman(9) == 'IX'
 
     def test2(self):
+        """test správnosti přiřazeného čísla"""
         assert arabic_to_roman(99) == 'XCIX'
 
     def test3(self):
+        """test správnosti přiřazeného čísla"""
         assert arabic_to_roman(499) == 'CDXCIX'
 
     def test4(self):
+        """test správnosti přiřazeného čísla"""
         assert arabic_to_roman(999) == 'CMXCIX'
 
     def test5(self):
+        """test správnosti přiřazeného čísla"""
         assert arabic_to_roman(1111) == 'V'
 
     def test6(self):
+        """test správnosti přiřazeného čísla"""
         assert arabic_to_roman(1888) == 'IX'
 
     def test7(self):
+        """test správnosti přiřazeného čísla"""
         assert arabic_to_roman(2205) == 'X'
 
+        
 def arabic_to_roman(number):
+    """def"""
     arabic = [1000, 900, 500, 400, 100,
               90, 50, 40, 10, 9, 5, 4, 1]
 
@@ -46,6 +56,7 @@ def arabic_to_roman(number):
 
 
 def main():
+    """def"""
     r_number = int(input("Vložte číslo, které chcete konvertovat: "))
     print("Číslo přeložené do římského systému: " + arabic_to_roman(r_number))
 
