@@ -27,7 +27,8 @@ class TestMorseovka(unittest.TestCase):
         code = [SLOVNIK_MORSEOVKA[i.upper()]
          + " " for i in text if i.upper() in SLOVNIK_MORSEOVKA.keys()]
         morseovka = "".join(code)
-        textocode.assertTrue("-. --- -. . ")
+        texttocode.assertTrue("-. --- -. . ")
+        texttocode.assertThat(morseovka = "-. --- -. . ") 
 
         
     def test_1(self):
