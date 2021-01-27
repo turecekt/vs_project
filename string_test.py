@@ -5,13 +5,12 @@ import unittest
 
 class TestMorseovka(unittest.TestCase):
     """Tato trida funguje jako testovaci trida."""
-    
+
     def test_3(texttocode):
         """Testovani prekladu do morseovky"""
         input = "Ahoj"
         output = "-. --- -. ."
-        assert.That(input = output)
-        
+        assert.That(input=output)
 
     def test_1(self):
         """Testovani zvetsovani pismen."""
