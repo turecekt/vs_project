@@ -26,7 +26,7 @@ A string nechame precist."""
 def Text_To_Code(text): """Fce pro preklad do morseovky."""
 
 
-text2 = print(Text_To_Code(input("Napiste slova, ktera chcete kodovat: ")))
+text2 = str(Text_To_Code(input("Napiste slova, ktera chcete kodovat: ")))
 code2 = [SLOVNIK_MORSEOVKA[i.upper()]
          + " " for i in text2 if i.upper() in SLOVNIK_MORSEOVKA.keys()]
 morseovka = "".join(code2)
@@ -41,7 +41,7 @@ print(morseovka)
 def Code_To_Text(text): """Fce pro preklad morseovky."""
 
 
-text1 = print(Code_To_Text(input("Napiste kod, ktery chcete dekodovat: ")))
+text1 = str(Code_To_Text(input("Napiste kod, ktery chcete dekodovat: ")))
 code1 = [k for i in text1.split() for k,
          v in SLOVNIK_MORSEOVKA.items() if i == v]
 novytext = "".join(code1)
