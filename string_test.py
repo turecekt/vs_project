@@ -18,19 +18,19 @@ SLOVNIK_MORSEOVKA = {"A": ".-", "B": "-...",
                      "?": "..--..", "/": "-..-.", "-": "-....-",
                      "(": "-.--.", ")": "-.--.-"}
 
+
 class TestMorseovka(unittest.TestCase):
     """Tato trida funguje jako testovaci trida."""
 
     def test_3(texttocode):
-        """Testovani prekladu do morseovky"""
-        text = str(input = "Ahoj")
-        code = [SLOVNIK_MORSEOVKA[i.upper()]
+        """Testovani prekladu do morseovky."""
+        text=str(input = "Ahoj")
+        code=[SLOVNIK_MORSEOVKA[i.upper()]
          + " " for i in text if i.upper() in SLOVNIK_MORSEOVKA.keys()]
         morseovka = "".join(code)
         texttocode.assertTrue("-. --- -. . ")
-        texttocode.assertThat(morseovka = "-. --- -. . ") 
-
-        
+        texttocode.assertThat(morseovka="-. --- -. . ") 
+       
     def test_1(self):
         """Testovani zvetsovani pismen."""
         self.asserEqual("abc".upper(), "ABC")
@@ -43,7 +43,7 @@ class TestMorseovka(unittest.TestCase):
         self.assertEqual(s.split(), ["miroslav", "olivik"])
         with self.assertRaises(TypeError):
             s.split(2)
- 
+  
 
 if __name__ == "main":
     unittest.main()
