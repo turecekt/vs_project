@@ -25,8 +25,8 @@ class TestMorseovka(unittest.TestCase):
     def test_3(texttocode):
         """Testovani prekladu do morseovky."""
         text = str(input="Ahoj")
-        code = [SLOVNIK_MORSEOVKA[i.upper()]
-         + " " for i in text if i.upper() in SLOVNIK_MORSEOVKA.keys()]
+        [SLOVNIK_MORSEOVKA[i.upper()]
+        + " " for i in text if i.upper() in SLOVNIK_MORSEOVKA.keys()]
         texttocode.assertTrue("-. --- -. . ")
         texttocode.assertThat(morseovka="-. --- -. . ")
 
