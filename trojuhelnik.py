@@ -74,9 +74,9 @@ if __name__ == '__main__':
           "Délka strany b je ", "{:.2f}".format(b),
           "Délka strany c je ", "{:.2f}".format(c))
     if sestrojitelnost(a, b, c):
-        print("Trojúhelník lze setrojit.")
-        print("Obvod trojúhelníku je ", "{:.2f}".format(obvod(a, b, c)))
-        print("Obsah trojúhelníku je ", "{:.2f}".format(obsah(a, b, c)))
+        print("Trojúhelník lze setrojit.",
+              "Obvod trojúhelníku je ", "{:.2f}".format(obvod(a, b, c)),
+              "Obsah trojúhelníku je ", "{:.2f}".format(obsah(a, b, c)))
         if pravouhlost(a, b, c):
             print("Trojúhelník je pravoúhlý.")
     else:
