@@ -70,9 +70,9 @@ if __name__ == '__main__':
     a = delka_strany(bx, by, cx, cy)
     b = delka_strany(ax, ay, cx, cy)
     c = delka_strany(ax, ay, bx, by)
-    print("Délka strany a je ", "{:.2f}".format(a))
-    print("Délka strany b je ", "{:.2f}".format(b))
-    print("Délka strany c je ", "{:.2f}".format(c))
+    print("Délka strany a je ", "{:.2f}".format(a),
+          "Délka strany b je ", "{:.2f}".format(b),
+          "Délka strany c je ", "{:.2f}".format(c))
     if sestrojitelnost(a, b, c):
         print("Trojúhelník lze setrojit.")
         print("Obvod trojúhelníku je ", "{:.2f}".format(obvod(a, b, c)))
