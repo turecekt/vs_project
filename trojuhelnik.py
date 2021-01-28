@@ -33,6 +33,14 @@ def delka_strany(a1, a2, b1, b2):
     return sqrt(((b1 - a1) ** 2) + ((b2 - a2) ** 2))
 
 
+def delky(ax, ay, bx, by, cx, cy):
+    """Vrátí délky všech tří stran trojúhelníku."""
+    a = delka_strany(bx, by, cx, cy)
+    b = delka_strany(ax, ay, cx, cy)
+    c = delka_strany(ax, ay, bx, by)
+    return [a, b, c]
+
+
 def sestrojitelnost(a1, b1, c1):
     """Určí, jestli lze trojúhelník sestrojit. Pokud ano, vrací 1, jinak 0."""
     if a1 + b1 > c1 and a1 + c1 > b1 and b1 + c1 > a1:
@@ -61,15 +69,12 @@ def pravouhlost(a1, b1, c1):
 
 
 if __name__ == '__main__':
-    ax = kontrola_vstupu(input("Zadej souřadnici x bodu A: "))
-    ay = kontrola_vstupu(input("Zadej souřadnici y bodu A: "))
-    bx = kontrola_vstupu(input("Zadej souřadnici x bodu B: "))
-    by = kontrola_vstupu(input("Zadej souřadnici y bodu B: "))
-    cx = kontrola_vstupu(input("Zadej souřadnici x bodu C: "))
-    cy = kontrola_vstupu(input("Zadej souřadnici y bodu C: "))
-    a = delka_strany(bx, by, cx, cy)
-    b = delka_strany(ax, ay, cx, cy)
-    c = delka_strany(ax, ay, bx, by)
+    a, b, c = delky(kontrola_vstupu(input("Zadej souřadnici x bodu A: ")),
+                    kontrola_vstupu(input("Zadej souřadnici y bodu A: ")),
+                    kontrola_vstupu(input("Zadej souřadnici x bodu B: ")),
+                    kontrola_vstupu(input("Zadej souřadnici y bodu B: ")),
+                    kontrola_vstupu(input("Zadej souřadnici x bodu C: ")),
+                    kontrola_vstupu(input("Zadej souřadnici y bodu C: ")))
     print("Délka strany a je ", "{:.2f}".format(a),
           "Délka strany b je ", "{:.2f}".format(b),
           "Délka strany c je ", "{:.2f}".format(c))
@@ -111,3 +116,9 @@ def test_sestrojitelnost():
 def test_kontrola_vstupu():
     """Testuje funkci pro kontrolu vstupu od uživatele."""
     assert kontrola_vstupu("1") == 1
+
+
+def test_delky():
+    """Testuje funkci, která vrací dély všech stran."""
+    assert delky(3, 0, 0, 4, 0, 0) == [4, 3, 5]
+    
