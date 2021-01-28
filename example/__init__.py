@@ -12,7 +12,6 @@ def compute(x):
 
     Args:
         - x - Input of the function
-
     Returns:
         - output - Output of the function
     """
