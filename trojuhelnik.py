@@ -121,4 +121,3 @@ def test_kontrola_vstupu():
 def test_delky():
     """Testuje funkci, která vrací dély všech stran."""
     assert delky(3, 0, 0, 4, 0, 0) == [4, 3, 5]
-    
