@@ -22,5 +22,5 @@ class MyTestCase(unittest.TestCase):
         """Test do morse."""
         self.assertEqual(domorzeovky('a'), " ---.. ")
 
-if _name_ == '_main_':
+if __name__ == '__main__':
     unittest.main()
