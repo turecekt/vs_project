@@ -6,7 +6,7 @@ import morseovka
 
 class TestMorseovka(unittest.TestCase):
     """Tato trida funguje jako testovaci trida."""
-    
+
     def test_5(self):
         """Testovani pro vyber pismena a kodu."""
         self.assertEqual("A", ".-")
