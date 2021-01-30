@@ -1,3 +1,5 @@
+"""Unittest pro morseovku."""
+
 import unittest
 import morseovka
 
