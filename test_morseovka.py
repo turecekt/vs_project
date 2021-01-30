@@ -9,7 +9,7 @@ class TestMorseovka(unittest.TestCase):
 
     def test_5(self):
         """Testovani pro vyber pismena a kodu."""
-        self.assertEqual("A", ".-")
+        self.assertEqual(morseovka.pismeno("A"), ".- ")
 
     def test_4(self):
         """Testovani prekladu kodu do textu."""
