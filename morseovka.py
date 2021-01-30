@@ -39,8 +39,6 @@ def Text_To_Code(text):
 
 def Code_To_Text(text):
   """Fce pro preklad morseovky."""
-
-
 text1 = str(text)
 code1 = [k for i in text1.split() for k,
          v in SLOVNIK_MORSEOVKA.items() if i == v]
@@ -62,13 +60,9 @@ if __name__ == "__main__":
         vyber = int(input("TVUJ VYBER: "))
 
         if vyber == 1:
-            print(Text_To_Code())
-            break
             print(Text_To_Code(input("Napiste slova, ktera chcete kodovat: ")))
 
         elif vyber == 2:
-            print(Code_To_Text())
-            break
             peint(Code_To_Text(input("Napiste kod, ktery chcete kodovat: ")))
 
         elif vyber == 3:
