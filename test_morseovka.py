@@ -13,7 +13,7 @@ class TestMorseovka(unittest.TestCase):
 
     def test_4(self):
         """Testovani prekladu kodu do textu."""
-        self.assertEqual(morseovka.Code_To_Text("... --- ... "), "sos")
+        self.assertEqual(morseovka.Code_To_Text("... --- ... "), "SOS")
 
     def test_3(self):
         """Testovani prekladu do morseovky."""
