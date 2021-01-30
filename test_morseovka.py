@@ -17,7 +17,7 @@ class TestMorseovka(unittest.TestCase):
 
     def test_1(self):
         """Testovani zvetsovani pismen."""
-        self.assertEqual("abc".isupper(), "ABC")
+        self.assertEqual("abc".upper(), "ABC")
         self.assertTrue("ABC".isupper())
         self.assertFalse("Abc".isupper())
 
