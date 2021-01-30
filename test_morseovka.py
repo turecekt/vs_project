@@ -6,15 +6,15 @@ import morseovka
 
 class TestMorseovka(unittest.TestCase):
     """Tato trida funguje jako testovaci trida."""
-    
-    def text_4(self)
+
+    def text_4(self):
         """Testovani prekladu kodu do textu."""
         self.asserEqual(morseovka.Code_To_Text("... --- ... ", "sos")
 
     def test_3(self):
         """Testovani prekladu do morseovky."""
         self.assertEqual(morseovka.Text_To_Code("sos"), "... --- ... ")
-      
+
     def test_1(self):
         """Testovani zvetsovani pismen."""
         self.asserEqual("abc".upper(), "ABC")
