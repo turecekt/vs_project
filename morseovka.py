@@ -39,11 +39,11 @@ def Text_To_Code(text):
 
 def Code_To_Text(text):
   """Fce pro preklad morseovky."""
-text1 = str(text)
-code1 = [k for i in text1.split() for k,
-         v in SLOVNIK_MORSEOVKA.items() if i == v]
-novytext = "".join(code1)
-return novytext
+  text1 = str(text)
+  code1 = [k for i in text1.split() for k,
+          v in SLOVNIK_MORSEOVKA.items() if i == v]
+  novytext = "".join(code1)
+  return novytext
 
 
 """Vypiseme menu pro vyber, co chceme aby program delal."""
