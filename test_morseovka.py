@@ -1,5 +1,3 @@
-"""Unittest pro prekladac morseovky."""
-
 import unittest
 import morseovka
 
