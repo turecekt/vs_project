@@ -19,15 +19,15 @@ def test_prelozit_do():
                                               '-.--.- -.--. ')
     # ověření překladače, jestli zvládne přeložit různé symboly,
     # čísla a znaky ve větě
-    assert morseovka.prelozit_do('Lo(rem 4 ipsum dolor sit amet, '
-                                 '6 consecte/tuer adipiscing elit? Cras el)'
+    assert morseovka.prelozit_do('lor em 4 ipsum dolor sit amet , 6'
+                                 ' consectetuer adipiscing elit? Cras el)'
                                  'ementum. Nulla accumsa'
-                                 'n, 5') == ('.-.. --- -.--. .-. . -- | ....- '
-                                             '| .. .--. ... ..- -- | -.. --- '
+                                 'n, 5') == ('.-.. --- .-. | . -- | ....- |'
+                                             ' .. .--. ... ..- -- | -.. --- '
                                              '.-.. --- .-. | ... .. - | .- -- '
-                                             '. - --..-- | -.... | -.-. --- -.'
-                                             ' ... . -.-. - . -..-. - ..- . '
-                                             '.-. | .- -. . .. .--. .. ... '
+                                             '. - | --..-- | -.... | -.-. --- '
+                                             '-. ... . -.-. - . - ..- . '
+                                             '.-. | .- -.. .. .--. .. ... '
                                              '-.-. .. -. --. | . .-.. .. - '
                                              '..--.. | -.-. .-. .- ... | . '
                                              '.-.. -.--.- . -- . -. - ..- '
