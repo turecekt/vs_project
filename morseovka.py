@@ -23,29 +23,29 @@ Vytvorime string k danemu codu.
 A string nechame precist."""
 
 
-def Text_To_Code(text): """Fce pro preklad do morseovky."""
-
-
-text2 = str(Text_To_Code(input("Napiste slova, ktera chcete kodovat: ")))
-code2 = [SLOVNIK_MORSEOVKA[i.upper()]
-         + " " for i in text2 if i.upper() in SLOVNIK_MORSEOVKA.keys()]
-morseovka = "".join(code2)
-print(morseovka)
-
+def Text_To_Code(text): 
+  """Fce pro preklad do morseovky."""
+  text2 = str(text)
+  code2 = [SLOVNIK_MORSEOVKA[i.upper()]
+           + " " for i in text2 if i.upper() in SLOVNIK_MORSEOVKA.keys()]
+  morseovka = "".join(code2)
+  return morseovka
+  
 
 """Stejny zpusob pouzijeme i zde i dekodovani nami zadaneho textu."""
 """Vytvorime zde to, ze nami zadany kod program rozlozi na jednotky."""
 """Opet nechame udelat string z code a nechame ho vypsat."""
 
 
-def Code_To_Text(text): """Fce pro preklad morseovky."""
+def Code_To_Text(text):
+  """Fce pro preklad morseovky."""
 
 
-text1 = str(Code_To_Text(input("Napiste kod, ktery chcete dekodovat: ")))
+text1 = str(text)
 code1 = [k for i in text1.split() for k,
          v in SLOVNIK_MORSEOVKA.items() if i == v]
 novytext = "".join(code1)
-print(novytext)
+return novytext
 
 
 """Vypiseme menu pro vyber, co chceme aby program delal."""
@@ -64,10 +64,12 @@ if __name__ == "__main__":
         if vyber == 1:
             print(Text_To_Code())
             break
+            print(Text_To_Code(input("Napiste slova, ktera chcete kodovat: ")))
 
         elif vyber == 2:
             print(Code_To_Text())
             break
+            peint(Code_To_Text(input("Napiste kod, ktery chcete kodovat: ")))
 
         elif vyber == 3:
             print("UKONCUJI")
