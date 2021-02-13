@@ -21,7 +21,7 @@ class MyTestCase(unittest.TestCase):
 
     def test4(self):
         """Test do morse."""
-        self.assertEqual(domorzeovky('a'), " ---.. ")
+        self.assertEqual(domorzeovky('8'), " ---.. ")
 
 
 if __name__ == '__main__':
