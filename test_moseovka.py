@@ -1,7 +1,7 @@
 """Test."""
 import unittest
 
-from morseovka import odmorzeovky, domorzeovky
+from main import odmorzeovky, domorzeovky
 
 
 class MyTestCase(unittest.TestCase):
