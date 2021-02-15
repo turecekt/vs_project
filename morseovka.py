@@ -101,7 +101,7 @@ def main():
     moznost = input("do morseovky(1) z morseovky(2): ")
     if moznost == "1":
         prelozit = input(" ")
-        vysledek = domorzeovky(prelozit)
+        vysledek = domorzeovky(prelozit.lower())
         print(vysledek)
 
     if moznost == "2":
