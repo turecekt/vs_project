@@ -1,5 +1,6 @@
 """Unit tests for dragon Curve functions"""
 
+from dragonCurve1 import functioncycle, functionprinttantsrlrl
 
 def test_cycle():
     """test of cycle"""
