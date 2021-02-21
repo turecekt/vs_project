@@ -1,4 +1,4 @@
-""" Dragoncurve.py This code is used for printing dragon curve in 2 ways in
+""" Dragoncurve .py This code is used for printing dragon curve in 2 ways in
    L-system and in system of iterated functions"""
 
 import turtle
@@ -17,7 +17,8 @@ def functioncycle(iteration):
         #  cycling through each character in the flipped old iteration:
         for char in range(0, len(old)):
 
-            if old[char] == r: # if the character is a right:
+            if old[char] == r:
+                # if the character is a right:
 
                old = old[:char] + l + old[char+1:]  # change it to a left
 
@@ -31,7 +32,7 @@ def functioncycle(iteration):
     return new
 
 def functionprinttantsrlrl(printans, new):
-    """print rl form of dragon curve"""
+    """Print rl form of dragon curve"""
     if printans == 'y':
         return new
     else:
