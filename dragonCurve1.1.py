@@ -1,11 +1,11 @@
 
-"""Dragoncurve .py This code is used for printing dragon curve in 2 ways in L-system and in system of iterated functions"""
+"""Dragoncurve .py This code is used for printing dragon curve in 2 ways in L-system and in system of iterated functions."""
 
 import turtle
 
 
 def functioncycle(iteration):
-      """functions that is used for printing iterations"""
+      """Functions that is used for printing iterations"""
     
     r = 'r'  # make variables for the right and left containg 'r' and 'l'
     l = 'l'
