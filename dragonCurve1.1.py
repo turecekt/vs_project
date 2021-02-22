@@ -6,7 +6,7 @@ import turtle
 
 
 def functioncycle(iteration):
-    """Function that is used for printing iterations"""
+     """Function that is used for printing iterations"""
 
     r = 'r'  # make variables for the right and left containg 'r' and 'l'
     l = 'l'
