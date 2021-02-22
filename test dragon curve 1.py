@@ -4,7 +4,7 @@ from dragonCurve1 import functioncycle, functionprinttantsrlrl
 
 
 def test_cycle():
- 
+
 """Test of cycle"""
     assert functioncycle(2) == "rrl"
     assert functioncycle(3) == "rrlrrll"
