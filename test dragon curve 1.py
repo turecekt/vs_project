@@ -2,6 +2,7 @@
 
 from dragonCurve1 import functioncycle, functionprinttantsrlrl
 
+
 def test_cycle():
     
     """Test of cycle"""
