@@ -74,14 +74,14 @@ if __name__ == '__main__':
 
         if new[char] == r:  # if the character is a right:
 
-           turtle.right(90)  # turn right at a right angle
+            turtle.right(90)  # turn right at a right angle
 
-           turtle.forward(length)  # go forward desired length
+            turtle.forward(length)  # go forward desired length
 
         elif new[char] == l:  # otherwise, if the character is a left:
 
-           turtle.left(90)  # turn left at a right angle
+            turtle.left(90)  # turn left at a right angle
 
-           turtle.forward(length)  # go forward desired length
+            turtle.forward(length)  # go forward desired length
 
     turtle.done()
