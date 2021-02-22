@@ -41,6 +41,7 @@ def functionprinttantsrlrl(printans, new):
     else:
         return ""
 
+      
 if __name__ == '__main__':
     r = 'r'  # make variables for the right and left containg 'r' and 'l'
     l = 'l'
