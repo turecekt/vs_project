@@ -7,7 +7,7 @@ import turtle
 
 
 def functioncycle(iteration):
-    """Functions that is used for printing iterations"""
+      """Functions that is used for printing iterations"""
 
     r = 'r'  # make variables for the right and left containg 'r' and 'l'
     l = 'l'
@@ -44,7 +44,7 @@ def functionprinttantsrlrl(printans, new):
     else:
         return ""
 
-      
+
 if __name__ == '__main__':
     r = 'r'  # make variables for the right and left containg 'r' and 'l'
     l = 'l'
