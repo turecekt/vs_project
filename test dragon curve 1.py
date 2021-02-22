@@ -11,6 +11,7 @@ def test_cycle():
     assert functioncycle(4) == "rrlrrllrrrllrll"
     assert functioncycle(5) == "rrlrrllrrrllrllrrrlrrlllrrllrll"
 
+    
 def test_print():
     
     """Test of Lsystem form"""
