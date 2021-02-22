@@ -34,6 +34,7 @@ def functioncycle(iteration):
         cycle = cycle+1
     return new
 
+
 def functionprinttantsrlrl(printans, new):
     
     """Print rl form of dragon curve"""
