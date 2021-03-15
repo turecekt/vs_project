@@ -51,14 +51,9 @@ def prvocislo(val):  # program pro urceni prvocisla
         return 22
 
 
-# print('(Pro vypocet byla pouzita deterministicka metoda.)')
-# deterministicka metoda =
-# vysledek je pokazde stejny a je urcen dle definice prvocisel
-# algoritmus je predvitatelny
-
-
 # unit testy:
 class TestPrvocislo(unittest.TestCase):
+    """Class docstring."""
 
     def test_is_one(self):
         """Use this function to check the entered value 1."""
@@ -91,9 +86,7 @@ class TestPrvocislo(unittest.TestCase):
         assert prvocislo(0) == 10
 
 
-print('===Program pro posouzeni cisla / prvocisla===')
-cislo = input('Zadejte libovolne cele cislo k posouzeni: ')
-prvocislo(cislo)
-
 if __name__ == '__main__':
-    unittest.main()
+    print('===Program pro posouzeni cisla / prvocisla===')
+    cislo = input('Zadejte libovolne cele cislo k posouzeni: ')
+    prvocislo(cislo)
