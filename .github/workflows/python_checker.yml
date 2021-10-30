@@ -18,9 +18,9 @@ jobs:
         python -m pip install --upgrade pip
         pip install flake8 flake8-docstrings pytest pytest-cov
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-    - name: Lint with flake8
-      run: |
-        flake8 .
     - name: Test with pytest
       run: |
         pytest --doctest-modules --cov=. --cov-fail-under=66 *
+    - name: Lint with flake8
+      run: |
+        flake8 .
