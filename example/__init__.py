@@ -7,7 +7,7 @@ The example module supplies one function: compute(). For example,
 """
 
 
-def compute(x):
+"""def compute(x):"""
     """Functon compute returns evaluation of expression using argument x.
 
     Args:
@@ -16,4 +16,7 @@ def compute(x):
     Returns:
         - output - Output of the function
     """
-    return x * x - 2 * x
+    """return x * x - 2 * x"""
+
+    print("Zkousim GitHub")
+
