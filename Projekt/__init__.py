@@ -1,4 +1,29 @@
 def morse():
+    once = True
+    #inicializace pouze jednou na zacatku
+    if (once = True):
+        morseovka = { 'A':'.-', 'B':'-...',
+                            'C':'-.-.', 'D':'-..', 'E':'.',
+                            'F':'..-.', 'G':'--.', 'H':'....',
+                            'I':'..', 'J':'.---', 'K':'-.-',
+                            'L':'.-..', 'M':'--', 'N':'-.',
+                            'O':'---', 'P':'.--.', 'Q':'--.-',
+                            'R':'.-.', 'S':'...', 'T':'-',
+                            'U':'..-', 'V':'...-', 'W':'.--',
+                            'X':'-..-', 'Y':'-.--', 'Z':'--..',
+                            '1':'.----', '2':'..---', '3':'...--',
+                            '4':'....-', '5':'.....', '6':'-....',
+                            '7':'--...', '8':'---..', '9':'----.',
+                            '0':'-----', ', ':'--..--', '.':'.-.-.-',
+                            '?':'..--..', '/':'-..-.', '-':'-....-',
+                            '(':'-.--.', ')':'-.--.-'}
+        yep = input("If you want to see a summary of all available characters, press Y and Enter:")
+        yep = yep.upper
+        once = False
+        if (yep == "Y"):
+            print("A B C D E F G H I J K L M N O P Q R S T U V W X Y Z 1 2 3 4 5 6 7 8 9 , . ? / - ( )")
+            input("Press Enter to continue..")
+
     decision = input("For encoding morse press 1, For decoding morse press 2, for exit press 3:")
     if (decision == "3"):
         print("Konec")
