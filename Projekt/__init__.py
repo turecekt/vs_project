@@ -24,46 +24,29 @@ def morse():
         yep = input("If you want to see a summary of all available characters, press Y and Enter:")
         yep = yep.upper
         once = False
-        if (yep == "Y"):
+        if (yep == "Y"):#pokud y, vypise mozne znaky
             print("A B C D E F G H I J K L M N O P Q R S T U V W X Y Z 1 2 3 4 5 6 7 8 9 , . ? / - ( )")
             input("Press Enter to continue..")
 
-    decision = input("For encoding morse press 1, For decoding morse press 2, for exit press 3:")
+    decision = input("For encoding morse press 1, For decoding morse press 2, for exit press 3:") #co chces delat / dekodovat / zakodovat
     if (decision == "3"):
-        print("Konec")
+        print("Goodbye")
     else:
-        if (decision == "1"):
+        if (decision == "1"): #dekodovani
             text = input("Enter text to encode:")
             encode(text)
             input("Press Enter to continue")
             morse()
-        elif (decision == "2"):
+        elif (decision == "2"): #rozkodovani
             text = input("Enter morse code to decode, write / after every letter, write // after every word:")
             decode(text)
             input("Press Enter to continue")
             morse()
-        else:
+        else: #spatnej input
             print("Your input isn't 1 or 2")
             input("Press Enter to continue")
             morse()
 
-# Slovnik obsahujici znaky morseovky
-morseovka = { 'A':'.-', 'B':'-...',
-                    'C':'-.-.', 'D':'-..', 'E':'.',
-                    'F':'..-.', 'G':'--.', 'H':'....',
-                    'I':'..', 'J':'.---', 'K':'-.-',
-                    'L':'.-..', 'M':'--', 'N':'-.',
-                    'O':'---', 'P':'.--.', 'Q':'--.-',
-                    'R':'.-.', 'S':'...', 'T':'-',
-                    'U':'..-', 'V':'...-', 'W':'.--',
-                    'X':'-..-', 'Y':'-.--', 'Z':'--..',
-                    '1':'.----', '2':'..---', '3':'...--',
-                    '4':'....-', '5':'.....', '6':'-....',
-                    '7':'--...', '8':'---..', '9':'----.',
-                    '0':'-----', ', ':'--..--', '.':'.-.-.-',
-                    '?':'..--..', '/':'-..-.', '-':'-....-',
-                    '(':'-.--.', ')':'-.--.-'}
- 
 # Funkce zakoduje do morseovky
 def encode(zprava):
     try:
