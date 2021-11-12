@@ -1,5 +1,9 @@
-def morse():
+#zapninani programu
+def start():
     once = True
+    morse()
+
+def morse():
     #inicializace pouze jednou na zacatku
     if (once):
         morseovka = { 'A':'.-', 'B':'-...',
