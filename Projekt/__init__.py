@@ -1,7 +1,7 @@
 def morse():
     once = True
     #inicializace pouze jednou na zacatku
-    if (once = True):
+    if (once):
         morseovka = { 'A':'.-', 'B':'-...',
                             'C':'-.-.', 'D':'-..', 'E':'.',
                             'F':'..-.', 'G':'--.', 'H':'....',
