@@ -1,4 +1,23 @@
-
+def morse():
+	decision = input("For encoding morse press 1, For decoding morse press 2, for exit press 3:")
+	decision = int(decision)
+	if (decision == 3):
+		print("Konec")
+	else:
+		if (decision == 1):
+            text = input("Enter text to encode:")
+			encode(text)
+			input("Press Enter to continue")
+			morse()
+		elif (decision == 2):
+            text = input("Enter morse code to decode, write '/' after every letter, write '//' after every word:")
+			decode(text)
+			input("Press Enter to continue")
+			morse()
+		else:
+			print("Your input isn't 1 or 2")
+			input("Press Enter to continue")
+			morse()
 
 # Slovnik obsahujici znaky morseovky
 morseovka = { 'A':'.-', 'B':'-...',
@@ -18,7 +37,7 @@ morseovka = { 'A':'.-', 'B':'-...',
                     '(':'-.--.', ')':'-.--.-'}
  
 # Funkce zakoduje do morseovky
-def zakodovat(zprava):
+def encode(zprava):
     try:
         zprava = zprava.upper()
         kod = ''
