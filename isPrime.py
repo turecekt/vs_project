@@ -36,9 +36,10 @@ if __name__ == "__main__":
     while True:
         try:
             n = int(input("Enter a number: "))
+            result = "Is Prime? "
             break
         except ValueError:
             print("Please enter an integer.")
 
-    print(isPrime(n))
+    print(result + str(isPrime(n)))
 

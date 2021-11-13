@@ -1,7 +1,11 @@
-from setuptools import find_packages, setup
+from setuptools import setup
 
 setup(
-    description='',
+    name='IsPrime',
+    version='0.0.1',
+    author='Tvarog, Kalny, Lev',
+    license='UTB FAI',
+    description='Simple python package build to decide if number is prime',
     install_requires=[],
     setup_requires=['pytest-runner'],
     tests_require=['pytest==4.4.1'],
