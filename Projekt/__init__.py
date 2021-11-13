@@ -6,7 +6,7 @@ def start():
 def morse():
     #inicializace pouze jednou na zacatku
     if (once):
-        morseovka = { 'A':'.-', 'B':'-...',
+        morseCode = { 'A':'.-', 'B':'-...',
                             'C':'-.-.', 'D':'-..', 'E':'.',
                             'F':'..-.', 'G':'--.', 'H':'....',
                             'I':'..', 'J':'.---', 'K':'-.-',
@@ -48,44 +48,45 @@ def morse():
             morse()
 
 # Funkce zakoduje do morseovky
-def encode(zprava):
+def encode(message):
     try:
-        zprava = zprava.upper()
+        message = message.upper()
         counter = 1
-        kod = ''
-        for pismeno in zprava:
-            if pismeno != ' ':
-                if counter < len(zprava):
+        code = ''
+        for letter in message:
+            if letter != ' ':
+                if counter < len(message):
                     # Najde ve slovniku odpovidajici kod pro jednotlive znaky
-                    kod = kod + morseovka[pismeno] + '/'
+                    code = code + morseCode[letter] + '/'
                 else:
-                    kod = kod + morseovka[pismeno]
+                    code = code + morseCode[letter]
             else:
                 # 1 / jsou ruzne znaky, 2 / ruzna slova
-                kod += '/'
+                code += '/'
             counter = counter + 1
  
-        return print(kod)
+        return print(code)
     # Pøi nedefinovaném vstupu se vypíše chybová hláška
     except KeyError: 
-        print("Znak", pismeno, "není definovaný v morseovì abecedì")
-        print("Definované znaky jsou: A B C D E F G H I J K L M N O P Q R S T U V W X Y Z 1 2 3 4 5 6 7 8 9 , . ? / - ( )")
+        print("Character", letter, "is note defined in morse code")
+        print("These characters are defined: A B C D E F G H I J K L M N O P Q R S T U V W X Y Z 1 2 3 4 5 6 7 8 9 , . ? / - ( )")
        
 
-def decode(zprava):
+# Funkce dekóduje do morseovky
+def decode(inputMessage):
     try:
         decodedMessage = ''
-        message = zprava.split('//')
+        message = inputMessage.split('//') # Do message se uloží všechny slova
         counter = 1
    
         for word in message:
-            letters = word.split('/')
+            letters = word.split('/') # Do letters se uloží všechny písmena
             for letter in letters:
-                if (letter != ''):
-                    decodedMessage = decodedMessage + list(morseovka.keys())[list(morseovka.values()).index(letter)]
-            if (counter < len(message)):
+                if (letter != ''): # Pro každé písmeno se najde odpovídající klíè v dictionary morseCode
+                    decodedMessage = decodedMessage + list(morseCode.keys())[list(morseCode.values()).index(letter)]
+            if (counter < len(message)): # Krom posledního slova, se za každým slovem pøipíše mezera
                 decodedMessage = decodedMessage + ' '
             counter = counter + 1
         return   print(decodedMessage)
-    except Exception: 
-        print("Znak", letter, "není definovaný v morseovì abecedì")
+    except Exception: # Pøi nenalezení hodnoty v dictionary se vypíše chybová hláška
+        print("Character", letter, "is note defined in morse code")
