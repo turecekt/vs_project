@@ -40,19 +40,26 @@ def encrypt(message):
 
 
 def decrypt(message):
-    message += ' '               
-    decipher = ''                
-    citext = ''                  
+    """Metoda pro desifrovani z morseovy abecedy na text."""
+    message += ' '               # pro ukonceni posledniho Morse znaku
+    decipher = ''                       # retezec, ktery bude funkce vracet
+    citext = ''                         # pomocny retezec pro jeden znak Morse
 
-    for letter in message:       
+    for letter in message:              # prochazi znaky vstupniho retezce
+        # kdyz znak neni mezera, prida znak do pomocneho retezce citext:
         if (letter != ' '):
-            i = 0 
+            i = 0                       # zaznamenava mezery v Morse kodu
             citext += letter
+        # jinak (kdyz mezera):
         else:
             i += 1
+            # pokud i == 2 >> konec slova -> prida mezeru do vystupu:
             if i == 2:
                 decipher += ' '
+            # jinak konec Morse znaku -> vyhleda znak ve slovniku
+            # a prida prelozene pismeno do vystupu:
             else:
                 decipher += list(MORSE_CODE_DICT.keys())[list(MORSE_CODE_DICT.values()).index(citext)]
-                citext = ''
-    return decipher        
+                citext = ''       # vycisti retezec pro znak
+
+    return decipher                     # vraci rozsifrovany text
