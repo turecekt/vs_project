@@ -27,7 +27,8 @@ MORSE_CODE_DICT = {'A': '.-', 'B': '-...', 'C': '-.-.',
 
 
 
-def encrypt(message):           
+def encrypt(message):
+    message = message.upper()           
     cipher = ''                         
     for letter in message:              
         if letter != ' ':
