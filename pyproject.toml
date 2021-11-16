@@ -1,0 +1,140 @@
+[tool.black]
+line-length=79
+target-version=["py38"]
+
+[tool.isort]
+atomic=true
+line_length = 79
+lines_after_imports=2
+lines_between_types=1
+use_parentheses = true
+balanced_wrapping = true
+include_trailing_comma = true
+multi_line_output = 3
+known_third_party=[
+    "pytest",
+    "loguru",
+]
+known_first_party=[
+]
+
+[tool.coverage.run]
+branch = false
+source = [
+    "./speed_of_reaction_alt/",
+    "./speed_of_reaction/",
+]
+omit = []
+
+[tool.coverage.paths]
+source = [
+    "./speed_of_reaction_alt/",
+    "./speed_of_reaction/",
+]
+
+[tool.coverage.report]
+fail_under = 100
+skip_covered = false
+show_missing = true
+
+[tool.mypy]
+check_untyped_defs = true
+# disallow_any_unimported = true
+# disallow_any_expr = true
+disallow_any_decorated = true
+disallow_any_generics = true
+disallow_any_explicit = true
+disallow_incomplete_defs = true
+disallow_untyped_calls = true
+disallow_untyped_decorators = true
+disallow_untyped_defs = true
+follow_imports = "normal"
+follow_imports_for_stubs = true
+ignore_missing_imports = false
+mypy_path = "."
+namespace_packages = true
+show_column_numbers = true
+show_error_codes = true
+warn_redundant_casts = true
+# warn_return_any = true
+warn_unused_ignores = true
+
+[[tool.mypy.overrides]]
+module = [
+  "conftest",
+  "migrations.*",
+  "tests.*",
+  "*.tests"
+]
+ignore_errors = true
+
+[tool.pytest.ini_options]
+minversion = "6.0.0"
+addopts = "-vv -s --tb=native"
+testpaths = "tests/"
+log_cli = true
+log_cli_level = "DEBUG"
+log_cli_format = "| %(asctime)s | %(name)s | %(levelname)s | %(filename)s | %(message)s"
+
+[tool.interrogate]
+ignore-init-method = true
+ignore-init-module = true
+ignore-magic = false
+ignore-semiprivate = false
+ignore-private = false
+ignore-property-decorators = false
+ignore-module = true
+fail-under = 100
+exclude = ["setup.py", "docs", "build",]
+ignore-regex = ["^get$", "^mock_.*", ".*BaseClass.*", "^get.*$", "^factory$", "^is_.*$", "^test_.*$", "main"]
+verbose = 2
+quiet = false
+whitelist-regex = []
+color = true
+
+[tool.poetry]
+name = "vs_project"
+version = "1.0"
+description = "Bot for helping with keeping work-life balance."
+authors = [
+    "Libor Horak <l2_horak@utb.cz>",
+    "Artem Zhukov <iam@zhukovgreen.pro>",
+]
+maintainers = [
+    "Libor Horak <l2_horak@utb.cz>",
+    "Artem Zhukov <iam@zhukovgreen.pro>",
+]
+readme = "README.md"
+repository = "https://github.com/zhukovgreen/vs_project"
+packages = [
+    {include = "speed_of_reaction"},
+    {include = "speed_of_reaction_alt"},
+]
+keywords = ["demo", "submission"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "Intended Audience :: System Administrators",
+  "Environment :: Web Environment",
+  "License :: OSI Approved :: BSD License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3 :: Only",
+  "Topic :: Software Development",
+  "Topic :: Utilities",
+  "Typing :: Typed"
+]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+
+[tool.poetry.dev-dependencies]
+coverage = {extras = ["toml"], version = "^6.1.2"}
+neovim = "^0.3.1"
+pdbpp = "^0.10.3"
+pytest = "^6.2.5"
+pytest-cov = "^3.0.0"
+mypy = "^0.910"
+
+[build-system]
+requires = ["poetry>=1.0.0"]
+build-backend = "poetry.masonry.api"
