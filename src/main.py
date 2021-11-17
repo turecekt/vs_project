@@ -7,7 +7,7 @@ def vyzadejCislo():
         vstup = int(input("Vlozte cislo: "))
         return vstup
     except ValueError:
-        print("Nesprávný formát čísla.")
+        return "Nesprávný formát čísla."
 
 
 def jePrvocislo(cislo):
@@ -26,11 +26,9 @@ def jePrvocislo(cislo):
 
     # Vypiseme vysledek
     if prvocislo:
-        print(f"Cislo {cislo} NENÍ provocislo.")
-        return False
+        return (f"Cislo {cislo} NENÍ provocislo.")
     else:
-        print(f"Cislo {cislo} je prvocislo.")
-        return True
+        return (f"Cislo {cislo} je prvocislo.")
 
 
 if __name__ == '__main__':
