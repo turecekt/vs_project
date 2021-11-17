@@ -10,11 +10,10 @@ def vyzadejCislo():
         print("Nesprávný formát čísla.")
 
 
-def jePrvocislo():
+def jePrvocislo(cislo):
     """Program vyzada vstup od uzivatele a overi zda se jedna o prvocislo."""
     prvocislo = False
     # Vyzadame vstup on uzivatele ve správném formátu.
-    cislo = vyzadejCislo()
     while(isinstance(cislo, int) is False):
         cislo = vyzadejCislo()
 
@@ -28,9 +27,11 @@ def jePrvocislo():
     # Vypiseme vysledek
     if prvocislo:
         print(f"Cislo {cislo} NENÍ provocislo.")
+        return False
     else:
         print(f"Cislo {cislo} je prvocislo.")
+        return True
 
 
 if __name__ == '__main__':
-    jePrvocislo()
+    jePrvocislo(vyzadejCislo())
