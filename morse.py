@@ -39,6 +39,11 @@ def encrypt(message):
     return cipher       
 
 
+def test_encrypt():
+    """Test zasifrovani."""
+    assert encrypt('TURECEK') == '- ..- .-. . -.-. . -.- '
+
+
 
 def decrypt(message):
     """Metoda pro desifrovani z morseovy abecedy na text."""
@@ -64,3 +69,9 @@ def decrypt(message):
                 citext = ''       # vycisti retezec pro znak
 
     return decipher                     # vraci rozsifrovany text
+
+def test_decrypt():
+    """Test desifrovani."""
+    assert decrypt('- ..- .-. . -.-. . -.-') == 'TURECEK'
+
+
