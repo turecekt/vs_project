@@ -27,6 +27,19 @@ MORSE_CODE_DICT = {'A': '.-', 'B': '-...', 'C': '-.-.',
 
 
 
+def mainInput(message):
+
+    for char in message:
+        if char not in ".- ":
+            return encrypt(message)
+    return decrypt(message)
+
+
+def test_mainInput():
+    assert mainInput('univerzita') == '..- -. .. ...- . .-. --.. .. - .- '
+    assert mainInput('- --- -- .- ...  -... .- - .-') == 'TOMAS BATA'
+
+
 def encrypt(message):
     message = message.upper()           
     cipher = ''                         
@@ -74,11 +87,3 @@ def test_decrypt():
     """Test desifrovani."""
     assert decrypt('- ..- .-. . -.-. . -.-') == 'TURECEK'
 
-
-
-def mainInput(message):
-
-    for char in message:
-        if char not in ".- ":
-            return encrypt(message)
-    return decrypt(message)
