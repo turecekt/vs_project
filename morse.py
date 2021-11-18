@@ -75,3 +75,10 @@ def test_decrypt():
     assert decrypt('- ..- .-. . -.-. . -.-') == 'TURECEK'
 
 
+
+def mainInput(message):
+
+    for char in message:
+        if char not in ".- ":
+            return encrypt(message)
+    return decrypt(message)
