@@ -66,27 +66,27 @@ def encode(message):
             counter = counter + 1
  
         return print(code)
-    # Pøi nedefinovaném vstupu se vypíše chybová hláška
+    # PÃ¸i nedefinovanÃ©m vstupu se vypÃ­Å¡e chybovÃ¡ hlÃ¡Å¡ka
     except KeyError: 
         print("Character", letter, "is note defined in morse code")
         print("These characters are defined: A B C D E F G H I J K L M N O P Q R S T U V W X Y Z 1 2 3 4 5 6 7 8 9 , . ? / - ( )")
        
 
-# Funkce dekóduje do morseovky
+# Funkce dekÃ³duje z morseovky
 def decode(inputMessage):
     try:
         decodedMessage = ''
-        message = inputMessage.split('//') # Do message se uloí všechny slova
+        message = inputMessage.split('//') # Do message se uloÅ¾Ã­ vÅ¡echny slova
         counter = 1
    
         for word in message:
-            letters = word.split('/') # Do letters se uloí všechny písmena
+            letters = word.split('/') # Do letters se uloÅ¾Ã­ vÅ¡echny pÃ­smena
             for letter in letters:
-                if (letter != ''): # Pro kadé písmeno se najde odpovídající klíè v dictionary morseCode
+                if (letter != ''): # Pro kaÅ¾dÃ© pÃ­smeno se najde odpovÃ­dajÃ­cÃ­ klÃ­Ã¨ v dictionary morseCode
                     decodedMessage = decodedMessage + list(morseCode.keys())[list(morseCode.values()).index(letter)]
-            if (counter < len(message)): # Krom posledního slova, se za kadım slovem pøipíše mezera
+            if (counter < len(message)): # Krom poslednÃ­ho slova, se za kaÅ¾dÃ½m slovem pÃ¸ipÃ­Å¡e mezera
                 decodedMessage = decodedMessage + ' '
             counter = counter + 1
         return   print(decodedMessage)
-    except Exception: # Pøi nenalezení hodnoty v dictionary se vypíše chybová hláška
+    except Exception: # PÅ™i nenalezenÃ­ hodnoty v dictionary se vypÃ­Å¡e chybovÃ¡ hlÃ¡Å¡ka
         print("Character", letter, "is note defined in morse code")
