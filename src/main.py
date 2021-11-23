@@ -7,9 +7,6 @@ def vyzadejCislo():
     except ValueError:
         print("Nespravny format cisla.")
         return "Nespravny format cisla."
-
-
-
 def jePrvocislo(cislo):
     """Program vyzada vstup od uzivatele a overi zda se jedna o prvocislo."""
     prvocislo = False
@@ -24,17 +21,14 @@ def jePrvocislo(cislo):
                 break
     else:            
         prvocislo = True
-
     # Vypiseme vysledek
     if prvocislo:
-        print(f"Cislo {cislo} NENÍ prvocislo.")
+        print(f"Cislo {cislo} NENI prvocislo.")
         return False
-        return (f"Cislo {cislo} NENÍ prvocislo.")
+        return (f"Cislo {cislo} NENI prvocislo.")
     else:
-        print(f"Cislo {cislo} je prvocislo.")
+        print(f"Cislo {cislo} JE prvocislo.")
         return True
-        return (f"Cislo {cislo} je prvocislo.")
-
-
+        return (f"Cislo {cislo} JE prvocislo.")
 if __name__ == '__main__':
     jePrvocislo(vyzadejCislo())
