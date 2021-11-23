@@ -25,16 +25,13 @@ def jePrvocislo(cislo):
                 break
     else:
         prvocislo = True
-
     # Vypiseme vysledek
     if prvocislo:
-        print(f"Cislo {cislo} NENÍ prvocislo.")
+        print(f"Cislo {cislo} NENI prvocislo.")
         return False
-        return (f"Cislo {cislo} NENÍ prvocislo.")
     else:
-        print(f"Cislo {cislo} je prvocislo.")
+        print(f"Cislo {cislo} JE prvocislo.")
         return True
-        return (f"Cislo {cislo} je prvocislo.")
 
 
 if __name__ == '__main__':
