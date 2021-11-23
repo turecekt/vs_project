@@ -1,4 +1,4 @@
-from main import jePrvocislo
+from src\main import jePrvocislo
 import pytest
 
 @pytest.mark.parametrize('cislo', (5, 9))
