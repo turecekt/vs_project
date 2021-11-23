@@ -1,4 +1,6 @@
 """Urceni prvocisla."""
+
+
 def vyzadejCislo():
     """Funkce si vyzada cislo od uzivatele."""
     try:
@@ -7,7 +9,6 @@ def vyzadejCislo():
     except ValueError:
         print("Nespravny format cisla.")
         return "Nespravny format cisla."
-
 
 
 def jePrvocislo(cislo):
@@ -20,9 +21,9 @@ def jePrvocislo(cislo):
     if cislo > 1:
         for i in range(2, cislo):
             if cislo % i == 0:
-                prvocislo = True         
+                prvocislo = True
                 break
-    else:            
+    else:
         prvocislo = True
 
     # Vypiseme vysledek

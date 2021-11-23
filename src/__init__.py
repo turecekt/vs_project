@@ -1,0 +1,1 @@
+"""Module pro zdroj souboru."""
