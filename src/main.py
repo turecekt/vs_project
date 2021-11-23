@@ -32,3 +32,4 @@ def jePrvocislo(cislo):
         return (f"Cislo {cislo} JE prvocislo.")
 if __name__ == '__main__':
     jePrvocislo(vyzadejCislo())
+    
