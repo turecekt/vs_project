@@ -5,15 +5,15 @@ def vyzadejCislo():
         vstup = int(input("Vlozte cislo: "))
         return vstup
     except ValueError:
-        print("Nesprávný formát čísla.")
-        return "Nesprávný formát čísla."
+        print("Nespravny format cisla.")
+        return "Nespravny format cisla."
 
 
 
 def jePrvocislo(cislo):
     """Program vyzada vstup od uzivatele a overi zda se jedna o prvocislo."""
     prvocislo = False
-    # Vyzadame vstup od uzivatele ve správném formátu.
+    # Vyzadame vstup od uzivatele ve spravnem formatu.
     while(isinstance(cislo, int) is False):
         cislo = vyzadejCislo()
     # Zkontrolujeme, zda je cislo delitelne jinym cislem bez zbytku.
@@ -27,9 +27,9 @@ def jePrvocislo(cislo):
 
     # Vypiseme vysledek
     if prvocislo:
-        print(f"Cislo {cislo} NENÍ provocislo.")
+        print(f"Cislo {cislo} NENÍ prvocislo.")
         return False
-        return (f"Cislo {cislo} NENÍ provocislo.")
+        return (f"Cislo {cislo} NENÍ prvocislo.")
     else:
         print(f"Cislo {cislo} je prvocislo.")
         return True
