@@ -87,3 +87,11 @@ def test_decrypt():
     """Test desifrovani."""
     assert decrypt('- ..- .-. . -.-. . -.-') == 'TURECEK'
 
+
+
+print('------------------------------')
+demoText = 'Univerzita ve Zline'
+print('"' + demoText + '" \nse prelozi jako:\n"' + mainInput(demoText) + '"')
+print('------------------------------')
+demoMorse = '..-. .- -.- ..- .-.. - .-  .. -. ..-. --- .-. -- .- - .. -.- -.--'
+print('"' + demoMorse + '" \nse prelozi jako:\n"' + mainInput(demoMorse) + '"')
