@@ -9,6 +9,7 @@ Promenne:
     decipher -> Zasifrovana zprava
 """
 
+# definice slovniku pro preklad pismen na Morse znaky a zpet:
 MORSE_CODE_DICT = {'A': '.-', 'B': '-...', 'C': '-.-.',
                    'D': '-..', 'E': '.', 'F': '..-.',
                    'G': '--.', 'H': '....',
@@ -28,7 +29,11 @@ MORSE_CODE_DICT = {'A': '.-', 'B': '-...', 'C': '-.-.',
 
 
 def mainInput(message):
-
+    """
+    Metoda pro vstup textu nebo morseova kodu.
+    Na zaklade druhu vstupu rozhodne, zda volat
+    sifrovaci nebo desifrovaci funkci
+    """
     for char in message:
         if char not in ".- ":
             return encrypt(message)
@@ -36,20 +41,26 @@ def mainInput(message):
 
 
 def test_mainInput():
+    """Test zda funkce vola spravnou funkci v zavislosti na vstupu."""
     assert mainInput('univerzita') == '..- -. .. ...- . .-. --.. .. - .- '
     assert mainInput('- --- -- .- ...  -... .- - .-') == 'TOMAS BATA'
 
 
 def encrypt(message):
-    message = message.upper()           
-    cipher = ''                         
-    for letter in message:              
+    """Metoda pro zasifrovani textu do morseovy abecedy."""
+    message = message.upper()           # prevede vstup na velka pismena
+    cipher = ''                         # retezec, který bude funkce vracet
+
+    for letter in message:              # prochazi znaky vstupniho retezce
+
+        # pokud pismeno neni mezera, prelozi znak a prida do vystupu:
         if letter != ' ':
             cipher += MORSE_CODE_DICT[letter] + ' '
+        # jinak prida mezeru:
         else:
             cipher += ' '
 
-    return cipher       
+    return cipher        # vraci zasifrovany retezec
 
 
 def test_encrypt():
