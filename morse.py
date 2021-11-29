@@ -1,4 +1,3 @@
-
 """
 Skript pro kodovani/dekodovani Morseovy abecedy.
 
@@ -9,7 +8,7 @@ Promenne:
     decipher -> Zasifrovana zprava
 """
 
-# definice slovniku pro preklad pismen na Morse znaky a zpet:
+# definice slovniku pro preklad pismen na Morse znaky a zpet
 MORSE_CODE_DICT = {'A': '.-', 'B': '-...', 'C': '-.-.',
                    'D': '-..', 'E': '.', 'F': '..-.',
                    'G': '--.', 'H': '....',
@@ -27,10 +26,9 @@ MORSE_CODE_DICT = {'A': '.-', 'B': '-...', 'C': '-.-.',
                    '(': '-.--.', ')': '-.--.-'}
 
 
-
 def mainInput(message):
-    """
-    Metoda pro vstup textu nebo morseova kodu.
+    """Metoda pro vstup textu nebo morseova kodu.
+
     Na zaklade druhu vstupu rozhodne, zda volat
     sifrovaci nebo desifrovaci funkci
     """
@@ -60,7 +58,7 @@ def encrypt(message):
         else:
             cipher += ' '
 
-    return cipher        # vraci zasifrovany retezec
+    return cipher                       # vraci zasifrovany retezec
 
 
 def test_encrypt():
@@ -68,14 +66,14 @@ def test_encrypt():
     assert encrypt('TURECEK') == '- ..- .-. . -.-. . -.- '
 
 
-
 def decrypt(message):
     """Metoda pro desifrovani z morseovy abecedy na text."""
-    message += ' '               # pro ukonceni posledniho Morse znaku
+    message += ' '                      # pro ukonceni posledniho Morse znaku
     decipher = ''                       # retezec, ktery bude funkce vracet
     citext = ''                         # pomocny retezec pro jeden znak Morse
 
     for letter in message:              # prochazi znaky vstupniho retezce
+
         # kdyz znak neni mezera, prida znak do pomocneho retezce citext:
         if (letter != ' '):
             i = 0                       # zaznamenava mezery v Morse kodu
@@ -83,21 +81,24 @@ def decrypt(message):
         # jinak (kdyz mezera):
         else:
             i += 1
+
             # pokud i == 2 >> konec slova -> prida mezeru do vystupu:
             if i == 2:
                 decipher += ' '
             # jinak konec Morse znaku -> vyhleda znak ve slovniku
             # a prida prelozene pismeno do vystupu:
             else:
-                decipher += list(MORSE_CODE_DICT.keys())[list(MORSE_CODE_DICT.values()).index(citext)]
-                citext = ''       # vycisti retezec pro znak
+                decipher += list(MORSE_CODE_DICT
+                                 .keys())[list(MORSE_CODE_DICT
+                                               .values()).index(citext)]
+                citext = ''             # vycisti retezec pro znak
 
     return decipher                     # vraci rozsifrovany text
+
 
 def test_decrypt():
     """Test desifrovani."""
     assert decrypt('- ..- .-. . -.-. . -.-') == 'TURECEK'
-
 
 
 print('------------------------------')
