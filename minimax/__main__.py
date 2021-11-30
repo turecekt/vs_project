@@ -31,18 +31,50 @@ def parse_args():
     return cisla
 
 
+def vyber_algoritmus():
+    """
+    Tato funkcia sa spyta na algoritmus ktory ma byt pouziti a vrati jeho funkciu.
+
+    Podporovane algoritmy:
+    - quick sort
+    - bubble sort
+    - insertion sort
+    - Python sort
+    """
+    algos = {
+        "1": ("Quick sort", utils.quick_sort),
+        "2": ("Bubble sort", utils.bubble_sort),
+        "3": ("Insertion sort", utils.insertion_sort),
+        "4": ("Python sort", sorted)
+    }
+    print("Vyber algoritmus pre zoradenie sekvencie: ")
+    for k, (v, _) in algos.items():
+        print(f"{k}. {v}")
+
+    while True:
+        try:
+            moznost = input("> ")
+        except KeyboardInterrupt:
+            print("\nUkoncene pouzivatelom.")
+            exit()
+
+        if not moznost.lower() in algos.keys():
+            moznosti = ", ".join(algos.keys())
+            print(f"Nespravna moznost! Dostupne moznosti: {moznosti}")
+            continue
+        return algos[moznost][1]
+
 def main():
     """Hlavna funkcia programu."""
     cisla = parse_args()
+    algo = vyber_algoritmus()
 
-    bubble_sort_zoradene = utils.bubble_sort(cisla)
-    insertion_sort_zoradene = utils.insertion_sort(cisla)
-    quick_sort_zoradenie = utils.quick_sort(cisla)
+    _min, i_min, _max, i_max = utils.minimax(cisla)
+    zoradeny_list = algo(cisla)
 
-    print(utils.minimax(cisla))
-    print(bubble_sort_zoradene)
-    print(quick_sort_zoradenie)
-    print(insertion_sort_zoradene)
+    print(f"Minimalne cislo v sekvencii: {_min}, na indexe #{i_min}")
+    print(f"Maximalne cislo v sekvencii: {_max}, na indexe #{i_max}")
+    print(f"Zoradene cisla: {zoradeny_list}")
 
 
 if __name__ == "__main__":
