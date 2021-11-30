@@ -55,3 +55,26 @@ def decrypt(vstup):
                 citext = ''
 
     return vystup
+
+def main():
+    x = input("Ak chceš kódovať, stlač K.\nAk chceš dekódovať, stlač D.\n")
+
+    if x == "k":
+        k = input("Zadaj text na preklad do morzeovky: \n")
+        k = k.upper()
+        print(encrypt(k))
+
+    elif x == "d":
+        d = input("Zadaj morzeovku na preklad na text: \n")
+        d = d.upper()
+        print(decrypt(d))
+
+    else:
+        print("Zadaj K alebo D!")
+
+    print()
+    print()
+    main()
+
+
+main()
