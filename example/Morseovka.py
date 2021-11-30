@@ -40,6 +40,13 @@ def encrypt(vstup):
     return vystup
 
 def decrypt(vstup):
+    """Decrypt string in morse code.
+    Return string text
+    >>> decrypt('.-')
+    A
+    >>> decrypt('--...') == '7 '
+    True.
+    """
     vstup += ' '
     vystup = ''
     citext = ''
