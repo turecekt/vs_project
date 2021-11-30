@@ -19,20 +19,27 @@ def minimax(cislo):
     for i, cislo in enumerate(cislo):
         if cislo < minimum:
             minimum = cislo
-            i_min = i 
+            i_min = i
         if cislo > maximum:
             maximum = cislo
-            i_max = i 
+            i_max = i
 
     return minimum, i_min, maximum, i_max
 
+
 def bubble_sort(cisla):
+    """
+    Tato funkcia vyuziva bubble sort algoritmus na zoradenie daneho listu cisel.
+
+    Vstup pre funkciu je list cisel, a vystupom je novy, zoradeny list cisel.
+    """
     cisla = cisla.copy()
-    for i in range(1, len(cisla)):
+    for _ in range(1, len(cisla)):
         for j in range(len(cisla) -1):
             if cisla[j] > cisla[j+1]:
                 cisla[j], cisla[j+1] = cisla [j+1], cisla[j]
     return cisla
+
 
 cisla = [2,7,1,23,6]
 zoradene = bubble_sort(cisla)
