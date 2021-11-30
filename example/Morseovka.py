@@ -17,6 +17,7 @@ dict = {'A': '.-',       'B': '-...',
 
 def encrypt(vstup):
     """Encrypt string text.
+
     Return string in morse code
     >>> encrypt('A')
     .-
@@ -41,6 +42,7 @@ def encrypt(vstup):
 
 def decrypt(vstup):
     """Decrypt string in morse code.
+    
     Return string text
     >>> decrypt('.-')
     A
