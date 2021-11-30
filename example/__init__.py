@@ -113,7 +113,15 @@ def quick_sort(arr, start=None, end=None):
     quick_sort(arr, start, index - 1)
     quick_sort(arr, index + 1, end)
 
+
 def insertion_sort(cisla):
+    """
+    Tato funkcia vyuziva insertion sort algoritmus na zoradenie daneho listu cisel.
+
+    Vstup pre funkciu je list cisel, a vystupom je novy, zoradeny list cisel.
+    Insertion Sort ma komplexitu O(N^2)
+    """
+    cisla = cisla.copy()
     for index in range(1, len(cisla)):
         current_value = cisla[index]
         current_position = index
@@ -121,6 +129,8 @@ def insertion_sort(cisla):
             cisla[current_position] = cisla[current_position -1]
             current_position = current_position - 1
         cisla[current_position] = current_value
+    return cisla
+
 
 def main():
     """Hlavna funkcia programu."""
@@ -133,14 +143,13 @@ def main():
     else:
         cisla = [random.randint(-100, 100) for _ in range(20)]
 
-    # bubble sort vyrvara novy zoradeny list
+    # bubble sort a insertion sort vyrvaraju novy zoradeny list
     bubble_sort_zoradene = bubble_sort(cisla)
+    insertion_sort_zoradene = insertion_sort(cisla)
+
     # quick sort funguje in-place.
     quick_sort_zoradenie = cisla.copy()
     quick_sort(quick_sort_zoradenie)
-
-    insertion_sort_zoradene = cisla.copy()
-    insertion_sort(insertion_sort_zoradene)
 
     print(minimax(cisla))
     print(bubble_sort_zoradene)
