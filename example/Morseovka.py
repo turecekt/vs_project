@@ -1,4 +1,3 @@
-
 dict = {'A': '.-',       'B': '-...',
         'C': '-.-.',     'D': '-..',      'E': '.',
         'F': '..-.',     'G': '--.',      'H': '....',
@@ -15,3 +14,19 @@ dict = {'A': '.-',       'B': '-...',
         '?': '..--..',   '/': '-..-.',    '-': '-....-',
         '(': '-.--.',    ')': '-.--.-'}
 
+def encrypt(vstup):
+    vystup = ''
+
+    for letter in vstup:
+
+        if letter in dict:
+            vystup += dict[letter] + ' '
+
+        elif letter == ' ':
+            vystup += ' '
+
+        else:
+            # necharakterizovaný znak
+            vystup += '?'
+
+    return vystup
