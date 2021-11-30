@@ -104,7 +104,7 @@ def main():
     bubble_sort_zoradene = bubble_sort(cisla)
     # quick sort funguje in-place.
     quick_sort_zoradenie = cisla.copy()
-    quick_sort(quick_sort_zoradenie, 0, len(quick_sort_zoradenie))
+    quick_sort(quick_sort_zoradenie, 0, len(quick_sort_zoradenie) - 1)
 
     print(minimax(cisla))
     print(bubble_sort_zoradene)
