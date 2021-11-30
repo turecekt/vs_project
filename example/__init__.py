@@ -26,5 +26,15 @@ def minimax(cislo):
 
     return minimum, i_min, maximum, i_max
 
+def bubble_sort(cisla):
+    cisla = cisla.copy()
+    for i in range(1, len(cisla)):
+        for j in range(len(cisla) -1):
+            if cisla[j] > cisla[j+1]:
+                cisla[j], cisla[j+1] = cisla [j+1], cisla[j]
+    return cisla
 
-print(minimax([1, 2, 3, -1]))
+cisla = [2,7,1,23,6]
+zoradene = bubble_sort(cisla)
+print(minimax(cisla))
+print(zoradene)
