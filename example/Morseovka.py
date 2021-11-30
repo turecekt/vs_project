@@ -75,7 +75,7 @@ def decrypt(vstup):
 
 #test_encrypt()
 def test_enc():
-    """test funkce encrypt."""
+    """Test funkce encrypt."""
     assert encrypt('A') == '.- '
 
 test_enc()
@@ -83,7 +83,7 @@ test_enc()
 
 #test_decrypt()
 def test_dec():
-    """test funkce decrypt."""
+    """Test funkce decrypt."""
     assert decrypt('-----') == '0'
 
 test_dec()
