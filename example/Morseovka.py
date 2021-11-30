@@ -31,3 +31,27 @@ def encrypt(vstup):
             vystup += '?'
 
     return vystup
+
+def decrypt(vstup):
+    vstup += ' '
+    vystup = ''
+    citext = ''
+
+    for letter in vstup:
+
+        if (letter != ' '):
+            i = 0
+            citext += letter
+
+        # v prípade medzery
+        else:
+            i += 1
+
+            if i == 2:
+                vystup += ' '
+
+            else:
+                vystup += list(dict.keys())[list(dict.values()).index(citext)]
+                citext = ''
+
+    return vystup
