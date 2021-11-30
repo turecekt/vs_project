@@ -35,13 +35,9 @@ def main():
     """Hlavna funkcia programu."""
     cisla = parse_args()
 
-    # bubble sort a insertion sort vyrvaraju novy zoradeny list
     bubble_sort_zoradene = utils.bubble_sort(cisla)
     insertion_sort_zoradene = utils.insertion_sort(cisla)
-
-    # quick sort funguje in-place.
-    quick_sort_zoradenie = cisla.copy()
-    utils.quick_sort(quick_sort_zoradenie)
+    quick_sort_zoradenie = utils.quick_sort(cisla)
 
     print(utils.minimax(cisla))
     print(bubble_sort_zoradene)

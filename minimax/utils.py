@@ -85,7 +85,7 @@ def _partition(arr, start, end):
     return pivot_index
 
 
-def quick_sort(arr, start=None, end=None):
+def _quick_sort(arr, start=None, end=None):
     """
     Tato funkcia vyuziva quick sort algoritmus na zoradenie daneho listu cisiel.
 
@@ -118,8 +118,19 @@ def quick_sort(arr, start=None, end=None):
 
     # Zoradenie hodnot v 2 zostavajucich sekciach (pred a za
     # strednym indexom pivotu)
-    quick_sort(arr, start, index - 1)
-    quick_sort(arr, index + 1, end)
+    _quick_sort(arr, start, index - 1)
+    _quick_sort(arr, index + 1, end)
+
+
+def quick_sort(arr):
+    """
+    Wrapper pre _quick_sort ktory funguje na principe kopii namiesto in-place upravy listu.
+
+    Pre detaily o quick_sort algoritme vid docstring pre _quick_sort funkciu.
+    """
+    arr = arr.copy()
+    _quick_sort(arr)
+    return arr
 
 
 def insertion_sort(cisla):
