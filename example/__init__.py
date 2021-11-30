@@ -109,6 +109,14 @@ def quick_sort(arr, start=None, end=None):
     quick_sort(arr, start, index - 1)
     quick_sort(arr, index + 1, end)
 
+def insertion_sort(cisla):
+    for index in range(1, len(cisla)):
+        current_value = cisla[index]
+        current_position = index
+        while current_position > 0 and cisla[current_position - 1] > current_value:
+            cisla[current_position] = cisla[current_position -1]
+            current_position = current_position - 1
+        cisla[current_position] = current_value
 
 def main():
     """Hlavna funkcia programu."""
@@ -120,9 +128,13 @@ def main():
     quick_sort_zoradenie = cisla.copy()
     quick_sort(quick_sort_zoradenie)
 
+    insertion_sort_zoradene = cisla.copy()
+    insertion_sort(insertion_sort_zoradene)
+
     print(minimax(cisla))
     print(bubble_sort_zoradene)
     print(quick_sort_zoradenie)
+    print(insertion_sort_zoradene)
 
 
 if __name__ == "__main__":
