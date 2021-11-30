@@ -2,9 +2,9 @@ def minimax(cislo):
     """
     Funkcia pre najdenie maxima a minima zadanej sekvencie cisiel.
 
-    Funkcia vracia 2 hodnoty: minimum, maximum (v poradi)
+    Funkcia vracia 4 hodnoty: minimum, index minium, maximum, index maximum (v poradi)
     >>> minimax([1, 2, 3, -1])
-    (-1, 3)
+    (-1, 3, 3, 2)
 
     Implementacia hladania minima a maxima nevyuziva built-in funkcie
     min(x)/max(x), pretoze to pravdepodobne nebolo cielom tohoto zadania.
@@ -13,14 +13,18 @@ def minimax(cislo):
     """
     minimum = cislo[0]
     maximum = cislo[0]
+    i_min = 0
+    i_max = 0
 
-    for num in cislo:
-        if num < minimum:
-            minimum = num
-        if num > maximum:
-            maximum = num
+    for i, cislo in enumerate(cislo):
+        if cislo < minimum:
+            minimum = cislo
+            i_min = i 
+        if cislo > maximum:
+            maximum = cislo
+            i_max = i 
 
-    return minimum, maximum
+    return minimum, i_min, maximum, i_max
 
 
 print(minimax([1, 2, 3, -1]))
