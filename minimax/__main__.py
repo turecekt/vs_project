@@ -1,5 +1,6 @@
 import sys
 import random
+import time
 
 from minimax import utils
 
@@ -70,11 +71,15 @@ def main():
     algo = vyber_algoritmus()
 
     _min, i_min, _max, i_max = utils.minimax(cisla)
+    t1 = time.perf_counter_ns()
     zoradeny_list = algo(cisla)
+    t2 = time.perf_counter_ns()
+    delta = (t2 - t1) / 1000
 
     print(f"Minimalne cislo v sekvencii: {_min}, na indexe #{i_min}")
     print(f"Maximalne cislo v sekvencii: {_max}, na indexe #{i_max}")
     print(f"Zoradene cisla: {zoradeny_list}")
+    print(f"Zoradovanie zabralo: {delta} milisekund")
 
 
 if __name__ == "__main__":
