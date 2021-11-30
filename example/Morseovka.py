@@ -44,7 +44,7 @@ def encrypt(vstup):
 
 def decrypt(vstup):
     """Decrypt string in morse code.
-    
+
     Return string text
     >>> decrypt('.-')
     A
@@ -75,7 +75,7 @@ def decrypt(vstup):
     return vystup
 
 
-#test_encrypt()
+# test_encrypt()
 def test_enc():
     """Test funkce encrypt."""
     assert encrypt('A') == '.- '
@@ -84,7 +84,7 @@ def test_enc():
 test_enc()
 
 
-#test_decrypt()
+# test_decrypt()
 def test_dec():
     """Test funkce decrypt."""
     assert decrypt('-----') == '0'
