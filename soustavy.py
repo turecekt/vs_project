@@ -47,12 +47,41 @@ def toHex(num):
 
 def toBin(num):
     """Převede číslo na zobrazení v binární soustavě."""
-    pass
+
+    # Ověříme že jsme opravdu dostaly číslo
+    try:
+        num = int(num)
+    except ValueError:  # Jinak si ho necháme znova vybrat
+        num = getInput()
+
+    zbytek = num
+    ret = ""
+
+    while num > 0:
+        zbytek = num % 2
+        num = num // 2
+        ret += str(zbytek)
+
+    return "0b" + ret[::-1]
 
 
 def toOctal(num):
     """Převede číslo na zobrazení v octální soustavě."""
-    pass
+    # Ověříme že jsme opravdu dostaly číslo
+    try:
+        num = int(num)
+    except ValueError:  # Jinak si ho necháme znova vybrat
+        num = getInput()
+
+    zbytek = num
+    ret = ""
+
+    while num > 0:
+        zbytek = num % 8
+        num = num // 8
+        ret += str(zbytek)
+
+    return "0o" + ret[::-1]
 
 
 def getInput():
@@ -80,7 +109,7 @@ def main(args=None):
     elif len(args) > 2:  # Máme buď typ nebo číslo
         print("Použití:\npython3 soustavy.py -[cílová soustava] [číslo k převodu]")
         print("Možné soustavy:\n\t-b binární\n\t-h šestnáctková\n\t-o osmičková")
-        print("Pokud není číslová soustava uvedena, výstupem jsou všechny")
+        print("Pokud není cílová soustava uvedena, výstupem jsou všechny.")
         sys.exit(1)
     else:  # Hlavní parsování
         if args[0] == "-h":
