@@ -95,14 +95,20 @@ def quick_sort(arr, start, end):
     quick_sort(arr, index + 1, end)
 
 
-cisla = [2, 7, 1, 23, 6]
+def main():
+    """Hlavna funkcia programu."""
+    cisla = [2, 7, 1, 23, 6]
 
-# bubble sort vyrvara novy zoradeny list
-bubble_sort_zoradene = bubble_sort(cisla)
-# quick sort funguje in-place.
-quick_sort_zoradenie = cisla.copy()
-quick_sort(quick_sort_zoradenie, 0, len(quick_sort_zoradenie))
+    # bubble sort vyrvara novy zoradeny list
+    bubble_sort_zoradene = bubble_sort(cisla)
+    # quick sort funguje in-place.
+    quick_sort_zoradenie = cisla.copy()
+    quick_sort(quick_sort_zoradenie, 0, len(quick_sort_zoradenie))
 
-print(minimax(cisla))
-print(bubble_sort_zoradene)
-print(quick_sort_zoradenie)
+    print(minimax(cisla))
+    print(bubble_sort_zoradene)
+    print(quick_sort_zoradenie)
+
+
+if __name__ == "__main__":
+    main()
