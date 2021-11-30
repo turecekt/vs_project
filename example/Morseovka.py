@@ -56,8 +56,9 @@ def decrypt(vstup):
 
     return vystup
 
-"""Funkce zabezpečí loop celého programu."""
+
 def main():
+    """Funkce zabezpečí loop celého programu."""
     x = input("Ak chceš kódovať, stlač K.\nAk chceš dekódovať, stlač D.\n")
 
     if x == "k":
