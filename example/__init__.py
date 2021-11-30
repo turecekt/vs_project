@@ -75,13 +75,27 @@ def _partition(arr, start, end):
     return pivot_index
 
 
-def quick_sort(arr, start, end):
+def quick_sort(arr, start=None, end=None):
     """
     Tato funkcia vyuziva quick sort algoritmus na zoradenie daneho listu cisiel.
 
     Na vstupe je zadany list ktory chceme zoradit. Radenie sa deje in-place (
     nevytvarame kopiu!). Quick sort ma komplexitu O(n*log n).
+
+    Funkcia berie 3 hodnoty: list, start, end.
+    - list: list cisiel na zoradenie (in-place)
+    - start: zaciatocny index pre zoradovanie (default: `0` - nutny pre rekurzivne volania)
+    - end: koncovy index pre zoradovanie (default: `len(list) - 1` - nutny pre rekurzivne volania)
+    >>> lst = [1, 8, 0, -5, 2, 9, 100, 6]
+    >>> quick_sort(lst, 0, len(lst) - 1)
+    None  # quick_sort nevracia ziadny vystup, zoraduje na mieste
     """
+    # Vychodzie hodnoty pre start a end:
+    if start is None:
+        start = 0
+    if end is None:
+        end = len(arr) - 1
+
     # Ak sa dostaneme na koniec, sekcia je zoradena
     if start >= end:
         return
@@ -104,7 +118,7 @@ def main():
     bubble_sort_zoradene = bubble_sort(cisla)
     # quick sort funguje in-place.
     quick_sort_zoradenie = cisla.copy()
-    quick_sort(quick_sort_zoradenie, 0, len(quick_sort_zoradenie) - 1)
+    quick_sort(quick_sort_zoradenie)
 
     print(minimax(cisla))
     print(bubble_sort_zoradene)
