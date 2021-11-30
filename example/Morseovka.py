@@ -15,6 +15,7 @@ dict = {'A': '.-',       'B': '-...',
         '?': '..--..',   '/': '-..-.',    '-': '-....-',
         '(': '-.--.',    ')': '-.--.-'}
 
+
 def encrypt(vstup):
     """Encrypt string text.
 
@@ -39,6 +40,7 @@ def encrypt(vstup):
             vystup += '?'
 
     return vystup
+
 
 def decrypt(vstup):
     """Decrypt string in morse code.
@@ -78,6 +80,7 @@ def test_enc():
     """Test funkce encrypt."""
     assert encrypt('A') == '.- '
 
+
 test_enc()
 
 
@@ -85,6 +88,7 @@ test_enc()
 def test_dec():
     """Test funkce decrypt."""
     assert decrypt('-----') == '0'
+
 
 test_dec()
 
