@@ -17,5 +17,5 @@ def test_toBin():
 
 def test_toHex():
     """Testuje převod na hexadecimální soustavu."""
-    assert hex(1263).lower() == soustavy.toBin(1263).lower()
+    assert hex(1263).lower() == soustavy.toHex(1263).lower()
     assert hex(9876543210).lower() == soustavy.toHex(9876543210).lower()
