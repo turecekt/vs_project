@@ -1,3 +1,4 @@
+"""Slovník z latinky do Morseovy abecedy."""
 dict = {'A': '.-',       'B': '-...',
         'C': '-.-.',     'D': '-..',      'E': '.',
         'F': '..-.',     'G': '--.',      'H': '....',
