@@ -1,3 +1,7 @@
+import sys
+import random
+
+
 def minimax(cislo):
     """
     Funkcia pre najdenie maxima a minima zadanej sekvencie cisiel.
@@ -112,7 +116,14 @@ def quick_sort(arr, start=None, end=None):
 
 def main():
     """Hlavna funkcia programu."""
-    cisla = [2, 7, 1, 23, 6]
+    argumenty = sys.argv[1:]
+    if len(argumenty) == 1:
+        with open(argumenty[0], "r") as f:
+            cisla = [int(x) for x in f.read().split()]
+    elif len(argumenty) > 1:
+        cisla = [int(x) for x in argumenty]
+    else:
+        cisla = [random.randint(-100, 100) for _ in range(20)]
 
     # bubble sort vyrvara novy zoradeny list
     bubble_sort_zoradene = bubble_sort(cisla)
