@@ -110,9 +110,5 @@ def main():
     else:
         print("Zadaj K alebo D!")
 
-    print()
-    print()
-    main()
-
 
 main()
