@@ -32,6 +32,7 @@ def bubble_sort(cisla):
     Tato funkcia vyuziva bubble sort algoritmus na zoradenie daneho listu cisel.
 
     Vstup pre funkciu je list cisel, a vystupom je novy, zoradeny list cisel.
+    Bubble Sort ma komplexitu O(N).
     """
     cisla = cisla.copy()
     for _ in range(1, len(cisla)):
