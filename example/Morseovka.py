@@ -16,6 +16,13 @@ dict = {'A': '.-',       'B': '-...',
         '(': '-.--.',    ')': '-.--.-'}
 
 def encrypt(vstup):
+    """Encrypt string text.
+    Return string in morse code
+    >>> encrypt('A')
+    .-
+    >>> encrypt('7') == '--... '
+    True.
+    """
     vystup = ''
 
     for letter in vstup:
