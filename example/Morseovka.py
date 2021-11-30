@@ -73,6 +73,14 @@ def decrypt(vstup):
     return vystup
 
 
+#test_encrypt()
+def test_enc():
+    """test funkce encrypt."""
+    assert encrypt('A') == '.- '
+
+test_enc()
+
+
 def main():
     """Funkce zabezpečí loop celého programu."""
     x = input("Ak chceš kódovať, stlač K.\nAk chceš dekódovať, stlač D.\n")
