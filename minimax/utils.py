@@ -3,6 +3,7 @@ Tento subor obsahuje potrebne utility funkcie vyuzivane v
 hlavnom skripte.
 """
 
+
 def minimax(cislo):
     """
     Funkcia pre najdenie maxima a minima zadanej sekvencie cisiel.
@@ -45,9 +46,9 @@ def bubble_sort(cisla):
     """
     cisla = cisla.copy()
     for _ in range(1, len(cisla)):
-        for j in range(len(cisla) -1):
-            if cisla[j] > cisla[j+1]:
-                cisla[j], cisla[j+1] = cisla [j+1], cisla[j]
+        for j in range(len(cisla) - 1):
+            if cisla[j] > cisla[j + 1]:
+                cisla[j], cisla[j + 1] = cisla[j + 1], cisla[j]
     return cisla
 
 
@@ -138,7 +139,7 @@ def insertion_sort(cisla):
         current_value = cisla[index]
         current_position = index
         while current_position > 0 and cisla[current_position - 1] > current_value:
-            cisla[current_position] = cisla[current_position -1]
+            cisla[current_position] = cisla[current_position - 1]
             current_position = current_position - 1
         cisla[current_position] = current_value
     return cisla
