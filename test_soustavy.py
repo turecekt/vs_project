@@ -25,9 +25,9 @@ def test_main():
     """Otestuje parsování argumentů"""
     # Test ukončení při příliš velkém množství argumentů
     with pytest.raises(SystemExit) as e:
-        soustavy.main(list("-h", 12, 15))
+        soustavy.main(["-h", 12, 15])
     assert e.type == SystemExit
     assert e.value.code == 1
 
     # Test správného zpracování argumentů
-    soustavy.main(list("-h", 22)) == hex(22)
+    soustavy.main(("-h", 22)) == hex(22)
