@@ -120,7 +120,8 @@ def main(args=None):
         print("python3 soustavy.py -[cílová soustava] [číslo k převodu]")
         print("Možné soustavy:\n\t-b binární\n\t-h šestnáctková")
         print("\t-o osmičková")
-        print("Pokud není cílová soustava uvedena, výstupem jsou všechny.")
+        print("Pokud spuštěno bez argumentů, číslo bude zjištěno interaktivně")
+        print("a výstupem budou všechny soustavy")
         sys.exit(1)
     else:  # Hlavní parsování
         # Na číslo převádíme automaticky v každé metodě takže zde
@@ -134,6 +135,7 @@ def main(args=None):
             vysledek = toOctal(args[1])
         else:
             print("Neznámý přepínač: " + args[0])
+            print("Zkuste --help pro nápovědu")
             sys.exit(1)
     print(vysledek)
     return vysledek  # Ještě vracíme kvůli testům
