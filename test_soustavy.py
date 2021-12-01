@@ -30,4 +30,4 @@ def test_main():
     assert e.value.code == 1
 
     # Test správného zpracování argumentů
-    soustavy.main(list("-h", 22) == hex(22)
+    soustavy.main(list("-h", 22)) == hex(22)
