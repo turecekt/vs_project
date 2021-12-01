@@ -1,3 +1,5 @@
+"""Program pro překlad do morseovy abecedy a zpět."""
+
 # Slovník pro překlad
 DIR = {'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..',
        'E': '.', 'F': '..-.', 'G': '--.', 'H': '....',
@@ -12,6 +14,14 @@ DIR = {'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..',
 
 # Překlad do morseovky
 def morseovka(retezec):
+    """Funkce morseovka převede vrací vstupní přetězec řevedený do morseovky.
+
+    Argumenty:
+        - retezec - Vstup funkce
+
+    Vrací:
+        - string - Výstup funkce
+    """
     morse = []
     # přeložené znaky se ukládají do pole morse
 
@@ -27,13 +37,12 @@ def morseovka(retezec):
 
 # Hlavní funkce - input
 def main():
-    vstup = input("Zadejte text: ")
-    preklad = morseovka(vstup.upper())
+    """Proměnné preklad je přidělen výsledek funkce morseovka.
 
-    """ 
-    proměnné preklad je přidělen výsledek funkce morseovka
     vstup.upper() = vložené písmeno je převedené na velký znak
     """
+    vstup = input("Zadejte text: ")
+    preklad = morseovka(vstup.upper())
 
     print(preklad)
     # Výstup přeloženého vstupu
@@ -41,4 +50,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
