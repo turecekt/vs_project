@@ -1,13 +1,15 @@
-"""
-Program pro převod celého čísla mezi číselnými soustavami.
-"""
+"""Program pro převod celého čísla mezi číselnými soustavami."""
 
 import sys
 import os
 sys.dont_write_bytecode = True  # Aby se složka nezacpávala cachem
 
 # Zobrazí chybovou hlášku se barevným a zvýrazněním na VT100 terminálech
-_TERMINAL_NUMBER_ERROR = "Zadejte\033[33;1m celé\033[22;0m číslo v \033[33;1mdesítkové\033[22;0m soustavě!"
+_TERMINAL_NUMBER_ERROR = """\
+Zadejte\033[33;1m celé\033[22;0m číslo v\
+\033[33;1mdesítkové\033[22;0m soustavě!
+"""  # Wau 79 znaků limit v roce 2021, tohle je o tolik čiteljnější
+
 # Zobrazí chybovou hlášku i na té hrůze cmd.exe
 _CMD_NUMBER_ERROR = "Zadejte celé číslo v desítkové soustavě"
 
@@ -27,7 +29,6 @@ HEX_TABULKA = {0: "0", 1: "1", 2: "2", 3: "3", 4: "4", 5: "5",
 
 def toHex(num):
     """Převede číslo na zobrazení v hexadecimální soustavě."""
-
     # Ověříme že jsme opravdu dostaly číslo
     try:
         num = int(num)
@@ -47,7 +48,6 @@ def toHex(num):
 
 def toBin(num):
     """Převede číslo na zobrazení v binární soustavě."""
-
     # Ověříme že jsme opravdu dostaly číslo
     try:
         num = int(num)
@@ -97,18 +97,21 @@ def getInput():
 
 
 def main(args=None):
-
+    """Vstupní funkce."""
     cisloKprevodu = 0
     # Použití bude -b [číslo] -hex hexadecimal -o octal
     # Pokud nezadá číslo tak se na něj zeptáme, pokud nezadá výstupní typ
     # tak vypíšeme všechny
 
-    if len(args) == 0:  # Nic jsme nedostaly, převádíme na vše, číslo získáme interaktivně
+    # Nic jsme nedostaly, převádíme na vše, číslo získáme interaktivně
+    if len(args) == 0:
         cisloKprevodu = getInput()
         toHex(cisloKprevodu)
     elif len(args) > 2:  # Máme buď typ nebo číslo
-        print("Použití:\npython3 soustavy.py -[cílová soustava] [číslo k převodu]")
-        print("Možné soustavy:\n\t-b binární\n\t-h šestnáctková\n\t-o osmičková")
+        print("Použití:")
+        print("python3 soustavy.py -[cílová soustava] [číslo k převodu]")
+        print("Možné soustavy:\n\t-b binární\n\t-h šestnáctková")
+        print("\t-o osmičková")
         print("Pokud není cílová soustava uvedena, výstupem jsou všechny.")
         sys.exit(1)
     else:  # Hlavní parsování

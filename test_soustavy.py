@@ -22,7 +22,7 @@ def test_toHex():
 
 
 def test_main():
-    """Otestuje parsování argumentů"""
+    """Otestuje parsování argumentů."""
     # Test ukončení při příliš velkém množství argumentů
     with pytest.raises(SystemExit) as e:
         soustavy.main(["-h", 12, 15])
