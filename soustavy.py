@@ -113,7 +113,7 @@ def main(args=None):
         sys.exit(1)
     else:  # Hlavní parsování
         if args[0] == "-h":
-            toHex(15)
+            return toHex(15)
             pass
         pass
 
