@@ -14,13 +14,17 @@ def isPrime(n):
         if PRINT_TIMINGS:
             print("\r%f%%" % (i*i/n*100), end="")
 
-    # Elimitate trivial cases
+    # odstraneni zapornych cisel, nuly a jednicky
     if n <= 1:
         printTime(start)
         return False
+
+    # potvrzeni cisel 1, 2, 3
     if n <= 3:
         printTime(start)
         return True
+
+    # odstraneni sudych cisel a cisel delitelnych 3
     if n % 2 == 0 or n % 3 == 0:
         printTime(start)
         return False
