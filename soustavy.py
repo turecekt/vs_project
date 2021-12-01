@@ -1,18 +1,19 @@
+#!/usr/bin/python3
 """Program pro převod celého čísla mezi číselnými soustavami."""
 
 import sys
 import os
-sys.dont_write_bytecode = True  # Aby se složka nezacpávala cachem
 
 # Zobrazí chybovou hlášku se barevným a zvýrazněním na VT100 terminálech
 _TERMINAL_NUMBER_ERROR = """\
 Zadejte\033[33;1m celé\033[22;0m číslo v\
-\033[33;1mdesítkové\033[22;0m soustavě!
-"""  # Wau 79 znaků limit v roce 2021, tohle je o tolik čiteljnější
+\033[33;1m desítkové\033[22;0m soustavě!\
+"""
 
 # Zobrazí chybovou hlášku i na té hrůze cmd.exe
 _CMD_NUMBER_ERROR = "Zadejte celé číslo v desítkové soustavě"
 
+# ========= Zadání =========
 # VSTUP
 # Kladné celé číslo v desítkové soustavě
 # Cílová soustava (2, 8, 16, apod.)
@@ -94,6 +95,9 @@ def getInput():
                 print(_CMD_NUMBER_ERROR)
             else:
                 print(_TERMINAL_NUMBER_ERROR)
+        except EOFError:  # Uživatel poslal jen EOF (^D)
+            print()       # Před ukončením pošleme \n aby se mu odsadila shell
+            sys.exit(0)
 
 
 def main(args=None):
@@ -106,8 +110,12 @@ def main(args=None):
     # Nic jsme nedostaly, převádíme na vše, číslo získáme interaktivně
     if len(args) == 0:
         cisloKprevodu = getInput()
-        toHex(cisloKprevodu)
-    elif len(args) > 2:  # Máme buď typ nebo číslo
+        print(toHex(cisloKprevodu))
+        print(toBin(cisloKprevodu))
+        print(toOctal(cisloKprevodu))
+        # Čistě interaktivní funkce takže návratová hodnota není potřeba
+        return None
+    elif len(args) > 2 or args[0] == "--help":  # Máme buď typ nebo číslo
         print("Použití:")
         print("python3 soustavy.py -[cílová soustava] [číslo k převodu]")
         print("Možné soustavy:\n\t-b binární\n\t-h šestnáctková")
@@ -115,10 +123,20 @@ def main(args=None):
         print("Pokud není cílová soustava uvedena, výstupem jsou všechny.")
         sys.exit(1)
     else:  # Hlavní parsování
+        # Na číslo převádíme automaticky v každé metodě takže zde
+        # kontrola být nemusí
+        vysledek = 0
         if args[0] == "-h":
-            return toHex(15)
-            pass
-        pass
+            vysledek = toHex(args[1])
+        elif args[0] == "-b":
+            vysledek = toBin(args[1])
+        elif args[0] == "-o":
+            vysledek = toOctal(args[1])
+        else:
+            print("Neznámý přepínač: " + args[0])
+            sys.exit(1)
+    print(vysledek)
+    return vysledek  # Ještě vracíme kvůli testům
 
 
 if __name__ == "__main__":
