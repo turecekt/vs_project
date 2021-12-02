@@ -77,3 +77,8 @@ def test_decode():
     assert decode("..... .----") == "51"
     assert decode("... | ---") == "S O"
 
+def test_get_key():
+   
+    assert get_key('.-..') == "L"
+    assert get_key('...-') == "V"
+
