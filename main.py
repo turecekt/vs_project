@@ -44,6 +44,7 @@ def decode(text):
     return ret.strip()
 
 def get_key(val):
+    """Překlad textu jendnoho písmene"""
     for key, value in morse_dict.items():
         if val == value:
             return key
@@ -51,6 +52,7 @@ def get_key(val):
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
+    """Hlavní funkce main"""
     print("Zvolte akci: ")
     choice = float(input("1 - Převod do Morseovky \n2 - Převod z Morseovky\n"))
     mess = str(input("Zadejte text k převodu: "))
