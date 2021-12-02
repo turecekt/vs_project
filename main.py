@@ -1,4 +1,4 @@
-
+# Slovník pro Morseovu abecedu.
 morse_dict = {
     'A':'.-',   'B':'-...',
     'C':'-.-.', 'D':'-..',  'E':'.',
@@ -67,6 +67,7 @@ if __name__ == '__main__':
             print(f'Původni text: {mess} \nPřeložený text: {decode(mess)}')
     print('\nKonec Programu')
 
+# Unit testy.
 def test_code():
    
     assert code("51") == "..... .----"
