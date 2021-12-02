@@ -1,1 +1,6 @@
 Ahoj! Tohle je nový soubor.
+
+A tohle je domčův nový řádek v tomto souboru!
+Lidstvo má stále naději..
+Další commit, další příběh
+Bageta
