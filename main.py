@@ -17,6 +17,7 @@ morse_dict = {
 }
 
 def code(text):
+    """ Funkce na přepsání písmen do morseovky. """
     text = text.upper()
     ret = ""
 
@@ -28,6 +29,7 @@ def code(text):
     return  ret.strip()
 
 def decode(text):
+    """ Funcke na přepsání morseovky na písmena. """
     ret = ""
 
     letters = text.split(" ")
