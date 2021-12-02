@@ -1,1 +1,2 @@
-ahojs
+Ahoj!
+Změna tohohle souboru.
