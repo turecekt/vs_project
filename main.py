@@ -67,5 +67,13 @@ if __name__ == '__main__':
             print(f'Původni text: {mess} \nPřeložený text: {decode(mess)}')
     print('\nKonec Programu')
 
+def test_code():
+   
+    assert code("51") == "..... .----"
+    assert code("SOS") == "... --- ..."
 
+def test_decode():
+   
+    assert decode("..... .----") == "51"
+    assert decode("... | ---") == "S O"
 
