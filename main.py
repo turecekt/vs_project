@@ -44,5 +44,40 @@ def decodovani(vstup):
                     pismeno = ''
         return desifrovanaZprava
     except ValueError:
-        return "Chyba, Nelze přeložit!"
+        return 0
 
+def vypisZnaku():
+    znakPodporovan=""
+    vypisZnaku=""
+    for znakPodporovan in znaky:
+        vypisZnaku+=znakPodporovan
+        
+    print(vypisZnaku)
+
+def start():
+    print("Zvolte: 'e' pro encode, 'd' pro decode, jinou klávesu pro ukončení programu:")
+    print("Podporované znaky:")
+    vypisZnaku()
+    
+    typ = input()
+
+    if typ=="e":
+        print("Zadejte vstup pro encode:")
+        vstup = input()
+        print("Enkodováno:")
+        print(encodovani(vstup))
+        
+    elif typ=="d":
+        print("Zadejte vstup pro decode:")
+        vstup = input()
+
+        res = decodovani(vstup)       
+        if res!=0:
+            print("Dekodováno:")
+            print(decodovani(vstup))
+        else:
+            print("Chyba - Nelze dekódovat.")
+            start()
+
+print("Vítejte v encoderu/decoderu pro morseovku")
+start()
