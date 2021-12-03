@@ -24,3 +24,25 @@ def encodovani(vstup):
                 zprava+= ' '
         i += 1
     return zprava
+
+def decodovani(vstup):
+    try:
+        vstup += " "
+        desifrovanaZprava = ''
+        pismeno = ''
+        i = 0
+        for letter in vstup:
+            if (letter != ' '):
+                i = 0
+                pismeno += letter
+            else:
+                i += 1
+                if i == 2:
+                    desifrovanaZprava += ' '
+                else:
+                    desifrovanaZprava += list(znaky.keys())[list(znaky.values()).index(pismeno)]
+                    pismeno = ''
+        return desifrovanaZprava
+    except ValueError:
+        return "Chyba, Nelze přeložit!"
+
