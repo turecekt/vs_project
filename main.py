@@ -17,7 +17,7 @@ znaky = {
 def encodovani(vstup):
     zprava = ''
     i = 0
-    for znak in vstup:
+    for znak in vstup.upper():
         if znak != ' ':
             zprava += znaky[znak]
             if len(vstup)-1 != i:
