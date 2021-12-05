@@ -1,6 +1,7 @@
 import argparse
 import re
 import sys
+import array as arr
 
 letter_a = ".-"
 letter_b = "-..."
@@ -137,12 +138,20 @@ else:
 
 if morseObj:
     letters = split_to_letters(st.MorseString)
+    temp_letter = ""
     message = ""
+    a=arr.array('i',[])
     for i in range(number_of_letters):
         if i == 0 and (letters[i] == " " or letters[i] == "|"):
             sys.exit("please do not start with separators")
         if i == number_of_letters-1 and (letters[i] == " " or letters[i] == "|"):
             sys.exit("please do not end with separators")
+        if (temp_letter == " " and letters[i] == " ") or (temp_letter == "|" and letters[i] == "|"):
+            a.append(i)
+        #I want to try to get spaces/separators between words
+        
+        temp_letter = letters[i]
+
 
     for j in range(sep_number + 1):
         print(splitString[j])
@@ -152,6 +161,7 @@ if morseObj:
             message += list(MORSE_CODE_ALPHABET.keys())[list(MORSE_CODE_ALPHABET.values()).index(splitString[j])]
             # I was looking for some easy way to cooperate with the table ... I found this at (https://www.geeksforgeeks.org/morse-code-translator-python/) and changed for my code#
     print(message)
+    print("space counter", a)
 
 
 
@@ -171,5 +181,5 @@ if alphabetObj:
                 sys.exit("please do not start with separators")
         if splitString[i] != " " and splitString[i] != "|":
             alpha_message += MORSE_CODE_ALPHABET[splitString[i]]
-    
+
     print ("alphabet message  :", alpha_message)
