@@ -1,5 +1,8 @@
-
+"""Morse script."""
 znaky = {
+        """
+        Definice pole morseovky.
+        """
         'A': '.-', 'B': '-...',
         'C': '-.-.', 'D': '-..', 'E': '.',
         'F': '..-.', 'G': '--.', 'H': '....',
@@ -16,6 +19,14 @@ znaky = {
 }
 
 def encodovani(vstup):
+    """
+    Encodovani do morseovky
+    Funkce bere parametr vstup, kterym je string 
+    Funkce prochazi pole znak, zaroven transformuje vstup stringu na velka pismena.
+    Pokud znak neni prazdny. Hleda funkce shodny znak morseovky v poli abecedy.
+    Postupne tak sklada morseuv kod.
+    Funkce vraci morseovku.
+    """
     zprava = ''
     i = 0
     for znak in vstup.upper():
@@ -26,7 +37,17 @@ def encodovani(vstup):
         i += 1
     return zprava
 
+
 def decodovani(vstup):
+    """
+    Dekodovani z morseovky
+    Funkce bere parametr vstup, kterym je string??...
+    Funkce kontroluje, zda vstup neni prazdny
+    Do promene pismeno vklada pomoci iterace kazdy prvek ze stringu/ pole vstupu
+    Funkce prohledava pole znak a hleda shodu morseovky s abecednim predpisem v poli. Pokud se shoduji, vypise dany znak abecedy
+    Funkce pasivne osetruje chyby v pripadnem prekladu.
+    Funkce vraci desifrovanou zpravu.
+    """
     try:
         vstup += " "
         desifrovanaZprava = ''
