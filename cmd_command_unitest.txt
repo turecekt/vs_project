@@ -1,0 +1,9 @@
+py.exe -m pytest test_morseovka.py --cov=test_morseovka --cov-fail-under=80
+py.exe -m pytest test_morseovka.py
+
+//FLAKE8
+py.exe -m pip install flake8 flake8-docstrings
+py.exe -m flake8 test_morseovka.py   /// tohle je jen na soubor testu
+py.exe -m flake8 main.py			// no way fucking shit errrrooooor 19872934
+py.exe -m flake8 --output-file chyby.txt
+

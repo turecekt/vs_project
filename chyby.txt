@@ -1,0 +1,32 @@
+.\main.py:1:1: D100 Missing docstring in public module
+.\main.py:18:1: D103 Missing docstring in public function
+.\main.py:18:1: E302 expected 2 blank lines, found 1
+.\main.py:28:1: D103 Missing docstring in public function
+.\main.py:28:1: E302 expected 2 blank lines, found 1
+.\main.py:43:80: E501 line too long (96 > 79 characters)
+.\main.py:49:1: D103 Missing docstring in public function
+.\main.py:49:1: E302 expected 2 blank lines, found 1
+.\main.py:50:19: E225 missing whitespace around operator
+.\main.py:51:15: E225 missing whitespace around operator
+.\main.py:53:19: E225 missing whitespace around operator
+.\main.py:54:1: W293 blank line contains whitespace
+.\main.py:57:1: D103 Missing docstring in public function
+.\main.py:57:1: E302 expected 2 blank lines, found 1
+.\main.py:58:80: E501 line too long (89 > 79 characters)
+.\main.py:61:1: W293 blank line contains whitespace
+.\main.py:64:11: E225 missing whitespace around operator
+.\main.py:69:1: W293 blank line contains whitespace
+.\main.py:70:13: E225 missing whitespace around operator
+.\main.py:74:32: W291 trailing whitespace
+.\main.py:75:15: E225 missing whitespace around operator
+.\main.py:82:1: D103 Missing docstring in public function
+.\main.py:82:1: E302 expected 2 blank lines, found 1
+.\test_morseovka.py:1:1: D100 Missing docstring in public module
+.\test_morseovka.py:1:1: F403 'from main import *' used; unable to detect undefined names
+.\test_morseovka.py:1:1: F401 'main.*' imported but unused
+.\test_morseovka.py:1:19: W291 trailing whitespace
+.\test_morseovka.py:2:1: D103 Missing docstring in public function
+.\test_morseovka.py:2:1: E302 expected 2 blank lines, found 0
+.\test_morseovka.py:5:1: D103 Missing docstring in public function
+.\test_morseovka.py:5:1: E302 expected 2 blank lines, found 1
+.\test_morseovka.py:6:16: W292 no newline at end of file
