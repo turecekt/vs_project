@@ -46,6 +46,7 @@ def decodovani(vstup):
         return 0
 
 def vypisZnaku():
+    print("Podporované znaky:")
     znakPodporovan=""
     vypisZnaku=""
     for znakPodporovan in znaky:
@@ -55,12 +56,10 @@ def vypisZnaku():
 
 def start():
     print("Zvolte: 'e' pro encode, 'd' pro decode, jinou klávesu pro ukončení programu:")
-    print("Podporované znaky:")
-    vypisZnaku()
-    
     typ = input()
 
     if typ=="e":
+        vypisZnaku()
         print("Zadejte vstup pro encode:")
         vstup = input()
         print("Enkodováno:")
