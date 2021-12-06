@@ -20,12 +20,12 @@ znaky = {
 
 def encodovani(vstup):
     """
-    Encodovani do morseovky
-    Funkce bere parametr vstup, kterym je string 
-    Funkce prochazi pole znak, zaroven transformuje vstup stringu na velka pismena.
-    Pokud znak neni prazdny. Hleda funkce shodny znak morseovky v poli abecedy.
-    Postupne tak sklada morseuv kod.
-    Funkce vraci morseovku.
+    Funkce encodovani do morseovky
+    Funkce prochazi a kontroluje vstup, hleda odpovidajici hodnotu v poli znak
+    Args:
+        - vstup - string 
+    Returns:
+        - zprava - string - vraci morseovku.
     """
     zprava = ''
     i = 0
@@ -40,13 +40,12 @@ def encodovani(vstup):
 
 def decodovani(vstup):
     """
-    Dekodovani z morseovky
-    Funkce bere parametr vstup, kterym je string??...
-    Funkce kontroluje, zda vstup neni prazdny
-    Do promene pismeno vklada pomoci iterace kazdy prvek ze stringu/ pole vstupu
-    Funkce prohledava pole znak a hleda shodu morseovky s abecednim predpisem v poli. Pokud se shoduji, vypise dany znak abecedy
-    Funkce pasivne osetruje chyby v pripadnem prekladu.
-    Funkce vraci desifrovanou zpravu.
+    Funkce dekodovani z morseovky
+    Funkce prohledava pole znak a hleda shodu morseovky s abecednim predpisem v poli
+    Args:
+        - vstup - string
+    Returns:
+        - desifrovanaZprava - string - desifrovana zpravu.
     """
     try:
         vstup += " "
