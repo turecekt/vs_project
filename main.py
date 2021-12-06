@@ -1,4 +1,3 @@
-"""Morse Script."""
 znaky = {
         'A': '.-', 'B': '-...',
         'C': '-.-.', 'D': '-..', 'E': '.',
@@ -23,7 +22,7 @@ def encodovani(vstup):
             zprava += znaky[znak] + ' '
         else:
             zprava += ' '
-    return zprava
+    return zprava[:-1]
 
 def decodovani(vstup):
     try:
@@ -82,7 +81,6 @@ def start():
 def main():
     print("Vítejte v encoderu/decoderu pro morseovku")
     start()
-
 
 if __name__ == '__main__':
     main()
