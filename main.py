@@ -1,3 +1,5 @@
+"""Morse script."""
+
 znaky = {
         'A': '.-', 'B': '-...',
         'C': '-.-.', 'D': '-..', 'E': '.',
@@ -14,7 +16,13 @@ znaky = {
         '0': '-----'
 }
 
+
 def encodovani(vstup):
+    """Encode text.
+
+    >>> encodovani('A')
+    '.-'
+    """
     vstup = vstup.upper()
     zprava = ''
     for znak in vstup:
@@ -24,7 +32,13 @@ def encodovani(vstup):
             zprava += ' '
     return zprava[:-1]
 
+
 def decodovani(vstup):
+    """Decode text.
+
+    >>> decodovani('.-')
+    'A'
+    """
     try:
         vstup += " "
         desifrovanaZprava = ''
@@ -39,47 +53,65 @@ def decodovani(vstup):
                 if i == 2:
                     desifrovanaZprava += ' '
                 else:
-                    desifrovanaZprava += list(znaky.keys())[list(znaky.values()).index(pismeno)]
+                    desifrovanaZprava += list(znaky.keys())[
+                        list(znaky.values()).index(pismeno)
+                        ]
                     pismeno = ''
         return desifrovanaZprava
     except ValueError:
         return 0
 
+
 def vypisZnaku():
+    """Write the text.
+
+    >>> vypisZnaku()
+    """
     print("Podporované znaky:")
-    znakPodporovan=""
-    vypisZnaku=""
+    znakPodporovan = ""
+    vypisZnaku = ""
     for znakPodporovan in znaky:
-        vypisZnaku+=znakPodporovan
-        
+        vypisZnaku += znakPodporovan
+
     print(vypisZnaku)
 
+
 def start():
-    print("Zvolte: 'e' pro encode, 'd' pro decode, jinou klávesu pro ukončení programu:")
+    """Input.
+
+    >>> start()
+    """
+    print("Zvolte: 'e' pro encode, 'd' pro decode,"
+          " jinou klávesu pro ukončení programu:")
     typ = input()
 
-    if typ=="e":
+    if typ == "e":
         vypisZnaku()
         print("Zadejte vstup pro encode:")
         vstup = input()
         print("Enkodováno:")
         print(encodovani(vstup))
-        
-    elif typ=="d":
+    elif typ == "d":
         print("Zadejte vstup pro decode:")
         vstup = input()
 
-        res = decodovani(vstup)       
-        if res!=0:
+        res = decodovani(vstup)
+        if res != 0:
             print("Dekodováno:")
             print(decodovani(vstup))
         else:
             print("Chyba - Nelze dekódovat.")
             start()
 
+
 def main():
+    """Start program.
+
+    >>> main()
+    """
     print("Vítejte v encoderu/decoderu pro morseovku")
     start()
+
 
 if __name__ == '__main__':
     main()
