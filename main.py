@@ -1,3 +1,4 @@
+"""Morse Script."""
 znaky = {
         'A': '.-', 'B': '-...',
         'C': '-.-.', 'D': '-..', 'E': '.',
@@ -20,7 +21,7 @@ def encodovani(vstup):
     i = 0
     for znak in vstup:
         if znak != ' ':
-            zprava += znaky[znak]
+            zprava += znaky[znak] + ' '
         else:
             zprava += ' '
     return zprava
