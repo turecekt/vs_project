@@ -4,7 +4,12 @@
 
 
 def morse_code(line):
-    """Morseovka koder."""
+    """Funkce na kódováni morseovky.
+
+    Jako vstupní parametr akceptuje string obsahující
+    alfanumerické a bežné speciální znaky.
+    Na výstupu funkce vrací string ve formě morseovy abecedy.
+    """
     code_dict = {"A": ".-", "B": "-...", "C": "-.-.", "D": "-..",
                  "E": ".", "F": "..-.", "G": "--.", "H": "....",
                  "I": "..", "J": ".---", "K": "-.-", "L": ".-..",
@@ -26,7 +31,13 @@ def morse_code(line):
 
 
 def morse_decode(line):
-    """Morseovka dekoder."""
+    """Funkce na dekódovaní morseovky.
+
+    Jako vstupní parametr akceptuje string obsahujíci
+    znaky ".", "-", "/" a " ".
+    Na výstupu funkce vrací string alfanumerických a
+    běžných speciálních znaků.
+    """
     decode_dict = {".-": "A", "-...": "B", "-.-.": "C", "-..": "D",
                    ".": "E", "..-.": "F", "--.": "G", "....": "H",
                    "..": "I", ".---": "J", "-.-": "K", ".-..": "L",
