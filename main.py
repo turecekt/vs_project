@@ -20,11 +20,7 @@ znaky = {
 
 # Funkce pro enkódování textu.
 def encodovani(vstup):
-    """Encode text.
-
-    >>> encodovani('A')
-    '.-'
-    """
+    """Encode text."""
     vstup = vstup.upper()
     zprava = ''
     for znak in vstup:
@@ -37,11 +33,7 @@ def encodovani(vstup):
 
 # Funkce pro dekódování znaků
 def decodovani(vstup):
-    """Decode text.
-
-    >>> decodovani('.-')
-    'A'
-    """
+    """Decode text."""
     try:
         vstup += " "
         desifrovanaZprava = ''
@@ -67,10 +59,7 @@ def decodovani(vstup):
 
 # Funkce pro vypsání textů.
 def vypisZnaku():
-    """Write the text.
-
-    >>> vypisZnaku()
-    """
+    """Write the text."""
     print("Podporované znaky:")
     znakPodporovan = ""
     vypisZnaku = ""
@@ -82,10 +71,7 @@ def vypisZnaku():
 
 # Funkce pro vstup uživatele.
 def start():
-    """Input.
-
-    >>> start()
-    """
+    """Input."""
     print("Zvolte: 'e' pro encode, 'd' pro decode,"
           " jinou klávesu pro ukončení programu:")
     typ = input()
@@ -111,10 +97,7 @@ def start():
 
 # Funnkce pro spuštění programu
 def main():
-    """Start program.
-
-    >>> main()
-    """
+    """Start program."""
     print("Vítejte v encoderu/decoderu pro morseovku")
     start()
 
