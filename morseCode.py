@@ -1,7 +1,6 @@
 import argparse
 import re
 import sys
-import array as arr
 
 letter_a = ".-"
 letter_b = "-..."
@@ -84,19 +83,13 @@ parser.add_argument('MorseString', metavar='String', type=str, help='a string to
 
 st = parser.parse_args()
 
-errorObj = re.search(r'[^a-zA-Z0-9 \-.|]', st.MorseString, re.I)
+errorObj = re.search(r'[^a-zA-Z0-9 \-\.\|]', st.MorseString, re.I)
 
 if errorObj:
     sys.exit("please type in right characters")
-    
-number_of_letters = len(st.MorseString)
 
-""" /be careful about anything else than alphabet and dots and commas
+""" 
     extremely careful for \ ""
-    osetrit ze nesmi byt dva rozdelovace vedle sebe
-    pozor na mezeru na konci a na zacatku -- odstraneno
-    rozlisit rozdelovace a pak pouzit podle toho urceny rozdelovac
-    rozlisit jestli se jedna o decode nebo ncode
 """
 separatorObj = re.search(r'[\|]+', st.MorseString)
 whitespaceObj = re.search(r'[\s]+', st.MorseString)
@@ -107,9 +100,10 @@ if separatorObj and whitespaceObj:
     sys.exit("please use only one way to split letters/words")
 
 if morseObj and alphabetObj:
-    sys.exit("please use only alphabet to Ncode or morse code to Decode")
+    sys.exit("please use only alphabet to Ncode it or morse code to Decode it")
 
 if separatorObj:
+    st.MorseString = re.sub(r'\|\|\|+', "||", st.MorseString)
     newString = re.sub(r'\|\|', "|----....|", st.MorseString)
     splitString = newString.split("|")
 elif whitespaceObj:
@@ -120,18 +114,16 @@ else:
     splitString = newString.split()
 
 len_splitString = len(splitString)
-
+len_basic_string = len(split_to_letters(st.MorseString))
 
 
 if morseObj:
     letters = split_to_letters(st.MorseString)
-    temp_letter = ""
     message = ""
-    sep_index=arr.array('i',[])
-    for i in range(number_of_letters):
+    for i in range(len_basic_string):
         if i == 0 and (letters[i] == " " or letters[i] == "|"):
             sys.exit("please do not start with separators")
-        if i == number_of_letters-1 and (letters[i] == " " or letters[i] == "|"):
+        if i == len_basic_string-1 and (letters[i] == " " or letters[i] == "|"):
             sys.exit("please do not end with separators")
 
 
@@ -141,8 +133,8 @@ if morseObj:
         else:
             message += list(MORSE_CODE_ALPHABET.keys())[list(MORSE_CODE_ALPHABET.values()).index(splitString[j])]
             # I was looking for some easy way to cooperate with the table ... I found this at (https://www.geeksforgeeks.org/morse-code-translator-python/) and changed for my code#
-    print(message)
 
+    print(message)
 
 
 if alphabetObj:
@@ -150,12 +142,15 @@ if alphabetObj:
     splitString = split_to_letters(st.MorseString)
     alpha_message = ""
 
-    for i in range(number_of_letters):
+    for i in range(len_basic_string):
         if i != 0:
                 alpha_message += "|"
         else:
             if splitString[i] == " " or splitString[i] == "|":
                 sys.exit("please do not start with separators")
+        if i == len_basic_string - 1:
+            sys.exit("please do not end with separators")
+
         if splitString[i] != " " and splitString[i] != "|":
             alpha_message += MORSE_CODE_ALPHABET[splitString[i]]
 
