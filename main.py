@@ -1,5 +1,6 @@
 """Morse script."""
 
+# Pole znaků.
 znaky = {
         'A': '.-', 'B': '-...',
         'C': '-.-.', 'D': '-..', 'E': '.',
@@ -17,6 +18,7 @@ znaky = {
 }
 
 
+# Funkce pro enkódování textu.
 def encodovani(vstup):
     """Encode text.
 
@@ -33,6 +35,7 @@ def encodovani(vstup):
     return zprava[:-1]
 
 
+# Funkce pro dekódování znaků
 def decodovani(vstup):
     """Decode text.
 
@@ -62,6 +65,7 @@ def decodovani(vstup):
         return 0
 
 
+# Funkce pro vypsání textů.
 def vypisZnaku():
     """Write the text.
 
@@ -76,6 +80,7 @@ def vypisZnaku():
     print(vypisZnaku)
 
 
+# Funkce pro vstup uživatele.
 def start():
     """Input.
 
@@ -104,6 +109,7 @@ def start():
             start()
 
 
+# Funnkce pro spuštění programu
 def main():
     """Start program.
 
