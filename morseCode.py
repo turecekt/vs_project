@@ -40,6 +40,8 @@ number_6 = "-...."
 number_7 = "--..."
 number_8 = "---.."
 number_9 = "----."
+space = "....----"
+separator = "----...."
 
 
 MORSE_CODE_ALPHABET = { 
@@ -61,7 +63,8 @@ MORSE_CODE_ALPHABET = {
                     '3':'...--', '4':'....-',
                     '5':'.....', '6':'-....',
                     '7':'--...', '8':'---..', 
-                    '9':'----.', '0':'-----'
+                    '9':'----.', '0':'-----',
+                    ' ':'....----', '|':'----....'
                     }
 
 def split_to_letters(my_string):
@@ -70,11 +73,8 @@ def split_to_letters(my_string):
 morseAlphNum = [letter_a, letter_b, letter_c, letter_d, letter_e, letter_f, letter_g, letter_h, letter_ch, letter_i, letter_j,
                 letter_k, letter_l, letter_m, letter_n, letter_o, letter_p, letter_q, letter_r, letter_s, letter_t, letter_v, letter_u, 
                 letter_w, letter_x, letter_y, letter_z, number_0, number_1, number_2, number_3, number_4, number_5, number_6, 
-                number_7, number_8, number_9]
+                number_7, number_8, number_9, space, separator]
 
-""" for letter in morseAlpNum:
-    if letter == ".":
-        print("yes we are there") """
 
 msg = "type in the string consist of morse code or alphabet"
 
@@ -87,24 +87,14 @@ st = parser.parse_args()
 errorObj = re.search(r'[^a-zA-Z0-9 \-.|]', st.MorseString, re.I)
 
 if errorObj:
-    print ("sys exit")
     sys.exit("please type in right characters")
-else:
-    print ("%s" %st.MorseString)
     
-
-number_of_whitespaces = st.MorseString.count(" ")
-number_of_separators = st.MorseString.count("|")
 number_of_letters = len(st.MorseString)
-
-print(number_of_letters)
-
-
 
 """ /be careful about anything else than alphabet and dots and commas
     extremely careful for \ ""
     osetrit ze nesmi byt dva rozdelovace vedle sebe
-    pozor na mezeru na konci a na zacatku
+    pozor na mezeru na konci a na zacatku -- odstraneno
     rozlisit rozdelovace a pak pouzit podle toho urceny rozdelovac
     rozlisit jestli se jedna o decode nebo ncode
 """
@@ -120,19 +110,16 @@ if morseObj and alphabetObj:
     sys.exit("please use only alphabet to Ncode or morse code to Decode")
 
 if separatorObj:
-    newString = re.sub(r'[\|\|]+', "|", st.MorseString)
-    number_of_separators = newString.count("|")
-    sep_number = number_of_separators
+    newString = re.sub(r'\|\|', "|----....|", st.MorseString)
     splitString = newString.split("|")
 elif whitespaceObj:
-    newString = re.sub(r'[\s\s]+', " ", st.MorseString)
-    number_of_whitespaces = newString.count(" ")
-    sep_number = number_of_whitespaces
+    newString = re.sub(r'\s\s', " ....---- ", st.MorseString)
     splitString = newString.split()
 else:
-    sep_number = 0
     newString = st.MorseString
     splitString = newString.split()
+
+len_splitString = len(splitString)
 
 
 
@@ -140,40 +127,30 @@ if morseObj:
     letters = split_to_letters(st.MorseString)
     temp_letter = ""
     message = ""
-    a=arr.array('i',[])
+    sep_index=arr.array('i',[])
     for i in range(number_of_letters):
         if i == 0 and (letters[i] == " " or letters[i] == "|"):
             sys.exit("please do not start with separators")
         if i == number_of_letters-1 and (letters[i] == " " or letters[i] == "|"):
             sys.exit("please do not end with separators")
-        if (temp_letter == " " and letters[i] == " ") or (temp_letter == "|" and letters[i] == "|"):
-            a.append(i)
-        #I want to try to get spaces/separators between words
-        
-        temp_letter = letters[i]
 
 
-    for j in range(sep_number + 1):
-        print(splitString[j])
+    for j in range(len_splitString):
         if splitString[j] not in morseAlphNum:
             sys.exit("please fill in right morse code")
         else:
             message += list(MORSE_CODE_ALPHABET.keys())[list(MORSE_CODE_ALPHABET.values()).index(splitString[j])]
             # I was looking for some easy way to cooperate with the table ... I found this at (https://www.geeksforgeeks.org/morse-code-translator-python/) and changed for my code#
     print(message)
-    print("space counter", a)
 
 
 
 if alphabetObj:
-    print("working on decode")
     st.MorseString = st.MorseString.upper()
     splitString = split_to_letters(st.MorseString)
-    print(splitString)
     alpha_message = ""
 
     for i in range(number_of_letters):
-        print(splitString[i])
         if i != 0:
                 alpha_message += "|"
         else:
