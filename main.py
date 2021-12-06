@@ -1,7 +1,7 @@
 """Morse script."""
 znaky = {
         """
-        Definice pole morseovky.
+        Definition of array for loop.
         """
         'A': '.-', 'B': '-...',
         'C': '-.-.', 'D': '-..', 'E': '.',
@@ -20,12 +20,12 @@ znaky = {
 
 def encodovani(vstup):
     """
-    Funkce encodovani do morseovky
-    Funkce prochazi a kontroluje vstup, hleda odpovidajici hodnotu v poli znak
+    Encode string to morse code
     Args:
-        - vstup - string 
+        - vstup - string
+    >>> encodovani('vstup')
     Returns:
-        - zprava - string - vraci morseovku.
+        - zprava - string.
     """
     zprava = ''
     i = 0
@@ -40,12 +40,12 @@ def encodovani(vstup):
 
 def decodovani(vstup):
     """
-    Funkce dekodovani z morseovky
-    Funkce prohledava pole znak a hleda shodu morseovky s abecednim predpisem v poli
+    Decode string to alphabet 
     Args:
         - vstup - string
+    >>> decodovani('vstup')
     Returns:
-        - desifrovanaZprava - string - desifrovana zpravu.
+        - desifrovanaZprava - string.
     """
     try:
         vstup += " "
