@@ -2,6 +2,9 @@
 
 """Zaznamenat vstup z konzole"""
 print("Zadejte souřadnice trojuhelníku\n")
+A = (0, 0)
+B = (0, 0)
+C = (0, 0)
 A = (input("bod A - souřadnice x: "), input("bod A - souřadnice y: "))
 B = (input("bod B - souřadnice x: "), input("bod B - souřadnice y: "))
 C = (input("bod C - souřadnice x: "), input("bod C - souřadnice y: "))
