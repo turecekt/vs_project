@@ -20,9 +20,6 @@ def is_valid(Triangle):
 
     Jinak řečeno, zdali všechny body neleží na stejné přímce.
 
-    >>> Triangle = [(0,0), (3,0), (0,4)]
-    >>> is_valid(Triangle)
-    True
     >>> Triangle = [(1,0), (1,7), (1,4)]
     >>> is_valid(Triangle)
     False
@@ -34,7 +31,7 @@ def side_lengths(Triangle):
     """Funkce side_lengths vrací list délek stran trojuhelníku.
 
     >>> Triangle = [(0,0), (3,0), (0,4)]
-    >>> side_lenghts(Triangle)
+    >>> side_lengths(Triangle)
     [5,4,3]
     """
     sides = [1, 1, 1]
@@ -60,25 +57,3 @@ def is_right(Triangle):
     True
     """
     return False
-
-
-def test_is_valid():
-    """Test vyhodnocení bodů na jedné přímce jako False."""
-    assert is_valid([(0, 0), (0, 4), (0, -2)]) is False
-    assert is_valid([(0, 0), (3, 0), (0, -2)]) is True
-
-
-def test_side_lengths():
-    """Test výpočtu délek stran."""
-    assert side_lengths([(0, 0), (3, 0), (0, 4)]) == [5, 4, 3]
-
-
-def test_circumference():
-    """Test výpočtu obvodu stran."""
-    assert circumference([(0, 0), (3, 0), (0, 4)]) == 12
-
-
-def test_is_right():
-    """Test určení pravoúhlého trojuhelníku."""
-    assert is_right([(0, 0), (3, 0), (0, 4)]) is True
-    assert is_right([(0, 0), (3, 2), (1, 4)]) is False
