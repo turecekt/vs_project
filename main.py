@@ -20,7 +20,11 @@ znaky = {
 
 # Funkce pro enkódování textu.
 def encodovani(vstup):
-    """Encode text."""
+    """Encode text.
+
+    >>> encodovani('A')
+    '.-'
+    """
     vstup = vstup.upper()
     zprava = ''
     for znak in vstup:
@@ -33,7 +37,11 @@ def encodovani(vstup):
 
 # Funkce pro dekódování znaků
 def decodovani(vstup):
-    """Decode text."""
+    """Decode text.
+
+    >>> decodovani('.-')
+    'A'
+    """
     try:
         vstup += " "
         desifrovanaZprava = ''
@@ -59,7 +67,12 @@ def decodovani(vstup):
 
 # Funkce pro vypsání textů.
 def vypisZnaku():
-    """Write the text."""
+    """Write the text.
+
+    >>> vypisZnaku()
+    Podporované znaky:
+    ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890
+    """
     print("Podporované znaky:")
     znakPodporovan = ""
     vypisZnaku = ""
