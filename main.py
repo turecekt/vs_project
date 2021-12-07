@@ -16,8 +16,16 @@ morse_dict = {
     '0':'-----'
 }
 
+
 def code(text):
-    """ Funkce na přepsání písmen a čísel do morseovky. """
+    """ Funkce na přepsání písmen a čísel do morseovky. 
+    
+    >>>code('123 45')
+    '.---- ..--- ...-- | ....- .....'
+    >>>code('Ahoj')
+    '.- .... --- .---'
+    """
+    
     text = text.upper()
     ret = ""
 
@@ -28,8 +36,16 @@ def code(text):
             ret += "| "
     return  ret.strip()
 
+
 def decode(text):
-    """ Funcke na přepsání morseovky na písmena a čísla. """
+    """ Funcke na přepsání morseovky na písmena a čísla. 
+    
+     >>>decode('.... . .... .!')
+    'Error'
+    >>>decode('.--. . ... | -.- --- -.-. -.- .-')
+    'PES KOCKA'
+    """
+    
     ret = ""
 
     letters = text.split(" ")
@@ -43,16 +59,19 @@ def decode(text):
 
     return ret.strip()
 
+
 def get_key(val):
-    """Překlad textu jendnoho písmene"""
+    """Překlad textu jendnoho písmene."""
+    
     for key, value in morse_dict.items():
         if val == value:
             return key
     return ""
 
-# Press the green button in the gutter to run the script.
+
 if __name__ == '__main__':
-    """Hlavní funkce main"""
+    """Hlavní funkce main. """
+    
     print("Zvolte akci: ")
     choice = float(input("1 - Převod do Morseovky \n2 - Převod z Morseovky\n"))
     mess = str(input("Zadejte text k převodu: "))
@@ -67,19 +86,18 @@ if __name__ == '__main__':
             print(f'Původni text: {mess} \nPřeložený text: {decode(mess)}')
     print('\nKonec Programu')
 
+ 
 # Unit testy.
 def test_code():
-   
     assert code("51") == "..... .----"
     assert code("SOS") == "... --- ..."
 
+
 def test_decode():
-   
     assert decode("..... .----") == "51"
     assert decode("... | ---") == "S O"
 
 def test_get_key():
-   
     assert get_key('.-..') == "L"
     assert get_key('...-') == "V"
 
