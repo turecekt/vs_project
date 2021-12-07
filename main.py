@@ -1,3 +1,5 @@
+"""Array."""
+
 MorseCodeArray = {'A': '.-', 'B': '-...', ' ': '',
                   'C': '-.-.', 'D': '-..', 'E': '.',
                   'F': '..-.', 'G': '--.', 'H': '....',
@@ -16,7 +18,11 @@ MorseCodeArray = {'A': '.-', 'B': '-...', ' ': '',
 
 
 # Metoda šifrování v Morseovu abecedu
+"""Functions."""
+
+
 def encrypt(userText):
+    """Convert English text to Morse code."""
     userText = userText.upper()
     error = 'Invalid data'
     cipher = ''
@@ -39,7 +45,9 @@ def encrypt(userText):
 
 
 # Metoda dešifrování z Morseovou abecedy
+
 def decrypt(userText):
+    """Convert Morse code to English text."""
     error = 'Invalid data'
     userText += ' '
     decipher = ''
@@ -55,7 +63,8 @@ def decrypt(userText):
                 if i == 2:
                     decipher += ' '
                 else:
-                    decipher += list(MorseCodeArray.keys())[list(MorseCodeArray.values()).index(citext)]
+                    decipher += list(MorseCodeArray.keys())
+                    [list(MorseCodeArray.values()).index(citext)]
                     citext = ''
             else:
                 errorcountdecrypt = errorcountdecrypt + 1
@@ -66,7 +75,8 @@ def decrypt(userText):
 
 
 def main():
-    print('To encrypt text in Morse code insert "M", to decode into English insert "E"')
+    """Print text and receive data from the keyboard."""
+    print('Enter "M" for Morse Code, to decode into English insert "E"')
     count = input()
     count = count.lower()
     if count == "m":
