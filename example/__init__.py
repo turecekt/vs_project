@@ -1,5 +1,6 @@
 """Výpočet vlastností trojuhelníka."""
 import math
+import sys
 
 
 def ask(prompt, default):
@@ -44,9 +45,18 @@ def is_right(Triangle):
 
 """Zaznamenat vstup z konzole"""
 print("Zadejte souřadnice trojuhelníku\n")
-A = (ask("bod A - souřadnice x: ", 0), ask("bod A - souřadnice y: ", 0))
-B = (ask("bod B - souřadnice x: ", 3), ask("bod B - souřadnice y: ", 0))
-C = (ask("bod C - souřadnice x: ", 0), ask("bod C - souřadnice y: ", 4))
+A = (0, 0)
+B = (3, 0)
+C = (0, 4)
+
+print(len(sys.argv))
+if len(sys.argv) > 1:
+    print(sys.argv[1])
+    if sys.argv[1] == "input":
+        A = (ask("bod A - souřadnice x:", 0), ask("bod A - souřadnice y:", 0))
+        B = (ask("bod B - souřadnice x:", 3), ask("bod B - souřadnice y:", 0))
+        C = (ask("bod C - souřadnice x:", 0), ask("bod C - souřadnice y:", 4))
+
 Triangle = [A, B, C]
 print("\nZadali jste Trojuhelník se souřadnicemi:")
 print("A: ", A)
