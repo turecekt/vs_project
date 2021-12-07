@@ -20,9 +20,9 @@ morse_dict = {
 def code(text):
     """ Funkce na přepsání písmen a čísel do morseovky. 
     
-    >>>code('123 45')
+    >>> code('123 45')
     '.---- ..--- ...-- | ....- .....'
-    >>>code('Ahoj')
+    >>> code('Ahoj')
     '.- .... --- .---'
     """
     
@@ -40,9 +40,9 @@ def code(text):
 def decode(text):
     """ Funcke na přepsání morseovky na písmena a čísla. 
     
-     >>>decode('.... . .... .!')
+    >>> decode('.... . .... .!')
     'Error'
-    >>>decode('.--. . ... | -.- --- -.-. -.- .-')
+    >>> decode('.--. . ... | -.- --- -.-. -.- .-')
     'PES KOCKA'
     """
     
