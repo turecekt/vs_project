@@ -19,9 +19,8 @@ morse_dict = {
 
 
 def code(text):
-    """ 
+    """
     Funkce na přepsání písmen a čísel do morseovky.
-    
     >>> code('123 45')
     '.---- ..--- ...-- | ....- .....'
     >>> code('Ahoj')
@@ -40,9 +39,8 @@ def code(text):
 
 
 def decode(text):
-    """ 
-    Funcke na přepsání morseovky na písmena a čísla.
-    
+    """
+    Funkce na přepsání morseovky na písmena a čísla.
     >>> decode('.... . .... .!')
     'Error'
     >>> decode('.--. . ... | -.- --- -.-. -.- .-')
@@ -52,10 +50,10 @@ def decode(text):
     ret = ""
 
     letters = text.split(" ")
-    for l in letters:
+    for letter in letters:
         if l == "|":
             ret += " "
-        elif l in morse_dict.values():
+        elif letter in morse_dict.values():
             ret += get_key(l)
         else:
             return "Error"
@@ -87,18 +85,21 @@ if __name__ == '__main__':
             print(f'Původni text: {mess} \nPřeložený text: {decode(mess)}')
     print('\nKonec Programu')
 
- 
+
 # Unit testy.
 def test_code():
+    """Unit test funkce Code."""
     assert code("51") == "..... .----"
     assert code("SOS") == "... --- ..."
 
 
 def test_decode():
+    """Unit test funkce Decode."""
     assert decode("..... .----") == "51"
     assert decode("... | ---") == "S O"
 
 
 def test_get_key():
+    """Unit test funkce Get_key."""
     assert get_key('.-..') == "L"
     assert get_key('...-') == "V"
