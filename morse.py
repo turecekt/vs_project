@@ -10,7 +10,7 @@ DIR_DoMorseovky = {'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..',
                    'Y': '-.--', 'Z': '--..',
                    '0': '-----', '1': '.----', '2': '..---', '3': '...--', '4': '....-',
                    '5': '.....', '6': '-....', '7': '--...', '8': '---..', '9': '----.',
-                   '.': '.-.-.-', ', ': '--..--', '-': '-....-'}
+                   '.': '.-.-.-', ',': '--..--', '-': '-....-', ':': '---...'}
 
 DIR_ZMorseovky = {'.-': 'A', '-...': 'B', '-.-.': 'C', '-..': 'D',
                   '.': 'E', '..-.': 'F', '--.': 'G', '....': 'H',
@@ -21,12 +21,10 @@ DIR_ZMorseovky = {'.-': 'A', '-...': 'B', '-.-.': 'C', '-..': 'D',
                   '-.--': 'Y', '--..': 'Z',
                   '-----': '0', '.----': '1', '..---': '2', '...--': '3', '....-': '4',
                   '.....': '5', '-....': '6', '--...': '7', '---..': '8', '----.': '9',
-                  '.-.-.-': '.', '--..--': ', ', '-....-': '-'}
+                  '.-.-.-': '.', '--..--': ',', '-....-': '-', '---...': ':'}
 
 
-# Překlad do morseovky
 def to_morse(retezec):
-
     """Funkce to_morse vrací vstupní řetězec převedený do morseovky.
         Argumenty:
             - retezec - Vstup funkce
@@ -48,7 +46,6 @@ def to_morse(retezec):
 
 
 def from_morse(retezec):
-
     """Funkce from_morse vrací vstupní řetězec převedený z morseovky.
             Argumenty:
                 - retezec - Vstup funkce
@@ -71,7 +68,9 @@ def from_morse(retezec):
 
 
 # Hlavní funkce
-def main():
+
+
+if __name__ == "__main__":
     operace = int(input("Vyberte si překlad:\n"
                         "1 - Do morseovky\n"
                         "2 - Z morseovky\n"))
@@ -94,5 +93,15 @@ def main():
     # V případě špatného výběru operace program končí
 
 
-if __name__ == "__main__":
-    main()
+# Pytest pro převod do morseovky
+def test_tomorse():
+    assert to_morse('EA') == '. .-'
+    assert to_morse('12') == '.---- ..---'
+    assert to_morse('XYZ: 26, 3, 7') == '-..- -.-- --.. ---... ..--- -.... --..-- ...-- --..-- --...'
+
+
+# Pytest pro převod z morseovky
+def test_frommorse():
+    assert from_morse('..... ----.') == '59'
+    assert from_morse('. ..... --..-- -. --...') == 'E5,N7'
+    assert from_morse('.---- ..--- ...-- -....- ....- ..... -.... -....- --... ---.. ----.') == '123-456-789'
