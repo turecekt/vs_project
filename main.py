@@ -54,7 +54,7 @@ def decode(text):
         if letter == "|":
             ret += " "
         elif letter in morse_dict.values():
-            ret += get_key(l)
+            ret += get_key(letter)
         else:
             return "Error"
 
