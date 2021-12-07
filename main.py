@@ -1,7 +1,7 @@
 # Slovník pro Morseovu abecedu.
 morse_dict = {
     'A': '.-',   'B': '-...',
-    'C' :'-.-.', 'D': '-..',  'E': '.',
+    'C': '-.-.', 'D': '-..',  'E': '.',
     'F': '..-.', 'G': '--.', 'H': '....',
     'I': '..',   'J': '.---', 'K': '-.-',
     'L': '.-..', 'M': '--', 'N': '-.',
@@ -18,8 +18,7 @@ morse_dict = {
 
 
 def code(text):
-    """ Funkce na přepsání písmen a čísel do morseovky. 
-    
+    """ Funkce na přepsání písmen a čísel do morseovky.
     >>> code('123 45')
     '.---- ..--- ...-- | ....- .....'
     >>> code('Ahoj')
