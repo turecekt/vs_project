@@ -8,8 +8,9 @@ DIR_DoMorseovky = {'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..',
                    'Q': '--.-', 'R': '.-.', 'S': '...', 'T': '-',
                    'U': '..-', 'V': '...-', 'W': '.--', 'X': '-..-',
                    'Y': '-.--', 'Z': '--..',
-                   '0': '-----', '1': '.----', '2': '..---', '3': '...--', '4': '....-',
-                   '5': '.....', '6': '-....', '7': '--...', '8': '---..', '9': '----.',
+                   '0': '-----', '1': '.----', '2': '..---', '3': '...--',
+                   '4': '....-', '5': '.....', '6': '-....', '7': '--...',
+                   '8': '---..', '9': '----.',
                    '.': '.-.-.-', ',': '--..--', '-': '-....-', ':': '---...'}
 
 DIR_ZMorseovky = {'.-': 'A', '-...': 'B', '-.-.': 'C', '-..': 'D',
@@ -19,19 +20,20 @@ DIR_ZMorseovky = {'.-': 'A', '-...': 'B', '-.-.': 'C', '-..': 'D',
                   '--.-': 'Q', '.-.': 'R', '...': 'S', '-': 'T',
                   '..-': 'U', '...-': 'V', '.--': 'W', '-..-': 'X',
                   '-.--': 'Y', '--..': 'Z',
-                  '-----': '0', '.----': '1', '..---': '2', '...--': '3', '....-': '4',
-                  '.....': '5', '-....': '6', '--...': '7', '---..': '8', '----.': '9',
+                  '-----': '0', '.----': '1', '..---': '2', '...--': '3',
+                  '....-': '4', '.....': '5', '-....': '6', '--...': '7',
+                  '---..': '8', '----.': '9',
                   '.-.-.-': '.', '--..--': ',', '-....-': '-', '---...': ':'}
 
 
 def to_morse(retezec):
     """Funkce to_morse vrací vstupní řetězec převedený do morseovky.
-        Argumenty:
-            - retezec - Vstup funkce
-        Vrací:
-            - string - Výstup funkce
-        """
 
+    Argumenty:
+        - retezec - Vstup funkce
+    Vrací:
+        - string - Výstup funkce
+    """
     morse = []
     # přeložené znaky se ukládají do pole morse
 
@@ -47,12 +49,12 @@ def to_morse(retezec):
 
 def from_morse(retezec):
     """Funkce from_morse vrací vstupní řetězec převedený z morseovky.
-            Argumenty:
-                - retezec - Vstup funkce
-            Vrací:
-                - string - Výstup funkce
-            """
 
+    Argumenty:
+        - retezec - Vstup funkce
+    Vrací:
+        - string - Výstup funkce
+    """
     morse = retezec.split()
     # vstup se rozdělí na jednotlivé znaky které následně hledá ve slovníku
     preklad = []
@@ -95,13 +97,17 @@ if __name__ == "__main__":
 
 # Pytest pro převod do morseovky
 def test_tomorse():
+    """Funkce test_tomorse testuje zda funkce to_morse funguje správně."""
     assert to_morse('EA') == '. .-'
     assert to_morse('12') == '.---- ..---'
-    assert to_morse('XYZ: 26, 3, 7') == '-..- -.-- --.. ---... ..--- -.... --..-- ...-- --..-- --...'
+    assert to_morse('XYZ: 26, 3, 7') ==\
+           '-..- -.-- --.. ---... ..--- -.... --..-- ...-- --..-- --...'
 
 
 # Pytest pro převod z morseovky
 def test_frommorse():
+    """Funkce test_frommorse testuje zda funkce from_morse funguje správně."""
     assert from_morse('..... ----.') == '59'
     assert from_morse('. ..... --..-- -. --...') == 'E5,N7'
-    assert from_morse('.---- ..--- ...-- -....- ....- ..... -.... -....- --... ---.. ----.') == '123-456-789'
+    assert from_morse('.---- ..--- ...-- -....- ....-'
+                      ' ..... -.... -....- --... ---.. ----.') == '123-456-789'
