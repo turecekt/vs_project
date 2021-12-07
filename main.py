@@ -16,7 +16,6 @@ morse_dict = {
     '0': '-----'
 }
 
-
 def code(text):
     """ Funkce na přepsání písmen a čísel do morseovky.
     >>> code('123 45')
@@ -24,7 +23,7 @@ def code(text):
     >>> code('Ahoj')
     '.- .... --- .---'
     """
-    
+
     text = text.upper()
     ret = ""
 
@@ -33,18 +32,17 @@ def code(text):
             ret += morse_dict[letter] + " "
         else:
             ret += "| "
-    return  ret.strip()
+    return ret.strip()
 
 
 def decode(text):
-    """ Funcke na přepsání morseovky na písmena a čísla. 
-    
+    """ Funcke na přepsání morseovky na písmena a čísla.
     >>> decode('.... . .... .!')
     'Error'
     >>> decode('.--. . ... | -.- --- -.-. -.- .-')
     'PES KOCKA'
     """
-    
+
     ret = ""
 
     letters = text.split(" ")
@@ -61,7 +59,6 @@ def decode(text):
 
 def get_key(val):
     """Překlad textu jendnoho písmene."""
-    
     for key, value in morse_dict.items():
         if val == value:
             return key
@@ -70,7 +67,7 @@ def get_key(val):
 
 if __name__ == '__main__':
     """Hlavní funkce main. """
-    
+
     print("Zvolte akci: ")
     choice = float(input("1 - Převod do Morseovky \n2 - Převod z Morseovky\n"))
     mess = str(input("Zadejte text k převodu: "))
