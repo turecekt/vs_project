@@ -21,6 +21,15 @@ Vo Windowse môžeme nahradiť `python3` za `py`
 - [ ] Doplnenie type-hintov
 - [ ] Uplna pyright komatibilita (staticke typovanie)
 
+## Datum zapoctu
+
+17.12.2021
+
 ## Ukazka
 
 ![Screenshot_2021-11-30_19-43-05](https://user-images.githubusercontent.com/20902250/144108317-d0fbfc5f-d038-4409-afbe-6552ba84d146.png)
+# Autori
+
+- Peter Vacho
+- Jozef Šranko
+- Martin Lehmden
