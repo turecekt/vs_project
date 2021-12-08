@@ -16,7 +16,7 @@ Vo Windowse môžeme nahradiť `python3` za `py`
 - [x] Hladanie minima a maxima
 - [x] Obdrzanie cisiel z command-line argumentov
 - [x] Vyber algoritmu
-- [ ] Unit testy
+- [X] Unit testy
 - [ ] Uplna flake8 kompatibilita (linting)
 - [ ] Doplnenie type-hintov
 - [ ] Uplna pyright komatibilita (staticke typovanie)

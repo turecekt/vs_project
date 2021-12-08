@@ -6,6 +6,7 @@ from minimax import utils
 
 class TestMain(unittest.TestCase):
     def test_parse_args(self):
+        """Otestovanie správnosti funkcie parse_args."""
         with self.subTest(msg="Overenie fungovania parse_args pre nahodne cisla (bez arg)"):
             with unittest.mock.patch("minimax.__main__.sys.argv", ["subor"]):
                 with unittest.mock.patch("minimax.__main__.random.randint", return_value=1):
