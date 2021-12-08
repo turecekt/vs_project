@@ -4,7 +4,7 @@ hlavnom skripte.
 """
 
 
-def minimax(cislo):
+def minimax(cisla):
     """
     Funkcia pre najdenie maxima a minima zadanej sekvencie cisiel.
 
@@ -17,12 +17,12 @@ def minimax(cislo):
     Bezne by sme ale chceli vyuzit tieto funkcie, namiesto implementovania
     niecoho co jazyk samotny uz podporuje.
     """
-    minimum = cislo[0]
-    maximum = cislo[0]
+    minimum = cisla[0]
+    maximum = cisla[0]
     i_min = 0
     i_max = 0
 
-    for i, cislo in enumerate(cislo):
+    for i, cislo in enumerate(cisla):
         if cislo < minimum:
             minimum = cislo
             i_min = i
