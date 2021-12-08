@@ -19,7 +19,7 @@ Vo Windowse môžeme nahradiť `python3` za `py`
 - [X] Unit testy
 - [x] Uplna flake8 kompatibilita (linting)
 - [x] Doplnenie type-hintov
-- [x] Uplna pyright komatibilita (staticke typovanie)
+- [x] Uplna `pyright` a `mypy` komatibilita (staticke typovanie)
 
 ## Ukážka
 
