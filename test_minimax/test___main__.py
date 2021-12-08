@@ -1,3 +1,5 @@
+"""Tento subor obsahuje testy pre minimax/__main__.py."""
+
 import unittest
 import unittest.mock
 from minimax import __main__ as main
@@ -5,6 +7,8 @@ from minimax import utils
 
 
 class TestMain(unittest.TestCase):
+    """Tato trieda obsahuje funkcie pre testovanie __main__ suboru."""
+
     def test_parse_args(self):
         """Otestovanie správnosti funkcie parse_args."""
         with self.subTest(msg="Overenie fungovania parse_args pre nahodne cisla (bez arg)"):

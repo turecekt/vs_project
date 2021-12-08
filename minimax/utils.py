@@ -1,7 +1,5 @@
-"""
-Tento subor obsahuje potrebne utility funkcie vyuzivane v
-hlavnom skripte.
-"""
+"""Tento subor obsahuje potrebne utility funkcie vyuzivane v hlavnom skripte."""
+
 from typing import List, Tuple, Sequence, MutableSequence, Optional
 
 
@@ -130,7 +128,9 @@ def _quick_sort(
 
 def quick_sort(arr: Sequence[int]) -> List[int]:
     """
-    Wrapper pre _quick_sort ktory funguje na principe kopii namiesto in-place upravy listu.
+    Funkcia sluzi ako wrapper pre _quick_sort, ktory pouziva kopie namiesto in-place upravy listu.
+
+    Ukazka pouzitia funkcie:
     >>> lst = [1, 8, 0, -5, 2, 9, 100, 6]
     >>> quick_sort(lst)
     [-5, 0, 1, 2, 6, 8, 9, 100]

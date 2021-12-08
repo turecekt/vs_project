@@ -1,3 +1,11 @@
+"""
+Tento subor obsahuje funkcie relevantne k zapinani programu.
+
+Toto zahrnuje nacitavanie CLI argumentov a nacitavanie cisiel pre zoradovanie
+podla tychto argumentov, vyber zoradovacieho algoritmu na zaklade vstupu od
+pouzivatela a hlavnu funkciu main, ktora je vykonana pri zapnuti programu.
+"""
+
 import sys
 import random
 import time

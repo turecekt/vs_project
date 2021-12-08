@@ -1,8 +1,12 @@
+"""Tento subor obsahuje testy pre minimax/utils.py."""
+
 import unittest
 from minimax import utils
 
 
 class TestUtils(unittest.TestCase):
+    """Tato trieda obsahuje funkcie pre testovanie utils suboru."""
+
     def test_minimax(self):
         """Otestovanie správnosti funkcie minimax."""
         vysledky = (
