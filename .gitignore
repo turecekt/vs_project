@@ -32,6 +32,9 @@ ENV/
 # Backup files
 *.bak
 
+# Coverage output
+.coverage
+
 # Personal TODO files
 TODO
 
