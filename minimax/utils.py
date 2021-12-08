@@ -126,6 +126,9 @@ def _quick_sort(arr, start=None, end=None):
 def quick_sort(arr):
     """
     Wrapper pre _quick_sort ktory funguje na principe kopii namiesto in-place upravy listu.
+    >>> lst = [1, 8, 0, -5, 2, 9, 100, 6]
+    >>> quick_sort(lst)
+    [-5, 0, 1, 2, 6, 8, 9, 100]
 
     Pre detaily o quick_sort algoritme vid docstring pre _quick_sort funkciu.
     """
