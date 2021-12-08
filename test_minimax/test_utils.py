@@ -41,7 +41,7 @@ class TestUtils(unittest.TestCase):
                 obdrzany_vysledok = utils.bubble_sort(list_cisel)
                 self.assertEqual(ocakavany_vysledok, obdrzany_vysledok)
 
-    def quick_sort(self):
+    def test_quick_sort(self):
         """Otestovanie správnosti funkcie quick_sort."""
         vysledky = (
             ([1, 8, 4], [1, 4, 8]),
@@ -60,7 +60,7 @@ class TestUtils(unittest.TestCase):
                 obdrzany_vysledok = utils.quick_sort(list_cisel)
                 self.assertEqual(ocakavany_vysledok, obdrzany_vysledok)
 
-    def insertion_sort(self):
+    def test_insertion_sort(self):
         """Otestovanie správnosti funkcie insertion_sort."""
         vysledky = (
             ([1, 8, 4], [1, 4, 8]),
