@@ -2,9 +2,10 @@
 Tento subor obsahuje potrebne utility funkcie vyuzivane v
 hlavnom skripte.
 """
+from typing import List, Tuple, Sequence, MutableSequence, Optional
 
 
-def minimax(cisla):
+def minimax(cisla: Sequence[int]) -> Tuple[int, int, int, int]:
     """
     Funkcia pre najdenie maxima a minima zadanej sekvencie cisiel.
 
@@ -33,7 +34,7 @@ def minimax(cisla):
     return minimum, i_min, maximum, i_max
 
 
-def bubble_sort(cisla):
+def bubble_sort(cisla: Sequence[int]) -> List[int]:
     """
     Tato funkcia vyuziva bubble sort algoritmus na zoradenie daneho listu cisel.
 
@@ -44,7 +45,7 @@ def bubble_sort(cisla):
 
     Bubble Sort ma komplexitu O(N^2).
     """
-    cisla = cisla.copy()
+    cisla = list(cisla)  # Vytvorenie kopie sekvencie ako list
     for _ in range(1, len(cisla)):
         for j in range(len(cisla) - 1):
             if cisla[j] > cisla[j + 1]:
@@ -52,7 +53,7 @@ def bubble_sort(cisla):
     return cisla
 
 
-def _partition(arr, start, end):
+def _partition(arr: MutableSequence[int], start: int, end: int) -> int:
     """
     Podporna funkcia pre quick_sort.
 
@@ -85,7 +86,11 @@ def _partition(arr, start, end):
     return pivot_index
 
 
-def _quick_sort(arr, start=None, end=None):
+def _quick_sort(
+        arr: MutableSequence[int],
+        start: Optional[int] = None,
+        end: Optional[int] = None
+) -> None:
     """
     Tato funkcia vyuziva quick sort algoritmus na zoradenie daneho listu cisiel.
 
@@ -123,7 +128,7 @@ def _quick_sort(arr, start=None, end=None):
     _quick_sort(arr, index + 1, end)
 
 
-def quick_sort(arr):
+def quick_sort(arr: Sequence[int]) -> List[int]:
     """
     Wrapper pre _quick_sort ktory funguje na principe kopii namiesto in-place upravy listu.
     >>> lst = [1, 8, 0, -5, 2, 9, 100, 6]
@@ -132,12 +137,12 @@ def quick_sort(arr):
 
     Pre detaily o quick_sort algoritme vid docstring pre _quick_sort funkciu.
     """
-    arr = arr.copy()
+    arr = list(arr)  # Vytvorenie kopie sekvencie ako list
     _quick_sort(arr)
     return arr
 
 
-def insertion_sort(cisla):
+def insertion_sort(cisla: Sequence[int]) -> List[int]:
     """
     Tato funkcia vyuziva insertion sort algoritmus na zoradenie daneho listu cisel.
 
@@ -149,7 +154,7 @@ def insertion_sort(cisla):
 
     Insertion Sort ma komplexitu O(N^2)
     """
-    cisla = cisla.copy()
+    cisla = list(cisla)  # Vytvorenie kopie sekvencie ako list
     for index in range(1, len(cisla)):
         current_value = cisla[index]
         current_position = index
