@@ -15,6 +15,10 @@ class TestUtils(unittest.TestCase):
         )
 
         for list_cisel, ocakavany_vysledok in vysledky:
+            with self.subTest(
+                msg="Test spravneho vysledku pre minimax funkciu",
+                list_cisel=list_cisel
+            ):
                 obdrzany_vysledok = utils.minimax(list_cisel)
                 self.assertEqual(ocakavany_vysledok, obdrzany_vysledok)
 
@@ -30,6 +34,10 @@ class TestUtils(unittest.TestCase):
         )
 
         for list_cisel, ocakavany_vysledok in vysledky:
+            with self.subTest(
+                msg="Test spravneho vysledku pre bubble_sort funkciu",
+                list_cisel=list_cisel
+            ):
                 obdrzany_vysledok = utils.bubble_sort(list_cisel)
                 self.assertEqual(ocakavany_vysledok, obdrzany_vysledok)
 
@@ -45,11 +53,15 @@ class TestUtils(unittest.TestCase):
         )
 
         for list_cisel, ocakavany_vysledok in vysledky:
+            with self.subTest(
+                msg="Test spravneho vysledku pre quick_sort funkciu",
+                list_cisel=list_cisel
+            ):
                 obdrzany_vysledok = utils.quick_sort(list_cisel)
                 self.assertEqual(ocakavany_vysledok, obdrzany_vysledok)
 
     def insertion_sort(self):
-        """Otestovanie správnosti funkcie quick_sort."""
+        """Otestovanie správnosti funkcie insertion_sort."""
         vysledky = (
             ([1, 8, 4], [1, 4, 8]),
             ([2, 16, 40, 1, -14], [-14, 1, 2, 16, 40]),
@@ -60,5 +72,9 @@ class TestUtils(unittest.TestCase):
         )
 
         for list_cisel, ocakavany_vysledok in vysledky:
+            with self.subTest(
+                msg="Test spravneho vysledku pre insertion_sort funkciu",
+                list_cisel=list_cisel
+            ):
                 obdrzany_vysledok = utils.insertion_sort(list_cisel)
                 self.assertEqual(ocakavany_vysledok, obdrzany_vysledok)
