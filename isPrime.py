@@ -1,10 +1,18 @@
 import time
 
+PRINT_TIMINGS = False
+
+
 def isPrime(n):
     start = time.time()
 
     def printTime(start):
-        print("\rFinished in %f seconds" % (time.time() - start))
+        if PRINT_TIMINGS:
+            print("\rFinished in %f seconds" % (time.time() - start))
+
+    def printProgress(i):
+        if PRINT_TIMINGS:
+            print("\r%f%%" % (i*i/n*100), end="")
 
     # Elimitate trivial cases
     if n <= 1:
@@ -17,12 +25,10 @@ def isPrime(n):
         printTime(start)
         return False
 
-    # Use the fact that all primes are of the form 6k +/- 1 to allow iterating by 6
+    # Use P = 6k +/- 1 to allow iterating by 6
     i = 5
     while i * i <= n:
-        progress = i*i/n
-        print("\r%f%%" % (i*i/n*100), end="")
-
+        printProgress(i)
         if n % i == 0 or n % (i + 2) == 0:
             printTime(start)
             return False
@@ -30,16 +36,3 @@ def isPrime(n):
 
     printTime(start)
     return True
-
-# Get user input and run isPrime
-if __name__ == "__main__":
-    while True:
-        try:
-            n = int(input("Enter a number: "))
-            result = "Is Prime? "
-            break
-        except ValueError:
-            print("Please enter an integer.")
-
-    print(result + str(isPrime(n)))
-
