@@ -97,8 +97,9 @@ def _quick_sort(arr, start=None, end=None):
     - start: zaciatocny index pre zoradovanie (default: `0` - nutny pre rekurzivne volania)
     - end: koncovy index pre zoradovanie (default: `len(list) - 1` - nutny pre rekurzivne volania)
     >>> lst = [1, 8, 0, -5, 2, 9, 100, 6]
-    >>> quick_sort(lst, 0, len(lst) - 1)
-    None  # quick_sort nevracia ziadny vystup, zoraduje na mieste
+    >>> _quick_sort(lst, 0, len(lst) - 1)
+
+    - quick_sort nevracia ziadny vystup, zoraduje na mieste
 
     Quick sort ma komplexitu O(n*log n).
     """
