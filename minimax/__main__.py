@@ -65,6 +65,7 @@ def vyber_algoritmus():
             continue
         return algos[moznost][1]
 
+
 def main():
     """Hlavna funkcia programu."""
     cisla = parse_args()
