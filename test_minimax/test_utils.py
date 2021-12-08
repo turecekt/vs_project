@@ -22,6 +22,11 @@ class TestUtils(unittest.TestCase):
         """Otestovanie správnosti funkcie bubblesort."""
         vysledky = (
             ([1, 8, 4], [1, 4, 8]),
+            ([2, 16, 40, 1, -14], [-14, 1, 2, 16, 40]),
+            ([-80, -22, -11, -55], [-80, -55, -22, -11]),
+            ([0, 1, 2, 3, 4, -6], [-6, 0, 1, 2, 3, 4,]),
+            ([5], [5]),
+            ([100, -10, 200, -20], [-20, -10, 100, 200]),
         )
 
         for list_cisel, ocakavany_vysledok in vysledky:
