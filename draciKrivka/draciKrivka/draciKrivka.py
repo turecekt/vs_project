@@ -2,50 +2,46 @@
 # import the turtle module to use turtle graphics
 import turtle
   
+iterace = int(input('Zadejte pocet iteraci: '))
 
+barvaPera = input('Zadejte barvu pera: ')
 
-def Krivka(n, delka, uhel):
-     if n == 0:
+barvaPozadi = input('Zadejte barvu pozdi: ')
+
+def Krivka(iterace, delka, uhel):
+     if iterace == 0:
         turtle.forward(delka)
      else:
-         Krivka(n - 1, delka, 90)
+         Krivka(iterace - 1, delka, 90)
          turtle.left(uhel)
-         Krivka(n - 1, delka, -90)
+         Krivka(iterace - 1, delka, -90)
+     
        
-
-
 
 turtle.Screen().clear()
 turtle.speed(0 )
 turtle.pensize(2)
-#turtle.color(barvaPozadi)
-#turtle.bgcolor(barvaPozadi)
-
-barvaPera = input('Zadejte barvu pera: ') 
-
-def barvaPera():
-    if barvaPera == '':
-        turtle.color('red')
-    else:
-        turtle.color(barvaPera)
-
-barvaPozadi = input('Zadejte barvu pozadi: ')
-
-def barvaPozadi():
-    if barvaPozadi == '':
-        turtle.bgcolor('black')
-    else:
-        turtle.bgcolor(barvaPera)
 
 turtle.penup()
 turtle.goto(100, 100)
 turtle.pendown()
 
-n = 30
+if barvaPera:
+    turtle.color(barvaPera)
+else:
+    turtle.color('red')
+
+if barvaPozadi:
+    turtle.bgcolor(barvaPozadi)
+else:
+    turtle.bgcolor('black')
+    
+
+
 delka = 5
 uhel = 90
 
 
-Krivka(n, delka, uhel)
+Krivka(iterace, delka, uhel)
 
 turtle.done()
