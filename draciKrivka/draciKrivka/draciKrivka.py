@@ -3,9 +3,16 @@
 import turtle
 
 
+
 # vyzve uzivatele pro zadani poctu iteraci
 
 iterace = input('Zadejte pocet iteraci: ')
+
+def cislo():
+    return iterace
+
+print(cislo())
+
 
 # vyzve uzivatele pro zadani barvy pera
 barvaPera = input('Zadejte barvu pera: ')
@@ -37,13 +44,14 @@ turtle.pendown()
 #zachyceni vstupu pro iterace
 def vrat_cislo():
     try:
-        val = int(iterace)              # ulozeni hodnoty, kterou zada uzivatel
+        val = int(cislo())              # ulozeni hodnoty, kterou zada uzivatel
         if val < 0:                     # pokud je zadane cislo mensi jak 0 nastavi se vychozi hodnota iteraci na 9
             val = 9
-            return val
+  
     except ValueError:                  # pokud hodnota neni cislo nastavi vychozi hodnotu iteraci na 9
         val = 9
-        return val
+    
+    return val
 
 
 # funkce pro nastaveni barvy pera 
