@@ -2,7 +2,8 @@
 # Naimportovani turtle modulu pro pouziti grafiky
 import turtle
 
-# vyzve uzivatele pro zadani poctu iteraci  
+
+# vyzve uzivatele pro zadani poctu iteraci
 iterace = input('Zadejte pocet iteraci: ')
 
 # vyzve uzivatele pro zadani barvy pera
@@ -40,16 +41,23 @@ try:
 except ValueError:                  # pokud hodnota neni cislo nastavi vychozi hodnotu iteraci na 9
     val = 9
 
-if barvaPera:
-    turtle.color(barvaPera)         # pokud uzivatel necha pole prazdne, nastavi se vychozi barva cervena
-else:
-    turtle.color('red')
-# podminka pro barvu pozadi
-if barvaPozadi:
-    turtle.bgcolor(barvaPozadi)
-else:
-    turtle.bgcolor('black')         # pokud uzivatel necha pole prazdne, nastavi se vychozi barva cerna
-    
+
+# metoda pro nastaveni barvy pera 
+def nbp():
+    if barvaPera:
+        turtle.color(barvaPera)       
+    else:
+        turtle.color('red')             # pokud uzivatel necha pole prazdne, nastavi se vychozi barva cervena
+
+
+# metoda pro nastaveni barvy pozadi
+def nbpo():
+     if barvaPozadi:
+        turtle.bgcolor(barvaPozadi)
+
+     else:
+        turtle.bgcolor('black')         # pokud uzivatel necha pole prazdne, nastavi se vychozi barva cerna
+     
 
 # preddefinovane parametry
 delka = 2                           # delka cary, ktera se vykresli
@@ -57,6 +65,8 @@ uhel = 90                           # uhel mezi rekurzemi
 
 
 # zavolani funkce Krivka
+nbp()
+nbpo()
 Krivka(val, delka, uhel)
 
 turtle.done()
