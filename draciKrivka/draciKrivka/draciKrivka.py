@@ -4,13 +4,16 @@ import turtle
 
 
 # vyzve uzivatele pro zadani poctu iteraci
-iterace = input('Zadejte pocet iteraci: ')
+def ite():
+ iterace = input('Zadejte pocet iteraci: ')
+ return iterace
+ 
 
 # vyzve uzivatele pro zadani barvy pera
-barvaPera = input('Zadejte barvu pera: ')
+#barvaPera = input('Zadejte barvu pera: ')
 
-# vyzve uzivatele pro zadani barvy pozadi
-barvaPozadi = input('Zadejte barvu pozadi: ')
+## vyzve uzivatele pro zadani barvy pozadi
+#barvaPozadi = input('Zadejte barvu pozadi: ')
 
 # funkce pro vykresleni draci krivky
 def Krivka(val, delka, uhel):               # nazev funkce a vstupni parametry
@@ -35,14 +38,14 @@ turtle.pendown()
 
 #zachyceni vstupu pro iterace
 try:
-    val = int(iterace)              # ulozeni hodnoty, kterou zada uzivatel
+    val = int(ite())             # ulozeni hodnoty, kterou zada uzivatel
     if val < 0:                     # pokud je zadane cislo mensi jak 0 nastavi se vychozi hodnota iteraci na 9
         val = 9
 except ValueError:                  # pokud hodnota neni cislo nastavi vychozi hodnotu iteraci na 9
     val = 9
 
 
-# metoda pro nastaveni barvy pera 
+# funkce pro nastaveni barvy pera 
 def nbp():
     if barvaPera:
         turtle.color(barvaPera)       
@@ -50,7 +53,7 @@ def nbp():
         turtle.color('red')             # pokud uzivatel necha pole prazdne, nastavi se vychozi barva cervena
 
 
-# metoda pro nastaveni barvy pozadi
+# funkce pro nastaveni barvy pozadi
 def nbpo():
      if barvaPozadi:
         turtle.bgcolor(barvaPozadi)
@@ -64,9 +67,11 @@ delka = 2                           # delka cary, ktera se vykresli
 uhel = 90                           # uhel mezi rekurzemi
 
 
-# zavolani funkce Krivka
+ite()
 nbp()
 nbpo()
+
+# zavolani funkce Krivka
 Krivka(val, delka, uhel)
 
 turtle.done()
