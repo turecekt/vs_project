@@ -34,34 +34,34 @@ turtle.goto(100, 100)
 turtle.pendown()
 
 
-#zachyceni vstupu pro iterace
-def vrat_cislo():
-    try:
-        val = int(iterace)              # ulozeni hodnoty, kterou zada uzivatel
-        if val < 0:                     # pokud je zadane cislo mensi jak 0 nastavi se vychozi hodnota iteraci na 9
-            val = 9
+##zachyceni vstupu pro iterace
+#def vrat_cislo():
+#    try:
+#        val = int(iterace)              # ulozeni hodnoty, kterou zada uzivatel
+#        if val < 0:                     # pokud je zadane cislo mensi jak 0 nastavi se vychozi hodnota iteraci na 9
+#            val = 9
   
-    except ValueError:                  # pokud hodnota neni cislo nastavi vychozi hodnotu iteraci na 9
-        val = 9
+#    except ValueError:                  # pokud hodnota neni cislo nastavi vychozi hodnotu iteraci na 9
+#        val = 9
     
-    return val
+#    return val
 
 
-# funkce pro nastaveni barvy pera 
-def nbp():
-    if barvaPera:
-        turtle.color(barvaPera)       
-    else:
-        turtle.color('red')             # pokud uzivatel necha pole prazdne, nastavi se vychozi barva cervena
+## funkce pro nastaveni barvy pera 
+#def nbp():
+#    if barvaPera:
+#        turtle.color(barvaPera)       
+#    else:
+#        turtle.color('red')             # pokud uzivatel necha pole prazdne, nastavi se vychozi barva cervena
 
 
-# funkce pro nastaveni barvy pozadi
-def nbpo():
-     if barvaPozadi:
-        turtle.bgcolor(barvaPozadi)
+## funkce pro nastaveni barvy pozadi
+#def nbpo():
+#     if barvaPozadi:
+#        turtle.bgcolor(barvaPozadi)
 
-     else:
-        turtle.bgcolor('black')         # pokud uzivatel necha pole prazdne, nastavi se vychozi barva cerna
+#     else:
+#        turtle.bgcolor('black')         # pokud uzivatel necha pole prazdne, nastavi se vychozi barva cerna
      
 
 # preddefinovane parametry
@@ -70,10 +70,10 @@ uhel = 90                           # uhel mezi rekurzemi
 
 
 
-nbp()
-nbpo()
+#nbp()
+#nbpo()
 
 # zavolani funkce Krivka
-Krivka(vrat_cislo(), delka, uhel)
+Krivka(9, delka, uhel)
 
 turtle.done()
