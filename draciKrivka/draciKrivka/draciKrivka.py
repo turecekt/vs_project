@@ -25,7 +25,7 @@ def Krivka(val, delka, uhel):               # nazev funkce a vstupni parametry
        
 # nastaveni prostredi
 def nastaveni():
-    turtle.Screen().clear()
+    #turtle.Screen().clear()
     turtle.speed(0 )
     turtle.pensize(1)
 
