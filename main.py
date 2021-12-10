@@ -43,3 +43,20 @@ for key, value in Morzeovka.items():
     MORSE_TO_ALFA[value] = key
 
 
+def alfa_to_morse(sprava):
+    """Preklad do morzeovky."""
+    morse = []
+    for char in sprava:
+        if char in Morzeovka:
+            morse.append(Morzeovka[char])
+    return " ".join(morse)
+
+
+def morse_to_alfa(sprava):
+    """Preklad do alfy."""
+    sprava = sprava.split(" ")
+    alfa = []
+    for code in sprava:
+        if code in MORSE_TO_ALFA:
+            alfa.append(MORSE_TO_ALFA[code])
+    return " ".join(alfa)
