@@ -24,14 +24,15 @@ def Krivka(val, delka, uhel):               # nazev funkce a vstupni parametry
      
        
 # nastaveni prostredi
-turtle.Screen().clear()
-turtle.speed(0 )
-turtle.pensize(1)
+def nastaveni():
+    turtle.Screen().clear()
+    turtle.speed(0 )
+    turtle.pensize(1)
 
-# pocatecni bod vykreslovani
-turtle.penup()
-turtle.goto(100, 100)
-turtle.pendown()
+    # pocatecni bod vykreslovani
+    turtle.penup()
+    turtle.goto(100, 100)
+    turtle.pendown()
 
 
 ##zachyceni vstupu pro iterace
@@ -74,6 +75,7 @@ uhel = 90                           # uhel mezi rekurzemi
 #nbpo()
 
 # zavolani funkce Krivka
+nastaveni()
 Krivka(9, delka, uhel)
 
 turtle.done()
