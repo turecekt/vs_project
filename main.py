@@ -60,3 +60,27 @@ def morse_to_alfa(sprava):
         if code in MORSE_TO_ALFA:
             alfa.append(MORSE_TO_ALFA[code])
     return " ".join(alfa)
+
+
+def main():
+    """Hlavni cast programu."""
+    while 1:
+        vstup = input("Morse => Alfa (1) alebo Alfa => Morse (2)? ").upper()
+        if vstup == "1" or vstup == "2":
+            break
+
+    if vstup == "1":
+        print("Zadaj kod v morzeovke: ")
+        morse = input("> ")
+        alfa = morse_to_alfa(morse)
+        print(alfa)
+
+    elif vstup == "2":
+        print("Zadaj text: ")
+        alfa = input("> ").upper()
+        morse = alfa_to_morse(alfa)
+        print(morse)
+
+
+if __name__ == "__main__":
+    main()
