@@ -84,3 +84,13 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+def test_alfa_to_morse():
+    """Testovani prekladu alfa to morse."""
+    assert alfa_to_morse("SOS") == "... --- ..."
+
+
+def test_morse_to_alfa():
+    """Testovani prekladu morse to alfa."""
+    assert morse_to_alfa("... --- ...") == "S O S"
