@@ -23,8 +23,10 @@ def sestrojitelnost(Triangle):
         
     if x==0:
         print("Trojuhelnik neni sestrojitelny")
+        return False
     else:
         print("Trojuhelnik je sestrojitelny")
+        return True
     
 
 

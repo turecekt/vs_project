@@ -16,8 +16,9 @@ def test_side_lengths():
 
 def test_side_stats():
     """Test výpočtu délek stran."""
-    assert trojuhelnik.informace([(0, 0), (3, 0), (0, 4)]) == (3, 5)
-    assert trojuhelnik.informace([(0, 0), (-3, 0), (0, -4)]) == (3, 5)
+    assert trojuhelnik.informace([(0, 0), (3, 0), (0, 4)]) == [5, 4, 3]
+    assert trojuhelnik.informace([(0, 0), (-3, 0), (0, -4)]) == [5, 4, 3]
+    assert trojuhelnik.informace([(-3, 0)), (0, -4), (0, 0)]) == [5, 4, 3]
 
 
 def test_circumference():
@@ -34,5 +35,5 @@ def test_area():
 
 def test_is_right():
     """Test určení pravoúhlého trojuhelníku."""
-    assert trojuhelnik.parvouhlost([(0, 0), (3, 0), (0, 4)]) is True
-    assert trojuhelnik.parvouhlost([(0, 0), (3, 2), (1, 4)]) is False
+    assert trojuhelnik.pravouhlost([(0, 0), (3, 0), (0, 4)]) is True
+    assert trojuhelnik.pravouhlost([(0, 0), (3, 2), (1, 4)]) is False

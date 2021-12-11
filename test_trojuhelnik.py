@@ -16,8 +16,9 @@ def test_side_lengths():
 
 def test_side_stats():
     """Test výpočtu délek stran."""
-    assert trojuhelnik.informace([(0, 0), (3, 0), (0, 4)]) == (3, 5)
-    assert trojuhelnik.informace([(0, 0), (-3, 0), (0, -4)]) == (3, 5)
+    assert trojuhelnik.informace([(0, 0), (3, 0), (0, 4)]) == [5, 4, 3]
+    assert trojuhelnik.informace([(0, 0), (-3, 0), (0, -4)]) == [5, 4, 3]
+    assert trojuhelnik.informace([(-3, 0), (0, -4), (0, 0)]) == [5, 4, 3]
 
 
 def test_circumference():

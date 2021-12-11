@@ -19,8 +19,10 @@ def sestrojitelnost(Triangle):
     A = Triangle[0]
     B = Triangle[1]
     C = Triangle[2]
+    
     x = (A[0]*(B[1] - C[1])+B[0]*(C[1] - A[1])+C[0]*(A[1] - B[1]))
-        
+    
+    
     if x==0:
         print("Trojuhelnik neni sestrojitelny")
         return False
