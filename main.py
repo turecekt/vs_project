@@ -104,5 +104,23 @@ def test_morse_to_alfa():
 
 # testování překladu textu do morseovky 2
 def test_alfa_to_morse2():
-    """Testovani prekladu alfa to morse."""
+    """Testovani prekladu alfa to morse2."""
     assert alfa_to_morse("1234") == ".---- ..--- ...-- ....-"
+
+
+# testování překladu morseovky do textu
+def test_morse_to_alfa2():
+    """Testovani prekladu morse to alfa2."""
+    assert morse_to_alfa(".- -... -.-. -.. . ..-. --.") == "A B C D E F G"
+
+
+# testování překladu textu do morseovky
+def test_alfa_to_morse3():
+    """Testovani prekladu alfa to morse3."""
+    assert alfa_to_morse("MORSEOVKA") == "-- --- .-. ... . --- ...- -.- .-"
+
+
+# testování překladu morseovky do textu
+def test_morse_to_alfa3():
+    """Testovani prekladu morse to alfa3."""
+    assert morse_to_alfa("-- --- .-. ... . --- ...-") == "M O R S E O V"
