@@ -100,3 +100,9 @@ def test_alfa_to_morse():
 def test_morse_to_alfa():
     """Testovani prekladu morse to alfa."""
     assert morse_to_alfa("... --- ...") == "S O S"
+
+
+# testování překladu textu do morseovky 2
+def test_alfa_to_morse2():
+    """Testovani prekladu alfa to morse."""
+    assert alfa_to_morse("1234") == ".---- ..--- ...-- ....-"
