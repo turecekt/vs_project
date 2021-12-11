@@ -10,8 +10,17 @@ by Radek Kratochvíl and Petr Slavík
 
 vstupFile = open('TopicPicker.txt')
 #print(vstupFile.read())
+characters=0
 for line in vstupFile:
-    print(line,end ='#')
+    line = line.strip("\#")
+
+    words= line.split()
+    count_words += len(words)
+    count_char += len(line)
+
+    vstupFile.close()
+
+    print("nm_char:",count_char)
 
 #####
 #
