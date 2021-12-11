@@ -1,10 +1,12 @@
 #zapninani programu
+
+
 def start():
-    once = True
     morse()
 
 def morse():
     #inicializace pouze jednou na zacatku
+    once = True
     if (once):
         morseCode = { 'A':'.-', 'B':'-...',
                             'C':'-.-.', 'D':'-..', 'E':'.',
@@ -34,7 +36,7 @@ def morse():
     else:
         if (decision == "1"): #dekodovani
             text = input("Enter text to encode:")
-            encode(text)
+            encode(text,morseCode)
             input("Press Enter to continue")
             morse()
         elif (decision == "2"): #rozkodovani
@@ -48,7 +50,7 @@ def morse():
             morse()
 
 # Funkce zakoduje do morseovky
-def encode(message):
+def encode(message,morseCode):
     try:
         message = message.upper()
         counter = 1
@@ -90,3 +92,5 @@ def decode(inputMessage):
         return   print(decodedMessage)
     except Exception: # Při nenalezení hodnoty v dictionary se vypíše chybová hláška
         print("Character", letter, "is note defined in morse code")
+
+start()
