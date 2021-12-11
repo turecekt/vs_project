@@ -18,6 +18,7 @@ errorMessage = "Morse code is not valid!"
 
 
 def letter2morse(letter: str) -> str:
+    """Gives Morse code."""
     return morse[letter]
 
 
@@ -25,6 +26,7 @@ def letter2morse(letter: str) -> str:
 
 
 def morse2letter(mor: str) -> str:
+    """Gives letters."""
     return list(morse.keys())[list(morse.values()).index(mor)]
 
 
@@ -32,6 +34,7 @@ def morse2letter(mor: str) -> str:
 
 
 def text2morse(text: str) -> str:
+    """Gives Morse code."""
     letters = list(text.lower())
     morseCode = ""
     for let in letters:
@@ -44,6 +47,7 @@ def text2morse(text: str) -> str:
 
 
 def morse2text(morseText: str) -> str:
+    """Gives full text."""
     arrayMorse = morseText.split(splitCharacter)
     text = ""
     for m in arrayMorse:
