@@ -12,6 +12,7 @@ morse = {'a': '.-', 'b': '-...', 'c': '-.-.', 'd': '-..', 'e': '.',
 splitCharacter = ' '
 errorMessage = "Morse code is not valid!"
 
+
 def letter2morse(letter: str) -> str:
     return morse[letter]
 
@@ -43,5 +44,5 @@ def morse2text(morseText: str) -> str:
 
 """Main method."""
 if __name__ == "__main__":
-    print(text2morse("Ahoj Kubo."))
+    print(text2morse("Ahoj Kubo/"))
     print(morse2text(".- .... --- .--- / -.- ..- -... ---"))
