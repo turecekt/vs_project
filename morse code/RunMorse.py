@@ -20,8 +20,7 @@ Morse_dictionary = {
 
 # Zalozeni funkci "encrypt" pro preklad z textu od morseovky
 def encrypt(translate):
-    """Prelozeni textu do
-    morseovky."""
+    """Prelozeni textu do morseovky."""
     # Do uvozovek se zadava text
     text = ''
     # Tento cyklus se obrati ke slovniku po kazdem stisknutim
@@ -70,8 +69,7 @@ def decrypt(translate):
 
 
 def main():
-    """Vyber jedne z funkce programu a jeho spusteni.
-    """
+    """Vyber jedne z funkce programu a jeho spusteni."""
     choice = input("For Encrypt type '1' "
                    "\nFor Decrypt type '2': ")
     if choice == "1":
