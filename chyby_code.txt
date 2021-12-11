@@ -1,0 +1,6 @@
+RunMorse.py:1:1: D100 Missing docstring in public module
+RunMorse.py:1:1: F401 'pytest' imported but unused
+RunMorse.py:4:1: D103 Missing docstring in public function
+RunMorse.py:16:14: W293 blank line contains whitespace
+RunMorse.py:77:1: W293 blank line contains whitespace
+RunMorse.py:80:1: W391 blank line at end of file
