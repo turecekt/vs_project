@@ -14,23 +14,19 @@ def ask(prompt, default):
         val = default
     return val
 
+
 def sestrojitelnost(Triangle):
-    """Funkce vypíše jeli trojuhelnik sestrojitelný."""      
+    """Funkce vypíše jeli trojuhelnik sestrojitelný."""
     A = Triangle[0]
     B = Triangle[1]
     C = Triangle[2]
-    
+
     x = (A[0]*(B[1] - C[1])+B[0]*(C[1] - A[1])+C[0]*(A[1] - B[1]))
-    
-    
-    if x==0:
-        print("Trojuhelnik neni sestrojitelny")
+
+    if x == 0:
         return False
     else:
-        print("Trojuhelnik je sestrojitelny")
         return True
-    
-
 
 
 def delky_stran(Triangle):
@@ -45,82 +41,33 @@ def delky_stran(Triangle):
     return sides
 
 
-def informace(Triangle):
+def serad_strany(Triangle):
     """Funkce vypíše nejdelší a nejkratší stranu."""
     sides = delky_stran(Triangle)
     a = sides[0]
     b = sides[1]
     c = sides[2]
-    print("a: " + str(a))
-    print("b: " + str(b))
-    print("c: " + str(c))
 
-    if (a==b==c):
-        print("Trojuhelnik je rovnostranny, vsechny strany maji delku: "+ str(a))
-
-        sides = [a, a, a]
-        return sides
-    else:
-        if (((a==b)and(c!=a))or((a==c)and(c!=b))or((b==c)and(a!=b))):
-            max = a
-            min = a
-            # Nejdelsi strana
-            if b > max:
-                max = b
-            if c > max:
-                max = c
-            # Nejkratsi strana
-            if b < min:
-                min = b
-            if c < min:
-                min = c
-            print("Trojuhelnik je rovnoramenny,max: "+str(max)+"kratsi strana: "+str(min))
-            
-            sides = [a, b, c]
-            return sides
-        else:
-            max = a
-            min = a
-            mid = a
-            # Nejdelsi strana
-            if b > max:
-                max = b
-            if c > max:
-                max = c
-            # Nejkratsi strana
-            if b < min:
-                min = b
-            if c < min:
-                min = c
-            # Mid
-            if ((b!=max)and(b!=min)):
-                mid=b
-            if ((c!=max)and(c!=min)):
-                mid=c
-            # Vypis max
-            if (max == a):
-                print("Nejdelsi strana: a = "+str(max))
-            if (max == b):
-                print("Nejdelsi strana: b = "+str(max))
-            if (max == c):
-                print("Nejdelsi strana: c = "+str(max))
-            # Vypis min
-            if (min == a):
-                print("Nejkratsi strana: a = "+str(min))
-            if (min == b):
-                print("Nejkratsi strana: b = "+str(min))
-            if (min == c):
-                print("Nejkratsi strana: c = "+str(min))
-            # Vypis mid 
-            if (mid == a):
-                print("Prostredni strana: a = "+str(mid))
-            if (mid == b):
-                print("Prostredni strana: b = "+str(mid))
-            if (mid == c):
-                print("Prostredni strana: c = "+str(mid))
-                
-            sides = [max, mid, min]
-            return sides
+    max = a
+    min = a
+    mid = a
+    # Nejdelsi strana
+    if b > max:
+        max = b
+    if c > max:
+        max = c
+    # Nejkratsi strana
+    if b < min:
+        min = b
+    if c < min:
+        min = c
+    # Mid
+    if ((b != max) and (b != min)):
+        mid = b
+    if ((c != max) and (c != min)):
+        mid = c
+    sides = [max, mid, min]
+    return sides
 
 
 def obvod(Triangle):
@@ -130,7 +77,6 @@ def obvod(Triangle):
     b = sides[1]
     c = sides[2]
     obvod = a + b + c
-    print("Obvod: "+str(obvod))
     return obvod
 
 
@@ -143,21 +89,18 @@ def obsah(Triangle):
     Obvod = a + b + c
     s = Obvod / 2
     S = math.sqrt(s*(s-a)*(s-b)*(s-c))
-    print("Obsah: "+str(S))
     return S
 
 
 def pravouhlost(Triangle):
     """Funkce pravouhlost vyhodnotí je-li daný trojuhelník pravoúhlý."""
-    sides = informace(Triangle)
+    sides = serad_strany(Triangle)
     c = sides[0]
     b = sides[1]
     a = sides[2]
-    if (c == math.sqrt(a**2 + b**2)) :
-        print("Trojuhelnik je pravouhly")
+    if (c == math.sqrt(a**2 + b**2)):
         return True
     else:
-        print("Trojuhelnik neni pravouhly")
         return False
 
 
@@ -168,9 +111,9 @@ B = (3, 0)
 C = (0, 4)
 
 
-if len(sys.argv) > 1:   # Zadal-li uživatel právě jeden argument = "input"
+if len(sys.argv) > 1:   # Zadal-li uživatel právě jeden argument = "-i"
     print(sys.argv[1])  # pak se přepne do interaktivního módu
-    if sys.argv[1] == "input":
+    if sys.argv[1] == "-i":
         A = (ask("bod A - souřadnice x:", 0), ask("bod A - souřadnice y:", 0))
         B = (ask("bod B - souřadnice x:", 3), ask("bod B - souřadnice y:", 0))
         C = (ask("bod C - souřadnice x:", 0), ask("bod C - souřadnice y:", 4))
@@ -180,3 +123,33 @@ print("\nZadali jste trojuhelník se souřadnicemi:")
 print("A: ", A)
 print("B: ", B)
 print("C: ", C)
+
+if not sestrojitelnost(Triangle):
+    print("\nTrojuhelnik neni sestrojitelny\n")
+else:
+    print("\nTrojuhelnik je sestrojitelny\n")
+
+    sides = delky_stran(Triangle)
+    print("strana a: " + str(sides[0]))
+    print("strana b: " + str(sides[1]))
+    print("strana c: " + str(sides[2]))
+
+    sides = serad_strany(Triangle)
+    print("\nnejdelší strana: " + str(sides[0]))
+    print("prostřední strana: " + str(sides[1]))
+    print("nejkratší strana: " + str(sides[2]))
+
+    print("\nObvod: "+str(obvod(Triangle)))
+    print("\nObsah: "+str(obsah(Triangle)))
+
+    if pravouhlost(Triangle):
+        print("\nTrojuhelnik je pravouhly")
+    else:
+        a = sides[0]
+        b = sides[1]
+        c = sides[2]
+        if (a == b == c):
+            print("\nTrojuhelník je rovnostranný")
+        else:
+            if (((a == b != c)) or ((a == c != b)) or ((b == c != a))):
+                print("\nTrojuhelník je rovnoramenný")
