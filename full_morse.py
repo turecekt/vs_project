@@ -9,6 +9,8 @@ morse = {'a': '.-', 'b': '-...', 'c': '-.-.', 'd': '-..', 'e': '.',
                     '5': '.....', '6': '-....', '7': '--...', '8': '---..',
                     '9': '----.', ' ': '/', '': ''}
 
+splitCharacter = ' '
+
 
 def letter2morse(letter):
     return morse[letter]
@@ -16,6 +18,14 @@ def letter2morse(letter):
 
 def morse2letter(mor):
     return list(morse.keys())[list(morse.values()).index(mor)]
+
+
+def text2morse(text):
+    letters = list(text)
+    morse = ""
+    for let in letters:
+        morse += letter2morse(let) + splitCharacter
+    return morse
 
 
 """Main method."""
