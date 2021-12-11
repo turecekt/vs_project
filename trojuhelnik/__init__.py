@@ -134,7 +134,7 @@ def obsah(Triangle):
     return S
 
 
-def parvouhlost(Triangle):
+def pravouhlost(Triangle):
     """Funkce pravouhlost vyhodnotí je-li daný trojuhelník pravoúhlý."""
     sides = informace(Triangle)
     c = sides[0]
@@ -142,10 +142,10 @@ def parvouhlost(Triangle):
     a = sides[2]
     if (c == math.sqrt(a**2 + b**2)) :
         print("Trojuhelnik je pravouhly")
-        return False
+        return True
     else:
         print("Trojuhelnik neni pravouhly")
-        return True
+        return False
 
 
 """Zaznamenat vstup z konzole"""
