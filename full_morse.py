@@ -14,23 +14,17 @@ splitCharacter = ' '
 errorMessage = "Morse code is not valid!"
 
 
-"""This will convert letters into morse code"""
-
-
 def letter2morse(letter: str) -> str:
-    """Gives Morse code."""
+    """First def.
+
+    gives morse code
+    """
     return morse[letter]
-
-
-"""This will convert morse code into letters"""
 
 
 def morse2letter(mor: str) -> str:
     """Gives letters."""
     return list(morse.keys())[list(morse.values()).index(mor)]
-
-
-"""This will convert text into morse code"""
 
 
 def text2morse(text: str) -> str:
@@ -41,9 +35,6 @@ def text2morse(text: str) -> str:
         if let in morse:
             morseCode += letter2morse(let) + splitCharacter
     return morseCode
-
-
-"""This will convert morse code into text"""
 
 
 def morse2text(morseText: str) -> str:
