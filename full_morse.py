@@ -20,14 +20,23 @@ def morse2letter(mor):
     return list(morse.keys())[list(morse.values()).index(mor)]
 
 
-def text2morse(text):
-    letters = list(text)
+def text2morse(text: str):
+    letters = list(text.lower())
     morse = ""
     for let in letters:
         morse += letter2morse(let) + splitCharacter
     return morse
 
 
+def morse2text(morseText):
+    arrayMorse = morseText.split(splitCharacter)
+    text = ""
+    for m in arrayMorse:
+        text += morse2letter(m)
+    return text
+
+
 """Main method."""
 if __name__ == "__main__":
-    print(letter2morse('a'))
+    print(text2morse("Ahoj Kubo"))
+    print(morse2text(".- .... --- .--- / -.- ..- -... ---"))
