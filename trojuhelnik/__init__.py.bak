@@ -41,73 +41,33 @@ def informace(Triangle):
     print("a: " + str(a))
     print("b: " + str(b))
     print("c: " + str(c))
-
-    if (a==b==c):
-        print("Trojuhelnik je rovnostranny, vsechny strany maji delku: "+ str(a))
-
-        sides = [a, a, a]
-        return sides
-    else:
-        if (((a==b)and(c!=a))or((a==c)and(c!=b))or((b==c)and(a!=b))):
-            max = a
-            min = a
-            # Nejdelsi strana
-            if b > max:
-                max = b
-            if c > max:
-                max = c
-            # Nejkratsi strana
-            if b < min:
-                min = b
-            if c < min:
-                min = c
-            print("Trojuhelnik je rovnoramenny,max: "+str(max)+"kratsi strana: "+str(min))
-            
-            sides = [a, b, c]
-            return sides
-        else:
-            max = a
-            min = a
-            mid = a
-            # Nejdelsi strana
-            if b > max:
-                max = b
-            if c > max:
-                max = c
-            # Nejkratsi strana
-            if b < min:
-                min = b
-            if c < min:
-                min = c
-            # Mid
-            if ((b!=max)and(b!=min)):
-                mid=b
-            if ((c!=max)and(c!=min)):
-                mid=c
-            # Vypis max
-            if (max == a):
-                print("Nejdelsi strana: a = "+str(max))
-            if (max == b):
-                print("Nejdelsi strana: b = "+str(max))
-            if (max == c):
-                print("Nejdelsi strana: c = "+str(max))
-            # Vypis min
-            if (min == a):
-                print("Nejkratsi strana: a = "+str(min))
-            if (min == b):
-                print("Nejkratsi strana: b = "+str(min))
-            if (min == c):
-                print("Nejkratsi strana: c = "+str(min))
-            # Vypis mid 
-            if (mid == a):
-                print("Prostredni strana: a = "+str(mid))
-            if (mid == b):
-                print("Prostredni strana: b = "+str(mid))
-            if (mid == c):
-                print("Prostredni strana: c = "+str(mid))
-                
-            sides = [max, mid, min]
-            return sides
+    max = a
+    min = a
+    # Nejdelsi strana
+    if b > max:
+        max = b
+    if c > max:
+        max = c
+    # Nejkratsi strana
+    if b < min:
+        min = b
+    if c < min:
+        min = c
+    # Vypis max
+    if (max == a):
+        print("Nejdelsi strana: a = "+str(max))
+    if (max == b):
+        print("Nejdelsi strana: b = "+str(max))
+    if (max == c):
+        print("Nejdelsi strana: c = "+str(max))
+    # Vypis min
+    if (min == a):
+        print("Nejkratsi strana: a = "+str(min))
+    if (min == b):
+        print("Nejkratsi strana: b = "+str(min))
+    if (min == c):
+        print("Nejkratsi strana: c = "+str(min))
+    return (min, max)
 
 
 def obvod(Triangle):
@@ -136,11 +96,11 @@ def obsah(Triangle):
 
 def parvouhlost(Triangle):
     """Funkce pravouhlost vyhodnotí je-li daný trojuhelník pravoúhlý."""
-    sides = informace(Triangle)
-    c = sides[0]
+    sides = delky_stran(Triangle)
+    a = sides[0]
     b = sides[1]
-    a = sides[2]
-    if (c == math.sqrt(a**2 + b**2)) :
+    c = sides[2]
+    if (c == math.sqrt(a**2 + b**2)):
         print("Trojuhelnik je pravouhly")
         return False
     else:
