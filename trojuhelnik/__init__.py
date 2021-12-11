@@ -14,10 +14,21 @@ def ask(prompt, default):
         val = default
     return val
 
-
 def sestrojitelnost(Triangle):
-    """Funkce sestrojitelnost vyhodnotí je-li trojuhelník sestrojitelný."""
-    return True
+    """Funkce vypíše jeli trojuhelnik sestrojitelný."""      
+    A = Triangle[0]
+    B = Triangle[1]
+    C = Triangle[2]
+    x = (A[0]*(B[1] - C[1])+B[0]*(C[1] - A[1])+C[0]*(A[1] - B[1]))
+        
+    if x==0:
+        print("Trojuhelnik neni sestrojitelny")
+        return False
+    else:
+        print("Trojuhelnik je sestrojitelny")
+        return True
+    
+
 
 
 def delky_stran(Triangle):
