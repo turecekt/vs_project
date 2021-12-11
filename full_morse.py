@@ -10,7 +10,7 @@ morse = {'a': '.-', 'b': '-...', 'c': '-.-.', 'd': '-..', 'e': '.',
                     '9': '----.', ' ': '/', '': ''}
 
 splitCharacter = ' '
-
+errorMessage = "Morse code is not valid!"
 
 def letter2morse(letter: str) -> str:
     return morse[letter]
@@ -33,7 +33,11 @@ def morse2text(morseText: str) -> str:
     arrayMorse = morseText.split(splitCharacter)
     text = ""
     for m in arrayMorse:
-        text += morse2letter(m)
+        if m in list(morse.values()):
+            text += morse2letter(m)
+        else:
+            text = errorMessage
+            break
     return text
 
 
