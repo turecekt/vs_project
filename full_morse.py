@@ -12,23 +12,24 @@ morse = {'a': '.-', 'b': '-...', 'c': '-.-.', 'd': '-..', 'e': '.',
 splitCharacter = ' '
 
 
-def letter2morse(letter):
+def letter2morse(letter: str) -> str:
     return morse[letter]
 
 
-def morse2letter(mor):
+def morse2letter(mor: str) -> str:
     return list(morse.keys())[list(morse.values()).index(mor)]
 
 
-def text2morse(text: str):
+def text2morse(text: str) -> str:
     letters = list(text.lower())
-    morse = ""
+    morseCode = ""
     for let in letters:
-        morse += letter2morse(let) + splitCharacter
-    return morse
+        if let in morse:
+            morseCode += letter2morse(let) + splitCharacter
+    return morseCode
 
 
-def morse2text(morseText):
+def morse2text(morseText: str) -> str:
     arrayMorse = morseText.split(splitCharacter)
     text = ""
     for m in arrayMorse:
@@ -38,5 +39,5 @@ def morse2text(morseText):
 
 """Main method."""
 if __name__ == "__main__":
-    print(text2morse("Ahoj Kubo"))
+    print(text2morse("Ahoj Kubo."))
     print(morse2text(".- .... --- .--- / -.- ..- -... ---"))
