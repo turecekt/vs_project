@@ -66,16 +66,17 @@ delka = 2                           # delka cary, ktera se vykresli
 uhel = 90                           # uhel mezi rekurzemi
 
 # nastaveni prostredi
-turtle.Screen().clear()
-turtle.speed(0 )
-turtle.pensize(1)
+def nastav_prostredi():
+    turtle.Screen().clear()
+    turtle.speed(0 )
+    turtle.pensize(1)
 
-# pocatecni bod vykreslovani
-turtle.penup()
-turtle.goto(100, 100)
-turtle.pendown()
+    # pocatecni bod vykreslovani
+    turtle.penup()
+    turtle.goto(100, 100)
+    turtle.pendown()
 
-
+nastav_prostredi()
 nbp()
 nbpo()
 
