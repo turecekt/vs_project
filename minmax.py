@@ -5,6 +5,40 @@ import os
 import random
 
 
+def handle_file(arr, file):
+    """
+    File input function.
+
+    Načte čísla ze souboru do listu arr.
+    """
+    # Rozsekej soubor na rádky a ty na slova
+    # každé slovo zpracuj jako číslo
+    for line in file:
+        for word in line.split():
+            try:
+                arr.append(int(word))
+            except ValueError:
+                print("failde to convert {} to integer".format(word))
+                exit(-1)
+
+
+def hadle_args(arr, string):
+    """
+    Arguments input function.
+
+    Získává data z příkazové řádky.
+    """
+    try:
+        arr.append(int(string))
+    except ValueError:
+        try:
+            for word in string.split():
+                arr.append(int(word))
+        except ValueError:
+            print("failde to convert {} to integer".format(string))
+            exit(-1)
+
+
 def get_input():
     """
     Input.
@@ -22,13 +56,12 @@ def get_input():
         if os.path.isfile(string):
             # Otevři soubor pro čtení v bloku
             with open(string, 'r') as file:
-                # Rozsekej soubor na rádky a ty na slova
-                # každé slovo zpracuj jako číslo
-                for line in file:
-                    for word in line.split():
-                        ret_val.append(int(word))
+                handle_file(ret_val, file)
+        elif(string == ""):
+            print("can not procces emmpty string")
+            exit(-1)
         else:
-            ret_val.append(int(string))
+            hadle_args(ret_val, string)
     return ret_val
 
 
@@ -155,3 +188,4 @@ if __name__ == '__main__':
     # Zavolej správnou funkci podle vstupu uživatele
     sort_dict[sort_str](y)
     print(y)
+    input("Zmáčkni Entr pro konec")
