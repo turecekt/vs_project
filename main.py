@@ -23,3 +23,12 @@ elif vyber == 3 and x >= 0:
     print('Prevod do 16 soustavy je: ', sest(x))
 else:
     print('Tato moznost neexistuje')
+
+def test_dva():
+    assert dva(10) == '1010'
+
+def test_osm():
+    assert osm(9) == '11'
+
+def test_sest():
+    assert sest(15) == 'F'
