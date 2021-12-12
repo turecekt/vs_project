@@ -6,6 +6,9 @@ import turtle
 import _tkinter
 
 # definovani promennych z inputu uzivatele
+
+print('Seznam dostupnych barev: blue, green, red, cyan, megenta, yellow, whitte, black')
+
 # vyzve uzivatele pro zadani poctu iteraci
 iterace = input('Zadejte pocet iteraci: ')
 
