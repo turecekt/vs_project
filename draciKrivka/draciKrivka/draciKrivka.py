@@ -5,20 +5,27 @@
 import turtle
 import _tkinter
 
-# definovani promennych z inputu uzivatele
-def barvy():
-    print('Seznam dostupnych barev: blue, green, red, cyan, megenta, yellow, whitte, black')
 
-barvy()
+# definovani promennych z inputu uzivatele
+print('Seznam dostupnych barev: blue, green, red, cyan, megenta, yellow, white, black')
 
 # vyzve uzivatele pro zadani poctu iteraci
-iterace = input('Zadejte pocet iteraci: ')
+#iterace = input('Zadejte pocet iteraci: ')
+def parametry():
+    global iterace
+    global barvaPera
+    global barvaPozadi
+    iterace = input('Zadejte pocet iteraci: ')
+    barvaPera = input('Zadejte barvu pera: ')
+    barvaPozadi = input('Zadejte barvu pozadi: ')
+
+parametry()
 
 # vyzve uzivatele pro zadani barvy pera
-barvaPera = input('Zadejte barvu pera: ')
+#barvaPera = input('Zadejte barvu pera: ')
 
 # vyzve uzivatele pro zadani barvy pozadi
-barvaPozadi = input('Zadejte barvu pozadi: ')
+#barvaPozadi = input('Zadejte barvu pozadi: ')
 
 
 # preddefinovani parametru
