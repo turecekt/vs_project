@@ -18,5 +18,5 @@ def test_vrat_cislo_chybny_vstup():
     assert vrat_cislo("sdfe") == 9
     assert vrat_cislo("slovo") == 9
     assert vrat_cislo("") == 9
-    assert vrat_cislo("7.5") == 9
+    assert vrat_cislo("7.6") == 9
 

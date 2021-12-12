@@ -5,12 +5,10 @@
 import turtle
 import _tkinter
 
-
-# definovani promennych z inputu uzivatele
 print('Seznam dostupnych barev: blue, green, red, cyan, megenta, yellow, white, black')
 
-# vyzve uzivatele pro zadani poctu iteraci
-#iterace = input('Zadejte pocet iteraci: ')
+# vyzve uzivatele pro zadani parametru
+"""Nastaveni parametru."""
 def parametry():
     global iterace
     global barvaPera
@@ -23,29 +21,7 @@ def parametry():
     delka = 2
     uhel = 90
 
-# vyzve uzivatele pro zadani barvy pera
-#barvaPera = input('Zadejte barvu pera: ')
-
-# vyzve uzivatele pro zadani barvy pozadi
-#barvaPozadi = input('Zadejte barvu pozadi: ')
-
-
-# preddefinovani parametru
-#delka = 2                          
-#uhel = 90                           
-
-# funkce pro vykresleni draci krivky
-def Krivka(val, delka, uhel):              
-     """Vykresleni krivky.
-     >>> Krivka()
-     """
-     if val == 0:
-        turtle.forward(delka)              
-     else:
-         Krivka(val - 1, delka, 90)         
-         turtle.left(uhel)
-         Krivka(val - 1, delka, -90)       
-     
+              
        
 #Nastaveni poctu iteraci
 def vrat_cislo(iterace):
@@ -92,7 +68,17 @@ def nbpo():
         turtle.bgcolor('black')                             # pokud je hodnota retezce neplatna (barva neexistuje a nastatne error), zachyti tuto chybu a nastavi barvu pozadi na cernou
      
 
-
+# funkce pro vykresleni draci krivky
+def Krivka(val, delka, uhel):              
+     """Vykresleni krivky.
+     >>> Krivka()
+     """
+     if val == 0:
+        turtle.forward(delka)              
+     else:
+         Krivka(val - 1, delka, 90)         
+         turtle.left(uhel)
+         Krivka(val - 1, delka, -90)    
 
 
 # funkce pro nasstaveni vykreslovaci plochy
@@ -106,6 +92,7 @@ def nastav_prostredi():
     turtle.penup()
     turtle.goto(100, 100)
     turtle.pendown()
+
 
 parametry()
 nastav_prostredi()
