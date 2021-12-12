@@ -1,4 +1,6 @@
 
+"""Heighway Dragon."""
+
 # Naimportovani turtle modulu pro pouziti grafiky a _tkinter pro vymezeni vyjimek u funkci
 import turtle
 import _tkinter
@@ -14,18 +16,30 @@ barvaPera = input('Zadejte barvu pera: ')
 barvaPozadi = input('Zadejte barvu pozadi: ')
 
 
+# preddefinovani parametru
+delka = 2                          
+uhel = 90                           
+
 # funkce pro vykresleni draci krivky
-def Krivka(val, delka, uhel):               # nazev funkce a vstupni parametry
+def Krivka(val, delka, uhel):              
+     """Vykresleni krivky.
+     >>> Krivka()
+     """
      if val == 0:
-        turtle.forward(delka)               # vykresli caru
+        turtle.forward(delka)              
      else:
-         Krivka(val - 1, delka, 90)         # otoceni o 90 stupnu mezi carami
+         Krivka(val - 1, delka, 90)         
          turtle.left(uhel)
-         Krivka(val - 1, delka, -90)        # otoceni o 90 stupnu mezi carami
+         Krivka(val - 1, delka, -90)       
      
        
-#zachyceni vstupu pro iterace
-def vrat_cislo():
+#Nastaveni poctu iteraci
+def vrat_cislo(iterace):
+    """Vrat cislo.
+    
+    >>> vrat_cislo('12')
+    '12'
+    """
     try:
         val = int(iterace)              # ulozeni hodnoty, kterou zada uzivatel
         if val < 0:                     # pokud je zadane cislo zaporne nastavi se kladna hodnota zadaneho cisla
@@ -39,6 +53,9 @@ def vrat_cislo():
 
 # funkce pro nastaveni barvy pera 
 def nbp():
+    """Nastav barvu pera.
+    >>> nbp()
+    """
     try:
      turtle.color(barvaPera)
      if barvaPera == str(''):                                  # pokud je hodnota retezce prazdna, nastavi se barva pera na cervenou
@@ -50,6 +67,9 @@ def nbp():
 
 # funkce pro nastaveni barvy pozadi
 def nbpo():
+    """Nastav barvu pozadi.
+    >>> nbpo()
+    """
     try:
       turtle.bgcolor(barvaPozadi)
       if barvaPozadi == str(''):                            # pokud je hodnota retezce prazdna, nastavi se barva pozadi na cernou
@@ -58,9 +78,7 @@ def nbpo():
         turtle.bgcolor('black')                             # pokud je hodnota retezce neplatna (barva neexistuje a nastatne error), zachyti tuto chybu a nastavi barvu pozadi na cernou
      
 
-# preddefinovane parametry
-delka = 2                           # delka cary, ktera se vykresli
-uhel = 90                           # uhel mezi rekurzemi
+
 
 
 # funkce pro nasstaveni vykreslovaci plochy
@@ -80,6 +98,6 @@ nbp()
 nbpo()
 
 # zavolani funkce Krivka
-Krivka(vrat_cislo(), delka, uhel)
+Krivka(vrat_cislo(iterace), delka, uhel)
 
 turtle.done()
