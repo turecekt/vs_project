@@ -15,7 +15,7 @@ errorMessage = "Morse code is not valid!"
 
 
 def letter2morse(letter: str) -> str:
-    """Commenting def.
+    """Commenting function.
 
     gives morse code from letters
     """
@@ -23,7 +23,7 @@ def letter2morse(letter: str) -> str:
 
 
 def morse2letter(mor: str) -> str:
-    """Commenting def.
+    """Commenting function.
 
     gives letters from morse code
     """
@@ -31,7 +31,7 @@ def morse2letter(mor: str) -> str:
 
 
 def text2morse(text: str) -> str:
-    """Commenting def.
+    """Commenting function.
 
     gives morse code from text
     """
@@ -46,7 +46,7 @@ def text2morse(text: str) -> str:
 
 
 def morse2text(morseText: str) -> str:
-    """Commenting def.
+    """Commenting function.
 
     gives full sentence from morse code
     """
@@ -62,18 +62,30 @@ def morse2text(morseText: str) -> str:
 
 
 def test_letter2morse():
+    """Commenting pytest.
+
+
+    """
     assert letter2morse("a") == '.-'
     assert letter2morse("9") != '---..'
     assert letter2morse("") == ""
 
 
 def test_morse2letter():
+    """Commenting pytest.
+
+
+    """
     assert morse2letter(".") == "e"
     assert morse2letter(".-") == "a"
     assert morse2letter("/") == " "
 
 
 def test_text2morse():
+    """Commenting pytest.
+
+
+    """
     assert text2morse("sos") == "... --- ..."
     assert text2morse("jAk se Mas") == ".--- .- -.- / ... . / -- .- ..."
     assert text2morse("as/ss") == ".- ... ... ..."
@@ -82,6 +94,10 @@ def test_text2morse():
 
 
 def test_morse2text():
+    """Commenting pytest.
+
+    sdsd
+    """
     assert morse2text("... --- ...") == "sos"
     assert morse2text(".--. . ... / ... . .-.. / " +
                       "...- . -.") == "pes sel ven"
