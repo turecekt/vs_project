@@ -1,26 +1,27 @@
+#Objekt morseovka
+class MorseDictionary:
+    dictionary = { 'A':'.-', 'B':'-...',
+                    'C':'-.-.', 'D':'-..', 'E':'.',
+                    'F':'..-.', 'G':'--.', 'H':'....',
+                    'I':'..', 'J':'.---', 'K':'-.-',
+                    'L':'.-..', 'M':'--', 'N':'-.',
+                    'O':'---', 'P':'.--.', 'Q':'--.-',
+                    'R':'.-.', 'S':'...', 'T':'-',
+                    'U':'..-', 'V':'...-', 'W':'.--',
+                    'X':'-..-', 'Y':'-.--', 'Z':'--..',
+                    '1':'.----', '2':'..---', '3':'...--',
+                    '4':'....-', '5':'.....', '6':'-....',
+                    '7':'--...', '8':'---..', '9':'----.',
+                    '0':'-----', ', ':'--..--', '.':'.-.-.-',
+                    '?':'..--..', '/':'-..-.', '-':'-....-',
+                    '(':'-.--.', ')':'-.--.-'}
+
 #zapninani programu
-
-
 def start():
     once = True
     morse(once)
 
 def morse(once):
-    morseCode = { 'A':'.-', 'B':'-...',
-                        'C':'-.-.', 'D':'-..', 'E':'.',
-                        'F':'..-.', 'G':'--.', 'H':'....',
-                        'I':'..', 'J':'.---', 'K':'-.-',
-                        'L':'.-..', 'M':'--', 'N':'-.',
-                        'O':'---', 'P':'.--.', 'Q':'--.-',
-                        'R':'.-.', 'S':'...', 'T':'-',
-                        'U':'..-', 'V':'...-', 'W':'.--',
-                        'X':'-..-', 'Y':'-.--', 'Z':'--..',
-                        '1':'.----', '2':'..---', '3':'...--',
-                        '4':'....-', '5':'.....', '6':'-....',
-                        '7':'--...', '8':'---..', '9':'----.',
-                        '0':'-----', ', ':'--..--', '.':'.-.-.-',
-                        '?':'..--..', '/':'-..-.', '-':'-....-',
-                        '(':'-.--.', ')':'-.--.-'}
     if (once):
         yep = input("If you want to see a summary of all available characters, press Y and Enter:")
         yep = yep.upper()
@@ -34,12 +35,12 @@ def morse(once):
     else:
         if (decision == "1"): #dekodovani
             text = input("Enter text to encode:")
-            encode(text,morseCode)
+            encode(text,MorseDictionary.dictionary)
             input("Press Enter to continue")
             morse(once)
         elif (decision == "2"): #rozkodovani
             text = input("Enter morse code to decode, write / after every letter, write // after every word:")
-            decode(text,morseCode)
+            decode(text,MorseDictionary.dictionary)
             input("Press Enter to continue")
             morse(once)
         else: #spatnej input
