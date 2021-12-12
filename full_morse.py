@@ -39,7 +39,9 @@ def text2morse(text: str) -> str:
     morseCode = ""
     for let in letters:
         if let in morse:
-            morseCode += letter2morse(let) + splitCharacter
+            morseCode += letter2morse(let)
+            morseCode += splitCharacter
+    morseCode = morseCode[:-1]
     return morseCode
 
 
@@ -59,7 +61,39 @@ def morse2text(morseText: str) -> str:
     return text
 
 
+def test_letter2morse():
+    assert letter2morse("a") == '.-'
+    assert letter2morse("9") != '---..'
+    assert letter2morse("") == ""
+
+
+def test_morse2letter():
+    assert morse2letter(".") == "e"
+    assert morse2letter(".-") == "a"
+    assert morse2letter("/") == " "
+
+
+def test_text2morse():
+    assert text2morse("sos") == "... --- ..."
+    assert text2morse("jAk se Mas") == ".--- .- -.- / ... . / -- .- ..."
+    assert text2morse("as/ss") == ".- ... ... ..."
+    assert text2morse("mama.") != "-- .- -- .- ."
+    assert text2morse("mama.") == "-- .- -- .-"
+
+
+def test_morse2text():
+    assert morse2text("... --- ...") == "sos"
+    assert morse2text(".--. . ... / ... . .-.. / " +
+                      "...- . -.") == "pes sel ven"
+    assert morse2text("") == ""
+    assert morse2text(" ") == ""
+    assert morse2text("        ") == ""
+    assert morse2text("... a --- / --.") == errorMessage
+
+
 """Main method."""
 if __name__ == "__main__":
-    print(text2morse("Ahoj Kubo/"))
-    print(morse2text(".- .... --- .--- / -.- ..- -... ---"))
+    test_letter2morse()
+    test_morse2letter()
+    test_text2morse()
+    test_morse2text()
