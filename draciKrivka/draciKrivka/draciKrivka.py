@@ -5,13 +5,13 @@ import _tkinter
 
 # definovani promennych z inputu uzivatele
 # vyzve uzivatele pro zadani poctu iteraci
-#iterace = input('Zadejte pocet iteraci: ')
+iterace = input('Zadejte pocet iteraci: ')
 
 # vyzve uzivatele pro zadani barvy pera
-#barvaPera = input('Zadejte barvu pera: ')
+barvaPera = input('Zadejte barvu pera: ')
 
 # vyzve uzivatele pro zadani barvy pozadi
-#barvaPozadi = input('Zadejte barvu pozadi: ')
+barvaPozadi = input('Zadejte barvu pozadi: ')
 
 
 # funkce pro vykresleni draci krivky
@@ -26,7 +26,6 @@ def Krivka(val, delka, uhel):               # nazev funkce a vstupni parametry
        
 #zachyceni vstupu pro iterace
 def vrat_cislo():
-    iterace = 5
     try:
         val = int(iterace)              # ulozeni hodnoty, kterou zada uzivatel
         if val < 0:                     # pokud je zadane cislo zaporne nastavi se kladna hodnota zadaneho cisla
@@ -40,10 +39,9 @@ def vrat_cislo():
 
 # funkce pro nastaveni barvy pera 
 def nbp():
-    barvaPera = 'pink'
     try:
      turtle.color(barvaPera)
-     if barvaPera == str(''):                                   # pokud je hodnota retezce prazdna, nastavi se barva pera na cervenou
+     if barvaPera == str(''):                                  # pokud je hodnota retezce prazdna, nastavi se barva pera na cervenou
          turtle.color('red') 
     except (turtle.TurtleGraphicsError, _tkinter.TclError):    # pokud je hodnota retezce neplatna (barva neexistuje a nastatne error), zachyti tuto chybu a nastavi barvu pera na cervenou
         turtle.color('red') 
@@ -52,7 +50,6 @@ def nbp():
 
 # funkce pro nastaveni barvy pozadi
 def nbpo():
-    barvaPozadi = 'red'
     try:
       turtle.bgcolor(barvaPozadi)
       if barvaPozadi == str(''):                            # pokud je hodnota retezce prazdna, nastavi se barva pozadi na cernou
@@ -65,8 +62,10 @@ def nbpo():
 delka = 2                           # delka cary, ktera se vykresli
 uhel = 90                           # uhel mezi rekurzemi
 
-# nastaveni prostredi
+
+# funkce pro nasstaveni vykreslovaci plochy
 def nastav_prostredi():
+    # nastaveni prostredi
     turtle.Screen().clear()
     turtle.speed(0 )
     turtle.pensize(1)
