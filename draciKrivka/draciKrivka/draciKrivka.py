@@ -15,11 +15,13 @@ def parametry():
     global iterace
     global barvaPera
     global barvaPozadi
+    global delka
+    global uhel
     iterace = input('Zadejte pocet iteraci: ')
     barvaPera = input('Zadejte barvu pera: ')
     barvaPozadi = input('Zadejte barvu pozadi: ')
-
-parametry()
+    delka = 2
+    uhel = 90
 
 # vyzve uzivatele pro zadani barvy pera
 #barvaPera = input('Zadejte barvu pera: ')
@@ -29,8 +31,8 @@ parametry()
 
 
 # preddefinovani parametru
-delka = 2                          
-uhel = 90                           
+#delka = 2                          
+#uhel = 90                           
 
 # funkce pro vykresleni draci krivky
 def Krivka(val, delka, uhel):              
@@ -105,6 +107,7 @@ def nastav_prostredi():
     turtle.goto(100, 100)
     turtle.pendown()
 
+parametry()
 nastav_prostredi()
 nbp()
 nbpo()
