@@ -2,34 +2,32 @@
 
 
 def start():
-    morse()
-
-def morse():
-    #inicializace pouze jednou na zacatku
     once = True
+    morse(once)
+
+def morse(once):
+    morseCode = { 'A':'.-', 'B':'-...',
+                        'C':'-.-.', 'D':'-..', 'E':'.',
+                        'F':'..-.', 'G':'--.', 'H':'....',
+                        'I':'..', 'J':'.---', 'K':'-.-',
+                        'L':'.-..', 'M':'--', 'N':'-.',
+                        'O':'---', 'P':'.--.', 'Q':'--.-',
+                        'R':'.-.', 'S':'...', 'T':'-',
+                        'U':'..-', 'V':'...-', 'W':'.--',
+                        'X':'-..-', 'Y':'-.--', 'Z':'--..',
+                        '1':'.----', '2':'..---', '3':'...--',
+                        '4':'....-', '5':'.....', '6':'-....',
+                        '7':'--...', '8':'---..', '9':'----.',
+                        '0':'-----', ', ':'--..--', '.':'.-.-.-',
+                        '?':'..--..', '/':'-..-.', '-':'-....-',
+                        '(':'-.--.', ')':'-.--.-'}
     if (once):
-        morseCode = { 'A':'.-', 'B':'-...',
-                            'C':'-.-.', 'D':'-..', 'E':'.',
-                            'F':'..-.', 'G':'--.', 'H':'....',
-                            'I':'..', 'J':'.---', 'K':'-.-',
-                            'L':'.-..', 'M':'--', 'N':'-.',
-                            'O':'---', 'P':'.--.', 'Q':'--.-',
-                            'R':'.-.', 'S':'...', 'T':'-',
-                            'U':'..-', 'V':'...-', 'W':'.--',
-                            'X':'-..-', 'Y':'-.--', 'Z':'--..',
-                            '1':'.----', '2':'..---', '3':'...--',
-                            '4':'....-', '5':'.....', '6':'-....',
-                            '7':'--...', '8':'---..', '9':'----.',
-                            '0':'-----', ', ':'--..--', '.':'.-.-.-',
-                            '?':'..--..', '/':'-..-.', '-':'-....-',
-                            '(':'-.--.', ')':'-.--.-'}
         yep = input("If you want to see a summary of all available characters, press Y and Enter:")
-        yep = yep.upper
+        yep = yep.upper()
         once = False
         if (yep == "Y"):#pokud y, vypise mozne znaky
             print("A B C D E F G H I J K L M N O P Q R S T U V W X Y Z 1 2 3 4 5 6 7 8 9 , . ? / - ( )")
             input("Press Enter to continue..")
-
     decision = input("For encoding morse press 1, For decoding morse press 2, for exit press 3:") #co chces delat / dekodovat / zakodovat
     if (decision == "3"):
         print("Goodbye")
@@ -38,16 +36,16 @@ def morse():
             text = input("Enter text to encode:")
             encode(text,morseCode)
             input("Press Enter to continue")
-            morse()
+            morse(once)
         elif (decision == "2"): #rozkodovani
             text = input("Enter morse code to decode, write / after every letter, write // after every word:")
-            decode(text)
+            decode(text,morseCode)
             input("Press Enter to continue")
-            morse()
+            morse(once)
         else: #spatnej input
             print("Your input isn't 1 or 2")
             input("Press Enter to continue")
-            morse()
+            morse(once)
 
 # Funkce zakoduje do morseovky
 def encode(message,morseCode):
@@ -75,7 +73,7 @@ def encode(message,morseCode):
        
 
 # Funkce dekóduje z morseovky
-def decode(inputMessage):
+def decode(inputMessage,morseCode):
     try:
         decodedMessage = ''
         message = inputMessage.split('//') # Do message se uloží všechny slova
