@@ -35,6 +35,7 @@ def text2morse(text: str) -> str:
 
     gives morse code from text
     """
+    text = text.strip()
     letters = list(text.lower())
     morseCode = ""
     for let in letters:
@@ -91,6 +92,7 @@ def test_text2morse():
     assert text2morse("as/ss") == ".- ... ... ..."
     assert text2morse("mama.") != "-- .- -- .- ."
     assert text2morse("mama.") == "-- .- -- .-"
+    assert text2morse("  s b     ") == "... / -..."
 
 
 def test_morse2text():
