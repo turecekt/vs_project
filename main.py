@@ -81,12 +81,13 @@ if __name__ == '__main__':
     """Hlavní funkce main. """
 
     print("Zvolte akci: ")
-    choice = float(input("1 - Převod do Morseovky \n2 - Převod z Morseovky\n"))
-    mess = str(input("Zadejte text k převodu: "))
-
-    if choice == 1:
+    choice = str(input("1 - Převod do Morseovky \n2 - Převod z Morseovky\n"))
+    if(choice == "1" or choice == "2"):
+        mess = str(input("Zadejte text k převodu: "))
+    
+    if choice == "1":
         print(f'Původni text: {mess} \nPřeložený text: {code(mess)}')
-    elif choice == 2:
+    elif choice == "2":
         if decode(mess) == "Error":
             print('Původní text není správně zakódován')
         else:
