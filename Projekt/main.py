@@ -19,7 +19,7 @@ class MorseDictionary:
                     '(':'-.--.', ')':'-.--.-'}
 
 #zapninani programu
-def start():
+def main():
     once = True
     morse(once)
 
@@ -94,10 +94,12 @@ def decode(inputMessage,morseCode):
     except Exception: # Při nenalezení hodnoty v dictionary se vypíše chybová hláška
         print("Character", letter, "is note defined in morse code")
 
-start()
 
-#def test_decode():
-#    assert decode(".-",MorseDictionary.dictionary) == print("A")
-#
-#def test_encode():
-#    assert encode("A",MorseDictionary.dictionary) == print(".-")
+def test_decode():
+    assert decode(".-",MorseDictionary.dictionary) == print("A")
+
+def test_encode():
+    assert encode("A",MorseDictionary.dictionary) == print(".-")
+
+if __name__ == '__main__':
+    main()
