@@ -109,9 +109,11 @@ def test_decode():
     assert decode("..... .----") == "51"
     assert decode("... | ---") == "S O"
     assert decode("..--- .---- | ...- .- -. --- -.-. .") == "21 VANOCE"
-
+    assert decode("'-.-' --- .-.. x") == "Error"
 
 def test_get_key():
     """Unit test funkce Get_key."""
     assert get_key('.-..') == "L"
     assert get_key('...-') == "V"
+    assert get_key('..-.') == "F"
+    assert get_key('x-x') = ""
