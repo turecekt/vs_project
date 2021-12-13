@@ -107,7 +107,7 @@ def test_decode():
     """Unit test funkce Decode."""
     assert decode("..... .----") == "51"
     assert decode("... | ---") == "S O"
-    assert decode("..--- ----- ..--- .---- | ...- .- -. --- -.-. .") == "2021 VANOCE"
+    assert decode("..--- .---- | ...- .- -. --- -.-. .") == "21 VANOCE"
 
 
 def test_get_key():
