@@ -1,3 +1,5 @@
+import pytest
+
 #Objekt morseovka
 class MorseDictionary:
     dictionary = { 'A':'.-', 'B':'-...',
@@ -93,3 +95,9 @@ def decode(inputMessage,morseCode):
         print("Character", letter, "is note defined in morse code")
 
 start()
+
+#def test_decode():
+#    assert decode(".-",MorseDictionary.dictionary) == print("A")
+#
+#def test_encode():
+#    assert encode("A",MorseDictionary.dictionary) == print(".-")
