@@ -116,4 +116,4 @@ def test_get_key():
     assert get_key('.-..') == "L"
     assert get_key('...-') == "V"
     assert get_key('..-.') == "F"
-    assert get_key('x-x') = ""
+    assert get_key('x-x') == ""
