@@ -26,6 +26,10 @@ def code(text):
     '.---- ..--- ...-- | ....- .....'
     >>> code('Ahoj')
     '.- .... --- .---'
+    >>> code('abeceda')
+    '.- -... . -.-. . -.. .-'
+    >>> code('Novy rok 2022')
+    '-. --- ...- -.-- | .-. --- -.- | ..--- ----- ..--- ..---'
     """
     text = text.upper()
     ret = ""
@@ -46,6 +50,10 @@ def decode(text):
     'Error'
     >>> decode('.--. . ... | -.- --- -.-. -.- .-')
     'PES KOCKA'
+    >>> decode('-- --- .-. ... . | .- .-.. .--. .... .- -... . -')
+    'MORSE ALPHABET'
+    >>> decode('-.-. .. -.-. .- -.. .- ...-- ...-- ----- .----')
+    'CICADA3301'
     """
     ret = ""
 
@@ -91,12 +99,15 @@ def test_code():
     """Unit test funkce Code."""
     assert code("51") == "..... .----"
     assert code("SOS") == "... --- ..."
+    assert code("Zlin UTB") == "--.. .-.. .. -. | ..- - -..."
+    assert code("Software") == "... --- ..-. - .-- .- .-. --- ...- ."
 
 
 def test_decode():
     """Unit test funkce Decode."""
     assert decode("..... .----") == "51"
     assert decode("... | ---") == "S O"
+    assert decode("..--- ----- ..--- .---- | ...- .- -. --- -.-. .") == "2021 Vanoce"
 
 
 def test_get_key():
