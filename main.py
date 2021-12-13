@@ -84,7 +84,7 @@ if __name__ == '__main__':
     choice = str(input("1 - Převod do Morseovky \n2 - Převod z Morseovky\n"))
     if(choice == "1" or choice == "2"):
         mess = str(input("Zadejte text k převodu: "))
-    
+
     if choice == "1":
         print(f'Původni text: {mess} \nPřeložený text: {code(mess)}')
     elif choice == "2":
