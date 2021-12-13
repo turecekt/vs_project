@@ -100,7 +100,7 @@ def test_code():
     assert code("51") == "..... .----"
     assert code("SOS") == "... --- ..."
     assert code("Zlin UTB") == "--.. .-.. .. -. | ..- - -..."
-    assert code("Software") == "... --- ..-. - .-- .- .-. --- ...- ."
+    assert code("Software") == "... --- ..-. - .-- .- .-. ."
 
 
 def test_decode():
