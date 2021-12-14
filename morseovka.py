@@ -1,120 +1,98 @@
-Slovnik_morse = {   'A':'.-',
-                    'B':'-...',
-                    'C':'-.-.',
-                    'D':'-..',
-                    'E':'.',
-                    'F':'..-.',
-                    'G':'--.',
-                    'H':'....',
-                    'I':'..',
-                    'J':'.---',
-                    'K':'-.-',
-                    'L':'.-..',
-                    'M':'--',
-                    'N':'-.',
-                    'O':'---',
-                    'P':'.--.',
-                    'Q':'--.-',
-                    'R':'.-.',
-                    'S':'...',
-                    'T':'-',
-                    'U':'..-',
-                    'V':'...-',
-                    'W':'.--',
-                    'X':'-..-',
-                    'Y':'-.--',
-                    'Z':'--..',
-                    '1':'.----',
-                    '2':'..---',
-                    '3':'...--',
-                    '4':'....-',
-                    '5':'.....',
-                    '6':'-....',
-                    '7':'--...',
-                    '8':'---..',
-                    '9':'----.',
-                    '0':'-----',
-                    ', ':'--..--',
-                    '.':'.-.-.-',
-                    '?':'..--..',
-                    '/':'-..-.',
-                    '-':'-....-',
-                    '(':'-.--.',
-                    ')':'-.--.-'
-                }
- 
-# Function to encrypt the string
-# according to the morse code chart
+"""Aplikace, ktera umoznuje prelozit text do morseovky a zpet."""
+
+# Vytvoøení slovníku znakù
+Slovnik_morse = {
+                    'A': '.-',
+                    'B': '-...',
+                    'C': '-.-.',
+                    'D': '-..',
+                    'E': '.',
+                    'F': '..-.',
+                    'G': '--.',
+                    'H': '....',
+                    'I': '..',
+                    'J': '.---',
+                    'K': '-.-',
+                    'L': '.-..',
+                    'M': '--',
+                    'N': '-.',
+                    'O': '---',
+                    'P': '.--.',
+                    'Q': '--.-',
+                    'R': '.-.',
+                    'S': '...',
+                    'T': '-',
+                    'U': '..-',
+                    'V': '...-',
+                    'W': '.--',
+                    'X': '-..-',
+                    'Y': '-.--',
+                    'Z': '--..',
+                    '1': '.----',
+                    '2': '..---',
+                    '3': '...--',
+                    '4': '....-',
+                    '5': '.....',
+                    '6': '-....',
+                    '7': '--...',
+                    '8': '---..',
+                    '9': '----.',
+                    '0': '-----',
+                    ', ': '--..--',
+                    '.': '.-.-.-',
+                    '?': '..--..',
+                    '/': '-..-.',
+                    '-': '-....-',
+                    '(': '-.--.',
+                    ')': '-.--.-'
+                    }
+
+
 def encrypt(message):
+    """Funkce pro prevedeni textu do morse code."""
     PrekladEncrypt = ''
     for letter in message:
         if letter != ' ':
- 
-            # Looks up the dictionary and adds the
-            # correspponding morse code
-            # along with a space to separate
-            # morse codes for different characters
             PrekladEncrypt += Slovnik_morse[letter] + ' '
         else:
-            # 1 space indicates different characters
-            # and 2 indicates different words
             PrekladEncrypt += ' '
- 
+
     return PrekladEncrypt
- 
-# Function to decrypt the string
-# from morse to english
+
+
 def decrypt(message):
- 
-    # extra space added at the end to access the
-    # last morse code
+    """Funkce pro prevedeni morse code do textu."""
     message += ' '
- 
     PrekladDecrypt = ''
     citext = ''
     for letter in message:
- 
-        # checks for space
         if (letter != ' '):
- 
-            # counter to keep track of space
             i = 0
- 
-            # storing morse code of a single character
             citext += letter
- 
-        # in case of space
         else:
-            # if i = 1 that indicates a new character
             i += 1
- 
-            # if i = 2 that indicates a new word
-            if i == 2 :
- 
-                 # adding space to separate words
+            if i == 2:
                 PrekladDecrypt += ' '
             else:
- 
-                # accessing the keys using their values (reverse of encryption)
-                PrekladDecrypt += list(Slovnik_morse.keys())[list(Slovnik_morse
-                .values()).index(citext)]
+                PrekladDecrypt += list(Slovnik_morse.keys())[list(
+                    Slovnik_morse.values()).index(citext)]
                 citext = ''
- 
+
     return PrekladDecrypt
- 
-# Hard-coded driver function to run the program
+
+
 def main():
+    """Funkce, ktera umoznuje vybrat typ prevodu."""
     vyber = input("Pro sifrovani stiskni 's' pro desifrovani stiskni 'd'")
     if vyber == "s":
         message = input("Zadej text/slovo pro prelozeni do morse code: ")
         result = encrypt(message.upper())
-        print (result)
+        print(result)
     if vyber == "d":
         message = input("Zadej morse code pro prelozeni do textu: ")
         result = decrypt(message.upper())
-        print (result)
+        print(result)
 
- 
-# Executes the main function
+
 if __name__ == '__main__':
     main()
