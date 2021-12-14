@@ -1,7 +1,7 @@
 """
 This is an example script.
 
-It seems that it has to have THIS docstring with a summary line, a blank line
+It seems that it has to have THIS docstring with a summary line,
 and sume more text like here. Wow.
 """
 import unittest
@@ -27,7 +27,7 @@ def num2roman(num):
     """
     This is an example script.
 
-    It seems that it has to have THIS docstring with a summary line, a blank line
+    It seems that it has to have THIS docstring with a summary line, a bl
     and sume more text like here. Wow.
     """
     roman = ''
@@ -51,7 +51,7 @@ class Testy(unittest.TestCase):
         """
         This is an example script.
 
-        It seems that it has to have THIS docstring with a summary line, a blank line
+        It seems that it has to have THIS docstring with a summary line, a bla
         and sume more text like here. Wow.
         """
         assert num2roman(1) == 'I'
@@ -60,7 +60,7 @@ class Testy(unittest.TestCase):
         """
         This is an example script.
 
-        It seems that it has to have THIS docstring with a summary line, a blank line
+        It seems that it has to have THIS docstring with a summary line, a
         and sume more text like here. Wow.
         """
         assert num2roman(5) == 'V'
@@ -69,7 +69,7 @@ class Testy(unittest.TestCase):
         """
         This is an example script.
 
-        It seems that it has to have THIS docstring with a summary line, a blank line
+        It seems that it has to have THIS docstring with a summary line, a bla
         and sume more text like here. Wow.
         """
         assert num2roman(50) == 'L'
@@ -78,7 +78,7 @@ class Testy(unittest.TestCase):
         """
         This is an example script.
 
-        It seems that it has to have THIS docstring with a summary line, a blank line
+        It seems that it has to have THIS docstring with a summary line, a bl
         and sume more text like here. Wow.
         """
         assert num2roman(2) == 'II'
@@ -87,7 +87,7 @@ class Testy(unittest.TestCase):
         """
         This is an example script.
 
-        It seems that it has to have THIS docstring with a summary line, a blank line
+        It seems that it has to have THIS docstring with a summary line, a blan
         and sume more text like here. Wow.
         """
         assert num2roman(3) == 'III'
@@ -96,7 +96,7 @@ class Testy(unittest.TestCase):
         """
         This is an example script.
 
-        It seems that it has to have THIS docstring with a summary line, a blank line
+        It seems that it has to have THIS docstring with a summary line, a blan
         and sume more text like here. Wow.
         """
         assert num2roman(4) == 'IV'
@@ -105,7 +105,7 @@ class Testy(unittest.TestCase):
         """
         This is an example script.
 
-        It seems that it has to have THIS docstring with a summary line, a blank line
+        It seems that it has to have THIS docstring with a summary line, a blan
         and sume more text like here. Wow.
         """
         assert num2roman(10) == 'X'
