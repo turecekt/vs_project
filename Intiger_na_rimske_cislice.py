@@ -219,6 +219,19 @@ class TestMethods(unittest.TestCase):
     def test79(self):
         assert integerToRoman(70) == 'LXX'
         
+    class ToRomanBadInput(unittest.TestCase):
+    def test_too_large(self):
+        '''to_roman should fail with large input'''
+        self.assertRaises(roman3.OutOfRangeError, roman3.integerToRoman, 4000)
+
+    def test_zero(self):
+        '''to_roman should fail with 0 input'''
+        self.assertRaises(roman3.OutOfRangeError, roman3.integerToRoman, 0) 
+
+    def test_negative(self):
+        '''to_roman should fail with negative input'''
+        self.assertRaises(roman3.OutOfRangeError, roman3.integerToRoman, -1) 
+        
 def integerToRoman(A):
     def test_integer_to_roman(self):
         self.fail()
@@ -270,4 +283,5 @@ num1 = int(input("Enter num1: "))
 print("Roman Numeral of Integer is:"
       + str(integerToRoman(num1)))
 
-
+if __name__ == '__main__':
+    unittest.main()
