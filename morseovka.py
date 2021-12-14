@@ -104,13 +104,16 @@ def decrypt(message):
  
 # Hard-coded driver function to run the program
 def main():
-    message = "GEEKS-FOR-GEEKS"
-    result = encrypt(message.upper())
-    print (result)
- 
-    message = "--. . . -.- ... -....- ..-. --- .-. -....- --. . . -.- ... "
-    result = decrypt(message)
-    print (result)
+    vyber = input("Pro šifrování stiskni 's' pro dešifrování stiskni 'd'")
+    if vyber == "s":
+        message = input("Zadej text/slovo pro pøeložení do morse code: ")
+        result = encrypt(message.upper())
+        print (result)
+    if vyber == "d":
+        message = input("Zadej morse code pro pøeložení do textu: ")
+        result = decrypt(message.upper())
+        print (result)
+
  
 # Executes the main function
 if __name__ == '__main__':
