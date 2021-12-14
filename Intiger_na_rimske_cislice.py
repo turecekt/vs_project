@@ -1,4 +1,5 @@
 """Desitkove na rimske """
+
 import unittest
 
 num_map = [
@@ -20,6 +21,7 @@ num_map = [
 
 def num2roman(num):
     """cislo na rim"""
+
     roman = ''
 
     while num > 0:
@@ -39,28 +41,38 @@ class Testy(unittest.TestCase):
 
     def test1(self):
         """Test """
+
         assert num2roman(1) == 'I'
 
     def test2(self):
         """Test """
+
         assert num2roman(5) == 'V'
 
     def test3(self):
         """Test """
+
         assert num2roman(50) == 'L'
 
     def test4(self):
         """Test """
+
         assert num2roman(2) == 'II'
 
     def test5(self):
         """Test """
+
         assert num2roman(3) == 'III'
 
     def test6(self):
         """Test """
+
         assert num2roman(4) == 'IV'
 
     def test7(self):
         """Test """
+
         assert num2roman(10) == 'X'
+
+
+num2roman(5)
