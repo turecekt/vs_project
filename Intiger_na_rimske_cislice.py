@@ -24,12 +24,7 @@ num_map = [
 
 
 def num2roman(num):
-    """
-    This is an example script.
-
-    It seems that it has to have THIS docstring with a summary line, a bl
-    and sume more text like here. Wow.
-    """
+    """Return the pathname of the KOS root directory."""
     roman = ''
 
     while num > 0:
@@ -46,7 +41,12 @@ num2roman(5)
 
 
 class Testy(unittest.TestCase):
+    """
+    Tady jsou testy
 
+    It seems that it has to have THIS docstring with a summary line, a bl
+    and sume more text like here. Wow.
+    """
     def test1(self):
         """
         This is an example script.
