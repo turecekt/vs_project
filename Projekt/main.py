@@ -71,9 +71,8 @@ def encode(message,morseCode):
         return code
     # Pøi nedefinovaném vstupu se vypíše chybová hláška
     except KeyError: 
-        print("Character", letter, "is note defined in morse code")
-        print("These characters are defined: A B C D E F G H I J K L M N O P Q R S T U V W X Y Z 1 2 3 4 5 6 7 8 9 , . ? / - ( )")
-       
+        print("Wrong character " + letter)
+        return ("Character is not defined in morse code. These characters are defined: A B C D E F G H I J K L M N O P Q R S T U V W X Y Z 1 2 3 4 5 6 7 8 9 , . ? / - ")
 
 # Funkce dekóduje z morseovky
 def decode(inputMessage,morseCode):
@@ -92,8 +91,11 @@ def decode(inputMessage,morseCode):
             counter = counter + 1
         return decodedMessage
     except Exception: # Při nenalezení hodnoty v dictionary se vypíše chybová hláška
-        print("Character", letter, "is note defined in morse code")
+        print("Wrong character: " + letter)
+        return ("Character is not defined in morse code")
 
+    if __name__ == '__main__':
+        main()
 
 def test_decode():
     assert decode(".-",MorseDictionary.dictionary) == "A"
@@ -101,5 +103,8 @@ def test_decode():
 def test_encode():
     assert encode("A",MorseDictionary.dictionary) == ".-"
 
-if __name__ == '__main__':
-    main()
+def test_decode2():
+    assert decode("@",MorseDictionary.dictionary) == "Character is not defined in morse code"
+
+def test_encode2():
+    assert encode("@",MorseDictionary.dictionary) == "Character is not defined in morse code. These characters are defined: A B C D E F G H I J K L M N O P Q R S T U V W X Y Z 1 2 3 4 5 6 7 8 9 , . ? / - "
