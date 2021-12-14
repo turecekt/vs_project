@@ -41,12 +41,8 @@ num2roman(5)
 
 
 class Testy(unittest.TestCase):
-    """
-    Tady jsou testy
-
-    It seems that it has to have THIS docstring with a summary line, a bl
-    and sume more text like here. Wow.
-    """
+    """Class docstrings go here."""
+    
     def test1(self):
         """
         This is an example script.
