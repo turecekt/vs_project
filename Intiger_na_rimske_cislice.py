@@ -113,7 +113,112 @@ class TestMethods(unittest.TestCase):
 
     def test35(self):
         assert integerToRoman(35) == 'XXXV'
+    
+    def test36(self):
+        assert integerToRoman(36) == 'XXXVI'
 
+    def test37(self):
+        assert integerToRoman(37) == 'XXXVII'
+
+    def test38(self):
+        assert integerToRoman(38) == 'XXXVIII'
+        
+    def test39(self):
+        assert integerToRoman(39) == 'XXXIX'
+
+    def test40(self):
+        assert integerToRoman(40) == 'XL'
+
+    def test50(self):
+        assert integerToRoman(41) == 'XLI'
+        
+    def test51(self):
+        assert integerToRoman(42) == 'XLII'
+
+    def test52(self):
+        assert integerToRoman(43) == 'XLIII'
+
+    def test53(self):
+        assert integerToRoman(44) == 'XLIV'
+        
+    def test54(self):
+        assert integerToRoman(45) == 'XLV'
+
+    def test55(self):
+        assert integerToRoman(46) == 'XLVI'
+
+    def test56(self):
+        assert integerToRoman(47) == 'XLVII'
+        
+    def test57(self):
+        assert integerToRoman(48) == 'XLVIII'
+
+    def test58(self):
+        assert integerToRoman(49) == 'XLIX'
+
+    def test59(self):
+        assert integerToRoman(50) == 'L'
+        
+    def test60(self):
+        assert integerToRoman(51) == 'LI'
+
+    def test61(self):
+        assert integerToRoman(52) == 'LII'
+
+    def test62(self):
+        assert integerToRoman(53) == 'LIII'
+        
+    def test63(self):
+        assert integerToRoman(54) == 'LIV'
+
+    def test64(self):
+        assert integerToRoman(55) == 'LV'
+
+    def test65(self):
+        assert integerToRoman(56) == 'LVI'
+        
+    def test66(self):
+        assert integerToRoman(57) == 'LVII'
+
+    def test67(self):
+        assert integerToRoman(58) == 'LVIII'
+
+    def test68(self):
+        assert integerToRoman(59) == 'LIX'
+    
+    def test69(self):
+        assert integerToRoman(60) == 'LX'
+
+    def test70(self):
+        assert integerToRoman(61) == 'LXI'
+        
+    def test71(self):
+        assert integerToRoman(62) == 'LXII'
+
+    def test72(self):
+        assert integerToRoman(63) == 'LXIII'
+
+    def test73(self):
+        assert integerToRoman(64) == 'LXIV'
+        
+    def test74(self):
+        assert integerToRoman(65) == 'LXV'
+
+    def test75(self):
+        assert integerToRoman(66) == 'LXVI'
+
+    def test76(self):
+        assert integerToRoman(67) == 'LXVII'
+        
+    def test77(self):
+        assert integerToRoman(68) == 'LXVIII'
+
+    def test78(self):
+        assert integerToRoman(69) == 'LXIX'
+
+    def test79(self):
+        assert integerToRoman(70) == 'LXX'
+        
 def integerToRoman(A):
     def test_integer_to_roman(self):
         self.fail()
