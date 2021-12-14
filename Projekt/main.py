@@ -37,12 +37,12 @@ def morse(once):
     else:
         if (decision == "1"): #dekodovani
             text = input("Enter text to encode:")
-            encode(text,MorseDictionary.dictionary)
+            print(encode(text,MorseDictionary.dictionary))
             input("Press Enter to continue")
             morse(once)
         elif (decision == "2"): #rozkodovani
             text = input("Enter morse code to decode, write / after every letter, write // after every word:")
-            decode(text,MorseDictionary.dictionary)
+            print(decode(text,MorseDictionary.dictionary))
             input("Press Enter to continue")
             morse(once)
         else: #spatnej input
@@ -68,7 +68,7 @@ def encode(message,morseCode):
                 code += '/'
             counter = counter + 1
  
-        return print(code)
+        return code
     # Pøi nedefinovaném vstupu se vypíše chybová hláška
     except KeyError: 
         print("Character", letter, "is note defined in morse code")
@@ -90,16 +90,16 @@ def decode(inputMessage,morseCode):
             if (counter < len(message)): # Krom posledního slova, se za každým slovem pøipíše mezera
                 decodedMessage = decodedMessage + ' '
             counter = counter + 1
-        return   print(decodedMessage)
+        return decodedMessage
     except Exception: # Při nenalezení hodnoty v dictionary se vypíše chybová hláška
         print("Character", letter, "is note defined in morse code")
 
 
 def test_decode():
-    assert decode(".-",MorseDictionary.dictionary) == print("A")
+    assert decode(".-",MorseDictionary.dictionary) == "A"
 
 def test_encode():
-    assert encode("A",MorseDictionary.dictionary) == print(".-")
+    assert encode("A",MorseDictionary.dictionary) == ".-"
 
 if __name__ == '__main__':
     main()
