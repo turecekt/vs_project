@@ -7,12 +7,25 @@ import unittest
 import math
 
 class TestMethods(unittest.TestCase):
-
+    
+    
     def test1(self):
+        assert integerToRoman(5) == 'I'
+
+    def test2(self):
+        assert integerToRoman(2) == 'II'
+
+    def test3(self):
+        assert integerToRoman(3) == 'III'
+        
+    def test4(self):
+        assert integerToRoman(4) == 'IV'
+
+    def test5(self):
         assert integerToRoman(5) == 'V'
 
     def test2(self):
-        assert integerToRoman(10) == 'X'
+        assert integerToRoman(9) == 'IX'
 
 def integerToRoman(A):
     def test_integer_to_roman(self):
@@ -26,9 +39,7 @@ def integerToRoman(A):
             50: "L",
             100: "C",
             500: "D",
-            1000: "M",
-            5000: "G",
-            10000: "H"
+            1000: "M"
         }
 
     div = 1
