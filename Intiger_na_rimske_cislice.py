@@ -24,8 +24,26 @@ class TestMethods(unittest.TestCase):
     def test5(self):
         assert integerToRoman(5) == 'V'
 
-    def test2(self):
+    def test6(self):
+        assert integerToRoman(6) == 'VI'
+        
+    def test7(self):
+        assert integerToRoman(7) == 'VII'
+
+    def test8(self):
+        assert integerToRoman(8) == 'VIII'
+
+    def test9(self):
         assert integerToRoman(9) == 'IX'
+        
+    def test10(self):
+        assert integerToRoman(10) == 'X'
+
+    def test11(self):
+        assert integerToRoman(11) == 'XI'
+
+    def test12(self):
+        assert integerToRoman(12) == 'XII'
 
 def integerToRoman(A):
     def test_integer_to_roman(self):
