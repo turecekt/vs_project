@@ -104,13 +104,13 @@ def decrypt(message):
  
 # Hard-coded driver function to run the program
 def main():
-    vyber = input("Pro šifrování stiskni 's' pro dešifrování stiskni 'd'")
+    vyber = input("Pro sifrovani stiskni 's' pro desifrovani stiskni 'd'")
     if vyber == "s":
-        message = input("Zadej text/slovo pro pøeložení do morse code: ")
+        message = input("Zadej text/slovo pro prelozeni do morse code: ")
         result = encrypt(message.upper())
         print (result)
     if vyber == "d":
-        message = input("Zadej morse code pro pøeložení do textu: ")
+        message = input("Zadej morse code pro prelozeni do textu: ")
         result = decrypt(message.upper())
         print (result)
 
