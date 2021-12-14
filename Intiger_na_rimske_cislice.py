@@ -1,9 +1,3 @@
-"""
-This is an example script.
-
-It seems that it has to have THIS docstring with a summary line,
-and sume more text like here. Wow.
-"""
 import unittest
 
 num_map = [
@@ -42,6 +36,7 @@ num2roman(5)
 
 class Testy(unittest.TestCase):
     """Class docstrings go here."""
+    
     def test1(self):
         """
         This is an example script.
