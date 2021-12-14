@@ -283,5 +283,3 @@ num1 = int(input("Enter num1: "))
 print("Roman Numeral of Integer is:"
       + str(integerToRoman(num1)))
 
-if __name__ == '__main__':
-    unittest.main()
