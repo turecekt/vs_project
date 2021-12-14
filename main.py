@@ -45,3 +45,28 @@ def shellsort(list):
             list[j] = temp
         gap = gap // 2
     return list
+
+
+def main():
+    """
+    Hlavni funkce.
+    - pokud neni zadany vstup tak se generuje pole 20ti cisel.
+    - pokud je zadany soubor tak ho vycte.
+    - pokud je zadany argument tak pracuje s nim.
+    - vypsani min a max cisla.
+    - uzivatel si vybere jaky algoritmus chce pouzit na serazeni.
+    - vypsani serazeneho listu.
+    - vraci list cisel
+    """
+    if len(sys.argv) == 1:
+        numbers = [randint(1, 1000) for i in range(20)]
+    else:
+        if "txt" in sys.argv[1]:
+            with open(f"{sys.argv[1]}", "r") as file:
+                txt = file.read().split(" ")
+                numbers = [int(item) for item in txt]
+        else:
+            numbers = []
+            for i in range(1, len(sys.argv)):
+                numbers.append(sys.argv[i])
+    return numbers
