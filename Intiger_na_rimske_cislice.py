@@ -1,242 +1,232 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
 import unittest
 import math
 
+
 class TestMethods(unittest.TestCase):
-    
-    
+
     def test1(self):
-        assert integerToRoman(5) == 'I'
+        assert integerroman(1) == 'I'
+
+    def test878(self):
+        assert integerroman(0) == ''
+
+    def test871(self):
+        assert integerroman(-1) == ''
+        
+    def test879(self):
+        assert integerroman(4000) == ''
 
     def test2(self):
-        assert integerToRoman(2) == 'II'
+        assert integerroman(2) == 'II'
 
     def test3(self):
-        assert integerToRoman(3) == 'III'
-        
+        assert integerroman(3) == 'III'
+
     def test4(self):
-        assert integerToRoman(4) == 'IV'
+        assert integerroman(4) == 'IV'
 
     def test5(self):
-        assert integerToRoman(5) == 'V'
+        assert integerroman(5) == 'V'
 
     def test6(self):
-        assert integerToRoman(6) == 'VI'
-        
+        assert integerroman(6) == 'VI'
+
     def test7(self):
-        assert integerToRoman(7) == 'VII'
+        assert integerroman(7) == 'VII'
 
     def test8(self):
-        assert integerToRoman(8) == 'VIII'
+        assert integerroman(8) == 'VIII'
 
     def test9(self):
-        assert integerToRoman(9) == 'IX'
-        
+        assert integerroman(9) == 'IX'
+
     def test10(self):
-        assert integerToRoman(10) == 'X'
+        assert integerroman(10) == 'X'
 
     def test11(self):
-        assert integerToRoman(11) == 'XI'
+        assert integerroman(11) == 'XI'
 
     def test12(self):
-        assert integerToRoman(12) == 'XII'
-        
+        assert integerroman(12) == 'XII'
+
     def test13(self):
-        assert integerToRoman(13) == 'XIII'
+        assert integerroman(13) == 'XIII'
 
     def test14(self):
-        assert integerToRoman(14) == 'XIV'
+        assert integerroman(14) == 'XIV'
 
     def test15(self):
-        assert integerToRoman(15) == 'XV'
-        
+        assert integerroman(15) == 'XV'
+
     def test16(self):
-        assert integerToRoman(16) == 'XVI'
+        assert integerroman(16) == 'XVI'
 
     def test17(self):
-        assert integerToRoman(17) == 'XVII'
+        assert integerroman(17) == 'XVII'
 
     def test18(self):
-        assert integerToRoman(18) == 'XVIII'
-        
+        assert integerroman(18) == 'XVIII'
+
     def test19(self):
-        assert integerToRoman(19) == 'XIX'
+        assert integerroman(19) == 'XIX'
 
     def test20(self):
-        assert integerToRoman(20) == 'XX'
+        assert integerroman(20) == 'XX'
 
     def test21(self):
-        assert integerToRoman(21) == 'XXI'
-        
+        assert integerroman(21) == 'XXI'
+
     def test22(self):
-        assert integerToRoman(22) == 'XXII'
+        assert integerroman(22) == 'XXII'
 
     def test23(self):
-        assert integerToRoman(23) == 'XXIII'
+        assert integerroman(23) == 'XXIII'
 
     def test24(self):
-        assert integerToRoman(24) == 'XXIV'
-    
+        assert integerroman(24) == 'XXIV'
+
     def test25(self):
-        assert integerToRoman(25) == 'XXV'
+        assert integerroman(25) == 'XXV'
 
     def test26(self):
-        assert integerToRoman(26) == 'XXVI'
-        
+        assert integerroman(26) == 'XXVI'
+
     def test27(self):
-        assert integerToRoman(27) == 'XXVII'
+        assert integerroman(27) == 'XXVII'
 
     def test28(self):
-        assert integerToRoman(28) == 'XXVIII'
+        assert integerroman(28) == 'XXVIII'
 
     def test29(self):
-        assert integerToRoman(29) == 'XXIX'
-        
+        assert integerroman(29) == 'XXIX'
+
     def test30(self):
-        assert integerToRoman(30) == 'XXX'
+        assert integerroman(30) == 'XXX'
 
     def test31(self):
-        assert integerToRoman(31) == 'XXXI'
+        assert integerroman(31) == 'XXXI'
 
     def test32(self):
-        assert integerToRoman(32) == 'XXXII'
-        
+        assert integerroman(32) == 'XXXII'
+
     def test33(self):
-        assert integerToRoman(33) == 'XXXIII'
+        assert integerroman(33) == 'XXXIII'
 
     def test34(self):
-        assert integerToRoman(34) == 'XXXIV'
+        assert integerroman(34) == 'XXXIV'
 
     def test35(self):
-        assert integerToRoman(35) == 'XXXV'
-    
+        assert integerroman(35) == 'XXXV'
+
     def test36(self):
-        assert integerToRoman(36) == 'XXXVI'
+        assert integerroman(36) == 'XXXVI'
 
     def test37(self):
-        assert integerToRoman(37) == 'XXXVII'
+        assert integerroman(37) == 'XXXVII'
 
     def test38(self):
-        assert integerToRoman(38) == 'XXXVIII'
-        
+        assert integerroman(38) == 'XXXVIII'
+
     def test39(self):
-        assert integerToRoman(39) == 'XXXIX'
+        assert integerroman(39) == 'XXXIX'
 
     def test40(self):
-        assert integerToRoman(40) == 'XL'
+        assert integerroman(40) == 'XL'
 
     def test50(self):
-        assert integerToRoman(41) == 'XLI'
-        
+        assert integerroman(41) == 'XLI'
+
     def test51(self):
-        assert integerToRoman(42) == 'XLII'
+        assert integerroman(42) == 'XLII'
 
     def test52(self):
-        assert integerToRoman(43) == 'XLIII'
+        assert integerroman(43) == 'XLIII'
 
     def test53(self):
-        assert integerToRoman(44) == 'XLIV'
-        
+        assert integerroman(44) == 'XLIV'
+
     def test54(self):
-        assert integerToRoman(45) == 'XLV'
+        assert integerroman(45) == 'XLV'
 
     def test55(self):
-        assert integerToRoman(46) == 'XLVI'
+        assert integerroman(46) == 'XLVI'
 
     def test56(self):
-        assert integerToRoman(47) == 'XLVII'
-        
+        assert integerroman(47) == 'XLVII'
+
     def test57(self):
-        assert integerToRoman(48) == 'XLVIII'
+        assert integerroman(48) == 'XLVIII'
 
     def test58(self):
-        assert integerToRoman(49) == 'XLIX'
+        assert integerroman(49) == 'XLIX'
 
     def test59(self):
-        assert integerToRoman(50) == 'L'
-        
+        assert integerroman(50) == 'L'
+
     def test60(self):
-        assert integerToRoman(51) == 'LI'
+        assert integerroman(51) == 'LI'
 
     def test61(self):
-        assert integerToRoman(52) == 'LII'
+        assert integerroman(52) == 'LII'
 
     def test62(self):
-        assert integerToRoman(53) == 'LIII'
-        
+        assert integerroman(53) == 'LIII'
+
     def test63(self):
-        assert integerToRoman(54) == 'LIV'
+        assert integerroman(54) == 'LIV'
 
     def test64(self):
-        assert integerToRoman(55) == 'LV'
+        assert integerroman(55) == 'LV'
 
     def test65(self):
-        assert integerToRoman(56) == 'LVI'
-        
+        assert integerroman(56) == 'LVI'
+
     def test66(self):
-        assert integerToRoman(57) == 'LVII'
+        assert integerroman(57) == 'LVII'
 
     def test67(self):
-        assert integerToRoman(58) == 'LVIII'
+        assert integerroman(58) == 'LVIII'
 
     def test68(self):
-        assert integerToRoman(59) == 'LIX'
-    
+        assert integerroman(59) == 'LIX'
+
     def test69(self):
-        assert integerToRoman(60) == 'LX'
+        assert integerroman(60) == 'LX'
 
     def test70(self):
-        assert integerToRoman(61) == 'LXI'
-        
+        assert integerroman(61) == 'LXI'
+
     def test71(self):
-        assert integerToRoman(62) == 'LXII'
+        assert integerroman(62) == 'LXII'
 
     def test72(self):
-        assert integerToRoman(63) == 'LXIII'
+        assert integerroman(63) == 'LXIII'
 
     def test73(self):
-        assert integerToRoman(64) == 'LXIV'
-        
+        assert integerroman(64) == 'LXIV'
+
     def test74(self):
-        assert integerToRoman(65) == 'LXV'
+        assert integerroman(65) == 'LXV'
 
     def test75(self):
-        assert integerToRoman(66) == 'LXVI'
+        assert integerroman(66) == 'LXVI'
 
     def test76(self):
-        assert integerToRoman(67) == 'LXVII'
-        
+        assert integerroman(67) == 'LXVII'
+
     def test77(self):
-        assert integerToRoman(68) == 'LXVIII'
+        assert integerroman(68) == 'LXVIII'
 
     def test78(self):
-        assert integerToRoman(69) == 'LXIX'
+        assert integerroman(69) == 'LXIX'
 
     def test79(self):
-        assert integerToRoman(70) == 'LXX'
-        
-    class ToRomanBadInput(unittest.TestCase):
-    def test_too_large(self):
-        '''to_roman should fail with large input'''
-        self.assertRaises(roman3.OutOfRangeError, roman3.integerToRoman, 4000)
+        assert integerroman(70) == 'LXX'
 
-    def test_zero(self):
-        '''to_roman should fail with 0 input'''
-        self.assertRaises(roman3.OutOfRangeError, roman3.integerToRoman, 0) 
 
-    def test_negative(self):
-        '''to_roman should fail with negative input'''
-        self.assertRaises(roman3.OutOfRangeError, roman3.integerToRoman, -1) 
-        
-def integerToRoman(A):
-    def test_integer_to_roman(self):
-        self.fail()
-   #
-    romansDict = \
+def integerroman(a):
+
+    romansdict = \
         {
             1: "I",
             5: "V",
@@ -248,31 +238,31 @@ def integerToRoman(A):
         }
 
     div = 1
-    while A >= div:
+    while a >= div:
         div *= 10
 
     div /= 10
 
     res = ""
 
-    while A:
+    while a:
 
         #
-        lastNum = int(A / div)
+        lastnum = int(a / div)
 
-        if lastNum <= 3:
-            res += (romansDict[div] * lastNum)
-        elif lastNum == 4:
-            res += (romansDict[div] +
-                    romansDict[div * 5])
-        elif 5 <= lastNum <= 8:
-            res += (romansDict[div * 5] +
-                    (romansDict[div] * (lastNum - 5)))
-        elif lastNum == 9:
-            res += (romansDict[div] +
-                    romansDict[div * 10])
+        if lastnum <= 3:
+            res += (romansdict[div] * lastnum)
+        elif lastnum == 4:
+            res += (romansdict[div] +
+                    romansdict[div * 5])
+        elif 5 <= lastnum <= 8:
+            res += (romansdict[div * 5] +
+                    (romansdict[div] * (lastnum - 5)))
+        elif lastnum == 9:
+            res += (romansdict[div] +
+                    romansdict[div * 10])
 
-        A = math.floor(A % div)
+        a = math.floor(a % div)
         div /= 10
 
     return res
@@ -281,5 +271,8 @@ def integerToRoman(A):
 # Vlozeni vstupu a vytisknuti vystupu
 num1 = int(input("Enter num1: "))
 print("Roman Numeral of Integer is:"
-      + str(integerToRoman(num1)))
+      + str(integerroman(num1)))
 
+
+if __name__ == '__main__':
+    unittest.main()
