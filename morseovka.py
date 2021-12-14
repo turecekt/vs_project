@@ -1,6 +1,6 @@
 """Aplikace, ktera umoznuje prelozit text do morseovky a zpet."""
 
-# Vytvoøení slovníku znakù
+# Vytvoreni slovniku znaku
 Slovnik_morse = {
                     'A': '.-',
                     'B': '-...',
