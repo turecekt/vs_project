@@ -1,5 +1,6 @@
 import unittest
 
+
 class Testy(unittest.TestCase):
 
     def test1(self):
@@ -11,16 +12,16 @@ class Testy(unittest.TestCase):
     def test3(self):
         assert num2roman(50) == 'L'
 
-    def test2(self):
+    def test4(self):
         assert num2roman(2) == 'II'
 
-    def test3(self):
+    def test5(self):
         assert num2roman(3) == 'III'
 
-    def test4(self):
+    def test6(self):
         assert num2roman(4) == 'IV'
 
-    def test5(self):
+    def test7(self):
         assert num2roman(10) == 'X'
 
 
