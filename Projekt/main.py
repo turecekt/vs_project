@@ -94,7 +94,7 @@ def decode(inputMessage,morseCode):
         print("Wrong character: " + letter)
         return ("Character is not defined in morse code")
 
-    if __name__ == '__main__':
+if __name__ == '__main__':
         main()
 
 def test_decode():
@@ -108,3 +108,40 @@ def test_decode2():
 
 def test_encode2():
     assert encode("@",MorseDictionary.dictionary) == "Character is not defined in morse code. These characters are defined: A B C D E F G H I J K L M N O P Q R S T U V W X Y Z 1 2 3 4 5 6 7 8 9 , . ? / - "
+
+def test_morse():
+    set_keyboard_input(["Y", "", "3"])
+    morse(True)
+    output = get_display_output()
+    assert output == ["If you want to see a summary of all available characters, press Y and Enter:",
+                      "A B C D E F G H I J K L M N O P Q R S T U V W X Y Z 1 2 3 4 5 6 7 8 9 , . ? / - ( )",
+                      "Press Enter to continue..",
+                      "For encoding morse press 1, For decoding morse press 2, for exit press 3:",
+                      "Goodbye"]
+import builtins
+
+inner_values = []
+print_values = []
+
+def vstup(s):
+    print_values.append(s)
+    return inner_values.pop(0)
+
+def vstup_vystup_start():
+    global inner_values, print_values
+
+    inner_values = []
+    print_values = []
+
+    builtins.input = vstup
+    builtins.print = lambda s: print_values.append(s)
+
+def get_display_output():
+    global print_values
+    return print_values
+
+def set_keyboard_input(vstupy):
+    global inner_values
+
+    vstup_vystup_start()
+    inner_values = vstupy
