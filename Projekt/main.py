@@ -134,6 +134,66 @@ def test_morse():
                       "Goodbye"]
 
 
+def test_morse2():
+    set_keyboard_input(["3"])
+    morse(False)
+    output = get_display_output()
+    assert output == ["For encoding morse press 1, For decoding morse press 2, for exit press 3:",
+                      "Goodbye"]
+
+
+def test_morse3():
+    set_keyboard_input(["1", "a", "3", "3"])
+    morse(False)
+    output = get_display_output()
+    assert output == ["For encoding morse press 1, For decoding morse press 2, for exit press 3:",
+                      "Enter text to encode:",
+                      ".-",
+                      "Press Enter to continue",
+                      "For encoding morse press 1, For decoding morse press 2, for exit press 3:",
+                      "Goodbye"]
+
+
+def test_morse4():
+    set_keyboard_input(["2", "..", "3", "3"])
+    morse(False)
+    output = get_display_output()
+    assert output == ["For encoding morse press 1, For decoding morse press 2, for exit press 3:",
+                      "Enter morse code to decode, write / after every letter, write // after every word:",
+                      "I",
+                      "Press Enter to continue",
+                      "For encoding morse press 1, For decoding morse press 2, for exit press 3:",
+                      "Goodbye"]
+
+
+def test_main():
+    set_keyboard_input(["n","2", "..", "3", "3"])
+    main()
+    output = get_display_output()
+    assert output == ["If you want to see a summary of all available characters, press Y and Enter:",
+                      "For encoding morse press 1, For decoding morse press 2, for exit press 3:",
+                      "Enter morse code to decode, write / after every letter, write // after every word:",
+                      "I",
+                      "Press Enter to continue",
+                      "For encoding morse press 1, For decoding morse press 2, for exit press 3:",
+                      "Goodbye"]
+
+
+def test_main2():
+    set_keyboard_input(["y","", "2", "..", "3", "3"])
+    main()
+    output = get_display_output()
+    assert output == ["If you want to see a summary of all available characters, press Y and Enter:",
+                      "A B C D E F G H I J K L M N O P Q R S T U V W X Y Z 1 2 3 4 5 6 7 8 9 , . ? / - ( )",
+                      "Press Enter to continue..",
+                      "For encoding morse press 1, For decoding morse press 2, for exit press 3:",
+                      "Enter morse code to decode, write / after every letter, write // after every word:",
+                      "I",
+                      "Press Enter to continue",
+                      "For encoding morse press 1, For decoding morse press 2, for exit press 3:",
+                      "Goodbye"]
+
+
 inner_values = []
 print_values = []
 
