@@ -70,8 +70,8 @@ def decrypt(message):
             else:
 
                 # accessing the keys using their values (reverse of encryption)
-                decipher += list(MORSE_CODE_DICT.keys())
-                [list(MORSE_CODE_DICT.values()).index(citext)]
+                decipher += list(MORSE_CODE_DICT.keys())[
+                            list(MORSE_CODE_DICT.values()).index(citext)]
                 citext = ''
 
     return decipher
@@ -83,7 +83,7 @@ def main():
     result = encrypt(message.upper())
     print(result)
 
-    message = "-.. .- -. .. . .-.. ...- .- ... -.- ---"
+    message = input("Zadaj nieco: ")
     result = decrypt(message)
     print(result)
 
@@ -101,7 +101,7 @@ def test_answer():
 
 def test_answer2():
     """Unit test dekryptovania."""
-    assert encrypt(".- ") == "A "
+    assert decrypt(".- ") == "A "
 
 
 def test_answer3():
