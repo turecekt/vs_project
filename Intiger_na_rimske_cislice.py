@@ -1,7 +1,7 @@
 """
-This is an example script.
+Adam Kopřiva.
 
-It seems that it has to have THIS docstring with a summary line,
+Převod integru na římský zápis čísel docstring with a summary line,
 and sume more text like here. Wow.
 """
 import unittest
@@ -24,7 +24,7 @@ num_map = [
 
 
 def num2roman(num):
-    """Return the pathname of the KOS root directory."""
+    """´Převod čísla na římské číslo."""
     roman = ''
 
     while num > 0:
@@ -41,11 +41,11 @@ num2roman(5)
 
 
 class Testy(unittest.TestCase):
-    """Class docstrings go here."""
+    """Zde jsou testy."""
 
     def test1(self):
         """
-        This is an example script.
+        Testik.
 
         It seems that it has to have THIS docstring with a summary line, a bla
         and sume more text like here. Wow.
