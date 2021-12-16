@@ -65,12 +65,6 @@ class RunMorseTest(unittest.TestCase):
         dst = src.upper()
         self.assertEqual(frommorse(tomorse(src)), dst)
 
-    def test_final(self):
-        """ Test Codovani a Decodovani vstupu. """
-        src = "There is no elevator to success, you have to take the stairs."
-        dst = src.upper()
-        self.assertEqual(frommorse(tomorse(src)), dst)
 
 if __name__ == '__main__':
     unittest.main()
-
