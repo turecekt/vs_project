@@ -19,30 +19,40 @@ _chars = {
     'M':  "--",    'Z':  "--..",  '?':  "..--..",  '\n': ",",
 }
 
+
 def atom(c):
     """ Codovani jednoho znaku do Morseovy abecedy. """
-    try: return _chars[c.upper()]
-    except: return '{'+ c +'}'
+    if c.upper() in _chars:
+        return _chars[c.upper()]
+    else:
+        return '{' + c + '}'
+
 
 def mtoa(c):
     """ Decodovani jednoho znaku Morseovy abecedy. """
-    try: return list(_chars.keys())[list(_chars.values()).index(c)]
-    except: return '{'+ c +'}' if c else c
+    if c in list(_chars.values()):
+        return list(_chars.keys())[list(_chars.values()).index(c)]
+    else:
+        return '{' + c + '}' if c else c
+
 
 def tomorse(s):
     """ Codovani z textu do Morseovy abecedy. """
     return "/".join(atom(c) for c in list(s)) if s else ''
 
+
 def frommorse(s):
     """ Decodovani z Morseovy abecedy do textu. """
-    return "".join(mtoa(c) for c in \
-        s.translate(str.maketrans('','',' \n')).split('/'))
+    s = s.translate(str.maketrans('', '', ' \n'))
+    return "".join(mtoa(c) for c in s.split('/'))
+
 
 if __name__ == "__main__":
     import sys
     # detekce argumentu se vstupem:
-    if len(sys.argv) <= 1: s = sys.stdin.read()
-    else: s = " ".join(sys.argv[1:])
+    if len(sys.argv) <= 1:
+        s = sys.stdin.read()
+    else:
+        s = " ".join(sys.argv[1:])
     # detekce morseovy abecedy:
     print(tomorse(s) if s.strip(".-/, \n") else frommorse(s))
-
