@@ -1,4 +1,6 @@
 import builtins
+
+
 # Objekt morseovka
 class MorseDictionary:
     dictionary = {'A': '.-', 'B': '-...',
@@ -26,13 +28,17 @@ def main():
 
 def morse(once):
     if (once):
-        yep = input("If you want to see a summary of all available characters, press Y and Enter:")
+        yep = input("If you want to see a summary of all available characters,"
+                    " press Y and Enter:")
         yep = yep.upper()
         once = False
         if (yep == "Y"):  # pokud y, vypise mozne znaky
-            print("A B C D E F G H I J K L M N O P Q R S T U V W X Y Z 1 2 3 4 5 6 7 8 9 , . ? / - ( )")
+            print("A B C D E F G H I J K L M N O P Q R S T U V W X Y Z 1 2 "
+                  "3 4 5 6 7 8 9 , . ? / - ( )")
             input("Press Enter to continue..")
-    decision = input("For encoding morse press 1, For decoding morse press 2, for exit press 3:")  # co chces delat / dekodovat / zakodovat
+    decision = input("For encoding morse press 1, For decoding morse press 2,"
+                     " for exit press 3:")  # co chces delat / dekodovat /
+    # zakodovat
     if (decision == "3"):
         print("Goodbye")
     else:
@@ -42,7 +48,8 @@ def morse(once):
             input("Press Enter to continue")
             morse(once)
         elif (decision == "2"):  # rozkodovani
-            text = input("Enter morse code to decode, write / after every letter, write // after every word:")
+            text = input("Enter morse code to decode, write / after every"
+                         " letter, write // after every word:")
             print(decode(text, MorseDictionary.dictionary))
             input("Press Enter to continue")
             morse(once)
@@ -74,7 +81,9 @@ def encode(message, morseCode):
     # Pri nedefinovaném vstupu se vypíše chybová hláška
     except KeyError:
         print("Wrong character " + letter)
-        return ("Character is not defined in morse code. These characters are defined: A B C D E F G H I J K L M N O P Q R S T U V W X Y Z 1 2 3 4 5 6 7 8 9 , . ? / - ")
+        return ("Character is not defined in morse code. These characters "
+                "are defined: A B C D E F G H I J K L M N O P Q R S T U V W"
+                " X Y Z 1 2 3 4 5 6 7 8 9 , . ? / - ")
 
 
 # Funkce dekóduje z morseovky
@@ -87,15 +96,22 @@ def decode(inputMessage, morseCode):
         for word in message:
             letters = word.split('/')  # Do letters se uloží všechny písmena
             for letter in letters:
-                if (letter != ''):  # Pro každé písmeno se najde odpovídající klíè v dictionary morseCode
-                    decodedMessage = decodedMessage + list(morseCode.keys())[list(morseCode.values()).index(letter)]
-            if (counter < len(message)):  # Krom posledního slova, se za každým slovem pøipíše mezera
+                if (letter != ''):  # Pro každé písmeno se najde odpovídající
+                    # klíè v dictionary morseCode
+                    decodedMessage =\
+                        decodedMessage + \
+                        list(morseCode.keys())[list(morseCode.values()).index(
+                            letter)]
+            if (counter < len(message)):  # Krom posledního slova, se za každým
+                # slovem pøipíše mezera
                 decodedMessage = decodedMessage + ' '
             counter = counter + 1
         return decodedMessage
-    except Exception:  # Při nenalezení hodnoty v dictionary se vypíše chybová hláška
+    except Exception:  # Při nenalezení hodnoty v dictionary se vypíše chybová
+        # hláška
         print("Wrong character: " + letter)
         return ("Character is not defined in morse code")
+
 
 # Podmínka pro spuštění programu
 if __name__ == '__main__':
@@ -114,12 +130,17 @@ def test_encode():
 
 # Test č. 3 na zadání špaptné hodnoty při dekodovani
 def test_decode2():
-    assert decode("@", MorseDictionary.dictionary) == "Character is not defined in morse code"
+    assert decode("@", MorseDictionary.dictionary) == "Character is" \
+                                                      " not defined in morse" \
+                                                      " code"
 
 
 # Test č. 4 na zadání špatné hodnoty při rozkodovani
 def test_encode2():
-    assert encode("@", MorseDictionary.dictionary) == "Character is not defined in morse code. These characters are defined: A B C D E F G H I J K L M N O P Q R S T U V W X Y Z 1 2 3 4 5 6 7 8 9 , . ? / - "
+    assert encode("@", MorseDictionary.dictionary) == \
+           "Character is not defined in morse code. These characters are" \
+           " defined: A B C D E F G H I J K L M N O P Q R S T U V W X Y Z 1" \
+           " 2 3 4 5 6 7 8 9 , . ? / - "
 
 
 # Test č. 5 na zadání vstupních hodnot a zobrazení výstupu
@@ -127,73 +148,97 @@ def test_morse():
     set_keyboard_input(["Y", "", "3"])
     morse(True)
     output = get_display_output()
-    assert output == ["If you want to see a summary of all available characters, press Y and Enter:",
-                      "A B C D E F G H I J K L M N O P Q R S T U V W X Y Z 1 2 3 4 5 6 7 8 9 , . ? / - ( )",
+    assert output == ["If you want to see a summary of all available"
+                      " characters, press Y and Enter:",
+                      "A B C D E F G H I J K L M N O P Q R S T U"
+                      " V W X Y Z 1 2 3 4 5 6 7 8 9 , . ? / - ( )",
                       "Press Enter to continue..",
-                      "For encoding morse press 1, For decoding morse press 2, for exit press 3:",
+                      "For encoding morse press 1, For decoding mor"
+                      "se press 2, for exit press 3:",
                       "Goodbye"]
+
 
 # Test č. 6 zadání vstupní hodnoty pro ukončení programu
 def test_morse2():
     set_keyboard_input(["3"])
     morse(False)
     output = get_display_output()
-    assert output == ["For encoding morse press 1, For decoding morse press 2, for exit press 3:",
+    assert output == ["For encoding morse press 1, For decoding "
+                      "morse press 2, for exit press 3:",
                       "Goodbye"]
 
-# Test č. 7 zadání dalších možnosti vstupních hodnot 
+
+# Test č. 7 zadání dalších možnosti vstupních hodnot
 def test_morse3():
     set_keyboard_input(["1", "a", "3", "3"])
     morse(False)
     output = get_display_output()
-    assert output == ["For encoding morse press 1, For decoding morse press 2, for exit press 3:",
+    assert output == ["For encoding morse press 1, For decoding "
+                      "morse press 2, for exit press 3:",
                       "Enter text to encode:",
                       ".-",
                       "Press Enter to continue",
-                      "For encoding morse press 1, For decoding morse press 2, for exit press 3:",
+                      "For encoding morse press 1, For decoding "
+                      "morse press 2, for exit press 3:",
                       "Goodbye"]
+
 
 # Test č. 8, další možnost na zadání špatného výstupu
 def test_morse4():
     set_keyboard_input(["2", "..", "3", "3"])
     morse(False)
     output = get_display_output()
-    assert output == ["For encoding morse press 1, For decoding morse press 2, for exit press 3:",
-                      "Enter morse code to decode, write / after every letter, write // after every word:",
+    assert output == ["For encoding morse press 1, For decoding"
+                      " morse press 2, for exit press 3:",
+                      "Enter morse code to decode, write / after"
+                      " every letter, write // after every word:",
                       "I",
                       "Press Enter to continue",
-                      "For encoding morse press 1, For decoding morse press 2, for exit press 3:",
+                      "For encoding morse press 1, For decoding"
+                      " morse press 2, for exit press 3:",
                       "Goodbye"]
+
 
 # Test č. 9, další možnost na zadání špatného výstupu
 def test_main():
-    set_keyboard_input(["n","2", "..", "3", "3"])
+    set_keyboard_input(["n", "2", "..", "3", "3"])
     main()
     output = get_display_output()
-    assert output == ["If you want to see a summary of all available characters, press Y and Enter:",
-                      "For encoding morse press 1, For decoding morse press 2, for exit press 3:",
-                      "Enter morse code to decode, write / after every letter, write // after every word:",
+    assert output == ["If you want to see a summary of all avail"
+                      "able characters, press Y and Enter:",
+                      "For encoding morse press 1, For decoding"
+                      " morse press 2, for exit press 3:",
+                      "Enter morse code to decode, write / aft"
+                      "er every letter, write // after every word:",
                       "I",
                       "Press Enter to continue",
-                      "For encoding morse press 1, For decoding morse press 2, for exit press 3:",
+                      "For encoding morse press 1, For decoding"
+                      " morse press 2, for exit press 3:",
                       "Goodbye"]
 
-# Test č. 10, zadání další špatné hodnoty ve výstupu a následný výpis 
+
+# Test č. 10, zadání další špatné hodnoty ve výstupu a následný výpis
 def test_main2():
-    set_keyboard_input(["y","", "2", "..", "3", "3"])
+    set_keyboard_input(["y", "", "2", "..", "3", "3"])
     main()
     output = get_display_output()
-    assert output == ["If you want to see a summary of all available characters, press Y and Enter:",
-                      "A B C D E F G H I J K L M N O P Q R S T U V W X Y Z 1 2 3 4 5 6 7 8 9 , . ? / - ( )",
+    assert output == ["If you want to see a summary of all availa"
+                      "ble characters, press Y and Enter:",
+                      "A B C D E F G H I J K L M N O P Q R S T "
+                      "U V W X Y Z 1 2 3 4 5 6 7 8 9 , . ? / - ( )",
                       "Press Enter to continue..",
-                      "For encoding morse press 1, For decoding morse press 2, for exit press 3:",
-                      "Enter morse code to decode, write / after every letter, write // after every word:",
+                      "For encoding morse press 1, For decoding"
+                      " morse press 2, for exit press 3:",
+                      "Enter morse code to decode, write / after"
+                      " every letter, write // after every word:",
                       "I",
                       "Press Enter to continue",
-                      "For encoding morse press 1, For decoding morse press 2, for exit press 3:",
+                      "For encoding morse press 1, For decoding "
+                      "morse press 2, for exit press 3:",
                       "Goodbye"]
 
 # Funkce podporující testování programu
+
 
 inner_values = []
 print_values = []
