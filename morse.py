@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 # 14.12.2021
-""" Codovani/Decodovani Morseovy abecedy. """
+"""Codovani/Decodovani Morseovy abecedy."""
 
 # mapa znaku morseovy abecedy
 _chars = {
@@ -21,7 +21,7 @@ _chars = {
 
 
 def atom(c):
-    """ Codovani jednoho znaku do Morseovy abecedy. """
+    """Codovani jednoho znaku do Morseovy abecedy."""
     if c.upper() in _chars:
         return _chars[c.upper()]
     else:
@@ -29,7 +29,7 @@ def atom(c):
 
 
 def mtoa(c):
-    """ Decodovani jednoho znaku Morseovy abecedy. """
+    """Decodovani jednoho znaku Morseovy abecedy."""
     if c in list(_chars.values()):
         return list(_chars.keys())[list(_chars.values()).index(c)]
     else:
@@ -37,12 +37,12 @@ def mtoa(c):
 
 
 def tomorse(s):
-    """ Codovani z textu do Morseovy abecedy. """
+    """Codovani z textu do Morseovy abecedy."""
     return "/".join(atom(c) for c in list(s)) if s else ''
 
 
 def frommorse(s):
-    """ Decodovani z Morseovy abecedy do textu. """
+    """Decodovani z Morseovy abecedy do textu."""
     s = s.translate(str.maketrans('', '', ' \n'))
     return "".join(mtoa(c) for c in s.split('/'))
 
