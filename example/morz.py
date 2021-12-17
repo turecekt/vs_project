@@ -1,3 +1,4 @@
+#Definice Morzeovy abecedy
 Slovnik =          {'A':'.-', 'B':'-...',
                     'C':'-.-.', 'D':'-..', 'E':'.',
                     'F':'..-.', 'G':'--.', 'H':'....',
@@ -14,6 +15,7 @@ Slovnik =          {'A':'.-', 'B':'-...',
                     '4':'....-','5':'.....', '6':'-....',
                     '7':'--...', '8':'---..', '9':'----.'}
 
+#Funkce ktera zakoduje zpravu psanou v latince do morzeovy abecedy
 def kod(zprava):
     sifra = ''
     for letter in zprava:
@@ -25,7 +27,7 @@ def kod(zprava):
     return sifra
  
 
-
+#Funkce ktera rozlusti zpravu psanou v morzeove abecede do latinky
 def dekod(zprava):
     
     zprava += ' '
@@ -54,6 +56,7 @@ def dekod(zprava):
  
     return rozsifra
  
+#Main, kde program pozna zdali je zadana zprava psana v morzeove abecede ci latince a spusti spravny kod na prevedeni do druhe abecedy
 def main():
     zprava = "AHOJ SVETE."
     if ('.' in zprava[0:1] or '-' in zprava[0:1]):
@@ -62,6 +65,7 @@ def main():
         vyslednazprava = kod(zprava.upper())
         
     print (vyslednazprava)
- 
+
+#Spusti main
 if __name__ == '__main__':
     main()
