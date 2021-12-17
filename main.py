@@ -91,7 +91,7 @@ def main():
 #        result = encrypt(userText)
 #        print(result)
 #    elif count == "e":
-#        print("Insert Morze code:")
+#        print("Insert Morze code: ")
 #        userText = input()
 #        result = decrypt(userText)
 #        print(result)
