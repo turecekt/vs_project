@@ -75,23 +75,28 @@ def decrypt(userText):
 
 
 def main():
-    """Print text and receive data from the keyboard."""
-    print('Enter "M" for Morse Code, to decode into English insert "E"')
-    count = input()
-    count = count.lower()
-    if count == "m":
-        print("Insert Eng text:")
-        userText = input()
-        result = encrypt(userText)
-        print(result)
-    elif count == "e":
-        print("Insert Morze code:")
-        userText = input()
-        result = decrypt(userText)
-        print(result)
-    else:
-        print("Invalid data")
+    resultencrypt  = encrypt("Happy Christmas")
+    print(resultencrypt)
 
+    resultdecrypt = decrypt(".... .- .--. .--. -.-- -.-. .... .-. .. ... - -- .- ...")
+    print(resultdecrypt)
+
+#    """Print text and receive data from the keyboard."""
+#    print('Enter "M" for Morse Code, to decode into English insert "E"')
+#    count = input()
+#    count = count.lower()
+#    if count == "m":
+#        print("Insert Eng text:")
+#        userText = input()
+#        result = encrypt(userText)
+#        print(result)
+#    elif count == "e":
+#        print("Insert Morze code: ")
+#        userText = input()
+#        result = decrypt(userText)
+#        print(result)
+#    else:
+#        print("Invalid data")
 
 if __name__ == '__main__':
     main()
