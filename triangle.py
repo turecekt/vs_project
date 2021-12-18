@@ -61,3 +61,65 @@ def triangle():
             print("Triangle is not assemblable")
     except Exception:
         print('You need to enter coordinates for each point')
+
+
+
+def inputTest(capsys):
+    triangle(1, 1, 1)
+    captured = capsys.readouterr()
+    assert captured.out == 'You need to enter coordinates for each point'
+
+
+def testSides1():
+    a, b, c = sides((2, 1), (5, 2), (4, 4))
+    assert a == 2.23606797749979
+    assert b == 3.605551275463989
+    assert c == 3.1622776601683795
+
+
+def testSides2():
+    a, b, c = sides((14, 6), (12, 26), (56, 121))
+    assert a == 104.69479452198185
+    assert b == 122.42957159118053
+    assert c == 20.09975124224178
+
+
+def testSides3():
+    a, b, c = sides((-4, 1), (23, -4), (-14, -2))
+    assert a == 37.05401462729781
+    assert b == 10.44030650891055
+    assert c == 27.459060435491963
+
+
+def testAssemblability1():
+    a, b, c = sides((2, 1), (5, 2), (4, 4))
+    assert assemblability(a, b, c) is True
+
+
+def testAssemblability2():
+    a, b, c = sides((1, 2), (1, 2), (3, 3))
+    assert assemblability(a, b, c) is False
+
+
+def testSquarness1():
+    a, b, c = sides((1, 3), (6, 3), (6, 8))
+    assert squarness(a, b, c) is True
+
+
+def testSquarness2():
+    a, b, c = sides((2, 1), (5, 2), (4, 4))
+    assert squarness(a, b, c) is False
+
+
+def testCalculation1():
+    a, b, c = sides((2, 1), (5, 2), (4, 4))
+    perimeter, area = calculation(a, b, c)
+    assert perimeter == 9.00389691313216
+    assert area == 3.500000000000002
+
+
+def testCalculation2():
+    a, b, c = sides((-3, 25), (17, 6), (121, 4))
+    perimeter, area = calculation(a, b, c)
+    assert perimeter == 257.3711125289721
+    assert area == 968.0000000000007
