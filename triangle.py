@@ -1,4 +1,4 @@
-"""AP1VS Triangle."""
+"""AP1VS  Triangle."""
 
 import math
 
