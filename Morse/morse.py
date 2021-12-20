@@ -76,3 +76,9 @@ def TestInput():
     """Overeni ze funkce vola správnou funkci."""
     assert Input('univerzita') == '..- -. .. ...- . .-. --.. .. - .- '
     assert Input('- --- -- .- ...  -... .- - .-') == 'TOMAS BATA'
+
+
+demoText = 'Hello world'
+print('"' + demoText + '" \nse prelozi jako:\n"' + Input(demoText) + '"')
+demoMorse = '.... --- .-- .- .-. . -.-- --- ..-'
+print('"' + demoMorse + '" \nse prelozi jako:\n"' + Input(demoMorse) + '"')
