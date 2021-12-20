@@ -16,7 +16,8 @@ class MyTestCase(unittest.TestCase):
     def testTextToEnglish(self):
         """Checking Endlish Encoding."""
         self.assertEqual(
-            decrypt(".... . .-.. .-.. --- .-- --- .-. .-.. -.. --..--"),
+            decrypt(".... . .-.. .-.. --- "
+                    ".-- --- .-. .-.. -.. --..--"),
                          "HELLOWORLD!")
 
     def testErrorsToMorseCode(self):
