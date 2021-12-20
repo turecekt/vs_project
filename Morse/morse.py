@@ -24,14 +24,14 @@ morseDictionary = {'A': '.-', 'B': '-...', 'C': '-.-.',
 
 def EncodeMorse(message):
     """Funkce pro zasifrovani do morseovky"""
-    message.upper()                          # prevede vstup na velka pismena
-    code = ''                                # string ktery bude funkci vracet
+    message.upper()                             # prevede vstup na velka pismena
+    morseCode = ''                              # string ktery bude funkci vracet
     for letter in message:
         if letter != ' ':
-            code += morseDictionary[letter] + ' '
+            morseCode += morseDictionary[letter] + ' '
         else:
-            code += ' '
-    return code
+            morseCode += ' '
+    return morseCode
 
 
 def DecodeMorse(message):
@@ -48,8 +48,9 @@ def DecodeMorse(message):
             if i == 2:
                 deCode += ' '
             else:
-                deCode += list(morseDictionary.keys())
-                [list(morseDictionary.values()).index(tempText)]
+                deCode += list(morseDictionary
+                .keys())[list(morseDictionary
+                .values()).index(tempText)]
                 tempText = ''
     return deCode
 
@@ -78,7 +79,7 @@ def TestInput():
     assert Input('- --- -- .- ...  -... .- - .-') == 'TOMAS BATA'
 
 
-demoText = 'Hello world'
+demoText = 'HELLO WORLD'
 print('"' + demoText + '" \nse prelozi jako:\n"' + Input(demoText) + '"')
 demoMorse = '.... --- .-- .- .-. . -.-- --- ..-'
 print('"' + demoMorse + '" \nse prelozi jako:\n"' + Input(demoMorse) + '"')
