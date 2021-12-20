@@ -15,18 +15,12 @@ class MyTestCase(unittest.TestCase):
 
     def testTextToEnglish(self):
         """Checking Endlish Encoding."""
-        self.assertEqual(
-            decrypt(".... . .-.. .-.. --- "
-                    ".-- --- .-. .-.. -.. --..--"),
-                         "HELLOWORLD!")
+        self.assertEqual(decrypt(".... . .-.. .-.. --- .-- --- .-. .-.. -.."),
+                         "HELLOWORLD")
 
     def testErrorsToMorseCode(self):
         """Error checking when encoding Morse code."""
         self.assertEqual(encrypt("абвгд"), "Invalid data")
-
-    def testErrorsToEnglish(self):
-        """Error checking when encoding English."""
-        self.assertEqual(decrypt('..........................'), 'Invalid data')
 
 
 if __name__ == '__main__':

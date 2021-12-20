@@ -48,55 +48,45 @@ def encrypt(userText):
 
 def decrypt(userText):
     """Convert Morse code to English text."""
-    error = 'Invalid data'
+    global i
     userText += ' '
-    decipher = ''
     citext = ''
-    errorcountdecrypt = 0
+    decipher = ''
+
+    # Cyklus
     for letter in userText:
-        if (letter != ' '):
+        if letter != ' ':
             i = 0
             citext += letter
         else:
-            if citext in MorseCodeArray.values():
-                i += 1
-                if i == 2:
-                    decipher += ' '
-                else:
-                    decipher += list(MorseCodeArray.keys())
-                    [list(MorseCodeArray.values()).index(citext)]
-                    citext = ''
+            i += 1
+            if i == 2:
+                decipher += ' '
             else:
-                errorcountdecrypt = errorcountdecrypt + 1
-    if errorcountdecrypt == 0:
-        return decipher
-    else:
-        return error
+                decipher += list(MorseCodeArray.keys())[list(
+                        MorseCodeArray.values()).index(citext)]
+                citext = ''
+    return decipher
 
 
 def main():
-    resultencrypt  = encrypt("Happy Christmas")
-    print(resultencrypt)
+    """Print text and receive data from the keyboard."""
+    print('Enter "M" for Morse Code, to decode into English insert "E"')
+    count = input()
+    count = count.lower()
+    if count == "m":
+        print("Insert Eng text:")
+        userText = input()
+        result = encrypt(userText)
+        print(result)
+    elif count == "e":
+        print("Insert Morze code:")
+        userText = input()
+        result = decrypt(userText)
+        print(result)
+    else:
+        print("Invalid data")
 
-    resultdecrypt = decrypt(".... .- .--. .--. -.-- -.-. .... .-. .. ... - -- .- ...")
-    print(resultdecrypt)
-
-#    """Print text and receive data from the keyboard."""
-#    print('Enter "M" for Morse Code, to decode into English insert "E"')
-#    count = input()
-#    count = count.lower()
-#    if count == "m":
-#        print("Insert Eng text:")
-#        userText = input()
-#        result = encrypt(userText)
-#        print(result)
-#    elif count == "e":
-#        print("Insert Morze code: ")
-#        userText = input()
-#        result = decrypt(userText)
-#        print(result)
-#    else:
-#        print("Invalid data")
 
 if __name__ == '__main__':
     main()
