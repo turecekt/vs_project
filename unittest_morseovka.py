@@ -31,7 +31,3 @@ class Unittest_morseovka(unittest.TestCase):
             ".--. .-. . ...- --- -..  -. .-  ... .-.."
             " --- ...- ---  --..  -.- --- -.. ..-"),
             "PREVOD NA SLOVO Z KODU")
-
-
-if __name__ == '__main__':
-    unittest.main()

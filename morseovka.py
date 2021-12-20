@@ -83,6 +83,7 @@ def decrypt(message):
 
 def main():
     """Funkce, ktera umoznuje vybrat typ prevodu."""
+
     vyber = input("Pro sifrovani stiskni 's' pro desifrovani stiskni 'd'")
     if vyber == "s":
         message = input("Zadej text/slovo pro prelozeni do morse code: ")
@@ -92,7 +93,6 @@ def main():
         message = input("Zadej morse code pro prelozeni do textu: ")
         result = decrypt(message.upper())
         print(result)
-
 
 if __name__ == '__main__':
     main()
