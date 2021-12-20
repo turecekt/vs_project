@@ -4,7 +4,7 @@ Program pro kodovani a dekodovani morseovy abecedy.
 Vypracoval: Petr kraus
 
 """
-
+# definice morseovy abecedy
 morseDictionary = {'A': '.-', 'B': '-...', 'C': '-.-.',
                    'D': '-..', 'E': '.', 'F': '..-.',
                    'G': '--.', 'H': '....',
@@ -22,36 +22,57 @@ morseDictionary = {'A': '.-', 'B': '-...', 'C': '-.-.',
                    '(': '-.--.', ')': '-.--.-'}
 
 
-
-def CodeMorse(message):   
-    message.upper()        
-    code = ''                         
-    for letter in message:              
+def EncodeMorse(message):
+    """Funkce pro zasifrovani do morseovky"""
+    message.upper()                          # prevede vstup na velka pismena
+    code = ''                                # string ktery bude funkci vracet
+    for letter in message:
         if letter != ' ':
             code += morseDictionary[letter] + ' '
         else:
             code += ' '
-
-    return code       
-
+    return code
 
 
 def DecodeMorse(message):
-    message += ' '               
-    deCode = ''                
-    tempText = ''                  
-
-    for letter in message:       
+    """Funkce pro desifrovani z morseovky"""
+    message += ' '
+    deCode = ''                              # string ktery bude funkci vracet
+    tempText = ''                            # docasny string pro jeden znak
+    for letter in message:
         if (letter != ' '):
-            i = 0 
+            i = 0                            # zaznamenavani mezery
             tempText += letter
         else:
             i += 1
             if i == 2:
                 deCode += ' '
             else:
-                deCode += list(morseDictionary.keys())[list(morseDictionary.values()).index(tempText)]
+                deCode += list(morseDictionary.keys())
+                [list(morseDictionary.values()).index(tempText)]
                 tempText = ''
-    return deCode         
+    return deCode
 
 
+def Input(message):
+    """Funkce pro input morseovky"""
+    for char in message:
+        if char not in ".- ":
+            return EncodeMorse(message)
+    return DecodeMorse(message)
+
+
+def TestEncode():
+    """Test zakodovani."""
+    assert EncodeMorse('HELLO') == '.... . .-.. .-.. --- '
+
+
+def TestDecode():
+    """Test dekodovani."""
+    assert DecodeMorse('.... . .-.. .-.. --- ') == 'HELLO'
+
+
+def TestInput():
+    """Overeni ze funkce vola správnou funkci."""
+    assert Input('univerzita') == '..- -. .. ...- . .-. --.. .. - .- '
+    assert Input('- --- -- .- ...  -... .- - .-') == 'TOMAS BATA'
