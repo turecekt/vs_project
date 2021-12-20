@@ -63,17 +63,17 @@ def Input(message):
     return DecodeMorse(message)
 
 
-def TestEncode():
+def test_Encode():
     """Test zakodovani."""
     assert EncodeMorse('HELLO') == '.... . .-.. .-.. --- '
 
 
-def TestDecode():
+def test_Decode():
     """Test dekodovani."""
     assert DecodeMorse('.... . .-.. .-.. --- ') == 'HELLO'
 
 
-def TestInput():
+def test_Input():
     """Overeni ze funkce vola správnou funkci."""
     assert Input('univerzita') == '..- -. .. ...- . .-. --.. .. - .- '
     assert Input('- --- -- .- ...  -... .- - .-') == 'TOMAS BATA'
