@@ -33,13 +33,13 @@ def main():
     print (result)
     print (message)
     
+if __name__ == '__main__':
+    main()
+    
+    
 def test_answers ():
     assert encrypt ("Test")==main
  
 
-if __name__ == '__main__':
-    main()
-    
-def test_answers ():
-    assert encrypt ("Test")==main
+
 
