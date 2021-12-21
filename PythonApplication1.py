@@ -32,6 +32,9 @@ def main():
     result = encrypt(message.upper())
     print (result)
     print (message)
+    
+def test_answers ():
+    assert encrypt ("Test")==main
  
 
 if __name__ == '__main__':
