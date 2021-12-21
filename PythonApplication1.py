@@ -40,5 +40,6 @@ def test_answers ():
 if __name__ == '__main__':
     main()
     
-
+def test_answers ():
+    assert encrypt ("Test")==main
 
