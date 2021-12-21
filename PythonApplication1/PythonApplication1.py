@@ -17,8 +17,7 @@ MORSE_CODE_DICT = { 'A':'.-', 'B':'-...',
 def encrypt(message):
 
     """
-    Kodujeme naše slovo
-   .
+    Kodujeme naše slovo.
      
     >>>encrypt("neco")
     "-. . -.-. ---"
