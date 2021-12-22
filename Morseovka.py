@@ -20,9 +20,9 @@ def encrypt(message):
     
     >>> encrypt('TEST UNITESTU')
     '- . ... - | ..- -. .. - . ... - ..-'
-    encrypt('AHOJ JA TU TESTUJI')
+    >>> encrypt('AHOJ JA TU TESTUJI')
     '.- .... --- .--- | .--- .- | - ..- | - . ... - ..- .--- ..'
-    encrypt('A B C K L I M')
+    >>> encrypt('A B C K L I M')
     '.- | -... | -.-. | -.- | .-.. | .. | --'
     """
     cipher = '' 
@@ -39,9 +39,9 @@ def decrypt(message):
     
     >>> decrypt('- . ... - | ..- -. .. - . ... - ..-')
     'TEST UNITESTU'
-    decrypt('.- .... --- .--- | .--- .- | - ..- | - . ... - ..- .--- ..')
+    >>> decrypt('.- .... --- .--- | .--- .- | - ..- | - . ... - ..- .--- ..')
     'AHOJ JA TU TESTUJI'
-    decrypt('.- | -... | -.-. | -.- | .-.. | .. | --')
+    >>> decrypt('.- | -... | -.-. | -.- | .-.. | .. | --')
     'A B C K L I M'
     """
     message += ' '
