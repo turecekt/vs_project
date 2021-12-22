@@ -20,11 +20,14 @@ def encrypt(message):
     Funkce k šifrování stringu
     
     >>> encrypt('TEST UNITESTU')
-    '- . ... - | ..- -. .. - . ... - ..-'
+    '- . ... - | ..- -. .. - . ... - ..- '
     >>> encrypt('AHOJ JA TU TESTUJI')
-    '.- .... --- .--- | .--- .- | - ..- | - . ... - ..- .--- ..'
+    '.- .... --- .--- | .--- .- | - ..- | - . ... - ..- .--- .. '
     >>> encrypt('A B C K L I M')
-    '.- | -... | -.-. | -.- | .-.. | .. | --'
+    '.- | -... | -.-. | -.- | .-.. | .. | -- '
+    >>> encrypt('SERGHEI BUCSA')
+    '... . .-. --. .... . .. | -... ..- -.-. ... .- '
+
     """
     cipher = '' 
     for pismeno in message: 
@@ -44,6 +47,8 @@ def decrypt(message):
     'AHOJ JA TU TESTUJI'
     >>> decrypt('.- | -... | -.-. | -.- | .-.. | .. | --')
     'A B C K L I M'
+    >>> decrypt('... . .-. --. .... . .. | -... ..- -.-. ... .-')
+    'SERGHEI BUCSA'
     """
     message += ' '
     decipher = '' 
@@ -70,11 +75,11 @@ def decrypt(message):
 
 """ Funkce pro spuštění programu """
 def main(): 
-    message = "A B C K L I M"
+    message = "Serghei Bucsa"
     result = encrypt(message.upper()) 
     print (result) 
 
-    message = ".- | -... | -.-. | -.- | .-.. | .. | --"
+    message = "... . .-. --. .... . .. | -... ..- -.-. ... .-"
     result = decrypt(message) 
     print (result) 
 
