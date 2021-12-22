@@ -30,7 +30,7 @@ def encrypt(message):
         if pismeno != ' ': 
             cipher += Morseovka[pismeno] + ' '
         else: 
-            cipher += '| '
+            cipher += '|'
     return cipher 
 
 def decrypt(message): 
