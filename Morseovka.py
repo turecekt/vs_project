@@ -1,61 +1,71 @@
-"""komentark1."""
 Morseovka = {'A': '.-', 'B': '-...',
-             'C': '-.-.', 'D': '-..', 'E': '.',
-             'F': '..-.', 'G': '--.', 'H': '....',
-             'I': '..', 'J': '.---', 'K': '-.-',
-             'L': '.-..', 'M': '--', 'N': '-.',
-             'O': '---', 'P': '.--.', 'Q': '--.-',
-             'R': '.-.', 'S': '...', 'T': '-',
-             'U': '..-', 'V': '...-', 'W': '.--',
-             'X': '-..-', 'Y': '-.--', 'Z': '--..',
-             '1': '.----', '2': '..---', '3': '...--',
-             '4': '....-', '5': '.....', '6': '-....',
-             '7': '--...', '8': '---..', '9': '----.',
-             '0': '-----', ', ': '--..--', '.': '.-.-.-',
-             '?': '..--..', '/': '-..-.', '-': '-....-',
-             '(': '-.--.', ')': '-.--.-'}
+            'C': '-.-.', 'D': '-..', 'E': '.',
+            'F': '..-.', 'G': '--.', 'H': '....',
+            'I': '..', 'J': '.---', 'K': '-.-',
+            'L': '.-..', 'M': '--', 'N': '-.',
+            'O': '---', 'P': '.--.', 'Q': '--.-',
+            'R': '.-.', 'S': '...', 'T': '-',
+            'U': '..-', 'V': '...-', 'W': '.--',
+            'X': '-..-', 'Y': '-.--', 'Z': '--..',
+            '1': '.----', '2': '..---', '3': '...--',
+            '4': '....-', '5': '.....', '6': '-....',
+            '7': '--...', '8': '---..', '9': '----.',
+            '0': '-----', ', ': '--..--', '.': '.-.-.-',
+            '?': '..--..', '/': '-..-.', '-': '-....-',
+            '(': '-.--.', ')': '-.--.-'}
 
-
-def encrypt(message):
-    cipher = ' '
-    for pismeno in message:
-        if pismeno != ' ':
+def encrypt(message): 
+    """
+    Komentar1.
+    encrypt('TEST UNITESTU')
+    '- . ... - | ..- -. .. - . ... - ..-'
+    """
+    cipher = '' 
+    for pismeno in message: 
+        if pismeno != ' ': 
             cipher += Morseovka[pismeno] + ' '
-        else:
-            cipher += ' '
-    return cipher
+        else: 
+            cipher += ' | '
+    return cipher 
 
-
-def decrypt(message):
+def decrypt(message): 
+    """
+    Komentar2.
+    decrypt('- . ... - | ..- -. .. - . ... - ..-')
+    'TEST UNITESTU'
+    """
     message += ' '
-    decipher = ' '
-    citext = ' '
+    decipher = '' 
+    citext = '' 
     for pismeno in message:
-        if (pismeno != ' '):
-            i = 0
-            citext += pismeno
+        if (pismeno == '|'):
 
-        else:
+            decipher += ' '
+            continue
+        if (pismeno != ' '): 
+            i = 0 
+            citext += pismeno
+        else: 
             i += 1
-            if i == 2:
+            if i == 2: 
                 decipher += ' '
 
-            else:
-                decipher += list(Morseovka.keys())
-                [list(Morseovka.values()).index(citext)]
-                citext = ' '
-    return decipher
+            else: 
+                decipher += list(Morseovka.keys())[list(Morseovka 
+                .values()).index(citext)] 
+                citext = ''
+    return decipher 
 
 
-def main():
-    message = "test"
-    result = encrypt(message.upper())
-    print(result)
 
-    message = "- . ... -"
-    result = decrypt(message)
-    print(result)
+def main(): 
+    message = "Test unitestu"
+    result = encrypt(message.upper()) 
+    print (result) 
 
+    message = "- . ... - | ..- -. .. - . ... - ..-"
+    result = decrypt(message) 
+    print (result) 
 
-if __name__ == '__main__':
+if __name__ == '__main__': 
     main()
