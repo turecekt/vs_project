@@ -17,7 +17,8 @@ Morseovka = {'A': '.-', 'B': '-...',
 def encrypt(message): 
     """
     Komentar1.
-    encrypt('TEST UNITESTU')
+    
+    >>> encrypt('TEST UNITESTU')
     '- . ... - | ..- -. .. - . ... - ..-'
     encrypt('AHOJ JA TU TESTUJI')
     '.- .... --- .--- | .--- .- | - ..- | - . ... - ..- .--- ..'
@@ -35,7 +36,8 @@ def encrypt(message):
 def decrypt(message): 
     """
     Komentar2.
-    decrypt('- . ... - | ..- -. .. - . ... - ..-')
+    
+    >>> decrypt('- . ... - | ..- -. .. - . ... - ..-')
     'TEST UNITESTU'
     decrypt('.- .... --- .--- | .--- .- | - ..- | - . ... - ..- .--- ..')
     'AHOJ JA TU TESTUJI'
