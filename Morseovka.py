@@ -21,6 +21,8 @@ def encrypt(message):
     '- . ... - | ..- -. .. - . ... - ..-'
     encrypt('AHOJ JA TU TESTUJI')
     '.- .... --- .--- | .--- .- | - ..- | - . ... - ..- .--- ..'
+    encrypt('A B C K L I M')
+    '.- | -... | -.-. | -.- | .-.. | .. | --'
     """
     cipher = '' 
     for pismeno in message: 
@@ -37,6 +39,8 @@ def decrypt(message):
     'TEST UNITESTU'
     decrypt('.- .... --- .--- | .--- .- | - ..- | - . ... - ..- .--- ..')
     'AHOJ JA TU TESTUJI'
+    decrypt('.- | -... | -.-. | -.- | .-.. | .. | --')
+    'A B C K L I M'
     """
     message += ' '
     decipher = '' 
@@ -63,23 +67,11 @@ def decrypt(message):
 
 
 def main(): 
-    message = "Ahoj ja tu testuji"
+    message = "A B C K L I M"
     result = encrypt(message.upper()) 
     print (result) 
 
-    message = ".- .... --- .--- | .--- .- | - ..- | - . ... - ..- .--- .."
-    result = decrypt(message) 
-    print (result) 
-
-if __name__ == '__main__': 
-    main()
-
-def main(): 
-    message = "Test unitestu"
-    result = encrypt(message.upper()) 
-    print (result) 
-
-    message = "- . ... - | ..- -. .. - . ... - ..-"
+    message = ".- | -... | -.-. | -.- | .-.. | .. | --"
     result = decrypt(message) 
     print (result) 
 
