@@ -69,8 +69,8 @@ def decrypt(message):
                 decipher += ' '
 
             else:
-                decipher += list(Morseovka.keys())[list
-                                 (Morseovka.values()).index(citext)]
+                decipher += list(Morseovka.keys())
+                                [list(Morseovka.values()).index(citext)]
                 citext = ''
     return decipher
 
