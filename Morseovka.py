@@ -19,13 +19,15 @@ def encrypt(message):
     Komentar1.
     encrypt('TEST UNITESTU')
     '- . ... - | ..- -. .. - . ... - ..-'
+    encrypt('AHOJ JA TU TESTUJI')
+    '.- .... --- .--- | .--- .- | - ..- | - . ... - ..- .--- ..'
     """
     cipher = '' 
     for pismeno in message: 
         if pismeno != ' ': 
             cipher += Morseovka[pismeno] + ' '
         else: 
-            cipher += ' | '
+            cipher += '| '
     return cipher 
 
 def decrypt(message): 
@@ -33,6 +35,8 @@ def decrypt(message):
     Komentar2.
     decrypt('- . ... - | ..- -. .. - . ... - ..-')
     'TEST UNITESTU'
+    decrypt('.- .... --- .--- | .--- .- | - ..- | - . ... - ..- .--- ..')
+    'AHOJ JA TU TESTUJI'
     """
     message += ' '
     decipher = '' 
@@ -40,7 +44,7 @@ def decrypt(message):
     for pismeno in message:
         if (pismeno == '|'):
 
-            decipher += ' '
+            decipher += ''
             continue
         if (pismeno != ' '): 
             i = 0 
@@ -57,6 +61,18 @@ def decrypt(message):
     return decipher 
 
 
+
+def main(): 
+    message = "Ahoj ja tu testuji"
+    result = encrypt(message.upper()) 
+    print (result) 
+
+    message = ".- .... --- .--- | .--- .- | - ..- | - . ... - ..- .--- .."
+    result = decrypt(message) 
+    print (result) 
+
+if __name__ == '__main__': 
+    main()
 
 def main(): 
     message = "Test unitestu"
