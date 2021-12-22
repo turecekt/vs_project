@@ -70,7 +70,7 @@ def decrypt(message):
 
             else:
                 decipher += list(Morseovka.keys())[list
-                                (Morseovka.values()).index(citext)]
+                                 (Morseovka.values()).index(citext)]
                 citext = ''
     return decipher
 
