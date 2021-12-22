@@ -1,3 +1,4 @@
+""" Morseova Abeceda """ 
 Morseovka = {'A': '.-', 'B': '-...',
             'C': '-.-.', 'D': '-..', 'E': '.',
             'F': '..-.', 'G': '--.', 'H': '....',
@@ -16,7 +17,7 @@ Morseovka = {'A': '.-', 'B': '-...',
 
 def encrypt(message): 
     """
-    Komentar1.
+    Funkce k šifrování stringu
     
     >>> encrypt('TEST UNITESTU')
     '- . ... - | ..- -. .. - . ... - ..-'
@@ -31,11 +32,11 @@ def encrypt(message):
             cipher += Morseovka[pismeno] + ' '
         else: 
             cipher += '|'
-    return cipher 
+    return cipher
 
 def decrypt(message): 
     """
-    Komentar2.
+    Funkce k dešifrování morseovky
     
     >>> decrypt('- . ... - | ..- -. .. - . ... - ..-')
     'TEST UNITESTU'
@@ -67,7 +68,7 @@ def decrypt(message):
     return decipher 
 
 
-
+""" Funkce pro spuštění programu """
 def main(): 
     message = "A B C K L I M"
     result = encrypt(message.upper()) 
@@ -77,5 +78,6 @@ def main():
     result = decrypt(message) 
     print (result) 
 
+""" Provádí hlavní funkci """
 if __name__ == '__main__': 
     main()
