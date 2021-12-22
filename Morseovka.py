@@ -1,21 +1,22 @@
-""" Morseova Abeceda """ 
+"""Morseova Abeceda""" 
 Morseovka = {'A': '.-', 'B': '-...',
-            'C': '-.-.', 'D': '-..', 'E': '.',
-            'F': '..-.', 'G': '--.', 'H': '....',
-            'I': '..', 'J': '.---', 'K': '-.-',
-            'L': '.-..', 'M': '--', 'N': '-.',
-            'O': '---', 'P': '.--.', 'Q': '--.-',
-            'R': '.-.', 'S': '...', 'T': '-',
-            'U': '..-', 'V': '...-', 'W': '.--',
-            'X': '-..-', 'Y': '-.--', 'Z': '--..',
-            '1': '.----', '2': '..---', '3': '...--',
-            '4': '....-', '5': '.....', '6': '-....',
-            '7': '--...', '8': '---..', '9': '----.',
-            '0': '-----', ', ': '--..--', '.': '.-.-.-',
-            '?': '..--..', '/': '-..-.', '-': '-....-',
-            '(': '-.--.', ')': '-.--.-'}
+             'C': '-.-.', 'D': '-..', 'E': '.',
+             'F': '..-.', 'G': '--.', 'H': '....',
+             'I': '..', 'J': '.---', 'K': '-.-',
+             'L': '.-..', 'M': '--', 'N': '-.',
+             'O': '---', 'P': '.--.', 'Q': '--.-',
+             'R': '.-.', 'S': '...', 'T': '-',
+             'U': '..-', 'V': '...-', 'W': '.--',
+             'X': '-..-', 'Y': '-.--', 'Z': '--..',
+             '1': '.----', '2': '..---', '3': '...--',
+             '4': '....-', '5': '.....', '6': '-....',
+             '7': '--...', '8': '---..', '9': '----.',
+             '0': '-----', ', ': '--..--', '.': '.-.-.-',
+             '?': '..--..', '/': '-..-.', '-': '-....-',
+             '(': '-.--.', ')': '-.--.-'}
 
-def encrypt(message): 
+
+def encrypt(message):
     """
     Funkce k šifrování stringu
     
@@ -29,15 +30,16 @@ def encrypt(message):
     '... . .-. --. .... . .. | -... ..- -.-. ... .- '
 
     """
-    cipher = '' 
-    for pismeno in message: 
-        if pismeno != ' ': 
+    cipher = ''
+    for pismeno in message:
+        if pismeno != ' ':
             cipher += Morseovka[pismeno] + ' '
-        else: 
+        else:
             cipher += '| '
     return cipher
 
-def decrypt(message): 
+
+def decrypt(message):
     """
     Funkce k dešifrování morseovky
     
@@ -51,22 +53,22 @@ def decrypt(message):
     'SERGHEI BUCSA'
     """
     message += ' '
-    decipher = '' 
-    citext = '' 
+    decipher = ''
+    citext = ''
     for pismeno in message:
         if (pismeno == '|'):
 
             decipher += ''
             continue
-        if (pismeno != ' '): 
-            i = 0 
+        if (pismeno != ' '):
+            i = 0
             citext += pismeno
-        else: 
+        else:
             i += 1
-            if i == 2: 
+            if i == 2:
                 decipher += ' '
 
-            else: 
+            else:
                 decipher += list(Morseovka.keys())[list(Morseovka 
                 .values()).index(citext)] 
                 citext = ''
@@ -74,7 +76,7 @@ def decrypt(message):
 
 
 """ Funkce pro spuštění programu """
-def main(): 
+def main():
     message = "Serghei Bucsa"
     result = encrypt(message.upper()) 
     print (result) 
