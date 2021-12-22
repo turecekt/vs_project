@@ -1,4 +1,4 @@
-"""Morseova Abeceda."""
+"""Morseova abeceda."""
 Morseovka = {'A': '.-', 'B': '-...',
              'C': '-.-.', 'D': '-..', 'E': '.',
              'F': '..-.', 'G': '--.', 'H': '....',
