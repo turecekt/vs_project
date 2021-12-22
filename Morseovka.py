@@ -70,17 +70,19 @@ def decrypt(message):
 
             else:
                 decipher += list(Morseovka.keys())[list(Morseovka
-                .values()).index(citext)] 
+                                                        .values()).index(citext)]
                 citext = ''
     return decipher
 
 
-""" Funkce pro spuštění programu """
-
-
 def main():
+    """
+    Funkce pro spuštění programu.
+
+    Funkce vypiše zadanou zprávu
+    """
     message = "Serghei Bucsa"
-    result = encrypt(message.upper()) 
+    result = encrypt(message.upper())
     print(result)
 
     message = "... . .-. --. .... . .. | -... ..- -.-. ... .-"
@@ -89,5 +91,5 @@ def main():
 
 
 """ Provádí hlavní funkci """
-if __name__ == '__main__': 
+if __name__ == '__main__':
     main()
