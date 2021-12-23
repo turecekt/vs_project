@@ -1,25 +1,41 @@
 from isPrime import isPrime
 import unittest
-import time
-import datetime
-import sympy
 
 
-class TestIsPrime(unittest.TestCase):
-    def test_range(self):
-        upto = 100000
-        start = time.time()
-        for i in range(1, upto+1):
-            eta = datetime.timedelta(seconds=(time.time()-start)*(upto-i)/i)
-            print(
-                "\r Running tests %d/" % i
-                + "%d" % upto + " [%f%%]" % (i/upto * 100)
-                + ", eta %s" % str(eta),
-                end=""
-            )
 
-            self.assertEqual(isPrime(i), sympy.isprime(i))
+class PrimesTestCase(unittest.TestCase):
+    """docs"""
+
+    def test_should_be_prime(self):
+        """docs"""
+        self.assertEqual(True,isPrime(2))
+        self.assertEqual(True,isPrime(3))
+        self.assertEqual(True,isPrime(17))
+        self.assertEqual(True,isPrime(33391))
+        self.assertEqual(True,isPrime(199933))
+
+    def test_should_not_be_prime(self):
+        """docs"""
+        self.assertEqual(False,isPrime(-1))
+        self.assertEqual(False,isPrime(-2))
+        self.assertEqual(False,isPrime(-13))
+        self.assertEqual(False,isPrime(0))
+        self.assertEqual(False,isPrime(1))
+        self.assertEqual(False,isPrime(4))
+        self.assertEqual(False,isPrime(16))
+        self.assertEqual(False,isPrime(88))
+        self.assertEqual(False,isPrime(30))
+        self.assertEqual(False,isPrime(35))
+        self.assertEqual(False,isPrime(121))
+        self.assertEqual(False,isPrime(81))
+        self.assertEqual(False,isPrime(1999331999331999331999331999331999331999331999331999335))
+
 
 
 if __name__ == '__main__':
     unittest.main()
+
+
+
+
+
