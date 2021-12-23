@@ -100,3 +100,47 @@ def Preloz_do_m(zprava, Morseovka):
 
 if __name__ == '__main__':
     main()
+
+def test_Preloz_z_m():
+    assert Preloz_z_m(".-",MorseovkaSeznam.dictionary) == "A"
+def test_Preloz_do_m():
+    assert Preloz_do_m("A",MorseovkaSeznam.dictionary) == ".-"
+def test_Preloz_z_m_():
+    assert Preloz_z_m("$",MorseovkaSeznam.dictionary) == "Tento znak není definový v morseově abecedě"
+
+def test_Preloz_do_m_():
+    assert Preloz_do_m("%",MorseovkaSeznam.dictionary) == "Tento znak nezle využít, využij tyto znaky: A B C D E F G H I J K L M N O P Q R S T U V W X Y Z 1 2 3 4 5 6 7 8 9 , . ? / - "
+
+def test_morse():
+    set_keyboard_input(["0"])
+    morse(True)
+    output = get_display_output()
+    assert output == ["Pro překlad do morseovy abecedy stiskni 1, Pro překlad z morseovy abecedy stiskni 2, pro ukončení stiskni 0:",
+                      "Ukončování..."]
+
+
+inner_values = []
+print_values = []
+
+def vstup(s):
+    print_values.append(s)
+    return inner_values.pop(0)
+
+def start_vstupu_vystupu():
+    global inner_values, print_values
+
+    inner_values = []
+    print_values = []
+
+    builtins.input = vstup
+    builtins.print = lambda s: print_values.append(s)
+
+def get_display_output():
+    global print_values
+    return print_values
+
+def set_keyboard_input(vstupy):
+    global inner_values
+
+    start_vstupu_vystupu()
+    inner_values = vstupy
