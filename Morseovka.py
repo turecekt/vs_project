@@ -127,3 +127,23 @@ if __name__ == '__main__':
         šifrovaný text do textového řetězce.
         """
         assert Dekodovat("..-. .-.. .- -.- . ---..") == "flake8"
+
+    def test_encrypt_pismeno(self):
+        """Test prevodu pismene na kod."""
+        self.assertEqual(Kodovat("T"), "- ")
+
+    def test_encrypt_veta(self):
+        """Test prevodu vety na kod."""
+        self.assertEqual(Kodovat(
+            "TESTOVACI VETA"), "- . ... - --- ...- .- -.-. ..  ...- . - .- ")
+
+    def test_decrypt_text(self):
+        """Test prevodu kodu na text."""
+        self.assertEqual(Dekodovat(
+            ".--. .-. . ...- --- -..  -. .-  ... .-.."
+            " --- ...- ---  --..  -.- --- -.. ..-"),
+            "PREVOD NA SLOVO Z KODU")
+
+    def test_decrypt_pismeno(self):
+        """Test prevodu kodu na pismeno."""
+        self.assertEqual(Dekodovat("-..-"), "X")
