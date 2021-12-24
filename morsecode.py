@@ -30,5 +30,8 @@ for pismeno in text:
 # Výstup překladače    
 print(morse_code)
 
+import unittest   # Importování Unit testu
 
+if __name__ == '__main__':
+    unittest.main()
 
