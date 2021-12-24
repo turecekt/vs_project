@@ -70,3 +70,18 @@ def main():
             for i in range(1, len(sys.argv)):
                 numbers.append(sys.argv[i])
     return numbers
+
+def run():
+    """Script který spouští program"""
+    numbers = main()
+    print(min_max(numbers))
+    print("Select sort algorithm:")
+    choose = (input("Bubble = 1, Selection = 2, Shell = 3: "))
+    if choose == "1":
+        return print(bubblesort(numbers))
+    elif choose == "2":
+        return print(selectionsort(numbers))
+    elif choose == "3":
+        return print(shellsort(numbers))
+    else:
+        return print("Incorrect input!")
