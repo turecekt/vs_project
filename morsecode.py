@@ -1,4 +1,4 @@
-import unittest
+
 
 #Překladač textu do morseova kodu
 
@@ -32,5 +32,3 @@ print(morse_code)
 
 
 
-if __name__ == '__main__':
-    unittest.main()
