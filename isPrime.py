@@ -1,6 +1,6 @@
 """Overeni prvocisel.
 
-Program pocita s merenim casu potrebneho k dokonceni behu.
+Program obsahuje funkci pro mereni casu potrebneho k dokonceni behu.
 Obsahuje jednoduche funkce pro overeni, zda je zadane cislo prvocislem
 a vraci vysledek na konzoli.
 """
@@ -38,11 +38,12 @@ def isPrime(n):
         printTime(start)
         return False
 
-    # Vsechna prvocisla jsou ve tvaru 6n +/-1 Use P = 6k +/- 1 to allow iterating by 6
+    # Vsechna prvocisla jsou ve tvaru 6n +/-1
+    # Use P = 6k +/- 1 to allow iterating by 6
     i = 5
     while i * i <= n:
         printProgress(i)
-  
+
         if n % i == 0 or n % (i + 2) == 0:
             printTime(start)
             return False
@@ -50,4 +51,3 @@ def isPrime(n):
 
     printTime(start)
     return True
-
