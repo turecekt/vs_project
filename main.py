@@ -72,7 +72,7 @@ def main():
     return numbers
 
 def run():
-    """Script který spouští program"""
+    """Script ktery spousti program"""
     numbers = main()
     print(min_max(numbers))
     print("Select sort algorithm:")
@@ -85,3 +85,7 @@ def run():
         return print(shellsort(numbers))
     else:
         return print("Incorrect input!")
+
+
+if __name__ == "__main__":
+    run()
