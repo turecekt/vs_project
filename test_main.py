@@ -17,3 +17,19 @@ def test_bubblesort():
         [12, 5, 9, 54, 1, 3, 98, 13]) == [1, 3, 5, 9, 12, 13, 54, 98])
     assert(bubblesort(
         [52, 15, 91, 5, 187, 23, 99, 53]) == [5, 15, 23, 52, 53, 91, 99, 187])
+    
+ 
+def test_selectionsort():
+    """Test algoritmu selectionsort."""
+    assert(selectionsort(
+        [12, 5, 9, 54, 1, 3, 98, 13]) == [1, 3, 5, 9, 12, 13, 54, 98])
+    assert(selectionsort(
+        [52, 15, 91, 5, 187, 23, 99, 53]) == [5, 15, 23, 52, 53, 91, 99, 187])
+
+
+def test_shellsort():
+    """Test algoritmu shellsort."""
+    assert(shellsort(
+        [12, 5, 9, 54, 1, 3, 98, 13]) == [1, 3, 5, 9, 12, 13, 54, 98])
+    assert(shellsort(
+        [52, 15, 91, 5, 187, 23, 99, 53]) == [5, 15, 23, 52, 53, 91, 99, 187])
