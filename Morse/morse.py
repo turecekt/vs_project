@@ -25,8 +25,8 @@ morseDictionary = {'A': '.-', 'B': '-...', 'C': '-.-.',
 
 def EncodeMorse(message):
     """Funkce pro zasifrovani do morseovky"""
-    message = message.upper()                             # prevede vstup na velka pismena
-    morseCode = ''                              # string ktery bude funkci vracet
+    message = message.upper()         # prevede vstup na velka pismena
+    morseCode = ''                    # string ktery bude funkci vracet
     for letter in message:
         if letter != ' ':
             morseCode += morseDictionary[letter] + ' '
@@ -50,8 +50,8 @@ def DecodeMorse(message):
                 deCode += ' '
             else:
                 deCode += list(morseDictionary
-                .keys())[list(morseDictionary
-                .values()).index(tempText)]
+                               .keys())[list(morseDictionary
+                                        .values()).index(tempText)]
                 tempText = ''
     return deCode
 
@@ -62,6 +62,7 @@ def Input(message):
         if char not in ".- ":
             return EncodeMorse(message)
     return DecodeMorse(message)
+
 
 def test_DecodeMorse():
     """Test dekodovani."""
