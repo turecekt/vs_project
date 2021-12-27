@@ -1,4 +1,5 @@
 
+
 """
 Program pro kodovani a dekodovani morseovy abecedy.
 Vypracoval: Petr kraus
@@ -24,7 +25,7 @@ morseDictionary = {'A': '.-', 'B': '-...', 'C': '-.-.',
 
 def EncodeMorse(message):
     """Funkce pro zasifrovani do morseovky"""
-    message.upper()                             # prevede vstup na velka pismena
+    message = message.upper()                             # prevede vstup na velka pismena
     morseCode = ''                              # string ktery bude funkci vracet
     for letter in message:
         if letter != ' ':
@@ -62,20 +63,19 @@ def Input(message):
             return EncodeMorse(message)
     return DecodeMorse(message)
 
-
-def test_Encode():
-    """Test zakodovani."""
-    assert EncodeMorse('HELLO') == '.... . .-.. .-.. ---'
-
-
-def test_Decode():
+def test_DecodeMorse():
     """Test dekodovani."""
     assert DecodeMorse('.... . .-.. .-.. ---') == 'HELLO'
 
 
+def test_EncodeMorse():
+    """Test zakodovani."""
+    assert EncodeMorse('HELLO') == '.... . .-.. .-.. --- '
+
+
 def test_Input():
     """Overeni ze funkce vola správnou funkci."""
-    assert Input('univerzita') == '..- -. .. ...- . .-. --.. .. - .-'
+    assert Input('UNIVERZITA') == '..- -. .. ...- . .-. --.. .. - .- '
     assert Input('- --- -- .- ...  -... .- - .-') == 'TOMAS BATA'
 
 
