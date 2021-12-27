@@ -1,3 +1,5 @@
+"""Testy k hlavnimu scriptu main."""
+
 from main import min_max, bubblesort, selectionsort, shellsort, main, run
 
 
