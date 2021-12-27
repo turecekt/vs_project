@@ -1,3 +1,5 @@
+"""Python script ktery zjisti nejvetsi a nejmensi cislo plus seradi cisla"""
+
 import sys
 from random import randint
 
@@ -47,8 +49,7 @@ def shellsort(list):
 
 
 def main():
-    """
-    Hlavni funkce.
+    """Hlavni funkce.
     - pokud neni zadany vstup tak se generuje pole 20ti cisel.
     - pokud je zadany soubor tak ho vycte.
     - pokud je zadany argument tak pracuje s nim.
@@ -72,7 +73,7 @@ def main():
 
 
 def run():
-    """Script ktery spousti program"""
+    """Script ktery spousti program."""
     numbers = main()
     print(min_max(numbers))
     print("Select sort algorithm:")
