@@ -1,4 +1,4 @@
-"""Python script ktery zjisti nejvetsi a nejmensi cislo plus seradi cisla"""
+"""Script ktery zjisti nejvetsi a nejmensi cislo plus seradi cisla."""
 
 import sys
 from random import randint
@@ -50,6 +50,7 @@ def shellsort(list):
 
 def main():
     """Hlavni funkce.
+    
     - pokud neni zadany vstup tak se generuje pole 20ti cisel.
     - pokud je zadany soubor tak ho vycte.
     - pokud je zadany argument tak pracuje s nim.
