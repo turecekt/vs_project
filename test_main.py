@@ -17,8 +17,8 @@ def test_bubblesort():
         [12, 5, 9, 54, 1, 3, 98, 13]) == [1, 3, 5, 9, 12, 13, 54, 98])
     assert(bubblesort(
         [52, 15, 91, 5, 187, 23, 99, 53]) == [5, 15, 23, 52, 53, 91, 99, 187])
-    
- 
+
+
 def test_selectionsort():
     """Test algoritmu selectionsort."""
     assert(selectionsort(
@@ -33,3 +33,16 @@ def test_shellsort():
         [12, 5, 9, 54, 1, 3, 98, 13]) == [1, 3, 5, 9, 12, 13, 54, 98])
     assert(shellsort(
         [52, 15, 91, 5, 187, 23, 99, 53]) == [5, 15, 23, 52, 53, 91, 99, 187])
+
+
+def test_main():
+    """Test funkce main."""
+    assert(main() is not None)
+
+
+def test_run(monkeypatch):
+    """Test run funkce."""
+    monkeypatch.setattr('builtins.input', lambda _: "a")
+    i = input("Bubble = 1, Selection = 2, Shell = 3: ")
+    assert i == "a"
+    assert(run() == print("Incorrect input!"))
