@@ -76,25 +76,6 @@ MinZnak()
  
  #####################Informace o četnosti jednotlivých znaků abecedy (bez diakritiky)#####################
 
-
-
-
-
-#####Unit testy
-
-#Neni zakonceno na #
-#Neni soubor
-
-
-
-
-
-#####
-#
-#   • V případě spuštění bez parametru musí program umět zpracovat text ze
-#       standardního vstupu až po řádek obsahující ukončovací symbol #
-######
-
 #vstup = input('Write your paragraph,ends with #: ')
 ##asi bude foreach abeceda a pocet exception mezera zatim nevim asi tak neco
 ##asi na to bude nejaka vlastni pocitaci funkce kdyz to jde tak hezky pres .count(x)
