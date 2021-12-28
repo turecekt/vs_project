@@ -3,7 +3,7 @@
 #Funkce pro definovani abecedy
 def abeceda():
 
-    # Abeceda pro překlad textu do orseovho kodu
+    # Abeceda pro překlad textu do morseovho kodu
     abeceda = {"a":".-","b":"-...","c":"-.-.","d":"-..","e":".","f":"..-.","g":"--.","h":"....","i":"..","j":".---",
                "k":"-.-","l":".---","m":"--","n":"-.","o":"---","p":".--.","q":"--.-","r":".-.","s":"...","t":"-",
                "u":"..-","v":"...-","w":".--","x":"-..-","y":"-.--","z":"--..","1":".----","2":"..---", "3":"...--",
@@ -12,6 +12,8 @@ def abeceda():
                "+":".-.-.","=":"-...-"}
                
     return abeceda
+
+abeceda = abeceda()
 
 #Funkce pro překlad textu do morseovho kodu
 def to_morse(vstup):
@@ -24,18 +26,18 @@ def to_morse(vstup):
 
         return morse_code  
 
+def main():
 
-abeceda = abeceda()
+    #vstupní formulár pro zadáni textu, kt. má být zakódován do morseovho kódu
+    text = input("Zadej text který chceš přenést do morseovky : ")
 
-#vstupní formulár pro zadáni textu, kt. má být zakódován do morseovho kódu
-text = input("Zadej text který chceš přenést do morseovky : ")
-
-out = to_morse(text)
+    out = to_morse(text)
         
-# Výstup překladače    
-print(out)
+    # Výstup překladače    
+    print(out)
 
 import unittest   # Importování Unit testu
 
 if __name__ == '__main__':
+    main()
     unittest.main()
