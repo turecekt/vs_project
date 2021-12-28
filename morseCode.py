@@ -162,6 +162,12 @@ def morseDecode(len_basic_string, len_splitString):
 
         print ("alphabet message  :", alpha_message)
 
+#main funkci kde zavolam vsechny funkce ... kod dole
+#taky potrebuju komentare
+
+#napsat testy
+#pak fork dokoncit
+
 st = myArgParser()
 
 separatorObj = re.search(r'[\|]+', st.MorseString)
