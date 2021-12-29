@@ -1,3 +1,20 @@
+"""
+
+this is module to Ncode alphabet messages to morse code and vice versa
+
+module contains "asserts" alphanum chars as morse code strings also my added separators codes 
+
+also contains multiple functions:
+
+split_to_letters()
+myArgParser()
+checkConditions()
+morseDecode()
+morseNcode()
+
+"""
+
+
 import argparse
 import re
 import sys
@@ -67,6 +84,15 @@ MORSE_CODE_ALPHABET = {
                     }
 
 def split_to_letters(my_string):
+    """
+    function split_to_letters returns list of characters from string
+
+    Args:
+        -my_string - Input string 
+    
+    Returns:
+        - list of separated characters
+    """
     return list(my_string)
 
 morseAlphNum = [letter_a, letter_b, letter_c, letter_d, letter_e, letter_f, letter_g, letter_h, letter_ch, letter_i, letter_j,
@@ -76,8 +102,20 @@ morseAlphNum = [letter_a, letter_b, letter_c, letter_d, letter_e, letter_f, lett
 
 
 def myArgParser():
+    """
+    function myArgParser returns obj with parsed argument (which should be string)
+    also checks if the string contains valid characters (alphanumeric chars, dots, dashes, verticals[as separators])
+    takes argument from command line
+
+    Args:
+        -None
+    
+    Returns:
+        - Object st with namespace MorseString
+    """
     msg = "type in the string consist of morse code or alphabet"
 
+# this had to be because python (more like unix) doesnt take double dash as a string but it expects something to go after ... so I had to check for it
     args = sys.argv[1]
     if args == '--':
         sys.exit("M")
@@ -92,13 +130,30 @@ def myArgParser():
     if errorObj:
         sys.exit("please type in right characters")
 
-    """ 
-        extremely careful for \ ""
-    """
+
     return st
 
 
 def checkConditions(st):
+    """
+    function checkConditions returns lengths of string which is already stripped to characters without separators and string with separators
+    also returns string which is stripped
+    it checks if is used only whitespaces or verticals and also if you want to only Ncode or Decode ... you cant do both at the same time
+    then magic with verticals and spaces happens  
+
+    Args:
+        -input string (in this case the input object containing input string)
+
+    Returns:
+        -len_basic_string - number of characters in string
+        -len_splitString - number of characters in stripped string
+        -splitString - stripped string (without separators)
+    """
+    separatorObj = re.search(r'[\|]+', st.MorseString)
+    whitespaceObj = re.search(r'[\s]+', st.MorseString)
+    morseObj = re.search(r'[.\-]', st.MorseString, re.I)
+    alphabetObj = re.search(r'[a-zA-Z0-9]', st.MorseString, re.I)
+
 
     if separatorObj and whitespaceObj:
         sys.exit("please use only one way to split letters/words")
@@ -122,61 +177,93 @@ def checkConditions(st):
 
     return len_splitString, len_basic_string, splitString
 
-def morseNcode(len_basic_string, len_splitString, splitString):
-    if morseObj:
-        letters = split_to_letters(st.MorseString)
-        message = ""
-        for i in range(len_basic_string):
-            if i == 0 and (letters[i] == " " or letters[i] == "|"):
+def morseDecode(len_basic_string, len_splitString, splitString, st):
+    """
+    function morseDecode returns printed Decoded message from morse code
+    it goes through the string and checks if you start or end with separators (not valid)
+    also it checks if you use valid morse code which is written above 
+
+    Args:
+        -st - obj with the input string
+        -len_basic_string - number of characters in none stripped input string
+        -len_splitString - number of characters in stripped input string
+        -splitString - stripped input string
+    
+    Returns:
+        - nothing really ... just prints the message
+
+    """
+
+    letters = split_to_letters(st.MorseString)
+    print("split_to letters:", letters)
+    message = ""
+    for i in range(len_basic_string):
+        if i == 0 and (letters[i] == " " or letters[i] == "|"):
+            sys.exit("please do not start with separators")
+        if i == len_basic_string-1 and (letters[i] == " " or letters[i] == "|"):
+            sys.exit("please do not end with separators")
+
+    for j in range(len_splitString):
+        if splitString[j] not in morseAlphNum:
+            sys.exit("please fill in right morse code")
+        else:
+            message += list(MORSE_CODE_ALPHABET.keys())[list(MORSE_CODE_ALPHABET.values()).index(splitString[j])]
+            # I was looking for some easy way to cooperate with the table ... I found this at (https://www.geeksforgeeks.org/morse-code-translator-python/) and changed for my code#
+    print(message)
+
+def morseNcode(len_basic_string, len_splitString, st):
+    """
+    function morseNcode ncodes the alphabet message to the morse code it uses verticals as separators
+    also it goes through the string and checks if you start or end with separators
+    then it checks if the character is separator if not it replaces alphanum chars with morse chars
+
+    Args:
+        -st - obj with the input string
+        -len_basic_string - number of characters in none stripped input string
+        -len_splitString - number of characters in stripped input string
+
+    Returns:
+        -nothing really again ... just prints the message out
+
+    """
+
+    st.MorseString = st.MorseString.upper()
+    splitString = split_to_letters(st.MorseString)
+    alpha_message = ""
+
+    for i in range(len_basic_string):
+        if i != 0:
+                alpha_message += "|"
+        else:
+            if splitString[i] == " " or splitString[i] == "|":
                 sys.exit("please do not start with separators")
-            if i == len_basic_string-1 and (letters[i] == " " or letters[i] == "|"):
-                sys.exit("please do not end with separators")
-
-
-        for j in range(len_splitString):
-            if splitString[j] not in morseAlphNum:
-                sys.exit("please fill in right morse code")
-            else:
-                message += list(MORSE_CODE_ALPHABET.keys())[list(MORSE_CODE_ALPHABET.values()).index(splitString[j])]
-                # I was looking for some easy way to cooperate with the table ... I found this at (https://www.geeksforgeeks.org/morse-code-translator-python/) and changed for my code#
-
-        print(message)
-
-def morseDecode(len_basic_string, len_splitString):
-    if alphabetObj:
-        st.MorseString = st.MorseString.upper()
-        splitString = split_to_letters(st.MorseString)
-        alpha_message = ""
-
-        for i in range(len_basic_string):
-            if i != 0:
-                    alpha_message += "|"
-            else:
-                if splitString[i] == " " or splitString[i] == "|":
-                    sys.exit("please do not start with separators")
-            if i == len_basic_string-1 and (splitString[i] == " " or splitString[i] == "|"):
-                sys.exit("please do not end with separators")
-
-            if splitString[i] != " " and splitString[i] != "|":
-                alpha_message += MORSE_CODE_ALPHABET[splitString[i]]
-
-        print ("alphabet message  :", alpha_message)
-
-#main funkci kde zavolam vsechny funkce ... kod dole
-#taky potrebuju komentare
+        if i == len_basic_string-1 and (splitString[i] == " " or splitString[i] == "|"):
+            sys.exit("please do not end with separators")
+        if splitString[i] != " " and splitString[i] != "|":
+            ncode_message += MORSE_CODE_ALPHABET[splitString[i]]
+            
+    print (ncode_message)
 
 #napsat testy
+#flake
 #pak fork dokoncit
 
-st = myArgParser()
+def main():
+    """ Main function where the program runs and all the functions are called"""
+    st = myArgParser()
 
-separatorObj = re.search(r'[\|]+', st.MorseString)
-whitespaceObj = re.search(r'[\s]+', st.MorseString)
-morseObj = re.search(r'[.\-]', st.MorseString, re.I)
-alphabetObj = re.search(r'[a-zA-Z0-9]', st.MorseString, re.I)
-
-len_splitString, len_basic_string, splitString = checkConditions(st)
+    separatorObj = re.search(r'[\|]+', st.MorseString)
+    whitespaceObj = re.search(r'[\s]+', st.MorseString)
+    morseObj = re.search(r'[.\-]', st.MorseString, re.I)
+    alphabetObj = re.search(r'[a-zA-Z0-9]', st.MorseString, re.I)
 
 
-morseNcode(len_basic_string, len_splitString, splitString)
-morseDecode(len_basic_string, len_splitString)
+    len_splitString, len_basic_string, splitString = checkConditions(st)
+
+    if morseObj:
+        morseDecode(len_basic_string, len_splitString, splitString, st)
+    elif alphabetObj:
+        morseNcode(len_basic_string, len_splitString, st)
+
+if __name__ == '__main__':
+    main()
