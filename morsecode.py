@@ -73,3 +73,15 @@ import unittest   # Importování Unit testu
 if __name__ == '__main__':
     main()
     unittest.main()
+
+   
+
+def test_to_morse():
+    #Test překladu textu do morseovky
+    assert(to_morse("ahoj")) == " .- .... --- .--- "
+
+
+def test_from_morse():
+    #Test překladu morseovky na text
+    assert(from_morse(".- .... --- .---")) == " ahoj "
+    
