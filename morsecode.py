@@ -4,7 +4,8 @@ import unittest
 
 
 def abec():
-    """Funkce pro definovani abecedy.
+    """
+    Funkce pro definovani abecedy.
     """
     abec = {"a": ".-", "b": "-...", "c": "-.-.", "d": "-..",
             "e": ".", "f": "..-.", "g": "--.", "h": "....",
@@ -27,7 +28,8 @@ abec = abec()
 
 
 def to_morse(vstup):
-    """Funkce pro překlad textu do morseovho kodu.
+    """
+    Funkce pro překlad textu do morseovho kodu.
     """
     morse_code = ""
     for pismeno in vstup:
@@ -40,7 +42,8 @@ def to_morse(vstup):
 
 
 def from_morse(vstup):
-    """Funkce pro překlad morseovky na text.
+    """
+    Funkce pro překlad morseovky na text.
     """
     vstup += ' '
     text = ''
@@ -82,10 +85,7 @@ def main():
     else:
         vypis = "\n --- Ukončili ste program --- "
     print(vypis)
-
-
-import unittest
-"""Importování Unit testu."""
+    
 
 if __name__ == '__main__':
     """Unit testovani"""
