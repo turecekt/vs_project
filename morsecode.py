@@ -76,12 +76,12 @@ if __name__ == '__main__':
 
    
 
-def test_to_morse():
+def test_to():
     #Test překladu textu do morseovky
     assert(to_morse("ahoj")) == ".- .... --- .---"
 
 
-def test_from_morse():
+def test_from():
     #Test překladu morseovky na text
     assert(from_morse("--.. -.. .- .-. . -.-.")) == "zdarec"
     
