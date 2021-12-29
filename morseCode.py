@@ -343,3 +343,8 @@ def testMorseNcode():
     value += "---|...-|-.--|-.-.|....||---.."
     num_substring, basic_str_len, splitString = checkConditions(teStr)
     assert(morseNcode(num_substring, basic_str_len, teStr) == value)
+    teStr = "zitra|me|nevezes|do|bystrice"
+    value = "--..|..|-|.-.|.-||--|.||-.|.|...-|.|--..|.|...|"
+    value += "|-..|---||-...|-.--|...|-|.-.|..|-.-.|."
+    num_substring, basic_str_len, splitString = checkConditions(teStr)
+    assert(morseNcode(num_substring, basic_str_len, teStr) == value)
