@@ -2,12 +2,12 @@
 """Kod obsahuje i výběrové menu pro překlad na text nebo morseovku."""
 
 def abeceda():
-    """Funkce pro definovani abecedy"""
+    """Funkce pro definovani abecedy."""
 
     abeceda = {"a": ".-", "b": "-...", "c": "-.-.", "d": "-..",
                "e": ".", "f": "..-.", "g": "--.", "h": "....",
-               "i": "..", "j": ".---","k": "-.-", "l": ".---",
-               "m": "--", "n": "-.", "o": "---", "p": ".--.",                         
+               "i": "..", "j": ".---", "k": "-.-", "l": ".---",
+               "m": "--", "n": "-.", "o": "---", "p": ".--.",
                "q": "--.-", "r": ".-.", "s": "...", "t": "-",
                "u": "..-", "v": "...-", "w": ".--", "x": "-..-",
                "y": "-.--", "z": "--..", "1": ".----", "2": "..---",
@@ -20,10 +20,13 @@ def abeceda():
 
     return abeceda
 
+
 abeceda = abeceda()
 
+
 def to_morse(vstup):
-    """Funkce pro překlad textu do morseovho kodu"""
+    """Funkce pro překlad textu do morseovho kodu."""
+    
     morse_code = ""
     for pismeno in vstup:
         if pismeno.lower() in abeceda.keys():
@@ -33,34 +36,38 @@ def to_morse(vstup):
 
     return morse_code
 
+
 def from_morse(vstup):
-    """Funkce pro překlad morseovky na text"""
+    """Funkce pro překlad morseovky na text."""
+
     vstup += ' '
     text = ''
     bvstup = ''
     for pismeno in vstup:
- 
+
         if (pismeno != ' '):
- 
+
             i = 0
- 
+
             bvstup += pismeno
- 
+
         else:
             i += 1
- 
+
             if i == 2:
- 
+
                 text += ' '
             else:
- 
-                text += list(abeceda.keys())[list(abeceda.values()).index(bvstup)]
+
+                text += list(abeceda.keys())
+                [list(abeceda.values()).index(bvstup)]
                 bvstup = ''
 
     return text
 
+
 def main():
-    """Menu pro překlad textu na morseovku nebo morseovky na text"""
+    """Menu pro překlad textu na morseovku nebo morseovky na text."""
     menu = input("Vyber si :\n\n 1. Zakódovať text do morzeovky (Zadaj č.1)\
     \n 2. Dekódovať text z morzeovky (Zadaj č.2)\
     \n 3. Ukončiť program (Zadaj znak alebo čísla od 3 do 9)\
@@ -75,7 +82,7 @@ def main():
         vypis = "\n --- Ukončili ste program --- "
     print(vypis)
 
-"""Importování Unit testu"""
+"""Importování Unit testu."""
 import unittest
 
 if __name__ == '__main__':
@@ -83,11 +90,12 @@ if __name__ == '__main__':
     main()
     unittest.main()
 
+
 def test_to():
-    """Test překladu textu do morseovky"""
+    """Test překladu textu do morseovky."""
     assert(to_morse("ahoj")) == ".- .... --- .--- "
 
 
 def test_from():
-    """Test překladu morseovky na text"""
+    """Test překladu morseovky na text."""
     assert(from_morse("--.. -.. .- .-. . -.-.")) == "zdarec"
