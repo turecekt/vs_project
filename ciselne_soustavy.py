@@ -5,39 +5,6 @@ DIGITS = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
 def main():
 
-def nactiVstup():
-	'''
-	Metoda nactiVstup nacte parametry <cislo> a <cilova_ciselna_soustava> budto z predanych parametru pri spusteni programu,
-	nebo je necha zadat uzivatelem programu, nebo vypise napovedu.
-	'''
-
-	# kontrola jestli jsou pri spousteni programu predavane parametry
-	if len(sys.argv) > 1:
-		args = sys.argv[1:]
-
-		# kontrola jestli bylo pozadovano vypsani napovedy
-		if args[0] == 'help' or args[0] == '-h':
-			print('Spustte budto s parametry: <cislo> <cilova_ciselna_soustava>(2..32), nebo help (-h) pro vypsani napovedy, nebo bez parametru pro rucni zadani hodnot uzivatelem.')  # noqa: E501
-			exit(0)
-		else:
-			# nacteni parametru <cislo> a <cilova_ciselna_soustava> pri spusteni programu
-			try:
-				cislo = int(args[0])
-				cilova_ciselna_soustava = int(args[1])
-				if cilova_ciselna_soustava < 2 or cilova_ciselna_soustava > 32:
-					print('Parametr <cilova_ciselna_soustava>(2..32) je mimo povoleny rozsah 3..32.')
-				return cislo, cilova_ciselna_soustava
-			except BaseException:
-				print('Nespravne zadane parametry: <cislo> <cilova_ciselna_soustava>(2..32)')
-
-	# nacitani parametru <cislo> od uzivatele
-	cislo = zadejCislo()
-
-	# nacitani parametru <cilova_ciselna_soustava> od uzivatele
-	cilova_ciselna_soustava = zadejSoustava()
-
-	return cislo, cilova_ciselna_soustava
-
 def zadejCislo():
 	'''
 	Metoda zadejCislo() nacte parametr <cislo>, ktere zada uzivatel, pri spatnem zadani vypise chybu a necha uzivatele opakovat
