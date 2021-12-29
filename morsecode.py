@@ -6,6 +6,7 @@ import unittest
 def abec():
     """Funkce pro definovani abecedy."""
 
+
     abec = {"a": ".-", "b": "-...", "c": "-.-.", "d": "-..",
             "e": ".", "f": "..-.", "g": "--.", "h": "....",
             "i": "..", "j": ".---", "k": "-.-", "l": ".---",
@@ -27,9 +28,9 @@ abec = abec()
 
 
 def to_morse(vstup):
-    """
-    Funkce pro překlad textu do morseovho kodu.
-    """
+    """Funkce pro překlad textu do morseovho kodu."""
+
+
     morse_code = ""
     for pismeno in vstup:
         if pismeno.lower() in abec.keys():
@@ -41,9 +42,9 @@ def to_morse(vstup):
 
 
 def from_morse(vstup):
-    """
-    Funkce pro překlad morseovky na text.
-    """
+    """Funkce pro překlad morseovky na text."""
+
+
     vstup += ' '
     text = ''
     bvstup = ''
