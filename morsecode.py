@@ -78,7 +78,7 @@ if __name__ == '__main__':
 
 def test_to():
     #Test překladu textu do morseovky
-    assert(to_morse("ahoj")) == ".- .... --- .---"
+    assert(to_morse("ahoj")) == ".- .... --- .--- "
 
 
 def test_from():
