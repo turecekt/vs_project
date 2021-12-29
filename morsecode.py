@@ -4,9 +4,8 @@ import unittest
 
 
 def abec():
-    """
-    Funkce pro definovani abecedy.
-    """
+    """Funkce pro definovani abecedy."""
+
     abec = {"a": ".-", "b": "-...", "c": "-.-.", "d": "-..",
             "e": ".", "f": "..-.", "g": "--.", "h": "....",
             "i": "..", "j": ".---", "k": "-.-", "l": ".---",
@@ -85,7 +84,7 @@ def main():
     else:
         vypis = "\n --- Ukončili ste program --- "
     print(vypis)
-    
+
 
 if __name__ == '__main__':
     """Unit testovani"""
