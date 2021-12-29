@@ -59,8 +59,7 @@ def from_morse(vstup):
                 text += ' '
             else:
 
-                text += list(abeceda.keys())
-                [list(abeceda.values()).index(bvstup)]
+                text += list(abeceda.keys())[list(abeceda.values()).index(bvstup)]
                 bvstup = ''
 
     return text
