@@ -1,27 +1,29 @@
 """Překladač textu do morseova kodu a dekóder morseova kodu do textu."""
 """Kod obsahuje i výběrové menu pro překlad na text nebo morseovku."""
 
-def abeceda():
-    """Funkce pro definovani abecedy."""
 
-    abeceda = {"a": ".-", "b": "-...", "c": "-.-.", "d": "-..",
+def abec():
+    """Funkce pro definovani abecedy."""
+    
+
+    abec = {"a": ".-", "b": "-...", "c": "-.-.", "d": "-..",
                "e": ".", "f": "..-.", "g": "--.", "h": "....",
                "i": "..", "j": ".---", "k": "-.-", "l": ".---",
                "m": "--", "n": "-.", "o": "---", "p": ".--.",
                "q": "--.-", "r": ".-.", "s": "...", "t": "-",
                "u": "..-", "v": "...-", "w": ".--", "x": "-..-",
                "y": "-.--", "z": "--..", "1": ".----", "2": "..---",
-               "3": "...--","4": "....-", "5": ".....",
+               "3": "...--", "4": "....-", "5": ".....",
                "6": "-....", "7": "--...", "8": "---..",
                "9": "----.", "0": "-----", ",": "--..--",
                ".": ".-.-.-", "?": "..--..", "/": "-..-.",
                "-": "-....-", "(": "-.--.", ")": "-.--.-",
                ":": "---...", ";": "-.-.-.", "+": ".-.-.", "=": "-...-"}
 
-    return abeceda
+    return abec
 
 
-abeceda = abeceda()
+abec = abec()
 
 
 def to_morse(vstup):
@@ -29,8 +31,8 @@ def to_morse(vstup):
     
     morse_code = ""
     for pismeno in vstup:
-        if pismeno.lower() in abeceda.keys():
-            morse_code += abeceda[pismeno.lower()] + " "
+        if pismeno.lower() in abec.keys():
+            morse_code += abec[pismeno.lower()] + " "
         else:
             morse_code += pismeno.lower() + " "
 
@@ -59,7 +61,7 @@ def from_morse(vstup):
                 text += ' '
             else:
 
-                text += list(abeceda.keys())[list(abeceda.values()).index(bvstup)]
+                text += list(abec.keys())[list(abec.values()).index(bvstup)]
                 bvstup = ''
 
     return text
@@ -81,8 +83,9 @@ def main():
         vypis = "\n --- Ukončili ste program --- "
     print(vypis)
 
-"""Importování Unit testu."""
+
 import unittest
+"""Importování Unit testu."""
 
 if __name__ == '__main__':
     """Unit testovani"""
