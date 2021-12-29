@@ -24,7 +24,7 @@ def to_morse(vstup):
         else:
             morse_code += pismeno.lower() + " "
 
-        return morse_code
+    return morse_code
     
 def from_morse(vstup):
 
@@ -56,18 +56,18 @@ def from_morse(vstup):
 
 def main():
 
-    #vstupní formulár pro zadáni textu, kt. má být zakódován do morseovho kódu
-    text = input("Zadej text který chceš přenést do morseovky : ")
+    menu = input("Vyber si :\n\n 1. Chcem zakódovať text do morzeovky (Zadaj číslo 1).\n 2. Chcem dekódovať text z morzeovky (Zadaj číslo 2).\n 3. Ukončiť program (Zadaj ľubovolný znak alebo čísla od 3 do 9)\n\n  - Zadajte svoju voľbu : ")
+    if menu == "1" :
+        text = input("\n  -- Zadej text který chceš přenést do morseovky : ")
+        vypis = "\n  --- Preklad : " + to_morse(text)
+    elif menu == "2":
+        text = input("\n  -- Zadej text který chceš přenést z morseovky : ")
+        vypis = "\n  --- Preklad : " + from_morse(text)
+    else:
+        vypis = "\n --- Ukončili ste program --- "
+    print(vypis)
 
-    out_morse = to_morse(text)
-        
-    # Výstup překladače    
-    print(out_morse)
-
-    out_text = from_morse(out_morse)
-
-    print(out_text)
-
+    
 import unittest   # Importování Unit testu
 
 if __name__ == '__main__':
