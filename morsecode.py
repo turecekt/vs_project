@@ -1,9 +1,6 @@
 """Překladač textu do morseova kodu a dekóder morseova kodu do textu"""
 """Kod obsahuje i výběrové menu pro překlad na text nebo morseovku"""
 
-"""Importování Unit testu"""
-import unittest
-
 """Funkce pro definovani abecedy"""
 def abeceda():
     
@@ -73,16 +70,18 @@ def main():
         vypis = "\n --- Ukončili ste program --- "
     print(vypis)
 
+"""Importování Unit testu"""
+import unittest
 """Unit testovani"""
 if __name__ == '__main__':
     main()
     unittest.main()
-
-def test_to():
+    
 """Test překladu textu do morseovky"""
+def test_to():
     assert(to_morse("ahoj")) == ".- .... --- .--- "
-
-def test_from():
+    
 """Test překladu morseovky na text"""
+def test_from():
     assert(from_morse("--.. -.. .- .-. . -.-.")) == "zdarec"
     
