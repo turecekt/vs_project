@@ -20,6 +20,7 @@ import argparse
 import re
 import sys
 
+# global morse code to check alphnum
 letter_a = ".-"
 letter_b = "-..."
 letter_c = "-.-."
@@ -60,7 +61,7 @@ number_9 = "----."
 space = "....----"
 separator = "----...."
 
-
+# AlphNum list of Morse code
 MORSE_ALPNUM = {
                     'A': '.-', 'B': '-...',
                     'C': '-.-.', 'D': '-..',
@@ -97,6 +98,7 @@ def split_to_letters(my_string):
     return list(my_string)
 
 
+# used to go through
 morseAlphNum = [letter_a, letter_b, letter_c, letter_d, letter_e, letter_f,
                 letter_g, letter_h, letter_ch, letter_i, letter_j, letter_k,
                 letter_l, letter_m, letter_n, letter_o, letter_p, letter_q,
@@ -124,6 +126,7 @@ def myArgParser(args):
     take double dash as a string but it expects something to go after ...
     so I had to check for it """
 
+    args = sys.argv[1]
     if args == '--':
         sys.exit("M")
     else:
@@ -263,13 +266,15 @@ def morseNcode(len_splitString, len_basic_string, st):
             ncode_message += MORSE_ALPNUM[subStr[i]]
 
     return ncode_message
-# flake
-# pak fork dokoncit
 
 
 def main():
     """ Main function where the program
     runs and all the functions are called"""
+
+    default_arg = sys.argv[0:]
+    if default_arg == ['morseCode.py']:
+        sys.exit("please fill in string argument type -h for help")
     myStr = myArgParser(sys.argv[1])
 
     morseObj = re.search(r'[.\-]', myStr, re.I)
@@ -281,12 +286,18 @@ def main():
         message = morseDecode(num_sub_str, len_b_string, splitString, myStr)
     elif alphabetObj:
         message = morseNcode(num_sub_str, len_b_string, myStr)
+    else:
+        message = sys.argv[1]
 
     print(message)
 
 
 if __name__ == '__main__':
     main()
+
+"""
+unit tests begin here
+"""
 
 
 def testParser():
