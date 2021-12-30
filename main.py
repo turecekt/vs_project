@@ -22,7 +22,7 @@ class MorseDictionary:
 
 
 def main():
-    """zapninani programu."""
+    """Zapninani programu."""
     once = True
     morse(once)
 
@@ -33,7 +33,8 @@ def morse(once):
                     " press Y and Enter:")
         yep = yep.upper()
         once = False
-        if (yep == "Y"):  # pokud y, vypise mozne znaky
+        if (yep == "Y"):
+            """Pokud y, vypise mozne znaky."""
             print("A B C D E F G H I J K L M N O P Q R S T U V W X Y Z 1 2 "
                   "3 4 5 6 7 8 9 , . ? / - ( )")
             input("Press Enter to continue..")
