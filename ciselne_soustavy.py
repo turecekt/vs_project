@@ -119,3 +119,8 @@ def testZadejCislo(monkeypatch):
 def testZadejSoustava(monkeypatch):
 	monkeypatch.setattr('builtins.input', lambda _: 10)
 	assert zadejSoustava() == 10
+
+
+def testNactivstup(monkeypatch):	
+	monkeypatch.setattr('builtins.input', lambda _: 8)
+	assert nactiVstup() == (8, 8)
