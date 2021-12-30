@@ -1,5 +1,5 @@
 """Unit testy pro program IsPrime."""
-from isPrime import isPrime
+from .isPrime import isPrime
 import unittest
 
 
