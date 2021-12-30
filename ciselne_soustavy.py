@@ -1,4 +1,6 @@
-#Program pro prevadeni cisel z desitkove soustavy do soustavy zvolene uzivatelem
+"""
+Program pro prevadeni cisel z desitkove soustavy do soustavy zvolene uzivatelem
+"""
 
 import sys
 
@@ -8,10 +10,9 @@ DIGITS = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
 def main():
 	"""
-	Program prevede zadane cislo <cislo> z desitkove soustavy
+	Program prevede zadane cislo <cislo> z desitkove soustavy	
 	do ciselne soustavy se zakladem <cilova_ciselna_soustava>.
-	"""
-	
+	"""	
 	cislo, cilova_ciselna_soustava = nactiVstup()
 
 	print(f'Zadane cislo: {cislo}, zaklad vybrane soustavy: {cilova_ciselna_soustava}, prevedene cislo: {preved(cislo, cilova_ciselna_soustava)}')	# noqa: E501
