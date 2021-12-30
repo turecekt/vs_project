@@ -4,6 +4,7 @@ import builtins
 
 class MorseDictionary:
     """Objekt morseovka."""
+
     dictionary = {'A': '.-', 'B': '-...',
                   'C': '-.-.', 'D': '-..', 'E': '.',
                   'F': '..-.', 'G': '--.', 'H': '....',
@@ -28,6 +29,7 @@ def main():
 
 
 def morse(once):
+    """Hlavni telo programu."""
     if (once):
         yep = input("If you want to see a summary of all available characters,"
                     " press Y and Enter:")
@@ -115,38 +117,38 @@ def decode(inputMessage, morseCode):
         return ("Character is not defined in morse code")
 
 
-# Podmínka pro spuštění programu
 if __name__ == '__main__':
+    """Podmínka pro spuštění programu."""
     main()
 
 
-# Test č. 1 na dekodovani
 def test_decode():
+    """Test č. 1 na dekodovani."""
     assert decode(".-", MorseDictionary.dictionary) == "A"
 
 
-# Test č. 2 na rozkodovani
 def test_encode():
+    """Test č. 2 na rozkodovani."""
     assert encode("A", MorseDictionary.dictionary) == ".-"
 
 
-# Test č. 3 na zadání špaptné hodnoty při dekodovani
 def test_decode2():
+    """Test č. 3 na zadání špaptné hodnoty při dekodovani."""
     assert decode("@", MorseDictionary.dictionary) == "Character is" \
                                                       " not defined in morse" \
                                                       " code"
 
 
-# Test č. 4 na zadání špatné hodnoty při rozkodovani
 def test_encode2():
+    """Test č. 4 na zadání špatné hodnoty při rozkodovani."""
     assert encode("@", MorseDictionary.dictionary) == \
            "Character is not defined in morse code. These characters are" \
            " defined: A B C D E F G H I J K L M N O P Q R S T U V W X Y Z 1" \
            " 2 3 4 5 6 7 8 9 , . ? / - "
 
 
-# Test č. 5 na zadání vstupních hodnot a zobrazení výstupu
 def test_morse():
+    """Test č. 5 na zadání vstupních hodnot a zobrazení výstupu."""
     set_keyboard_input(["Y", "", "3"])
     morse(True)
     output = get_display_output()
@@ -160,8 +162,8 @@ def test_morse():
                       "Goodbye"]
 
 
-# Test č. 6 zadání vstupní hodnoty pro ukončení programu
 def test_morse2():
+    """Test č. 6 zadání vstupní hodnoty pro ukončení programu."""
     set_keyboard_input(["3"])
     morse(False)
     output = get_display_output()
@@ -170,8 +172,8 @@ def test_morse2():
                       "Goodbye"]
 
 
-# Test č. 7 zadání dalších možnosti vstupních hodnot
 def test_morse3():
+    """Test č. 7 zadání dalších možnosti vstupních hodnot."""
     set_keyboard_input(["1", "a", "3", "3"])
     morse(False)
     output = get_display_output()
@@ -185,8 +187,8 @@ def test_morse3():
                       "Goodbye"]
 
 
-# Test č. 8, další možnost na zadání špatného výstupu
 def test_morse4():
+    """Test č. 8, další možnost na zadání špatného výstupu."""
     set_keyboard_input(["2", "..", "3", "3"])
     morse(False)
     output = get_display_output()
@@ -201,8 +203,8 @@ def test_morse4():
                       "Goodbye"]
 
 
-# Test č. 9, další možnost na zadání špatného výstupu
 def test_main():
+    """Test č. 9, další možnost na zadání špatného výstupu."""
     set_keyboard_input(["n", "2", "..", "3", "3"])
     main()
     output = get_display_output()
@@ -219,8 +221,8 @@ def test_main():
                       "Goodbye"]
 
 
-# Test č. 10, zadání další špatné hodnoty ve výstupu a následný výpis
 def test_main2():
+    """Test č. 10, zadání další špatné hodnoty ve výstupu a následný výpis."""
     set_keyboard_input(["y", "", "2", "..", "3", "3"])
     main()
     output = get_display_output()
@@ -239,21 +241,19 @@ def test_main2():
                       "morse press 2, for exit press 3:",
                       "Goodbye"]
 
-# Funkce podporující testování programu
-
 
 inner_values = []
 print_values = []
 
 
-# Vypíše vstupní hodnoty
 def vstup(s):
+    """Vypíše vstupní hodnoty."""
     print_values.append(s)
     return inner_values.pop(0)
 
 
-# Spouští funkci pro testovani
 def vstup_vystup_start():
+    """Spouští funkci pro testovani."""
     global inner_values, print_values
 
     inner_values = []
@@ -263,14 +263,14 @@ def vstup_vystup_start():
     builtins.print = lambda s: print_values.append(s)
 
 
-# Vezme výpis z obrazovky
 def get_display_output():
+    """Vezme výpis z obrazovky."""
     global print_values
     return print_values
 
 
-# Nastaví vstup
 def set_keyboard_input(vstupy):
+    """Nastaví vstup."""
     global inner_values
 
     vstup_vystup_start()
