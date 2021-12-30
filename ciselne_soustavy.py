@@ -4,6 +4,16 @@ import sys
 DIGITS = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
 def main():
+	'''
+	Program prevede zadane cislo <cislo> z desitkove soustavy
+	do ciselne soustavy se zakladem <cilova_ciselna_soustava>.
+	'''
+
+	cislo, cilova_ciselna_soustava = nactiVstup()
+
+	print(f'Zadane cislo: {cislo}, zaklad vybrane soustavy: {cilova_ciselna_soustava}, prevedene cislo: {preved(cislo, cilova_ciselna_soustava)}')	# noqa: E501
+	input('Stisknete ENTER pro ukonceni.')
+
 
 def nactiVstup():
 	'''
@@ -90,3 +100,22 @@ def preved(cislo: int, cilova_ciselna_soustava: int) -> str:
 	for s in prevedene[::-1]:
 		vysledek += s
 	return vysledek
+
+
+if __name__ == '__main__':
+	main()
+
+
+# Pytest testy
+def testPreved():
+	assert preved(98, 17) == '5D'
+
+
+def testZadejCislo(monkeypatch):
+	monkeypatch.setattr('builtins.input', lambda _: 5)
+	assert zadejCislo() == 5
+
+
+def testZadejSoustava(monkeypatch):
+	monkeypatch.setattr('builtins.input', lambda _: 10)
+	assert zadejSoustava() == 10
