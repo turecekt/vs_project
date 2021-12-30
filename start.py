@@ -14,4 +14,5 @@ if __name__ == "__main__":
         except ValueError:
             print("Please enter an integer.")
 
-    print("Is " + str(n) + " Prime number? " + str(isPrime(n)))  # zobrazeni vysledku
+    # zobrazeni vysledku
+    print("Is " + str(n) + " Prime number? " + str(isPrime(n)))
