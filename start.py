@@ -10,9 +10,8 @@ if __name__ == "__main__":
     while True:
         try:  # uzivatelsky vstup
             n = int(input("Enter a number: "))
-            result = "Is Prime? "
             break
         except ValueError:
             print("Please enter an integer.")
 
-    print(result + str(isPrime(n)))  # zobrazeni vysledku
+    print("Is " + str(n) + " Prime number? " + str(isPrime(n)))  # zobrazeni vysledku
