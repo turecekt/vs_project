@@ -1,9 +1,9 @@
+"""Import pro testy."""
 import builtins
 
 
 class MorseDictionary:
-    """Objekt morseovka"""
-
+    """Objekt morseovka."""
     dictionary = {'A': '.-', 'B': '-...',
                   'C': '-.-.', 'D': '-..', 'E': '.',
                   'F': '..-.', 'G': '--.', 'H': '....',
@@ -22,8 +22,7 @@ class MorseDictionary:
 
 
 def main():
-    """zapninani programu"""
-
+    """zapninani programu."""
     once = True
     morse(once)
 
@@ -62,8 +61,7 @@ def morse(once):
 
 
 def encode(message, morseCode):
-    """Funkce zakoduje do morseovky"""
-
+    """Funkce zakoduje do morseovky."""
     try:
         message = message.upper()
         counter = 1
@@ -90,8 +88,7 @@ def encode(message, morseCode):
 
 
 def decode(inputMessage, morseCode):
-    """Funkce dekóduje z morseovky"""
-
+    """Funkce dekóduje z morseovky."""
     try:
         decodedMessage = ''
         message = inputMessage.split('//')  # Do message se uloží všechny slova
