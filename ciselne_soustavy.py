@@ -49,7 +49,8 @@ def nactiVstup():
 
 
 def zadejCislo():
-	"""Metoda zadejCislo() nacte parametr <cislo>, ktere zada uzivatel, pri spatnem zadani vypise chybu a necha uzivatele opakovat"""
+	"""Metoda zadejCislo() nacte parametr <cislo>, ktere zada uzivatel,"""
+	"""pri spatnem zadani vypise chybu a necha uzivatele opakovat"""
 	
 	while True:
 		try:
@@ -65,7 +66,7 @@ def zadejCislo():
 def zadejSoustava():	
 	"""Metoda zadejSoustava() nacte parametr <cilova_ciselna_soustava>, kterou zada uzivatel,"""
 	"""pri spatnem zadani vypise chybu a necha uzivatele opakovat"""
-	
+
 	while True:
 		try:
 			cilova_ciselna_soustava = int(input('Zadejte cilovou ciselnou soustavu (2..32): '))
@@ -122,4 +123,3 @@ def testNactivstup(monkeypatch):
 	"""Pytest funkce NactiVstup, monkeypatch simuluje input uzivatele"""
 	monkeypatch.setattr('builtins.input', lambda _: 8)
 	assert nactiVstup() == (8, 8)
-	
