@@ -16,21 +16,20 @@ class PrimesTestCase(unittest.TestCase):
 
     def test_should_not_be_prime(self):
         """Test s vysledkem NENI prvocislo."""
-        self.assertEqual(False, isPrime(-1))
-        self.assertEqual(False, isPrime(-2))
         self.assertEqual(False, isPrime(-13))
+        self.assertEqual(False, isPrime(-2))
+        self.assertEqual(False, isPrime(-1))
         self.assertEqual(False, isPrime(0))
         self.assertEqual(False, isPrime(1))
         self.assertEqual(False, isPrime(4))
         self.assertEqual(False, isPrime(16))
-        self.assertEqual(False, isPrime(88))
         self.assertEqual(False, isPrime(30))
         self.assertEqual(False, isPrime(35))
-        self.assertEqual(False, isPrime(121))
         self.assertEqual(False, isPrime(81))
+        self.assertEqual(False, isPrime(88))
+        self.assertEqual(False, isPrime(121))
         self.assertEqual(False, isPrime
                          (1999331999331999331999331999331999331999331999331999335))
-
 
 if __name__ == '__main__':
     unittest.main()
