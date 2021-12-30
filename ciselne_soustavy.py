@@ -1,3 +1,5 @@
+#Program pro prevadeni cisel z desitkove soustavy do soustavy zvolene uzivatelem
+
 import sys
 
 # vycet cislic pro soustavy se zakladem 2 az po cislice se zakladem 32
@@ -5,11 +7,11 @@ DIGITS = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
 
 def main():
-
 	"""
 	Program prevede zadane cislo <cislo> z desitkove soustavy
 	do ciselne soustavy se zakladem <cilova_ciselna_soustava>.
 	"""
+	
 	cislo, cilova_ciselna_soustava = nactiVstup()
 
 	print(f'Zadane cislo: {cislo}, zaklad vybrane soustavy: {cilova_ciselna_soustava}, prevedene cislo: {preved(cislo, cilova_ciselna_soustava)}')	# noqa: E501
@@ -17,11 +19,11 @@ def main():
 
 
 def nactiVstup():
-
 	"""
 	Metoda nactiVstup nacte parametry <cislo> a <cilova_ciselna_soustava> budto z predanych parametru pri spusteni programu,
 	nebo je necha zadat uzivatelem programu, nebo vypise napovedu.
 	"""
+	
 	# kontrola jestli jsou pri spousteni programu predavane parametry
 	if len(sys.argv) > 1:
 		args = sys.argv[1:]
@@ -51,7 +53,6 @@ def nactiVstup():
 
 
 def zadejCislo():
-
 	"""
 	Metoda zadejCislo() nacte parametr <cislo>, ktere zada uzivatel, pri spatnem zadani vypise chybu a necha uzivatele opakovat
 	"""
@@ -67,7 +68,6 @@ def zadejCislo():
 
 
 def zadejSoustava():
-
 	"""
 	Metoda zadejSoustava() nacte parametr <cilova_ciselna_soustava>, kterou zada uzivatel,
 	pri spatnem zadani vypise chybu a necha uzivatele opakovat
@@ -83,7 +83,6 @@ def zadejSoustava():
 			print('Spatny vstup. Zadejte cilovou ciselnou soustavu v rozsahu intervalu (2..32)')
 			
 def preved(cislo: int, cilova_ciselna_soustava: int) -> str:
-
 	"""
 	Metoda preved prevede <cislo> z desitkove soustavy do ciselne soustavy se zakladem <cilova_ciselna_soustava>
 	"""
