@@ -49,9 +49,9 @@ def nactiVstup():
 
 
 def zadejCislo():
-	"""Metoda zadejCislo() nacte parametr <cislo>, ktere zada uzivatel,"""
+	"""Metoda zadejCislo() nacte parametr <cislo>, ktere zada uzivatel,"""  # noqa: D402
 	"""pri spatnem zadani vypise chybu a necha uzivatele opakovat"""
-	
+
 	while True:
 		try:
 			cislo = int(input('Zadejte kladne cele cislo: '))
@@ -63,8 +63,8 @@ def zadejCislo():
 			print('Spatny vstup. Zadejte pouze kladne cele cislo.')
 
 
-def zadejSoustava():	
-	"""Metoda zadejSoustava() nacte parametr <cilova_ciselna_soustava>, kterou zada uzivatel,"""
+def zadejSoustava():
+	"""Metoda zadejSoustava() nacte parametr <cilova_ciselna_soustava>, kterou zada uzivatel,"""  # noqa: D402
 	"""pri spatnem zadani vypise chybu a necha uzivatele opakovat"""
 
 	while True:
