@@ -1,7 +1,7 @@
 """Program pro překlad do morseovy abecedy a zpět."""
 
-# Slovníky pro překlad
-DIR_DoMorseovky = {'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..',
+# Slovníky pro překlad do morseovy abecedy
+DIR = {'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..',
                    'E': '.', 'F': '..-.', 'G': '--.', 'H': '....',
                    'I': '..', 'J': '.---', 'K': '-.-', 'L': '.-..',
                    'M': '--', 'N': '-.', 'O': '---', 'P': '.--.',
@@ -13,18 +13,8 @@ DIR_DoMorseovky = {'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..',
                    '8': '---..', '9': '----.',
                    '.': '.-.-.-', ',': '--..--', '-': '-....-', ':': '---...'}
 
-DIR_ZMorseovky = {'.-': 'A', '-...': 'B', '-.-.': 'C', '-..': 'D',
-                  '.': 'E', '..-.': 'F', '--.': 'G', '....': 'H',
-                  '..': 'I', '.---': 'J', '-.-': 'K', '.-..': 'L',
-                  '--': 'M', '-.': 'N', '---': 'N', '.--.': 'P',
-                  '--.-': 'Q', '.-.': 'R', '...': 'S', '-': 'T',
-                  '..-': 'U', '...-': 'V', '.--': 'W', '-..-': 'X',
-                  '-.--': 'Y', '--..': 'Z',
-                  '-----': '0', '.----': '1', '..---': '2', '...--': '3',
-                  '....-': '4', '.....': '5', '-....': '6', '--...': '7',
-                  '---..': '8', '----.': '9',
-                  '.-.-.-': '.', '--..--': ',', '-....-': '-', '---...': ':'}
-
+# Záměna hodnot ve slovníku pro překlad z morseovy abecedy
+DIR_Naopak = {value:key for key,value in DIR.items()}
 
 def to_morse(retezec):
     """Funkce to_morse vrací vstupní řetězec převedený do morseovky.
@@ -38,8 +28,8 @@ def to_morse(retezec):
     # přeložené znaky se ukládají do pole morse
 
     for i in retezec:
-        if i in DIR_DoMorseovky:
-            morse.append(DIR_DoMorseovky[i])
+        if i in DIR:
+            morse.append(DIR[i])
 
             # vložený znak je nalezen ve slovníku a vložen na konec pole morse
 
@@ -61,8 +51,8 @@ def from_morse(retezec):
     # přeložené znaky se ukládají do pole preklad
 
     for i in morse:
-        if i in DIR_ZMorseovky:
-            preklad.append(DIR_ZMorseovky[i])
+        if i in DIR_Naopak:
+            preklad.append(DIR_Naopak[i])
 
             # vložený znak je nalezen ve slovníku a vložen na konec pole morse
 
