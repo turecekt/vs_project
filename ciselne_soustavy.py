@@ -1,6 +1,4 @@
-"""
-Program pro prevadeni cisel z desitkove soustavy do soustavy zvolene uzivatelem
-"""
+""" Program pro prevadeni cisel z desitkove soustavy do soustavy zvolene uzivatelem. """
 
 import sys
 
@@ -9,10 +7,9 @@ DIGITS = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
 
 def main():
-	"""
-	Program prevede zadane cislo <cislo> z desitkove soustavy	
-	do ciselne soustavy se zakladem <cilova_ciselna_soustava>.
-	"""	
+	""" Program prevede zadane cislo <cislo> z desitkove soustavy """
+	""" do ciselne soustavy se zakladem <cilova_ciselna_soustava>. """
+		
 	cislo, cilova_ciselna_soustava = nactiVstup()
 
 	print(f'Zadane cislo: {cislo}, zaklad vybrane soustavy: {cilova_ciselna_soustava}, prevedene cislo: {preved(cislo, cilova_ciselna_soustava)}')	# noqa: E501
@@ -24,7 +21,7 @@ def nactiVstup():
 	Metoda nactiVstup nacte parametry <cislo> a <cilova_ciselna_soustava> budto z predanych parametru pri spusteni programu,
 	nebo je necha zadat uzivatelem programu, nebo vypise napovedu.
 	"""
-	
+
 	# kontrola jestli jsou pri spousteni programu predavane parametry
 	if len(sys.argv) > 1:
 		args = sys.argv[1:]
@@ -110,19 +107,23 @@ if __name__ == '__main__':
 
 # Pytest testy
 def testPreved():
+	""" Pytest funkce Preved"""
 	assert preved(98, 17) == '5D'
 
 
 def testZadejCislo(monkeypatch):
+	""" Pytest funkce ZadejCislo, monkeypatch simuluje input uzivatele"""
 	monkeypatch.setattr('builtins.input', lambda _: 5)
 	assert zadejCislo() == 5
 
 
 def testZadejSoustava(monkeypatch):
+	""" Pytest funkce ZadejSoustava, monkeypatch simuluje input uzivatele"""
 	monkeypatch.setattr('builtins.input', lambda _: 10)
 	assert zadejSoustava() == 10
 
 
-def testNactivstup(monkeypatch):	
+def testNactivstup(monkeypatch):
+	""" Pytest funkce NactiVstup, monkeypatch simuluje input uzivatele"""
 	monkeypatch.setattr('builtins.input', lambda _: 8)
 	assert nactiVstup() == (8, 8)
