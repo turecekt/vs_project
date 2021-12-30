@@ -111,4 +111,5 @@ def main():
         print("Zadaj K alebo D!")
 
 
-main()
+if __name__ == '__main__':
+    main()
