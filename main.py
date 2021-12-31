@@ -85,7 +85,7 @@ def secti(a, b):
 
 
 def vyhodnot_vstup_uzivatel():
-    """Vyhodnotí výsledek nádhodného výrazu"""
+    """Vyhodnotí výsledek nádhodného výrazu."""
     global NAHODNY_VYRAZ
     a = NAHODNY_VYRAZ.split(" ")[0]  # přístup k elementu a ve výrazu
     oper = NAHODNY_VYRAZ.split(" ")[1]  # přístup k operátoru ve výrazu
@@ -100,7 +100,7 @@ def vyhodnot_vstup_uzivatel():
         vysledek = vynasob(int(a), int(b))
     vysledek_uzivatele = vstup_uzivatele()
     # kontrola správnosti výsledků zadaného uživatelem
-    if vysledek_uzivatele == float("%.2f" % vysledek):  
+    if vysledek_uzivatele == float("%.2f" % vysledek):
         global POCET_SPRAVNYCH_ODPOVEDI
         POCET_SPRAVNYCH_ODPOVEDI = POCET_SPRAVNYCH_ODPOVEDI + 1
 
@@ -124,9 +124,9 @@ def vytvor_test():
         RYCHLOSTI_REAKCI.append(end - start)
     # Vytisteni poctu spravnych odpovedi
     print(f"\nPocet spravnych odpovedi: {POCET_SPRAVNYCH_ODPOVEDI} z 5")
+    reakce = prumerna_reakcni_rychlost(RYCHLOSTI_REAKCI)
     # Vytisteni prumerne reakcni rychlosti
-    print("Prumerna reakcni rychlost: %.2fs"
-    % prumerna_reakcni_rychlost(RYCHLOSTI_REAKCI))
+    print("Průměrná reakční rychlost: %.2fs"% reakce)
     input("\nPro ukončení stiskněte ENTER")
 
 
