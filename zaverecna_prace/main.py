@@ -48,36 +48,36 @@ def vstup_uzivatele():
 def odecti(a, b):
     """odecte hodnotu parametru b od a"""
     try:
-    return a - b
+        return a - b
     except:
-    raise ValueError
+        raise ValueError
 
 
 def vynasob(a, b):
     """Vynásobí hodnoty parametrů a a b"""
     try:
-    return int(a * b)
+        return int(a * b)
     except:
-    raise ValueError
+        raise ValueError
 
 
 def vydel(a, b):
     """Vydělí hodnotu parametru a hodnotou b"""
     if b == 0:
-    return 0
-    lse:
-    try:
-    return a / b
-    except:
-    raise ValueError
+        return 0
+    else:
+        try:
+            return a / b
+        except:
+            raise ValueError
 
 
 def secti(a, b):
     """sečte hodnoty parametrů a a b"""
     try:
-    return a + b
+        return a + b
     except:
-    raise ValueError
+        raise ValueError
 
 
 def vyhodnot_vstup_uzivatel():
@@ -99,8 +99,32 @@ def vyhodnot_vstup_uzivatel():
         global POCET_SPRAVNYCH_ODPOVEDI
         POCET_SPRAVNYCH_ODPOVEDI = POCET_SPRAVNYCH_ODPOVEDI + 1 # inkrementace počtu správných odpovědí
 
+
+def prumerna_reakcni_rychlost():
+    """Vypočte průměrnou reakčni rychlost"""
+    return sum(RYCHLOSTI_REAKCI) / len(RYCHLOSTI_REAKCI)
+
+
+def vytvor_test():
+    """Vytvoří test o 5 příkladech a vyhodnotí počet správných odpovědí a průměrnou reakční rychlost"""
+    global RYCHLOSTI_REAKCI
+    print("Vypocti nasledujících 5 výrazů")
+    input("Pro start stiskni ENTER: ")
+    print("\n")
+    for i in range(5):
+        start = time.time()
+        uloz_nahodny_vyraz()
+        vyhodnot_vstup_uzivatel()
+        end = time.time()
+        RYCHLOSTI_REAKCI.append(end - start)
+
+    print(f"\nPocet spravnych odpovedi: {POCET_SPRAVNYCH_ODPOVEDI} z 5") # Vytisteni poctu spravnych odpovedi    
+    print(f"Prumerna reakcni rychlost: %.2fs" %prumerna_reakcni_rychlost(RYCHLOSTI_REAKCI)) # Vytisteni prumerneho reakcni rychlosti
+    input("\nPro ukončení stiskněte ENTER")
+
+
 def main():
-    pass
+    vytvor_test()
 
 
 if __name__ == "__main__":
