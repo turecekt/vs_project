@@ -1,7 +1,7 @@
-"""Změř průměrnou reakční rychlost odpovědí na nádhodné výrazy"""
+"""Změř průměrnou reakční rychlost odpovědí na nádhodné výrazy."""
 # ------------------------------------------------------------
 # REAKCNI RYCHLOSTI
-# Program se postupně dotazuje uživatele 
+# Program se postupně dotazuje uživatele
 # na výsledek pěti pseudonáhodně generovaných
 # jednoduchých výrazů a [+-*/] b ( a , b∈⟨−10,10⟩ ), přičemž
 # měří reakční dobu a
@@ -77,7 +77,7 @@ def vydel(a, b):
 
 
 def secti(a, b):
-    """sečte hodnoty parametrů a a b."""
+    """Sečte hodnoty parametrů a a b."""
     try:
         return a + b
     except TypeError:
@@ -85,8 +85,10 @@ def secti(a, b):
 
 
 def vyhodnot_vstup_uzivatel():
-    """Vyhodnotí vysledek nahodneho vyrazu a
-    porovná jej se vstupem uživatele."""
+    """
+    Vyhodnotí vysledek nahodneho vyrazu a
+    porovná jej se vstupem uživatele.
+    """
     global NAHODNY_VYRAZ
     a = NAHODNY_VYRAZ.split(" ")[0]  # přístup k elementu a ve výrazu
     oper = NAHODNY_VYRAZ.split(" ")[1]  # přístup k operátoru ve výrazu
@@ -112,8 +114,10 @@ def prumerna_reakcni_rychlost(reakcni_rychlosti):
 
 
 def vytvor_test():
-    """Vytvoří test o 5 příkladech a vyhodnotí 
-    počet správných odpovědí a průměrnou reakční rychlost."""
+    """
+    Vytvoří test o 5 příkladech a vyhodnotí 
+    počet správných odpovědí a průměrnou reakční rychlost.
+    """
     global RYCHLOSTI_REAKCI
     print("Vypocti nasledujících 5 výrazů")
     input("Pro start stiskni ENTER: ")
