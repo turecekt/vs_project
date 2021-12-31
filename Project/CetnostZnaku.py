@@ -30,44 +30,44 @@ testStr = "Testovaci text ktery je zakonceny #"
 #    return open(vstup)
 
  #####################Informace o celkovém počtu znaků#####################
-def PocetZnak(vstup):
-    vstupFile = open(vstup,"r")
-    data = vstupFile.read().replace(" ","")
-    pocet_char = len(data)
-    print('Pocet znaku v celem txt souboru bez mezer :',pocet_char)
-
-PocetZnak('.\TopicPicker.txt')
-
-#####################Informace o nejčastějším znaku#####################
-
-def MaxZnak():
-    print ("The original string is : " + testStr)
-    all_freqMax = {}
-    for i in testStr:
-        if i in all_freqMax:
-         all_freqMax[i] += 1
-        else:
-            all_freqMax[i] = 1
-    res = max(all_freqMax, key = all_freqMax.get)
-    print ("The maximum of all characters in text is : " + str(res)) 
-
-MaxZnak()
-
-
-
- #####################Informace o nejméně častém znaku#####################
-def MinZnak():
-    print ("The original string is : " + testStr)
-    all_freqMin = {}
-    for i in testStr:
-        if i in all_freqMin:
-         all_freqMin[i] += 1
-        else:
-            all_freqMin[i] = 1
-    res = min(all_freqMin, key = all_freqMin.get)
-    print ("The minimum of all characters in text is : " + str(res)) 
-   
-MinZnak()
+#def PocetZnak(vstup):
+#    vstupFile = open(vstup,"r")
+#    data = vstupFile.read().replace(" ","")
+#    pocet_char = len(data)
+#    print('Pocet znaku v celem txt souboru bez mezer :',pocet_char)
+#
+#PocetZnak('.\TopicPicker.txt')
+#
+######################Informace o nejčastějším znaku#####################
+#
+#def MaxZnak():
+#    print ("The original string is : " + testStr)
+#    all_freqMax = {}
+#    for i in testStr:
+#        if i in all_freqMax:
+#         all_freqMax[i] += 1
+#        else:
+#            all_freqMax[i] = 1
+#    res = max(all_freqMax, key = all_freqMax.get)
+#    print ("The maximum of all characters in text is : " + str(res)) 
+#
+#MaxZnak()
+#
+#
+#
+# #####################Informace o nejméně častém znaku#####################
+#def MinZnak():
+#    print ("The original string is : " + testStr)
+#    all_freqMin = {}
+#    for i in testStr:
+#        if i in all_freqMin:
+#         all_freqMin[i] += 1
+#        else:
+#            all_freqMin[i] = 1
+#    res = min(all_freqMin, key = all_freqMin.get)
+#    print ("The minimum of all characters in text is : " + str(res)) 
+#   
+#MinZnak()
 
 #####################Informace o průměrné četnosti#####################
  
@@ -75,6 +75,32 @@ MinZnak()
  
  
  #####################Informace o četnosti jednotlivých znaků abecedy (bez diakritiky)#####################
+
+
+def PocetKazdyZnak(vstup):
+    vstupFile = open(vstup,"r")
+    data = (vstupFile.read().replace(" ","")).upper()
+    alpha = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
+    print(data)
+    for iChar in alpha:
+        pocet = data.count(iChar)
+        if data.count(iChar) > 0:
+            print(iChar, "je",pocet)
+            
+        
+    
+
+   # for f in alpha:
+   #     indivChar = data.count('f')
+   #     print(indivChar)
+        #if indivChar>0:
+        #    print('Pocet kazdeho znaku :',f,indivChar)
+
+
+
+PocetKazdyZnak('.\TopicPicker.txt')
+
+
 
 #vstup = input('Write your paragraph,ends with #: ')
 ##asi bude foreach abeceda a pocet exception mezera zatim nevim asi tak neco
