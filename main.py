@@ -56,7 +56,7 @@ def vynasob(a, b):
     """Vynásobí hodnoty parametrů a a b."""
     try:
         return int(a * b)
-    except TypeError:
+    except ValueError:
         return "Spatna hodnota"
 
 
