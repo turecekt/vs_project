@@ -40,7 +40,7 @@ def vstup_uzivatele():
     try:
         vysledek = float(vysledek)
         return vysledek
-    except:
+    except TypeError:
         print("Zadan neplatny vstup")
 
 
@@ -48,7 +48,7 @@ def odecti(a, b):
     """odecte hodnotu parametru b od a."""
     try:
         return a - b
-    except:
+    except TypeError:
         return "Spatna hodnota"
 
 
@@ -56,7 +56,7 @@ def vynasob(a, b):
     """Vynásobí hodnoty parametrů a a b."""
     try:
         return int(a * b)
-    except:
+    except TypeError:
         return "Spatna hodnota"
 
 
@@ -67,7 +67,7 @@ def vydel(a, b):
     else:
         try:
             return a / b
-        except:
+        except TypeError:
             return "Spatna hodnota"
 
 
@@ -75,7 +75,7 @@ def secti(a, b):
     """sečte hodnoty parametrů a a b."""
     try:
         return a + b
-    except:
+    except TypeError:
         return "Spatna hodnota"
 
 
@@ -135,12 +135,12 @@ if __name__ == "__main__":
 
 
 def test_secti():
-    """testuje funkcni sčítání."""
+    """Testuje funkcni sčítání."""
     assert secti(10, 9) == 19
 
 
 def test_secti2():
-    """testuje spatne zadanou hodnotu."""
+    """Testuje spatne zadanou hodnotu."""
     assert secti(",", 10) == "Spatna hodnota"
 
 
@@ -170,7 +170,7 @@ def test_vydel():
 
 
 def test_vydel2():
-    """testuje dělení nulou."""
+    """Testuje dělení nulou."""
     assert vydel(10, 0) == 0
 
 
@@ -195,6 +195,7 @@ def test_vstup_uzivatele():
 
 
 def test_vygeneruj_nahodny_vyraz():
+    """Testuje generaci náhodného výrazu"""
     assert vygeneruj_nahodny_vyraz_test(10, 10, "+") == "10 + 10"
 
 
@@ -208,7 +209,7 @@ def vstup_uzivatele_test(a, b):
     try:
         vysledek = a + b
         return vysledek
-    except:
+    except TypeError:
         return "Zadana neplatna hodnota"
 
 
