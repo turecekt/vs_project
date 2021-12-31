@@ -1,7 +1,10 @@
+"""Změř průměrnou reakční rychlost odpovědí na nádhodné výrazy"""
 # ------------------------------------------------------------
 # REAKCNI RYCHLOSTI
-# Program se postupně dotazuje uživatele na výsledek pěti pseudonáhodně generovaných
-# jednoduchých výrazů a [+-*/] b ( a , b∈⟨−10,10⟩ ), přičemž měří reakční dobu a
+# Program se postupně dotazuje uživatele 
+# na výsledek pěti pseudonáhodně generovaných
+# jednoduchých výrazů a [+-*/] b ( a , b∈⟨−10,10⟩ ), přičemž
+# měří reakční dobu a
 # vyhodnocuje správnost.
 # VSTUP
 # • Reakce uživatele na příklady v podobě zadaných výsledků
@@ -24,7 +27,8 @@ def vygeneruj_nahodny_vyraz():
     operatory = ["+", "-", "/", "*"]  # list operátorů
     a = random.randint(-10, 10)  # náhodné b číslo v intervalu <-10,10>
     b = random.randint(-10, 10)  # náhodné a číslo v intervalu <-10,10>
-    operator = operatory[random.randint(0, 3)]  # výběr náhodného operátoru z listu operátorů
+    # výběr náhodného operátoru z listu operátorů
+    operator = operatory[random.randint(0, 3)]
     return f"{a} {operator} {b}"
 
 
@@ -81,7 +85,8 @@ def secti(a, b):
 
 
 def vyhodnot_vstup_uzivatel():
-    """Vyhodnotí vysledek nahodneho vyrazu a porovná jej se vstupem uživatele."""
+    """Vyhodnotí vysledek nahodneho vyrazu a
+    porovná jej se vstupem uživatele."""
     global NAHODNY_VYRAZ
     a = NAHODNY_VYRAZ.split(" ")[0]  # přístup k elementu a ve výrazu
     oper = NAHODNY_VYRAZ.split(" ")[1]  # přístup k operátoru ve výrazu
