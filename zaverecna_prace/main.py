@@ -100,9 +100,9 @@ def vyhodnot_vstup_uzivatel():
         POCET_SPRAVNYCH_ODPOVEDI = POCET_SPRAVNYCH_ODPOVEDI + 1 # inkrementace počtu správných odpovědí
 
 
-def prumerna_reakcni_rychlost():
+def prumerna_reakcni_rychlost(reakcni_rychlosti):
     """Vypočte průměrnou reakčni rychlost"""
-    return sum(RYCHLOSTI_REAKCI) / len(RYCHLOSTI_REAKCI)
+    return sum(reakcni_rychlosti) / len(reakcni_rychlosti)
 
 
 def vytvor_test():
