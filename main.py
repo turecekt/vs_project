@@ -126,7 +126,7 @@ def vytvor_test():
     print(f"\nPocet spravnych odpovedi: {POCET_SPRAVNYCH_ODPOVEDI} z 5")
     reakce = prumerna_reakcni_rychlost(RYCHLOSTI_REAKCI)
     # Vytisteni prumerne reakcni rychlosti
-    print("Průměrná reakční rychlost: %.2fs"% reakce)
+    print("Průměrná reakční rychlost: %.2fs" % reakce)
     input("\nPro ukončení stiskněte ENTER")
 
 
