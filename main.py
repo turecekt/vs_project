@@ -33,7 +33,7 @@ def vygeneruj_nahodny_vyraz():
 
 
 def uloz_nahodny_vyraz():
-    """Uložení náhodného vyrazu do globální proměnné pro pozděj:ší použití."""
+    """Uložení náhodného vyrazu do globální proměnné pro pozdější použití."""
     global NAHODNY_VYRAZ
     NAHODNY_VYRAZ = vygeneruj_nahodny_vyraz()
     return NAHODNY_VYRAZ
@@ -85,10 +85,7 @@ def secti(a, b):
 
 
 def vyhodnot_vstup_uzivatel():
-    """
-    Vyhodnotí vysledek nahodneho vyrazu a
-    porovná jej se vstupem uživatele.
-    """
+    """Vyhodnotí výsledek nádhodného výrazu"""
     global NAHODNY_VYRAZ
     a = NAHODNY_VYRAZ.split(" ")[0]  # přístup k elementu a ve výrazu
     oper = NAHODNY_VYRAZ.split(" ")[1]  # přístup k operátoru ve výrazu
@@ -114,10 +111,7 @@ def prumerna_reakcni_rychlost(reakcni_rychlosti):
 
 
 def vytvor_test():
-    """
-    Vytvoří test o 5 příkladech a vyhodnotí 
-    počet správných odpovědí a průměrnou reakční rychlost.
-    """
+    """Vytvoří test o 5 příkladech."""
     global RYCHLOSTI_REAKCI
     print("Vypocti nasledujících 5 výrazů")
     input("Pro start stiskni ENTER: ")
@@ -144,7 +138,7 @@ def main():
 if __name__ == "__main__":
     main()
 
-    # Testovací funkce
+# Testovací funkce
 
 
 def test_secti():
