@@ -11,6 +11,13 @@
 # Autoři: Filip Chromý, Drahomíra Šťastná, Jan Fojtík, Tomáš Blabla
 # ------------------------------------------------------------
 
+import random
+import time
+
+RYCHLOSTI_REAKCI = [] # Globální list pro uložení reakčních rychlostí
+POCET_SPRAVNYCH_ODPOVEDI = 0
+NAHODNY_VYRAZ = ""
+
 
 def main():
     pass
