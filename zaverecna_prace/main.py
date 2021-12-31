@@ -95,7 +95,7 @@ def vyhodnot_vstup_uzivatel():
     elif oper == "*":
         vysledek = vynasob(int(a), int(b))
     vysledek_uzivatele = vstup_uzivatele()
-    if vysledek_uzivatele == float(vysledek): # kontrola správnosti výsledků zadaného uživatelem
+    if vysledek_uzivatele == float(".%2f")%vysledek: # kontrola správnosti výsledků zadaného uživatelem
         global POCET_SPRAVNYCH_ODPOVEDI
         POCET_SPRAVNYCH_ODPOVEDI = POCET_SPRAVNYCH_ODPOVEDI + 1 # inkrementace počtu správných odpovědí
 
