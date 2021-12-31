@@ -29,10 +29,9 @@ def vygeneruj_nahodny_vyraz():
 
 
 def uloz_nahodny_vyraz():
-    """Uložení náhodného vyrazu do globální proměnné pro pozdější použití"""
+    """Uložení náhodného vyrazu do globální proměnné pro pozděj:ší použití"""
     global NAHODNY_VYRAZ
     NAHODNY_VYRAZ = vygeneruj_nahodny_vyraz()
-    return NAHODNY_VYRAZ
 
 
 def vstup_uzivatele():
@@ -164,7 +163,7 @@ def test_vypocty_reakcni_rychlost():
 
 def test_uloz_nahodny_vyraz():
     """Testuje správné uložení hodnoty do globální proměnné"""
-    assert uloz_nahodny_vyraz() == NAHODNY_VYRAZ
+    assert uloz_nahodny_vyraz() == NAHODNY_VYRAZ.isalnum()
 
 
 def test_vstup_uzivatele():
@@ -173,7 +172,7 @@ def test_vstup_uzivatele():
 
 
 def test_vygeneruj_nahodny_vyraz():
-    assert vygeneruj_nahodny_vyraz() == uloz_nahodny_vyraz()
+    assert vygeneruj_nahodny_vyraz() == type(str)
 
 
 def test_vstup_uzivatele2():
