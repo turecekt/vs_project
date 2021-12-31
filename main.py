@@ -1,15 +1,15 @@
-  # ------------------------------------------------------------
-  # REAKCNI RYCHLOSTI
-  # Program se postupně dotazuje uživatele na výsledek pěti pseudonáhodně generovaných
-  # jednoduchých výrazů a [+-*/] b ( a , b∈⟨−10,10⟩ ), přičemž měří reakční dobu a
-  # vyhodnocuje správnost.
-  # VSTUP
-  # • Reakce uživatele na příklady v podobě zadaných výsledků
-  # VÝSTUP
-  # • Informace o úspěšnosti (kolikrát bylo zodpovězeno správně),
-  # • Informace o průměrné reakční době.
-  # Autoři: Filip Chromý, Drahomíra Šťastná, Jan Fojtík, Tomáš Blabla
-  # ------------------------------------------------------------
+    # ------------------------------------------------------------
+    # REAKCNI RYCHLOSTI
+    # Program se postupně dotazuje uživatele na výsledek pěti pseudonáhodně generovaných
+    # jednoduchých výrazů a [+-*/] b ( a , b∈⟨−10,10⟩ ), přičemž měří reakční dobu a
+    # vyhodnocuje správnost.
+    # VSTUP
+    # • Reakce uživatele na příklady v podobě zadaných výsledků
+    # VÝSTUP
+    # • Informace o úspěšnosti (kolikrát bylo zodpovězeno správně),
+    # • Informace o průměrné reakční době.
+    # Autoři: Filip Chromý, Drahomíra Šťastná, Jan Fojtík, Tomáš Blabla
+    # ------------------------------------------------------------
 
 import random
 import time
@@ -24,7 +24,7 @@ def vygeneruj_nahodny_vyraz():
     operatory = ["+", "-", "/", "*"]  # list operátorů
     a = random.randint(-10, 10)  # náhodné b číslo v intervalu <-10,10>
     b = random.randint(-10, 10)  # náhodné a číslo v intervalu <-10,10>
-    operator = operatory[random.randint(0,3)]  # výběr náhodného operátoru z listu operátorů
+    operator = operatory[random.randint(0, 3)]  # výběr náhodného operátoru z listu operátorů
     return f"{a} {operator} {b}"
 
 
@@ -33,6 +33,7 @@ def uloz_nahodny_vyraz():
     global NAHODNY_VYRAZ
     NAHODNY_VYRAZ = vygeneruj_nahodny_vyraz()
     return NAHODNY_VYRAZ
+
 
 def vstup_uzivatele():
     """Přečte a zkontroluje platnost vstupu uživatele."""
@@ -45,7 +46,7 @@ def vstup_uzivatele():
 
 
 def odecti(a, b):
-    """odecte hodnotu parametru b od a."""
+    """Odecte hodnotu parametru b od a."""
     try:
         return a - b
     except TypeError:
@@ -120,11 +121,12 @@ def vytvor_test():
     # Vytisteni poctu spravnych odpovedi
     print(f"\nPocet spravnych odpovedi: {POCET_SPRAVNYCH_ODPOVEDI} z 5")  
     # Vytisteni prumerne reakcni rychlosti
-    print(f"Prumerna reakcni rychlost: %.2fs" %prumerna_reakcni_rychlost(RYCHLOSTI_REAKCI))
+    print("Prumerna reakcni rychlost: %.2fs" % prumerna_reakcni_rychlost(RYCHLOSTI_REAKCI))
     input("\nPro ukončení stiskněte ENTER")
 
 
 def main():
+    """Spouštěcí metoda programu"""
     vytvor_test()
 
 
@@ -214,4 +216,5 @@ def vstup_uzivatele_test(a, b):
 
 
 def vygeneruj_nahodny_vyraz_test(a, b, op):
+    """Pomocna funkce pro test generace nahodneho vyrazu"""
     return f"{a} {op} {b}"
