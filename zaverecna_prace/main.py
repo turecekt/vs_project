@@ -80,6 +80,25 @@ def secti(a, b):
     raise ValueError
 
 
+def vyhodnot_vstup_uzivatel():
+    """Vyhodnotí vysledek nahodneho vyrazu a porovná jej se vstupem uživatele"""
+    global NAHODNY_VYRAZ
+    a = NAHODNY_VYRAZ.split(" ")[0] # přístup k elementu a ve výrazu
+    oper = NAHODNY_VYRAZ.split(" ")[1] # přístup k operátoru ve výrazu
+    b = NAHODNY_VYRAZ.split(" ")[2] # přístup k elementu b ve výrazu
+    if oper == "+":
+        vysledek = secti(int(a), int(b))
+    elif oper == "-":
+        vysledek = odecti(int(a), int(b))
+    elif oper == "/":
+        vysledek = vydel(int(a), int(b))
+    elif oper == "*":
+        vysledek = vynasob(int(a), int(b))
+        vysledek_uzivatele = vstup_uzivatele()
+    if vysledek_uzivatele == float(vysledek): # kontrola správnosti výsledků zadaného uživatelem
+    global POCET_SPRAVNYCH_ODPOVEDI
+    POCET_SPRAVNYCH_ODPOVEDI = POCET_SPRAVNYCH_ODPOVEDI + 1 # inkrementace počtu správných odpovědí
+
 def main():
     pass
 
