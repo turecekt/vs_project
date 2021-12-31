@@ -130,3 +130,62 @@ def main():
 if __name__ == "__main__":
     main()
 
+# Testovací funkce
+
+def test_secti():
+    """testuje funkcni sčítání"""
+    assert secti(10, 20) == 30
+
+
+def test_odecti():
+    """Testuje funkci odečitání"""
+    assert odecti(20, 10) == 10
+
+
+def test_vynasob():
+    """Testuje funkci násobení"""
+    assert vynasob(2, 2) == 4
+
+
+def test_vydel():
+    """Testuje funkcni dělení"""
+    assert vydel(10, 5) == 2
+
+
+def test_vydel2():
+    """testuje dělení nulou"""
+    assert vydel(10, 0) == 0
+
+
+def test_vypocty_reakcni_rychlost():
+    """Testuje vypočtení průměrné reakční rychlosti"""
+    assert prumerna_reakcni_rychlost([2.22, 3.45, 5.55]) == 3.74
+
+
+def test_uloz_nahodny_vyraz():
+    """Testuje správné uložení hodnoty do globální proměnné"""
+    assert uloz_nahodny_vyraz() == NAHODNY_VYRAZ
+
+
+def test_vstup_uzivatele():
+    """Testuje správnou návratovou hodnotu vstupu uživatelem"""
+    assert vstup_uzivatele_test(10, 10) == 20
+
+
+def test_vygeneruj_nahodny_vyraz():
+    assert vygeneruj_nahodny_vyraz() == uloz_nahodny_vyraz()
+
+
+def test_vstup_uzivatele2():
+    """Testuje špatně zadanou hodnotu uživatelem"""
+    assert vstup_uzivatele_test("a", 10) == "Zadana neplatna hodnota"
+
+
+def vstup_uzivatele_test(a, b):
+    """Pomocná funkce pro testování vstupu uživatele"""
+    vysledek = input(f"{a} + {b} = ")
+    try:
+        return float(vysledek)
+    except:
+        return "Zadana neplatna hodnota"
+
