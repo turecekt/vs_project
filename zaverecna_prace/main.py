@@ -45,6 +45,41 @@ def vstup_uzivatele():
         print("Zadan neplatny vstup")
 
 
+def odecti(a, b):
+    """odecte hodnotu parametru b od a"""
+    try:
+    return a - b
+    except:
+    raise ValueError
+
+
+def vynasob(a, b):
+    """Vynásobí hodnoty parametrů a a b"""
+    try:
+    return int(a * b)
+    except:
+    raise ValueError
+
+
+def vydel(a, b):
+    """Vydělí hodnotu parametru a hodnotou b"""
+    if b == 0:
+    return 0
+    lse:
+    try:
+    return a / b
+    except:
+    raise ValueError
+
+
+def secti(a, b):
+    """sečte hodnoty parametrů a a b"""
+    try:
+    return a + b
+    except:
+    raise ValueError
+
+
 def main():
     pass
 
