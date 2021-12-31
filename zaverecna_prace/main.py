@@ -49,7 +49,7 @@ def odecti(a, b):
     try:
         return a - b
     except:
-        raise ValueError
+        return "Spatna hodnota"
 
 
 def vynasob(a, b):
@@ -57,7 +57,7 @@ def vynasob(a, b):
     try:
         return int(a * b)
     except:
-        raise ValueError
+        return "Spatna hodnota"
 
 
 def vydel(a, b):
@@ -68,7 +68,7 @@ def vydel(a, b):
         try:
             return a / b
         except:
-            raise ValueError
+            return "Spatna hodnota"
 
 
 def secti(a, b):
@@ -76,7 +76,7 @@ def secti(a, b):
     try:
         return a + b
     except:
-        raise ValueError
+        return "Spatna hodnota"
 
 
 def vyhodnot_vstup_uzivatel():
@@ -136,14 +136,29 @@ def test_secti():
     assert secti(10, 20) == 30
 
 
+def test_secti2():
+    """testuje spatne zadanou hodnotu"""
+    assert secti(",", 10) == "Spatna hodnota"
+
+
 def test_odecti():
     """Testuje funkci odečitání"""
     assert odecti(20, 10) == 10
 
 
+def test_odecti():
+    """Testuje spatne zadanou hodnotu"""
+    assert odecti("#", 10) == "Spatna hodnota"
+
+
 def test_vynasob():
     """Testuje funkci násobení"""
     assert vynasob(2, 2) == 4
+
+
+def test_vynasob2():
+    """Testuje spatne zadanou hodnotu pri nasobeni"""
+    assert vynasob("a", 2) == "Spatna hodnota"
 
 
 def test_vydel():
@@ -154,6 +169,11 @@ def test_vydel():
 def test_vydel2():
     """testuje dělení nulou"""
     assert vydel(10, 0) == 0
+
+
+def test_vydel3():
+    """Testuje špatně zadanou hodnotu"""
+    assert vydel("a", 2) == "Spatna hodnota"
 
 
 def test_vypocty_reakcni_rychlost():
