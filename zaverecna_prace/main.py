@@ -28,6 +28,22 @@ operator = operatory[random.randint(0,3)] # výběr náhodného operátoru z lis
 return f"{a} {operator} {b}"
 
 
+def vygeneruj_nahodny_vyraz():
+"""Generuje náhodny matematicky vyraz"""
+operatory = ["+", "-", "/", "*"] # list operátorů
+a = random.randint(-10, 10) # náhodné b číslo v intervalu <-10,10>
+b = random.randint(-10, 10) # náhodné a číslo v intervalu <-10,10>
+operator = operatory[random.randint(0,3)] # výběr náhodného operátoru z listu operátorů
+return f"{​​a}​​ {​​operator}​​ {​​b}​​"
+
+
+def uloz_nahodny_vyraz():
+    """Uložení náhodného vyrazu do globální proměnné pro pozdější použití"""
+    global NAHODNY_VYRAZ
+    NAHODNY_VYRAZ = vygeneruj_nahodny_vyraz()
+    return NAHODNY_VYRAZ
+
+
 def main():
     pass
 
