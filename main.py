@@ -1,15 +1,15 @@
-    # ------------------------------------------------------------
-    # REAKCNI RYCHLOSTI
-    # Program se postupně dotazuje uživatele na výsledek pěti pseudonáhodně generovaných
-    # jednoduchých výrazů a [+-*/] b ( a , b∈⟨−10,10⟩ ), přičemž měří reakční dobu a
-    # vyhodnocuje správnost.
-    # VSTUP
-    # • Reakce uživatele na příklady v podobě zadaných výsledků
-    # VÝSTUP
-    # • Informace o úspěšnosti (kolikrát bylo zodpovězeno správně),
-    # • Informace o průměrné reakční době.
-    # Autoři: Filip Chromý, Drahomíra Šťastná, Jan Fojtík, Tomáš Blabla
-    # ------------------------------------------------------------
+# ------------------------------------------------------------
+# REAKCNI RYCHLOSTI
+# Program se postupně dotazuje uživatele na výsledek pěti pseudonáhodně generovaných
+# jednoduchých výrazů a [+-*/] b ( a , b∈⟨−10,10⟩ ), přičemž měří reakční dobu a
+# vyhodnocuje správnost.
+# VSTUP
+# • Reakce uživatele na příklady v podobě zadaných výsledků
+# VÝSTUP
+# • Informace o úspěšnosti (kolikrát bylo zodpovězeno správně),
+# • Informace o průměrné reakční době.
+# Autoři: Filip Chromý, Drahomíra Šťastná, Jan Fojtík, Tomáš Blabla
+# ------------------------------------------------------------
 
 import random
 import time
@@ -107,7 +107,8 @@ def prumerna_reakcni_rychlost(reakcni_rychlosti):
 
 
 def vytvor_test():
-    """Vytvoří test o 5 příkladech a vyhodnotí počet správných odpovědí a průměrnou reakční rychlost."""
+    """Vytvoří test o 5 příkladech a vyhodnotí 
+    počet správných odpovědí a průměrnou reakční rychlost."""
     global RYCHLOSTI_REAKCI
     print("Vypocti nasledujících 5 výrazů")
     input("Pro start stiskni ENTER: ")
@@ -119,14 +120,15 @@ def vytvor_test():
         end = time.time()
         RYCHLOSTI_REAKCI.append(end - start)
     # Vytisteni poctu spravnych odpovedi
-    print(f"\nPocet spravnych odpovedi: {POCET_SPRAVNYCH_ODPOVEDI} z 5")  
+    print(f"\nPocet spravnych odpovedi: {POCET_SPRAVNYCH_ODPOVEDI} z 5")
     # Vytisteni prumerne reakcni rychlosti
-    print("Prumerna reakcni rychlost: %.2fs" % prumerna_reakcni_rychlost(RYCHLOSTI_REAKCI))
+    print("Prumerna reakcni rychlost: %.2fs"
+    % prumerna_reakcni_rychlost(RYCHLOSTI_REAKCI))
     input("\nPro ukončení stiskněte ENTER")
 
 
 def main():
-    """Spouštěcí metoda programu"""
+    """Spouštěcí metoda programu."""
     vytvor_test()
 
 
@@ -151,7 +153,7 @@ def test_odecti():
     assert odecti(20, 10) == 10
 
 
-def test_odecti():
+def test_odecti2():
     """Testuje spatne zadanou hodnotu."""
     assert odecti("#", 10) == "Spatna hodnota"
 
@@ -197,7 +199,7 @@ def test_vstup_uzivatele():
 
 
 def test_vygeneruj_nahodny_vyraz():
-    """Testuje generaci náhodného výrazu"""
+    """Testuje generaci náhodného výrazu."""
     assert vygeneruj_nahodny_vyraz_test(10, 10, "+") == "10 + 10"
 
 
@@ -216,5 +218,5 @@ def vstup_uzivatele_test(a, b):
 
 
 def vygeneruj_nahodny_vyraz_test(a, b, op):
-    """Pomocna funkce pro test generace nahodneho vyrazu"""
+    """Pomocna funkce pro test generace nahodneho vyrazu."""
     return f"{a} {op} {b}"
