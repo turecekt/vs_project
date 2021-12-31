@@ -19,9 +19,19 @@ POCET_SPRAVNYCH_ODPOVEDI = 0
 NAHODNY_VYRAZ = ""
 
 
+def vygeneruj_nahodny_vyraz():
+"""Generuje náhodny matematicky vyraz"""
+operatory = ["+", "-", "/", "*"] # list operátorů
+a = random.randint(-10, 10) # náhodné b číslo v intervalu <-10,10>
+b = random.randint(-10, 10) # náhodné a číslo v intervalu <-10,10>
+operator = operatory[random.randint(0,3)] # výběr náhodného operátoru z listu operátorů
+return f"{a} {operator} {b}"
+
+
 def main():
     pass
 
 
 if __name__ == "__main__":
     main()
+
