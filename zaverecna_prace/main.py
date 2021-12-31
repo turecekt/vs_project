@@ -20,12 +20,12 @@ NAHODNY_VYRAZ = ""
 
 
 def vygeneruj_nahodny_vyraz():
-"""Generuje náhodny matematicky vyraz"""
-operatory = ["+", "-", "/", "*"] # list operátorů
-a = random.randint(-10, 10) # náhodné b číslo v intervalu <-10,10>
-b = random.randint(-10, 10) # náhodné a číslo v intervalu <-10,10>
-operator = operatory[random.randint(0,3)] # výběr náhodného operátoru z listu operátorů
-return f"{a} {operator} {b}"
+    """Generuje náhodny matematicky vyraz"""
+    operatory = ["+", "-", "/", "*"] # list operátorů
+    a = random.randint(-10, 10) # náhodné b číslo v intervalu <-10,10>
+    b = random.randint(-10, 10) # náhodné a číslo v intervalu <-10,10>
+    operator = operatory[random.randint(0,3)] # výběr náhodného operátoru z listu operátorů
+    return f"{a} {operator} {b}"
 
 
 def uloz_nahodny_vyraz():
@@ -33,6 +33,16 @@ def uloz_nahodny_vyraz():
     global NAHODNY_VYRAZ
     NAHODNY_VYRAZ = vygeneruj_nahodny_vyraz()
     return NAHODNY_VYRAZ
+
+
+def vstup_uzivatele():
+    """Přečte a zkontroluje platnost vstupu uživatele"""
+    vysledek = input(f"Vypocitej: {NAHODNY_VYRAZ} = ")
+    try:
+        vysledek = float(vysledek)
+        return vysledek
+    except:
+        print("Zadan neplatny vstup")
 
 
 def main():
