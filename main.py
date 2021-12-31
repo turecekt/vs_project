@@ -32,7 +32,7 @@ def uloz_nahodny_vyraz():
     """Uložení náhodného vyrazu do globální proměnné pro pozděj:ší použití"""
     global NAHODNY_VYRAZ
     NAHODNY_VYRAZ = vygeneruj_nahodny_vyraz()
-
+    return NAHODNY_VYRAZ
 
 def vstup_uzivatele():
     """Přečte a zkontroluje platnost vstupu uživatele"""
@@ -178,12 +178,12 @@ def test_vydel3():
 
 def test_vypocty_reakcni_rychlost():
     """Testuje vypočtení průměrné reakční rychlosti"""
-    assert prumerna_reakcni_rychlost([2.22, 3.45, 5.55]) == 3.74
+    assert prumerna_reakcni_rychlost([2.22, 3.45, 5.55]) == 3.7399999999999998
 
 
 def test_uloz_nahodny_vyraz():
     """Testuje správné uložení hodnoty do globální proměnné"""
-    assert uloz_nahodny_vyraz() == NAHODNY_VYRAZ.isalnum()
+    assert uloz_nahodny_vyraz() == NAHODNY_VYRAZ
 
 
 def test_vstup_uzivatele():
@@ -202,8 +202,8 @@ def test_vstup_uzivatele2():
 
 def vstup_uzivatele_test(a, b):
     """Pomocná funkce pro testování vstupu uživatele"""
-    vysledek = a + b
     try:
+        vysledek = a + b
         return vysledek
     except:
         return "Zadana neplatna hodnota"
