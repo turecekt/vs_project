@@ -12,7 +12,7 @@ import random
 def random_inputs_forTest():
     a = random.randint(-10, 10) #random integer from interval -10;10
     b = random.randint(-10, 10) #random integer from interval -10;10
-    sgn = random.choice("+-*")  #random sign +-*
+    sgn = random.choice("+-*/")  #random sign +-*/
     print('\nWhat is ',a,sgn,b, '?') #Math equation
     return a, b, sgn
     
@@ -27,7 +27,7 @@ class randomInputs(unittest.TestCase):
  
     def test_sgn(self):
         a,b,sgn = random_inputs_forTest()
-        self.assertTrue(sgn in ['+','-','*'])
+        self.assertTrue(sgn in ['+','-','*','/'])
    
 if __name__ == '__main__':
     unittest.main()
