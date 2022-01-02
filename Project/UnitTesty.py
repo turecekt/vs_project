@@ -1,1 +1,0 @@
-#### testovani funkcionalit #####
