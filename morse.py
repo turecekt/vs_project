@@ -2,6 +2,7 @@
 
 """
 Program pro kodovani a dekodovani morseovy abecedy.
+
 Vypracoval: Petr kraus
 
 """
