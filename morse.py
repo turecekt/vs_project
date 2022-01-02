@@ -5,6 +5,7 @@ Program pro kodovani a dekodovani morseovy abecedy.
 Vypracoval: Petr kraus
 
 """
+
 # definice morseovy abecedy
 morseDictionary = {'A': '.-', 'B': '-...', 'C': '-.-.',
                    'D': '-..', 'E': '.', 'F': '..-.',
@@ -24,7 +25,7 @@ morseDictionary = {'A': '.-', 'B': '-...', 'C': '-.-.',
 
 
 def EncodeMorse(message):
-    """Funkce pro zasifrovani do morseovky"""
+    """Funkce pro zasifrovani do morseovky."""
     message = message.upper()         # prevede vstup na velka pismena
     morseCode = ''                    # string ktery bude funkci vracet
     for letter in message:
@@ -36,7 +37,7 @@ def EncodeMorse(message):
 
 
 def DecodeMorse(message):
-    """Funkce pro desifrovani z morseovky"""
+    """Funkce pro desifrovani z morseovky."""
     message += ' '
     deCode = ''                              # string ktery bude funkci vracet
     tempText = ''                            # docasny string pro jeden znak
@@ -57,7 +58,7 @@ def DecodeMorse(message):
 
 
 def Input(message):
-    """Funkce pro input morseovky"""
+    """Funkce pro input morseovky."""
     for char in message:
         if char not in ".- ":
             return EncodeMorse(message)
