@@ -1,31 +1,31 @@
-import pytest
 from sorts import buble_sort
 from sorts import merge_sort
 from sorts import insertion_sort
 from sorts import quick_sort
 
-test_pole = [3,2,1]
-test_vysledok_pole = [1,2,3]
+test_pole = [3, 2, 1]
+test_vysledok_pole = [1, 2, 3]
 
-test_volba1 = 1
-test_volba2 = 1
 
 class Test_MainFunction:
     def test_choice(self):
         buble_sort(test_pole)
         assert (test_vysledok_pole == test_pole)
 
-class Test_MergeSort:       
+
+class Test_MergeSort:
     def test_choice(self):
-        merge_sort(test_pole,0, len(test_pole)-1)
+        merge_sort(test_pole, 0, len(test_pole) - 1)
         assert (test_vysledok_pole == test_pole)
 
-class Test_InsertionSort:       
+
+class Test_InsertionSort:
     def test_choice(self):
         insertion_sort(test_pole)
         assert (test_vysledok_pole == test_pole)
 
-class Test_QuickSort:     
+
+class Test_QuickSort:
     def test_choice(self):
-        quick_sort(test_pole,0, len(test_pole)-1)
+        quick_sort(test_pole, 0, len(test_pole) - 1)
         assert (test_vysledok_pole == test_pole)

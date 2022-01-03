@@ -14,6 +14,7 @@ def buble_sort(numbers):
                 has_swapped = True
         num_of_iterations += 1
 
+
 def merge_sort(array, left_index, right_index):
     if left_index >= right_index:
         return
@@ -23,8 +24,9 @@ def merge_sort(array, left_index, right_index):
     merge_sort(array, middle + 1, right_index)
     merge(array, left_index, right_index, middle)
 
+
 def insertion_sort(numbers):
-     # We start from 1 since the first element is trivially sorted
+    # We start from 1 since the first element is trivially sorted
     for index in range(1, len(numbers)):
         currentValue = numbers[index]
         currentPosition = index
@@ -32,16 +34,17 @@ def insertion_sort(numbers):
         # As long as we haven't reached the beginning and there is an element
         # in our sorted array larger than the one we're trying to insert - move
         # that element to the right
-        while currentPosition > 0 and numbers[currentPosition - 1] > currentValue:
-            numbers[currentPosition] = numbers[currentPosition -1]
+        while currentPosition > 0 and \
+                + numbers[currentPosition - 1] > currentValue:
+            numbers[currentPosition] = numbers[currentPosition - 1]
             currentPosition = currentPosition - 1
-
 
         # We have either reached the beginning of the array or we have found
         # an element of the sorted array that is smaller than the element
         # we're trying to insert at index currentPosition - 1.
         # Either way - we insert the element at currentPosition
         numbers[currentPosition] = currentValue
+
 
 def quick_sort(array, start, end):
     if start >= end:
@@ -50,6 +53,7 @@ def quick_sort(array, start, end):
     p = partition(array, start, end)
     quick_sort(array, start, p-1)
     quick_sort(array, p+1, end)
+
 
 def partition(array, start, end):
     pivot = array[start]
@@ -60,8 +64,11 @@ def partition(array, start, end):
         # If the current value we're looking at is larger than the pivot
         # it's in the right place (right side of pivot) and we can move left,
         # to the next element.
-        # We also need to make sure we haven't surpassed the low pointer, since that
-        # indicates we have already moved all the elements to their correct side of the pivot
+        # We also need to make sure we haven't surpassed the
+        # low pointer, since that
+        # indicates we have already moved all the elements to their
+        # correct side of the pivot
+
         while low <= high and array[high] >= pivot:
             high = high - 1
 
@@ -82,6 +89,7 @@ def partition(array, start, end):
 
     return high
 
+
 def merge(array, left_index, right_index, middle):
     # Make copies of both arrays we're trying to merge
 
@@ -96,7 +104,8 @@ def merge(array, left_index, right_index, middle):
     sorted_index = left_index
 
     # Go through both copies until we run out of elements in one
-    while left_copy_index < len(left_copy) and right_copy_index < len(right_copy):
+    while left_copy_index < len(left_copy) and \
+            right_copy_index < len(right_copy):
 
         # If our left_copy has the smaller element, put it in the sorted
         # part and then move forward in left_copy (by increasing the pointer)
