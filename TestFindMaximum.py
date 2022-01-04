@@ -17,9 +17,7 @@ compares result of the function and the expected output
 
 
 class TestFindMaximum(unittest.TestCase):
-    """
-    public class for finding maximum unit test
-    """
+    """public class for finding maximum unit test."""
 
     def test_small_sorted(self):
         """

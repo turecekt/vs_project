@@ -17,9 +17,7 @@ compares result of the function and the expected output
 
 
 class TestFindMinimum(unittest.TestCase):
-    """
-        public class for finding minimum unit test
-    """
+    """public class for finding minimum unit test."""
 
     def test_small_sorted(self):
         """

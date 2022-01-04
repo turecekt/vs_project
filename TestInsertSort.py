@@ -15,9 +15,7 @@ compares result of the function and the expected output
 
 
 class TestInsertSort(unittest.TestCase):
-    """
-    public class for insert sort unit test
-    """
+    """public class for insert sort unit test."""
 
     def test_sorting_small_sorted(self):
         """

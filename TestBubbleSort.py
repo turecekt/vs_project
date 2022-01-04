@@ -15,9 +15,7 @@ compares result of the function and the expected output
 
 
 class TestBubbleSort(unittest.TestCase):
-    """
-    public class for bubble sort unit test
-    """
+    """public class for bubble sort unit test."""
 
     def test_sorting_small_sorted(self):
         """
