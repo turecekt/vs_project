@@ -1,3 +1,5 @@
+"""sorting algorithms"""
+
 import sys
 from os import path
 from typing import Tuple, List, Optional
@@ -151,7 +153,8 @@ def input_process(file_or_array: bool, number_of_arg: int) -> None:
     """
     Process the user input - nothing, txt file or array of integers.
 
-    :param file_or_array: true - the input is array, otherwise - the input is txt file
+    :param file_or_array: true - the input is array,
+                          otherwise - the input is txt file
     :param number_of_arg: number of arguments, 0 - use of pseudo generator
     :return: None
     """
@@ -183,7 +186,7 @@ Function to report wrong input.
 
 def wrong_input():
     """
-    Function to report wrong user input.
+    Report wrong user input.
 
     :return: None
     """
