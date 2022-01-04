@@ -34,9 +34,9 @@ class Test_QuickSort:
         assert (test_vysledok_pole == test_pole)
 
 
-class Test_Main_Program:
-    def test_main_program(self):
-        main_program(3)
+#class Test_Main_Program:
+#    def test_main_program(self):
+#        main_program(3)
 
 
 class Test_Main_Program2:
