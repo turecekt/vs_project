@@ -16,7 +16,7 @@ def main_program(choiceForField):
         return cisla_uzivatele
     if (choiceForField == 3):
         print('\nChoice 3: Nacitaj zo suboru cisla')
-        f = open("c:/Users/m_susoliakova/Desktop/cisla.txt", 'r')
+        f = open('cisla.txt', 'r')
         with f as tf:
             cisla = tf.read().split(',')
         # Program vybere čísla z textového dokumentu file.txt
