@@ -34,8 +34,8 @@ def insertion_sort(numbers):
         # As long as we haven't reached the beginning and there is an element
         # in our sorted array larger than the one we're trying to insert - move
         # that element to the right
-        while currentPosition > 0 and \
-                + numbers[currentPosition - 1] > currentValue:
+        while currentPosition > 0 and\
+                numbers[currentPosition - 1] > currentValue:
             numbers[currentPosition] = numbers[currentPosition - 1]
             currentPosition = currentPosition - 1
 
