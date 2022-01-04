@@ -27,6 +27,7 @@ def insert_sort(array: List[int]) -> List[int]:
         array[j + 1] = current
     return array
 
+
 """
 Implementation of sorting algorithm.
 A simple comparison sorting algorithm
@@ -43,6 +44,7 @@ def selection_sort(array: List[int]) -> List[int]:
 
         array[i], array[min_index] = array[min_index], array[i]
     return array
+
 
 """
 Implementation of bubble sort.
@@ -125,14 +127,6 @@ def input_process(file_or_array: bool, number_of_arg: int):
         data = data.split()  # split integers into n integers
         for each in data:
             array.append(each)  # make an array from the txt file
-
-    print(array)
-    print(find_minimum(array))
-    print(find_maximum(array))
-    # bubble_sort(array)
-    # selection_sort(array)
-    insert_sort(array)
-    print(array)
 
 
 """
