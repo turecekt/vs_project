@@ -1,20 +1,10 @@
-from sorts import buble_sort
-from sorts import merge_sort
-from sorts import insertion_sort
-from sorts import quick_sort
-from main import main_program
-from main import vyber_algorythm
-from main import min_max_index
-from main import main
+from sorts import buble_sort, merge_sort, insertion_sort, quick_sort
+from main import main_program, vyber_algorythm, min_max_index
+from main import main, chooseSorts
 
 
 test_pole = [11, 3, 2, 1, 5, 7, 10, 6]
 test_vysledok_pole = [1, 2, 3, 5, 6, 7, 10, 11]
-
-
-class Test_MainFunction1:
-    def test_main_main(self):
-        main()
 
 
 class Test_MainFunction2:
@@ -44,11 +34,6 @@ class Test_QuickSort:
     def test_choice(self):
         quick_sort(test_pole, 0, len(test_pole) - 1)
         assert (test_vysledok_pole == test_pole)
-
-
-class Test_Main_Program2:
-    def test_main_program(self):
-        main_program(2)
 
 
 class Test_Main_Program1:
@@ -84,3 +69,25 @@ class Test_vyber_algorytm5:
 class Test_min_max_index:
     def test_minmaxindex(self):
         min_max_index(test_pole)
+
+
+def test_run(monkeypatch):
+    """Test run funkce."""
+    monkeypatch.setattr('builtins.input', lambda _: 5)
+    i = input("Enter your choice:")
+    assert i == 5
+    assert(main() == print("Incorrect input!"))
+
+
+def test_run_mainSorts(monkeypatch):
+    monkeypatch.setattr('builtins.input', lambda _: 5)
+    i = input("Enter your choice:")
+    assert i == 5
+    assert(main() == print("Incorrect input!"))
+
+
+def test_run_mainSorts_2(monkeypatch):
+    monkeypatch.setattr('builtins.input', lambda _: 7)
+    i = input("Enter your choice:")
+    assert i == 7
+    assert(chooseSorts() == 7)

@@ -37,16 +37,16 @@ def vyber_algorythm(choice_algorythm, cisla):
     if (choice_algorythm == 1):
         sorts.buble_sort(cisla)
         print("Buble Sort Sorted array: " + str(cisla))
-    if (choice_algorythm == 2):
+    elif (choice_algorythm == 2):
         sorts.merge_sort(cisla, 0, len(cisla) - 1)
         print("Merge Sort Sorted array: " + str(cisla))
-    if (choice_algorythm == 3):
+    elif (choice_algorythm == 3):
         sorts.insertion_sort(cisla)
         print("Insertion Sort Sorted array: " + str(cisla))
-    if (choice_algorythm == 4):
+    elif (choice_algorythm == 4):
         sorts.quick_sort(cisla, 0, len(cisla) - 1)
         print("Quick Sort Sorted array: " + str(cisla))
-    if (choice_algorythm == 5):
+    elif (choice_algorythm == 5):
         print('All Sorts\n')
         original_array = cisla
         buble_array = original_array
@@ -98,6 +98,19 @@ def min_max_index(cisla_uzivatele):
     print("\n")
 
 
+def chooseSorts():
+    print('\nZvol cislo')
+    print('1. Bubble Sort')
+    print('2. Merge Sort')
+    print('3. Insertion Sort')
+    print('4. Quick Sort')
+    print('5. All Sorts')
+
+    choice_algorythm = int(input('Enter your choice:'))
+
+    return choice_algorythm
+
+
 def main():
     # Uživatel zvolí, o jaké pole čísel se bude jednat
     print('Zvol cislo')
@@ -106,19 +119,22 @@ def main():
     print('- 3: Nacitaj zo suboru cisla')
     choiceForField = int(input('Enter your choice:'))
 
-    print('\nZvol cislo')
-    print('1. Bubble Sort')
-    print('2. Merge Sort')
-    print('3. Insertion Sort')
-    print('4. Quick Sort')
-    print('5. All Sorts')
-    choice_algorythm = int(input('Enter your choice:'))
+    if((choiceForField != 1) and (choiceForField != 2)
+            and (choiceForField != 3)):
+        return print("Incorrect input!")
+    else:
+        choice_algorythm = chooseSorts()
 
-    field_number = main_program(choiceForField)
-
-    # najdenie min, max cisla v poli "cisla" a najde je v indexu
-    min_max_index(field_number)
-    vyber_algorythm(choice_algorythm, field_number)
+        if((choice_algorythm != 1) and (choice_algorythm != 2)
+                and (choice_algorythm != 3)
+                and (choice_algorythm != 4)
+                and (choice_algorythm != 5)):
+            return print("Incorrect input!")
+        else:
+            field_number = main_program(choiceForField)
+            # najdenie min, max cisla v poli "cisla" a najde je v indexu
+            min_max_index(field_number)
+            vyber_algorythm(choice_algorythm, field_number)
 
 
 if __name__ == "__main__":
