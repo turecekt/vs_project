@@ -1,8 +1,7 @@
 """
 Adam Kopřiva.
 
-Převod integru na římský zápis čísel docstring with a summary line,
-and sume more text like here. Wow.
+Převod integru na římský zápis čísel
 """
 import unittest
 
@@ -47,7 +46,6 @@ class Testy(unittest.TestCase):
         """
         Testik.
 
-        It seems that it has to have THIS docstring with a summary line, a bla
-        and sume more text like here. Wow.
+        Zde se testuje správnost kodu
         """
         assert num2roman(1) == 'I'
