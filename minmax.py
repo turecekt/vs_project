@@ -49,7 +49,8 @@ def selection_sort(array: List[int]) -> List[int]:
 """
 Implementation of bubble sort.
 A simple comparing sorting algorithm.
-This algorithm performs poorly in real world, it is used as an educational tool.
+This algorithm performs poorly in real world,
+ it is used as an educational tool.
 Time complexity: O(n^2)
 """
 
