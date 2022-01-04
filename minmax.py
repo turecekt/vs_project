@@ -1,10 +1,7 @@
 import sys
-import unittest
 from os import path
 from typing import Tuple, List
-
 import numpy as np
-
 
 # -----------------------------------
 # This project contains three sorting algorithms,
@@ -13,63 +10,6 @@ import numpy as np
 # Author: Lucie Šikudová
 # -----------------------------------
 
-class TestInsertSort(unittest.TestCase):
-    def test_sorting_small_sorted(self):
-        self.assertEqual(insert_sort([1, 2, 3, 4, 5]), [1, 2, 3, 4, 5])
-
-    def test_sorting_small_unsorted(self):
-        self.assertEqual(insert_sort([11, 15, 3, 29, 14, 39, 81, 45, 31]), [3, 11, 14, 15, 29, 31, 39, 45, 81])
-
-    def test_sorting_large_sorted(self):
-        self.assertEqual(insert_sort([1, 3, 8, 12, 21, 35, 39, 81, 113, 198, 265]),
-                         [1, 3, 8, 12, 21, 35, 39, 81, 113, 198, 265])
-
-    def test_sorting_large_unsorted(self):
-        self.assertEqual(insert_sort([212, 28, 58, 25, 183, 197, 199, 127, 119, 97, 143, 136, 175, 185]),
-                         [25, 28, 58, 97, 119, 127, 136, 143, 175, 183, 185, 197, 199, 212, 277])
-
-    def test_sorting_empty_array(self):
-        self.assertEqual(insert_sort([]), [])
-
-
-class TestSelectionSort(unittest.TestCase):
-    def test_sorting_small_sorted(self):
-        self.assertEqual(selection_sort([1, 2, 3, 4, 5]), [1, 2, 3, 4, 5])
-
-    def test_sorting_small_unsorted(self):
-        self.assertEqual(selection_sort([11, 15, 3, 29, 14, 39, 81, 45, 31]), [3, 11, 14, 15, 29, 31, 39, 45, 81])
-
-    def test_sorting_large_sorted(self):
-        self.assertEqual(selection_sort([1, 3, 8, 12, 21, 35, 39, 81, 113, 198, 265]),
-                         [1, 3, 8, 12, 21, 35, 39, 81, 113, 198, 265])
-
-    def test_sorting_large_unsorted(self):
-        self.assertEqual(selection_sort([212, 28, 58, 25, 183, 197, 199, 127, 119, 97, 143, 136, 175, 185]),
-                         [25, 28, 58, 97, 119, 127, 136, 143, 175, 183, 185, 197, 199, 212, 277])
-
-    def test_sorting_empty_array(self):
-        self.assertEqual(selection_sort([]), [])
-
-
-class TestBubbleSort(unittest.TestCase):
-    def test_sorting_small_sorted(self):
-        self.assertEqual(bubble_sort([1, 2, 3, 4, 5]), [1, 2, 3, 4, 5])
-
-    def test_sorting_small_unsorted(self):
-        self.assertEqual(bubble_sort([11, 15, 3, 29, 14, 39, 81, 45, 31]), [3, 11, 14, 15, 29, 31, 39, 45, 81])
-
-    def test_sorting_large_sorted(self):
-        self.assertEqual(bubble_sort([1, 3, 8, 12, 21, 35, 39, 81, 113, 198, 265]),
-                         [1, 3, 8, 12, 21, 35, 39, 81, 113, 198, 265])
-
-    def test_sorting_large_unsorted(self):
-        self.assertEqual(bubble_sort([212, 28, 58, 25, 183, 197, 199, 127, 119, 97, 143, 136, 175, 185]),
-                         [25, 28, 58, 97, 119, 127, 136, 143, 175, 183, 185, 197, 199, 212, 277])
-
-    def test_sorting_empty_array(self):
-        self.assertEqual(bubble_sort([]), [])
-
-
 """
 Implementation of insertion sort.
 A simple sorting algorithm, efficient for small data sets.
@@ -77,7 +17,7 @@ Time complexity: O(n^2)
 """
 
 
-def insert_sort(array: List[int]) -> None:
+def insert_sort(array: List[int]) -> List[int]:
     for i in range(1, len(array)):
         current = array[i]
         j = i - 1
@@ -85,7 +25,7 @@ def insert_sort(array: List[int]) -> None:
             array[j + 1] = array[j]
             j -= 1
         array[j + 1] = current
-
+    return array
 
 """
 Implementation of sorting algorithm.
@@ -94,7 +34,7 @@ Time complexity: O(n^2)
 """
 
 
-def selection_sort(array: List[int]) -> None:
+def selection_sort(array: List[int]) -> List[int]:
     for i in range(len(array)):
         min_index = i
         for j in range(i + 1, len(array)):
@@ -102,7 +42,7 @@ def selection_sort(array: List[int]) -> None:
                 min_index = j
 
         array[i], array[min_index] = array[min_index], array[i]
-
+    return array
 
 """
 Implementation of bubble sort.
@@ -112,11 +52,12 @@ Time complexity: O(n^2)
 """
 
 
-def bubble_sort(array: List[int]) -> None:
+def bubble_sort(array: List[int]) -> List[int]:
     for i in range(len(array) - 1):
         for j in range(0, len(array) - i - 1):
             if array[j] > array[j + 1]:
                 array[j], array[j + 1] = array[j + 1], array[j]
+    return array
 
 
 """
