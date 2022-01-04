@@ -1,6 +1,6 @@
 import sys
 from os import path
-from typing import Tuple, List
+from typing import Tuple, List, Optional
 import numpy as np
 
 # -----------------------------------
@@ -67,7 +67,9 @@ Implementation of function that finds the minimum in the array.
 """
 
 
-def find_minimum(array: List[int]) -> Tuple[int, int]:
+def find_minimum(array: List[int]) -> Tuple[Optional[int], int]:
+    if len(array) == 0:
+        return None, -1
     min_index = 0
     min_elem = array[0]
     for i in range(1, len(array)):
@@ -82,7 +84,9 @@ Implementation of function that finds the maximum in the array.
 """
 
 
-def find_maximum(array: List[int]) -> Tuple[int, int]:
+def find_maximum(array: List[int]) -> Tuple[Optional[int], int]:
+    if len(array) == 0:
+        return None, -1
     max_index = 0
     max_elem = array[0]
     for i in range(1, len(array)):
