@@ -16,7 +16,9 @@ def main_program(choiceForField):
         return cisla_uzivatele
     if (choiceForField == 3):
         print('\nChoice 3: Nacitaj zo suboru cisla')
-        f = open('vs_project/MinMax zadanie Susoliakova Milosicova/cisla.txt', 'r')
+        f = open(
+                'vs_project/MinMax zadanie Susoliakova Milosicova/cisla.txt',
+                'r')
         with f as tf:
             cisla = tf.read().split(',')
         # Program vybere čísla z textového dokumentu file.txt

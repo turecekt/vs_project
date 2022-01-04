@@ -5,9 +5,21 @@ from sorts import quick_sort
 from main import main_program
 from main import vyber_algorythm
 from main import min_max_index
+from main import main
+
 
 test_pole = [11, 3, 2, 1, 5, 7, 10, 6]
 test_vysledok_pole = [1, 2, 3, 5, 6, 7, 10, 11]
+
+
+class Test_MainFunction1:
+    def test_main_main(self):
+        main()
+
+
+class Test_MainFunction2:
+    def test_main_minmax(self):
+        min_max_index(test_pole)
 
 
 class Test_MainFunction:
@@ -32,11 +44,6 @@ class Test_QuickSort:
     def test_choice(self):
         quick_sort(test_pole, 0, len(test_pole) - 1)
         assert (test_vysledok_pole == test_pole)
-
-
-#class Test_Main_Program:
-#    def test_main_program(self):
-#        main_program(3)
 
 
 class Test_Main_Program2:
