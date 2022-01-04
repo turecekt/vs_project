@@ -51,4 +51,3 @@ class Testy(unittest.TestCase):
         and sume more text like here. Wow.
         """
         assert num2roman(1) == 'I'
-
