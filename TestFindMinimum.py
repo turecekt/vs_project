@@ -2,6 +2,14 @@ import unittest
 from minmax import find_minimum
 
 
+# -------------------------------------------
+# This file contains unit tests for function
+# that finds minimum in array and its index.
+#
+# Author: Lucie Šikudová
+# -------------------------------------------
+
+
 class TestFindMinimum(unittest.TestCase):
     def test_small_sorted(self):
         self.assertEqual(find_minimum([1, 2, 3, 4, 5]), (1, 0))

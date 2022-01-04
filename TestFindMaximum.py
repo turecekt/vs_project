@@ -1,6 +1,13 @@
 import unittest
 from minmax import find_maximum
 
+# -------------------------------------------
+# This file contains unit tests for function
+# that finds maximum in array and its index.
+#
+# Author: Lucie Šikudová
+# -------------------------------------------
+
 
 class TestFindMaximum(unittest.TestCase):
     def test_small_sorted(self):

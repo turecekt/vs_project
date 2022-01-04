@@ -2,6 +2,13 @@ from minmax import insert_sort
 import unittest
 
 
+# -----------------------------------
+# This file contains unit tests for insert sort algorithm.
+#
+# Author: Lucie Šikudová
+# -----------------------------------
+
+
 class TestInsertSort(unittest.TestCase):
     def test_sorting_small_sorted(self):
         self.assertEqual(insert_sort([1, 2, 3, 4, 5]), [1, 2, 3, 4, 5])

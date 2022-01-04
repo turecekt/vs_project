@@ -2,6 +2,13 @@ from minmax import selection_sort
 import unittest
 
 
+# -----------------------------------
+# This file contains unit tests for selection sort algorithm.
+#
+# Author: Lucie Šikudová
+# -----------------------------------
+
+
 class TestSelectionSort(unittest.TestCase):
     def test_sorting_small_sorted(self):
         self.assertEqual(selection_sort([1, 2, 3, 4, 5]), [1, 2, 3, 4, 5])
