@@ -1,12 +1,16 @@
 from minmax import bubble_sort
 import unittest
 
-
 # -----------------------------------
 # This file contains unit tests for bubble sort algorithm.
 #
 # Author: Lucie Šikudová
 # -----------------------------------
+
+"""
+class for bubble sort unit tests
+compares result of the function and the expected output
+"""
 
 
 class TestBubbleSort(unittest.TestCase):

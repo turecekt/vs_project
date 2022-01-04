@@ -9,6 +9,12 @@ from minmax import find_maximum
 # -------------------------------------------
 
 
+"""
+class for finding maximum in array unit tests
+compares result of the function and the expected output
+"""
+
+
 class TestFindMaximum(unittest.TestCase):
     def test_small_sorted(self):
         self.assertEqual(find_maximum([1, 2, 3, 4, 5]), (5, 4))

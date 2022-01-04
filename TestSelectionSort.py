@@ -1,12 +1,17 @@
 from minmax import selection_sort
 import unittest
 
-
 # -----------------------------------
 # This file contains unit tests for selection sort algorithm.
 #
 # Author: Lucie Šikudová
 # -----------------------------------
+
+
+"""
+class for selection sort unit tests
+compares result of the function and the expected output
+"""
 
 
 class TestSelectionSort(unittest.TestCase):

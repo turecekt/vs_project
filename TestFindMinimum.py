@@ -1,13 +1,18 @@
 import unittest
 from minmax import find_minimum
 
-
 # -------------------------------------------
 # This file contains unit tests for function
 # that finds minimum in array and its index.
 #
 # Author: Lucie Šikudová
 # -------------------------------------------
+
+
+"""
+class for finding minimum in array unit tests
+compares result of the function and the expected output
+"""
 
 
 class TestFindMinimum(unittest.TestCase):

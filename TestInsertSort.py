@@ -1,12 +1,16 @@
 from minmax import insert_sort
 import unittest
 
-
 # -----------------------------------
 # This file contains unit tests for insert sort algorithm.
 #
 # Author: Lucie Šikudová
 # -----------------------------------
+
+"""
+class for insert sort unit tests
+compares result of the function and the expected output
+"""
 
 
 class TestInsertSort(unittest.TestCase):
