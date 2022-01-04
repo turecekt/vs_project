@@ -19,7 +19,8 @@ Time complexity: O(n^2)
 
 def insert_sort(array: List[int]) -> List[int]:
     """
-    Sorts array with insert sort algorithm.
+    Sort array with insert sort algorithm.
+
     :param array: list of integers, array to be sorted
     :return: sorted array
     """
@@ -42,7 +43,8 @@ Time complexity: O(n^2)
 
 def selection_sort(array: List[int]) -> List[int]:
     """
-    Sorts array with selection sort algorithm.
+    Sort array with selection sort algorithm.
+
     :param array: list of integers, array to be sorted
     :return: sorted array
     """
@@ -67,7 +69,8 @@ Time complexity: O(n^2)
 
 def bubble_sort(array: List[int]) -> List[int]:
     """
-    Sorts array with bubble sort algorithm.
+    Sort array with bubble sort algorithm.
+
     :param array: list of integers, array to be sorted
     :return: sorted array
     """
@@ -85,7 +88,8 @@ Implementation of function that finds the minimum in the array.
 
 def find_minimum(array: List[int]) -> Tuple[Optional[int], int]:
     """
-    Finds minimum and its index in the array.
+    Find minimum and its index in the array.
+
     :param array: list of integers, array where to find minimum and its index
     :return: tuple (minimum, its index)
     """
@@ -107,7 +111,8 @@ Implementation of function that finds the maximum in the array.
 
 def find_maximum(array: List[int]) -> Tuple[Optional[int], int]:
     """
-    Finds maximum and its index in the array.
+    Find maximum and its index in the array.
+
     :param array: list of integers, array where to find maximum and its index
     :return: tuple (maximum, its index)
     """
@@ -129,7 +134,8 @@ Function that generates array of (pseudo)random integers.
 
 def pseudo_generator():
     """
-    Returns array with 20 randomly generated integers.
+    Return array with 20 randomly generated integers.
+
     :return: list of random generated integers, length of the list is 20
     """
     rng = np.random.default_rng()
@@ -143,7 +149,8 @@ Function that process the user input.
 
 def input_process(file_or_array: bool, number_of_arg: int) -> None:
     """
-    Function to process the user input - nothing, txt file or array of integers.
+    Process the user input - nothing, txt file or array of integers.
+
     :param file_or_array: true - the input is array, otherwise - the input is txt file
     :param number_of_arg: number of arguments, 0 - use of pseudo generator
     :return: None
@@ -177,6 +184,7 @@ Function to report wrong input.
 def wrong_input():
     """
     Function to report wrong user input.
+
     :return: None
     """
     print("wrong input entered")
