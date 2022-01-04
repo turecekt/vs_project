@@ -18,6 +18,11 @@ Time complexity: O(n^2)
 
 
 def insert_sort(array: List[int]) -> List[int]:
+    """
+    Sorts array with insert sort algorithm.
+    :param array: list of integers, array to be sorted
+    :return: sorted array
+    """
     for i in range(1, len(array)):
         current = array[i]
         j = i - 1
@@ -36,6 +41,11 @@ Time complexity: O(n^2)
 
 
 def selection_sort(array: List[int]) -> List[int]:
+    """
+    Sorts array with selection sort algorithm.
+    :param array: list of integers, array to be sorted
+    :return: sorted array
+    """
     for i in range(len(array)):
         min_index = i
         for j in range(i + 1, len(array)):
@@ -56,6 +66,11 @@ Time complexity: O(n^2)
 
 
 def bubble_sort(array: List[int]) -> List[int]:
+    """
+    Sorts array with bubble sort algorithm.
+    :param array: list of integers, array to be sorted
+    :return: sorted array
+    """
     for i in range(len(array) - 1):
         for j in range(0, len(array) - i - 1):
             if array[j] > array[j + 1]:
@@ -69,6 +84,11 @@ Implementation of function that finds the minimum in the array.
 
 
 def find_minimum(array: List[int]) -> Tuple[Optional[int], int]:
+    """
+    Finds minimum and its index in the array.
+    :param array: list of integers, array where to find minimum and its index
+    :return: tuple (minimum, its index)
+    """
     if len(array) == 0:
         return None, -1
     min_index = 0
@@ -86,6 +106,11 @@ Implementation of function that finds the maximum in the array.
 
 
 def find_maximum(array: List[int]) -> Tuple[Optional[int], int]:
+    """
+    Finds maximum and its index in the array.
+    :param array: list of integers, array where to find maximum and its index
+    :return: tuple (maximum, its index)
+    """
     if len(array) == 0:
         return None, -1
     max_index = 0
@@ -103,6 +128,10 @@ Function that generates array of (pseudo)random integers.
 
 
 def pseudo_generator():
+    """
+    Returns array with 20 randomly generated integers.
+    :return: list of random generated integers, length of the list is 20
+    """
     rng = np.random.default_rng()
     return rng.integers(100000, size=20)
 
@@ -112,7 +141,13 @@ Function that process the user input.
 """
 
 
-def input_process(file_or_array: bool, number_of_arg: int):
+def input_process(file_or_array: bool, number_of_arg: int) -> None:
+    """
+    Function to process the user input - nothing, txt file or array of integers.
+    :param file_or_array: true - the input is array, otherwise - the input is txt file
+    :param number_of_arg: number of arguments, 0 - use of pseudo generator
+    :return: None
+    """
     # no input given, pseudo-random generator is used
     if number_of_arg - 1 == 0:
         print("the input is empty, just use pseudo generator")
@@ -139,7 +174,11 @@ Function to report wrong input.
 """
 
 
-def wrong_input(input):
+def wrong_input():
+    """
+    Function to report wrong user input.
+    :return: None
+    """
     print("wrong input entered")
 
 
@@ -155,11 +194,11 @@ if __name__ == "__main__":
             file_or_array = False
         # non exist txt file
         elif sys.argv[1].find("txt") != -1:
-            wrong_input(sys.argv[1])
+            wrong_input()
             exit(0)
         # just a word without txt
         elif not sys.argv[1].isnumeric():
-            wrong_input(sys.argv[1])
+            wrong_input()
             exit(0)
 
     input_process(file_or_array, len(sys.argv))
