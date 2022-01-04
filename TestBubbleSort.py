@@ -1,4 +1,4 @@
-"""unit test for bubble sort"""
+"""unit test for bubble sort."""
 from minmax import bubble_sort
 import unittest
 
@@ -15,6 +15,10 @@ compares result of the function and the expected output
 
 
 class TestBubbleSort(unittest.TestCase):
+    """
+    public class for bubble sort unit test
+    """
+
     def test_sorting_small_sorted(self):
         """
         Check the correctness of bubble sort with sorted small array.

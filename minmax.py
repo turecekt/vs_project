@@ -1,4 +1,4 @@
-"""sorting algorithms"""
+"""sorting algorithms."""
 
 import sys
 from os import path

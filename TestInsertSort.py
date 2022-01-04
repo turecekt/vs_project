@@ -1,4 +1,4 @@
-"""unit test insert sort"""
+"""unit test insert sort."""
 from minmax import insert_sort
 import unittest
 
@@ -15,6 +15,10 @@ compares result of the function and the expected output
 
 
 class TestInsertSort(unittest.TestCase):
+    """
+    public class for insert sort unit test
+    """
+
     def test_sorting_small_sorted(self):
         """
         Check the correctness of insert sort with sorted small array.

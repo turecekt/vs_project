@@ -1,4 +1,4 @@
-"""unit test selection sort"""
+"""unit test selection sort."""
 
 from minmax import selection_sort
 import unittest
@@ -17,6 +17,10 @@ compares result of the function and the expected output
 
 
 class TestSelectionSort(unittest.TestCase):
+    """
+    public class for bubble sort unit test
+    """
+
     def test_sorting_small_sorted(self):
         """
         Check the correctness of selection sort with sorted small array.
