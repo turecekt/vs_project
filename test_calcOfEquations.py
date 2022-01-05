@@ -89,6 +89,10 @@ class calcOfEquationsDivisionSign(unittest.TestCase):
         actual = calcOfEquations_forTest(0,-5,'/')
         self.assertEqual(actual,0) 
         
+    def test_divideZeroByZero(self):
+        with self.assertRaises(ZeroDivisionError):
+            actual = calcOfEquations_forTest(0,0,'/')   
+        
 class calcOfEquationsError(unittest.TestCase):
     def test_error(self):
         with self.assertRaises(ZeroDivisionError):
