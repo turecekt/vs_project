@@ -9,6 +9,7 @@ from time import perf_counter
 import time
 import random
 from statistics import mean
+import sys
 
 #Short description of the program
 def introduction():
@@ -46,6 +47,13 @@ def evaluation(results,reactTime):
     print('\n \nYour results are:',results,'\nOverall success is:',success,' %')
     print('Details of your react times are:',reT,' s \nMean react time is: ',avRate,' s')
     return success, avRate, reT
+
+#Termination
+def termination():
+    input('\nDid you enjoy it?')
+    print('\nThe program will be closed...')
+    time.sleep(1)
+    sys.exit(0) 
     
 #Main function    
 def myFunction():
@@ -81,6 +89,8 @@ def myFunction():
         i = i + 1 # next iteration
     
     evaluation(results,reactTime) #Final evaluation
+    
+    termination() #Termination of the program
     
 myFunction() #Calling of the main function that has additional functions
         
