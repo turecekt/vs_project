@@ -1,6 +1,6 @@
-''' Funkce římské číslice přebýrá celé číslo,
+""" Funkce římské číslice přebýrá celé číslo,
 rozdělí ho na číslice definované v listu a přepíše je danou string hodnotu,
-která je k číslu přiřazena, na konci vrací string list '''
+která je k číslu přiřazena, na konci vrací string list. """
 
 
 def rimskeCislice(cislo):
