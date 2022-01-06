@@ -90,8 +90,11 @@ def myFunction():
     
     evaluation(results,reactTime) #Final evaluation
     
-    #termination() #Termination of the program
+    termination() #Termination of the program
     
-myFunction() #Calling of the main function that has additional functions
+if '__main__' == __name__: 
+   
+    myFunction() #Calling of the main function that has additional functions        
+                 #This prevents from calling whole script when executing the unit tests  
         
     
