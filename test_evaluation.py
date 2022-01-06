@@ -7,7 +7,9 @@ Created on Fri Dec 31 15:15:12 2021
 
 import unittest
 from reakcniRychlost import evaluation
-
+"""
+This class has unit tests for function evaluation()
+"""
 class evaluationTestSuccess(unittest.TestCase):
     def test_success_zeros(self):
         results = [0,0,0,0,0]
