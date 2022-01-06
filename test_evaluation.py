@@ -6,9 +6,7 @@ Created on Fri Dec 31 15:15:12 2021
 """
 
 import unittest
-import random
-from statistics import mean
-from reakcniRychlost import *
+from reakcniRychlost import evaluation
 
 class evaluationTestSuccess(unittest.TestCase):
     def test_success_zeros(self):
