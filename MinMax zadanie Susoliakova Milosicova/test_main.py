@@ -1,3 +1,5 @@
+"""Test funkcie na vykonanie pytestov."""
+
 from sorts import buble_sort, merge_sort, insertion_sort, quick_sort
 from main import main_program, vyber_algorythm, min_max_index
 from main import main, chooseSorts
@@ -7,72 +9,77 @@ test_pole = [11, 3, 2, 1, 5, 7, 10, 6]
 test_vysledok_pole = [1, 2, 3, 5, 6, 7, 10, 11]
 
 
-class Test_MainFunction2:
-    def test_main_minmax(self):
-        min_max_index(test_pole)
+def test_main_minmax(self):
+    """Test funkcie na skontrolovanie min_max index pola."""
+    min_max_index(test_pole)
 
 
-class Test_MainFunction:
-    def test_choice(self):
-        buble_sort(test_pole)
-        assert (test_vysledok_pole == test_pole)
+def test_choice_buble_sort(self):
+    """Test run buble sortu pre spravne zoradenie."""
+    buble_sort(test_pole)
+    assert (test_vysledok_pole == test_pole)
 
 
-class Test_MergeSort:
-    def test_choice(self):
-        merge_sort(test_pole, 0, len(test_pole) - 1)
-        assert (test_vysledok_pole == test_pole)
+def test_choice_merge_sort(self):
+    """Test run merge sortu pre spravne zoradenie."""
+    merge_sort(test_pole, 0, len(test_pole) - 1)
+    assert (test_vysledok_pole == test_pole)
 
 
-class Test_InsertionSort:
-    def test_choice(self):
-        insertion_sort(test_pole)
-        assert (test_vysledok_pole == test_pole)
+def test_choice_insertion_sort(self):
+    """Test run insertion sortu pre spravne zoradenie."""
+    insertion_sort(test_pole)
+    assert (test_vysledok_pole == test_pole)
 
 
-class Test_QuickSort:
-    def test_choice(self):
-        quick_sort(test_pole, 0, len(test_pole) - 1)
-        assert (test_vysledok_pole == test_pole)
+def test_choice(self):
+    """Test run quick sortu pre spravne zoradenie."""
+    quick_sort(test_pole, 0, len(test_pole) - 1)
+    assert (test_vysledok_pole == test_pole)
 
 
-class Test_Main_Program1:
-    def test_main_program1(self):
-        main_program(1)
+def test_main_program1(self):
+    """Test run hlavnej funkce pre specificku volbou 1."""
+    main_program(1)
 
 
-class Test_vyber_algorytm:
-    def test_vyber_algorythm(self):
-        vyber_algorythm(3, test_pole)
+def test_vyber_algorythm(self):
+    """Test run funkce pre vyber sortov s danym polom\
+        a specifickou volbou 3."""
+    vyber_algorythm(3, test_pole)
 
 
-class Test_vyber_algorytm1:
-    def test_vyber_algorythm1(self):
-        vyber_algorythm(1, test_pole)
+def test_vyber_algorythm1(self):
+    """Test run funkce pre vyber sortov s danym polom\
+        a specifickou volbou 1."""
+    vyber_algorythm(1, test_pole)
 
 
-class Test_vyber_algorytm2:
-    def test_vyber_algorythm2(self):
-        vyber_algorythm(2, test_pole)
+def test_vyber_algorythm2(self):
+    """Test run funkce pre vyber sortov s danym polom\
+        a specifickou volbou 2."""
+    vyber_algorythm(2, test_pole)
 
 
-class Test_vyber_algorytm4:
-    def test_vyber_algorythm4(self):
-        vyber_algorythm(4, test_pole)
+def test_vyber_algorythm4(self):
+    """Test run funkce pre vyber sortov s danym polom\
+        a specifickou volbou 4."""
+    vyber_algorythm(4, test_pole)
 
 
-class Test_vyber_algorytm5:
-    def test_vyber_algorythm5(self):
-        vyber_algorythm(5, test_pole)
+def test_vyber_algorythm5(self):
+    """Test run funkce pre vyber sortov s danym polom\
+        a specifickou volbou 5."""
+    vyber_algorythm(5, test_pole)
 
 
-class Test_min_max_index:
-    def test_minmaxindex(self):
-        min_max_index(test_pole)
+def test_minmaxindex(self):
+    """Test run funkce pre specificke pole v min max index funcii."""
+    min_max_index(test_pole)
 
 
 def test_run(monkeypatch):
-    """Test run funkce."""
+    """Test run funkce pre volbu 5 a vystup Incorrect input."""
     monkeypatch.setattr('builtins.input', lambda _: 5)
     i = input("Enter your choice:")
     assert i == 5
@@ -80,6 +87,7 @@ def test_run(monkeypatch):
 
 
 def test_run_mainSorts(monkeypatch):
+    """Test run main sorts funkce pre volbu 5."""
     monkeypatch.setattr('builtins.input', lambda _: 5)
     i = input("Enter your choice:")
     assert i == 5
@@ -87,6 +95,7 @@ def test_run_mainSorts(monkeypatch):
 
 
 def test_run_mainSorts_2(monkeypatch):
+    """Test run main sorts funkce pre volbu 7."""
     monkeypatch.setattr('builtins.input', lambda _: 7)
     i = input("Enter your choice:")
     assert i == 7

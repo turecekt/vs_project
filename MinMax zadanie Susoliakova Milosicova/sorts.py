@@ -1,6 +1,9 @@
-# Zdroj algoritmov: https://stackabuse.com/
+"""Funkcie, ktore su na jednotlive zoradenie sortov. \
+    Zdroj algoritmov: https://stackabuse.com/."""
+
 
 def buble_sort(numbers):
+    """Funkcia pre buble sort."""
     has_swapped = True
 
     num_of_iterations = 0
@@ -16,6 +19,7 @@ def buble_sort(numbers):
 
 
 def merge_sort(array, left_index, right_index):
+    """Funkcia pre merge sort."""
     if left_index >= right_index:
         return
 
@@ -26,6 +30,7 @@ def merge_sort(array, left_index, right_index):
 
 
 def insertion_sort(numbers):
+    """Funkcia pre insertion sort."""
     # We start from 1 since the first element is trivially sorted
     for index in range(1, len(numbers)):
         currentValue = numbers[index]
@@ -47,6 +52,7 @@ def insertion_sort(numbers):
 
 
 def quick_sort(array, start, end):
+    """Funkcia pre quick sort."""
     if start >= end:
         return
 
@@ -56,6 +62,7 @@ def quick_sort(array, start, end):
 
 
 def partition(array, start, end):
+    """Pmocna funkcia pre quick sort."""
     pivot = array[start]
     low = start + 1
     high = end
@@ -91,6 +98,7 @@ def partition(array, start, end):
 
 
 def merge(array, left_index, right_index, middle):
+    """Pomocna funkcia pre merge sort."""
     # Make copies of both arrays we're trying to merge
 
     # The second parameter is non-inclusive, so we have to increase by 1

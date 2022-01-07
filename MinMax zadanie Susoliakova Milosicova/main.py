@@ -1,5 +1,8 @@
+"""Hlavne funkcie na spustanie hlavneho programu."""
+
+
 def main_program(choiceForField):
-    # Program vytvoří pole náhodných čísel
+    """Program vytvoří pole náhodných čísel."""
     if (choiceForField == 1):
         print('\nChoice 1: Vygeneruj nahodne 20 cisel random')
         import random
@@ -7,14 +10,14 @@ def main_program(choiceForField):
         print(nahodna_cisla)
         # Uživatel nahraje jednotlivá čísla do programu
         return nahodna_cisla
-    if (choiceForField == 2):
+    elif (choiceForField == 2):
         print('\nChoice 2:')
         x = input('Vložte libovolný počet celých čísel oddělených mezerami: ')
         cisla_uzivatele = x.split()
         print('Seznam čísel: ', cisla_uzivatele)
         # Program vybere čísla zadane od uzivatela
         return cisla_uzivatele
-    if (choiceForField == 3):
+    elif (choiceForField == 3):
         print('\nChoice 3: Nacitaj zo suboru cisla')
         f = open(
                 'vs_project/MinMax zadanie Susoliakova Milosicova/cisla.txt',
@@ -27,8 +30,7 @@ def main_program(choiceForField):
 
 
 def vyber_algorythm(choice_algorythm, cisla):
-
-    # Uživatel si zvolil sort choice_algorythm
+    """Uživatel si zvolil sort choice_algorythm."""
     # Importování pro práci s časováním
     import time
     # Importování funkcí pro sortování
@@ -82,7 +84,7 @@ def vyber_algorythm(choice_algorythm, cisla):
 
 # Implementační funkce
 def min_max_index(cisla_uzivatele):
-
+    """Funkcia najde min a max zadaneho pola cisel."""
     max_cislo = max(cisla_uzivatele)
     min_cislo = min(cisla_uzivatele)
 
@@ -99,6 +101,7 @@ def min_max_index(cisla_uzivatele):
 
 
 def chooseSorts():
+    """Funkcia na zvolenie sortu pre dane pole."""
     print('\nZvol cislo')
     print('1. Bubble Sort')
     print('2. Merge Sort')
@@ -112,7 +115,7 @@ def chooseSorts():
 
 
 def main():
-    # Uživatel zvolí, o jaké pole čísel se bude jednat
+    """Uživatel zvolí, o jaké pole čísel se bude jednat."""
     print('Zvol cislo')
     print('- 1: Vygeneruj nahodne 20 cisel random')
     print('- 2: Vložte libovolný počet celých čísel oddělených mezerami')
