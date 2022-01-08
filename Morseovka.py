@@ -124,7 +124,7 @@ def test_Kodovat():
 
     """
 
-    assert Kodovat("flake8") == "..-. .-.. .- -.- . ---.."
+    assert Kodovat("FLAKE8") == "..-. .-.. .- -.- . ---.."
 
 
 
