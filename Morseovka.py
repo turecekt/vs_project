@@ -114,32 +114,6 @@ def main():
 if __name__ == '__main__':
     main()
 
-     def test_encode():
-
-        """
-
-        Prvni test kontroluje, zda opravdu funkce Kodovat převádí
-
-        textovy řetězec do šifrovaného textu.
-
-        """
-
-        assert Kodovat("flake8") == "..-. .-.. .- -.- . ---.."
-
-
-
-    def test_decode():
-
-        """
-
-        Druhá test kontroluje, zda funkce Dekodovat převádí
-
-        šifrovaný text do textového řetězce.
-
-        """
-
-        assert Dekodovat("..-. .-.. .- -.- . ---..") == "flake8"
-
 def test_Kodovat():
 
     """
