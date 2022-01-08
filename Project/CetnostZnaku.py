@@ -22,15 +22,15 @@ def MaxZnak(vstup):
                 charStore[sChar] += 1
             else:
                 charStore[sChar] = 1    
-        res = max(charStore, key = charStore.get)
-        print ("Znak s nejvetsim poctem je: " + str(res) )
+        resMax = max(charStore.values())
+        res = [key for key in charStore if charStore[key] ==resMax]
+        print ("Znak s nejvetsim poctem je: " + str(res)) 
 
     elif vstup.endswith('.txt'): #za predpokladu ze je vstup file input .txt
         with open(vstup) as text_file:
                 data = text_file.read().upper().replace(" ","")
                 pocet_char = len(data) #musime vynechat # a veskere nestandartni znaky
                 valid = data.endswith(endis)
-                print(data)
                 if valid:
                     charStore = {}  
                     for sChar in data:
@@ -38,8 +38,9 @@ def MaxZnak(vstup):
                             charStore[sChar] += 1
                         else:
                             charStore[sChar] = 1    
-                    res = max(charStore, key = charStore.get)
-                    print ("Znak s nejvetsim poctem je: " + str(res) )                 
+                    resMax = max(charStore.values())
+                    res = [key for key in charStore if charStore[key] == resMax]
+                    print ("Znak s nejvetsim poctem je: " + str(res))                  
                          
                 else:
                     print("Vlozeny file nema ukonceni s #")
@@ -48,7 +49,7 @@ def MaxZnak(vstup):
         print("Vlozeny text neni ukonceny #")            
     
     
-#MaxZnak(input("MaxZnak File nebo text zakonceny #: "))
+MaxZnak(input("MaxZnak File nebo text zakonceny #: "))
 
 
 #####################Informace o nejméně častém znaku#####################
@@ -62,8 +63,9 @@ def MinZnak(vstup):
                 charStore[sChar] += 1
             else:
                 charStore[sChar] = 1    
-        res = min(charStore, key = charStore.get)
-        print ("Znak s nejmensim poctem je: " + str(res))
+        resMin = min(charStore.values())
+        res = [key for key in charStore if charStore[key] ==resMin]
+        print ("Znaky s nejmensim poctem: " + str(res)) 
 
     elif vstup.endswith('.txt'): #za predpokladu ze je vstup file input .txt
         with open(vstup) as text_file:
@@ -77,11 +79,10 @@ def MinZnak(vstup):
                             charStore[sChar] += 1
                         else:
                             charStore[sChar] = 1    
-                    #res = min(charStore, key = charStore.get)
-                    res = min(charStore)
-                    print (charStore.get) 
-                    print(charStore)                               
-                    print ("Znak s nejmensim poctem je: " + str(res))            
+                    resMin = min(charStore.values())
+                    res = [key for key in charStore if charStore[key] ==resMin]
+                    print ("Znaky s nejmensim poctem je: " + str(res))            
+                
                 else:
                     print("Vlozeny file nema ukonceni s #")
                              
@@ -89,15 +90,8 @@ def MinZnak(vstup):
         print("Vlozeny text neni ukonceny #")            
     
     
-MinZnak(input("MinZnak File nebo text zakonceny #: "))
+#MinZnak(input("MinZnak File nebo text zakonceny #: "))
     
- 
- 
-    
-    
-    
-
-
 #pridat vystup pole znaku kdyz nejmensi maji stejne
 
 
