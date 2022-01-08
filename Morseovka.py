@@ -116,15 +116,15 @@ if __name__ == '__main__':
 
 def test_Kodovat():
 
-  """
+    """
 
-  Prvni test kontroluje, zda opravdu funkce Kodovat převádí
+    Prvni test kontroluje, zda opravdu funkce Kodovat převádí
 
    textovy řetězec do šifrovaného textu.
 
-   """
+    """
 
-   assert Kodovat("flake8") == "..-. .-.. .- -.- . ---.."
+    assert Kodovat("flake8") == "..-. .-.. .- -.- . ---.."
 
 
 
@@ -132,7 +132,7 @@ def test_Dekodovat():
 
    """
 
-   Druhá test kontroluje, zda funkce Dekodovat převádí
+    Druhá test kontroluje, zda funkce Dekodovat převádí
 
     šifrovaný text do textového řetězce.
 
