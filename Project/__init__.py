@@ -10,6 +10,35 @@ Kód musí obsahovat unit testy (pokrytí kódu testy by se mělo blížit 100%)
 #""" cetnost znaku project
 #by Radek Kratochvíl and Petr Slavík
 
+#######################Informace o celkovém počtu znaků###########
+def PocetZnak(vstup): 
+    endis = "#"
+    if vstup.endswith(endis):
+        charStore = {} 
+        data = (vstup.replace(" ","")).upper()
+        pocet_char = len(data)    
+        print ("Celkovy pocet znaku bez mezer je: " + int(pocet_char) )  
+
+    elif vstup.endswith('.txt'): #za predpokladu ze je vstup file input .txt
+        with open(vstup) as text_file:
+                data = text_file.read().upper().replace(" ","")
+                pocet_char = len(data) #musime vynechat # a veskere nestandartni znaky
+                valid = data.endswith(endis)
+                print(data)
+                if valid:
+                    print ("Celkovy pocet znaku bez mezer je: " + int(pocet_char) )                 
+                         
+                else:
+                    print("Vlozeny file nema ukonceni s #")
+                             
+    else:       
+        print("Vlozeny text neni ukonceny #")            
+    
+    
+#MaxZnak(input("MaxZnak File nebo text zakonceny #: "))
+
+
+
 #######################Informace o nejčastějším znaku#####################
 
 def MaxZnak(vstup): 
@@ -22,8 +51,9 @@ def MaxZnak(vstup):
                 charStore[sChar] += 1
             else:
                 charStore[sChar] = 1    
-        res = max(charStore, key = charStore.get)
-        print ("Znak s nejvetsim poctem je: " + str(res) )
+        resMax = min(charStore.vaulue())
+        res = [key for keay in charStore if charStore[key] == resMax]
+        print ("Znaky s nejvetsim poctem jsou: " + str(res)) )
 
     elif vstup.endswith('.txt'): #za predpokladu ze je vstup file input .txt
         with open(vstup) as text_file:
@@ -38,8 +68,9 @@ def MaxZnak(vstup):
                             charStore[sChar] += 1
                         else:
                             charStore[sChar] = 1    
-                    res = max(charStore, key = charStore.get)
-                    print ("Znak s nejvetsim poctem je: " + str(res) )                 
+                    resMax = min(charStore.vaulue())
+                    res = [key for keay in charStore if charStore[key] == resMax]
+                    print ("Znaky s nejvetsim poctem jsou: " + str(res))                  
                          
                 else:
                     print("Vlozeny file nema ukonceni s #")
@@ -62,8 +93,9 @@ def MinZnak(vstup):
                 charStore[sChar] += 1
             else:
                 charStore[sChar] = 1    
-        res = min(charStore, key = charStore.get)
-        print ("Znak s nejmensim poctem je: " + str(res))
+        resMin = min(charStore.vaulue())
+        res = [key for keay in charStore if charStore[key] == resMin]
+        print ("Znaky s nejmensim poctem jsou: " + str(res)) 
 
     elif vstup.endswith('.txt'): #za predpokladu ze je vstup file input .txt
         with open(vstup) as text_file:
@@ -77,11 +109,9 @@ def MinZnak(vstup):
                             charStore[sChar] += 1
                         else:
                             charStore[sChar] = 1    
-                    #res = min(charStore, key = charStore.get)
-                    res = min(charStore)
-                    print (charStore.get) 
-                    print(charStore)                               
-                    print ("Znak s nejmensim poctem je: " + str(res))            
+                    resMin = min(charStore.vaulue())
+                    res = [key for keay in charStore if charStore[key] == resMin]
+                    print ("Znaky s nejmensim poctem jsou: " + str(res))            
                 else:
                     print("Vlozeny file nema ukonceni s #")
                              
