@@ -166,7 +166,8 @@ def insertionSort(arr):
         arr[j + 1] = key
 
 
-if __name__ == '__main__':
+def main():
+    """Hlavni funkce modulu."""
     # Pokud je počet argumentů větší jak
     # 1(uživatel zadal argument zpracuj argumenty
     # jinak získej náhodná čísla
@@ -189,3 +190,7 @@ if __name__ == '__main__':
     sort_dict[sort_str](y)
     print(y)
     input("Zmáčkni Entr pro konec")
+
+
+if __name__ == '__main__':
+    main()
