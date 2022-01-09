@@ -6,7 +6,6 @@ Kód musí obsahovat unit testy (pokrytí kódu testy by se mělo blížit 100%)
 #Kód musí být okomentovaný (ideálně všechny entity)
 #"""
 #
-#python -m venv c:\path\to\myenv
 #""" cetnost znaku project
 #by Radek Kratochvíl and Petr Slavík
 
@@ -54,8 +53,8 @@ def MaxZnak(vstup):
                 charStore[sChar] += 1
             else:
                 charStore[sChar] = 1    
-        resMax = min(charStore.vaulue())
-        res = [key for keay in charStore if charStore[key] == resMax]
+        resMax = max(charStore.values())
+        res = [key for key in charStore if charStore[key] == resMax]
         return(res)
         #print ("Znaky s nejvetsim poctem jsou: " + str(res)) 
 
@@ -72,16 +71,18 @@ def MaxZnak(vstup):
                             charStore[sChar] += 1
                         else:
                             charStore[sChar] = 1    
-                    resMax = min(charStore.vaulue())
-                    res = [key for keay in charStore if charStore[key] == resMax]
+                    resMax = max(charStore.values())
+                    res = [key for key in charStore if charStore[key] == resMax]
                     return(res)
                     #print ("Znaky s nejvetsim poctem jsou: " + str(res))                  
                          
                 else:
-                    print("Vlozeny file nema ukonceni s #")
+                    return(0)
+                    #print("Vlozeny file nema ukonceni s #")
                              
-    else:       
-        print("Vlozeny text neni ukonceny #")            
+    else:
+        return(0)       
+        #print("Vlozeny text neni ukonceny #")            
     
     
 #MaxZnak(input("MaxZnak File nebo text zakonceny #: "))
@@ -98,9 +99,10 @@ def MinZnak(vstup):
                 charStore[sChar] += 1
             else:
                 charStore[sChar] = 1    
-        resMin = min(charStore.vaulue())
-        res = [key for keay in charStore if charStore[key] == resMin]
-        print ("Znaky s nejmensim poctem jsou: " + str(res)) 
+        resMin = min(charStore.values())
+        res = [key for key in charStore if charStore[key] == resMin]
+        return(res)
+        #print ("Znaky s nejmensim poctem jsou: " + str(res)) 
 
     elif vstup.endswith('.txt'): #za predpokladu ze je vstup file input .txt
         with open(vstup) as text_file:
@@ -114,14 +116,16 @@ def MinZnak(vstup):
                             charStore[sChar] += 1
                         else:
                             charStore[sChar] = 1    
-                    resMin = min(charStore.vaulue())
-                    res = [key for keay in charStore if charStore[key] == resMin]
-                    print ("Znaky s nejmensim poctem jsou: " + str(res))            
+                    resMin = min(charStore.values())
+                    res = [key for key in charStore if charStore[key] == resMin]
+                    return(res)            
                 else:
-                    print("Vlozeny file nema ukonceni s #")
+                    return(0)
+                    #print("Vlozeny file nema ukonceni s #")
                              
     else:       
-        print("Vlozeny text neni ukonceny #")            
+        return(0)
+        #print("Vlozeny text neni ukonceny #")
     
     
 #MinZnak(input("MinZnak File nebo text zakonceny #: "))
@@ -153,9 +157,11 @@ def PrumerKazdyZnak(vstup):
                         if data.count(iChar) > 0:
                             print(iChar, "vyskyt je",f"{pocet:.2f}", "%")
                 else:
-                    print("Vlozeny file nema ukonceni s #")
+                    return(0)
+                    #print("Vlozeny file nema ukonceni s #")
                              
-    else:       
+    else:
+        return(0)       
         print("Vlozeny text neni ukonceny #")
 
 #PrumerKazdyZnak(input("File nebo text zakonceny #: "))
