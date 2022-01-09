@@ -9,7 +9,7 @@ from time import perf_counter
 import time
 import random
 from statistics import mean
-import sys
+#import sys
 
 #Short description of the program
 def introduction():
@@ -36,7 +36,7 @@ def calcOfEquations(a,b,sgn):
     elif sgn == "*": correct = a*b
     elif sgn == "/" and b != 0: correct = round(a/b,3)
     elif sgn == "/" and b == 0: raise ZeroDivisionError('Cannot divide by zero!') 
-    else: raise ValueError("Unsupported math operation")
+    #else: raise ValueError("Unsupported math operation")
     return correct
     
 #Final evaluation  
@@ -49,11 +49,11 @@ def evaluation(results,reactTime):
     return success, avRate, reT
 
 #Termination
-def termination():
-    input('\nDid you enjoy it?')
-    print('\nThe program will be closed...')
-    time.sleep(1)
-    sys.exit(0) 
+#def termination():
+ #  input('\nDid you enjoy it?')
+  #  print('\nThe program will be closed...')
+   # time.sleep(1)
+ #   sys.exit(0) 
     
 #Main function    
 def myFunction():
@@ -90,7 +90,7 @@ def myFunction():
     
     evaluation(results,reactTime) #Final evaluation
     
-    termination() #Termination of the program
+   # termination() #Termination of the program
     
 if '__main__' == __name__: 
    
