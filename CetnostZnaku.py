@@ -183,38 +183,22 @@ def PocetKazdyZnak(vstup):
                 data = text_file.read().upper().replace(" ","")
                 valid = data.endswith(endis)
                 if valid:
-                    print("if valid",data)
-                    print(data)
-                    alpha = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
-                    for iChar in alpha:
-                        pocet = data.count(iChar)
-                        if data.count(iChar) > 0:
-                            print(iChar, "je",pocet)
+                    charStore = {} 
+                    for sChar in data:
+                        if sChar in charStore:
+                            charStore[sChar] += 1
+                        else:
+                            charStore[sChar] = 1    
+                    resVal =(charStore.values())
+                    res = [key for key in charStore if charStore[key] == resVal]
+                    print(resVal.values,resVal.items)
+                    #return(res)
                 else:
-                    print("Vlozeny file nema ukonceni s #")
+                    return(0)
+                    #print("Vlozeny file nema ukonceni s #")
                              
-    else:       
-        print("Vlozeny text neni ukonceny #")
+    else:
+        return(0)       
+        #print("Vlozeny text neni ukonceny #")
 
-#PocetKazdyZnak(input("File nebo text zakonceny #: "))
-       
-# 2 testy a to je jsou to neobyc znaky a nebo cislice a nebo odradkovani tak to bude test fail
-#
-#jen pro ukazku jestli funguje import CetnostZnaku.py
-
-"""
-if __name__ == '__main__':
-    print(PocetZnak(input("PocetZnak File nebo text zakonceny #: ")))
-    print(MaxZnak(input("MaxZnak File nebo text zakonceny #: ")))
-    print(MinZnak(input("MinZnak File nebo text zakonceny #: ")))
-    print(PrumerKazdyZnak(input("File nebo text zakonceny #: ")))
-    print(PocetKazdyZnak(input("File nebo text zakonceny #: ")))
-    
-"""
-
-
-#    [1]PocetZnak(input("PocetZnak File nebo text zakonceny #: "))
-#    [2]MaxZnak(input("MaxZnak File nebo text zakonceny #: "))
-#    [3]MinZnak(input("MinZnak File nebo text zakonceny #: "))
-#    [4]PrumerKazdyZnak(input("File nebo text zakonceny #: "))
-#    [5]PocetKazdyZnak(input("File nebo text zakonceny #: "))
+PocetKazdyZnak(input("File nebo text zakonceny #: "))
