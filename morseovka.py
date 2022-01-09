@@ -45,20 +45,16 @@ print('''\n Vyber možnost:
 
 
 
-opakovat = True
-while opakovat:
-    volba = int(input("Zadej možnost 1-3: "))
-    if __name__ == '__main__':
+
+volba = int(input("Zadej možnost 1-3: "))
+if __name__ == '__main__':
      if volba == 1:
       print(sifrovani())
-      opakovat = False
      elif volba == 2:
       print(desifrovani())
-      opakovat = False
      elif volba == 3:
       print("ukončení programu")
-      opakovat = False
      else: 
       print("Špatná možnost, opakuj výběr.")
-    else:
-     print('Znova')
+else:
+  print('Znova')
