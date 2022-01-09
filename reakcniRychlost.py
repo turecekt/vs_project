@@ -33,7 +33,7 @@ def introduction():
 
 # Generation of random inputs
 def random_inputs():
-    """Generating numbers.
+    """Generate numbers.
 
     Generates integers used in equations.
     """
@@ -46,7 +46,7 @@ def random_inputs():
 
 # Calculation of generated equations - correct results
 def calcOfEquations(a, b, sgn):
-    """Calculates given equation.
+    """Calculate given equation.
 
     Calculates generated equations.
     Tests for ilegal operations.
@@ -69,7 +69,7 @@ def calcOfEquations(a, b, sgn):
 
 # Final evaluation
 def evaluation(results, reactTime):
-    """Calculates success percentage.
+    """Calculate success percentage.
 
     Calculates percentage of successful answers.
     """
