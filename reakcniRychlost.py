@@ -31,10 +31,9 @@ def introduction():
     time.sleep(random.randint(1, 4))
 
 
-
 # Generation of random inputs
 def random_inputs():
-    """Number generation.
+    """Generating numbers.
 
     Generates integers used in equations.
     """
@@ -47,7 +46,7 @@ def random_inputs():
 
 # Calculation of generated equations - correct results
 def calcOfEquations(a, b, sgn):
-    """Calculation of given equation.
+    """Calculates given equation.
 
     Calculates generated equations.
     Tests for ilegal operations.
@@ -67,9 +66,10 @@ def calcOfEquations(a, b, sgn):
         raise ZeroDivisionError('Cannot divide by zero!')
     return correct
 
+
 # Final evaluation
 def evaluation(results, reactTime):
-    """Calculation of percentage success.
+    """Calculates success percentage.
 
     Calculates percentage of successful answers.
     """
@@ -92,7 +92,7 @@ def evaluation(results, reactTime):
 
 # Main function
 def myFunction():
-    """Main.
+    """Contains Main function.
 
     Main.
     """
