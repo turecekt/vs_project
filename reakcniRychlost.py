@@ -14,6 +14,11 @@ from statistics import mean
 
 # Short description of the program
 def introduction():
+    """Script initiation.
+
+    Prints information about this script.
+    Prints countdown.
+    """
     print('The program generates 5 easy math tasks.'
           '\nReact time and correctness are evaluated. \nGood luck!')
     time.sleep(1)  # Little break of 1s
@@ -29,6 +34,10 @@ def introduction():
 
 # Generation of random inputs
 def random_inputs():
+    """Number generation.
+
+    Generates integers used in equations.
+    """
     a = random.randint(-10, 10)  # random integer from interval -10;10
     b = random.randint(-10, 10)  # random integer from interval -10;10
     sgn = random.choice("+-*/")  # random sign +-*
@@ -38,7 +47,14 @@ def random_inputs():
 
 # Calculation of generated equations - correct results
 def calcOfEquations(a, b, sgn):
-    # Calculation of given equation
+    """Calculation of given equation.
+
+    Calculates generated equations.
+    Tests for ilegal operations.
+
+    Returns:
+    int: Correct value of equation.
+    """
     if sgn == "+":
         correct = a+b
     elif sgn == "-":
@@ -52,26 +68,34 @@ def calcOfEquations(a, b, sgn):
     return correct
 
 # Final evaluation
-def evaluation(results,reactTime):
-    # Calculation of percentage success
+def evaluation(results, reactTime):
+    """Calculation of percentage success.
+
+    Calculates percentage of successful answers.
+    """
     success = round(results.count(1)/5*100, 2)
     avRate = round(mean(reactTime), 2)  # Calculation of mean react time
     reT = [round(elem, 2) for elem in reactTime]  # Formatted react times
-    print('\n \nYour results are:',results,
+    print('\n \nYour results are:', results,
           '\nOverall success is:', success, ' %')
     print('Details of your react times are:', reT,
           ' s \nMean react time is: ', avRate, ' s')
     return success, avRate, reT
 
-#Termination
-#def termination():
- #  input('\nDid you enjoy it?')
-  #  print('\nThe program will be closed...')
-   # time.sleep(1)
- #   sys.exit(0) 
+# Termination
+# def termination():
+    # input('\nDid you enjoy it?')
+    # print('\nThe program will be closed...')
+    # time.sleep(1)
+    # sys.exit(0)
+
 
 # Main function
 def myFunction():
+    """Main.
+
+    Main.
+    """
     introduction()
     i = 0
     # Creation of list with results (1 for correct, 0 for wrong)
@@ -87,9 +111,9 @@ def myFunction():
         # Handling of errors - what happens if the user inputs wrong character
         t1 = perf_counter()  # Time - start
         try:  # if the input is integer, the program executes the 'try' part
-            userResult = float(input('Vysledek:')) # User inputs his answer
+            userResult = float(input('Vysledek:'))  # User inputs his answer
             t2 = perf_counter()  # Time - end
-            reactTime[i] = t2 - t1;  # Duration from start to end
+            reactTime[i] = t2 - t1  # Duration from start to end
 
             # Result of calcOfEquations function stored in var correct
             # Evaluation of user's answers.
