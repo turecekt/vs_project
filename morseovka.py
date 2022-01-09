@@ -18,3 +18,8 @@ MORSEUVA_ABECEDA = {
                     '(': '-.--.', ')': '-.--.-', '@': '.--.-.',
                     '  ': '|', '=': '-...-'
                 }
+
+print('''\n Vyber možnost: 
+             1 - Šifrování do morseovy abecedy
+             2 - Dešifrování morseovy abecedy
+             3 - konec''')
