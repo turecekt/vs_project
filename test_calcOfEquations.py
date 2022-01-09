@@ -43,7 +43,7 @@ class calcOfEquationsMinusSign(unittest.TestCase):
 
     def test_subPositiveNumbers2(self):
         """Tests subtraction of two positive integers.
-        
+
         Ending with negative return.
         """
         actual = calcOfEquations(5, 8, '-')
@@ -56,7 +56,7 @@ class calcOfEquationsMinusSign(unittest.TestCase):
 
     def test_subNegNumbers2(self):
         """Tests subtraction of two negative integers.
-        
+
         Ending with positive return.
         """
         actual = calcOfEquations(-3, -8, '-')
