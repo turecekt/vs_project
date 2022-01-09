@@ -191,7 +191,7 @@ def PocetKazdyZnak(vstup):
                             charStore[sChar] = 1    
                     resVal =(charStore.values())
                     res = [key for key in charStore if charStore[key] == resVal]
-                    print(resVal.values,resVal.items)
+                    print(*resVal.values,resVal.items)
                     #return(res)
                 else:
                     return(0)
