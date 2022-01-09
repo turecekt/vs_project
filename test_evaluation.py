@@ -8,6 +8,7 @@ Created on Fri Dec 31 15:15:12 2021.
 import unittest
 from reakcniRychlost import evaluation
 
+
 class evaluationTestSuccess(unittest.TestCase):
     """Set of tests for evaluation function.
 
@@ -32,22 +33,22 @@ class evaluationTestSuccess(unittest.TestCase):
         """Tests result of some wrong answers."""
         results = [1, 0, 0, 1, 1]
         reactTime = [3.36, 3.13, 2.55, 2.43, 2.38]
-        success, avRate, reT = evaluation(results,reactTime)
+        success, avRate, reT = evaluation(results, reactTime)
         self.assertGreater(100, success, None)
         self.assertLess(0, success, None)
 
 
 class evaluationTestAverageRate(unittest.TestCase):
     """Set of tests for evaluation function.
-    
+
     Testing time intervals.
     """
-    
+
     def test_avRate(self):
         """Tests average time calculation."""
         results = [0, 0, 0, 0, 0]
         reactTime = [3.36, 3.13, 2.55, 2.43, 2.38]
-        success, avRate, reT = evaluation(results,reactTime)
+        success, avRate, reT = evaluation(results, reactTime)
         self.assertEqual(avRate, 2.77)
 
     def test_avRate2(self):
