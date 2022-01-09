@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 """
-Created on Fri Dec 31 14:07:17 2021
+Created on Fri Dec 31 14:07:17 2021.
+
 @author: zifca
 """
 
@@ -42,9 +43,9 @@ class calcOfEquationsMinusSign(unittest.TestCase):
 
     def test_subPositiveNumbers2(self):
         """Tests subtraction of two positive integers.
+        
         Ending with negative return.
         """
-
         actual = calcOfEquations(5, 8, '-')
         self.assertEqual(actual, -3)
 
@@ -55,9 +56,9 @@ class calcOfEquationsMinusSign(unittest.TestCase):
 
     def test_subNegNumbers2(self):
         """Tests subtraction of two negative integers.
+        
         Ending with positive return.
         """
-
         actual = calcOfEquations(-3, -8, '-')
         self.assertEqual(actual, 5)
 
