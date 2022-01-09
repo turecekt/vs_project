@@ -1,4 +1,4 @@
-""" Morseova abeceda """
+# Morseova abeceda
 
 MORSEOVA_ABECEDA = {
                     ' ': '/', 'A': '.-', 'B': '-...',
@@ -20,20 +20,24 @@ MORSEOVA_ABECEDA = {
                 }
 
 def sifrovani():
- #   """Šifrovaní textu do morseovky"""
+ # Šifrovaní textu do morseovky
     textNaSifrovani = input("Text pro šifrování do morseovy abecedy: ")
     sifra = [MORSEOVA_ABECEDA[i.upper()] + ' ' for i in textNaSifrovani if i.upper()
            in MORSEOVA_ABECEDA.keys()]
     vysledek = ''.join(sifra)
     print(vysledek)
 
-#"""def desifrovani()"""
- #   """Dešifrování textu z moreovky"""
-    
+
+def desifrovani():
+ # Dešifrování textu z moreovky
+    textNaDesifrovani = input("Text pro dešifrování z morseovy abecedy: ")
+    desifra = [j for i in textNaDesifrovani.split()
+           for j, k in MORSEOVA_ABECEDA.items() if i == k]
+    vysledek = ''.join(desifra)
+    print(vysledek)
 
 
-
-"""Výběrové menu"""
+# Výběrové menu
 print('''\n Vyber možnost: 
              1 - Šifrování do morseovy abecedy
              2 - Dešifrování morseovy abecedy
@@ -49,7 +53,7 @@ while opakovat:
       print(sifrovani())
       opakovat = False
      elif volba == 2:
-      print("výběr dešifrování")
+      print(desifrovani())
       opakovat = False
      elif volba == 3:
       print("ukončení programu")
