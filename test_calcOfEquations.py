@@ -31,9 +31,10 @@ class calcOfEquationsPlusSign(unittest.TestCase):
         actual = calcOfEquations(5, -0, '+')
         self.assertEqual(actual, 5)
 
+
 class calcOfEquationsMinusSign(unittest.TestCase):
     """Set of tests for subtraction in calcOfEquations function."""
-    
+
     def test_subPositiveNumbers(self):
         """Tests subtraction of two positive integers."""
         actual = calcOfEquations(5, 5, '-')
@@ -43,6 +44,7 @@ class calcOfEquationsMinusSign(unittest.TestCase):
         """Tests subtraction of two positive integers.
         Ending with negative return.
         """
+
         actual = calcOfEquations(5, 8, '-')
         self.assertEqual(actual, -3)
 
@@ -55,6 +57,7 @@ class calcOfEquationsMinusSign(unittest.TestCase):
         """Tests subtraction of two negative integers.
         Ending with positive return.
         """
+
         actual = calcOfEquations(-3, -8, '-')
         self.assertEqual(actual, 5)
 
@@ -63,9 +66,10 @@ class calcOfEquationsMinusSign(unittest.TestCase):
         actual = calcOfEquations(-3, -0, '-')
         self.assertEqual(actual, -3)
 
+
 class calcOfEquationsMultiplicationSign(unittest.TestCase):
     """Set of tests for multiplication in calcOfEquations function."""
-    
+
     def test_multiplyPositiveNumbers(self):
         """Tests multiplication of two positive integers."""
         actual = calcOfEquations(5, 5, '*')
@@ -86,9 +90,10 @@ class calcOfEquationsMultiplicationSign(unittest.TestCase):
         actual = calcOfEquations(0, -5, '*')
         self.assertEqual(actual, 0)
 
+
 class calcOfEquationsDivisionSign(unittest.TestCase):
     """Set of tests for division in calcOfEquations function."""
-    
+
     def test_dividePositiveNumbers(self):
         """Tests division of two positive integers."""
         actual = calcOfEquations(5, 5, '/')
@@ -112,16 +117,16 @@ class calcOfEquationsDivisionSign(unittest.TestCase):
     def test_divideZeroByZero(self):
         """Tests division by zero."""
         with self.assertRaises(ZeroDivisionError):
-            actual = calcOfEquations(0, 0, '/')
+            calcOfEquations(0, 0, '/')
+
 
 class calcOfEquationsError(unittest.TestCase):
     """Set of tests for error handling in calcOfEquations function."""
-    
+
     def test_error(self):
         """Tests division by zero error."""
         with self.assertRaises(ZeroDivisionError):
-            actual = calcOfEquations(5, 0, '/')
-
+            calcOfEquations(5, 0, '/')
 
 
 if __name__ == '__main__':
