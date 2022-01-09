@@ -50,7 +50,7 @@ class evaluationTestAverageRate(unittest.TestCase):
         success, avRate, reT = evaluation(results,reactTime)
         self.assertEqual(avRate, 2.77)
 
-     def test_avRate2(self):
+    def test_avRate2(self):
         """Tests zeroing of average time calculation."""
         results = [0, 0, 0, 0, 0]
         reactTime = [3.36, 3.13, 2.55, 2.43, 2.38]
