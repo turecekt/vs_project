@@ -16,26 +16,29 @@ def PocetZnak(vstup):
     if vstup.endswith(endis):
         charStore = {} 
         data = (vstup.replace(" ","")).upper()
-        pocet_char = len(data)    
-        print ("Celkovy pocet znaku bez mezer je: " + int(pocet_char) )  
+        pocet_char = len(data)-1 
+        return(pocet_char)
+        #print ("Celkovy pocet znaku bez mezer je: " + str(pocet_char) )  
 
     elif vstup.endswith('.txt'): #za predpokladu ze je vstup file input .txt
         with open(vstup) as text_file:
                 data = text_file.read().upper().replace(" ","")
-                pocet_char = len(data) #musime vynechat # a veskere nestandartni znaky
+                pocet_char = len(data)-1 #musime vynechat # a veskere nestandartni znaky
                 valid = data.endswith(endis)
-                print(data)
                 if valid:
-                    print ("Celkovy pocet znaku bez mezer je: " + int(pocet_char) )                 
-                         
+                    return(pocet_char)
+                    #print ("Celkovy pocet znaku bez mezer je: " + str(pocet_char) )                 
+
                 else:
-                    print("Vlozeny file nema ukonceni s #")
+                    return(0)
+                    #print("Vlozeny file nema ukonceni s #")
                              
-    else:       
-        print("Vlozeny text neni ukonceny #")            
+    else:
+        return(0)       
+        #print("Vlozeny text neni ukonceny #")            
     
     
-#MaxZnak(input("MaxZnak File nebo text zakonceny #: "))
+#PocetZnak(input("PocetZnak File nebo text zakonceny #: "))
 
 
 
@@ -53,7 +56,8 @@ def MaxZnak(vstup):
                 charStore[sChar] = 1    
         resMax = min(charStore.vaulue())
         res = [key for keay in charStore if charStore[key] == resMax]
-        print ("Znaky s nejvetsim poctem jsou: " + str(res)) )
+        return(res)
+        #print ("Znaky s nejvetsim poctem jsou: " + str(res)) 
 
     elif vstup.endswith('.txt'): #za predpokladu ze je vstup file input .txt
         with open(vstup) as text_file:
@@ -70,7 +74,8 @@ def MaxZnak(vstup):
                             charStore[sChar] = 1    
                     resMax = min(charStore.vaulue())
                     res = [key for keay in charStore if charStore[key] == resMax]
-                    print ("Znaky s nejvetsim poctem jsou: " + str(res))                  
+                    return(res)
+                    #print ("Znaky s nejvetsim poctem jsou: " + str(res))                  
                          
                 else:
                     print("Vlozeny file nema ukonceni s #")
@@ -119,20 +124,8 @@ def MinZnak(vstup):
         print("Vlozeny text neni ukonceny #")            
     
     
-MinZnak(input("MinZnak File nebo text zakonceny #: "))
+#MinZnak(input("MinZnak File nebo text zakonceny #: "))
     
- 
- 
-    
-    
-    
-
-
-#pridat vystup pole znaku kdyz nejmensi maji stejne
-
-
-
-
 
 #
 ######################Informace o průměrné četnosti#####################
@@ -202,5 +195,20 @@ def PocetKazdyZnak(vstup):
 # 2 testy a to je jsou to neobyc znaky a nebo cislice a nebo odradkovani tak to bude test fail
 #
 #jen pro ukazku jestli funguje import CetnostZnaku.py
-def secti(a,b):
-    return a+b
+
+"""
+if __name__ == '__main__':
+    print(PocetZnak(input("PocetZnak File nebo text zakonceny #: ")))
+    print(MaxZnak(input("MaxZnak File nebo text zakonceny #: ")))
+    print(MinZnak(input("MinZnak File nebo text zakonceny #: ")))
+    print(PrumerKazdyZnak(input("File nebo text zakonceny #: ")))
+    print(PocetKazdyZnak(input("File nebo text zakonceny #: ")))
+    
+"""
+
+
+#    [1]PocetZnak(input("PocetZnak File nebo text zakonceny #: "))
+#    [2]MaxZnak(input("MaxZnak File nebo text zakonceny #: "))
+#    [3]MinZnak(input("MinZnak File nebo text zakonceny #: "))
+#    [4]PrumerKazdyZnak(input("File nebo text zakonceny #: "))
+#    [5]PocetKazdyZnak(input("File nebo text zakonceny #: "))
