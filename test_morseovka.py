@@ -1,0 +1,1 @@
+"""Testy na funkci Morseovka."""
