@@ -7,10 +7,10 @@ from reakcniRychlost import introduction
 class introductionTest(unittest.TestCase):
         
     def test_exception(self):
-    try:
-        introduction()
-    except ExceptionType:
-        self.fail("introduction() raised ExceptionType unexpectedly!")
+        try:
+            introduction()
+        except ExceptionType:
+            self.fail("introduction() raised ExceptionType unexpectedly!")
 
 
 if __name__ == '__main__':
