@@ -1,4 +1,4 @@
-"""Projekt: ČETNOST ZNAKŮ, Authors: Radek Kratochvíl and Petr Slavík."""
+"""Projekt ČETNOST ZNAKŮ """
 
 
 def PocetZnak(vstup):
@@ -99,10 +99,10 @@ def PrumerKazdyZnak(vstup):
             pocet = data.count(iChar)/pocet_char*100
             if data.count(iChar) > 0:
                 print(iChar, "vyskyt je",f"{pocet:.2f}", "%")
-    elif vstup.endswith('.txt'): #za predpokladu ze je vstup file input .txt
+    elif vstup.endswith('.txt'):
         with open(vstup) as text_file:
                 data = text_file.read().upper().replace(" ", "")
-                pocet_char = len(data) #musime vynechat # a veskere nestandartni znaky
+                pocet_char = len(data)
                 valid = data.endswith(endis)
                 if valid:
                     charStore = {}
@@ -119,11 +119,8 @@ def PrumerKazdyZnak(vstup):
                             print(iChar, "vyskyt je",f"{pocet:.2f}", "%")
                 else:
                     return(0)
-                    #print("Vlozeny file nema ukonceni s #")
     else:
-        return(0)       
-        print("Vlozeny text neni ukonceny #")
-#PrumerKazdyZnak(input("File nebo text zakonceny #: "))
+        return(0)
 
 def PocetKazdyZnak(vstup):
     """Informace o četnosti jednotlivých znaků abecedy (bez diakritiky)."""
