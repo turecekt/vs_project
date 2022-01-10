@@ -188,7 +188,7 @@ def PocetKazdyZnak(vstup):
                 charStore[sChar] += 1
             else:
                 charStore[sChar] = 1    
-        #return(charStore)
+        return(charStore)
         #print(charStore)
     elif vstup.endswith('.txt'): #za predpokladu ze je vstup file input .txt
         with open(vstup) as text_file:
@@ -202,8 +202,6 @@ def PocetKazdyZnak(vstup):
                         else:
                             charStore[sChar] = 1    
                     return(charStore)
-                    #res = [key for key in charStore if charStore[key] == resVal]
-                    #return(res)
                 else:
                     return(0)
                     #print("Vlozeny file nema ukonceni s #")
@@ -212,4 +210,4 @@ def PocetKazdyZnak(vstup):
         return(0)       
         #print("Vlozeny text neni ukonceny #")
 
-#PocetKazdyZnak(input("File nebo text zakonceny #: "))
+#PocetKazdyZnak(input("PocetKazdyZnak File nebo text zakonceny #: "))
