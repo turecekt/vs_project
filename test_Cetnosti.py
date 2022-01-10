@@ -11,17 +11,21 @@ class TestCases(unittest.TestCase):
 
     def test_PocetZnak(self):
         """
+
         Test počtu znaků ve vstupním textu, kdy povinný atribut (hash)
         není brán jako znak.
         """
+        
         vstup = "AAAAAAAA#"
         self.assertEqual(PocetZnak(vstup), 8)
 
     def test_PocetZnakFromFile(self):
         """"
+
         Test počtu znaků ve vstupním souboru, kdy povinný atribut (hash)
         není brán jako znak.
         """
+
         vstup = "test_file.txt"
         self.assertEqual(PocetZnak(vstup), 0)
 
@@ -50,9 +54,11 @@ class TestCases(unittest.TestCase):
 
     def test_MinZnakNoHashinFile(self):
         """
+        
         Test informace o minimálním počtu znaků ve vstupním souboru
         bez povinného atributu (hash).
         """
+        
         vstup = "test_file.txt"
         self.assertEqual(MinZnak(vstup), 0)
 
