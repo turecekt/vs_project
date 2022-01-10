@@ -1,64 +1,95 @@
-"""Seminarni prace - prekladac do Morseovy abecedy a zpet."""
+"""Aplikace, ktera umoznuje prelozit text do morseovky a zpet."""
 
-MORSEUV_SLOVNIK = {
-                    ' ': '/', 'A': '.-', 'B': '-...',
-                    'C': '-.-.', 'D': '-..', 'E': '.',
-                    'F': '..-.', 'G': '--.', 'H': '....',
-                    'I': '..', 'J': '.---', 'K': '-.-',
-                    'L': '.-..', 'M': '--', 'N': '-.',
-                    'O': '---', 'P': '.--.', 'Q': '--.-',
-                    'R': '.-.', 'S': '...', 'T': '-',
-                    'U': '..-', 'V': '...-', 'W': '.--',
-                    'X': '-..-', 'Y': '-.--', 'Z': '--..',
-                    '1': '.----', '2': '..---', '3': '...--',
-                    '4': '....-', '5': '.....', '6': '-....',
-                    '7': '--...', '8': '---..', '9': '----.',
-                    '0': '-----', ', ': '--..--', '.': '.-.-.-',
-                    '?': '..--..', '/': '-..-.', '-': '-....-',
-                    '(': '-.--.', ')': '-.--.-', '@': '.--.-.',
-                    '  ': '|', '=': '-...-'
-                }
+# Vytvoreni slovniku znaku
+Slovnik_morse = {
+                    'A': '.-',
+                    'B': '-...',
+                    'C': '-.-.',
+                    'D': '-..',
+                    'E': '.',
+                    'F': '..-.',
+                    'G': '--.',
+                    'H': '....',
+                    'I': '..',
+                    'J': '.---',
+                    'K': '-.-',
+                    'L': '.-..',
+                    'M': '--',
+                    'N': '-.',
+                    'O': '---',
+                    'P': '.--.',
+                    'Q': '--.-',
+                    'R': '.-.',
+                    'S': '...',
+                    'T': '-',
+                    'U': '..-',
+                    'V': '...-',
+                    'W': '.--',
+                    'X': '-..-',
+                    'Y': '-.--',
+                    'Z': '--..',
+                    '1': '.----',
+                    '2': '..---',
+                    '3': '...--',
+                    '4': '....-',
+                    '5': '.....',
+                    '6': '-....',
+                    '7': '--...',
+                    '8': '---..',
+                    '9': '----.',
+                    '0': '-----',
+                    ', ': '--..--',
+                    '.': '.-.-.-',
+                    '?': '..--..',
+                    '/': '-..-.',
+                    '-': '-....-',
+                    '(': '-.--.',
+                    ')': '-.--.-'
+                    }
 
 
-# urceni prekladace
-def sifrovani():
-    """Přeložení do Morseovy abecedy."""
-    text = input('Napis text pro Morseovo sifrovani : ')
-    kod = [MORSEUV_SLOVNIK[i.upper()] + ' ' for i in text if i.upper()
-           in MORSEUV_SLOVNIK.keys()]
-    morseovka = ''.join(kod)
-    print(morseovka)
+def encrypt(message):
+    """Funkce pro prevedeni textu do morse code."""
+    PrekladEncrypt = ''
+    for letter in message:
+        if letter != ' ':
+            PrekladEncrypt += Slovnik_morse[letter] + ' '
+        else:
+            PrekladEncrypt += ' '
+
+    return PrekladEncrypt
 
 
-# desifrovani na text
-def desifrovani():
-    """Přeložení z Morseovy abecedy."""
-    text = input('Napis Morseuv kod pro desifrovani do textu: ')
-    kod = [j for i in text.split()
-           for j, k in MORSEUV_SLOVNIK.items() if i == k]
-    text2 = ''.join(kod)
+def decrypt(message):
+    """Funkce pro prevedeni morse code do textu."""
+    message += ' '
+    PrekladDecrypt = ''
+    citext = ''
+    for letter in message:
+        if (letter != ' '):
+            i = 0
+            citext += letter
+        else:
+            i += 1
+            if i == 2:
+                PrekladDecrypt += ' '
+            else:
+                PrekladDecrypt += list(Slovnik_morse.keys())[list(
+                    Slovnik_morse.values()).index(citext)]
+                citext = ''
 
-    print(text2)
-
-
-print('''\n1 - Napis text pro Morseovo sifrovani
-        \n2 - Napis Morseuv kod pro desifrovani do textu\n3 - Konec\n ''')
+    return PrekladDecrypt
 
 
 if __name__ == '__main__':
+    """Funkce, ktera umoznuje vybrat typ prevodu."""
 
-    vyber = int(input('Zvol moznost 1-3 a potvrd klavesou ENTER: '))
-    if vyber == 1:
-        print(sifrovani())
-
-    elif vyber == 2:
-        print(desifrovani())
-
-    elif vyber == 3:
-        print('Ukonceni')
-
-    else:
-        print('Spatne zadani, opakujte volbu')
-
-else:
-    print('Zadna volba nevyhovuje pozadavkum, zkuste to znova.')
+    vyber = input("Pro sifrovani stiskni 's' pro desifrovani stiskni 'd'")
+    if vyber == "s":
+        message = input("Zadej text nebo slovo pro prelozeni do morse code: ")
+        result = encrypt(message.upper())
+        print(result)
+    if vyber == "d":
+        message = input("Zadej morse code pro prelozeni do textu: ")
+        result = decrypt(message.upper())
+        print(result)
