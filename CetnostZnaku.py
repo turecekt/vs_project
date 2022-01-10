@@ -1,7 +1,7 @@
 """ cetnost znaku project """
 """Authors: Radek Kratochvíl and Petr Slavík"""
 
-"""#Informace o celkovém počtu znaků###########
+"""Informace o celkovém počtu znaků"""
 def PocetZnak(vstup): 
     endis = "#"
     if vstup.endswith(endis):
@@ -33,7 +33,7 @@ def PocetZnak(vstup):
 
 
 
-"""#Informace o nejčastějším znaku"""
+"""Informace o nejčastějším znaku"""
 """ Funkce sebere na vstupu soubor/text a provede nad nim kontrolu jestli je zakonceny znakem #
  Pokud je vstup validni tak provede pocet o nejcastejsim znaku a 
  v pripade ze je pocet stejny pro vice charakteru vrati pole nejcastejsich znaku
@@ -130,7 +130,7 @@ def PrumerKazdyZnak(vstup):
     if vstup.endswith(endis):
         data = (vstup.replace(" ", "")).upper()
         pocet_char = len(data)   
-        #alpha = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
+        alpha = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
         for iChar in alpha:
             pocet = data.count(iChar)/pocet_char*100
             if data.count(iChar) > 0:
@@ -152,7 +152,7 @@ def PrumerKazdyZnak(vstup):
 
                     print("if valid",data)
                     print(data)
-                    #alpha = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
+                    alpha = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
                     for iChar in alpha:
                         pocet = data.count(iChar)/pocet_char*100
                         if data.count(iChar) > 0:
@@ -168,8 +168,7 @@ def PrumerKazdyZnak(vstup):
 #PrumerKazdyZnak(input("File nebo text zakonceny #: "))
 
 
-# """Informace o četnosti jednotlivých znaků abecedy (bez diakritiky)"""
-
+"""Informace o četnosti jednotlivých znaků abecedy (bez diakritiky)"""
 def PocetKazdyZnak(vstup):
     endis = "#"
     if vstup.endswith(endis):
