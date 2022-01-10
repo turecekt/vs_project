@@ -1,3 +1,4 @@
+# -*- coding: latin-1 -*-
 # Morseova abeceda
 
 MORSEOVA_ABECEDA = {
@@ -20,9 +21,9 @@ MORSEOVA_ABECEDA = {
                 }
 
 def sifrovani():
- # Šifrovaní textu do morseovky
-    textNaSifrovani = input("Text pro šifrování do morseovy abecedy: ")
-    sifra = [MORSEOVA_ABECEDA[i.upper()] + ' ' for i in textNaSifrovani if i.upper()
+
+    text = input('Text pro šifrování do morseovy abecedy: ')
+    sifra = [MORSEOVA_ABECEDA[i.upper()] + ' ' for i in text if i.upper()
            in MORSEOVA_ABECEDA.keys()]
     vysledek = ''.join(sifra)
     print(vysledek)
