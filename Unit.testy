@@ -43,3 +43,5 @@ class Test(unittest.TestCase):
         vstup = unittest.desifrovania("TEST VELKYCH PISMEN")
         self.assertEqual(vstup, "- . ... -  ...- . .-.. -.- "
                                 "-.-- -.-. ....  .--. .. ... -- . -. ")
+if __name__ == '__main__':
+    Unit.testy.source()
