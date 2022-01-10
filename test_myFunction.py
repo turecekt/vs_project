@@ -3,10 +3,10 @@ from reakcniRychlost import myFunction
 
 class tests_myFunction(unittest.TestCase):
 
-def test_something_that_involves_user_input(monkeypatch):
+    def test_myFunction(monkeypatch):
 
-    monkeypatch.setattr('builtins.input', lambda _: 5)
-    myFunction()
+        monkeypatch.setattr('builtins.input', lambda _: 5)
+        myFunction()
     #assert i == "XXX"
     
     
