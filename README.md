@@ -15,5 +15,5 @@ VÝSTUP
 
 ## Autori
 
-Petr Slavik
-Radek Kratochvil
+*Petr Slavik
+*Radek Kratochvil
