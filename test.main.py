@@ -1,4 +1,4 @@
-from main import text_do_mors, mors_do_text
+from import text_do_mors, mors_do_text
 
 pole = "priklad"
 text = "priklad1"
