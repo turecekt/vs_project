@@ -49,6 +49,7 @@ class App:
     """
         Method to handle user target system input.
     """
+
     def parse_target_number_system(self):
         target_system = input("Please choose target number system: ")
 
@@ -88,7 +89,8 @@ class App:
 
     @staticmethod
     def print_help():
-        print("You can convert numbers from decimal system to binary, octal or hex systems.")
+        print(
+            "You can convert numbers from decimal system to binary, octal or hex systems.")
         print("At first you need to pass number in decimal system.")
         print("Then you need to choose target number system by selecting number.")
         print("1. Binary")

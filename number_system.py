@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 
 """
-    Abstract class to custom number systems. 
+    Abstract class to custom number systems.
 """
 
 
@@ -25,6 +25,7 @@ class BinarySystem(NumberSystem):
     """
         Method to convert decimal number into binary one.
     """
+
     def convert_decimal(self, number):
         return bin(number)
 
@@ -39,6 +40,7 @@ class OctalSystem(NumberSystem):
     """
         Method to convert decimal number into octal one.
     """
+
     def convert_decimal(self, number):
         return oct(number)
 
@@ -53,5 +55,6 @@ class HexSystem(NumberSystem):
     """
         Method to convert decimal number into hex one.
     """
+
     def convert_decimal(self, number):
         return hex(number)
