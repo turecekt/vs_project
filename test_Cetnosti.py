@@ -1,20 +1,26 @@
 """Test fuknci z CetnostZnaky"""
+
+
 import unittest
-from CetnostZnaku import PocetZnak,MinZnak,MaxZnak,PocetKazdyZnak
+from CetnostZnaku import PocetZnak, MinZnak, MaxZnak, PocetKazdyZnak
 
 class TestCases(unittest.TestCase):
 
     def test_PocetZnak(self):
-        """Test počtu znaků ve vstupním textu, kdy povinný atribut #(hash)
-        není brán jako znak."""
+        """
+        Test počtu znaků ve vstupním textu, kdy povinný atribut #(hash)
+        není brán jako znak.
+        """
         vstup = "AAAAAAAA#"
         self.assertEqual(PocetZnak(vstup), 8)
 
     def test_PocetZnak(self):
-        """"Test počtu znaků ve vstupním souboru, kdy povinný atribut (hash)
-        není brán jako znak."""
+        """"
+        Test počtu znaků ve vstupním souboru, kdy povinný atribut (hash)
+        není brán jako znak.
+        """
         vstup = "test_file.txt"
-        self.assertEqual(PocetZnak(vstup),0)
+        self.assertEqual(PocetZnak(vstup), 0)
 
     def test_MinZnak(self):
         """Test informace o minimálním počtu znaků ve vstupním textu."""
@@ -38,8 +44,10 @@ class TestCases(unittest.TestCase):
         self.assertEqual(MaxZnak(vstup), ['A'])
 
     def test_MinZnakNoHashinFile(self):
-        """Test informace o minimálním počtu znaků ve vstupním souboru 
-        bez povinného atributu #(hash)."""
+        """
+        Test informace o minimálním počtu znaků ve vstupním souboru 
+        bez povinného atributu #(hash).
+        """
         vstup = "test_file.txt"
         self.assertEqual(MinZnak(vstup), 0)
 
