@@ -45,9 +45,8 @@ print('''\n Vyber možnost:
 
 
 
-
-volba = int(input("Zadej možnost 1-3: "))
 if __name__ == '__main__':
+    volba = int(input("Zadej možnost 1-3: "))
      if volba == 1:
       print(sifrovani())
      elif volba == 2:
