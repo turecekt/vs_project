@@ -1,4 +1,4 @@
-"""Authors: Radek Kratochvíl and Petr Slavík"""
+"""Test fuknci z CetnostZnaky.py Authors: Radek Kratochvíl and Petr Slavík."""
 import unittest
 from CetnostZnaku import PocetZnak,MinZnak,MaxZnak,PocetKazdyZnak
 

@@ -1,5 +1,4 @@
-"""ČETNOST ZNAKŮ"""
-"""Authors: Radek Kratochvíl and Petr Slavík"""
+"""Projekt: ČETNOST ZNAKŮ, Authors: Radek Kratochvíl and Petr Slavík."""
 
 
 def PocetZnak(vstup):
@@ -10,32 +9,23 @@ def PocetZnak(vstup):
         data = (vstup.replace(" ", "")).upper()
         pocet_char = len(data)-1 
         return(pocet_char)
-        #print ("Celkovy pocet znaku bez mezer je: " + str(pocet_char) )  
-
-    elif vstup.endswith('.txt'): #za predpokladu ze je vstup file input .txt
+    elif vstup.endswith('.txt'):
         with open(vstup) as text_file:
                 data = text_file.read().upper().replace(" ", "")
-                pocet_char = len(data)-1 #musime vynechat # a veskere nestandartni znaky
+                pocet_char = len(data)-1
                 valid = data.endswith(endis)
                 if valid:
                     return(pocet_char)
-                    #print ("Celkovy pocet znaku bez mezer je: " + str(pocet_char) )
-
                 else:
                     return(0)
-                    #print("Vlozeny file nema ukonceni s #")
-                             
     else:
         return(0)
-        #print("Vlozeny text neni ukonceny #")
-    
-#PocetZnak(input("PocetZnak File nebo text zakonceny #: "))
 
 def MaxZnak(vstup):
     """Informace o nejčastějším znaku"""
     endis = "#"
     if vstup.endswith(endis):
-        charStore = {} # dictionary pro ulozeni znaku
+        charStore = {}
         data = (vstup.replace(" ", "")).upper()
         for sChar in data:
             if sChar in charStore:
@@ -45,9 +35,7 @@ def MaxZnak(vstup):
         resMax = max(charStore.values())
         res = [key for key in charStore if charStore[key] == resMax]
         return(res)
-        #print ("Znaky s nejvetsim poctem jsou: " + str(res))
-
-    elif vstup.endswith('.txt'): #za predpokladu ze je vstup file input .txt
+    elif vstup.endswith('.txt'):
         with open(vstup) as text_file:
                 data = text_file.read().upper().replace(" ", "")
                 valid = data.endswith(endis)
@@ -61,20 +49,10 @@ def MaxZnak(vstup):
                     resMax = max(charStore.values())
                     res = [key for key in charStore if charStore[key] == resMax]
                     return(res)
-                    #print ("Znaky s nejvetsim poctem jsou: " + str(res))    
-                         
                 else:
                     return(0)
-                    #print("Vlozeny file nema ukonceni s #")
-                             
     else:
-        return(0)       
-        #print("Vlozeny text neni ukonceny #")
-    
-    
-#MaxZnak(input("MaxZnak File nebo text zakonceny #: "))
-
-
+        return(0)
 
 def MinZnak(vstup):
     """Informace o nejméně častém znaku"""
@@ -90,12 +68,10 @@ def MinZnak(vstup):
         resMin = min(charStore.values())
         res = [key for key in charStore if charStore[key] == resMin]
         return(res)
-        #print ("Znaky s nejmensim poctem jsou: " + str(res))
 
-    elif vstup.endswith('.txt'): #za predpokladu ze je vstup file input .txt
+    elif vstup.endswith('.txt'):
         with open(vstup) as text_file:
                 data = text_file.read().upper().replace(" ", "")
-                pocet_char = len(data) #musime vynechat # a veskere nestandartni znaky
                 valid = data.endswith(endis)
                 if valid:
                     charStore = {}
@@ -109,13 +85,8 @@ def MinZnak(vstup):
                     return(res)
                 else:
                     return(0)
-                    #print("Vlozeny file nema ukonceni
     else:       
         return(0)
-        #print("Vlozeny text neni ukonceny #")
-    
-    
-#MinZnak(input("MinZnak File nebo text zakonceny #: "))
 
 def PrumerKazdyZnak(vstup):
     """Informace o průměrné četnosti"""
@@ -166,7 +137,6 @@ def PocetKazdyZnak(vstup):
             else:
                 charStore[sChar] = 1    
         return(charStore)
-        #print(charStore)
     elif vstup.endswith('.txt'): #za predpokladu ze je vstup file input .txt
         with open(vstup) as text_file:
                 data = text_file.read().upper().replace(" ", "")
@@ -181,9 +151,5 @@ def PocetKazdyZnak(vstup):
                     return(charStore)
                 else:
                     return(0)
-                    #print("Vlozeny file nema ukonceni s #")  
     else:
         return(0)       
-        #print("Vlozeny text neni ukonceny #")
-
-#PocetKazdyZnak(input("PocetKazdyZnak File nebo text zakonceny #: "))
