@@ -21,29 +21,26 @@ MORSEOVA_ABECEDA = {
                 }
 
 def sifrovani():
-#Sifrovani textu do morseovky
+    """Sifrovani textu do morseovky"""
     text = input('Text pro sifrovani do morseovy abecedy: ')
-    sifra = [MORSEOVA_ABECEDA[i.upper()] + ' ' for i in text if i.upper()
-           in MORSEOVA_ABECEDA.keys()]
+    sifra = [MORSEOVA_ABECEDA[i.upper()] + ' ' for i in text if i.upper() in MORSEOVA_ABECEDA.keys()]
     vysledek = ''.join(sifra)
     print(vysledek)
 
 
 def desifrovani():
-#Desifrovani textu z moreovky
+    """Desifrovani textu z moreovky"""
     textNaDesifrovani = input('Text pro desifrovani z morseovy abecedy: ')
-    desifra = [j for i in textNaDesifrovani.split()
-           for j, k in MORSEOVA_ABECEDA.items() if i == k]
+    desifra = [j for i in textNaDesifrovani.split() for j, k in MORSEOVA_ABECEDA.items() if i == k]
     vysledek = ''.join(desifra)
     print(vysledek)
 
 
-#Vyberove menu
+"""Vyberove menu"""
 print('''\n Vyber moznost: 
              1 - Sifrovani do morseovy abecedy
              2 - Desifrovani morseovy abecedy
              3 - Konec''')
-
 
 
 if __name__ == '__main__':
@@ -56,5 +53,7 @@ if __name__ == '__main__':
         print('Ukonceni programu')
     else: 
         print('Spatna moznost, opakuj vyber.')
-else:
-  print('Znova')
+
+
+
+
