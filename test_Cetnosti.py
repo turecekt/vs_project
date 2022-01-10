@@ -1,4 +1,4 @@
-"""Test fuknci z CetnostZnaky"""
+"""Test fuknci z CetnostZnaky."""
 
 
 import unittest
@@ -24,7 +24,7 @@ class TestCases(unittest.TestCase):
 
     def test_MinZnak(self):
         """Test informace o minimálním počtu znaků ve vstupním textu."""
-        vstup = "Python ma jen jednou X Y Z a mozna jeste nejaka dalsi pismena #"        
+        vstup = "Python ma jen jednou X Y Z a mozna jeste nejaka dalsi pismena #"
         self.assertEqual(MinZnak(vstup), ['H', 'U', 'X', 'K', 'L', '#'])
 
     def test_MinZnakNoHash(self):
@@ -52,7 +52,7 @@ class TestCases(unittest.TestCase):
         self.assertEqual(MinZnak(vstup), 0)
 
     def test_PocetKazdyZnakInFile(self):
-        """Test funkce ktera vypise pocet kazdeho znaku z vlozeneho file."""          
+        """Test funkce ktera vypise pocet kazdeho znaku z vlozeneho file."""
         vstup="test_filePocet.txt"
         self.assertEqual(PocetKazdyZnak(vstup), {'T': 5, 'E': 4, 'X': 1, 'P': 2, 'R': 1,
         'O': 2, 'S': 1, 'F': 1, 'N': 2, 'C': 2, 'K': 2, 'A': 2, 'Z': 2, 'D': 1, 'Y': 1, '#': 1})
@@ -62,7 +62,5 @@ class TestCases(unittest.TestCase):
         vstup="Python max znaku#"
         self.assertEqual(PocetKazdyZnak(vstup), {'P': 1, 'Y': 1, 'T': 1, 'H': 1,
         'O': 1, 'N': 2, 'M': 1, 'A': 2, 'X': 1, 'Z': 1, 'K': 1, 'U': 1, '#': 1})
-
 if __name__ == '__main__':
-
-    unittest.main()    
+    unittest.main()

@@ -1,4 +1,4 @@
-"""Projekt ČETNOST ZNAKŮ """
+"""Projekt ČETNOST ZNAKŮ."""
 
 
 def PocetZnak(vstup):
