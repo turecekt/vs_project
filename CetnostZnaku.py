@@ -2,12 +2,12 @@
 
 
 def PocetZnak(vstup):
-    """Informace o celkovém počtu znaků.""" 
+    """Informace o celkovém počtu znaků."""
     endis = "#"
     if vstup.endswith(endis):
-        charStore = {} 
+        charStore = {}
         data = (vstup.replace(" ", "")).upper()
-        pocet_char = len(data)-1 
+        pocet_char = len(data)-1
         return(pocet_char)
     elif vstup.endswith('.txt'):
         with open(vstup) as text_file:
@@ -31,7 +31,7 @@ def MaxZnak(vstup):
             if sChar in charStore:
                 charStore[sChar] += 1
             else:
-                charStore[sChar] = 1    
+                charStore[sChar] = 1
         resMax = max(charStore.values())
         res = [key for key in charStore if charStore[key] == resMax]
         return(res)
@@ -43,9 +43,9 @@ def MaxZnak(vstup):
                     charStore = {}
                     for sChar in data:
                         if sChar in charStore:
-                            charStore[sChar] += 1
+                            charStore[sChar] +=1
                         else:
-                            charStore[sChar] = 1
+                            charStore[sChar] =1
                     resMax = max(charStore.values())
                     res = [key for key in charStore if charStore[key] == resMax]
                     return(res)
@@ -62,9 +62,9 @@ def MinZnak(vstup):
         data = (vstup.replace(" ", "")).upper()
         for sChar in data:
             if sChar in charStore:
-                charStore[sChar] += 1
+                charStore[sChar] +=1
             else:
-                charStore[sChar] = 1
+                charStore[sChar] =1
         resMin = min(charStore.values())
         res = [key for key in charStore if charStore[key] == resMin]
         return(res)
@@ -77,9 +77,9 @@ def MinZnak(vstup):
                     charStore = {}
                     for sChar in data:
                         if sChar in charStore:
-                            charStore[sChar] += 1
+                            charStore[sChar] +=1
                         else:
-                            charStore[sChar] = 1
+                            charStore[sChar] =1
                     resMin = min(charStore.values())
                     res = [key for key in charStore if charStore[key] == resMin]
                     return(res)
@@ -108,9 +108,9 @@ def PrumerKazdyZnak(vstup):
                     charStore = {}
                     for sChar in data:
                         if sChar in charStore:
-                            charStore[sChar] += 1
+                            charStore[sChar] +=1
                         else:
-                            charStore[sChar] = 1    
+                            charStore[sChar] =1
                     return(charStore)
                     alpha = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
                     for iChar in alpha:
@@ -126,27 +126,27 @@ def PocetKazdyZnak(vstup):
     """Informace o četnosti jednotlivých znaků abecedy (bez diakritiky)."""
     endis = "#"
     if vstup.endswith(endis):
-        data = (vstup.replace(" ", "")).upper()   
+        data = (vstup.replace(" ", "")).upper()
         charStore = {}
         for sChar in data:
             if sChar in charStore:
-                charStore[sChar] += 1
+                charStore[sChar] +=1
             else:
-                charStore[sChar] = 1    
+                charStore[sChar] =1
         return(charStore)
     elif vstup.endswith('.txt'):
         with open(vstup) as text_file:
                 data = text_file.read().upper().replace(" ", "")
                 valid = data.endswith(endis)
                 if valid:
-                    charStore = {} 
+                    charStore ={}
                     for sChar in data:
                         if sChar in charStore:
-                            charStore[sChar] += 1
+                            charStore[sChar] +=1
                         else:
-                            charStore[sChar] = 1    
+                            charStore[sChar] =1
                     return(charStore)
                 else:
                     return(0)
     else:
-        return(0)       
+        return(0)
