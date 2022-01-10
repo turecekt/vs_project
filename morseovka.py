@@ -47,13 +47,13 @@ print('''\n Vyber možnost:
 
 if __name__ == '__main__':
     volba = int(input("Zadej možnost 1-3: "))
-     if volba == 1:
+    if volba == 1:
         print(sifrovani())
-     elif volba == 2:
+    elif volba == 2:
         print(desifrovani())
-     elif volba == 3:
+    elif volba == 3:
         print("ukončení programu")
-     else: 
+    else: 
         print("Špatná možnost, opakuj výběr.")
 else:
   print('Znova')
