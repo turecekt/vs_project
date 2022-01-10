@@ -9,12 +9,12 @@ class TestCases(unittest.TestCase):
     """TestClass pro testovani funkci z CetnostZnaky."""
 
     def test_PocetZnak(self):
-        """"Test počtu znaků ze vstupním z textu."""    
+        """Test počtu znaků ze vstupním z textu."""
         vstup = "AAAAAAAA#"
         self.assertEqual(PocetZnak(vstup), 8)
 
     def test_PocetZnakFromFile(self):
-        """"Test počtu znaků ze vstupním souboru."""
+        """Test počtu znaků ze vstupním souboru."""
         vstup = "test_file.txt"
         self.assertEqual(PocetZnak(vstup), 0)
 
