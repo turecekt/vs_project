@@ -1,5 +1,5 @@
 # -*- coding: latin-1 -*-
-# Morseova abeceda
+'''Morseova abeceda'''
 
 MORSEOVA_ABECEDA = {
                     ' ': '/', 'A': '.-', 'B': '-...',
@@ -21,8 +21,8 @@ MORSEOVA_ABECEDA = {
                 }
 
 def sifrovani():
-
-    text = input('Text pro šifrování do morseovy abecedy: ')
+#Sifrovani textu do morseovky
+    text = input('Text pro sifrovani do morseovy abecedy: ')
     sifra = [MORSEOVA_ABECEDA[i.upper()] + ' ' for i in text if i.upper()
            in MORSEOVA_ABECEDA.keys()]
     vysledek = ''.join(sifra)
@@ -30,31 +30,31 @@ def sifrovani():
 
 
 def desifrovani():
- # Dešifrování textu z moreovky
-    textNaDesifrovani = input("Text pro dešifrování z morseovy abecedy: ")
+#Desifrovani textu z moreovky
+    textNaDesifrovani = input('Text pro desifrovani z morseovy abecedy: ')
     desifra = [j for i in textNaDesifrovani.split()
            for j, k in MORSEOVA_ABECEDA.items() if i == k]
     vysledek = ''.join(desifra)
     print(vysledek)
 
 
-# Výběrové menu
-print('''\n Vyber možnost: 
-             1 - Šifrování do morseovy abecedy
-             2 - Dešifrování morseovy abecedy
-             3 - konec''')
+#Vyberove menu
+print('''\n Vyber moznost: 
+             1 - Sifrovani do morseovy abecedy
+             2 - Desifrovani morseovy abecedy
+             3 - Konec''')
 
 
 
 if __name__ == '__main__':
-    volba = int(input("Zadej možnost 1-3: "))
+    volba = int(input('Zadej moznost 1-3: '))
     if volba == 1:
         print(sifrovani())
     elif volba == 2:
         print(desifrovani())
     elif volba == 3:
-        print("ukončení programu")
+        print('Ukonceni programu')
     else: 
-        print("Špatná možnost, opakuj výběr.")
+        print('Spatna moznost, opakuj vyber.')
 else:
   print('Znova')
