@@ -1,4 +1,7 @@
-"""Projekt ČETNOST ZNAKŮ."""
+"""
+Projekt ČETNOST ZNAKŮ.
+Autori:Petr Slavik, Radek Kratochvil
+"""
 
 
 def PocetZnak(vstup):
