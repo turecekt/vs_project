@@ -2,7 +2,7 @@
 
 
 def PocetZnak(vstup):
-    """Informace o celkovém počtu znaků""" 
+    """Informace o celkovém počtu znaků.""" 
     endis = "#"
     if vstup.endswith(endis):
         charStore = {} 
@@ -22,7 +22,7 @@ def PocetZnak(vstup):
         return(0)
 
 def MaxZnak(vstup):
-    """Informace o nejčastějším znaku"""
+    """Informace o nejčastějším znaku."""
     endis = "#"
     if vstup.endswith(endis):
         charStore = {}
@@ -55,7 +55,7 @@ def MaxZnak(vstup):
         return(0)
 
 def MinZnak(vstup):
-    """Informace o nejméně častém znaku"""
+    """Informace o nejméně častém znaku."""
     endis = "#"
     if vstup.endswith(endis):
         charStore = {} 
@@ -89,7 +89,7 @@ def MinZnak(vstup):
         return(0)
 
 def PrumerKazdyZnak(vstup):
-    """Informace o průměrné četnosti"""
+    """Informace o průměrné četnosti."""
     endis = "#"
     if vstup.endswith(endis):
         data = (vstup.replace(" ", "")).upper()
@@ -126,7 +126,7 @@ def PrumerKazdyZnak(vstup):
 #PrumerKazdyZnak(input("File nebo text zakonceny #: "))
 
 def PocetKazdyZnak(vstup):
-    """Informace o četnosti jednotlivých znaků abecedy (bez diakritiky)"""
+    """Informace o četnosti jednotlivých znaků abecedy (bez diakritiky)."""
     endis = "#"
     if vstup.endswith(endis):
         data = (vstup.replace(" ", "")).upper()   
@@ -137,7 +137,7 @@ def PocetKazdyZnak(vstup):
             else:
                 charStore[sChar] = 1    
         return(charStore)
-    elif vstup.endswith('.txt'): #za predpokladu ze je vstup file input .txt
+    elif vstup.endswith('.txt'):
         with open(vstup) as text_file:
                 data = text_file.read().upper().replace(" ", "")
                 valid = data.endswith(endis)
