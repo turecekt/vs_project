@@ -1,1 +1,0 @@
-# Morzeovka Vatterova, Loukota
