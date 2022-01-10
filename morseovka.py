@@ -1,5 +1,5 @@
 # -*- coding: latin-1 -*-
-'''Morseova abeceda'''
+"""Morseova abeceda"""
 
 MORSEOVA_ABECEDA = {
                     ' ': '/', 'A': '.-', 'B': '-...',
@@ -26,7 +26,6 @@ def sifrovani():
     vysledek = ''.join(sifra)
     print(vysledek)
 
-
 def desifrovani():
     """Desifrovani textu z moreovky"""
     textNaDesifrovani = input('Text pro desifrovani z morseovy abecedy: ')
@@ -34,12 +33,11 @@ def desifrovani():
     vysledek = ''.join(desifra)
     print(vysledek)
 
-
 """Vyberove menu"""
-print('''\n Vyber moznost: 
-             1 - Sifrovani do morseovy abecedy
-             2 - Desifrovani morseovy abecedy
-             3 - Konec''')
+print('''Vyber moznost: 
+1 - Sifrovani do morseovy abecedy
+2 - Desifrovani morseovy abecedy
+3 - Konec''')
 
 
 if __name__ == '__main__':
