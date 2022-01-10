@@ -2,6 +2,7 @@
 
 Projekt ČETNOST ZNAKŮ.
 Autori:Petr Slavik, Radek Kratochvil.
+
 """
 
 
