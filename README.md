@@ -1,6 +1,6 @@
 # vs_project
 * Projekt na tema CetnostZnaku
 
-##Autori
+## Autori
 * Per Slavik
 * Radek Kratochvil
