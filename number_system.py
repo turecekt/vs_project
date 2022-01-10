@@ -1,60 +1,36 @@
-from abc import ABC, abstractmethod
+"""Module with number system representations."""
 
-"""
-    Abstract class to custom number systems.
-"""
+from abc import ABC, abstractmethod
 
 
 class NumberSystem(ABC):
+    """Abstract class to number systems."""
 
-    """
-        Abstract method to convert decimal number into number system given class provides.
-    """
     @abstractmethod
     def convert_decimal(self, number):
+        """Abstract method to convert decimal number."""
         pass
 
 
-"""
-    Class representing binary number system.
-"""
-
-
 class BinarySystem(NumberSystem):
-
-    """
-        Method to convert decimal number into binary one.
-    """
+    """Class representing binary number system."""
 
     def convert_decimal(self, number):
+        """Convert decimal number into binary one."""
         return bin(number)
 
 
-"""
-    Class representing octal number system.
-"""
-
-
 class OctalSystem(NumberSystem):
-
-    """
-        Method to convert decimal number into octal one.
-    """
+    """Class representing octal number system."""
 
     def convert_decimal(self, number):
+        """Convert decimal number into octal one."""
         return oct(number)
 
 
-"""
-    Class representing hexadecimal number system.
-"""
-
-
 class HexSystem(NumberSystem):
-
-    """
-        Method to convert decimal number into hex one.
-    """
+    """Class representing hexadecimal number system."""
 
     def convert_decimal(self, number):
+        """Convert decimal number into hex one."""
         return hex(number)
