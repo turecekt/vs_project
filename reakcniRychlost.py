@@ -110,6 +110,11 @@ def evaluation(results, reactTime):
     # time.sleep(1)
     # sys.exit(0)
 
+    
+def user_input():
+    """Get user input, return float."""
+    return float(input('Vysledek:'))
+
 
 def question(a, b, sgn):
     """
@@ -130,7 +135,7 @@ def question(a, b, sgn):
     
     try:
     """If the input is integer, the program executes the 'try' part."""
-        userResult = float(input('Vysledek:'))
+        userResult = user_input()
         t2 = perf_counter()
         reactTime = t2 - t1
         if correct == userResult:
@@ -170,7 +175,7 @@ def myFunction():
         Returns performace result.
     """
         a, b, sgn = random_inputs()
-        results[i], reactTime[i] = question(a, b, sgn
+        results[i], reactTime[i] = question(a, b, sgn)
     # Calculates and prints overall performace evaluation
     evaluation(results, reactTime)
 
