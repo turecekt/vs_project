@@ -132,9 +132,8 @@ def question(a, b, sgn):
     correct = calcOfEquations(a, b, sgn)
     print('\nWhat is ', a, sgn, b, '?')
     t1 = perf_counter()
-    
+    # If the input is integer, the program executes the 'try' part.
     try:
-    """If the input is integer, the program executes the 'try' part."""
         userResult = user_input()
         t2 = perf_counter()
         reactTime = t2 - t1
