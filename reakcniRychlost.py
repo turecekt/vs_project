@@ -156,6 +156,14 @@ def question(a, b, sgn):
 def myFunction():
     """
     Contains Main function.
+    
+    Iterates over n-equations.
+    
+    Generate parts of equation.
+    
+    Asks for equation.
+    
+    Returns performace result.
         
     Main.
     """
@@ -167,12 +175,6 @@ def myFunction():
     reactTime = [0, 0, 0, 0, 0]
     
     for i in range(5):
-    """
-        Iterates over n-equations.
-        Generate parts of equation.
-        Asks for equation.
-        Returns performace result.
-    """
         a, b, sgn = random_inputs()
         results[i], reactTime[i] = question(a, b, sgn)
     # Calculates and prints overall performace evaluation
