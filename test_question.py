@@ -15,7 +15,7 @@ class tests_question(unittest.TestCase):
 
     def test_question_err(self):
         reakcniRychlost.user_input = autoInput
-        with self.assertRaises(TypeError):
+        with self.assertRaises(ValueError):
             reakcniRychlost.question(2, "a", "+")
     
 
