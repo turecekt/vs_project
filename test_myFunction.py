@@ -9,7 +9,7 @@ import unittest
 import reakcniRychlost
 
 
-def myFunction_False(a, b, c):
+def question(a, b, c):
     """Monkeypatch function.
 
     Returns:
@@ -24,8 +24,9 @@ class tests(unittest.TestCase):
 
     def test_myFunction_False(self):
         """Test myFunction with valid values."""
-        reakcniRychlost.question = myFunction_False
+        reakcniRychlost.question = question
         reakcniRychlost.myFunction()
+        del reakcniRychlost.question
 
 
 if __name__ == '__main__':
