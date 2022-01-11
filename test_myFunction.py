@@ -10,7 +10,7 @@ import reakcniRychlost
 
 
 def myFunction_False(a, b, c):
-    """Monkeypatch function
+    """Monkeypatch function.
 
     Returns:
     boolean: Wrong answer indicator.
