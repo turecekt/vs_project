@@ -109,6 +109,7 @@ def evaluation(results, reactTime):
     # time.sleep(1)
     # sys.exit(0)
 
+
 def user_input():
     """Get user input, return float."""
     return float(input('Vysledek:'))
@@ -168,7 +169,7 @@ def myFunction():
     """
     # Prints introductory information
     introduction()
-    # Creation of list with results (1 for correct, 0 for wrong) 
+    # Creation of list with results (1 for correct, 0 for wrong)
     # Initialized with zeros
     results = [0, 0, 0, 0, 0]
     # Creation of list with react times, initialized with zeros
@@ -182,7 +183,7 @@ def myFunction():
 
     # termination()  # Termination of the program
 
-    
+
 if '__main__' == __name__:
 
     myFunction()  # Calling of the main function that has additional functions
