@@ -71,7 +71,7 @@ def calcOfEquations(a, b, sgn):
         correct = a*b
     elif sgn == "/" and b != 0:
         correct = round(a/b, 3)
-        elif sgn == "/" and b == 0:
+    elif sgn == "/" and b == 0:
         raise ZeroDivisionError('Cannot divide by zero!')
     return correct
 
