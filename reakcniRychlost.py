@@ -88,6 +88,8 @@ def evaluation(results, reactTime):
     # time.sleep(1)
     # sys.exit(0)
 
+def user_input():  # Get user input
+    return float(input('Vysledek:'))
 
 def question(a, b, sgn):
     correct = calcOfEquations(a, b, sgn)  # Get correct answer
@@ -96,7 +98,7 @@ def question(a, b, sgn):
     t1 = perf_counter()  # Starting point of performace timer
 
     try:  # if the input is integer, the program executes the 'try' part
-        userResult = float(input('Vysledek:'))  # User inputs his answer
+        userResult = user_input()  # User inputs his answer
         t2 = perf_counter()  # Endpoint of performace timer
         reactTime = t2 - t1  # Calculates reaction time
         if correct == userResult: # Evaluation of user's answers
