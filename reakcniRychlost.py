@@ -89,52 +89,51 @@ def evaluation(results, reactTime):
     # sys.exit(0)
 
 
+def question(a, b, sgn):
+    correct = calcOfEquations(a, b, sgn)  # Get correct answer
+    print('\nWhat is ', a, sgn, b, '?')  # Printout whole equation and ask for answer
+    
+    t1 = perf_counter()  # Starting point of performace timer
+
+    try:  # if the input is integer, the program executes the 'try' part
+        userResult = float(input('Vysledek:'))  # User inputs his answer
+        t2 = perf_counter()  # Endpoint of performace timer
+        reactTime = t2 - t1  # Calculates reaction time
+        if correct == userResult: # Evaluation of user's answers
+            print('Correct')
+            result = True
+        else:
+            print('Wrong')
+            result = False
+        return result, reactTime
+
+    except ValueError:  # Wrong value given
+        t2 = perf_counter()  # Endpoint of performace timer
+        print('Wrong input, sorry, good luck with other equations')
+        reactTime = t2 - t1  # Calculates reaction time
+        result = False  # Result is automatically False/Wrong
+    return result, reactTime
+
 # Main function
 def myFunction():
     """Contains Main function.
 
     Main.
     """
-    introduction()
-    i = 0
+    introduction()  # Prints introductory information
+
     # Creation of list with results (1 for correct, 0 for wrong) initialized with zeros
     results = [0, 0, 0, 0, 0]
     # Creation of list with react times, initialized with zeros
     reactTime = [0, 0, 0, 0, 0]
 
-    while i < 5: # 5 iterations - from 0 to 4 (5 math equations)
-        # Return values from random_inputs() function stored in tuple a,b,sgn
-        a, b, sgn = random_inputs()
+    for i in range(5):  # Iterates over n-equations
+        a, b, sgn = random_inputs()  # Generate parts of equation
+        results[i], reactTime[i] = question(a, b, sgn)  # Asks for equation
+                                                        # Returns performace result
 
-        # Determination of time and results
-        t1 = perf_counter()  # Time - start
-        try:  # if the input is integer, the program executes the 'try' part
-            userResult = float(input('Vysledek:'))  # User inputs his answer
-            t2 = perf_counter()  # Time - end
-            reactTime[i] = t2 - t1  # Duration from start to end
-              
-            correct = calcOfEquations(a, b, sgn)
-            # Result of calcOfEquations function stored in var correct
-            # Ones/zeros are stored in the list results
-            if correct == userResult: # Evaluation of user's answers
-                print('Correct')
-                results[i] = 1
-            else:
-                print('Wrong')
-                results[i] = 0
-        
-        # Chech the correctness of the answers
-        except ValueError: 
-            # If the input is not integer, the 'try' part is not executed, 
-            # sentence below is printed and the result is automatically set to 0
-            print('Wrong input, sorry, good luck with other equations')
-            t2 = perf_counter()  # Time - end
-            reactTime[i] = t2 - t1  # Duration from start to end
-            results[i] = 0  # Result is automatically 0
-
-        i = i + 1  # next iteration
-
-    evaluation(results, reactTime)  # Final evaluation
+    # Calculates and prints overall performace evaluation
+    evaluation(results, reactTime)
 
     # termination()  # Termination of the program
 
