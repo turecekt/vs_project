@@ -112,7 +112,7 @@ def evaluation(results, reactTime):
 
 def user_input():
     """Get user input, return float."""
-    return float(input('Vysledek:'))
+    return input('Vysledek:')
 
 
 def question(a, b, sgn):
@@ -133,7 +133,7 @@ def question(a, b, sgn):
     t1 = perf_counter()
     # If the input is integer, the program executes the 'try' part.
     try:
-        userResult = user_input()
+        userResult = float(user_input())
         t2 = perf_counter()
         reactTime = t2 - t1
         if correct == userResult:
