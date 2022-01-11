@@ -16,9 +16,9 @@ from statistics import mean
 def introduction():
     """
     Script initiation.
-    
+
         Prints information about this script.
-    
+
         Prints countdown.
     """
     print('The program generates 5 easy math tasks.'
@@ -32,17 +32,17 @@ def introduction():
     # Break for 2 - 5 sec.
     time.sleep(random.randint(1, 4))
 
-    
+
 # Generation of random inputs
 def random_inputs():
     """
     Implement random number and sign generators for equations.
-        
+
         Attributes:
             a (int): Random integer from interval -10;10
             b (int): Random integer from interval -10;10
             sgn: Random operator +, -, * or /
-            
+
         Returns:
             a, b, sgn: A mathematical equation
     """
@@ -57,7 +57,7 @@ def random_inputs():
 def calcOfEquations(a, b, sgn):
     """
     Composes an equation according to the generated sign.
-    
+
     Tests for ilegal operations.
 
         Returns:
@@ -79,12 +79,12 @@ def calcOfEquations(a, b, sgn):
 # Final evaluation
 def evaluation(results, reactTime):
     """
-    Calculates the overall success.
-    
+    Calculate the overall success.
+
         Parameters:
             result (int): Result of answers
             reactTime (float): Total reaction time
-            
+
         Return:
             success (float): Calculate percentage of successful answers
             avRate (float): Return the sample arithmetic mean of react time
@@ -99,7 +99,6 @@ def evaluation(results, reactTime):
           ' s \nMean react time is: ', avRate, ' s')
     return success, avRate, reT
 
-
 # Termination
 # def termination():
     """
@@ -110,7 +109,6 @@ def evaluation(results, reactTime):
     # time.sleep(1)
     # sys.exit(0)
 
-    
 def user_input():
     """Get user input, return float."""
     return float(input('Vysledek:'))
@@ -119,12 +117,12 @@ def user_input():
 def question(a, b, sgn):
     """
     Difines answers over time.
-    
+
         Parameters:
             correct (int): Correct value of equation
             t1 (float): Starting point of performace timer
             t2 (float): Endpoint of performace timer
-            
+
         Return:
             result (bool): Evaluation of user's answers
             reactTime (float): Calculates reaction time
@@ -152,28 +150,30 @@ def question(a, b, sgn):
         result = False
     return result, reactTime
 
+
 # Main function
 def myFunction():
     """
     Contains Main function.
-    
+
     Iterates over n-equations.
-    
+
     Generate parts of equation.
-    
+
     Asks for equation.
-    
+
     Returns performace result.
-        
+
     Main.
     """
     # Prints introductory information
     introduction()
-    # Creation of list with results (1 for correct, 0 for wrong) initialized with zeros
+    # Creation of list with results (1 for correct, 0 for wrong) 
+    # Initialized with zeros
     results = [0, 0, 0, 0, 0]
     # Creation of list with react times, initialized with zeros
     reactTime = [0, 0, 0, 0, 0]
-    
+    # Function for evaluation
     for i in range(5):
         a, b, sgn = random_inputs()
         results[i], reactTime[i] = question(a, b, sgn)
@@ -182,6 +182,7 @@ def myFunction():
 
     # termination()  # Termination of the program
 
+    
 if '__main__' == __name__:
 
     myFunction()  # Calling of the main function that has additional functions
