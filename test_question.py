@@ -43,8 +43,7 @@ class tests_question(unittest.TestCase):
     def test_question_err(self):
         """Test error answer handling."""
         reakcniRychlost.user_input = autoInputErr
-        with self.assertRaises(ValueError):
-            reakcniRychlost.question(2, 0, "+")
+        reakcniRychlost.question(2, 0, "+")
 
 
 if __name__ == '__main__':
