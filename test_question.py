@@ -18,6 +18,7 @@ def autoInput():
     """
     return 5
 
+
 def autoInputErr():
     """Monkeypatch function.
 
@@ -26,6 +27,7 @@ def autoInputErr():
     str: Incorect user input.
     """
     return "a"
+
 
 class tests_question(unittest.TestCase):
     """Set of tests for question function."""
