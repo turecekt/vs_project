@@ -24,9 +24,10 @@ class tests(unittest.TestCase):
 
     def test_myFunction_False(self):
         """Test myFunction with valid values."""
+        temp = reakcniRychlost.question
         reakcniRychlost.question = question
         reakcniRychlost.myFunction()
-        del reakcniRychlost.question
+        reakcniRychlost.question = temp
 
 
 if __name__ == '__main__':
