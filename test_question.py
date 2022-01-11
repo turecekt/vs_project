@@ -18,6 +18,14 @@ def autoInput():
     """
     return 5
 
+def autoInputErr():
+    """Monkeypatch function.
+
+    Simulates incorect User input.
+    Returns:
+    str: Incorect user input.
+    """
+    return "a"
 
 class tests_question(unittest.TestCase):
     """Set of tests for question function."""
@@ -34,9 +42,9 @@ class tests_question(unittest.TestCase):
 
     def test_question_err(self):
         """Test error answer handling."""
-        reakcniRychlost.user_input = autoInput
+        reakcniRychlost.user_input = autoInputErr
         with self.assertRaises(ValueError):
-            reakcniRychlost.question(2, "a", "+")
+            reakcniRychlost.question(2, 0, "+")
 
 
 if __name__ == '__main__':
