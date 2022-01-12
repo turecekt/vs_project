@@ -1,23 +1,20 @@
 # -*- coding: latin-1 -*-
 """Morseova abeceda"""
 
-MORSEOVA_ABECEDA = {
-                    ' ': '/', 'A': '.-', 'B': '-...',
-                    'C': '-.-.', 'D': '-..', 'E': '.',
-                    'F': '..-.', 'G': '--.', 'H': '....',
-                    'I': '..', 'J': '.---', 'K': '-.-',
-                    'L': '.-..', 'M': '--', 'N': '-.',
-                    'O': '---', 'P': '.--.', 'Q': '--.-',
-                    'R': '.-.', 'S': '...', 'T': '-',
-                    'U': '..-', 'V': '...-', 'W': '.--',
-                    'X': '-..-', 'Y': '-.--', 'Z': '--..',
-                    '1': '.----', '2': '..---', '3': '...--',
-                    '4': '....-', '5': '.....', '6': '-....',
-                    '7': '--...', '8': '---..', '9': '----.',
-                    '0': '-----', ', ': '--..--', '.': '.-.-.-',
-                    '?': '..--..', '/': '-..-.', '-': '-....-',
-
-                }
+MORSEOVA_ABECEDA = {'A': '.-',  'B': '-...', 'C': '-.-.',
+                   'D': '-..', 'E': '.', 'F': '..-.',
+                   'G': '--.', 'H': '....', 'I': '..',
+                   'J': '.---', 'K': '-.-', 'L': '.-..',
+                   'M': '--', 'N': '-.', 'O': '---',
+                   'P': '.--.', 'Q': '--.-', 'R': '.-.',
+                   'S': '...', 'T': '-', 'U': '..-', 'V': '...-',
+                   'W': '.--', 'X': '-..-', 'Y': '-.--', 'Z': '--..',
+                   '1': '.----', '2': '..---', '3': '...--',
+                   '4': '....-', '5': '.....', '6': '-....',
+                   '7': '--...', '8': '---..', '9': '----.',
+                   '0': '-----', ', ': '--..--', '.': '.-.-.-',
+                   '?': '..--..', '/': '-..-.', '-': '-....-',
+                   '(': '-.--.', ')': '-.--.-'}
 
 def sifrovani():
     """Sifrovani textu do morseovky"""
@@ -39,8 +36,7 @@ print('''Vyber moznost:
 2 - Desifrovani morseovy abecedy
 3 - Konec''')
 
-
-if __name__ == '__main__':
+def main():
     volba = int(input('Zadej moznost 1-3: '))
     if volba == 1:
         print(sifrovani())
@@ -51,6 +47,20 @@ if __name__ == '__main__':
     else: 
         print('Spatna moznost, opakuj vyber.')
 
+if __name__ == '__main__':
+
+    main()
+
+def test_sifrovani1():
+    """Test testujici string o jednom slove."""
+    ocekavanyVysledek = '- . ... -'
+    assert sifrovani
+    ('test') == ocekavanyVysledek
 
 
+def test_sifrovani2():
+    """Test testujici string o vice slovech."""
+    ocekavanyVysledek2 = '--.. -.- --- ..- ... -.- .- / - . ... -..-'
+    assert sifrovani
+    ("zkouska testu") == ocekavanyVysledek2
 
