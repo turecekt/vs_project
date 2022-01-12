@@ -71,6 +71,7 @@ def test_desifrovani1():
     ("- . ... -") == ocekavanyVysledek3
 
 
+
 def test_desifrovani2():
     """Test testujici desifgitrovani stringu o dvou slovech."""
     ocekavanyVysledek4 = "test prosel"
