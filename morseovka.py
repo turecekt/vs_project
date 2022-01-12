@@ -53,27 +53,36 @@ if __name__ == '__main__':
 
 def test_sifrovani1():
     """Test testujici string o jednom slove."""
-    ocekavanyVysledek = '- . ... -'
+    ocekavanyVysledek = "- . ... -"
     assert sifrovani
     ('test') == ocekavanyVysledek
 
-
 def test_sifrovani2():
     """Test testujici string o vice slovech."""
-    ocekavanyVysledek2 = '--.. -.- --- ..- ... -.- .- / - . ... -..-'
+    ocekavanyVysledek2 = "--.. -.- --- ..- ... -.- .- / - . ... -..-"
     assert sifrovani
     ("zkouska testu") == ocekavanyVysledek2
 
+def test_sifrovani3():
+    """Test testujici string o vete."""
+    ocekavanyVysledek3 = "-.. -. . ... -.- .- / .--- . / .--. . -.- -. -.--/ -.. . -."
+    assert sifrovani
+    ("dneska je pekny den") == ocekavanyVysledek3
+
 def test_desifrovani1():
     """Test testujici desifrovani stringu o jednom slove."""
-    ocekavanyVysledek3 = "test"
+    ocekavanyVysledek4 = "test"
     assert desifrovani
-    ("- . ... -") == ocekavanyVysledek3
-
-
+    ("- . ... -") == ocekavanyVysledek4
 
 def test_desifrovani2():
     """Test testujici desifgitrovani stringu o dvou slovech."""
-    ocekavanyVysledek4 = "test prosel"
+    ocekavanyVysledek5 = "test prosel"
     assert desifrovani
-    ("- . ... - / .--. .-. --- ... . .-.. ") == ocekavanyVysledek4
+    ("- . ... - / .--. .-. --- ... . .-.. ") == ocekavanyVysledek5
+
+def test_desifrovani1():
+    """Test testujici desifrovani stringu o vete."""
+    ocekavanyVysledek6 = "budeto urcite fungovat"
+    assert desifrovani
+    ("-... ..- -.. . / ..- .-. -.-. .. - . / ..-. ..- -. --. --- ...- .- -") == ocekavanyVysledek6
