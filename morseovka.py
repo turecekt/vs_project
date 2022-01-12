@@ -36,7 +36,7 @@ print('''Vyber moznost:
 2 - Desifrovani morseovy abecedy''')
 
 def main():
-    volba = int(input('Zadej moznost 1-3: '))
+    volba = int(input('Zadej moznost 1-2: '))
     if volba == 1:
         print(sifrovani())
     elif volba == 2:
@@ -64,6 +64,12 @@ def test_sifrovani3():
     ocekavanyVysledek3 = "-.. -. . ... -.- .- / .--- . / .--. . -.- -. -.--/ -.. . -."
     assert sifrovani
     ("dneska je pekny den") == ocekavanyVysledek3
+
+def test_sifrovani4():
+    """Test testujici cisel."""
+    ocekavanyVysledek5 = "..--- -.... ....-"
+    assert sifrovani
+    ("264") == ocekavanyVysledek5    
 
 def test_desifrovani1():
     """Test testujici desifrovani stringu o jednom slove."""
