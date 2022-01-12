@@ -64,3 +64,15 @@ def test_sifrovani2():
     assert sifrovani
     ("zkouska testu") == ocekavanyVysledek2
 
+def test_desifrovani1():
+    """Test testujici desifrovani stringu o jednom slove."""
+    ocekavanyVysledek3 = "test"
+    assert desifrovani
+    ("- . ... -") == ocekavanyVysledek3
+
+
+def test_desifrovani2():
+    """Test testujici desifrovani stringu o dvou slovech."""
+    ocekavanyVysledek4 = "test prosel"
+    assert desifrovani
+    ("- . ... - / .--. .-. --- ... . .-.. ") == ocekavanyVysledek4
