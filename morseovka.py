@@ -22,7 +22,7 @@ def sifrovani():
     """Sifrovani textu do morseovky."""
     text = input('Text pro sifrovani do morseovy abecedy: ')
     sifra = [MORSEOVA_ABECEDA[i.upper()] + ' ' for i in text if i.upper()
-        in MORSEOVA_ABECEDA.keys()]
+             in MORSEOVA_ABECEDA.keys()]
     vysledek = ''.join(sifra)
     print(vysledek)
 
@@ -31,7 +31,7 @@ def desifrovani():
     """Desifrovani textu z moreovky."""
     textNaDesifrovani = input('Text pro desifrovani z morseovy abecedy: ')
     desifra = [j for i in textNaDesifrovani.split() for j, k
-        in MORSEOVA_ABECEDA.items() if i == k]
+               in MORSEOVA_ABECEDA.items() if i == k]
     vysledek = ''.join(desifra)
     print(vysledek)
 
@@ -82,7 +82,7 @@ def test_sifrovani4():
     """Test testujici cisel."""
     ocekavanyVysledek5 = "..--- -.... ....-"
     assert sifrovani
-    ("264") == ocekavanyVysledek5    
+    ("264") == ocekavanyVysledek5
 
 
 def test_desifrovani1():
@@ -99,8 +99,9 @@ def test_desifrovani2():
     ("- . ... - / .--. .-. --- ... . .-.. ") == ocekavanyVysledek5
 
 
-def test_desifrovani1():
+def test_desifrovani3():
     """Test testujici desifrovani stringu o vete."""
     ocekavanyVysledek6 = "budeto urcite fungovat"
     assert desifrovani
-    ("-... ..- -.. . / ..- .-. -.-. .. - . / ..-. ..- -. --. --- ...- .- -") == ocekavanyVysledek6
+    ("""-... ..- -.. . / ..- .-. -.-. .. - . /
+    ..-. ..- -. --. --- ...- .- -""") == ocekavanyVysledek6
