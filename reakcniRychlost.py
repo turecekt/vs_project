@@ -99,6 +99,7 @@ def evaluation(results, reactTime):
           ' s \nMean react time is: ', avRate, ' s')
     return success, avRate, reT
 
+
 def user_input():
     """Get user input, return float."""
     return input('Vysledek:')
