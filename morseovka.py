@@ -33,8 +33,7 @@ def desifrovani():
 """Vyberove menu"""
 print('''Vyber moznost: 
 1 - Sifrovani do morseovy abecedy
-2 - Desifrovani morseovy abecedy
-3 - Konec''')
+2 - Desifrovani morseovy abecedy''')
 
 def main():
     volba = int(input('Zadej moznost 1-3: '))
@@ -42,8 +41,6 @@ def main():
         print(sifrovani())
     elif volba == 2:
         print(desifrovani())
-    elif volba == 3:
-        print('Ukonceni programu')
 
 
 if __name__ == '__main__':
