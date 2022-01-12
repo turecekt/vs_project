@@ -44,8 +44,7 @@ def main():
         print(desifrovani())
     elif volba == 3:
         print('Ukonceni programu')
-    else: 
-        print('Spatna moznost, opakuj vyber.')
+
 
 if __name__ == '__main__':
 
