@@ -1,32 +1,36 @@
 
-"""Morseova abeceda"""
+"""Morseova abeceda."""
+
 
 MORSEOVA_ABECEDA = {'A': '.-',  'B': '-...', 'C': '-.-.',
-                   'D': '-..', 'E': '.', 'F': '..-.',
-                   'G': '--.', 'H': '....', 'I': '..',
-                   'J': '.---', 'K': '-.-', 'L': '.-..',
-                   'M': '--', 'N': '-.', 'O': '---',
-                   'P': '.--.', 'Q': '--.-', 'R': '.-.',
-                   'S': '...', 'T': '-', 'U': '..-', 'V': '...-',
-                   'W': '.--', 'X': '-..-', 'Y': '-.--', 'Z': '--..',
-                   '1': '.----', '2': '..---', '3': '...--',
-                   '4': '....-', '5': '.....', '6': '-....',
-                   '7': '--...', '8': '---..', '9': '----.',
-                   '0': '-----', ', ': '--..--', '.': '.-.-.-',
-                   '?': '..--..', '/': '-..-.', '-': '-....-',
-                   '(': '-.--.', ')': '-.--.-'}
+                    'D': '-..', 'E': '.', 'F': '..-.',
+                    'G': '--.', 'H': '....', 'I': '..',
+                    'J': '.---', 'K': '-.-', 'L': '.-..',
+                    'M': '--', 'N': '-.', 'O': '---',
+                    'P': '.--.', 'Q': '--.-', 'R': '.-.',
+                    'S': '...', 'T': '-', 'U': '..-', 'V': '...-',
+                    'W': '.--', 'X': '-..-', 'Y': '-.--', 'Z': '--..',
+                    '1': '.----', '2': '..---', '3': '...--',
+                    '4': '....-', '5': '.....', '6': '-....',
+                    '7': '--...', '8': '---..', '9': '----.',
+                    '0': '-----', ', ': '--..--', '.': '.-.-.-',
+                    '?': '..--..', '/': '-..-.', '-': '-....-',
+                    '(': '-.--.', ')': '-.--.-'}
+
 
 def sifrovani():
     """Sifrovani textu do morseovky"""
     text = input('Text pro sifrovani do morseovy abecedy: ')
-    sifra = [MORSEOVA_ABECEDA[i.upper()] + ' ' for i in text if i.upper() in MORSEOVA_ABECEDA.keys()]
+    sifra = [MORSEOVA_ABECEDA[i.upper()] + ' ' for i in text if i.upper() 
+    in MORSEOVA_ABECEDA.keys()]
     vysledek = ''.join(sifra)
     print(vysledek)
 
 def desifrovani():
     """Desifrovani textu z moreovky"""
     textNaDesifrovani = input('Text pro desifrovani z morseovy abecedy: ')
-    desifra = [j for i in textNaDesifrovani.split() for j, k in MORSEOVA_ABECEDA.items() if i == k]
+    desifra = [j for i in textNaDesifrovani.split() for j, k 
+    in MORSEOVA_ABECEDA.items() if i == k]
     vysledek = ''.join(desifra)
     print(vysledek)
 
