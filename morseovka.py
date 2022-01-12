@@ -72,7 +72,7 @@ def test_desifrovani1():
 
 
 def test_desifrovani2():
-    """Test testujici desifrovani stringu o dvou slovech."""
+    """Test testujici desifgitrovani stringu o dvou slovech."""
     ocekavanyVysledek4 = "test prosel"
     assert desifrovani
     ("- . ... - / .--. .-. --- ... . .-.. ") == ocekavanyVysledek4
