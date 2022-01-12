@@ -105,4 +105,3 @@ def test_desifrovani3():
     assert desifrovani
     ("""-... ..- -.. . / ..- .-. -.-. .. - . /
     ..-. ..- -. --. --- ...- .- -""") == ocekavanyVysledek6
-    
