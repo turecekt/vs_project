@@ -99,17 +99,6 @@ def evaluation(results, reactTime):
           ' s \nMean react time is: ', avRate, ' s')
     return success, avRate, reT
 
-# Termination
-# def termination():
-    """
-    After pressing some key, they program will be terminated.
-    """
-    # input('\nDid you enjoy it?')
-    # print('\nThe program will be closed...')
-    # time.sleep(1)
-    # sys.exit(0)
-
-
 def user_input():
     """Get user input, return float."""
     return input('Vysledek:')
@@ -180,8 +169,6 @@ def myFunction():
         results[i], reactTime[i] = question(a, b, sgn)
     # Calculates and prints overall performace evaluation
     evaluation(results, reactTime)
-
-    # termination()  # Termination of the program
 
 
 if '__main__' == __name__:
