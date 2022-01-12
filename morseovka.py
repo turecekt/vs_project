@@ -1,4 +1,4 @@
-# -*- coding: latin-1 -*-
+
 """Morseova abeceda"""
 
 MORSEOVA_ABECEDA = {'A': '.-',  'B': '-...', 'C': '-.-.',
