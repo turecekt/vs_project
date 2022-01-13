@@ -67,13 +67,13 @@ def dekodovani(text): #funkce pro dekodovani
                 kod = ""
     print(normal) #vypis dekodovanz text
 
-print("\n\n\n\t\tMorse Code Generator")
-ch = input("Stiskni E k zakodovani nebo D k Dekodovani : ")
-if ch == 'E' or ch == 'e': #stiskni "e" a muzes zakodovat svoji vetu,slovo nebo pismeno
-    text_k_zakodovani = input("Vlož text k zakodovani : ").upper()
-    zakodovani(text_k_zakodovani)
-else:
-    text_k_dekodovani = input("Vlož text k dekodovani : ") #stiskni jakoukoli jinou klavesu a muzes dekodovat svoji vetu,slovo nebo pismeno
-    dekodovani(text_k_dekodovani)
-
+if __name__ == '__main__':
+    print("\n\n\n\t\tMorse Code Generator")
+    ch = input("Stiskni E k zakodovani nebo D k Dekodovani : ")
+    if ch == 'E' or ch == 'e': #stiskni "e" a muzes zakodovat svoji vetu,slovo nebo pismeno
+        text_k_zakodovani = input("Vlož text k zakodovani : ").upper()
+        zakodovani(text_k_zakodovani)
+    else:
+        text_k_dekodovani = input("Vlož text k dekodovani : ") #stiskni jakoukoli jinou klavesu a muzes dekodovat svoji vetu,slovo nebo pismeno
+        dekodovani(text_k_dekodovani)
 
