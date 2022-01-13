@@ -1,6 +1,6 @@
 """Base App class to run this application."""
 
-from number_system import BinarySystem, OctalSystem, HexSystem
+from .number_system import BinarySystem, OctalSystem, HexSystem
 
 
 class App:
