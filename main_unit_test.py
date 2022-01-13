@@ -3,9 +3,6 @@ from main import *
 
 
 class MyTestCase(unittest.TestCase):
-    def test_if_valid_input_in_celkovypocetznakuzadany_returns_valid_value(self):
-        text =[]
-        self.assertEqual(celkovypocetznakuzadany(text), 4)
 
     def test_if_valid_input_in_nejcastejsiznak_returns_valid_value(self):
         text = "aaaabbbccdefgh"
