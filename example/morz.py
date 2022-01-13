@@ -1,21 +1,23 @@
-#Definice Morzeovy abecedy
-Slovnik =          {'A':'.-', 'B':'-...',
-                    'C':'-.-.', 'D':'-..', 'E':'.',
-                    'F':'..-.', 'G':'--.', 'H':'....',
-                    'I':'..', 'J':'.---', 'K':'-.-',
-                    'L':'.-..', 'M':'--', 'N':'-.',
-                    'O':'---', 'P':'.--.', 'Q':'--.-',
-                    'R':'.-.', 'S':'...', 'T':'-',
-                    'U':'..-', 'V':'...-', 'W':'.--',
-                    'X':'-..-', 'Y':'-.--', 'Z':'--..',
-                    ', ':'--..--', '.':'.-.-.-',
-                    '?':'..--..', '/':'-..-.', '-':'-....-',
-                    '(':'-.--.', ')':'-.--.-', '0':'-----',
-                    '1':'.----', '2':'..---', '3':'...--',
-                    '4':'....-','5':'.....', '6':'-....',
-                    '7':'--...', '8':'---..', '9':'----.'}
+# Definice Morzeovy abecedy
+Slovnik = {'A': '.-', 'B': '-...',
+           'C': '-.-.', 'D': '-..', 'E': '.',
+           'F': '..-.', 'G': '--.', 'H': '....',
+           'I': '..', 'J': '.---', 'K': '-.-',
+           'L': '.-..', 'M': '--', 'N': '-.',
+           'O': '---', 'P': '.--.', 'Q': '--.-',
+           'R': '.-.', 'S': '...', 'T': '-',
+           'U': '..-', 'V': '...-', 'W': '.--',
+           'X': '-..-', 'Y': '-.--', 'Z': '--..',
+           ', ': '--..--', '.': '.-.-.-',
+           '?': '..--..', '/': '-..-.', '-': '-....-',
+           '(': '-.--.', ')': '-.--.-', '0': '-----',
+           '1': '.----', '2': '..---', '3': '...--',
+           '4': '....-', '5': '.....', '6': '-....',
+           '7': '--...', '8': '---..', '9': '----.'}
 
-#Funkce ktera zakoduje zpravu psanou v latince do morzeovy abecedy
+# Funkce ktera zakoduje zpravu psanou v latince do morzeovy abecedy
+
+
 def kod(zprava):
     sifra = ''
     for letter in zprava:
@@ -23,49 +25,55 @@ def kod(zprava):
             sifra += Slovnik[letter] + ' '
         else:
             sifra += ' '
- 
     return sifra
- 
 
-#Funkce ktera rozlusti zpravu psanou v morzeove abecede do latinky
+# Funkce ktera rozlusti zpravu psanou v morzeove abecede do latinky
+
+
 def dekod(zprava):
-    
+
     zprava += ' '
- 
+
     rozsifra = ''
     jedenznak = ''
     for letter in zprava:
 
         if (letter != ' '):
- 
+
             i = 0
 
             jedenznak += letter
- 
+
         else:
             i += 1
- 
-            if i == 2 :
- 
+
+            if i == 2:
+
                 rozsifra += ' '
             else:
- 
-                rozsifra += list(Slovnik.keys())[list(Slovnik
-                .values()).index(jedenznak)]
+
+                rozsifra += list(Slovnik.keys())[list(Slovnik.values())
+                                                 .index(jedenznak)]
                 jedenznak = ''
- 
+
     return rozsifra
- 
-#Main, kde program pozna zdali je zadana zprava psana v morzeove abecede ci latince a spusti spravny kod na prevedeni do druhe abecedy
+
+
+"""Main, kde program pozna zdali je zadana zprava psana v morzeove abecede
+ci latince a spusti spravny kod na prevedeni do druhe abecedy"""
+
+
 def main():
     zprava = "AHOJ SVETE."
     if ('.' in zprava[0:1] or '-' in zprava[0:1]):
         vyslednazprava = dekod(zprava)
     else:
         vyslednazprava = kod(zprava.upper())
-        
-    print (vyslednazprava)
 
-#Spusti main
+    print(vyslednazprava)
+
+# Spusti main
+
+
 if __name__ == '__main__':
     main()
