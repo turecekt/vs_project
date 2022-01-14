@@ -50,3 +50,9 @@ class Testy(unittest.TestCase):
         Zde se testuje správnost kodu
         """
         assert num2roman(1) == 'I'
+        assert num2roman(5) == 'V'
+        assert num2roman(50) == 'L'
+        assert num2roman(2) == 'II'
+        assert num2roman(3) == 'III'
+        assert num2roman(4) == 'IV'
+        assert num2roman(10) == 'X'
