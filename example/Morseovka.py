@@ -21,9 +21,9 @@ def encrypt(vstup):
 
     Return string in morse code
     >>> encrypt('A')
-    .-
+    '.-'
     >>> encrypt('7') == '--... '
-    True.
+    True
     """
     vystup = ''
 
@@ -47,9 +47,9 @@ def decrypt(vstup):
 
     Return string text
     >>> decrypt('.-')
-    A
+    'A'
     >>> decrypt('--...') == '7 '
-    True.
+    True
     """
     vstup += ' '
     vystup = ''
@@ -78,7 +78,7 @@ def decrypt(vstup):
 # test_encrypt()
 def test_enc():
     """Test funkce encrypt."""
-    assert encrypt('A') == '.- '
+    assert encrypt('A') == '.-'
 
 
 test_enc()
@@ -99,13 +99,11 @@ def main():
 
     if x == "k":
         k = input("Zadaj text na preklad do morzeovky: \n")
-        k = k.upper()
-        print(encrypt(k))
+        print(encrypt(k.upper()))
 
     elif x == "d":
         d = input("Zadaj morzeovku na preklad na text: \n")
-        d = d.upper()
-        print(decrypt(d))
+        print(encrypt(d.upper()))
 
     else:
         print("Zadaj K alebo D!")
