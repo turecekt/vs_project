@@ -1,3 +1,8 @@
+"""
+Autori Petr Loukota a Natalie Vatterova.
+"""
+
+
 TEXT_DO_MORS = {'A': '.-',
                 'B': '-...',
                 'C': '-.-.',
