@@ -23,4 +23,4 @@ jobs:
         pytest --doctest-modules --cov=. --cov-fail-under=66 *
     - name: Lint with flake8
       run: |
-        flake8 .
+        flake8
