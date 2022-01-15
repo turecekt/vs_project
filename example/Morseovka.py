@@ -30,10 +30,10 @@ def encrypt(vstup):
     for letter in vstup:
 
         if letter in dict:
-            vystup += dict[letter] + ' '
+            vystup += dict[letter] + ''
 
-        elif letter == ' ':
-            vystup += ' '
+        elif letter == '':
+            vystup += ''
 
         else:
             # necharakterizovaný znak
@@ -66,7 +66,7 @@ def decrypt(vstup):
             i += 1
 
             if i == 2:
-                vystup += ' '
+                vystup += ''
 
             else:
                 vystup += list(dict.keys())[list(dict.values()).index(citext)]
