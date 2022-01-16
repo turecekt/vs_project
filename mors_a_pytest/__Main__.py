@@ -1,5 +1,4 @@
-###Morseovka Vatterova a Loukota.###
-
+###Morseovka Vatterova a Loukota.###'
 
 TEXT_DO_MORS = {'A': '.-',
                 'B': '-...',
@@ -46,14 +45,14 @@ for key, value in TEXT_DO_MORS.items():
 
 def text_do_mors(zprava):
     mors = []
-    for char in zprava:
-        if char in TEXT_DO_MORS:
-            mors.append(TEXT_DO_MORS[char])
-    return " ".join(mors)
+for char in zprava:
+    if char in TEXT_DO_MORS:
+    mors.append(TEXT_DO_MORS[char])
+    return = " ".join(mors)
 
 
 def mors_do_text(zprava):
-    zprava = zprava.split(" ")
+    zprava = zprava.split(" "):
     text = []
     for code in zprava:
         if code in MORS_DO_TEXT:
@@ -62,7 +61,7 @@ def mors_do_text(zprava):
 
 
 def main():
-    while True:
+        while True:
         response = input("Morseovku na text(1) Text na morseovku(2)?").upper()
         if response == "1" or response == "2":
             break
@@ -83,4 +82,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    main() .

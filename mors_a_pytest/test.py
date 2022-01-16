@@ -1,8 +1,10 @@
-###Unit testy.###
-import unittest
+###Unit testy..###
+import __Main__
+
+from mors_a_pytest.__Main__ import MORS_DO_TEXT
 
 
-class RunMorseTest(unittest.TestCase):
+class Pytest(unittest.TestCase):
 
     def TEXT_DO_MORS(self):
         """ Test Kodovani jednoducheho textu. """
@@ -14,7 +16,7 @@ class RunMorseTest(unittest.TestCase):
         """ Test Kodovani chybnych znaku. """
 """ Unit testy """
 
-from lib2to3.pgen2.literals import test
+from __Main__ import test
 import unittest
 
 
