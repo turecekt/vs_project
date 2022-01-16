@@ -1,6 +1,4 @@
-"""
-Autori Petr Loukota a Natalie Vatterova.
-"""
+"""Autori Petr Loukota a Natalie Vatterova."""
 
 
 TEXT_DO_MORS = {'A': '.-',
@@ -41,11 +39,13 @@ TEXT_DO_MORS = {'A': '.-',
                 '9': '----.'}
 
 
+"""Text."""
 MORS_DO_TEXT = {}
 for key, value in TEXT_DO_MORS.items():
     MORS_DO_TEXT[value] = key
 
 
+"""Text."""
 def text_do_mors(zprava):
     mors = []
     for char in zprava:
@@ -54,6 +54,7 @@ def text_do_mors(zprava):
     return " ".join(mors)
 
 
+"""Text."""
 def mors_do_text(zprava):
     zprava = zprava.split(" ")
     text = []
@@ -63,6 +64,7 @@ def mors_do_text(zprava):
     return " ".join(text)
 
 
+"""Text."""
 def main():
     while True:
         response = input("Morseovku na text(1) Text na morseovku(2)?").upper()
@@ -75,6 +77,7 @@ def main():
         text = mors_do_text(mors)
         print("Text prevedeny z morseovky je:  ")
         print(text)
+
 
     elif response == "2":
         print("Napište text: ")
