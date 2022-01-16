@@ -2,6 +2,7 @@ from Main import text_do_mors, mors_do_text, main
 
 pole = "priklad"
 
+
 def test_main_chec_text_do_mors():
     text_do_mors(pole)
 
