@@ -1,7 +1,7 @@
 """Autori Petr Loukota a Natalie Vatterova."""
 
 
-TEXT_DO_MORS = {'A': '.-',
+text_do_mors = {'A': '.-',
                 'B': '-...',
                 'C': '-.-.',
                 'D': '-..',
@@ -83,7 +83,7 @@ def main():
         print("Napište text: ")
         text = input("").upper()
         mors = text_do_mors(text)
-        print("Morseovka prevedena z textu je:  ")
+        print(" Morseovka prevedena z textu je:  ".)
         print(mors)
 
 
