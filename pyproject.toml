@@ -26,16 +26,12 @@ source = [
 ]
 omit = [
     "./speed_of_reaction_alt/__main__.py",
+    "./speed_of_reaction/__main__.py",
 ]
 
-[tool.coverage.paths]
-source = [
-    "./speed_of_reaction_alt/",
-    "./speed_of_reaction/",
-]
 
 [tool.coverage.report]
-fail_under = 100
+fail_under = 90
 skip_covered = false
 show_missing = true
 
@@ -138,6 +134,7 @@ pytest-cov = "^3.0.0"
 mypy = "^0.910"
 black = "^21.12b0"
 isort = "^5.10.1"
+pytest-mock = "^3.6.1"
 
 [build-system]
 requires = ["poetry>=1.0.0"]
