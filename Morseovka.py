@@ -115,8 +115,7 @@ def main():
         while not all(c in PovoleneZnaky for c in zprava) or zprava[0] != '"':
             print('\nVstup obsahuje nepovolené znaky,'
                   'nebo není v úvozovkách')
-            print('Zkuste zadat vstup znovu:')
-            zprava = input()
+            zprava = input('Zkuste zadat vstup znovu:')
             zprava = zprava.upper()
 
         print('\nVstup je v pořádku')
