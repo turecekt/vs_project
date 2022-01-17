@@ -72,12 +72,46 @@ def myArgParser(args):
     """
     """
     this had to be because python (more like unix) doesnt
-    take double dash as a string but it expects something to go after ...
-    so I had to check for it """
+    take anything that starts wit dash as a string but
+    it expects something to go after so I had to check for it """
 
     args = sys.argv[1]
     if args == '--':
         sys.exit("M")
+    elif args == '---':
+        sys.exit("O")
+    elif args == '--.':
+        sys.exit("G")
+    elif args == '----':
+        sys.exit("CH")
+    elif args == '--.-':
+        sys.exit("Q")
+    elif args == '-...':
+        sys.exit("B")
+    elif args == '-.-.':
+        sys.exit("C")
+    elif args == '-..':
+        sys.exit("D")
+    elif args == '-.-':
+        sys.exit("K")
+    elif args == '-.':
+        sys.exit("N")
+    elif args == '-..-':
+        sys.exit("X")
+    elif args == '-.--':
+        sys.exit("Y")
+    elif args == '--..':
+        sys.exit("Z")
+    elif args == '--...':
+        sys.exit("7")
+    elif args == '-....':
+        sys.exit("6")
+    elif args == '---..':
+        sys.exit("8")
+    elif args == '----.':
+        sys.exit("9")
+    elif args == '-----':
+        sys.exit("0")
     else:
         msg = "type in string consist of morse code or alphanumeric characters"
         hlp = 'a string to decode/Ncode from/to morse code'
