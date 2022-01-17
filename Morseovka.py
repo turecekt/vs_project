@@ -109,8 +109,7 @@ def main():
     while True:
 
         print('\nVstup musí být v úvozovkách a bez diakritiky')
-        print('Zadejte vstup:')
-        zprava = input()
+        zprava = input('Zadejte vstup:')
         zprava = zprava.upper()
 
         while not all(c in PovoleneZnaky for c in zprava) or zprava[0] != '"':
