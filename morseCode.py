@@ -20,47 +20,6 @@ import argparse
 import re
 import sys
 
-# global morse code to check alphnum
-letter_a = ".-"
-letter_b = "-..."
-letter_c = "-.-."
-letter_d = "-.."
-letter_e = "."
-letter_f = "..-."
-letter_g = "--."
-letter_h = "...."
-letter_ch = "----"
-letter_i = ".."
-letter_j = ".---"
-letter_k = "-.-"
-letter_l = ".-.."
-letter_m = "--"
-letter_n = "-."
-letter_o = "---"
-letter_p = ".--."
-letter_q = "--.-"
-letter_r = ".-."
-letter_s = "..."
-letter_t = "-"
-letter_v = "...-"
-letter_u = "..-"
-letter_w = ".--"
-letter_x = "-..-"
-letter_y = "-.--"
-letter_z = "--.."
-number_0 = "-----"
-number_1 = ".----"
-number_2 = "..---"
-number_3 = "...--"
-number_4 = "....-"
-number_5 = "....."
-number_6 = "-...."
-number_7 = "--..."
-number_8 = "---.."
-number_9 = "----."
-space = "....----"
-separator = "----...."
-
 # AlphNum list of Morse code
 MORSE_ALPNUM = {
                     'A': '.-', 'B': '-...',
@@ -96,16 +55,6 @@ def split_to_letters(my_string):
         - list of separated characters
     """
     return list(my_string)
-
-
-# used to go through
-morseAlphNum = [letter_a, letter_b, letter_c, letter_d, letter_e, letter_f,
-                letter_g, letter_h, letter_ch, letter_i, letter_j, letter_k,
-                letter_l, letter_m, letter_n, letter_o, letter_p, letter_q,
-                letter_r, letter_s, letter_t, letter_v, letter_u, letter_w,
-                letter_x, letter_y, letter_z, number_0, number_1, number_2,
-                number_3, number_4, number_5, number_6, number_7, number_8,
-                number_9, space, separator]
 
 
 def myArgParser(args):
@@ -219,7 +168,7 @@ def morseDecode(len_splitString, len_string, splitString, st):
             sys.exit("please do not end with separators")
 
     for j in range(len_splitString):
-        if splitString[j] not in morseAlphNum:
+        if splitString[j] not in MORSE_ALPNUM.values():
             sys.exit("please fill in right morse code")
         else:
             my_index = list(MORSE_ALPNUM.values()).index(splitString[j])
@@ -298,13 +247,6 @@ if __name__ == '__main__':
 """
 unit tests begin here
 """
-
-
-def testParser():
-    parser = myArgParser("hello")
-    assert(parser == myArgParser(sys.argv[1]))
-    parser = myArgParser("---")
-    assert(parser == myArgParser(sys.argv[1]))
 
 
 def testSplitToLetters():
