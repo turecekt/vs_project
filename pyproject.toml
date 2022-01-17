@@ -24,7 +24,9 @@ source = [
     "./speed_of_reaction_alt/",
     "./speed_of_reaction/",
 ]
-omit = []
+omit = [
+    "./speed_of_reaction_alt/__main__.py",
+]
 
 [tool.coverage.paths]
 source = [
@@ -134,6 +136,8 @@ pdbpp = "^0.10.3"
 pytest = "^6.2.5"
 pytest-cov = "^3.0.0"
 mypy = "^0.910"
+black = "^21.12b0"
+isort = "^5.10.1"
 
 [build-system]
 requires = ["poetry>=1.0.0"]
