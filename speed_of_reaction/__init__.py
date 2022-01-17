@@ -1,5 +1,6 @@
-import time
 import random
+import time
+
 
 """
 Checks if the product of the division is a decimal number.
@@ -51,7 +52,9 @@ operations = ["+", "-", "*", "/"]  # Possible operations
 correct = 0  # Couter of correct answers
 elapsed_time = 0  # elapsed time couter
 
-print("Solve 5 examples. Use . in decimal numbers, round to two decimal places.")
+print(
+    "Solve 5 examples. Use . in decimal numbers, round to two decimal places."
+)
 
 for x in range(5):
 
@@ -66,7 +69,7 @@ for x in range(5):
 
     if b < 0:
         b_string = (
-                "(" + str(b) + ")"
+            "(" + str(b) + ")"
         )  # it is a convension to display a negative number in brackets e.g. 4+(-3)
     else:
         b_string = b  # no need for brackets in case of a positive number

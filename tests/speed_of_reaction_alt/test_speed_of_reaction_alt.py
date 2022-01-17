@@ -8,9 +8,9 @@ import speed_of_reaction_alt
 
 from speed_of_reaction_alt import (
     RAND_RANGE,
-    evaluate_results,
     ask_a_question,
     evaluate_answer,
+    evaluate_results,
     generate_question,
     interact_with_user,
     main,
@@ -46,7 +46,7 @@ def test_main(monkeypatch, capsys):
     # test that the needed report was generated
     assert (
         capsys.readouterr().out
-        == "Success rate is: 0\nFor 5 tasks you've spent 0 sec.\n"
+        == f"Success rate is: 0\nFor {speed_of_reaction_alt.NUMBER_OF_EXAMPLES} tasks you've spent 0 sec.\n"
     )
 
 
@@ -174,14 +174,16 @@ def test_interact_with_the_user(
     expected_result,
     expected_exception,
 ):
-    get_result = lambda: interact_with_user(
-        q=question,
-        type_converter=type_converter,
-        exp_answer_to_continue=exp_answer_to_continue,
-        exp_answer_to_quit=exp_answer_to_quit,
-        number_of_trials=number_of_trials,
-        unvalidated_answer=unvalidated_answer,
-    )
+    def get_result():
+        return interact_with_user(
+            q=question,
+            type_converter=type_converter,
+            exp_answer_to_continue=exp_answer_to_continue,
+            exp_answer_to_quit=exp_answer_to_quit,
+            number_of_trials=number_of_trials,
+            unvalidated_answer=unvalidated_answer,
+        )
+
     if expected_exception:
         with pytest.raises(expected_exception):
             get_result()
@@ -234,7 +236,9 @@ def test_generate_question_0_div(monkeypatch):
 def test_evaluate_answer(
     monkeypatch, question, answer, expected, expected_err
 ):
-    get_actual = lambda: evaluate_answer(question, answer)
+    def get_actual():
+        return evaluate_answer(question, answer)
+
     if expected_err:
         with pytest.raises(expected_err):
             get_actual()
@@ -271,7 +275,9 @@ def test_ask_a_question(monkeypatch, question, answer, expected):
     ),
 )
 def test_evaluate_results(monkeypatch, results, time, expected, expected_err):
-    get_actual = lambda: evaluate_results(results, time)
+    def get_actual():
+        return evaluate_results(results, time)
+
     if expected_err:
         with pytest.raises(expected_err):
             get_actual()
