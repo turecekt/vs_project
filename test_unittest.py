@@ -22,6 +22,13 @@ def test_mors_do_text1():
     ("S O S") == mors1
 
 
+def test_mors_do_text2():
+    """Zakodovanie slova AHOJ test."""
+    mors1 = ".- .... --- .---"
+    assert mors_do_text
+    ("S O S") == mors1
+
+
 def test_text_do_mors1():
     """Dekodovanie SOS."""
     text1 = "S O S"
