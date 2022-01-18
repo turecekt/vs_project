@@ -1,4 +1,4 @@
-import unittest
+import Morse.py
 from main import kodovat, dekodovat
 
 class Unittest_morseovka(unittest.TestCase):
