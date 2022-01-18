@@ -1,4 +1,3 @@
-
 """
 Morseovka.
 
@@ -55,11 +54,7 @@ List = {
 
 
 def Kodovat(text):
-    """
-    Funkce přiřazuje z kolekce písmen danné znaky.
-    Do funkce je vložena podmínka v případě, kdy v textu bude
-    mezera.
-    """
+    """Funkce dekoduje textový řetezec do morseovky."""
     Ktext = ""
     for pismena in text:
         """Pokud není mezera"""
@@ -73,7 +68,7 @@ def Kodovat(text):
 
 
 def Dekodovat(text):
-    """Funkce přiřazuje hodnoty z kolekce do písmen"""
+    """Funkce dekoduje morseovy text do textového řetezce."""
     text += " "
     """Proměnné je přiřazen klíč"""
     Klic = list(List.keys())
@@ -101,9 +96,7 @@ def Dekodovat(text):
 
 
 def main():
-    """Do proměnné Ktext vložíme text, který chceme kódovat,
-     do proměnné Detext vložíme znaky Morseovy abecedy,
-    zavoláním funkcí, program vypíše výsledky."""
+    """"""
     Ktext = "Neandertalec"
     Detext = "-. . .- -. -.. . .-. - .- .-.. . -.-."
     """Proměnná výsledek překládá na velké písmena"""
@@ -116,20 +109,16 @@ def main():
 if __name__ == '__main__':
     main()
 
-def test_Kodovat():
 
+def test_Kodovat():
     """
     testováni převodu textového řetezce do morseovky.
     """
-
     assert Kodovat("FLAKE8") == "..-. .-.. .- -.- . ---.. "
 
 
-
 def test_Dekodovat():
-
     """
     Testování převodu morseova kodu do textového řetezce.
     """
-
     assert Dekodovat("..-. .-.. .- -.- . ---..") == "FLAKE8"
