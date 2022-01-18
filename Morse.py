@@ -57,6 +57,7 @@ List = {
 def Kodovat(text):
     """
     Funkce přiřazuje z kolekce písmen danné znaky.
+
     Do funkce je vložena podmínka v případě, kdy v textu bude
     mezera.
     """
@@ -100,9 +101,13 @@ def Dekodovat(text):
 
 
 def main():
-    """Do proměnné Ktext vložíme text, který chceme kódovat,
-     do proměnné Detext vložíme znaky Morseovy abecedy,
-    zavoláním funkcí, program vypíše výsledky."""
+    """Funkce pro vložení překládaného textu.
+
+    Do proměnné Ktext vložime text,
+    který chceme přeložit do morseovky.
+    Do proměnné Detext vložíme znaky morseovky,
+    které chceme přeložit do textu
+    """
     Ktext = "Neandertalec"
     Detext = "-. . .- -. -.. . .-. - .- .-.. . -.-."
     """Proměnná výsledek překládá na velké písmena"""
@@ -114,6 +119,7 @@ def main():
 
 if __name__ == '__main__':
     main()
+
 
 def test_Kodovat():
     """
