@@ -120,7 +120,7 @@ def test_Kodovat():
     textovy řetězec do šifrovaného textu.
     """
 
-    assert (Kodovat("FLAKE8")) == "..-. .-.. .- -.- . ---.."
+    assert(Kodovat("FLAKE8")) == "..-. .-.. .- -.- . ---.."
 
 
 
@@ -131,4 +131,4 @@ def test_Dekodovat():
     šifrovaný text do textového řetězce.
     """
 
-    assert (Dekodovat("..-. .-.. .- -.- . ---..")) == "FLAKE8"
+    assert(Dekodovat("..-. .-.. .- -.- . ---..")) == "FLAKE8"
