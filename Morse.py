@@ -122,7 +122,7 @@ def test_Kodovat():
     testováni převodu textového řetezce do morseovky.
     """
 
-    assert Kodovat("FLAKE8") == "..-. .-.. .- -.- . ---.."
+    assert Kodovat("FLAKE8") == "..-. .-.. .- -.- . ---.. "
 
 
 
