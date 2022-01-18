@@ -1,3 +1,4 @@
+
 """
 Morseovka.
 
@@ -96,7 +97,7 @@ def Dekodovat(text):
 
 
 def main():
-    """"""
+    """Funkce main pro vlozeni textového řetezce a morseova kodu."""
     Ktext = "Neandertalec"
     Detext = "-. . .- -. -.. . .-. - .- .-.. . -.-."
     """Proměnná výsledek překládá na velké písmena"""
@@ -111,14 +112,10 @@ if __name__ == '__main__':
 
 
 def test_Kodovat():
-    """
-    testováni převodu textového řetezce do morseovky.
-    """
+    """testováni převodu textového řetezce do morseovky."""
     assert Kodovat("FLAKE8") == "..-. .-.. .- -.- . ---.. "
 
 
 def test_Dekodovat():
-    """
-    Testování převodu morseova kodu do textového řetezce.
-    """
+    """Testování převodu morseova kodu do textového řetezce."""
     assert Dekodovat("..-. .-.. .- -.- . ---..") == "FLAKE8"
