@@ -1,7 +1,10 @@
+
 """
+Morseovka.
+
 Tenhle kolekce nám umožňuje pracovat s písmeny,
- číslicemi a několik unikátních znaků,
- které pomocí funkcí lze kódovat a dekódovat.
+číslicemi a několik unikátních znaků,
+které pomocí funkcí lze kódovat a dekódovat.
 Písmena v kolekci mají hodnotu key, znaky value.
 """
 List = {
@@ -114,14 +117,11 @@ if __name__ == '__main__':
     main()
 
 def test_Kodovat():
-
     """
     Prvni test kontroluje, zda opravdu funkce Kodovat převádí
     textovy řetězec do šifrovaného textu.
     """
-
-    assert Kodovat("FLAKE8") == "..-. .-.. .- -.- . ---.. "
-
+    assert Kodovat("FLAKE8") == "..-. .-.. .- -.- . ---.."
 
 
 def test_Dekodovat():
