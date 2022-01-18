@@ -5,126 +5,130 @@ Tenhle kolekce nám umožňuje pracovat s písmeny,
 Písmena v kolekci mají hodnotu key, znaky value.
 """
 List = {
-         'A':'.-',
-         'B':'-...',
-         'C':'-.-.',
-         'D':'-..',
-         'E':'.',
-         'F':'..-.',
-         'G':'--.',
-         'H':'....',
-         'I':'..',
-         'J':'.---',
-         'K':'-.-',
-         'L':'.-..',
-         'M':'--',
-         'N':'-.',
-         'O':'---',
-         'P':'.--.',
-         'Q':'--.-',
-         'R':'.-.',
-         'S':'...',
-         'T':'-',
-         'U':'..-',
-         'V':'...-',
-         'W':'.--',
-         'X':'-..-',
-         'Y':'-.--',
-         'Z':'--..',
-         '1':'.----',
-         '2':'..---',
-         '3':'...--',
-         '4':'....-',
-         '5':'.....',
-         '6':'-....',
-         '7':'--...',
-         '8':'---..',
-         '9':'----.',
-         '0':'-----',
-         ', ':'--..--',
-         '.':'.-.-.-',
-         '?':'..--..',
-         '/':'-..-.',
-         '-':'-....-',
-         '(':'-.--.',
-         ')':'-.--.-'
+         'A': '.-',
+         'B': '-...',
+         'C': '-.-.',
+         'D': '-..',
+         'E': '.',
+         'F': '..-.',
+         'G': '--.',
+         'H': '....',
+         'I': '..',
+         'J': '.---',
+         'K': '-.-',
+         'L': '.-..',
+         'M': '--',
+         'N': '-.',
+         'O': '---',
+         'P': '.--.',
+         'Q': '--.-',
+         'R': '.-.',
+         'S': '...',
+         'T': '-',
+         'U': '..-',
+         'V': '...-',
+         'W': '.--',
+         'X': '-..-',
+         'Y': '-.--',
+         'Z': '--..',
+         '1': '.----',
+         '2': '..---',
+         '3': '...--',
+         '4': '....-',
+         '5': '.....',
+         '6': '-....',
+         '7': '--...',
+         '8': '---..',
+         '9': '----.',
+         '0': '-----',
+         ', ': '--..--',
+         '.': '.-.-.-',
+         '?': '..--..',
+         '/': '-..-.',
+         '-': '-....-',
+         '(': '-.--.',
+         ')': '-.--.-'
          }
 
 
-def kodovat(text):
-    """    Funkce přiřazuje z kolekce písmen danné znaky.
+def Kodovat(text):
+    """
+    Funkce přiřazuje z kolekce písmen danné znaky.
     Do funkce je vložena podmínka v případě, kdy v textu bude
     mezera.
     """
-    ktext = ''
-    for pismeno in text:
-        if pismeno != ' ':
-            ktext += List[pismeno] + ' '
+    Ktext = ""
+    for pismena in text:
+        """Pokud není mezera"""
+        if text != " ":
+            Ktext = Ktext + List.get(pismena) + " "
+            """Pokud mezera je"""
         else:
-            ktext += ' '
+            Ktext += " "
+    return Ktext
+    print(Ktext)
 
-    return ktext
 
-
-def dekodovat(text):
+def Dekodovat(text):
     """Funkce přiřazuje hodnoty z kolekce do písmen"""
-    text += ' '
-    dtext = ''
-    citext = ''
-    for letter in text:
-        if (letter != ' '):
+    text += " "
+    """Proměnné je přiřazen klíč"""
+    Klic = list(List.keys())
+    """Proměnné je přiřazena hodnota"""
+    Hodnota = list(List.values())
+    m = ""
+    """Výsledná proměnná"""
+    Ntext = ""
+    for pismena in text:
+        if pismena != " ":
+            m += pismena
+            """Proměnná počítá mezery"""
             i = 0
-            citext += letter
         else:
             i += 1
+            """Nové písmeno"""
             if i == 2:
-                dtext += ' '
+                """Přidání mezery"""
+                Ntext += " "
             else:
-                dtext += list(List.keys())[list(
-                    List.values()).index(citext)]
-                citext = ''
-               
-    return dtext
+                Ntext = Ntext + Klic[Hodnota.index(m)]
+                m = ""
+    return Ntext
+    print(Ntext)
+
+
+def main():
+    """Do proměnné Ktext vložíme text, který chceme kódovat,
+     do proměnné Detext vložíme znaky Morseovy abecedy,
+    zavoláním funkcí, program vypíše výsledky."""
+    Ktext = "Neandertalec"
+    Detext = "-. . .- -. -.. . .-. - .- .-.. . -.-."
+    """Proměnná výsledek překládá na velké písmena"""
+    Vysledek = Kodovat(Ktext.upper())
+    DVysledek = Dekodovat(Detext)
+    print(Vysledek)
+    print(DVysledek)
+
 
 if __name__ == '__main__':
-    """Funkce, ktera umoznuje vybrat typ prevodu."""
+    main()
 
-    vyber = input("stiskni '1' pro kodovani textu"
-                  ", stiskni '2' pro dekodovani textu: ")
-    if vyber == "1":
-        message = input("Zadej text, ktery chceš přeložit do morseovky: ")
-        result = kodovat(message.upper())
-        print(result)
-    if vyber == "2":
-        message = input("Zadej morseový kod, ktery chceš přeložit do textu: ")
-        result = dekodovat(message.upper())
-        print(result)
+def test_Kodovat():
 
-        class Unittest_morseovka(unittest.TestCase):
-    """Trida pro spusteni unit testu."""
+    """
+    Prvni test kontroluje, zda opravdu funkce Kodovat převádí
+    textovy řetězec do šifrovaného textu.
+    """
 
-    def test_kodovat_pismeno(self):
-        """Test pro převod písmena na kod."""
-        self.assertEqual(kodovat("A"), ".- ")
+    assert Kodovat("FLAKE8") == "..-. .-.. .- -.- . ---.."
 
-    def test_kodovat_veta(self):
-        """Test pro převodu vety do morseovky"""
-        self.assertEqual(kodovat(
-            "MORSEOVKA"), "-- --- .-. ... . --- ...- -.- .- ")
 
-    def test_kodovat_cislo(self):
-        """Test pro převod číslic do morseovky."""
-        self.assertEqual(kodovat(
-            "1234567890"), ".---- ..--- ...-- ....- ....."
-            " -.... --... ---.. ----. ----- ")
 
-    def test_dekodovat_pismeno(self):
-        """Test pro morseovky na pismeno."""
-        self.assertEqual(dekodovat("-.--"), "Y")
+def test_Dekodovat():
 
-    def test_dekodovat_text(self):
-        """Test pro převod morseovky do textové věty."""
-        self.assertEqual(dekodovat(
-            ".--. .-. . ...- --- -..  -. .-  ... .-.."
-            " --- ...- ---  --..  -.- --- -.. ..-"),
-            "PREVOD NA SLOVO Z KODU")
+    """
+    Druhá test kontroluje, zda funkce Dekodovat převádí
+    šifrovaný text do textového řetězce.
+    """
+
+    assert Dekodovat("..-. .-.. .- -.- . ---..") == "FLAKE8"
