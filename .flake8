@@ -1,6 +1,12 @@
 [flake8]
 ban-relative-imports = true
-extend-ignore = E501
+extend-ignore =
+    E501,
+    D104,
+    D401,
+    D103,
+    D100,
+    D202,
 inline-quotes = double
 max-complexity = 15
 multiline-quotes = double
