@@ -18,6 +18,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install flake8 flake8-docstrings pytest pytest-cov
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        if [ -f pyproject.toml ]; then pip install .; fi
     - name: Test with pytest
       run: |
         pytest --doctest-modules --cov=. --cov-fail-under=66 *
