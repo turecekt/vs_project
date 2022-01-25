@@ -23,5 +23,8 @@ class MyTestCase(unittest.TestCase):
         text = ["a", "a", "a", "a", "b", "b", "b", "c", "c", "d", "e", "f", "g", "h"]
         self.assertEqual((unique(text)), ["a", "b", "c", "d", "e", "f", "g", "h"])
 
+    def text_if_valid_input_in_vyskytznaku_return_valid_value(self):
+        self.assertEqual(vyskytznaku(["a", "a", "a", "h"]), ["3", "3", "3", "1"])
+
 if __name__ == '__main__':
     unittest.main()
