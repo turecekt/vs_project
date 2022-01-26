@@ -79,7 +79,7 @@ if __name__ == '__main__':
         
 #test zakodovani textu
 def test_zakodovani():
-    assert zakodovani('".-"') == "A"
+    assert zakodovani('".-"') == 'A'
 
 #test dekodovani textu
 def test_dekodovani():
