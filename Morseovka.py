@@ -79,11 +79,11 @@ if __name__ == '__main__':
         
 #test zakodovani textu
 def test_zakodovani():
-    assert zakodovani('.-', '....', '---', '.---') == 'AHOJ'
+    assert zakodovani('.-', '....', '---', '.---') == "AHOJ"
 
 #test dekodovani textu
 def test_dekodovani():
-    assert dekodovani('AHOJ') == '.-' '....' '---' '.---'
+    assert dekodovani("AHOJ") == '.-' '....' '---' '.---'
 
 if __name__ == '__main__':
     unittest.main()
