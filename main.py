@@ -26,21 +26,35 @@ def sest(x):
     return hex(x)[2:].upper()
 
 
+def prevod(vyber, x):
+    """Vyber soustavy a overeni platnosti.
+
+    Podle zadane hodnoty zvoli soustavu, overi zda-li je cislo
+    vetsi nebo rovno nez nula a pote provede danou funkci
+    """
+    if vyber == 1 and x >= 0:  # Rozhoduje podle vstupu vyber
+        return f'Prevod do 2 soustavy je: {dva(x)}'
+    elif vyber == 2 and x >= 0:
+        return f'Prevod do 8 soustavy je: {osm(x)}'
+    elif vyber == 3 and x >= 0:
+        return f'Prevod do 16 soustavy je: {sest(x)}'
+    else:  # Pokud neni cislo = 1, 2 nebo 3
+        return 'Tato moznost neexistuje'
+
+
 if __name__ == '__main__':
     print('Prekladac z desitkove soustavy'
           '\nVyber si do jake soustavy chces prekladat: ')
     print('1) Dvojkova\n2) Osmickova\n3) Sestnactkova')
     vyber = int(input('Vyber: '))
     x = int(input('Zadej cislo: '))
+    prevod(vyber, x)
+    print(prevod(vyber, x))
 
-    if vyber == 1 and x >= 0:  # Rozhoduje podle vstupu vyber
-        print('Prevod do 2 soustavy je: ', dva(x))
-    elif vyber == 2 and x >= 0:
-        print('Prevod do 8 soustavy je: ', osm(x))
-    elif vyber == 3 and x >= 0:
-        print('Prevod do 16 soustavy je: ', sest(x))
-    else:  # Pokud neni cislo = 1, 2 nebo 3
-        print('Tato moznost neexistuje')
+
+def test_prevod():
+    """Test funkce prevod()."""
+    assert prevod(3, 20) == 'Prevod do 16 soustavy je: 14'
 
 
 def test_dva():
