@@ -77,11 +77,14 @@ if __name__ == '__main__':
         text_k_dekodovani = input("Vlož text k dekodovani : ") #stiskni jakoukoli jinou klavesu a muzes dekodovat svoji vetu,slovo nebo pismeno
         dekodovani(text_k_dekodovani)
         
-class Test_testmorse(unittest.TestCase):
-    #test zakodovani textu
-    def test_zakodovani():
-        assert zakodovani('.-', '....', '---', '.---') == 'AHOJ'
-    #test dekodovani textu
-    def test_dekodovani():
-        assert dekodovani('AHOJ') == '.-' '....' '---' '.---'
+#test zakodovani textu
+def test_zakodovani():
+    assert zakodovani('.-', '....', '---', '.---') == 'AHOJ'
+
+#test dekodovani textu
+def test_dekodovani():
+    assert dekodovani('AHOJ') == '.-' '....' '---' '.---'
+
+if __name__ == '__main__':
+    unittest.main()
 
