@@ -83,7 +83,7 @@ def test_zakodovani():
 
 #test dekodovani textu
 def test_dekodovani():
-    assert dekodovani("AHOJ") == '.-' '....' '---' '.---'
+    assert dekodovani('"AHOJ"') == '.-' '....' '---' '.---'
 
 if __name__ == '__main__':
     unittest.main()
