@@ -1,5 +1,5 @@
 import unittest
-from Morseovka import MORSE_CODE_DICT, zakodovani, dekodovani
+import Morseovka
 
 class Test_testmorse(unittest.TestCase):
     #test zakodovani textu
