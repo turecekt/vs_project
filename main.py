@@ -48,8 +48,8 @@ if __name__ == '__main__':
     print('1) Dvojkova\n2) Osmickova\n3) Sestnactkova')
     vyber = int(input('Vyber: '))
     x = int(input('Zadej cislo: '))
-    prevod(vyber, x)
-    print(prevod(vyber, x))
+    vystup = prevod(vyber, x)
+    print(vystup)
 
 
 def test_prevod():
