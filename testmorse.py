@@ -1,18 +1,19 @@
 import unittest
+from Morseovka import MORSE_CODE_DICT, zakodovani, dekodovani
 
 class Test_testmorse(unittest.TestCase):
     #test zakodovani textu
     def test_zakodovani(self):
-        assert Morseovka.zakodovani('.-', '....', '---', '.---') == AHOJ
+        self.Morseovka.zakodovani('.-', '....', '---', '.---') == AHOJ
     #test dekodovani textu
     def test_dekodovani(self):
-        assert Morseovka.dekodovani(AHOJ) == '.-' '....' '---' '.---'
+        self.Morseovka.dekodovani(AHOJ) == '.-' '....' '---' '.---'
     #test zakodovani prazdneho vstupu
     def test_zakodovani01(self):
-        assert Morseovka.zakodovani("") == ""
+        self.Morseovka.zakodovani("") == ""
     #test dekodovani prazdneho vstupu
     def test_dekodovani01(self):
-        assert Morseovka.dekodovani("") == ""
+        self.Morseovka.dekodovani("") == ""
 
 if __name__ == '__main__':
     unittest.main()
