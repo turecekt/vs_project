@@ -76,52 +76,25 @@ def myArgParser(args):
     it expects something to go after so I had to check for it """
 
     args = sys.argv[1]
-    if args == '--':
-        sys.exit("M")
-    elif args == '---':
-        sys.exit("O")
-    elif args == '--.':
-        sys.exit("G")
-    elif args == '----':
-        sys.exit("CH")
-    elif args == '--.-':
-        sys.exit("Q")
-    elif args == '-...':
-        sys.exit("B")
-    elif args == '-.-.':
-        sys.exit("C")
-    elif args == '-..':
-        sys.exit("D")
-    elif args == '-.-':
-        sys.exit("K")
-    elif args == '-.':
-        sys.exit("N")
-    elif args == '-..-':
-        sys.exit("X")
-    elif args == '-.--':
-        sys.exit("Y")
-    elif args == '--..':
-        sys.exit("Z")
-    elif args == '--...':
-        sys.exit("7")
-    elif args == '-....':
-        sys.exit("6")
-    elif args == '---..':
-        sys.exit("8")
-    elif args == '----.':
-        sys.exit("9")
-    elif args == '-----':
-        sys.exit("0")
-    else:
-        msg = "type in string consist of morse code or alphanumeric characters"
-        hlp = 'a string to decode/Ncode from/to morse code'
-        parser = argparse.ArgumentParser(description=msg)
-        parser.add_argument('MorseStr', metavar='String', type=str, help=hlp)
+    if args.startswith("-"):
+        if(" " not in args and "|" not in args) and args != "-h":
+            if args in MORSE_ALPNUM.values():
+                my_index = list(MORSE_ALPNUM.values()).index(args)
+                message = list(MORSE_ALPNUM.keys())[my_index]
+                sys.exit(message)
+            else:
+                sys.exit("please enter right morse code")
+        elif("|" in args):
+            return args
+
+    msg = "type in string consist of morse code or alphanumeric characters"
+    hlp = 'a string to decode/Ncode from/to morse code'
+    parser = argparse.ArgumentParser(description=msg)
+    parser.add_argument('MorseStr', metavar='String', type=str, help=hlp)
 
     st = parser.parse_args()
 
     errorObj = re.search(r'[^a-zA-Z0-9 \-\.\|]', st.MorseStr, re.I)
-
     if errorObj:
         sys.exit("please type in right characters")
 
