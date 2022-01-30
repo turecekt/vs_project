@@ -1,6 +1,4 @@
-"""
-
-this is module to Ncode alphabet messages to morse code and vice versa
+"""This is module to Ncode alphabet messages to morse code and vice versa.
 
 module contains "asserts" alphanum chars
 as morse code strings also my added separators codes
@@ -46,8 +44,7 @@ MORSE_ALPNUM = {
 
 
 def split_to_letters(my_string):
-    """
-    function split_to_letters returns list of characters from string
+    """Functon split_to_letters returns list using argument my_string.
 
     Args:
         -my_string - Input string
@@ -58,12 +55,12 @@ def split_to_letters(my_string):
 
 
 def myArgParser(args):
-    """
-    function myArgParser returns obj with
-    parsed argument (which should be string)
+    """Functon myArgParser returns obj using argument args.
+
+    Obj with parsed argument (which should be string)
     also checks if the string contains valid characters
     (alphanumeric chars, dots, dashes, verticals[as separators])
-    takes argument from command line
+    takes argument from command line.
 
     Args:
         -args - Command line argument
@@ -71,9 +68,9 @@ def myArgParser(args):
         - st.MorseStr - input string
     """
     """
-    this had to be because python (more like unix) doesnt
+    This had to be because python (more like unix) doesnt
     take anything that starts wit dash as a string but
-    it expects something to go after so I had to check for it """
+    it expects something to go after so I had to check for it. """
 
     args = sys.argv[1]
     if args.startswith("-"):
@@ -102,11 +99,11 @@ def myArgParser(args):
 
 
 def checkConditions(st):
-    """
-    function checkConditions returns lengths of string
-    which is already stripped to characters without separators and
-    string with separators
-    also returns string which is stripped
+    """Functon checkConditions returns lengths of string st.
+
+    st is already stripped to characters without separators and
+    string with separators.
+    Returns string which is stripped
     it checks if is used only whitespaces or verticals
     and also if you want to only Ncode or Decode ...
     you cant do both at the same time
@@ -149,10 +146,9 @@ def checkConditions(st):
 
 
 def morseDecode(len_splitString, len_string, splitString, st):
-    """
-    function morseDecode returns printed Decoded message from morse code
-    it goes through the string and checks if
+    """Functon morseDecode returns printed Decoded message from morse code.
 
+    it goes through the string and checks if
     you start or end with separators (not valid)
     also it checks if you use valid morse code which is written above
     Args:
@@ -165,7 +161,6 @@ def morseDecode(len_splitString, len_string, splitString, st):
         - message - returns the decoded message
 
     """
-
     letters = split_to_letters(st)
     message = ""
     for i in range(len_string):
@@ -188,8 +183,8 @@ def morseDecode(len_splitString, len_string, splitString, st):
 
 
 def morseNcode(len_splitString, len_basic_string, st):
-    """
-    function morseNcode ncodes the alphabet message
+    """Functon morseNcode ncodes the alphabet message.
+
     to the morse code it uses verticals as separators
     also it goes through the string and checks if you
     start or end with separators
@@ -205,7 +200,6 @@ def morseNcode(len_splitString, len_basic_string, st):
         -ncode_message - morse coded message
 
     """
-
     st = st.upper()
     subStr = split_to_letters(st)
     ncode_message = ""
@@ -225,9 +219,10 @@ def morseNcode(len_splitString, len_basic_string, st):
 
 
 def main():
-    """ Main function where the program
-    runs and all the functions are called"""
+    """Functon main runs the program.
 
+    And all the functions are called
+    """
     default_arg = sys.argv[0:]
     if default_arg == ['morseCode.py']:
         sys.exit("please fill in string argument type -h for help")
@@ -257,17 +252,29 @@ unit tests begin here
 
 
 def testSplitToLetters():
+    """Functon testSplitToLetters runs test.
+
+    It tests the first function split_to_letters
+    """
     assert split_to_letters("....") == ['.', '.', '.', '.']
     assert split_to_letters("aaaa") == ['a', 'a', 'a', 'a']
 
 
 def testCheckConditions():
+    """Functon testCheckConditions runs test.
+
+    It tests the second function checkConditions
+    """
     value = (4, 12, ['....', '....----', '....----', '....'])
     assert(checkConditions("ahoj H") == (2, 6, ['ahoj', 'H']))
     assert(checkConditions("....    ....") == value)
 
 
 def testMorseDecode():
+    """Functon testMorseDecode runs test.
+
+    It tests the function morseDecode
+    """
     teStr = ".... ...."
     num_substring, basic_str_len, splitString = checkConditions(teStr)
     asStr = morseDecode(num_substring, basic_str_len, splitString, teStr)
@@ -281,6 +288,10 @@ def testMorseDecode():
 
 
 def testMorseNcode():
+    """Functon testMorseNcode runs test.
+
+    It tests the function morseNcode
+    """
     value = "....|.|.-..|.-..|---"
     num_substring, basic_str_len, splitString = checkConditions("hello")
     assert(morseNcode(num_substring, basic_str_len, "hello") == value)
