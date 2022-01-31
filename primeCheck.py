@@ -1,23 +1,15 @@
-"""
-Defined methods.
-"""
-
-import sys
+"""Defined methods."""
 
 
-"""
-Get input.
-"""
 def getInput(input):
+    """Get input."""
     # Wait for user input
     # inputArgument = input("Enter number to check if its a prime... ")
     return start(input)
 
-"""
-Start.
-"""
+
 def start(inputArgument):
-	
+    """Start."""
     # If input is 'exit', exit program
     if (inputArgument == ''):
         print("Not valid input")
@@ -32,10 +24,10 @@ def start(inputArgument):
         number = int(inputArgument)
         if (number < 100):
             if (number > 1):
-                # for each number till my number    
+                # for each number till my number
                 for i in range(2, number):
                     # if mod is 0 -> no rest, number is divisible -> not prime
-                    if (number % i) == 0:    
+                    if (number % i) == 0:
                         return isNotPrimeAndRepeat(number, "Deterministic")
                 # if mod is always different from 0 -> prime
                 return isPrimeAndRepeat(number, "Deterministic")
@@ -47,30 +39,25 @@ def start(inputArgument):
             # +1 process every/last/root number
             for i in range(2, int(number ** (0.5)) + 1):
                 # if mod is 0 -> no rest, number is divisible -> not prime
-                if (number % i) == 0:    
+                if (number % i) == 0:
                     return isNotPrimeAndRepeat(number, "Heuristic")
             return isPrimeAndRepeat(number, "Heuristic")
 
 
-"""
-Is prime answer.
-"""
 def isPrimeAndRepeat(number, approach):
+    """Is prime answer."""
     print(number, "is a prime number.", approach, "approach.")
     return 'PRIME'
 
 
-"""
-Is not prime answer.
-"""
 def isNotPrimeAndRepeat(number, approach):
+    """Is not prime answer."""
     print(number, "is not a prime number.", approach, "approach.")
     return 'NOT PRIME'
 
-"""
-Check if number is an integer.
-"""
+
 def isInteger(input):
+    """Check if number is an integer."""
     try:
         int(input)
         return True
