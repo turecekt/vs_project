@@ -5,8 +5,8 @@ import unittest
 from unittest.mock import patch
 
 
-"""Tests."""
 class Test(unittest.TestCase):
+    """Tests."""
 
     @patch('builtins.print')
     def test_isPrime(self, mock_print):
@@ -15,7 +15,8 @@ class Test(unittest.TestCase):
         approach = 'Deterministic'
         primeCheck.isPrimeAndRepeat(number, approach)
         mock_print.assert_called_with(number,
-        "is a prime number.", approach, "approach.")
+                                      "is a prime number.",
+                                      approach, "approach.")
 
     @patch('builtins.print')
     def test_isNotPrime(self, mock_print):
@@ -24,7 +25,8 @@ class Test(unittest.TestCase):
         approach = 'Deterministic'
         primeCheck.isNotPrimeAndRepeat(number, approach)
         mock_print.assert_called_with(number,
-        "is not a prime number.", approach, "approach.")
+                                      "is not a prime number.",
+                                      approach, "approach.")
 
     def test_isInteger(self):
         """Check method isInteger."""
@@ -56,4 +58,4 @@ class Test(unittest.TestCase):
 
 
 if __name__ == '__main__':
-        unittest.main()
+    unittest.main()
