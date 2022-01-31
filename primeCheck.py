@@ -4,8 +4,8 @@ import sys
 
 def getInput():
 	#Wait for user input
-	inputArgument = input()
-	return start(inputArgument);
+	#inputArgument = input()
+	return start(7);
 
 
 def start(inputArgument):
