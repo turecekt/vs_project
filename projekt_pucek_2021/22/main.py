@@ -1,9 +1,9 @@
 # Třída obsahující metody pro převody
 class Prevod:
-    # Metoda pro převod z arabských čísel na římská
     def __init__(self):
         pass
 
+    # Metoda pro převod z arabských čísel na římská
     @staticmethod
     def narim(nrcislo):
         if 4000 > nrcislo > 0:
@@ -93,7 +93,9 @@ if __name__ == "__main__":
         # Cyklus, při kterém běží input do doby,
         # než uživatel zadá validní hodnotu
         while rim < 1 or rim > 3999:
-            rimZad = input("Zadej římské: ")
+            # rimZad = input("Zadej římské: ")
+            rimZad = "MMXI"
+            print(str("Zadej římské: ") + str(rimZad))
             x = rimZad.isnumeric()
 
             # Obsahuje-li římské zadání číslo, jedná se o chybu
@@ -118,7 +120,9 @@ if __name__ == "__main__":
 
         # Cyklus, který běží po dobu, dokud není správně zadané číslo
         while arZad < 1 or arZad > 3999:
-            arZad = str(input("Zadej arabské: "))
+            # arZad = str(input("Zadej arabské: "))
+            arZad = "312"
+            print(str("Zadej arabské: ") + str(arZad))
             x = arZad.isnumeric()
 
             # Kontrola, jestli bylo správně zadáno číslo v zadání
@@ -142,7 +146,9 @@ if __name__ == "__main__":
                 # Zápis hodnoty, aby při špatném zadání neskončil cyklus
 
         # Ukončovací dialog programu
-        zadani = input("Přejete si ukončit program? (A/N)\n")
+        # zadani = input("Přejete si ukončit program? (A/N)\n")
+        zadani = "A"
+        print(str("Přejete si ukončit program? (A/N)\n") + str(zadani))
 
         # Podmínka pro not-case-sensitive zadání pro ukončení
         if zadani.isupper():
