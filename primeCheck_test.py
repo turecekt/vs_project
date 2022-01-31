@@ -5,8 +5,8 @@ import unittest
 from unittest.mock import patch
 
 
-class Test(unittest.TestCase):
 """Tests."""
+class Test(unittest.TestCase):
 
     @patch('builtins.print')
     def test_isPrime(self, mock_print):
