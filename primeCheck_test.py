@@ -6,15 +6,16 @@ from unittest.mock import patch
 
 
 class Test(unittest.TestCase):
+"""Tests."""
 
     @patch('builtins.print')
     def test_isPrime(self, mock_print):
         """Check method isPrime."""
-        number = 7;
+        number = 7
         approach = 'Deterministic'
         primeCheck.isPrimeAndRepeat(number, approach)
-        mock_print.assert_called_with(number, 
-        	"is a prime number.", approach, "approach.")
+        mock_print.assert_called_with(number,
+        "is a prime number.", approach, "approach.")
 
     @patch('builtins.print')
     def test_isNotPrime(self, mock_print):
@@ -22,8 +23,8 @@ class Test(unittest.TestCase):
         number = 8
         approach = 'Deterministic'
         primeCheck.isNotPrimeAndRepeat(number, approach)
-        mock_print.assert_called_with(number, 
-        	"is not a prime number.", approach, "approach.")
+        mock_print.assert_called_with(number,
+        "is not a prime number.", approach, "approach.")
 
     def test_isInteger(self):
         """Check method isInteger."""
@@ -52,6 +53,7 @@ class Test(unittest.TestCase):
         """Check if input is zero."""
         primeCheck.start(0)
         mock_print.assert_called_with('0 is not a valid input')
+
 
 if __name__ == '__main__':
         unittest.main()
