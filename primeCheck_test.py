@@ -28,7 +28,7 @@ class Test(unittest.TestCase):
 
   """Check method isNotInteger"""
   def test_isNotInteger(self):
-	self.assertEqual(primeCheck.isInteger('AA'), False)
+    self.assertEqual(primeCheck.isInteger('AA'), False)
 
   """Check program with input 7"""
   def test_prime(self):
