@@ -4,7 +4,7 @@ import sys
 
 def getInput():
 	#Wait for user input
-	inputArgument = input("Enter number to check if its a prime... ")
+	inputArgument = input()
 	return start(inputArgument);
 
 
