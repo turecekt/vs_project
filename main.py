@@ -1,6 +1,5 @@
-"""
-Run program.
-"""
+"""Run program."""
+
 
 import primeCheck
 
