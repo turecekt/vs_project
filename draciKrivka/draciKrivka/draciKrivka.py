@@ -94,12 +94,13 @@ def nastav_prostredi():
     turtle.pendown()
 
 
-parametry()
-nastav_prostredi()
-nbp()
-nbpo()
+if __name__ == '__main__':
+    parametry()
+    nastav_prostredi()
+    nbp()
+    nbpo()
 
-# zavolani funkce Krivka
-Krivka(vrat_cislo(iterace), delka, uhel)
+    # zavolani funkce Krivka
+    Krivka(vrat_cislo(iterace), delka, uhel)
 
-turtle.done()
+    turtle.done()
