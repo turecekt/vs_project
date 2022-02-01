@@ -9,15 +9,14 @@ print('Seznam dostupnych barev: blue, green, red, cyan, megenta, yellow, white, 
 
 # vyzve uzivatele pro zadani parametru
 """Nastaveni parametru."""
+
+iterace = input('Zadejte pocet iteraci: ')
+barvaPera = input('Zadejte barvu pera: ')
+barvaPozadi = input('Zadejte barvu pozadi: ')
+
 def parametry():
-    global iterace
-    global barvaPera
-    global barvaPozadi
     global delka
     global uhel
-    iterace = input('Zadejte pocet iteraci: ')
-    barvaPera = input('Zadejte barvu pera: ')
-    barvaPozadi = input('Zadejte barvu pozadi: ')
     delka = 2
     uhel = 90
 
@@ -99,8 +98,6 @@ if __name__ == '__main__':
     nastav_prostredi()
     nbp()
     nbpo()
-
     # zavolani funkce Krivka
     Krivka(vrat_cislo(iterace), delka, uhel)
-
     turtle.done()
