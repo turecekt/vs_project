@@ -1,9 +1,9 @@
 # Třída obsahující metody pro převody
 class Prevod:
+    # Metoda pro převod z arabských čísel na římská
     def __init__(self):
         pass
 
-    # Metoda pro převod z arabských čísel na římská
     @staticmethod
     def narim(nrcislo):
         if 4000 > nrcislo > 0:
@@ -70,13 +70,15 @@ class Prevod:
 
         # Je-li odeslána prázdná hodnota římského čísla, program zahlásí chybu
         else:
-            "Chybně zadané číslo."
+            print("Chybně zadané číslo.")
             return 0
 
 
-# Testovací příkazy, je možné přehlédnout..
-# print(Prevod().narim(3999))
-# print(Prevod().naar("MMMCMXCIX"))
+def test_prevod():
+    """Testovací příkazy."""
+    assert Prevod().narim(3999) == "MMMCMXCIX"
+    assert Prevod().naar("MMMCMXCIX") == 3999
+
 
 if __name__ == "__main__":
     # Deklarace proměnné typu string,
