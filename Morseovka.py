@@ -42,7 +42,7 @@ def zakodovani(text): #funkce pro zakodovani
     zakodovany_text = "" #zakodovany text = string
     for pismena in text: 
         if pismena != " ": #kontrola mista
-            zakodovany_text = zakodovany_text + MORSE_CODE_DICT.get(pismena) + " " #vyhleda slovnik a prida odpovidajici znak + mezeru
+            zakodovany_text = zakodovany_text + MORSE_CODE_DICT.get(pismena)#vyhleda slovnik a prida odpovidajici znak + mezeru
         else:
             zakododvany_text += " " #pridani mezery
     print(zakodovany_text) #vypis zakodovany text
@@ -79,11 +79,11 @@ if __name__ == '__main__':
         
 #test zakodovani textu
 def test_zakodovani():
-    assert zakodovani('".-"') == 'A'
+    assert zakodovani('.-') == 'A'
 
 #test dekodovani textu
 def test_dekodovani():
-    assert dekodovani('"A"') == '.-'
+    assert dekodovani('A') == '.-'
 
 if __name__ == '__main__':
     unittest.main()
