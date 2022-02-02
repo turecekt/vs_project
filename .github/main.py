@@ -1,9 +1,9 @@
 def unique(pole_znaku):
     """
     Vrací pouze unikátní prvky pole.
+
     :param pole_znaku:
     """
-
     vystup = []
     for x in pole_znaku:
         if x not in vystup:
@@ -13,11 +13,11 @@ def unique(pole_znaku):
 
 def celkovypocetznakuzadany(znaky):
     """
-    Vrací celkový počet znaků ze zadaného textu
+    Vrací celkový počet znaků ze zadaného textu \
     a zároveň naplňuje pole znaky, což jsou všechny zadané znaky.
+
     :param znaky:
     """
-
     while True:
         print("Zadejte text")
         slova = input()
@@ -35,11 +35,11 @@ def celkovypocetznakuzadany(znaky):
 
 def celkovypocetznakuzesouboru(znaky):
     """
-      Vrací celkový počet znaků z textového souboru
+      Vrací celkový počet znaků z textového souboru \
     a zároveň naplňuje pole znaky, což jsou všechny zadané znaky.
+
     :param znaky:
     """
-
     slova = open("Text.txt").read()
     slova = slova.lower()
     for znak in slova:
@@ -50,11 +50,11 @@ def celkovypocetznakuzesouboru(znaky):
 
 def vyskytznaku(znaky):
     """
-    Vrací pole čísel, které reprezenztuje
-    počet výskytů každého znaku z textu
+    Vrací pole čísel, které reprezenztuje \
+    počet výskytů každého znaku z textu.
+
     :param znaky:
     """
-
     pocty_znaku = []
     for znak1 in znaky:
         nejcastejsi_znak = znak1
@@ -72,10 +72,10 @@ def vyskytznaku(znaky):
 
 def nejcastejsiznak(znaky):
     """
-    Vrací pole nejčastějších znaků v textu
+    Vrací pole nejčastějších znaků v textu.
+
     :param znaky:
     """
-
     pocty_znaku = vyskytznaku(znaky)
     nejcastejsi_pocet = max(pocty_znaku)
     nejcastejsi_znaky = []
@@ -89,10 +89,10 @@ def nejcastejsiznak(znaky):
 
 def nejmenecastyznak(znaky):
     """
-    Vrací pole nejméně častých znaků z textu
+    Vrací pole nejméně častých znaků z textu.
+
     :param znaky:
     """
-
     pocty_znaku = vyskytznaku(znaky)
     nejmene_casty_pocet = min(pocty_znaku)
     nejmene_caste_znaky = []
@@ -106,21 +106,21 @@ def nejmenecastyznak(znaky):
 
 def prumernacetnostznaku(znaky):
     """
-    Vrací průměrnou četnost z textu.
-    (součet všech četností/součet všech znaků)
+    Vrací průměrnou četnost z textu \
+    (součet všech četností/součet všech znaků).
+
     :param znaky:
     """
-
     return sum(vyskytznaku(znaky)) / len(vyskytznaku(znaky))
 
 
 def cetnostznakuabecedy(znaky):
     """
-    Vrací pole abecedy. Ke každému písmenu v abecedě
+    Vrací pole abecedy. Ke každému písmenu v abecedě \
     je přiřazeno, kolikrát se vyskytuje v textu.
+
     :param znaky:
     """
-
     abeceda = ['a', 'b', 'c', 'd', 'e', 'f',
                'g', 'h', 'i', 'j', 'k', 'l',
                'm', 'n', 'o', 'p', 'q', 'r',
@@ -146,7 +146,8 @@ if __name__ == '__main__':
     vsechny_znaky = []
 
     while True:
-        print("Chcete četnost z textového souboru nebo zadat text zde? text/zde ")
+        print("Chcete četnost z textového souboru nebo "
+              "zadat text zde? text/zde ")
         volba = input()
         if volba == "text":
             print(celkovypocetznakuzesouboru(vsechny_znaky))
