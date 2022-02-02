@@ -1,9 +1,9 @@
 # Třída obsahující metody pro převody
 class Prevod:
-    # Metoda pro převod z arabských čísel na římská
     def __init__(self):
         pass
 
+    # Metoda pro převod z arabských čísel na římská
     @staticmethod
     def narim(nrcislo):
         if 4000 > nrcislo > 0:
@@ -74,35 +74,31 @@ class Prevod:
             return 0
 
 
-def test_prevod():
-    """Testovací příkazy."""
-    assert Prevod().narim(3999) == "MMMCMXCIX"
-    assert Prevod().naar("MMMCMXCIX") == 3999
-
-
 if __name__ == "__main__":
     # Deklarace proměnné typu string,
     # která následně určuje, jestli se má program ukončit
     zadani = " "
+    c = 0
 
     # Cyklus, při kterém program běží, dokud
     # není na konci zadáno A pro ukončení
     while zadani != 'a':
-        rimZad = ""
+        rimZad = "15"
         arZad = 0
         rim = 0
+        d = 0
 
         # Cyklus, při kterém běží input do doby,
         # než uživatel zadá validní hodnotu
         while rim < 1 or rim > 3999:
             # rimZad = input("Zadej římské: ")
-            rimZad = "MMXI"
             print(str("Zadej římské: ") + str(rimZad))
             x = rimZad.isnumeric()
 
             # Obsahuje-li římské zadání číslo, jedná se o chybu
             if x == 1:
                 print("Nezadal jsi římské číslo.")
+                rimZad = "MMMMM"
 
             # Pokud je vše zadáno správně, program pokračuje dál
             else:
@@ -119,16 +115,21 @@ if __name__ == "__main__":
                 # pro platnost, program zahlásí chybu
                 else:
                     print("Chybné zadání.")
+                    rimZad = "MMMDCCCLXXXVIII"
 
         # Cyklus, který běží po dobu, dokud není správně zadané číslo
         while arZad < 1 or arZad > 3999:
             # arZad = str(input("Zadej arabské: "))
-            arZad = "312"
+            if d == 0:
+                arZad = "XCIV"
+            if d == 1:
+                arZad = "5621"
+            if d == 2:
+                arZad = "3888"
             print(str("Zadej arabské: ") + str(arZad))
-            x = arZad.isnumeric()
 
             # Kontrola, jestli bylo správně zadáno číslo v zadání
-            if x == 1:
+            if arZad.isnumeric():
                 arZad = int(arZad)
                 # Převod proměnné typu string na integer
 
@@ -136,6 +137,7 @@ if __name__ == "__main__":
                 # platném rozsahu, program zahlásí chybu
                 if arZad < 1 or arZad > 3999:
                     print("Chybné zadání.")
+                    d = 2
 
                 # V opačném případě se provede převod
                 else:
@@ -146,12 +148,16 @@ if __name__ == "__main__":
                 print("Nezadal jsi číslo.")
                 arZad = 0
                 # Zápis hodnoty, aby při špatném zadání neskončil cyklus
+                d = 1
 
         # Ukončovací dialog programu
         # zadani = input("Přejete si ukončit program? (A/N)\n")
-        zadani = "A"
+        if c == 0:
+            zadani = "N"
+        elif c == 1:
+            zadani = "A"
         print(str("Přejete si ukončit program? (A/N)\n") + str(zadani))
-
+        c = 1
         # Podmínka pro not-case-sensitive zadání pro ukončení
         if zadani.isupper():
             zadani = zadani.lower()
