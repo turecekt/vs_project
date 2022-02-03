@@ -15,19 +15,6 @@ print('Seznam dostupnych barev: blue, green, red, cyan, megenta, yellow, white, 
 #barvaPera = input('Zadejte barvu pera: ')
 #barvaPozadi = input('Zadejte barvu pozadi: ')
 
-
-def parametry():
-    global iterace
-    global barvaPera
-    global barvaPozadi
-    global delka
-    global uhel
-    iterace = input('Zadejte pocet iteraci: ')
-    barvaPera = input('Zadejte barvu pera: ')
-    barvaPozadi = input('Zadejte barvu pozadi: ')
-    delka = 2
-    uhel = 90
-
               
        
 #Nastaveni poctu iteraci
@@ -35,7 +22,7 @@ def vrat_cislo(iterace):
     """Vrat cislo.
     
     >>> vrat_cislo('12')
-    '12'
+    12
     """
     try:
         val = int(iterace)              
@@ -52,10 +39,8 @@ def vrat_cislo(iterace):
 
 
 # funkce pro nastaveni barvy pera 
-def nbp():
-    """Nastav barvu pera.
-    >>> nbp()
-    """
+def nbp(barvaPera):
+    """Nastav barvu pera."""
     try:
      turtle.color(barvaPera)
      if barvaPera == str(''):                                  
@@ -69,10 +54,8 @@ def nbp():
     
 
 # funkce pro nastaveni barvy pozadi
-def nbpo():
-    """Nastav barvu pozadi.
-    >>> nbpo()
-    """
+def nbpo(barvaPozadi):
+    """Nastav barvu pozadi."""
     try:
       turtle.bgcolor(barvaPozadi)
       if barvaPozadi == str(''):                            
@@ -86,9 +69,7 @@ def nbpo():
 
 # funkce pro vykresleni draci krivky
 def Krivka(val, delka, uhel):              
-     """Vykresleni krivky.
-     >>> Krivka()
-     """
+     """Vykresleni krivky."""
      if val == 0:
         turtle.forward(delka)              
      else:
@@ -111,10 +92,14 @@ def nastav_prostredi():
 
 
 if __name__ == '__main__':
-    parametry()
+    iterace = input('Zadejte pocet iteraci: ')
+    barvaPera = input('Zadejte barvu pera: ')
+    barvaPozadi = input('Zadejte barvu pozadi: ')
+    delka = 2
+    uhel = 90
     nastav_prostredi()
-    nbp()
-    nbpo()
+    nbp(barvaPera)
+    nbpo(barvaPozadi)
     # zavolani funkce Krivka
     Krivka(vrat_cislo(iterace), delka, uhel)
     turtle.done()
