@@ -84,27 +84,23 @@ if __name__ == "__main__":
     # Deklarace proměnné typu string,
     # která následně určuje, jestli se má program ukončit
     zadani = " "
-    c = 0
 
     # Cyklus, při kterém program běží, dokud
     # není na konci zadáno A pro ukončení
     while zadani != 'a':
-        rimZad = "15"
+        rimZad = " "
         arZad = 0
         rim = 0
-        d = 0
 
         # Cyklus, při kterém běží input do doby,
         # než uživatel zadá validní hodnotu
         while rim < 1 or rim > 3999:
-            # rimZad = input("Zadej římské: ")
-            print(str("Zadej římské: ") + str(rimZad))
+            rimZad = input("Zadej římské: ")
             x = rimZad.isnumeric()
 
             # Obsahuje-li římské zadání číslo, jedná se o chybu
             if x == 1:
                 print("Nezadal jsi římské číslo.")
-                rimZad = "MMMMM"
 
             # Pokud je vše zadáno správně, program pokračuje dál
             else:
@@ -121,18 +117,10 @@ if __name__ == "__main__":
                 # pro platnost, program zahlásí chybu
                 else:
                     print("Chybné zadání.")
-                    rimZad = "MMMDCCCLXXXVIII"
 
         # Cyklus, který běží po dobu, dokud není správně zadané číslo
         while arZad < 1 or arZad > 3999:
-            # arZad = str(input("Zadej arabské: "))
-            if d == 0:
-                arZad = "XCIV"
-            if d == 1:
-                arZad = "5621"
-            if d == 2:
-                arZad = "3888"
-            print(str("Zadej arabské: ") + str(arZad))
+            arZad = str(input("Zadej arabské: "))
 
             # Kontrola, jestli bylo správně zadáno číslo v zadání
             if arZad.isnumeric():
@@ -143,7 +131,6 @@ if __name__ == "__main__":
                 # platném rozsahu, program zahlásí chybu
                 if arZad < 1 or arZad > 3999:
                     print("Chybné zadání.")
-                    d = 2
 
                 # V opačném případě se provede převod
                 else:
@@ -154,16 +141,10 @@ if __name__ == "__main__":
                 print("Nezadal jsi číslo.")
                 arZad = 0
                 # Zápis hodnoty, aby při špatném zadání neskončil cyklus
-                d = 1
 
         # Ukončovací dialog programu
-        # zadani = input("Přejete si ukončit program? (A/N)\n")
-        if c == 0:
-            zadani = "N"
-        elif c == 1:
-            zadani = "A"
-        print(str("Přejete si ukončit program? (A/N)\n") + str(zadani))
-        c = 1
+        zadani = input("Přejete si ukončit program? (A/N)\n")
+
         # Podmínka pro not-case-sensitive zadání pro ukončení
         if zadani.isupper():
             zadani = zadani.lower()
