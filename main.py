@@ -74,12 +74,15 @@ class Prevod:
             return 0
 
 
-def test_prevod():
+def test_prevodnarim():
     """Testovací příkazy."""
     assert Prevod().narim(3999) == 'MMMCMXCIX'
     assert Prevod().narim(3888) == 'MMMDCCCLXXXVIII'
     assert Prevod().narim(2421) == 'MMCDXXI'
     assert Prevod().narim(15) == 'XV'
+
+
+def test_prevodnaar():
     assert Prevod().naar("MMMCMXCIX") == 3999
     assert Prevod().naar("MMMDCCCLXXXVIII") == 3888
     assert Prevod().naar("MMCDXXI") == 2421
