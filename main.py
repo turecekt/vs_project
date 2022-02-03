@@ -1,9 +1,9 @@
-import pytest
+"""Projekt do AP1VS"""
 import builtins
 
-
-# Objekt morzeovka
+# Objekt morseovka
 class MorseovkaSeznam:
+    """Přiřazovánní"""
     dictionary = {'A': '.-', 'B': '-...',
                   'C': '-.-.', 'D': '-..', 'E': '.',
                   'F': '..-.', 'G': '--.', 'H': '....',
@@ -21,22 +21,26 @@ class MorseovkaSeznam:
                   '(': '-.--.', ')': '-.--.-'}
 
 
-# zapnutie programu
+# zapninani programu
 def main():
+    """Zapínání programu"""
     once = True
     morse(once)
 
 
 def morse(once):
+    """Výběr akce"""
     decision = input(
         "Pro překlad do morseovy abecedy stiskni 1, "
-        "Pro překlad z morseovy abecedy stiskni 2, pro ukončení stiskni 0:")
+        "Pro překlad z morseovy abecedy stiskni 2, pro ukončení"
+        " stiskni 0:")
     # preklad do morseovky  / z morseovky / ukonceni
     if decision == "0":
         print("Ukončování...")
     else:
         if decision == "1":  # preklad do morseovky
-            text = input("Vlož text, který chceš přeložit do morseovy abecedy:")
+            text = input("Vlož text, který chceš přeložit do"
+                         " morseovy abecedy:")
             print(preloz_do_m(text, MorseovkaSeznam.dictionary))
             input("Stiskni Enter pro pokračování")
             morse(once)
@@ -53,8 +57,9 @@ def morse(once):
             morse(once)
 
 
-# Funkcia preloží z morzeovky
+# Funkce přeloží z morseovky
 def preloz_z_m(input_message, morseovka):
+    """překládání z moresovy abecedy"""
     try:
         prelozena_zprava = ''
         zprava = input_message.split('//')  # Do zpravy se uloží všechny slova
@@ -63,20 +68,26 @@ def preloz_z_m(input_message, morseovka):
         for word in zprava:
             pismena = word.split('/')  # Do Písmena uloží všechny písmena
             for pismeno in pismena:
-                if pismeno != '':  # Pro každé písmeno se najde odpovídající skupina symbolů
+                if pismeno != '':
+                    # Pro každé písmeno se najde odpovídající skupina symbolů
                     prelozena_zprava = prelozena_zprava +\
-                                       list(morseovka.keys())[list(morseovka.values()).index(pismeno)]
-            if counter < len(zprava):  # Za každým slovem se udělá mezera mimo poslední
+                                       list(morseovka.keys()) \
+                    [list(morseovka.values()).index(pismeno)]
+            if counter < len(zprava):
+                # Za každým slovem se udělá mezera mimo poslední
                 prelozena_zprava = prelozena_zprava + ' '
             counter = counter + 1
         return prelozena_zprava
-    except Exception:  # Pokud se nenajde skprávná skupina znaků vypíše se chybová hláška
+    except Exception:
+        """chybová hláška"""
+        # Pokud se nenajde skprávná skupina znaků vypíše se chybová hláška
         print("Chybný vstup: " + pismeno)
         return "Tento znak není definový v morseově abecedě"
 
 
-# Funkcia preloží do morzeovky
+# Funkce přeloží do morseovky
 def preloz_do_m(zprava, morseovka):
+    """Překládání do morseovy abecedy"""
     try:
         zprava = zprava.upper()
         counter = 1
@@ -96,42 +107,54 @@ def preloz_do_m(zprava, morseovka):
         return code
 
     except KeyError:
+        """chybová hláška"""
         print("Chybný vstup: " + pismeno)
         return (
             # Při špatném vstupu se vypíše chybová hláška
 
             "Tento znak nezle využít, využij tyto znaky:"
-            " A B C D E F G H I J K L M N O P Q R S T U V W X Y Z 1 2 3 4 5 6 7 8 9 , . ? / - ")
+            " A B C D E F G H I J K L M N O P Q "
+            "R S T U V W X Y Z 1 2 3 4 5 6 7 8 9 , . ? / - ")
 
 
 if __name__ == '__main__':
+    """main"""
     main()
 
 
 def test_preloz_z_m():
+    """test"""
     assert preloz_z_m(".-", MorseovkaSeznam.dictionary) == "A"
 
 
 def test_preloz_do_m():
+    """test"""
     assert preloz_do_m("A", MorseovkaSeznam.dictionary) == ".-"
 
 
 def test_preloz_z_m_():
-    assert preloz_z_m("$", MorseovkaSeznam.dictionary) == "Tento znak není definový v morseově abecedě"
+    """test"""
+    assert preloz_z_m("$", MorseovkaSeznam.dictionary) == "Tento znak " \
+                                                          "není definový v " \
+                                                          "morseově abecedě"
 
 
 def test_preloz_do_m_():
+    """test"""
     assert preloz_do_m("%", MorseovkaSeznam.dictionary) == \
            "Tento znak nezle využít, využij tyto znaky:" \
-           " A B C D E F G H I J K L M N O P Q R S T U V W X Y Z 1 2 3 4 5 6 7 8 9 , . ? / - "
+           " A B C D E F G H I J K L M N O P Q R S T U " \
+           "V W X Y Z 1 2 3 4 5 6 7 8 9 , . ? / - "
 
 
 def test_morse():
+    """test"""
     set_keyboard_input(["0"])
     morse(True)
     output = get_display_output()
     assert output == [
-        "Pro překlad do morseovy abecedy stiskni 1, Pro překlad z morseovy abecedy stiskni 2, pro ukončení stiskni 0:",
+        "Pro překlad do morseovy abecedy stiskni 1, Pro překlad "
+        "z morseovy abecedy stiskni 2, pro ukončení stiskni 0:",
         "Ukončování..."]
 
 
@@ -140,11 +163,13 @@ print_values = []
 
 
 def vstup(s):
+    """vstup"""
     print_values.append(s)
     return inner_values.pop(0)
 
 
 def start_vstupu_vystupu():
+    """test vstupu"""
     global inner_values, print_values
 
     inner_values = []
@@ -155,11 +180,13 @@ def start_vstupu_vystupu():
 
 
 def get_display_output():
+    """output"""
     global print_values
     return print_values
 
 
 def set_keyboard_input(vstupy):
+    """input"""
     global inner_values
 
     start_vstupu_vystupu()
