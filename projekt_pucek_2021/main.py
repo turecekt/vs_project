@@ -74,6 +74,12 @@ class Prevod:
             return 0
 
 
+def test_prevod():
+    """Testovací příkazy."""
+    assert Prevod().narim(3999) == "MMMCMXCIX"
+    assert Prevod().naar("MMMCMXCIX") == 3999
+
+
 if __name__ == "__main__":
     # Deklarace proměnné typu string,
     # která následně určuje, jestli se má program ukončit
