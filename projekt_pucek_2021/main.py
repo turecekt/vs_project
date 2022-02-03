@@ -77,7 +77,13 @@ class Prevod:
 def test_prevod():
     """Testovací příkazy."""
     assert Prevod().narim(3999) == "MMMCMXCIX"
+    assert Prevod().narim(3888) == "MMMDCCCLXXXVIII"
+    assert Prevod().narim(2421) == "MMCDXXI"
+    assert Prevod().narim(15) == "XV"
     assert Prevod().naar("MMMCMXCIX") == 3999
+    assert Prevod().naar("MMMDCCCLXXXVIII") == 3888
+    assert Prevod().naar("MMCDXXI") == 2421
+    assert Prevod().naar("XV") == 15
 
 
 if __name__ == "__main__":
