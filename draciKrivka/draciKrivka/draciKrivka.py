@@ -6,16 +6,7 @@
 import turtle
 import _tkinter
 
-print('Seznam dostupnych barev: blue, green, red, cyan, megenta, yellow, white, black')
-
-# vyzve uzivatele pro zadani parametru
-"""Nastaveni parametru."""
-
-#iterace = input('Zadejte pocet iteraci: ')
-#barvaPera = input('Zadejte barvu pera: ')
-#barvaPozadi = input('Zadejte barvu pozadi: ')
-
-              
+print('Seznam dostupnych barev: blue, green, red, cyan, megenta, yellow, white, black')      
        
 #Nastaveni poctu iteraci
 def vrat_cislo(iterace):
