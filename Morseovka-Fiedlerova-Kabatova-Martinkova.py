@@ -47,7 +47,7 @@ MORSE_CODE_DICT = {
 
 
 def encryption(message):
-    """This method will encrypt text to Morse code."""
+    """Encrypts text to Morse code."""
     if len(message) == 0:
         return ''
 
@@ -64,7 +64,7 @@ def encryption(message):
 # Morse code to English
 
 def decryption(message):
-    """This metod will decrypt message in Morse code to text."""
+    """Decrypts message in Morse code to text."""
     if len(message) == 0:
         return ''
 
@@ -90,7 +90,7 @@ def decryption(message):
 
 
 def main():
-    """Main function."""
+    """Starts program."""
     my_message = 'python-program'
     output = encryption(my_message)
     print(output)
