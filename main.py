@@ -1,92 +1,81 @@
-# Třída obsahující metody pro převody
-class Prevod:
-    def __init__(self):
-        pass
+# Metoda pro převod z arabských čísel na římská
+def narim(nrcislo):
+    if 4000 > nrcislo > 0:
+        # List hodnot, použitých při převodu
+        hod = [
+            1000, 900, 500, 400,
+            100, 90, 50, 40,
+            10, 9, 5, 4,
+            1
+        ]
+        # List obsahující možné symboly a kombinace vyjímek
+        sym = [
+            "M", "CM", "D", "CD",
+            "C", "XC", "L", "XL",
+            "X", "IX", "V", "IV",
+            "I"
+        ]
+        nrrimske = ''
+        i = 0
+        # Dokud nejsou převedeny všechny čísla, provádí se převod
+        while nrcislo > 0:
+            for _ in range(nrcislo // hod[i]):
+                nrrimske += sym[i]
+                nrcislo -= hod[i]
+            i += 1
+        return nrrimske
+        # Návratová hodnota výsledku
+    # Pokud není splněna podmínka, program zahlásí chybu
+    else:
+        print("Chybně zadané číslo.")
+        return " "  # Vrátí zpět pouze mezeru
 
-    # Metoda pro převod z arabských čísel na římská
-    @staticmethod
-    def narim(nrcislo):
-        if 4000 > nrcislo > 0:
 
-            # List hodnot, použitých při převodu
-            hod = [
-                1000, 900, 500, 400,
-                100, 90, 50, 40,
-                10, 9, 5, 4,
-                1
-            ]
+# Metoda pro převod z římských čísel na arabské
 
-            # List obsahující možné symboly a kombinace vyjímek
-            sym = [
-                "M", "CM", "D", "CD",
-                "C", "XC", "L", "XL",
-                "X", "IX", "V", "IV",
-                "I"
-            ]
-            nrrimske = ''
-            i = 0
 
-            # Dokud nejsou převedeny všechny čísla, provádí se převod
-            while nrcislo > 0:
-                for _ in range(nrcislo // hod[i]):
-                    nrrimske += sym[i]
-                    nrcislo -= hod[i]
-                i += 1
-            return nrrimske
-            # Návratová hodnota výsledku
-
-        # Pokud není splněna podmínka, program zahlásí chybu
-        else:
-            print("Chybně zadané číslo.")
-            return " "  # Vrátí zpět pouze mezeru
-
-    # Metoda pro převod z římských čísel na arabské
-    @staticmethod
-    def naar(s):
-        # Podmínka pro ošetření vstupu při vložení prázdné hodnoty
-        if s != 0:
-            # Seznam možných symbolů a vyjímek při převodu
-            narim = {'I': 1, 'V': 5, 'X': 10, 'L': 50,
-                     'C': 100, 'D': 500, 'M': 1000,
-                     'IV': 4, 'IX': 9, 'XL': 40,
-                     'XC': 90, 'CD': 400, 'CM': 900}
-            j = 0
-            nacislo = 0
-
-            # Cyklus, který opakuje, dokud proměnná j
-            # není menší, než délka vstupního stringu
-            while j < len(s):
-                # Podmínka pro převod vyjímek ze seznamu výše
-                if j + 1 < len(s) and s[j:j + 2] in narim:
-                    nacislo += narim[s[j:j + 2]]
-                    j += 2
-
-                # Pokud se nenachází vyjímka pro
-                # převod, provede se klasický jednočíselný
-                else:
-                    nacislo += narim[s[j]]
-                    j += 1
-            return nacislo  # Návratová hodnota výsledku
-
-        # Je-li odeslána prázdná hodnota římského čísla, program zahlásí chybu
-        else:
-            print("Chybně zadané číslo.")
-            return 0
+def naar(s):
+    # Podmínka pro ošetření vstupu při vložení prázdné hodnoty
+    if s != 0:
+        # Seznam možných symbolů a vyjímek při převodu
+        symr = {'I': 1, 'V': 5, 'X': 10, 'L': 50,
+                'C': 100, 'D': 500, 'M': 1000,
+                'IV': 4, 'IX': 9, 'XL': 40,
+                'XC': 90, 'CD': 400, 'CM': 900}
+        j = 0
+        nacislo = 0
+        # Cyklus, který opakuje, dokud proměnná j
+        # není menší, než délka vstupního stringu
+        while j < len(s):
+            # Podmínka pro převod vyjímek ze seznamu výše
+            if j + 1 < len(s) and s[j:j + 2] in symr:
+                nacislo += symr[s[j:j + 2]]
+                j += 2
+            # Pokud se nenachází vyjímka pro
+            # převod, provede se klasický jednočíselný
+            else:
+                nacislo += symr[s[j]]
+                j += 1
+        return nacislo  # Návratová hodnota výsledku
+    # Je-li odeslána prázdná hodnota římského čísla, program zahlásí chybu
+    else:
+        print("Chybně zadané číslo.")
+        return 0
 
 
 def test_prevodnarim():
     """Testovací příkazy."""
-    assert Prevod().narim(3999) == 'MMMCMXCIX'
-    assert Prevod().narim(3888) == 'MMMDCCCLXXXVIII'
-    assert Prevod().narim(2421) == 'MMCDXXI'
-    assert Prevod().narim(15) == 'XV'
+    assert narim(3999) == 'MMMCMXCIX'
+    assert narim(3888) == 'MMMDCCCLXXXVIII'
+    assert narim(2421) == 'MMCDXXI'
+    assert narim(15) == 'XV'
 
 
 def test_prevodnaar():
-    assert Prevod().naar("MMMCMXCIX") == 3999
-    assert Prevod().naar("MMMDCCCLXXXVIII") == 3888
-    assert Prevod().naar("MMCDXXI") == 2421
-    assert Prevod().naar("XV") == 15
+    assert naar("MMMCMXCIX") == 3999
+    assert naar("MMMDCCCLXXXVIII") == 3888
+    assert naar("MMCDXXI") == 2421
+    assert naar("XV") == 15
 
 
 if __name__ == "__main__":
@@ -96,7 +85,7 @@ if __name__ == "__main__":
 
     # Cyklus, při kterém program běží, dokud
     # není na konci zadáno A pro ukončení
-    while zadani != 'a':
+    while zadani.lower() != 'a':
         rimZad = " "
         arZad = 0
         rim = 0
@@ -115,7 +104,7 @@ if __name__ == "__main__":
             else:
                 if rimZad.islower():
                     rimZad = rimZad.upper()
-                rim = Prevod().naar(rimZad)
+                rim = naar(rimZad)
 
                 # Pokud se výsledek nachází v intervalu
                 # pro platnost, program vypíše výsledek
@@ -143,7 +132,7 @@ if __name__ == "__main__":
 
                 # V opačném případě se provede převod
                 else:
-                    print(str(arZad) + str(" = ") + Prevod().narim(arZad))
+                    print(str(arZad) + str(" = ") + narim(arZad))
 
             # Nebylo-li zadáno číslo, program zahlásí chybu
             else:
@@ -153,8 +142,3 @@ if __name__ == "__main__":
 
         # Ukončovací dialog programu
         zadani = input("Přejete si ukončit program? (A/N)\n")
-
-        # Podmínka pro not-case-sensitive zadání pro ukončení
-        if zadani.isupper():
-            zadani = zadani.lower()
-            # Převod velkého písmena na malé
