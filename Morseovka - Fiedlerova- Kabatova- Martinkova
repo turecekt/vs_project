@@ -105,26 +105,26 @@ if __name__ == '__main__':
 def testEncryption():
     result = encryption('test')
     expected = '- . ... -'
-    assert result == expected, "Expected:'" + expected + "', result:'" \
-        + result + "'"
+    err_mess = "Expected:'" + expected + "', result:'" + result + "'"
+    assert result == expected, err_mess
 
 
 def testDecryption():
     result = decryption('- . ... -')
     expected = 'TEST'
-    assert result == expected, "Expected:'" + expected + "', result:'" \
-        + result + "'"
+    err_mess = "Expected:'" + expected + "', result:'" + result + "'"
+    assert result == expected, err_mess
 
 
 def test2Encryption():
     result = encryption('')
     expected = ''
-    assert result == expected, "Expected:'" + expected + "', result:'" \
-        + result + "'"
+    err_mess = "Expected:'" + expected + "', result:'" + result + "'"
+    assert result == expected, err_mess
 
 
 def test2Decryption():
     result = decryption('')
     expected = ''
-    assert result == expected, "Expected:'" + expected + "', result:'" \
-        + result + "'"
+    err_mess = "Expected:'" + expected + "', result:'" + result + "'"
+    assert result == expected, err_mess
