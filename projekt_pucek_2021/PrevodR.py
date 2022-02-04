@@ -31,15 +31,13 @@ def naar(s):
                 'IV': 4, 'IX': 9, 'XL': 40, 'XC': 90, 'CD': 400, 'CM': 900}
         j = 0
         nacislo = 0
-        # Cyklus, který opakuje, dokud proměnná j
-        # není menší, než délka vstupního stringu
+        # Cyklus, který opakuje, dokud proměnná j není menší, než délka vstupního stringu
         while j < len(s):
             # Podmínka pro převod vyjímek ze seznamu výše
             if j + 1 < len(s) and s[j:j + 2] in symr:
                 nacislo += symr[s[j:j + 2]]
                 j += 2
-            # Pokud se nenachází vyjímka pro
-            # převod, provede se klasický jednočíselný
+            # Pokud se nenachází vyjímka pro převod, provede se klasický jednočíselný
             else:
                 nacislo += symr[s[j]]
                 j += 1
