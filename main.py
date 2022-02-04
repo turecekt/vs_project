@@ -1,19 +1,21 @@
 from projekt_pucek_2021 import PrevodR
 
 
-def test_prevodnarim():
+def test():
     """Testovací příkazy."""
     assert PrevodR.narim(3999) == 'MMMCMXCIX'
     assert PrevodR.narim(3888) == 'MMMDCCCLXXXVIII'
     assert PrevodR.narim(2421) == 'MMCDXXI'
     assert PrevodR.narim(15) == 'XV'
 
-
-def test_prevodnaar():
     assert PrevodR.naar("MMMCMXCIX") == 3999
     assert PrevodR.naar("MMMDCCCLXXXVIII") == 3888
     assert PrevodR.naar("MMCDXXI") == 2421
     assert PrevodR.naar("XV") == 15
+
+    assert rimZad
+    assert arZad
+    assert zadani
 
 
 if __name__ == "__main__":
