@@ -1,6 +1,11 @@
 """draciKrivka_test"""
 
-from draciKrivka import vrat_cislo,nbp,nbpo
+
+from draciKrivka import vrat_cislo, nbp, nbpo
+import unittest
+
+
+
 
 def test_vrat_cislo_spravne():
     """Test vraceni spravneho cisla."""
@@ -31,3 +36,6 @@ def test_vrat_nbpo():
     assert nbpo("blue") == "blue"
     assert nbpo("") == "black"
     assert nbpo("ak33k") == "black"
+
+if __name__ == '__main__':
+    unittest.main()
