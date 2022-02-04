@@ -41,6 +41,7 @@ def nbp(barvaPera):
         # pokud je hodnota retezce neplatna (barva neexistuje a nastatne
         # error), zachyti tuto chybu a nastavi barvu pera na cervenou
         turtle.color('red')
+
     return turtle.pencolor()
 
     
@@ -57,6 +58,7 @@ def nbpo(barvaPozadi):
         turtle.bgcolor('black')                             
         # pokud je hodnota retezce neplatna (barva neexistuje a nastatne
         # error), zachyti tuto chybu a nastavi barvu pozadi na cernou
+
     return turtle.bgcolor()
      
 

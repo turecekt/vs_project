@@ -24,7 +24,7 @@ def test_vrat_nbp():
     """Test vraceni barvy pera."""
     assert nbp("blue") == "blue"
     assert nbp("") == "red"
-    assert nbpo("896UAB") == "red"
+    assert nbp("896UAB") == "red"
 
 def test_vrat_nbpo():
     """Test vraceni barvy pozadi."""
