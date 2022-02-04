@@ -90,7 +90,7 @@ def decryption(message):
 
 
 def main():
-    """Program encrypts message to Morse code, then decrypts message from Morse code to text."""
+    """Program encrypts message to Morse code, then decrypts message from Morse code to text."""  # noqa: E501
     my_message = 'python-program'
     output = encryption(my_message)
     print(output)
