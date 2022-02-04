@@ -89,11 +89,11 @@ def decryption(message):
 def main():
     my_message = 'python-program'
     output = encryption(my_message)
-    print output
+    print(output)
     my_message = \
         '.--. -.-- - .... --- -. -....- .--. .-. --- --. .-. .- --'
     output = decryption(my_message)
-    print output
+    print(output)
 
 
 # Executes the main function
