@@ -29,7 +29,7 @@ if __name__ == "__main__":
 
         # Cyklus, při kterém běží input do doby,
         # než uživatel zadá validní hodnotu
-        while PrevodR.naar(rimZad) < 1 or PrevodR.naar(rimZad) > 3999:
+        while 1 > PrevodR.naar(rimZad) > 3999:
             rimZad = input("Zadej římské: ")
 
             # Obsahuje-li římské zadání číslo, jedná se o chybu
@@ -49,22 +49,18 @@ if __name__ == "__main__":
                     print("Chybné zadání.")
 
         # Cyklus, který běží po dobu, dokud není správně zadané číslo
-        while arZad < 1 or arZad > 3999:
+        while 1 > arZad > 3999:
             arZad = str(input("Zadej arabské: "))
-
             # Kontrola, jestli bylo správně zadáno číslo v zadání
-            if arZad.isnumeric():
-                arZad = int(arZad)
-                # Převod proměnné typu string na integer
-
+            if arZad.isnumeric():   # Převod proměnné typu string na integer
                 # Pokud se zadané číslo nenachází v
                 # platném rozsahu, program zahlásí chybu
-                if arZad < 1 or arZad > 3999:
+                if 1 > int(arZad) > 3999:
                     print("Chybné zadání.")
 
                 # V opačném případě se provede převod
                 else:
-                    print(str(arZad) + str(" = ") + PrevodR.narim(arZad))
+                    print(str(int(arZad)) + str(" = ") + PrevodR.narim(int(arZad)))
 
             # Nebylo-li zadáno číslo, program zahlásí chybu
             else:
