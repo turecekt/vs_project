@@ -26,11 +26,10 @@ if __name__ == "__main__":
     while zadani.lower() != 'a':
         rimZad = " "
         arZad = 0
-        rim = 0
 
         # Cyklus, při kterém běží input do doby,
         # než uživatel zadá validní hodnotu
-        while rim < 1 or rim > 3999:
+        while PrevodR.naar(rimZad) < 1 or PrevodR.naar(rimZad) > 3999:
             rimZad = input("Zadej římské: ")
 
             # Obsahuje-li římské zadání číslo, jedná se o chybu
@@ -39,14 +38,10 @@ if __name__ == "__main__":
 
             # Pokud je vše zadáno správně, program pokračuje dál
             else:
-                if rimZad.islower():
-                    rimZad = rimZad.upper()
-                rim = PrevodR.naar(rimZad)
-
                 # Pokud se výsledek nachází v intervalu
                 # pro platnost, program vypíše výsledek
-                if 0 < rim < 4000:
-                    print(rimZad + str(" = ") + str(rim))
+                if 0 < PrevodR.naar(rimZad.upper()) < 4000:
+                    print(rimZad.upper() + str(" = ") + str(PrevodR.naar(rimZad.upper())))
 
                 # Je-li výsledná hodnota mimo interval
                 # pro platnost, program zahlásí chybu
