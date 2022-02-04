@@ -1,5 +1,4 @@
-"""Program for encryption the english text to Morse code and vice versa"""
-
+"""Program for encryption the english text to Morse code and vice versa."""
 MORSE_CODE_DICT = {
     'A': '.-',
     'B': '-...',
@@ -48,8 +47,7 @@ MORSE_CODE_DICT = {
 
 
 def encryption(message):
-    """This method will encrypt text to Morse code"""
-    
+    """This method will encrypt text to Morse code."""
     if len(message) == 0:
         return ''
 
@@ -66,8 +64,7 @@ def encryption(message):
 # Morse code to English
 
 def decryption(message):
-    """This metod will decrypt message in Morse code to text"""
-    
+    """This metod will decrypt message in Morse code to text."""
     if len(message) == 0:
         return ''
 
@@ -93,8 +90,7 @@ def decryption(message):
 
 
 def main():
-    """Main function"""
-    
+    """Main function."""
     my_message = 'python-program'
     output = encryption(my_message)
     print(output)
@@ -111,8 +107,7 @@ if __name__ == '__main__':
 
 
 def testEncryption():
-    """Pytest funkce encryption"""
-    
+    """Pytest funkce encryption."""
     result = encryption('test')
     expected = '- . ... -'
     err_mess = "Expected:'" + expected + "', result:'" + result + "'"
@@ -120,8 +115,7 @@ def testEncryption():
 
 
 def testDecryption():
-    """Pytest funkce decryption"""
-    
+    """Pytest funkce decryption."""
     result = decryption('- . ... -')
     expected = 'TEST'
     err_mess = "Expected:'" + expected + "', result:'" + result + "'"
@@ -129,8 +123,7 @@ def testDecryption():
 
 
 def test2Encryption():
-    """Pytest funkce encryption"""
-    
+    """Pytest funkce encryption."""
     result = encryption('')
     expected = ''
     err_mess = "Expected:'" + expected + "', result:'" + result + "'"
@@ -138,8 +131,7 @@ def test2Encryption():
 
 
 def test2Decryption():
-    """Pytest funkce decryption"""
-    
+    """Pytest funkce decryption."""
     result = decryption('')
     expected = ''
     err_mess = "Expected:'" + expected + "', result:'" + result + "'"
