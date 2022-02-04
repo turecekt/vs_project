@@ -13,9 +13,9 @@ def test():
     assert PrevodR.naar("MMCDXXI") == 2421
     assert PrevodR.naar("XV") == 15
 
-    assert rimZad
-    assert arZad
-    assert zadani
+    assert rimZad == " "
+    assert arZad == 0
+    assert zadani == " "
 
 
 if __name__ == "__main__":
