@@ -95,6 +95,10 @@ if __name__ == '__main__':
     nastav_prostredi()
     nbp(barvaPera)
     nbpo(barvaPozadi)
+
+    print(vrat_cislo(iterace))
+    print(nbp(barvaPera))
+    print(nbpo(barvaPozadi))
    
     # zavolani funkce Krivka
     Krivka(vrat_cislo(iterace), delka, uhel)
