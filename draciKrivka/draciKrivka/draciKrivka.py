@@ -34,13 +34,14 @@ def nbp(barvaPera):
     """Nastav barvu pera."""
     try:
      turtle.color(barvaPera)
-     if barvaPera == str(''):                                  
+     if barvaPera == '':                                  
          # pokud je hodnota retezce prazdna, nastavi se barva pera na cervenou
          turtle.color('red') 
     except (turtle.TurtleGraphicsError, _tkinter.TclError):    
         # pokud je hodnota retezce neplatna (barva neexistuje a nastatne
         # error), zachyti tuto chybu a nastavi barvu pera na cervenou
-        turtle.color('red') 
+        turtle.color('red')
+    return turtle.pencolor()
 
     
 
@@ -49,13 +50,14 @@ def nbpo(barvaPozadi):
     """Nastav barvu pozadi."""
     try:
       turtle.bgcolor(barvaPozadi)
-      if barvaPozadi == str(''):                            
+      if barvaPozadi == '':                            
           # pokud je hodnota retezce prazdna, nastavi se barva pozadi na cernou
           turtle.bgcolor('black') 
     except (turtle.TurtleGraphicsError, _tkinter.TclError):
         turtle.bgcolor('black')                             
         # pokud je hodnota retezce neplatna (barva neexistuje a nastatne
         # error), zachyti tuto chybu a nastavi barvu pozadi na cernou
+    return turtle.bgcolor()
      
 
 # funkce pro vykresleni draci krivky

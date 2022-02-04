@@ -1,6 +1,6 @@
 """draciKrivka_test"""
 
-from draciKrivka import vrat_cislo
+from draciKrivka import vrat_cislo,nbp,nbpo
 
 def test_vrat_cislo_spravne():
     """Test vraceni spravneho cisla."""
@@ -20,3 +20,14 @@ def test_vrat_cislo_chybny_vstup():
     assert vrat_cislo("") == 9
     assert vrat_cislo("7.6") == 9
 
+def test_vrat_nbp():
+    """Test vraceni barvy pera."""
+    assert nbp("blue") == "blue"
+    assert nbp("") == "red"
+    assert nbpo("896UAB") == "red"
+
+def test_vrat_nbpo():
+    """Test vraceni barvy pozadi."""
+    assert nbpo("blue") == "blue"
+    assert nbpo("") == "black"
+    assert nbpo("ak33k") == "black"
