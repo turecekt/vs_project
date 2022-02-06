@@ -1,3 +1,6 @@
+"""Program na získání iformací o četnosti znaků daného řetězce."""
+
+
 def unique(pole_znaku):
     """
     Vrací pouze unikátní prvky pole.
