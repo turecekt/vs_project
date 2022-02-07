@@ -1,8 +1,10 @@
-"""Projekt do AP1VS""";
 import builtins
+"""Projekt do AP1VS"""
+
 
 # Objekt morseovka
 class MorseovkaSeznam:
+    
     
     """Přiřazovánní"""
     dictionary = {'A': '.-', 'B': '-...',
