@@ -11,7 +11,7 @@ VÝSTUP
         (deterministickou/heuristickou metodou)
 """
 
-    """
+"""
     Funkce test_Metody zjistuje co je použito za metody u kterých čísel.
     """
 def test_Metody():
