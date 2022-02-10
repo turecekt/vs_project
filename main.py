@@ -19,7 +19,7 @@ def test_Metody():
     assert Metody(36) == -2
     assert Metody(3) == 3
     assert Metody(8) == -3
-    assert Metody(50013) == 4
+    assert Metody(50013) == -4
     assert Metody(50011) == -4
 
     """
@@ -27,7 +27,6 @@ def test_Metody():
     """
     
 def test_MetodaPravidelDelitelnosti():
-    assert MetodaPravidelDelitelnosti(61) == True
     assert MetodaPravidelDelitelnosti(88) == False
 
     """
@@ -35,7 +34,7 @@ def test_MetodaPravidelDelitelnosti():
     """
     
 def test_DeterministickaMetoda():
-    assert DeterministickaMetoda(90902) == False
+    assert DeterministickaMetoda(90091) == False
     assert DeterministickaMetoda(50011) == False
 
     """
@@ -51,8 +50,8 @@ def test_HeurestickaMetoda():
     """
     
 def test_Vstup():
-    assert Vstup(0) == False
-    assert Vstup(3) == True
+    assert Vstup([0,-1]) == False
+    assert Vstup([3,7]) == True
 
 def Vstup(Napsanecislo):
     """
