@@ -36,11 +36,10 @@ def test_HeurestickaMetoda():
     assert HeurestickaMetoda(12) == False
 
 
-def Vstup():
+def Vstup(Napsanecislo):
     """
     Funkce získá vstup od uživatele proti chybám.
     """
-    Napsanecislo = input("Zadej číslo:")
 
     for znak in Napsanecislo:
         if not(znak in "0123456789"):
@@ -177,10 +176,11 @@ def HeurestickaMetoda(o):
         return False
     pass
 
-# MAIN
-moznePrvocislo = Vstup()            # Získá vstup od uživatele
-
-if(moznePrvocislo > 0):             # Otestuje chybový vstup
-    Vystup(Metody(moznePrvocislo))  # Vystup s řešením
-else:
-    Vystup()                        # Vystup s chybovou hláškou
+if __name__ == "__main__":
+    # MAIN
+    moznePrvocislo = Vstup(input("Zadej číslo:")) # Získá vstup od uživatele
+    
+    if(moznePrvocislo > 0):             # Otestuje chybový vstup
+        Vystup(Metody(moznePrvocislo))  # Vystup s řešením
+    else:
+        Vystup()                        # Vystup s chybovou hláškou
