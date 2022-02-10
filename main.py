@@ -11,30 +11,48 @@ VÝSTUP
         (deterministickou/heuristickou metodou)
 """
 
-
+    """
+    Funkce test_Metody zjistuje co je použito za metody u kterých čísel.
+    """
 def test_Metody():
     assert Metody(1) == -1
     assert Metody(36) == -2
     assert Metody(3) == 3
-    assert Metody(7) == -3
+    assert Metody(8) == -3
     assert Metody(50013) == 4
     assert Metody(50011) == -4
 
-
+    """
+    Funkce test_MetodaPravidelDelitelnosti zjistuje u téhle metody, jestli je číslo prvočíslo = True nebo není = False.
+    """
+    
 def test_MetodaPravidelDelitelnosti():
-    assert MetodaPravidelDelitelnosti(88) == True
-    assert MetodaPravidelDelitelnosti(61) == False
+    assert MetodaPravidelDelitelnosti(61) == True
+    assert MetodaPravidelDelitelnosti(88) == False
 
-
+    """
+    Funkce test_DeterministickaMetoda zjistuje u téhle metody, jestli je číslo prvočíslo = True nebo není = False.
+    """
+    
 def test_DeterministickaMetoda():
-    assert DeterministickaMetoda(90901) == True
+    assert DeterministickaMetoda(90902) == False
     assert DeterministickaMetoda(50011) == False
 
-
+    """
+    Funkce test_HeurestickaMetoda zjistuje u téhle metody, jestli je číslo prvočíslo = True nebo není = False.
+    """
+    
 def test_HeurestickaMetoda():
     assert HeurestickaMetoda(17) == True
     assert HeurestickaMetoda(12) == False
-
+    
+    """
+    Funkce test_vstup zjistuje, jestli byl vstup zadán špatně nebo správně (správně pouze celá čísla a jen čísla 0,1,2,3,4,5,6,7,8,9 ne znaky a písmena to se vyhodnotí chybou)
+    """
+    
+def test_Vstup():
+    assert Vstup(0) == False
+    assert Vstup(3) == True
 
 def Vstup(Napsanecislo):
     """
