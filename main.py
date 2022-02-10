@@ -34,7 +34,6 @@ def test_MetodaPravidelDelitelnosti():
     """
     
 def test_DeterministickaMetoda():
-    assert DeterministickaMetoda(90021) == False
     assert DeterministickaMetoda(50011) == False
 
     """
@@ -50,7 +49,7 @@ def test_HeurestickaMetoda():
     """
     
 def test_Vstup():
-    assert Vstup([0]) == False
+    assert Vstup([0,"kk"]) == False
     assert Vstup([3,7]) == True
 
 def Vstup(Napsanecislo):
