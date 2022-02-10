@@ -23,18 +23,18 @@ def test_Metody():
     assert Metody(50011) == -4
 
     """
-    Funkce test_MetodaPravidelDelitelnosti zjistuje u téhle metody, jestli je číslo prvočíslo = True nebo není = False.
+    Funkce test_MetodaPravidelDelitelnosti určí některá neprvočísla, pomocí toho, že je číslo končí určitým číslem, které podle pravidel dělitelnosti, lze vydělit již prvočíslem. (např. čísla končící na číslo 5 a 0 jdou vždy vydělit 5.
     """
     
 def test_MetodaPravidelDelitelnosti():
-    assert MetodaPravidelDelitelnosti(88) == False
+    assert MetodaPravidelDelitelnosti(88) == True
 
     """
     Funkce test_DeterministickaMetoda zjistuje u téhle metody, jestli je číslo prvočíslo = True nebo není = False.
     """
     
 def test_DeterministickaMetoda():
-    assert DeterministickaMetoda(90091) == False
+    assert DeterministickaMetoda(90021) == False
     assert DeterministickaMetoda(50011) == False
 
     """
@@ -50,7 +50,7 @@ def test_HeurestickaMetoda():
     """
     
 def test_Vstup():
-    assert Vstup([0,-1]) == False
+    assert Vstup([0]) == False
     assert Vstup([3,7]) == True
 
 def Vstup(Napsanecislo):
