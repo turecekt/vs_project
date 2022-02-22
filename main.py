@@ -49,8 +49,8 @@ def test_HeurestickaMetoda():
     """
     
 def test_Vstup():
-    assert Vstup([0,"kk"]) == False
-    assert Vstup([3,7]) == True
+    assert Vstup("k") == False
+    assert Vstup("1") == True
 
 def Vstup(Napsanecislo):
     """
