@@ -159,7 +159,7 @@ def MetodaPravidelDelitelnosti(cislo):
     return (cislo > 9 and str(cislo)[-1] in "024568")
 
 
-def DeterministickaMetoda(moznePrvocislo):
+def DeterministickaMetoda(cislo):
     """
     Funkce zkouší zjistit prvočíslo deterministickou metodou.
     Pokud číslo není dělitelné prvočísly do odmocnina z čísla,
@@ -168,13 +168,13 @@ def DeterministickaMetoda(moznePrvocislo):
 
 # number=int(input("Zadej celé číslo: "))
 # prvočísla jsou větší než 1
-    if moznePrvocislo > 1:
+    if cislo > 1:
 # omezující podmínky
-        for i in range(2, moznePrvocislo):
-            if (moznePrvocislo % i) == 0:
+        for i in range(2, cislo):
+            if (cislo % i) == 0:
                 break
         else:
-            print("Zadané číslo" , moznePrvocislo , "PATŘÍ mezi prvočísla.")
+            print("Zadané číslo" , cislo , "PATŘÍ mezi prvočísla.")
 
 
 def HeurestickaMetoda(o):
