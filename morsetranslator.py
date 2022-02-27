@@ -84,10 +84,5 @@ class TestTestTest(unittest.TestCase):
         result = decodeMorse("- . ... - .--. .-. . ...- --- -.. ..- -- --- .-. ... . --- ...- -.-- .- -... . -.-. . -.. -.-- -.. --- - . -..- - ..- ")
         self.assertEqual(result, "testPREVODUmorseovyABECEDYdoTEXTU")
 
-    def test_10(self):
-        result = encodeToMorse("?ahoj")
-        self.assertEqual(result, 'Zadaná nesprávná kombince znaků')
-
-
 if __name__ == '__main__':
     main()
