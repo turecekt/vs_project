@@ -76,13 +76,13 @@ class TestTestTest(unittest.TestCase):
 
     #test převodu z textu na morseovu abecedu
     def test_1(self):
-        result = encodeToMorse("testPREVODUtextuDOmorseovyABECEDY")
-        self.assertEqual(result, "- . ... - .--. .-. . ...- --- -.. ..- - . -..- - ..- -.. --- -- --- .-. ... . --- ...- -.-- .- -... . -.-. . -.. -.-- ")
+        result = encodeToMorse("TESTtoMORSE")
+        self.assertEqual(result, "- . ... - - --- -- --- .-. ... . ")
 
     #test převodu z morseovy abecedy na text
     def test_2(self):
-        result = decodeMorse("- . ... - .--. .-. . ...- --- -.. ..- -- --- .-. ... . --- ...- -.-- .- -... . -.-. . -.. -.-- -.. --- - . -..- - ..- ")
-        self.assertEqual(result, "testPREVODUmorseovyABECEDYdoTEXTU")
+        result = decodeMorse("- . ... - - --- -- --- .-. ... . ")
+        self.assertEqual(result, "TESTTOMORSE")
 
 if __name__ == '__main__':
     main()
