@@ -70,25 +70,30 @@ def main():
     # User input (uživatel vloží string pro dekódování/zakódování morseovy abecedy)
     userInput = input ("Vlož morseovu abecedu nebo text pro přeložení: ")
     
-    # Pokud detekuje . nebo - ve stringu userInput, tak bude překládat z morseovy abecedy na text, jinak bude enkódovat text do morseovy abecedy
+    # Pokud detekuje . nebo - ve stringu userInput,
+    # tak bude překládat z morseovy abecedy na text,
+    # jinak bude enkódovat text do morseovy abecedy
     str = userInput
-    if str.find("." or "-")!=-1:
+    if str.find("." or "-")!=-1 :
      print(decodeMorse(userInput))
     else:
      print(encodeToMorse(userInput))
 
-  # Unit testy
-class TestTestTest(unittest.TestCase):
 
-    # Test převodu z textu na morseovu abecedu
+class TestTestTest(unittest.TestCase):
+    """Unit testy."""
+
     def test_1(self):
+        """Test převodu z textu na morseovu abecedu."""
         result = encodeToMorse("TESTtoMORSE")
         self.assertEqual(result, "- . ... - - --- -- --- .-. ... . ")
 
-    # Test převodu z morseovy abecedy na text
+
     def test_2(self):
+        """Test převodu z morseovy abecedy na text."""
         result = decodeMorse("- . ... - - --- -- --- .-. ... . ")
         self.assertEqual(result, "TESTTOMORSE")
 
 if __name__ == '__main__':
     main()
+
