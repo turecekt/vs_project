@@ -1,4 +1,4 @@
-"""morsetranslator.py - your daily morse translator"""
+"""morsetranslator.py - your daily morse translator."""
 import unittest
 
 """Slovník morseovy abecedy"""
@@ -36,9 +36,7 @@ inverseMorseAlphabet = dict((v, k) for (k, v) in morseAlphabet.items())
 
 
 def decodeMorse(code, positionInString=0):
-    """Metoda pro převod morseovy abecedy na text"""
-
-
+    """Metoda pro převod morseovy abecedy na text."""
     if positionInString < len(code):
         morseLetter = ""
         for key, char in enumerate(code[positionInString:]):
@@ -53,9 +51,7 @@ def decodeMorse(code, positionInString=0):
 
 
 def encodeToMorse(message):
-    """Metoda pro převod textu na morseovu abecedu"""
-
-
+    """Metoda pro převod textu na morseovu abecedu."""
     encodedMessage = ""
     for char in message[:]:
         encodedMessage += morseAlphabet[char.upper()] + " "
