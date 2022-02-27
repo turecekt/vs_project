@@ -72,7 +72,7 @@ def main():
     # tak bude překládat z morseovy abecedy na text,
     # jinak bude enkódovat text do morseovy abecedy
     str = userInput
-    if str.find("." or "-")!=-1 :
+    if str.find("." or "-")!= -1:
         print(decodeMorse(userInput))
     else:
         print(encodeToMorse(userInput))
