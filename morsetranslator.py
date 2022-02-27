@@ -1,8 +1,8 @@
-import unittest
 """morsetranslator.py - your daily morse translator"""
+import unittest
 
 """Slovník morseovy abecedy"""
-morseAlphabet ={
+morseAlphabet = {
     "A": ".-",
     "B": "-...",
     "C": "-.-.",
@@ -35,8 +35,10 @@ morseAlphabet ={
 inverseMorseAlphabet = dict((v, k) for (k, v) in morseAlphabet.items())
 
 
-"""Metoda pro převod morseovy abecedy na text"""
 def decodeMorse(code, positionInString=0):
+    """Metoda pro převod morseovy abecedy na text"""
+
+
     if positionInString < len(code):
         morseLetter = ""
         for key, char in enumerate(code[positionInString:]):
@@ -50,16 +52,20 @@ def decodeMorse(code, positionInString=0):
         return ""
 
 
-"""Metoda pro převod textu na morseovu abecedu"""
 def encodeToMorse(message):
+    """Metoda pro převod textu na morseovu abecedu"""
+
+
     encodedMessage = ""
     for char in message[:]:
         encodedMessage += morseAlphabet[char.upper()] + " "
     return encodedMessage
 
 
-"""Hlavní metoda main"""
 def main():
+    """Hlavní metoda main"""
+
+
     # Návod
     print("===============Morse to text / Text to morse translator===============")
     print("pro převod z morseovy abecedy na text používej . nebo - a za každým písmenem vlož mezeru(i na konec) a pro mezery mezi slovy použij /")
