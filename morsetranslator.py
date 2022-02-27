@@ -61,7 +61,7 @@ def encodeToMorse(message):
 def main():
     """Hlavní metoda main."""
     # Návod
-    print("===============Morse to text / Text to morse translator===============")
+    print("======Morse to text / Text to morse translator============")
     print("morse -> text [. ; - ; whitespace ; /]")
     print("za každým písmenem morseovy abecedy udělej mezeru(i na konci)")
     print("text -> morse [A-Z; whitespace]")
@@ -72,7 +72,7 @@ def main():
     # tak bude překládat z morseovy abecedy na text,
     # jinak bude enkódovat text do morseovy abecedy
     str = userInput
-    if str.find("." or "-") !=-1:
+    if str.find("." or "-")!=-1:
         print(decodeMorse(userInput))
     else:
         print(encodeToMorse(userInput))
@@ -85,12 +85,12 @@ class TestTestTest(unittest.TestCase):
         """Test převodu z textu na morseovu abecedu."""
         result = encodeToMorse("TESTtoMORSE")
         self.assertEqual(result, "- . ... - - --- -- --- .-. ... . ")
+
     def test_2(self):
         """Test převodu z morseovy abecedy na text."""
         result = decodeMorse("- . ... - - --- -- --- .-. ... . ")
         self.assertEqual(result, "TESTTOMORSE")
 
+
 if __name__ == '__main__':
-
-
     main()
