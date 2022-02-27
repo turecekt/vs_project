@@ -1,3 +1,4 @@
+import unittest
 #slovník morseovy abecedy
 morseAlphabet ={
     "A" : ".-",
@@ -53,17 +54,40 @@ def encodeToMorse(message):
         encodedMessage += morseAlphabet[char.upper()] + " "
     return encodedMessage
 
-#návod
-print("===============Morse to text / Text to morse translator===============")
-print("pro převod z morseovy abecedy na text používej . nebo - a za každým písmenem vlož mezeru(i na konec) a pro mezery mezi slovy použij /")
-print("pro převod z textu na morseovu abecedu používej latinskou abecedu bez diakritiky a mezery pro oddělení slov")
+#hlavní metoda main
+def main():
+    #návod
+    print("===============Morse to text / Text to morse translator===============")
+    print("pro převod z morseovy abecedy na text používej . nebo - a za každým písmenem vlož mezeru(i na konec) a pro mezery mezi slovy použij /")
+    print("pro převod z textu na morseovu abecedu používej latinskou abecedu bez diakritiky a mezery pro oddělení slov")
 
-#user input (uživatel vloží string pro dekódování/zakódování morseovy abecedy)
-userInput = input ("Vlož morseovu abecedu nebo text pro přeložení: ")
+    #user input (uživatel vloží string pro dekódování/zakódování morseovy abecedy)
+    userInput = input ("Vlož morseovu abecedu nebo text pro přeložení: ")
+    
+    #pokud detekuje . nebo - ve stringu userInput, tak bude překládat z morseovy abecedy na text, jinak bude enkódovat text do morseovy abecedy
+    str = userInput
+    if str.find("." or "-")!=-1:
+     print(decodeMorse(userInput))
+    else:
+     print(encodeToMorse(userInput))
 
-#pokud detekuje . nebo - ve stringu userInput, tak bude překládat z morseovy abecedy na text, jinak bude enkódovat text do morseovy abecedy
-str = userInput
-if str.find("." or "-")!=-1:
-  print(decodeMorse(userInput))
-else:
-  print(encodeToMorse(userInput))
+  #unit testy
+class TestTestTest(unittest.TestCase):
+
+    #test převodu z textu na morseovu abecedu
+    def test_1(self):
+        result = encodeToMorse("testPREVODUtextuDOmorseovyABECEDY")
+        self.assertEqual(result, "- . ... - .--. .-. . ...- --- -.. ..- - . -..- - ..- -.. --- -- --- .-. ... . --- ...- -.-- .- -... . -.-. . -.. -.-- ")
+
+    #test převodu z morseovy abecedy na text
+    def test_2(self):
+        result = decodeMorse("- . ... - .--. .-. . ...- --- -.. ..- -- --- .-. ... . --- ...- -.-- .- -... . -.-. . -.. -.-- -.. --- - . -..- - ..- ")
+        self.assertEqual(result, "testPREVODUmorseovyABECEDYdoTEXTU")
+
+    def test_10(self):
+        result = encodeToMorse("?ahoj")
+        self.assertEqual(result, 'Zadaná nesprávná kombince znaků')
+
+
+if __name__ == '__main__':
+    main()
