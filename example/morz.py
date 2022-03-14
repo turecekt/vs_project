@@ -19,7 +19,7 @@ Slovnik = {'A': '.-', 'B': '-...',
 def kod(zprava):
     """
     Funkce ktera zakoduje zpravu psanou v latince do morzeovy
-    abecedy.
+    abecedy
     """
     sifra = ''
     for letter in zprava:
@@ -33,7 +33,7 @@ def kod(zprava):
 def dekod(zprava):
     """
     Funkce ktera rozlusti zpravu psanou v morzeove
-    abecede do latinky.
+    abecede do latinky
     """
     zprava += ' '
 
