@@ -15,8 +15,8 @@ Slovnik = {'A': '.-', 'B': '-...',
            '4': '....-', '5': '.....', '6': '-....',
            '7': '--...', '8': '---..', '9': '----.'}
 
-def kod(zprava):
 
+def kod(zprava):
     """
     Funkce ktera zakoduje zpravu psanou v latince do morzeovy
     abecedy.
@@ -29,10 +29,10 @@ def kod(zprava):
             sifra += ' '
     return sifra
 
-def dekod(zprava):
 
+def dekod(zprava):
     """
-    Funkce ktera rozlusti zpravu psanou v morzeove 
+    Funkce ktera rozlusti zpravu psanou v morzeove
     abecede do latinky.
     """
     zprava += ' '
@@ -61,11 +61,10 @@ def dekod(zprava):
 
     return rozsifra
 
+
 def main():
-
-
     """Hlavní blok programu.
-    
+
     Main, kde program pozna, zda-li je zadana zprava psana v morzeove abecede
     ci latince a spusti spravny kod na prevedeni do druhe abecedy
     """
