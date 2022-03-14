@@ -17,7 +17,8 @@ Slovnik = {'A': '.-', 'B': '-...',
 
 
 def kod(zprava):
-    """
+    """Funkce na zakodovani.
+
     Funkce ktera zakoduje zpravu psanou v latince do morzeovy
     abecedy
     """
@@ -31,7 +32,8 @@ def kod(zprava):
 
 
 def dekod(zprava):
-    """
+    """Funkce na dekodovani.
+
     Funkce ktera rozlusti zpravu psanou v morzeove
     abecede do latinky
     """
