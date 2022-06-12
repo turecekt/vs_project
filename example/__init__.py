@@ -6,7 +6,7 @@ The example module supplies one function: compute(). For example,
 3
 """
 
-"""
+
 def compute(x):
     """Functon compute returns evaluation of expression using argument x.
 
@@ -17,4 +17,4 @@ def compute(x):
         - output - Output of the function
     """
     return x * x - 2 * x
-"""
+
