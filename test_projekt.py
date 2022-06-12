@@ -1,4 +1,3 @@
-
 # Morseovka
 # Oliver Ludvík, Ondřej Sedláček, Martin Sedláček
 
@@ -72,7 +71,7 @@ Morseovka = {
     "(": "(",
     ")": ")",
     "?": "?",
-    "!": "!"
+    "!": "!",
 }
 # dictoanry Moresovka s invertovaným mapováním
 inv_Morseovka = {v: k for k, v in Morseovka.items()}
@@ -82,12 +81,13 @@ special_char = [",", ":", "!", "?", "(", ")"]
 
 def IsInMorse(character):
 
-	if character in Morseovka:
-		return True
-	else:
-		return False
-	
-def ToMorse(text, preklad=""): # Zašifrovává text do morzeovy abecedy
+    if character in Morseovka:
+        return True
+    else:
+        return False
+
+
+def ToMorse(text, preklad=""):  # Zašifrovává text do morzeovy abecedy
     """Popis funkce.
 
     Přiřazuje do proměnné preklad jednotlivé znaky s dictionary,
@@ -102,7 +102,8 @@ def ToMorse(text, preklad=""): # Zašifrovává text do morzeovy abecedy
             preklad = preklad + char
     return preklad
 
-def FromMorse(text): # Rozšifrovává kód z morzeovy abecedy
+
+def FromMorse(text):  # Rozšifrovává kód z morzeovy abecedy
     """Popis funkce.
 
     ze stringu text vytvoří list souřadnic
@@ -116,26 +117,32 @@ def FromMorse(text): # Rozšifrovává kód z morzeovy abecedy
     sl = [text[cords[i] + 1: cords[i + 1]]
           for i in range(len(cords) - 1)] + [""]
     # vytvoří souřadnice souřadnic pozic kde se mají nacházet tečky
-    dot = [i for i in range(len(sl) - 2)
-           if sl[i] + sl[i + 1] + sl[i + 2] == ""]
+    dot = [i for i in range(len(sl) - 2) if sl[i] +
+           sl[i + 1] + sl[i + 2] == ""]
     """
     navrátí list sl s přiřazenýma tečkama
     jako string reprezentující výslednou zprávu
     """
-    return "".join([inv_Morseovka[sl[i]]
-                    if i not in dot else "." for i in range(len(sl))])
-	
+    return "".join(
+        [inv_Morseovka[sl[i]] if i not in dot else "." for i in range(len(sl))]
+    )
+
+
 def test_tomorse():
-	assert ToMorse("ahoj") == ".-/..../---/.---/"
-	
+    assert ToMorse("ahoj") == ".-/..../---/.---/"
+
+
 def test_frommorse():
-	assert FromMorse(".-/..../---/.---/") == "ahoj "
-	
+    assert FromMorse(".-/..../---/.---/") == "ahoj "
+
+
 def test_isinmorse():
-	assert IsInMorse("a") == True
-#následují sekce je zakomentovaná jelikož není funkce a nejde testovat
-"""	
-if __name__ == "__main__":   
+    assert IsInMorse("a")
+
+
+# následují sekce je zakomentovaná jelikož není funkce a nejde testovat
+"""
+if __name__ == "__main__":
     running = True
     while running:
         zkama, jak = " ", " "
@@ -156,11 +163,12 @@ if __name__ == "__main__":
                 running = False
         elif zkama == "2":
             while jak not in ["1", "2"]:
-                jak = input("morseovka na abecedu(1), abeceda na morseovku(2)?\n")
+                jak = input(
+                    "morseovka na abecedu(1), abeceda na morseovku(2)?\n")
             if jak == "1":
                 text = input(
                     "napiš morseovku ve formátu .../---/...// "
-                    "(/ = konec písmena, // = konec slova, /// = konec věty\n ")
+                    "(/= konec písmena, //= konec slova, ///= konec věty\n ")
                 print(FromMorse(text))
             elif jak == "2":
                 text = input("napiš text(mezery jenom mezi slovy): ")
