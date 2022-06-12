@@ -81,6 +81,22 @@ special_char = [",", ":", "!", "?", "(", ")"]
 
 
 def IsInMorse(character):
+	"""
+	toto je funkce pro zvýšení pokrití testy
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	"""
 	if character in Morseovka:
 		return True
 	else:
