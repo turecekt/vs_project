@@ -80,7 +80,9 @@ special_char = [",", ":", "!", "?", "(", ")"]
 
 
 def IsInMorse(character):
-
+    """
+    Funkce kotroluje zda li je znak v dictionary
+    """
     if character in Morseovka:
         return True
     else:
@@ -129,14 +131,23 @@ def FromMorse(text):  # Rozšifrovává kód z morzeovy abecedy
 
 
 def test_tomorse():
+    """
+    test
+    """
     assert ToMorse("ahoj") == ".-/..../---/.---/"
 
 
 def test_frommorse():
+    """
+    test
+    """
     assert FromMorse(".-/..../---/.---/") == "ahoj "
 
 
 def test_isinmorse():
+    """
+    test
+    """
     assert IsInMorse("a")
 
 
