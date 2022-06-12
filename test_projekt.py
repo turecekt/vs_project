@@ -135,7 +135,7 @@ def test_isinmorse():
 	assert IsInMorse("a") == True
 def test_isinmorse2():
 	assert IsInMorse("b") == True
-	
+"""	
 if __name__ == "__main__":   
     running = True
     while running:
@@ -168,3 +168,4 @@ if __name__ == "__main__":
                 print(ToMorse(text))
         else:
             running = False
+"""
