@@ -2,6 +2,7 @@
 # Oliver Ludvík, Ondřej Sedláček, Martin Sedláček
 
 """Vytvořte program, který umí kódovat i dekódovat Morseovu abecedu.
+
 VSTUP
 • Textový řetězec v uvozovkách
 • Bude čistě na řešitelském týmu, aby vymyslelo vhodný způsob zadávání vstupu.
@@ -79,9 +80,7 @@ special_char = [",", ":", "!", "?", "(", ")"]
 
 
 def IsInMorse(character):
-    """
-    Funkce kotroluje zda li je znak v dictionary
-    """
+    #Funkce kotroluje zda li je znak v dictionary.
     if character in Morseovka:
         return True
     else:
@@ -128,23 +127,17 @@ def FromMorse(text):  # Rozšifrovává kód z morzeovy abecedy
 
 
 def test_tomorse():
-    """
-    test
-    """
+    #Test.
     assert ToMorse("ahoj") == ".-/..../---/.---/"
 
 
 def test_frommorse():
-    """
-    test
-    """
+    #Test.
     assert FromMorse(".-/..../---/.---/") == "ahoj "
 
 
 def test_isinmorse():
-    """
-    test
-    """
+    #Test.
     assert IsInMorse("a")
 
 
@@ -184,4 +177,3 @@ if __name__ == "__main__":
         else:
             running = False
 """
-
