@@ -189,4 +189,5 @@ if __name__ == "__main__":
                 text = input("napiš text(mezery jenom mezi slovy): ")
                 print(ToMorse(text))
         else:
-            running = False"""
+            running = False
+            """
