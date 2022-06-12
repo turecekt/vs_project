@@ -80,7 +80,12 @@ inv_Morseovka = {v: k for k, v in Morseovka.items()}
 special_char = [",", ":", "!", "?", "(", ")"]
 
 
-
+def IsInMorse(character):
+	if character in Morseovka:
+		return True
+	else:
+		return False
+	
 def ToMorse(text, preklad=""): # Zašifrovává text do morzeovy abecedy
     """Popis funkce.
 
@@ -124,6 +129,9 @@ def test_tomorse():
 	
 def test_frommorse():
 	assert FromMorse(".-/..../---/.---/") == "ahoj "
+	
+def test_isinmorse():
+	assert IsInMorse("a") == True
 	
 if __name__ == "__main__":   
     running = True
