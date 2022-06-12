@@ -191,5 +191,3 @@ if __name__ == "__main__":
         else:
             running = False
             """
-a = 1
-
