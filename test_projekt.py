@@ -2,6 +2,7 @@
 # Oliver Ludvík, Ondřej Sedláček, Martin Sedláček
 
 """Vytvořte program, který umí kódovat i dekódovat Morseovu abecedu.
+
 VSTUP
 • Textový řetězec v uvozovkách
 • Bude čistě na řešitelském týmu, aby vymyslelo vhodný způsob zadávání vstupu.
@@ -80,6 +81,7 @@ special_char = [",", ":", "!", "?", "(", ")"]
 
 def IsInMorse(character):
     """Popis funkce.
+    
     Funkce kontroluje zdali je znak v dictionary
     """
     if character in Morseovka:
@@ -90,6 +92,7 @@ def IsInMorse(character):
 
 def ToMorse(text, preklad=""):  # Zašifrovává text do morzeovy abecedy
     """Popis funkce.
+    
     Přiřazuje do proměnné preklad jednotlivé znaky s dictionary,
     případně z listu speciálních charakterů.
     """
@@ -105,6 +108,7 @@ def ToMorse(text, preklad=""):  # Zašifrovává text do morzeovy abecedy
 
 def FromMorse(text):  # Rozšifrovává kód z morzeovy abecedy
     """Popis funkce.
+    
     ze stringu text vytvoří list souřadnic
     konců a začátků jedlotlivých znaků odělených "/".
     """
@@ -129,6 +133,7 @@ def FromMorse(text):  # Rozšifrovává kód z morzeovy abecedy
 
 def test_tomorse():
     """Popis funkce.
+    
     Test funkce konvertující do morseovky.
     """
     assert ToMorse("ahoj") == ".-/..../---/.---/"
@@ -136,6 +141,7 @@ def test_tomorse():
 
 def test_frommorse():
     """Popis funkce.
+    
     Test funkce konvertující z morseovky.
     """
     assert FromMorse(".-/..../---/.---/") == "ahoj "
@@ -143,6 +149,7 @@ def test_frommorse():
 
 def test_isinmorse():
     """Popis funkce.
+    
     Test funkce kontrolující výskyt znaku.
     """
     assert IsInMorse("a")
