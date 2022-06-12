@@ -96,7 +96,6 @@ def ToMorse(text, preklad=""): # Zašifrovává text do morzeovy abecedy
             preklad = preklad + char
     return preklad
 
-
 def FromMorse(text): # Rozšifrovává kód z morzeovy abecedy
     """Popis funkce.
 
