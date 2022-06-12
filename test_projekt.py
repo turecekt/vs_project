@@ -133,7 +133,7 @@ def test_frommorse():
 	
 def test_isinmorse():
 	assert IsInMorse("a") == True
-
+#následují sekce je zakomentovaná jelikož není funkce a nejde testovat
 """	
 if __name__ == "__main__":   
     running = True
