@@ -1,75 +1,94 @@
-import unittest
+"""MORSE TRANSLATOR"""
 
 #Definování morseovky
 MORSE_CODE_DICT = {
-    'A':'.-',
-    'B':'-...',
-    'C':'-.-.',
-    'D':'-..',
-    'E':'.',
-    'F':'..-.',
-    'G':'--.',
-    'H':'....',
-    'I':'..',
-    'J':'.---',
-    'K':'-.-',
-    'L':'.-..',
-    'M':'--',
-    'N':'-.',
-    'O':'---',
-    'P':'.--.',
-    'Q':'--.-',
-    'R':'.-.',
-    'S':'...',
-    'T':'-',
-    'U':'..-',
-    'V':'...-',
-    'W':'.--',
-    'X':'-..-',
-    'Y':'-.--',
-    'Z':'--..',
-    '1':'.----',
-    '2':'..---',
-    '3':'...--',
-    '4':'....-',
-    '5':'.....',
-    '6':'-....',
-    '7':'--...',
-    '8':'---..',
-    '9':'----.',
-    '0':'-----',
+    'A': '.-',
+    'B': '-...',
+    'C': '-.-.',
+    'D': '-..',
+    'E': '.',
+    'F': '..-.',
+    'G': '--.',
+    'H': '....',
+    'I': '..',
+    'J': '.---',
+    'K': '-.-',
+    'L': '.-..',
+    'M': '--',
+    'N': '-.',
+    'O': '---',
+    'P': '.--.',
+    'Q': '--.-',
+    'R': '.-.',
+    'S': '...',
+    'T': '-',
+    'U': '..-',
+    'V': '...-',
+    'W': '.--',
+    'X': '-..-',
+    'Y': '-.--',
+    'Z': '--..',
+    '1': '.----',
+    '2': '..---',
+    '3': '...--',
+    '4': '....-',
+    '5': '.....',
+    '6': '-....',
+    '7': '--...',
+    '8': '---..',
+    '9': '----.',
+    '0': '-----',
 }
 
-def zakodovani(text): #funkce pro zakodovani
-    zakodovany_text = "" #zakodovany text = string
+def zakodovani(text):
+    """Funkce pro zakodovani
+    
+    funkce pro rozpoznani znaku
+    v retezci. Kazdemu znaku priradi znak,
+    ktery je definovan v MORSE_CODE_DICT.
+    """
+    
+    zakodovany_text = "" # zakodovany text = string
     for pismena in text.upper(): 
-        if pismena != " ": #kontrola mista
-            zakodovany_text += MORSE_CODE_DICT[pismena] + ' ' #vyhleda slovnik a prida odpovidajici znak + mezeru
+        if pismena != " ": # kontrola mista
+            zakodovany_text += MORSE_CODE_DICT[pismena] + ' ' # vyhleda slovnik a prida odpovidajici znak + mezeru
         else:
-            zakodovany_text += " " #pridani mezery
-    return zakodovany_text #vypis zakodovany text
+            zakodovany_text += " " # pridani mezery
+    return zakodovany_text # vypis zakodovany text
 
 
-def dekodovani(text): #funkce pro dekodovani
+def dekodovani(text):
+    """Funkce pro dekodovani
+    
+    funkce pro rozpoznani kodu
+    v retezci. Kazdemu znaku kodu priradi znak,
+    ktery je definovany v MORSE_CODE_DICT.
+    """
+    
     global prostor
     text += " " 
     kod = "" 
     normal = ""
     for pismena in text:
-        if pismena != " ": #kontrola mista
-            kod += pismena #ukladani morseovky po znaku
-            prostor = 0 #prostor
+        if pismena != " ": # kontrola mista
+            kod += pismena # ukladani morseovky po znaku
+            prostor = 0 # prostor
         else:
-            prostor += 1 #pokud je rovno 1 oznacuje pismeno
-            if prostor == 2: #pokud je rovno 2 oznacuje nove slovo
-                normal += " " #pridani mezery
+            prostor += 1 # pokud je rovno 1 oznacuje pismeno
+            if prostor == 2: # pokud je rovno 2 oznacuje nove slovo
+                normal += " " # pridani mezery
             else:
                 normal += \
-                    list(MORSE_CODE_DICT.keys())[list(MORSE_CODE_DICT.values()).index(kod)] #pristup ke klicum pomoci jejich hodnot
+                    list(MORSE_CODE_DICT.keys())[list(MORSE_CODE_DICT.values()).index(kod)] # pristup ke klicum pomoci jejich hodnot
                 kod = ""
-    return normal  #vypis dekodovany text
+    return normal  # vypis dekodovany text
 
 def main():
+    """Funkce spousteni programu
+    
+    uzivatel zada "d" pro dekodovani
+    nebo "e" pro zakodovani retezce
+    """
 
     sifrovani = input('Morse Encoder/Decoder\n'
                       ' d for decode \n'
@@ -88,14 +107,14 @@ def main():
 if __name__ == '__main__':
     main()
 
-#test zakodovani textu
+# test zakodovani textu
 def test_zakodovani01():
     assert zakodovani("test") == "- . ... - "
                                    
-#test dekodovani textu
+# test dekodovani textu
 def test_dekodovani01():
     assert dekodovani("- . ... -") == "TEST"
 
-#test dekodovani cisel
+# test dekodovani cisel
 def test_dekodovani02():
     assert dekodovani("----- -----  .----  ..---  ...--  ....-") == "00 1 2 3 4"
