@@ -90,33 +90,33 @@ if __name__ == '__main__':
 
 #test zakodovani znaku
 def test_zakodovani():
-    vstup = source.zakodovani('.-')
+    vstup = zakodovani('.-')
     self.assertEqual(vstup, 'a')
 
 #test zakodovani textu
 def test_zakodovani01(self):
-    vstup = source.zakodovani("test")
+    vstup = zakodovani("test")
     self.assertEqual(vstup, "- . ... - ")
 
 #test zakodovani cisel
 def test_zakodovani02(self):
-    vstup = source.zakodovani("1, 2, 3, 4")
+    vstup = zakodovani("1, 2, 3, 4")
     self.assertEqual(vstup, ".---- --..--  "
                             "..--- --..--  ...-- --..--  ....- ")
 
 #test dekodovani znaku
 def test_dekodovani():
-    vstup = source.dekodovani('a')
+    vstup = dekodovani('a')
     self.assertEqual(vstup, '.-')
 
 #test dekodovani textu
 def test_dekodovani01(self):
-    vstup = source.dekodovani("- . ... -")
+    vstup = dekodovani("- . ... -")
     self.assertEqual(vstup, "TEST")
 
 #test dekodovani cisel
 def test_dekodovani02(self):
-    vstup = source.dekodovani("----- -----  .----  ..---  ...--  ....-")
+    vstup = dekodovani("----- -----  .----  ..---  ...--  ....-")
     self.assertEqual(vstup, "00 1 2 3 4")
 
 if __name__ == '__main__':
