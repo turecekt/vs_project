@@ -76,7 +76,7 @@ def main():
                       ' e for encode \n'
                       'Enter what you want to do: \n')
     if sifrovani == 'e':
-        text_k_zakodovani = input('Enter text to decode: \n')
+        text_k_zakodovani = input('Enter text to encode: \n').upper()
         print(zakodovani(text_k_zakodovani))
     elif sifrovani == 'd':
         text_k_dekodovani = input('Enter text to decode: \n')
