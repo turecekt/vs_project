@@ -1,6 +1,6 @@
-"""MORSE TRANSLATOR"""
+"""MORSE TRANSLATOR."""
 
-#Definování morseovky
+# Definování morseovky
 MORSE_CODE_DICT = {
     'A': '.-',
     'B': '-...',
@@ -51,7 +51,7 @@ def zakodovani(text):
     zakodovany_text = "" # zakodovany text = string
     for pismena in text.upper(): 
         if pismena != " ": # kontrola mista
-            zakodovany_text += MORSE_CODE_DICT[pismena] + ' ' # vyhleda slovnik a prida odpovidajici znak + mezeru
+            zakodovany_text += MORSE_CODE_DICT[pismena] + ' '
         else:
             zakodovany_text += " " # pridani mezery
     return zakodovany_text # vypis zakodovany text
@@ -79,13 +79,14 @@ def dekodovani(text):
                 normal += " " # pridani mezery
             else:
                 normal += \
-                    list(MORSE_CODE_DICT.keys())[list(MORSE_CODE_DICT.values()).index(kod)] # pristup ke klicum pomoci jejich hodnot
+                    list(MORSE_CODE_DICT.keys())[list(MORSE_CODE_DICT.values()).index(kod)] 
                 kod = ""
     return normal  # vypis dekodovany text
 
+
 def main():
     """Funkce spousteni programu
-    
+
     uzivatel zada "d" pro dekodovani
     nebo "e" pro zakodovani retezce
     """
@@ -107,14 +108,17 @@ def main():
 if __name__ == '__main__':
     main()
 
-# test zakodovani textu
+    
 def test_zakodovani01():
+    """test k zakodovani textu"""
     assert zakodovani("test") == "- . ... - "
-                                   
-# test dekodovani textu
+
+    
 def test_dekodovani01():
+    """test k dekodovani textu"""
     assert dekodovani("- . ... -") == "TEST"
 
-# test dekodovani cisel
+    
 def test_dekodovani02():
-    assert dekodovani("----- -----  .----  ..---  ...--  ....-") == "00 1 2 3 4"
+    """test k dekodovani cisel"""
+    assert dekodovani("-----  .----  ..---  ...--  ....-") == "0 1 2 3 4"
