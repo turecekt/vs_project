@@ -88,11 +88,6 @@ def main():
 if __name__ == '__main__':
     main()
 
-#test zakodovani znaku
-def test_zakodovani():
-    vstup = zakodovani('.-')
-    self.assertEqual(vstup, 'a')
-
 #test zakodovani textu
 def test_zakodovani01(self):
     vstup = zakodovani("test")
@@ -103,12 +98,6 @@ def test_zakodovani02(self):
     vstup = zakodovani("1, 2, 3, 4")
     self.assertEqual(vstup, ".---- --..--  "
                             "..--- --..--  ...-- --..--  ....- ")
-
-#test dekodovani znaku
-def test_dekodovani():
-    vstup = dekodovani('a')
-    self.assertEqual(vstup, '.-')
-
 #test dekodovani textu
 def test_dekodovani01(self):
     vstup = dekodovani("- . ... -")
