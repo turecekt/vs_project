@@ -93,13 +93,13 @@ def test_zakodovani01():
     assert zakodovani("test") == "- . ... - "
 
 #test zakodovani cisel
-def test_zakodovani02(self):
+def test_zakodovani02():
     assert zakodovani("00 1 2 3 4") == "----- -----  .----  ..---  ...--  ....-"                                     
 
 #test dekodovani textu
-def test_dekodovani01(self):
+def test_dekodovani01():
     assert dekodovani("- . ... -") == "TEST"
 
 #test dekodovani cisel
-def test_dekodovani02(self):
+def test_dekodovani02():
     assert dekodovani("----- -----  .----  ..---  ...--  ....-") == "00 1 2 3 4"
