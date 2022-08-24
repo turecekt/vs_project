@@ -91,11 +91,7 @@ if __name__ == '__main__':
 #test zakodovani textu
 def test_zakodovani01():
     assert zakodovani("test") == "- . ... - "
-
-#test zakodovani cisel
-def test_zakodovani02():
-    assert zakodovani("00 1 2 3 4") == "----- -----  .----  ..---  ...--  ....-"                                     
-
+                                   
 #test dekodovani textu
 def test_dekodovani01():
     assert dekodovani("- . ... -") == "TEST"
