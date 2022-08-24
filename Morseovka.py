@@ -90,7 +90,7 @@ if __name__ == '__main__':
 
 #test zakodovani textu
 def test_zakodovani():
-    assert zakodovani('.-') == 'a'
+    assert zakodovani('.-') == 'a '
 
 #test dekodovani textu
 def test_dekodovani():
