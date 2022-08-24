@@ -44,10 +44,10 @@ def zakodovani(text): #funkce pro zakodovani
     zakodovany_text = "" #zakodovany text = string
     for pismena in text: 
         if pismena != " ": #kontrola mista
-            zakodovany_text = zakodovany_text + MORSE_CODE_DICT.get(pismena) + " " #vyhleda slovnik a prida odpovidajici znak + mezeru
+            zakodovany_text = zakodovany_text + MORSE_CODE_DICT.get(pismena) #vyhleda slovnik a prida odpovidajici znak + mezeru
         else:
             zakodovany_text += " " #pridani mezery
-    print(zakodovany_text) #vypis zakodovany text
+    return(zakodovany_text) #vypis zakodovany text
 
 
 def dekodovani(text): #funkce pro dekodovani
@@ -67,7 +67,7 @@ def dekodovani(text): #funkce pro dekodovani
             else:
                 normal = normal + key_list[val_list.index(kod)] #pristup ke klicum pomoci jejich hodnot
                 kod = ""
-    print(normal) #vypis dekodovany text
+    return(normal) #vypis dekodovany text
 
 def main():
 
@@ -90,7 +90,7 @@ if __name__ == '__main__':
 
 #test zakodovani textu
 def test_zakodovani():
-    assert zakodovani('.-') == 'a '
+    assert zakodovani('.-') == 'a'
 
 #test dekodovani textu
 def test_dekodovani():
@@ -98,4 +98,3 @@ def test_dekodovani():
 
 if __name__ == '__main__':
     unittest.main()
-
