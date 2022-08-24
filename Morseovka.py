@@ -47,7 +47,7 @@ def zakodovani(text):
     funkce pro rozpoznani znaku
     v retezci. Kazdemu znaku priradi znak,
     ktery je definovan v MORSE_CODE_DICT.
-    """ 
+    """
     zakodovany_text = ""  # zakodovany text = string
     for pismena in text.upper():
         if pismena != " ":  # kontrola mista
@@ -63,10 +63,10 @@ def dekodovani(text):
     funkce pro rozpoznani kodu
     v retezci. Kazdemu znaku kodu priradi znak,
     ktery je definovany v MORSE_CODE_DICT.
-    """   
+    """ 
     global prostor
     text += " "
- 
+
     kod = ""
     normal = ""
     for pismena in text:
