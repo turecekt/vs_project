@@ -63,7 +63,7 @@ def dekodovani(text):
     funkce pro rozpoznani kodu
     v retezci. Kazdemu znaku kodu priradi znak,
     ktery je definovany v MORSE_CODE_DICT.
-    """ 
+    """
     global prostor
     text += " "
 
