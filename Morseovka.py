@@ -42,18 +42,17 @@ MORSE_CODE_DICT = {
 
 def zakodovani(text): #funkce pro zakodovani
     zakodovany_text = "" #zakodovany text = string
-    for pismena in text: 
+    for pismena in text.upper(): 
         if pismena != " ": #kontrola mista
-            zakodovany_text = zakodovany_text + MORSE_CODE_DICT.get(pismena) #vyhleda slovnik a prida odpovidajici znak + mezeru
+            zakodovany_text += MORSE_CODE_DICT[pismena] + ' ' #vyhleda slovnik a prida odpovidajici znak + mezeru
         else:
             zakodovany_text += " " #pridani mezery
-    return(zakodovany_text) #vypis zakodovany text
+    return zakodovany_text #vypis zakodovany text
 
 
 def dekodovani(text): #funkce pro dekodovani
-    text += " " #pridani mezery
-    key_list = list(MORSE_CODE_DICT.keys()) #pro pristup ke klicum
-    val_list = list(MORSE_CODE_DICT.values())
+    global prostor
+    text += " " 
     kod = "" 
     normal = ""
     for pismena in text:
@@ -65,9 +64,10 @@ def dekodovani(text): #funkce pro dekodovani
             if prostor == 2: #pokud je rovno 2 oznacuje nove slovo
                 normal += " " #pridani mezery
             else:
-                normal = normal + key_list[val_list.index(kod)] #pristup ke klicum pomoci jejich hodnot
+                normal += \
+                    list(MORSE_CODE_DICT.keys())[list(MORSE_CODE_DICT.values()).index(kod)] #pristup ke klicum pomoci jejich hodnot
                 kod = ""
-    return(normal) #vypis dekodovany text
+    return normal  #vypis dekodovany text
 
 def main():
 
@@ -88,13 +88,36 @@ def main():
 if __name__ == '__main__':
     main()
 
-#test zakodovani textu
+#test zakodovani znaku
 def test_zakodovani():
-    assert zakodovani('.-') == 'a'
+    vstup = source.zakodovani('.-')
+    self.assertEqual(vstup, 'a')
+
+#test zakodovani textu
+def test_zakodovani01(self):
+    vstup = source.zakodovani("test")
+    self.assertEqual(vstup, "- . ... - ")
+
+#test zakodovani cisel
+def test_zakodovani02(self):
+    vstup = source.zakodovani("1, 2, 3, 4")
+    self.assertEqual(vstup, ".---- --..--  "
+                            "..--- --..--  ...-- --..--  ....- ")
+
+#test dekodovani znaku
+def test_dekodovani():
+    vstup = source.dekodovani('a')
+    self.assertEqual(vstup, '.-')
 
 #test dekodovani textu
-def test_dekodovani():
-    assert dekodovani('a') == '.-'
+def test_dekodovani01(self):
+    vstup = source.dekodovani("- . ... -")
+    self.assertEqual(vstup, "TEST")
+
+#test dekodovani cisel
+def test_dekodovani02(self):
+    vstup = source.dekodovani("----- -----  .----  ..---  ...--  ....-")
+    self.assertEqual(vstup, "00 1 2 3 4")
 
 if __name__ == '__main__':
     unittest.main()
