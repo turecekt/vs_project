@@ -69,14 +69,24 @@ def dekodovani(text): #funkce pro dekodovani
                 kod = ""
     print(normal) #vypis dekodovany text
 
-print("\n\n\n\t\tMorse Code Generator")
-ch = input("Stiskni E k zakodovani nebo D k Dekodovani : ")
-if ch == 'E' or ch == 'e': #stiskni "e" a muzes zakodovat svoji vetu,slovo nebo pismeno
-    text_k_zakodovani = input("Vlož text k zakodovani : ").upper()
-    zakodovani(text_k_zakodovani)
-else:
-    text_k_dekodovani = input("Vlož text k dekodovani : ") #stiskni jakoukoli jinou klavesu a muzes dekodovat svoji vetu,slovo nebo pismeno
-    dekodovani(text_k_dekodovani)
+def main():
+
+    sifrovani = input('Morse Encoder/Decoder\n'
+                      ' d for decode \n'
+                      ' e for encode \n'
+                      'Enter what you want to do: \n')
+    if sifrovani == 'e':
+        text_k_zakodovani = input('Enter text to decode: \n')
+        print(zakodovani(text_k_zakodovani))
+    elif sifrovani == 'd':
+        text_k_dekodovani = input('Enter text to decode: \n')
+        print(dekodovani(text_k_dekodovani))
+    else:
+        print('Wrong choice...\nExiting...')
+
+
+if __name__ == '__main__':
+    main()
 
 #test zakodovani textu
 def test_zakodovani():
