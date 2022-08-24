@@ -89,24 +89,17 @@ if __name__ == '__main__':
     main()
 
 #test zakodovani textu
-def test_zakodovani01(self):
-    vstup = zakodovani("test")
-    self.assertEqual(vstup, "- . ... - ")
+def test_zakodovani01():
+    assert zakodovani("test") == "- . ... - "
 
 #test zakodovani cisel
 def test_zakodovani02(self):
-    vstup = zakodovani("1, 2, 3, 4")
-    self.assertEqual(vstup, ".---- --..--  "
-                            "..--- --..--  ...-- --..--  ....- ")
+    assert zakodovani("00 1 2 3 4") == "----- -----  .----  ..---  ...--  ....-"                                     
+
 #test dekodovani textu
 def test_dekodovani01(self):
-    vstup = dekodovani("- . ... -")
-    self.assertEqual(vstup, "TEST")
+    assert dekodovani("- . ... -") == "TEST"
 
 #test dekodovani cisel
 def test_dekodovani02(self):
-    vstup = dekodovani("----- -----  .----  ..---  ...--  ....-")
-    self.assertEqual(vstup, "00 1 2 3 4")
-
-if __name__ == '__main__':
-    unittest.main()
+    assert dekodovani("----- -----  .----  ..---  ...--  ....-") == "00 1 2 3 4"
