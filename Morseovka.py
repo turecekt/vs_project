@@ -43,13 +43,13 @@ DICT = {
 
 def zakodovani(text):
     """Funkce pro zakodovani.
-    
+
     funkce pro rozpoznani znaku
     v retezci. Kazdemu znaku priradi znak,
     ktery je definovan v MORSE_CODE_DICT.
-    """  
+    """ 
     zakodovany_text = ""  # zakodovany text = string
-    for pismena in text.upper(): 
+    for pismena in text.upper():
         if pismena != " ":  # kontrola mista
             zakodovany_text += DICT[pismena] + ' '
         else:
@@ -59,15 +59,15 @@ def zakodovani(text):
 
 def dekodovani(text):
     """Funkce pro dekodovani.
-    
+
     funkce pro rozpoznani kodu
     v retezci. Kazdemu znaku kodu priradi znak,
     ktery je definovany v MORSE_CODE_DICT.
-    """    
+    """   
     global prostor
-    text += " " 
-    
-    kod = "" 
+    text += " "
+ 
+    kod = ""
     normal = ""
     for pismena in text:
         if pismena != " ":  # kontrola mista
@@ -79,7 +79,7 @@ def dekodovani(text):
                 normal += " "  # pridani mezery
             else:
                 normal += \
-                    list(DICT.keys())[list(DICT.values()).index(kod)] 
+                    list(DICT.keys())[list(DICT.values()).index(kod)]
                 kod = ""
     return normal  # vypis dekodovany text
 
@@ -106,15 +106,18 @@ def main():
 
 if __name__ == '__main__':
     main()
-   
+
+
 def test_zakodovani01():
     """Test k zakodovani textu."""
     assert zakodovani("test") == "- . ... - "
-    
+
+
 def test_dekodovani01():
     """Test k dekodovani textu."""
     assert dekodovani("- . ... -") == "TEST"
-    
+
+
 def test_dekodovani02():
     """Test k dekodovani cisel."""
     assert dekodovani("-----  .----  ..---  ...--  ....-") == "0 1 2 3 4"
