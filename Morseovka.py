@@ -1,7 +1,7 @@
 """MORSE TRANSLATOR."""
 
 # Definování morseovky
-MORSE_CODE_DICT = {
+DICT = {
     'A': '.-',
     'B': '-...',
     'C': '-.-.',
@@ -40,57 +40,56 @@ MORSE_CODE_DICT = {
     '0': '-----',
 }
 
+
 def zakodovani(text):
-    """Funkce pro zakodovani
+    """Funkce pro zakodovani.
     
     funkce pro rozpoznani znaku
     v retezci. Kazdemu znaku priradi znak,
     ktery je definovan v MORSE_CODE_DICT.
-    """
-    
-    zakodovany_text = "" # zakodovany text = string
+    """  
+    zakodovany_text = ""  # zakodovany text = string
     for pismena in text.upper(): 
-        if pismena != " ": # kontrola mista
-            zakodovany_text += MORSE_CODE_DICT[pismena] + ' '
+        if pismena != " ":  # kontrola mista
+            zakodovany_text += DICT[pismena] + ' '
         else:
-            zakodovany_text += " " # pridani mezery
-    return zakodovany_text # vypis zakodovany text
+            zakodovany_text += " "  # pridani mezery
+    return zakodovany_text  # vypis zakodovany text
 
 
 def dekodovani(text):
-    """Funkce pro dekodovani
+    """Funkce pro dekodovani.
     
     funkce pro rozpoznani kodu
     v retezci. Kazdemu znaku kodu priradi znak,
     ktery je definovany v MORSE_CODE_DICT.
-    """
-    
+    """    
     global prostor
     text += " " 
+    
     kod = "" 
     normal = ""
     for pismena in text:
-        if pismena != " ": # kontrola mista
-            kod += pismena # ukladani morseovky po znaku
-            prostor = 0 # prostor
+        if pismena != " ":  # kontrola mista
+            kod += pismena  # ukladani morseovky po znaku
+            prostor = 0  # prostor
         else:
-            prostor += 1 # pokud je rovno 1 oznacuje pismeno
-            if prostor == 2: # pokud je rovno 2 oznacuje nove slovo
-                normal += " " # pridani mezery
+            prostor += 1  # pokud je rovno 1 oznacuje pismeno
+            if prostor == 2:  # pokud je rovno 2 oznacuje nove slovo
+                normal += " "  # pridani mezery
             else:
                 normal += \
-                    list(MORSE_CODE_DICT.keys())[list(MORSE_CODE_DICT.values()).index(kod)] 
+                    list(DICT.keys())[list(DICT.values()).index(kod)] 
                 kod = ""
     return normal  # vypis dekodovany text
 
 
 def main():
-    """Funkce spousteni programu
+    """Funkce spousteni programu.
 
     uzivatel zada "d" pro dekodovani
     nebo "e" pro zakodovani retezce
     """
-
     sifrovani = input('Morse Encoder/Decoder\n'
                       ' d for decode \n'
                       ' e for encode \n'
@@ -107,18 +106,15 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-    
+   
 def test_zakodovani01():
-    """test k zakodovani textu"""
+    """Test k zakodovani textu."""
     assert zakodovani("test") == "- . ... - "
-
     
 def test_dekodovani01():
-    """test k dekodovani textu"""
+    """Test k dekodovani textu."""
     assert dekodovani("- . ... -") == "TEST"
-
     
 def test_dekodovani02():
-    """test k dekodovani cisel"""
+    """Test k dekodovani cisel."""
     assert dekodovani("-----  .----  ..---  ...--  ....-") == "0 1 2 3 4"
