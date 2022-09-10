@@ -1,5 +1,4 @@
-"""
-Project Minimax
+"""Project Minimax.
 
 Definition of done:
 TODO: add dod
@@ -7,8 +6,16 @@ TODO: add dod
 
 
 def main():
-  print("Main method")
+    """Docstring of a main method.
+
+    Args:
+        no args
+    
+    Returns:
+        doesn't return a thing.
+    """
+    print("Main method")
 
 
 if __name__ == "__main__":
-  main()
+    main()
