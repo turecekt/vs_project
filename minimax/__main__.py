@@ -17,7 +17,10 @@ from docopt import docopt
 def main(args):
     """Docstring of a main method."""
     print("Main method")
-    print(args)
+    if args['-f'] is False                  \
+        and not args['<n>']                 \
+            and args['<value_file>'] is None:
+        print("Run automatically with random numbers")
 
 
 if __name__ == "__main__":
