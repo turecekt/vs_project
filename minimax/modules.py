@@ -5,7 +5,7 @@ This will do stuff.
 
 
 def a() -> int:
-    """Do not be in other than imperative mood. Ye fucken' eejit
+    """Return value of two.
 
     It also will do stuff.
     """
