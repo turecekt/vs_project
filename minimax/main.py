@@ -10,7 +10,7 @@ def main():
 
     Args:
         no args
-    
+
     Returns:
         doesn't return a thing.
     """
