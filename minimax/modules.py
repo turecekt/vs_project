@@ -5,7 +5,7 @@ This will do stuff.
 
 
 def a() -> int:
-    """This do a function A().
+    """Do not be in other than imperative mood. Ye fucken' eejit
 
     It also will do stuff.
     """
