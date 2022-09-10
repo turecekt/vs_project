@@ -1,5 +1,6 @@
 """Test suite for basic module.
 
+Test suite for basic module.
 """
 
 
@@ -7,7 +8,7 @@ from modules import a
 
 
 def test_a():
-    """Test for function A().
+    """Test do for function A().
 
     This must not be empty.
     """

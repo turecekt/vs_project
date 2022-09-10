@@ -5,7 +5,7 @@ This will do stuff.
 
 
 def a() -> int:
-    """This is a function A().
+    """This do a function A().
 
     It also will do stuff.
     """
