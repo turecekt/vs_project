@@ -4,4 +4,4 @@
 import sys
 import triangle
 
-print(triangle.start(sys.argv))
+triangle.start(sys.argv)
