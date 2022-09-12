@@ -26,11 +26,18 @@ def start(args):
 
         print(f"Perimeter of the triangle is: {perimeter}")
 
+        #Area
+        area = triangleArea(length1, length2, length3)
+
+        print(f"Area of the triangle is: {area}")
+
 def sideLength(point1, point2):
     return math.sqrt(math.pow((int(point2[0]) - int(point1[0])), 2) + math.pow((int(point2[1]) - int(point1[1])), 2))
 
 def trianglePerimeter(a, b, c):
     return a + b + c
 
-def triangleArea():
-    pass
+def triangleArea(a, b, c):
+    s = (a + b + c) / 2
+    area = math.sqrt(s * (s - a) * (s - b) * (s - c))
+    return area
