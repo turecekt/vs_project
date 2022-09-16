@@ -48,7 +48,7 @@ def test_ExtractNumbersFromFile__stringGiven__listItemsAreEqual():
     """Loads vector from file.
     Vector is equal to a given sequence.
     """
-    v = number_extractions.ExtractNumbersFromFile('test_vector.txt')
+    v = number_extractions.ExtractNumbersFromFile('./minimax/modules/test_vector.txt')
     assert v == [1, 2, 3, 4, -10, -11, 22, 0, 16, -4]
 
 
