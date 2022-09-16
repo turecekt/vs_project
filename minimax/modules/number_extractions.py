@@ -1,5 +1,7 @@
 """Module will do number extractions.
-Either from given file, from commandline interface or generated.
+
+Either from given file, from commandline interface
+or generated.
 """
 
 
@@ -8,6 +10,7 @@ from random import randrange
 
 def ExtractNumbersFromFile(pathToFile: str):
     """It will extract numbers from given file.
+
     File is valid even if it contains whitespace characters and multiple lines.
     """
     lines = None
@@ -23,6 +26,7 @@ def ExtractNumbersFromFile(pathToFile: str):
 
 def ExtractNumbersFromCLI(cliArg: str):
     """Extract numbers from CLI.
+
     Values are in quotes, comma separated, including negative values.
     Returns list of those values as integers.
     """
@@ -39,6 +43,7 @@ def ExtractNumbersFromCLI(cliArg: str):
 
 def GenerateRandomVectorLength20():
     """Generate random vector of length 20.
+
     The basic range of every element is from -100 to 100.
     """
     lst = []

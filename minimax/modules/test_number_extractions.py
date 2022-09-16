@@ -1,5 +1,4 @@
-"""Dunno, unit testing I guess.
-"""
+"""Test module for number extraction methods."""
 
 
 import number_extractions
@@ -11,6 +10,7 @@ stringCli = "1,2,3,4,-10,-11,22,0,16,-4"
 #   ExtractNumbersFromCLI
 def test_ExtractNumbersFromCLI__stringGiven__typeReturnedIsList():
     """Assert that given parameter is parsed correctly.
+
     It will be returned as list of integers.
     """
     v = number_extractions.ExtractNumbersFromCLI(stringCli)
@@ -19,6 +19,7 @@ def test_ExtractNumbersFromCLI__stringGiven__typeReturnedIsList():
 
 def test_ExtractNumbersFromCLI__stringGiven__listItemsAreEqual():
     """Count is equal to count in string comma separated values.
+
     It will compare integer count on either side.
     """
     v = number_extractions.ExtractNumbersFromCLI(stringCli)
@@ -27,6 +28,7 @@ def test_ExtractNumbersFromCLI__stringGiven__listItemsAreEqual():
 
 def test_ExtractNumbersFromCLI__corruptStringGiven__raisesValueError():
     """Corrupt string is given.
+
     Raises ValueError exception.
     """
     try:
@@ -38,6 +40,7 @@ def test_ExtractNumbersFromCLI__corruptStringGiven__raisesValueError():
 #   ExtractNumbersFromFile
 def test_ExtractNumbersFromFile__stringGiven__typeReturnedIsList():
     """Loads vector from file.
+
     Type returned is list.
     """
     v = number_extractions. \
@@ -47,6 +50,7 @@ def test_ExtractNumbersFromFile__stringGiven__typeReturnedIsList():
 
 def test_ExtractNumbersFromFile__stringGiven__listItemsAreEqual():
     """Loads vector from file.
+
     Vector is equal to a given sequence.
     """
     v = number_extractions. \
@@ -56,6 +60,7 @@ def test_ExtractNumbersFromFile__stringGiven__listItemsAreEqual():
 
 def test_ExtractNumbersFromFile__corruptStringGiven__raisesValueError():
     """While loading vector from test_vector_corrupt raises error.
+
     On of the element is not easily parsable to integer.
     """
     try:
@@ -70,6 +75,7 @@ def test_ExtractNumbersFromFile__corruptStringGiven__raisesValueError():
 #   GenerateRandomVectorLength20
 def test_GenerateRandomVectorLength20__X__typeReturnedIsList():
     """Generates a random numeric vector of length 20.
+
     Type returned is list.
     """
     v = number_extractions.GenerateRandomVectorLength20()
@@ -78,6 +84,7 @@ def test_GenerateRandomVectorLength20__X__typeReturnedIsList():
 
 def test_GenerateRandomVectorLength20__X__listContains20Elements():
     """Generates a random numeric vector of length 20.
+
     The length is 20."""
     v = number_extractions.GenerateRandomVectorLength20()
     assert len(v) == 20
@@ -85,7 +92,9 @@ def test_GenerateRandomVectorLength20__X__listContains20Elements():
 
 def test_GenerateRandomVectorLength20__X__listContainsIntegersOnly():
     """Generates a random numberic vector of length 20.
-    Every single item of the list is of type integer."""
+
+    Every single item of the list is of type integer.
+    """
     v = number_extractions.GenerateRandomVectorLength20()
     t = True
     for item in v:

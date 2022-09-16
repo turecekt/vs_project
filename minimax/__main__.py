@@ -14,6 +14,8 @@ from modules import sort_methods, number_extractions
 
 
 def SortMethodSelector(**kwargs):
+    """Will select a sort method callback.
+    """
     if kwargs['q']:
         return sort_methods.quick_sort
     elif kwargs['b']:
@@ -27,6 +29,10 @@ def SortMethodSelector(**kwargs):
 
 
 def Sort(vector, callback):
+    """Sort numeric vector.
+    Sort numeric vector, which is acquired by favourite method, 
+    by favourite algorithm.
+    """
     sortedList = callback(vector)
     return sortedList
 

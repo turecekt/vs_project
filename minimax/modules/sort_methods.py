@@ -9,6 +9,7 @@ from random import randrange
 
 def bubble_sort(array):
     """This taken code will perform bubble sort.
+
     This code is not my work.
     """
     n = len(array)
@@ -44,6 +45,7 @@ def bubble_sort(array):
 
 def insertion_sort(array):
     """This taken code will perform insertion sort.
+
     This code is not my work.
     """
     # Loop from the second element of the array until
@@ -77,7 +79,8 @@ def insertion_sort(array):
 
 
 def _merge(left, right):
-    """This is supportive method.
+    """This will provide a supportive method.
+
     For the merge sort.
     Not my work.
     """
@@ -123,6 +126,7 @@ def _merge(left, right):
 
 def merge_sort(array):
     """This taken code will perform merge sort.
+
     This code is not my work.
     """
     # If the input array contains fewer than two elements,
@@ -142,6 +146,7 @@ def merge_sort(array):
 
 def quick_sort(array):
     """This taken code will perform quick sort.
+
     This code is not my work.
     """
     # If the input array contains fewer than two elements,
