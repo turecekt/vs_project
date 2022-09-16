@@ -40,7 +40,8 @@ def test_ExtractNumbersFromFile__stringGiven__typeReturnedIsList():
     """Loads vector from file.
     Type returned is list.
     """
-    v = number_extractions.ExtractNumbersFromFile('./minimax/modules/test_vector.txt')
+    v = number_extractions. \
+        ExtractNumbersFromFile('./minimax/modules/test_vector.txt')
     assert isinstance(v, list)
 
 
@@ -48,7 +49,8 @@ def test_ExtractNumbersFromFile__stringGiven__listItemsAreEqual():
     """Loads vector from file.
     Vector is equal to a given sequence.
     """
-    v = number_extractions.ExtractNumbersFromFile('./minimax/modules/test_vector.txt')
+    v = number_extractions. \
+        ExtractNumbersFromFile('./minimax/modules/test_vector.txt')
     assert v == [1, 2, 3, 4, -10, -11, 22, 0, 16, -4]
 
 
@@ -57,7 +59,8 @@ def test_ExtractNumbersFromFile__corruptStringGiven__raisesValueError():
     On of the element is not easily parsable to integer.
     """
     try:
-        number_extractions.ExtractNumbersFromFile('./minimax/modules/test_vector_corrupt.txt')
+        number_extractions. \
+            ExtractNumbersFromFile('./minimax/modules/test_vector_corrupt.txt')
     except ValueError:
         assert True
     else:
@@ -74,11 +77,15 @@ def test_GenerateRandomVectorLength20__X__typeReturnedIsList():
 
 
 def test_GenerateRandomVectorLength20__X__listContains20Elements():
+    """Generates a random numeric vector of length 20.
+    The length is 20."""
     v = number_extractions.GenerateRandomVectorLength20()
     assert len(v) == 20
 
 
 def test_GenerateRandomVectorLength20__X__listContainsIntegersOnly():
+    """Generates a random numberic vector of length 20.
+    Every single item of the list is of type integer."""
     v = number_extractions.GenerateRandomVectorLength20()
     t = True
     for item in v:
