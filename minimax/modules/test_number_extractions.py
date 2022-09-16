@@ -40,7 +40,7 @@ def test_ExtractNumbersFromFile__stringGiven__typeReturnedIsList():
     """Loads vector from file.
     Type returned is list.
     """
-    v = number_extractions.ExtractNumbersFromFile('test_vector.txt')
+    v = number_extractions.ExtractNumbersFromFile('./minimax/modules/test_vector.txt')
     assert isinstance(v, list)
 
 
@@ -57,7 +57,7 @@ def test_ExtractNumbersFromFile__corruptStringGiven__raisesValueError():
     On of the element is not easily parsable to integer.
     """
     try:
-        number_extractions.ExtractNumbersFromFile('test_vector_corrupt.txt')
+        number_extractions.ExtractNumbersFromFile('./minimax/modules/test_vector_corrupt.txt')
     except ValueError:
         assert True
     else:
