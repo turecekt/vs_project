@@ -7,6 +7,9 @@ from random import randrange
 
 
 def ExtractNumbersFromFile(pathToFile: str):
+    """It will extract numbers from given file.
+    File is valid even if it contains whitespace characters and multiple lines.
+    """
     lines = None
     numbers = []
     with open(pathToFile) as f:
@@ -35,6 +38,9 @@ def ExtractNumbersFromCLI(cliArg: str):
 
 
 def GenerateRandomVectorLength20():
+    """Generate random vector of length 20.
+    The basic range of every element is from -100 to 100.
+    """
     lst = []
     for _ in range(20):
         lst.append(randrange(-100, 100))
