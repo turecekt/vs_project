@@ -1,5 +1,6 @@
 """Sorting module.
-Methods taken with from https://realpython.com/sorting-algorithms-python/ .
+
+Methods taken with from https://realpython.com/sorting-algorithms-python/
 Few minor changes had to be done to make it working nicely.
 """
 
@@ -8,7 +9,7 @@ from random import randrange
 
 
 def bubble_sort(array):
-    """This taken code will perform bubble sort.
+    """Sorts vector using bubble sort method.
 
     This code is not my work.
     """
@@ -44,7 +45,7 @@ def bubble_sort(array):
 
 
 def insertion_sort(array):
-    """This taken code will perform insertion sort.
+    """Sorts vector using insertion sort method.
 
     This code is not my work.
     """
@@ -79,7 +80,7 @@ def insertion_sort(array):
 
 
 def _merge(left, right):
-    """This will provide a supportive method.
+    """Merges arrays into one.
 
     For the merge sort.
     Not my work.
@@ -125,7 +126,7 @@ def _merge(left, right):
 
 
 def merge_sort(array):
-    """This taken code will perform merge sort.
+    """Sorts vector using merge sort method.
 
     This code is not my work.
     """
@@ -145,7 +146,7 @@ def merge_sort(array):
 
 
 def quick_sort(array):
-    """This taken code will perform quick sort.
+    """Sorts vector using quick sort method.
 
     This code is not my work.
     """

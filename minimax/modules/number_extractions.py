@@ -9,7 +9,7 @@ from random import randrange
 
 
 def ExtractNumbersFromFile(pathToFile: str):
-    """It will extract numbers from given file.
+    """Extract numbers from given file.
 
     File is valid even if it contains whitespace characters and multiple lines.
     """

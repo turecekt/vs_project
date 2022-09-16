@@ -85,7 +85,8 @@ def test_GenerateRandomVectorLength20__X__typeReturnedIsList():
 def test_GenerateRandomVectorLength20__X__listContains20Elements():
     """Generates a random numeric vector of length 20.
 
-    The length is 20."""
+    The length is 20.
+    """
     v = number_extractions.GenerateRandomVectorLength20()
     assert len(v) == 20
 
