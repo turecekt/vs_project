@@ -8,6 +8,9 @@ from random import randrange
 
 
 def bubble_sort(array):
+    """This taken code will perform bubble sort.
+    This code is not my work.
+    """
     n = len(array)
 
     for i in range(n):
@@ -40,6 +43,9 @@ def bubble_sort(array):
 
 
 def insertion_sort(array):
+    """This taken code will perform insertion sort.
+    This code is not my work.
+    """
     # Loop from the second element of the array until
     # the last element
     for i in range(1, len(array)):
@@ -71,6 +77,10 @@ def insertion_sort(array):
 
 
 def _merge(left, right):
+    """This is supportive method.
+    For the merge sort.
+    Not my work.
+    """
     # If the first array is empty, then nothing needs
     # to be merged, and you can return the second array as the result
     if len(left) == 0:
@@ -112,6 +122,9 @@ def _merge(left, right):
 
 
 def merge_sort(array):
+    """This taken code will perform merge sort.
+    This code is not my work.
+    """
     # If the input array contains fewer than two elements,
     # then return it as the result of the function
     if len(array) < 2:
@@ -128,6 +141,9 @@ def merge_sort(array):
 
 
 def quick_sort(array):
+    """This taken code will perform quick sort.
+    This code is not my work.
+    """
     # If the input array contains fewer than two elements,
     # then return it as the result of the function
     if len(array) < 2:
