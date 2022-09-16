@@ -80,7 +80,7 @@ def insertion_sort(array):
 
 
 def _merge(left, right):
-    """Merges arrays into one.
+    """Merge two arrays into one.
 
     For the merge sort.
     Not my work.
