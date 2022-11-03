@@ -13,17 +13,43 @@ jobs:
       uses: actions/setup-python@v4
       with:
         python-version: '3.x'
+
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install flake8 flake8-docstrings pytest pytest-cov
+        pip install flake8 flake8-docstrings pytest pytest-cov pdoc
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
     - name: Test with pytest
       run: |
         pytest --doctest-modules --cov=. --cov-fail-under=66 *
+
     - name: Lint with flake8
       run: |
         flake8 .
+
     - name: Text documentation with pydoc
       run: |
         pydoc3 *
+
+    - name: HTML documentation with pdoc
+      run: |
+        pdoc -o docs/ *
+
+    - name: Upload pages artifact
+      uses: actions/upload-pages-artifact@v1
+      with:
+        path: docs/
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+    - id: deployment
+      uses: actions/deploy-pages@v1
