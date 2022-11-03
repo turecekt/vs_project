@@ -26,4 +26,4 @@ jobs:
         flake8 .
     - name: Text documentation with pydoc
       run: |
-        pydoc *
+        pydoc3 *
