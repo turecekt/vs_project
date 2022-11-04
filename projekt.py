@@ -1,3 +1,5 @@
+import unittest
+
 """This file consists of two ways of printing out prime numbers
     primes_sieve() function is a heuristic method of finding a prime number"""
 
