@@ -1,19 +1,16 @@
 """This is the "example" module.
 
-The example module supplies one function: compute(). For example,
-
->>> compute(3)
-3
+The example module supplies functions for math computation.
 """
 
 
 def compute(x):
-    """Functon compute returns evaluation of expression using argument x.
+    """Functon compute returns the evaluation of expression using argument x.
 
-    Args:
-        - x - Input of the function
+    :param x: First input parameter.
+    :return: Expression value for x.
 
-    Returns:
-        - output - Output of the function
+    >>> compute(3)
+    3
     """
     return x * x - 2 * x
