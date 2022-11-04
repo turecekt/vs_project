@@ -1,8 +1,8 @@
-from ciselne_soustavy import is_number_int
+from .ciselne_soustavy import is_number_int
 import pytest
 
 
-@pytest.mark.parametrize("number"["0", "5", "55", "444", "065", "66.0", "0.0", "066.0"])
+@pytest.mark.parametrize("number", ["0", "5", "55", "444", "065", "66.0", "0.0", "066.0"])
 def test_is_number_int_true(number):
     result = is_number_int(number)
 
