@@ -13,20 +13,16 @@ def primes_sieve(limit):
     return primes
 
 vstup = input("Please write a number to be checked: ")
-vstup_int= int(vstup)
-check=primes_sieve(vstup_int)
-if vstup_int in check:
-    print("This number is a prime number.")
-else:
-    print("This is not a prime number.")
+vstup_int = int(vstup)
+check = primes_sieve(vstup_int)
 
-"""
+
 if vstup_int >= 100:
-    if vstup_int in  primes_sieve(vstup_int):
+    if vstup_int in check:
         print("This number is a prime number.")
     else:
         print("This is not a prime number.")
 elif vstup_int<100:
+    """insert funkce"""
 else:
     print("not a number!")
-"""
