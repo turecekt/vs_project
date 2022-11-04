@@ -12,7 +12,7 @@ def primes_sieve(limit):
                 primes.remove(f)
     return primes
 
-vstup = input("Please write a number to be checked: )
+vstup = input("Please write a number to be checked: ")
 if vstup>100:
     primes_sieve(vstup)
 elif vstup<100:
