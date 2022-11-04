@@ -5,7 +5,7 @@ The example module supplies functions for math computation.
 
 
 def compute(x):
-    """Functon compute returns evaluation of expression using argument x.
+    """Functon compute returns the evaluation of expression using argument x.
 
     :param x: First input parameter.
     :return: Expression value for x.
