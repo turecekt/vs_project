@@ -1,5 +1,6 @@
 def is_number_int(number):
-    return True
+    return number.isdigit()
+
 
 
 def number_conversion(number, number_system):
