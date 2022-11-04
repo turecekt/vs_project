@@ -3,7 +3,7 @@
 
 def primes_sieve(limit):
     limitn = limit+1
-    primes = range(2, limitn)
+    primes = [i for i in range(2,limitn)]
 
     for i in primes:
         factors = range(i, limitn, i)
@@ -13,14 +13,20 @@ def primes_sieve(limit):
     return primes
 
 vstup = input("Please write a number to be checked: ")
-if vstup>100:
-    primes_sieve(vstup)
-    if vstup in primes:
+vstup_int= int(vstup)
+check=primes_sieve(vstup_int)
+if vstup_int in check:
+    print("This number is a prime number.")
+else:
+    print("This is not a prime number.")
+
+"""
+if vstup_int >= 100:
+    if vstup_int in  primes_sieve(vstup_int):
         print("This number is a prime number.")
     else:
         print("This is not a prime number.")
-elif vstup<100:
-    """placeholder"""
+elif vstup_int<100:
 else:
     print("not a number!")
-
+"""
