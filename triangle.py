@@ -33,6 +33,13 @@ def start(args):
 
         print(f"Area of the triangle is: {area}")
 
+        # Orthogonality
+        sides = [lenght1, length2, length3]
+        hyponetuse = max(sides)
+        orthogonal = orthogonality()
+
+
+
 
 def sideLength(point1, point2):
     """Return lenghts of sides."""
@@ -52,3 +59,11 @@ def triangleArea(a, b, c):
     s = (a + b + c) / 2
     area = math.sqrt(s * (s - a) * (s - b) * (s - c))
     return area
+
+def constructability(a, b, c):
+    """Return constructability"""
+    return (a + b > c) and (b + c > a) and (c + a > b)
+
+def triangleOrthogonality(leg1, leg2, hypotenuse):
+    """Return orthogonality"""
+    return math.pow(hypotenuse, 2) == math.pow(leg1, 2) + math.pow(leg2, 2)
