@@ -2,7 +2,7 @@ import re
 
 
 def is_number_int(number):
-    return re.match(r"[+]?\d+(\.0*)?$", number) is not None
+    return re.match(r"[-+]?\d+(\.0*)?$", number) is not None
 
 
 def number_conversion(number, base_system):         # max base value = 36
