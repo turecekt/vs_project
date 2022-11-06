@@ -1,6 +1,10 @@
+"""Module containing functions encode and decode."""
+
+
 # Function that converts text into morse code
 def encode(user_input):
-    """
+    """Encode text into morse code.
+
     Contains a dictionary of alphabet to morse code.
     User input is looped through and compared to dictionary keys.
     Individual values are concatenated into a variable which is
@@ -31,7 +35,8 @@ def encode(user_input):
 
 # Function that converts morse code into text
 def decode(user_input):
-    """
+    """Decode morse code into text.
+
     Contains a dictionary of morse code to alphabet.
     User input in morse code is made into a list which is
     then looped through and compared to dictionary keys.
