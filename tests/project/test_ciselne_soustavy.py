@@ -4,15 +4,13 @@ import pytest
 
 
 class TestIsNumberInt:
-    @pytest.mark.parametrize(
-        "number", ["0", "5", "55", "444", "065", "66.0", "0.0", "066.0", "-5", "-5.6"]
-    )
+    @pytest.mark.parametrize("number", ["0", "5", "55", "444", "065", "66.0", "0.0", "066.0", "-5"])
     def test_true(self, number):
         result = is_number_int(number)
 
         assert result is True
 
-    @pytest.mark.parametrize("number", ["a", "5a", "55.5", "55.a", "a5"])
+    @pytest.mark.parametrize("number", ["a", "5a", "55.5", "55.a", "a5", "-5.6"])
     def test_false(self, number):
         result = is_number_int(number)
 
@@ -37,7 +35,7 @@ class TestNumberConversion:
 
         assert result == expected
 
-#tadeaskuv test
+# tadeaskuv test
 # def fnc():
 #     a = input()
 #     b = input()
