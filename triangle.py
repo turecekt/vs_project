@@ -2,14 +2,6 @@
 import math
 
 
-def sideLength(point1, point2):
-    """Return lenghts of sides."""
-    return math.sqrt(
-                     math.pow((int(point2[0]) - int(point1[0])), 2)
-                     + math.pow((int(point2[1]) - int(point1[1])), 2)
-                    )
-
-
 def trianglePerimeter(a, b, c):
     """Return perimeter."""
     return a + b + c
