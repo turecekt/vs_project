@@ -15,16 +15,16 @@ class SimpleTest(unittest.TestCase):
     def test(self):
         """First test of valid STDIN input."""
         test_args = ['.\\main.py', '1', '2', '3', '4', '5', '6']
-        test_output = """Points are ('1', '2') ('3', '4') ('5', '6')
+        expectedStdout = """Points are ('1', '2') ('3', '4') ('5', '6')
 Lengths of the sides of the triangle are:
 2.8284271247461903, 2.8284271247461903, 5.656854249492381
 Perimeter of the triangle is: 11.313708498984761
 Area of the triangle is: 0.0
 """
         #  Test evaluation
-        with patch('sys.stdout', new_callable=StringIO) as f:
+        with patch('sys.stdout', new_callable=StringIO) as fakeStdout:
             triangle.start(test_args)
-            self.assertEqual(f.getvalue(), test_output)
+            self.assertEqual(fakeStdout.getvalue(), expectedStdout)
 
 
 if __name__ == '__main__':
