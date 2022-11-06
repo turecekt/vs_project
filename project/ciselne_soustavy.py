@@ -1,6 +1,12 @@
 import re
 
 
+def coventer():
+    number = input("Enter number in decimal base: ")
+    base_system = input("Enter required base system: ")
+    return number, base_system
+
+
 def is_number_int(number):
     return re.match(r"[-+]?\d+(\.0*)?$", number) is not None
 
