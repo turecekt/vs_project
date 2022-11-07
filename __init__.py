@@ -9,7 +9,7 @@ The output is either decoded morse code (output = text in latin)
 or encoded text (output = morse code).
 """
 # importing functions
-from morse_func import decode, encode
+from .morse_func import decode, encode
 
 
 # main function encodes text into morse code
