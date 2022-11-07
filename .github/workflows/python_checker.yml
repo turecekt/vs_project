@@ -30,11 +30,11 @@ jobs:
 
     - name: Text documentation with pydoc
       run: |
-        pydoc3 *
+        pydoc3 ./*.py
 
     - name: HTML documentation with pdoc
       run: |
-        pdoc -o docs/ *
+        pdoc -o docs/ `pwd`
 
     - name: Upload pages artifact
       uses: actions/upload-pages-artifact@v1

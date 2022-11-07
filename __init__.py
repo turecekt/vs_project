@@ -1,4 +1,4 @@
-"""This is the "example" module.
+"""Thiss is the "example" module.
 
 The example module supplies functions for math computation.
 """
@@ -13,4 +13,10 @@ def compute(x):
     >>> compute(3)
     3
     """
-    return x * x - 2 * x
+    x2 = x * x
+    return x2 - 2 * x
+
+
+if __name__ == '__main__':
+    num = int(input('Insert a number:'))
+    print(compute(num))
