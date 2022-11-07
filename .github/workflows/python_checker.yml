@@ -30,7 +30,7 @@ jobs:
 
     - name: Text documentation with pydoc
       run: |
-        pydoc3 ./*.py
+        dir=$(basename `pwd`); cd ../; pydoc3 $dir; cd $dir
 
     - name: HTML documentation with pdoc
       run: |
