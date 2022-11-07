@@ -1,6 +1,6 @@
 """Module containing functions test_encode and test_decode."""
 # importing functions
-import morse_func
+import .morse_func
 
 
 # function responsible for testing the encode function
