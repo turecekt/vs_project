@@ -1,4 +1,11 @@
-"""Module containing main function."""
+"""Module containing main function.
+
+This application expects a user to first choose to decode or encode morse code.
+Based upon the user's choice user then enters either morse code in morse characters
+separated by commas or regular text in alphabet letters.
+The output is either decoded morse code (output = text in latin)
+or encoded text (output = morse code).
+"""
 # importing functions
 from morse_func import decode, encode
 
