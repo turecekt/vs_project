@@ -1,4 +1,4 @@
-"""Morse Code Decoder/Encoder.
+"""Package for converting from and to morse code.
 
 This application expects a user to first choose to decode or
 encode morse code.
