@@ -31,18 +31,6 @@ jobs:
       run: |
         flake8 .
 
-    - name: Text documentation with pydoc
-      run: |
-        if [ -f __init__.py ]
-        then
-          dir=$(basename `pwd`)
-          cd ../
-          pydoc3 $dir
-          cd $dir
-        else
-          pydoc3 ./*.py `ls --hide=*.py --hide=*.md --hide=*.txt --hide=__pycache__`
-        fi
-
     - name: HTML documentation with pdoc
       run: |
         if [ -f __init__.py ]
