@@ -1,6 +1,6 @@
-"""Thiss is the "example" module.
+"""Thiss is the "example" module for Ap1VS project.
 
-The example module supplies functions for math computation.
+.. include:: README.md
 """
 
 
