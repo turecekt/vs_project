@@ -1,14 +1,17 @@
-"""Thiss is the "example" module for Ap1VS project.
+"""Vzorový kód pro závěrečný projekt předmětu Ap1VS.
 
 .. include:: README.md
+
+Následuje ukázka vzorové funkce.
 """
 
 
 def compute(x):
-    """Functon compute returns the evaluation of expression using argument x.
+    """Funkce počítá výsledek výrazu pro zadaný agrument x.
+    Functon compute returns the evaluation of expression using argument x.
 
-    :param x: First input parameter.
-    :return: Expression value for x.
+    :param x: Vstupní parametr x.
+    :return: Vrací hodnotu výrazu pro vstupní parametr x.
 
     >>> compute(3)
     3
