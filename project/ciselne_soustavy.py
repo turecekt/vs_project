@@ -1,23 +1,19 @@
 import re
 
 
-def coventer():
-    number = input("Enter number in decimal base: ")
-    base_system = input("Enter required base system: ")
-    return number, base_system
-
-
 def is_number_int(number):
     return re.match(r"[-+]?\d+(\.0*)?$", number) is not None
 
 
 def number_conversion(number, base_system):         # max base value = 36
     result = ""
-    if int(number) == 0:
-        result += str(number)
+    number = int(number)
+    base_system = int(base_system)
+    if number == 0:
+        result += number
     else:
         while number > 0:
-            inter = int(number) % base_system
+            inter = number % base_system
             if inter <= 9:
                 result += str(inter)
             else:
@@ -26,3 +22,13 @@ def number_conversion(number, base_system):         # max base value = 36
 
     result = result[::-1]
     return result
+
+
+def converter():
+    number = input("Enter number in decimal base: ")
+    base_system = input("Enter required base system: ")
+    if is_number_int(number) is True:
+        print("Result number is: ", number_conversion(number, base_system))
+    else:
+        print("You did not write right number. Try it again, dummy.")
+        converter()
