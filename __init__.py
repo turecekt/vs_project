@@ -8,7 +8,6 @@ Následuje ukázka vzorové funkce.
 
 def compute(x):
     """Funkce počítá výsledek výrazu pro zadaný agrument x.
-    Functon compute returns the evaluation of expression using argument x.
 
     :param x: Vstupní parametr x.
     :return: Vrací hodnotu výrazu pro vstupní parametr x.
