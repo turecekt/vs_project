@@ -1,5 +1,20 @@
 """Module containing functions encode and decode."""
 
+# A dictionary containing the following value pairs:
+# key = letter of the alphabet, value = morse sign
+alpha_to_morse = {
+    "A": ".-", "B": "-...", "C": "-.-.", "D": "-..", "E": ".",
+    "F": "..-.", "G": "--.", "H": "....", "I": "..", "J": ".---",
+    "K": "-.-", "L": ".-..", "M": "--", "N": "-.", "O": "---",
+    "P": ".--.", "Q": "--.-", "R": ".-.", "S": "...", "T": "-",
+    "U": "..-", "V": "...-", "W": ".--", "X": "-..-", "Y": "-.--",
+    "Z": "--..", "1": ".----", "2": "..---", "3": "...--",
+    "4": "....-", "5": ".....", "6": "-....", "7": "--...",
+    "8": "---..", "9": "----.", "0": "-----", " ": "|"
+}
+# A dictionary containing the following value pairs:
+# key = morse sign, value = alphabet letter
+morse_to_alpha = dict((v, k) for (k, v) in alpha_to_morse.items())
 
 # Function that converts text into morse code
 def encode(user_input):
@@ -9,23 +24,11 @@ def encode(user_input):
     User input is looped through and compared to dictionary keys.
     Individual values are concatenated into a variable which is
     printed to the terminal.
-    :parameter: user_input
+    :param user_input: String of alphabet.
     :return: Morse code.
     """
     # Empty variable which will be used to store converted text into morse code
     encode_output = ""
-    # A dictionary containing the following value pairs:
-    # key = letter of the alphabet, value = morse sign
-    alpha_to_morse = {
-        "A": ".-", "B": "-...", "C": "-.-.", "D": "-..", "E": ".",
-        "F": "..-.", "G": "--.", "H": "....", "I": "..", "J": ".---",
-        "K": "-.-", "L": ".-..", "M": "--", "N": "-.", "O": "---",
-        "P": ".--.", "Q": "--.-", "R": ".-.", "S": "...", "T": "-",
-        "U": "..-", "V": "...-", "W": ".--", "X": "-..-", "Y": "-.--",
-        "Z": "--..", "1": ".----", "2": "..---", "3": "...--",
-        "4": "....-", "5": ".....", "6": "-....", "7": "--...",
-        "8": "---..", "9": "----.", "0": "-----", " ": "|"
-    }
     # Looping through the list of letters of the alphabet and
     # getting the corresponding values (morse characters) from the dictionary
     for letter in user_input.upper():
@@ -42,23 +45,13 @@ def decode(user_input):
     then looped through and compared to dictionary keys.
     Individual values are concatenated into a variable which is
     printed to the terminal.
-    :parameter: user_input
+    :param user_input: String of morse code.
     :return: Morse code translation.
     """
     # Empty variable which will be used to store converted morse code into text
     decode_output = ""
     # A dictionary containing the following value pairs:
     # key = morse sign, value = alphabet letter
-    morse_to_alpha = {
-        ".-": "A", "-...": "B", "-.-.": "C", "-..": "D", ".": "E",
-        "..-.": "F", "--.": "G", "....": "H", "..": "I", ".---": "J",
-        "-.-": "K", ".-..": "L", "--": "M", "-.": "N", "---": "O",
-        ".--.": "P", "--.-": "Q", ".-.": "R", "...": "S", "-": "T",
-        "..-": "U", "...-": "V", ".--": "W", "-..-": "X", "-.--": "Y",
-        "--..": "Z", ".----": "1", "..---": "2", "...--": "3",
-        "....-": "4", ".....": "5", "-....": "6", "--...": "7",
-        "---..": "8", "----.": "9", "-----": "0", "|": " "
-    }
     # Individual morse code characters that are typed in by the user
     # are split upon a space and stored in the code variable
     code = user_input.split(" ")
