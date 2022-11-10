@@ -45,7 +45,7 @@ def decode(user_input):
     then looped through and compared to dictionary keys.
     Individual values are concatenated into a variable which is
     printed to the terminal.
-    :parameter: user_input
+    :param user_input: String of morse code.
     :return: Morse code translation.
     """
     # Empty variable which will be used to store converted morse code into text
