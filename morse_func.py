@@ -16,6 +16,7 @@ alpha_to_morse = {
 # key = morse sign, value = alphabet letter
 morse_to_alpha = dict((v, k) for (k, v) in alpha_to_morse.items())
 
+
 # Function that converts text into morse code
 def encode(user_input):
     """Encode text into morse code.
