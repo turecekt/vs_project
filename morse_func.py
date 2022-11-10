@@ -52,16 +52,6 @@ def decode(user_input):
     decode_output = ""
     # A dictionary containing the following value pairs:
     # key = morse sign, value = alphabet letter
-    morse_to_alpha = {
-        ".-": "A", "-...": "B", "-.-.": "C", "-..": "D", ".": "E",
-        "..-.": "F", "--.": "G", "....": "H", "..": "I", ".---": "J",
-        "-.-": "K", ".-..": "L", "--": "M", "-.": "N", "---": "O",
-        ".--.": "P", "--.-": "Q", ".-.": "R", "...": "S", "-": "T",
-        "..-": "U", "...-": "V", ".--": "W", "-..-": "X", "-.--": "Y",
-        "--..": "Z", ".----": "1", "..---": "2", "...--": "3",
-        "....-": "4", ".....": "5", "-....": "6", "--...": "7",
-        "---..": "8", "----.": "9", "-----": "0", "|": " "
-    }
     # Individual morse code characters that are typed in by the user
     # are split upon a space and stored in the code variable
     code = user_input.split(" ")
