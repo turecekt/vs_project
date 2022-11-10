@@ -29,18 +29,6 @@ def encode(user_input):
     """
     # Empty variable which will be used to store converted text into morse code
     encode_output = ""
-    # A dictionary containing the following value pairs:
-    # key = letter of the alphabet, value = morse sign
-    alpha_to_morse = {
-        "A": ".-", "B": "-...", "C": "-.-.", "D": "-..", "E": ".",
-        "F": "..-.", "G": "--.", "H": "....", "I": "..", "J": ".---",
-        "K": "-.-", "L": ".-..", "M": "--", "N": "-.", "O": "---",
-        "P": ".--.", "Q": "--.-", "R": ".-.", "S": "...", "T": "-",
-        "U": "..-", "V": "...-", "W": ".--", "X": "-..-", "Y": "-.--",
-        "Z": "--..", "1": ".----", "2": "..---", "3": "...--",
-        "4": "....-", "5": ".....", "6": "-....", "7": "--...",
-        "8": "---..", "9": "----.", "0": "-----", " ": "|"
-    }
     # Looping through the list of letters of the alphabet and
     # getting the corresponding values (morse characters) from the dictionary
     for letter in user_input.upper():
