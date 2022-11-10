@@ -24,7 +24,7 @@ def encode(user_input):
     User input is looped through and compared to dictionary keys.
     Individual values are concatenated into a variable which is
     printed to the terminal.
-    :parameter: user_input
+    :param user_input: String of alphabet.
     :return: Morse code.
     """
     # Empty variable which will be used to store converted text into morse code
