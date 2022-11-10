@@ -1,5 +1,20 @@
 """Module containing functions encode and decode."""
 
+# A dictionary containing the following value pairs:
+# key = letter of the alphabet, value = morse sign
+alpha_to_morse = {
+    "A": ".-", "B": "-...", "C": "-.-.", "D": "-..", "E": ".",
+    "F": "..-.", "G": "--.", "H": "....", "I": "..", "J": ".---",
+    "K": "-.-", "L": ".-..", "M": "--", "N": "-.", "O": "---",
+    "P": ".--.", "Q": "--.-", "R": ".-.", "S": "...", "T": "-",
+    "U": "..-", "V": "...-", "W": ".--", "X": "-..-", "Y": "-.--",
+    "Z": "--..", "1": ".----", "2": "..---", "3": "...--",
+    "4": "....-", "5": ".....", "6": "-....", "7": "--...",
+    "8": "---..", "9": "----.", "0": "-----", " ": "|"
+}
+# A dictionary containing the following value pairs:
+# key = morse sign, value = alphabet letter
+morse_to_alpha = dict((v, k) for (k, v) in alpha_to_morse.items())
 
 # Function that converts text into morse code
 def encode(user_input):
