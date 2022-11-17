@@ -4,9 +4,10 @@ import time
 
 """
 This file consists of two ways of printing out prime numbers
-primes_sieve() function is a heuristic method of finding a prime number
-is_prime function is a deterministic method.
-simple timetracker is included for measuring performance of different algorithms    
+''primes_sieve()'' function is a deterministic method of finding a prime number.
+''primes_sieve()'' is more is more suited for creating list of primes, but for educational purposes is used for numbers lesser than 100.
+Second function ''is_prime'' is also deterministic function, but is designed for faster operation when searching for primality of given number.
+Simple timetracker is included for measuring performance of different algorithms. Python time library is used by this tracker.
 """
 def primes_sieve(limit):
     """
@@ -33,19 +34,10 @@ def primes_sieve(limit):
     else:
         return False
 
-
-"""def is_prime(vstup):
-    if vstup == 2 or vstup == 3:
-        return True
-
-    for i in range(2, int(vstup ** 0.5) + 1):
-        if vstup % i == 0:
-            return False
-    return True"""
-
 def is_prime(vstup):
     """
     This function test if ``vstup`` is prime number by modulation of this number.
+    Python math library needs to imported before deployment of this function.
 
     :param vstup: int
         number that is tested for primality
@@ -59,7 +51,7 @@ def is_prime(vstup):
         return vstup == 2 #it will return True if the number is equal to 2 else false
 
     max_div = math.floor(math.sqrt(vstup))
-    for i in range(3, 1 + max_div, 2):#If the given number is divisible by any of the numbers from 3 to the square root of the number skipping all the even numon will return False" \
+    for i in range(3, 1 + max_div, 2):#If the given number is divisible by any of the numbers from 3 to the square root of the number skipping all the even numbers, function will return False
         if vstup % i == 0:
             return False
     return True
@@ -70,15 +62,15 @@ try:
     vstup = int(input("Please write a number to be checked: "))
 
     if vstup >= 100:
-        if primes_sieve(vstup):
-            print("Your number is prime. This was determined by heuristic method.")
+        if is_prime(vstup) :
+            print("Your number is prime.")
         else:
-            print("Your number isn't prime. This was determined by heuristic  method.")
+            print("Your number isn't prime.")
     elif 100 > vstup > 1:
-        if is_prime(vstup):
-            print("Your number is prime. Deterministic method was used.")
+        if primes_sieve(vstup):
+            print("Your number is prime. Sieve method was used.")
         else:
-            print("Your number isn't prime. Deterministic method was used.")
+            print("Your number isn't prime. Sieve method was used.")
     else:
         print("Your number isn't prime.")
 
