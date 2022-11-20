@@ -4,16 +4,26 @@ alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I',
             'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R',
             'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
             '1', '2', '3', '4', '5', '6', '7', '8', '9', '0',
-            ',', '.', '?', '/', '-', '(', ')', ' ']
+            ',', '.', '?', '-', '(', ')', ' ']
 
 morseCode = ['.-', '-...', '-.-.', '-..', '.', '..-.', '--.', '....', '..',
              '.---', '-.-', '.-..', '--', '-.', '---', '.--.', '--.-', '.-.',
              '...', '-', '..-', '...-', '.--', '-..-', '-.--', '--..',
              '.----', '..---', '...--', '....-', '.....', '-....', '--...', '---..', '----.', '-----',
-             '--..--', '.-.-.-', '..--..', '-..-.', '-....-', '-.--.', '-.--.-', '']
+             '--..--', '.-.-.-', '..--..', '-....-', '-.--.', '-.--.-', '']
 
 
-userInput = unidecode(input())
+def encode():
+    userInput = unidecode(input())
+    for letter in userInput:
+        print(morseCode[alphabet.index(letter.upper())] + "/", end='', flush=True)
 
-for letter in userInput:
-    print(morseCode[alphabet.index(letter.upper())] + "|", end='', flush=True)
+
+def decode():
+    userInput = input()
+    separatedString = userInput.split('/')
+    for item in separatedString:
+        print(alphabet[morseCode.index(item)], end='', flush=True)
+
+
+decode()
