@@ -14,16 +14,27 @@ morseCode = ['.-', '-...', '-.-.', '-..', '.', '..-.', '--.', '....', '..',
 
 
 def encode():
-    userInput = unidecode(input())
+    userInput = unidecode(input()).upper()
+
+    while not all(temp in alphabet for temp in userInput):
+        print("Vstup obsahuje nepovolené znaky")
+        print("Povolené znaky: [a-Z][0-9],.?()")
+        print("Zadejte vstup znovu:")
+        userInput = unidecode(input()).upper()
+
     for letter in userInput:
-        print(morseCode[alphabet.index(letter.upper())] + "/", end='', flush=True)
+        print(morseCode[alphabet.index(letter)] + "/", end='', flush=True)
 
 
 def decode():
     userInput = input()
     separatedString = userInput.split('/')
     for item in separatedString:
-        print(alphabet[morseCode.index(item)], end='', flush=True)
-
+        if item not in morseCode:
+            print("#", end='', flush=True)
+        else:
+            print(alphabet[morseCode.index(item)], end='', flush=True)
 
 decode()
+
+
