@@ -24,6 +24,7 @@ def encode():
 
     for letter in userInput:
         print(morseCode[alphabet.index(letter)] + "/", end='', flush=True)
+    print("\n")
 
 
 def decode():
@@ -34,7 +35,28 @@ def decode():
             print("#", end='', flush=True)
         else:
             print(alphabet[morseCode.index(item)], end='', flush=True)
+    print("\n")
 
-decode()
+
+def main():
+    while True:
+        print("Chcete přeložit:")
+        print("1 - text do morseovky")
+        print("2 - morseovka do textu")
+        print("3 - ukončit program")
+
+        menuInput = input()
+        if menuInput == "1":
+            print("Zadejte vstup:")
+            encode()
+        elif menuInput == "2":
+            print("Zadejte vstup:")
+            decode()
+        elif menuInput == "3":
+            break
+        else:
+            print("Špatné číslo")
 
 
+if __name__ == '__main__':
+    main()
