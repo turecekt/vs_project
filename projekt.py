@@ -71,7 +71,7 @@ def is_prime(vstup):
     return True
 
 
-t0 = time.time()
+
 try:
 
     vstup = int(input("Please write a number to be checked: "))
@@ -92,5 +92,3 @@ try:
 except ValueError:
     print("Please enter a whole number!")
 
-t1 = time.time()
-print("Time required :", t1 - t0)
