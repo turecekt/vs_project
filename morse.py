@@ -1,5 +1,4 @@
 """Coding and decoding."""
-import unidecode
 
 
 alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I',
@@ -27,7 +26,7 @@ def encode(userInput):
         print("Vstup obsahuje nepovolené znaky")
         print("Povolené znaky: [a-Z][0-9],.?()")
         print("Zadejte vstup znovu:")
-        userInput = unidecode(input()).upper()
+        userInput = input().upper()
 
     for letter in userInput:
         cypher += morseCode[alphabet.index(letter)] + "/"
@@ -62,7 +61,7 @@ def main():
         menuInput = input()
         if menuInput == "1":
             print("Zadejte vstup:")
-            userInput = unidecode(input()).upper()
+            userInput = input().upper()
             print(encode(userInput))
         elif menuInput == "2":
             print("Zadejte vstup:")

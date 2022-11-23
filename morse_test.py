@@ -1,12 +1,12 @@
 """Tool for testing morse.py."""
-import morse
+from morse import encode, decode
 
 
 def test_encode():
     """Testing encoding."""
-    assert morse.encode("A") == ".-/"
+    assert encode("A") == ".-/"
 
 
 def test_decode():
     """Testing decoding."""
-    assert morse.decode(".-") == "A"
+    assert decode(".-") == "A"
