@@ -1,4 +1,6 @@
-from unidecode import unidecode
+"""Coding and decoding."""
+import unidecode
+
 
 alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I',
             'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R',
@@ -9,13 +11,15 @@ alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I',
 morseCode = ['.-', '-...', '-.-.', '-..', '.', '..-.', '--.', '....', '..',
              '.---', '-.-', '.-..', '--', '-.', '---', '.--.', '--.-', '.-.',
              '...', '-', '..-', '...-', '.--', '-..-', '-.--', '--..',
-             '.----', '..---', '...--', '....-', '.....', '-....', '--...', '---..', '----.', '-----',
+             '.----', '..---', '...--', '....-', '.....', '-....', '--...',
+             '---..', '----.', '-----',
              '--..--', '.-.-.-', '..--..', '-....-', '-.--.', '-.--.-', '']
 
 
 def encode(userInput):
     """
-    Encodes normal alphabet to morse code.
+    Encode normal alphabet to morse code.
+
     :param userInput: text to translate(string)
     """
     cypher = ""
@@ -32,7 +36,8 @@ def encode(userInput):
 
 def decode(userInput):
     """
-    Decodes morse code to normal alphabet.
+    Decode morse code to normal alphabet.
+
     :param userInput: text to decode(string)
     """
     cypher = ""
@@ -47,9 +52,7 @@ def decode(userInput):
 
 
 def main():
-    """
-    Main function for console UI.
-    """
+    """Console UI of the main function."""
     while True:
         print("Chcete přeložit:")
         print("1 - text do morseovky")
