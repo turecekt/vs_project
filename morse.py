@@ -13,9 +13,8 @@ morseCode = ['.-', '-...', '-.-.', '-..', '.', '..-.', '--.', '....', '..',
              '--..--', '.-.-.-', '..--..', '-....-', '-.--.', '-.--.-', '']
 
 
-def encode():
-    userInput = unidecode(input()).upper()
-
+def encode(userInput):
+    cypher = ""
     while not all(temp in alphabet for temp in userInput):
         print("Vstup obsahuje nepovolené znaky")
         print("Povolené znaky: [a-Z][0-9],.?()")
@@ -23,19 +22,20 @@ def encode():
         userInput = unidecode(input()).upper()
 
     for letter in userInput:
-        print(morseCode[alphabet.index(letter)] + "/", end='', flush=True)
-    print("\n")
+        cypher += morseCode[alphabet.index(letter)] + "/"
+    return cypher
 
 
-def decode():
-    userInput = input()
+def decode(userInput):
+    cypher = ""
     separatedString = userInput.split('/')
     for item in separatedString:
         if item not in morseCode:
-            print("#", end='', flush=True)
+            cypher += "#"
         else:
-            print(alphabet[morseCode.index(item)], end='', flush=True)
-    print("\n")
+            cypher += alphabet[morseCode.index(item)]
+
+    return cypher
 
 
 def main():
@@ -48,10 +48,12 @@ def main():
         menuInput = input()
         if menuInput == "1":
             print("Zadejte vstup:")
-            encode()
+            userInput = unidecode(input()).upper()
+            print(encode(userInput))
         elif menuInput == "2":
             print("Zadejte vstup:")
-            decode()
+            userInput = input()
+            print(decode(userInput))
         elif menuInput == "3":
             break
         else:
