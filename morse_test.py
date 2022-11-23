@@ -1,7 +1,3 @@
-from unidecode import unidecode
-import pytest
-
-import morse
 from morse import encode
 from morse import decode
 

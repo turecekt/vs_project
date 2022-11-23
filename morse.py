@@ -14,6 +14,10 @@ morseCode = ['.-', '-...', '-.-.', '-..', '.', '..-.', '--.', '....', '..',
 
 
 def encode(userInput):
+    """
+    Encodes normal alphabet to morse code.
+    :param userInput: text to translate(string)
+    """
     cypher = ""
     while not all(temp in alphabet for temp in userInput):
         print("Vstup obsahuje nepovolené znaky")
@@ -27,6 +31,10 @@ def encode(userInput):
 
 
 def decode(userInput):
+    """
+    Decodes morse code to normal alphabet.
+    :param userInput: text to decode(string)
+    """
     cypher = ""
     separatedString = userInput.split('/')
     for item in separatedString:
@@ -39,6 +47,9 @@ def decode(userInput):
 
 
 def main():
+    """
+    Main function for console UI.
+    """
     while True:
         print("Chcete přeložit:")
         print("1 - text do morseovky")
