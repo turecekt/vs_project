@@ -1,6 +1,5 @@
 """Coding and decoding."""
 
-
 alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I',
             'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R',
             'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
@@ -15,63 +14,65 @@ morseCode = ['.-', '-...', '-.-.', '-..', '.', '..-.', '--.', '....', '..',
              '--..--', '.-.-.-', '..--..', '-....-', '-.--.', '-.--.-', '']
 
 
-def encode(userInput):
+def encode(encodeInput):
     """
     Encode normal alphabet to morse code.
 
-    :param userInput: text to translate(string)
+    :param encodeInput: text to translate(string)
     """
     cypher = ""
-    while not all(temp in alphabet for temp in userInput):
-        print("Vstup obsahuje nepovolené znaky")
-        print("Povolené znaky: [a-Z][0-9],.?()")
-        print("Zadejte vstup znovu:")
-        userInput = input().upper()
+    while not all(temp in alphabet for temp in encodeInput):
+        encodeInput = input('Vstup obsahuje nepovolené znaky\n'
+                            'Povolené znaky: [a-Z][0-9],.?()\n'
+                            'Zadejte vstup znovu:\n').upper()
 
-    for letter in userInput:
+    for letter in encodeInput:
         cypher += morseCode[alphabet.index(letter)] + "/"
     return cypher
 
 
-def decode(userInput):
+def decode(decodeInput):
     """
     Decode morse code to normal alphabet.
 
-    :param userInput: text to decode(string)
+    :param decodeInput: text to decode(string)
     """
     cypher = ""
-    separatedString = userInput.split('/')
+    separatedString = decodeInput.split('/')
     for item in separatedString:
-        if item not in morseCode:
-            cypher += "#"
-        else:
+        if item in morseCode:
             cypher += alphabet[morseCode.index(item)]
+        else:
+            cypher += "#"
 
     return cypher
 
 
-def main():
-    """Console UI of the main function."""
-    while True:
-        print("Chcete přeložit:")
-        print("1 - text do morseovky")
-        print("2 - morseovka do textu")
-        print("3 - ukončit program")
+def mainMenu(x):
+    """
+    Give number to user menu.
 
-        menuInput = input()
-        if menuInput == "1":
-            print("Zadejte vstup:")
-            userInput = input().upper()
-            print(encode(userInput))
-        elif menuInput == "2":
-            print("Zadejte vstup:")
-            userInput = input()
-            print(decode(userInput))
-        elif menuInput == "3":
-            break
-        else:
-            print("Špatné číslo")
+    :param x: input to menu(int)
+    """
+    if x == "1":
+        userInput = input('Zadejte vstup:\n').upper()
+        print(encode(userInput))
+    elif x == "2":
+        userInput = input('Zadejte vstup:\n')
+        print(decode(userInput))
+    elif x == "3":
+        exit()
+    else:
+        print("Špatné číslo")
+    return x
 
 
 if __name__ == '__main__':
-    main()
+    """Console UI of the main function."""
+
+    while True:
+        menuInput = input('Chcete přeložit:\n'
+                          '1 - text do morseovky\n'
+                          '2 - morseovka do textu\n'
+                          '3 - ukončit program\n')
+        mainMenu(menuInput)
