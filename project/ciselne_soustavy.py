@@ -1,6 +1,6 @@
 import re
 
-
+#TODO: test comment
 def is_number_int(number):
     return re.match(r"[-+]?\d+(\.0*)?$", number) is not None
 
