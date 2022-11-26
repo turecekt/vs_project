@@ -1,5 +1,4 @@
 """Unit tests for `ciselne_soustavy.py`"""
-
 from project.ciselne_soustavy import is_number_int
 from project.ciselne_soustavy import number_conversion
 import pytest
