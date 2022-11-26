@@ -14,7 +14,7 @@ def is_number_int(number):
 
 
 def number_conversion(number, base_system):  # max base value = 36
-    """Converts the selected number to the selected number system.
+    """Convert the selected number to the selected number system.
 
     This function uses conditional statements to convert a number
     to the selected number system.
