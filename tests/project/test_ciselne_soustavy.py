@@ -4,7 +4,9 @@ import pytest
 
 
 class TestIsNumberInt:
-    @pytest.mark.parametrize("number", ["0", "5", "55", "444", "065", "66.0", "0.0", "066.0", "-5"])
+    @pytest.mark.parametrize(
+        "number", ["0", "5", "55", "444", "065", "66.0", "0.0", "066.0", "-5"]
+    )
     def test_true(self, number):
         result = is_number_int(number)
 
@@ -34,6 +36,7 @@ class TestNumberConversion:
         result = number_conversion(number, number_system)
 
         assert result == expected
+
 
 # tadeaskuv test
 # def fnc():

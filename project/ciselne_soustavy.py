@@ -5,7 +5,7 @@ def is_number_int(number):
     return re.match(r"[-+]?\d+(\.0*)?$", number) is not None
 
 
-def number_conversion(number, base_system):         # max base value = 36
+def number_conversion(number, base_system):  # max base value = 36
     result = ""
     number = int(number)
     base_system = int(base_system)
@@ -17,7 +17,7 @@ def number_conversion(number, base_system):         # max base value = 36
             if inter <= 9:
                 result += str(inter)
             else:
-                result += chr(ord('A') + inter - 10)
+                result += chr(ord("A") + inter - 10)
             number //= base_system
 
     result = result[::-1]
