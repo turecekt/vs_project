@@ -3,7 +3,7 @@ import re
 
 
 def is_number_int(number):
-    """Checks that the value is an integer.
+    """Validate the value.
 
     Checks if the specified string contains values representing integers.
     Both integers and integers written in float form are recognized.
