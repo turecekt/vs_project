@@ -1,6 +1,6 @@
 import re
 
-#TODO: test comment
+
 def is_number_int(number):
     return re.match(r"[-+]?\d+(\.0*)?$", number) is not None
 
@@ -10,7 +10,7 @@ def number_conversion(number, base_system):         # max base value = 36
     number = int(number)
     base_system = int(base_system)
     if number == 0:
-        result += number
+        result += str(number)
     else:
         while number > 0:
             inter = number % base_system
