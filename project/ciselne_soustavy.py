@@ -3,11 +3,10 @@ import re
 
 
 def is_number_int(number):
-    """Checks if the value is an integer.
+    """Checks that the value is an integer.
 
     Checks if the specified string contains values representing integers.
     Both integers and integers written in float form are recognized.
-
     :param number: String
     :return: Bool
     """
@@ -17,10 +16,11 @@ def is_number_int(number):
 def number_conversion(number, base_system):  # max base value = 36
     """Converts the selected number to the selected number system.
 
-    This function uses conditional statements to convert a number to the selected number system.
+    This function uses conditional statements to convert a number
+    to the selected number system.
     If the specified number is equal to 0, zero is automatically returned.
-    If the number is other than zero, the result is calculated by successive division.
-
+    If the number is other than zero, the result is calculated
+    by successive division.
     :param number: String
     :param base_system: String
     :return: String
@@ -47,7 +47,8 @@ def converter():
     """Input values.
 
     The function requires two input values - a number and a number system.
-    It checks if the values are entered correctly (correct number of inputs and the "number" value is an integer).
+    It checks if the values are entered correctly
+    (correct number of inputs and the "number" value is an integer).
     If incorrect values are entered, the function asks for new values.
 
     :return: None
