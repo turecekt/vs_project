@@ -1,9 +1,9 @@
+"""Functions for converting values."""
 import re
 
 
 def is_number_int(number):
-    """
-    Checks if the value is an integer.
+    """Checks if the value is an integer.
 
     Checks if the specified string contains values representing integers.
     Both integers and integers written in float form are recognized.
@@ -15,8 +15,7 @@ def is_number_int(number):
 
 
 def number_conversion(number, base_system):  # max base value = 36
-    """
-    Converts the selected number to the selected number system.
+    """Converts the selected number to the selected number system.
 
     This function uses conditional statements to convert a number to the selected number system.
     If the specified number is equal to 0, zero is automatically returned.
@@ -45,8 +44,7 @@ def number_conversion(number, base_system):  # max base value = 36
 
 
 def converter():
-    """
-    Input values.
+    """Input values.
 
     The function requires two input values - a number and a number system.
     It checks if the values are entered correctly (correct number of inputs and the "number" value is an integer).
