@@ -5,6 +5,7 @@ import pytest
 
 
 class TestIsNumberInt:
+    # test should past for +/- integers (also in form of float)
     """Unit tests for function `is_number_int`."""
 
     @pytest.mark.parametrize(

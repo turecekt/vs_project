@@ -2,7 +2,7 @@
 import re
 
 
-def is_number_int(number):
+def is_number_int(number):  # checks if the number value is an integer
     """Validate the value.
 
     Checks if the specified string contains values representing integers.
@@ -28,14 +28,14 @@ def number_conversion(number, base_system):  # max base value = 36
     result = ""
     number = int(number)
     base_system = int(base_system)
-    if number == 0:
+    if number == 0:     # 0 is 0 in every base
         result += str(number)
     else:
         while number > 0:
             inter = number % base_system
             if inter <= 9:
                 result += str(inter)
-            else:
+            else:   # converting numbers > 10 into characters
                 result += chr(ord("A") + inter - 10)
             number //= base_system
 
@@ -43,7 +43,7 @@ def number_conversion(number, base_system):  # max base value = 36
     return result
 
 
-def converter():
+def converter():    # asking for values
     """Input values.
 
     The function requires two input values - a number and a number system.
@@ -56,6 +56,7 @@ def converter():
     number = input("Enter number in decimal base: ")
     base_system = input("Enter required base system: ")
     if is_number_int(number) is True:
+        # the number must be integer
         print("Result number is: ", number_conversion(number, base_system))
     else:
         print("You did not write right number. Try it again, dummy.")
