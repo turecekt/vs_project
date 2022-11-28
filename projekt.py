@@ -92,3 +92,4 @@ try:
 except ValueError:
     print("Please enter a whole number!")
 
+assert vstup(12)== "Your number isn't prime. Sieve method was used."
