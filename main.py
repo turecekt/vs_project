@@ -1,18 +1,19 @@
 import sys
-import collections
-from os.path import exists
 
+from os.path import exists
 from collections import Counter
 
 
 line = "-" * 45 # separator
 occurrence = {}
 
-
 # spouštění programu: "py main.py"
 # spouštění programu s textovým souborem: "py main.py soubor.txt"
 
 def main():
+    num = 0
+    alpha = 0
+    other_sym = 0
     text = ""
 
     if sys.argv[1:]:
@@ -59,22 +60,37 @@ def main():
 
     print(line)
 
-    count_to_dictionary(text)
-    occurrence_graph(occurrence)
+    count_to_dictionary(text, alpha, num, other_sym)
+    occurrence_graph()
 
 
 # TODO Bonus - počet čísel, počet písmen, počet speciálních znaků
 
-def count_to_dictionary(text):
+def count_to_dictionary(text, alpha, num, other_sym):
     for char in text:
+        if char.isalpha():
+            alpha += 1
+        elif char.isdigit():
+            num += 1
+        else:
+            other_sym += 1
+
         if char != "\n":
-            if char in occurrence :
+            if char in occurrence:
                 occurrence[char] = occurrence[char] + 1
             else:
                 occurrence[char] = 1
+    print("Počet písmen")
+    print(alpha)
+
+    print("Počet čísel")
+    print(num)
+
+    print("Počet specialních symbolů")
+    print(other_sym)
 
 # Graf četnost znaků
-def occurrence_graph(occurrence):
+def occurrence_graph():
 
     max_value = 0
 
