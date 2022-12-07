@@ -1,10 +1,12 @@
 import sys
 import collections
+from os.path import exists
 
 from collections import Counter
 
 
 line = "-" * 45 # separator
+occurrence = {}
 
 
 # spouštění programu: "py main.py"
@@ -12,12 +14,19 @@ line = "-" * 45 # separator
 
 def main():
     text = ""
-    # TODO Error, když soubor neexistuje
-    # TODO Soubor musí být jen .txt
-    if (sys.argv[1:]):
-        file = open(sys.argv[1], "r+")
-        text = file.read()
-        file.close()
+
+    if sys.argv[1:]:
+        if sys.argv[1].endswith(".txt") or sys.argv[1].endswith(".log"):
+            if exists(sys.argv[1]):
+                file = open(sys.argv[1], "r+")
+                text = file.read()
+                file.close()
+            else:
+                print("\nSoubor nenalezen.")
+                exit()
+        else:
+            print("\nByl zadán špatný formát souboru.")
+            exit()
     else:
         while True:
             input_text = input("Zadejte textový řetězec: ")
@@ -26,8 +35,8 @@ def main():
                 break
             text = text + input_text
 
-    # TODO prázdný text ukončí program, nějak vylepšit
     if len(text) == 0:
+        print("\n Nebyl zadán žádný text.")
         exit()
 
 
@@ -43,27 +52,31 @@ def main():
     print("\nNejméně častý znak")
     print(Counter(text).most_common()[-1])
 
+    # TODO Zaokrouhlení
     print("\nPrůměrná četnost")
-    print(len(text) / len(sorted(Counter(text))))
+    rounded_average = round(len(text) / len(sorted(Counter(text))), 2)
+    print(rounded_average)
 
     print(line)
 
-    occurrence_graph(text)
+    count_to_dictionary(text)
+    occurrence_graph(occurrence)
 
 
 # TODO Bonus - počet čísel, počet písmen, počet speciálních znaků
 
+def count_to_dictionary(text):
+    for char in text:
+        if char != "\n":
+            if char in occurrence :
+                occurrence[char] = occurrence[char] + 1
+            else:
+                occurrence[char] = 1
 
 # Graf četnost znaků
-def occurrence_graph(text):
-    occurrence = {}
-    max_value = 0
+def occurrence_graph(occurrence):
 
-    for char in text:
-        if char in occurrence:
-            occurrence[char] = occurrence[char] + 1
-        else:
-            occurrence[char] = 1
+    max_value = 0
 
     for key, value in occurrence.items():
         if value > max_value:
