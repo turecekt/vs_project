@@ -7,7 +7,7 @@ char_occurrence_dict = {}
 alphabet_chars_dict = {}
 
 # spouštění programu: "py main.py"
-# spouštění programu s textovým souborem: "py main.py soubor.txt"
+# spouštění programu s textovým souborem: "py main.py random_text.txt"
 # Docstringy - za definici funkce napsat """ a zmáčknout Enter
 
 # TODO Unit testy
@@ -75,6 +75,8 @@ def occurrence_to_alphabetic_dict(char_occurrence_dict):
         if key.isalpha():
             alphabet_chars_dict[key] = value
 
+    print(f"Četnost jednotlivých znaků abecedy: {alphabet_chars_dict}")
+
 
 def count_to_dictionary(text):
     """
@@ -86,12 +88,12 @@ def count_to_dictionary(text):
     """
     char_counter = 0
     for char in text:
-        #if char != "\n":
-        char_counter += 1
-        if char in char_occurrence_dict:
-            char_occurrence_dict[char] += 1
-        else:
-            char_occurrence_dict[char] = 1
+        if char != "#":
+            char_counter += 1
+            if char in char_occurrence_dict:
+                char_occurrence_dict[char] += 1
+            else:
+                char_occurrence_dict[char] = 1
     print(f"Celkový počet znaků: {char_counter}")
 
 
