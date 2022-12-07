@@ -13,9 +13,16 @@ text = ""
 
 # spouštění programu: "py main.py"
 # spouštění programu s textovým souborem: "py main.py soubor.txt"
+# Docstringy - za definici funkce napsat """ a zmáčknout Enter
+
+# TODO Unit testy
+# TODO Docstring
 
 def main():
+    """
 
+    :return:
+    """
 
     if sys.argv[1:]:
         if sys.argv[1].endswith(".txt") or sys.argv[1].endswith(".log"):
@@ -54,7 +61,7 @@ def main():
     print("\nNejméně častý znak")
     print(Counter(text).most_common()[-1])
 
-    # TODO Zaokrouhlení
+
     print("\nPrůměrná četnost")
     rounded_average = round(len(text) / len(sorted(Counter(text))), 2)
     print(rounded_average)
@@ -69,7 +76,13 @@ def main():
 # TODO Bonus - počet čísel, počet písmen, počet speciálních znaků
 
 def char_type_counting(alpha, num, other_sym):
+    """
 
+    :param alpha:
+    :param num:
+    :param other_sym:
+    :return:
+    """
     for key, value in occurrence.items():
         if key.isalpha():
             alpha += 1
@@ -88,6 +101,13 @@ def char_type_counting(alpha, num, other_sym):
     print(other_sym)
 
 def count_to_dictionary(text):
+    """
+    This function checks if char is in dictionary occurence.
+    If char is in occurence, then add 1 to its count.
+    If char is not in occurence, then set its count to 1.
+    :param text: Text from file or from user input.
+    This function returns nothing.
+    """
     for char in text:
         if char != "\n":
             if char in occurrence:
@@ -98,6 +118,10 @@ def count_to_dictionary(text):
 
 # Graf četnost znaků
 def occurrence_graph():
+    """
+    Function will show table of char occurences.
+    This function returns nothing.
+    """
 
     max_value = 0
 
