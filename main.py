@@ -6,15 +6,16 @@ from collections import Counter
 
 line = "-" * 45 # separator
 occurrence = {}
+num = 0
+alpha = 0
+other_sym = 0
+text = ""
 
 # spouštění programu: "py main.py"
 # spouštění programu s textovým souborem: "py main.py soubor.txt"
 
 def main():
-    num = 0
-    alpha = 0
-    other_sym = 0
-    text = ""
+
 
     if sys.argv[1:]:
         if sys.argv[1].endswith(".txt") or sys.argv[1].endswith(".log"):
@@ -60,26 +61,23 @@ def main():
 
     print(line)
 
-    count_to_dictionary(text, alpha, num, other_sym)
+    count_to_dictionary(text)
+    char_type_counting(alpha, num, other_sym)
     occurrence_graph()
 
 
 # TODO Bonus - počet čísel, počet písmen, počet speciálních znaků
 
-def count_to_dictionary(text, alpha, num, other_sym):
-    for char in text:
-        if char.isalpha():
+def char_type_counting(alpha, num, other_sym):
+
+    for key, value in occurrence.items():
+        if key.isalpha():
             alpha += 1
-        elif char.isdigit():
+        elif key.isdigit():
             num += 1
         else:
             other_sym += 1
 
-        if char != "\n":
-            if char in occurrence:
-                occurrence[char] = occurrence[char] + 1
-            else:
-                occurrence[char] = 1
     print("Počet písmen")
     print(alpha)
 
@@ -88,6 +86,15 @@ def count_to_dictionary(text, alpha, num, other_sym):
 
     print("Počet specialních symbolů")
     print(other_sym)
+
+def count_to_dictionary(text):
+    for char in text:
+        if char != "\n":
+            if char in occurrence:
+                occurrence[char] = occurrence[char] + 1
+            else:
+                occurrence[char] = 1
+
 
 # Graf četnost znaků
 def occurrence_graph():
