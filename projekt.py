@@ -1,21 +1,11 @@
+"""Prvocislo.
+
+.. include:: README.md
+"""
+
 import unittest
 import math
 import time
-
-"""
-This file consists of two methods for determination of primality
-
-Firrst is ''primes_sieve()''
-Deterministic method of finding a prime number.
-Method is more is more suited for creating list of primes.
-
-Second function ''is_prime''
-also deterministic function
-is designed for faster operation when searching for primality of given number.
-
-Simple timetracker is included for performance measuring.
-Python time library is used.
-"""
 
 
 def primes_sieve(limit):
