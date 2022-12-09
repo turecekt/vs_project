@@ -10,9 +10,10 @@ alphabet_chars_dict = {}
 # spouštění programu s textovým souborem:>> py main.py random_text.txt
 # Docstringy - za definici funkce napsat """ a zmáčknout Enter
 
-# TODO Unit testy
+# TODO Unit testy (dokončit)
 # TODO Docstrings
 # TODO kontrola pomocí flake8 a flake8-docstrings
+# TODO (Optional FIX) Mezery se počítají do celkového počtu znaků a nejčastějšího/nejméně častého znaku, ale ne do grafu
 
 def main():
     """
@@ -76,33 +77,35 @@ def main():
     # Výskyt znaků abecedy v grafu
     alphabet_occurrence_graph(alphabet_chars_dict)
 
-
+def error_raiser(char_occurrence_dict):
+    if type(char_occurrence_dict) != dict:
+        raise TypeError("Parametr musí být typu dictionary.")
 
 def char_average(char_occurrence_dict):
-    # TODO Error
+    error_raiser(char_occurrence_dict)
+
     rounded_average = round(sum(char_occurrence_dict.values()) / len(char_occurrence_dict), 2)
     return rounded_average
 
 def char_min_values(char_occurrence_dict):
-    if type(char_occurrence_dict) != dict:
-        raise TypeError("Parametr musí být typu dictionary.")
+    error_raiser(char_occurrence_dict)
 
     min_values = [key for key, value in char_occurrence_dict.items() if value == min(char_occurrence_dict.values())]
     return min_values
 
 def char_max_values(char_occurrence_dict):
-    # TODO Error
+    error_raiser(char_occurrence_dict)
+
     max_values = [key for key, value in char_occurrence_dict.items() if value == max(char_occurrence_dict.values())]
     return max_values
 
 def occurrence_to_alphabetic_dict(char_occurrence_dict):
-    # TODO Error
+    error_raiser(char_occurrence_dict)
+
     for key, value in char_occurrence_dict.items():
         if key.isalpha():
             alphabet_chars_dict[key] = value
     return alphabet_chars_dict
-
-
 
 
 def count_to_dictionary(text):
