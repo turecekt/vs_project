@@ -29,7 +29,7 @@ Tento repozitář slouží jako podklad a vzor pro závěrečný projekt z před
 
     Naklonování vašeho repozitáře do aktuálního adresáře:
     
-        git clone https://github.com/tureckova/AP1VS-final-project.git
+        git clone https://github.com/your_username/AP1VS-final-project.git
         
     Přejděte do adresáře s naklonovaným repozitářem:
     
