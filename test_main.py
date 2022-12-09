@@ -53,7 +53,7 @@ def test_occurrence_to_alphabetic_dict():
     assert occurrence_to_alphabetic_dict({"a": 1}) == {"a": 1}
 
     with pytest.raises(TypeError):
-        occurrence_to_alphabetic_dict(False)
+        occurrence_to_alphabetic_dict(True)
         occurrence_to_alphabetic_dict(6 + 6j)
         occurrence_to_alphabetic_dict("ahoj")
 
