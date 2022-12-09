@@ -13,7 +13,7 @@ alphabet_chars_dict = {}
 # TODO Unit testy (dokončit)
 # TODO Docstrings
 # TODO kontrola pomocí flake8 a flake8-docstrings
-# TODO (Optional FIX) Mezery se počítají do celkového počtu znaků a nejčastějšího/nejméně častého znaku, ale ne do grafu
+
 
 def main():
     """
@@ -60,22 +60,23 @@ def main():
     if len(min_values) > 1:
         print(f"Nejméně časté znaky: {min_values}")
     else:
-        print(f"Nejméně častý znak: {min_values[0]}")
+        print(f"Nejméně častý znak: '{min_values[0]}'")
 
     # Nejčastější znaky
     if len(max_values) > 1:
         print(f"Nejčastější znaky: {max_values}")
     else:
-        print(f"Nejčastější znak: {max_values[0]}")
+        print(f"Nejčastější znak: '{max_values[0]}'")
 
     # Průměrná četnost
     print(f"Průměrná četnost: {rounded_average}")
 
-    # Výskyt znaků abecedy
-    print(f"Četnost jednotlivých znaků abecedy: {alphabet_chars_dict}")
+    if len(alphabet_chars_dict) > 0:
+        # Výskyt znaků abecedy
+        print(f"Četnost jednotlivých znaků abecedy: {alphabet_chars_dict}")
 
-    # Výskyt znaků abecedy v grafu
-    alphabet_occurrence_graph(alphabet_chars_dict)
+        # Výskyt znaků abecedy v grafu
+        alphabet_occurrence_graph(alphabet_chars_dict)
 
 def error_raiser(char_occurrence_dict):
     if type(char_occurrence_dict) != dict:
