@@ -80,12 +80,12 @@ def main():
 
 
 def error_raiser(char_occurrence_dict):
-   """
-   This function checks if entered parameter's type is dictionary. If it's not, function signals an error.
-   :param char_occurrence_dict: Dictionary with char occurrence.
-   :return: None
-   """
-if type(char_occurrence_dict) != dict:
+    """
+    This function checks if entered parameter's type is dictionary. If it's not, function signals an error.
+    :param char_occurrence_dict: Dictionary with char occurrence.
+    :return: None
+    """
+    if type(char_occurrence_dict) != dict:
         raise TypeError("Parametr musí být typu dictionary.")
 
 
