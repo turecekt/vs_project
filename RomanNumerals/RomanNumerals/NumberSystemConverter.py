@@ -95,14 +95,6 @@ class NumberSystemConverter :
             else : pass
         else : pass
         
-        """
-        for char in one_character_numbers :
-            four_same_chars_in_row = char + char + char + char
-            if (four_same_chars_in_row in romanNumber) :
-                return "Nemuze obsahovat vice nez tri stejne znaky v rade."
-            else : pass
-        else : pass
-        """
 
         parsed_roman_number = [roman_number[0]]
 
@@ -120,9 +112,6 @@ class NumberSystemConverter :
 
             i += 1
 
-        """DEBUG"""
-        print(parsed_roman_number)
-        """_END_"""
 
         integer = NumberSystemConverter.valueOf(parsed_roman_number[0])
         value_of_highest_usable_number = NumberSystemConverter.getHighestUsableNumberAfter(integer)
