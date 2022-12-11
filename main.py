@@ -78,29 +78,59 @@ def main():
         # Výskyt znaků abecedy v grafu
         alphabet_occurrence_graph(alphabet_chars_dict)
 
+
 def error_raiser(char_occurrence_dict):
+   """
+   This function checks if entered parameter's type is dictionary. If it's not, function signals an error.
+   :param char_occurrence_dict: Dictionary with char occurrence.
+   :return: nothing.
+   """
     if type(char_occurrence_dict) != dict:
         raise TypeError("Parametr musí být typu dictionary.")
 
+
 def char_average(char_occurrence_dict):
+   """
+   This function counts an average quantity of symbols and rounds it with 2 decimals.
+   :param char_occurrence_dict: Dictionary with char occurrence.
+   :return: rounded_average.
+   """
     error_raiser(char_occurrence_dict)
 
     rounded_average = round(sum(char_occurrence_dict.values()) / len(char_occurrence_dict), 2)
     return rounded_average
 
+
 def char_min_values(char_occurrence_dict):
+   """
+   This function counts the least frequent character.
+   :param char_occurrence_dict: Dictionary with char occurrence.
+   :return: min_values.
+   """
     error_raiser(char_occurrence_dict)
 
     min_values = [key for key, value in char_occurrence_dict.items() if value == min(char_occurrence_dict.values())]
     return min_values
 
+
 def char_max_values(char_occurrence_dict):
+   """
+   This function counts the most frequent character.
+   :param char_occurrence_dict: Dictionary with char occurrence.
+   :return: max_values.
+   """
     error_raiser(char_occurrence_dict)
 
     max_values = [key for key, value in char_occurrence_dict.items() if value == max(char_occurrence_dict.values())]
     return max_values
 
+
 def occurrence_to_alphabetic_dict(char_occurrence_dict):
+    """
+    This function saves exceptionally letters from char_occurrence_dict to alphabet_chars_dict.
+    :param char_occurrence_dict: Dictionary with char occurrence.
+    :return: alphabet_chars_dict.
+    """
     error_raiser(char_occurrence_dict)
 
     for key, value in char_occurrence_dict.items():
@@ -115,7 +145,7 @@ def count_to_dictionary(text):
     If char is in 'char_occurrence_dict', then add 1 to its count.
     If char is not in 'char_occurrence_dict', then set its count to 1.
     :param text: Text from file or from user input.
-    This function returns char_counter.
+    :return: char_counter.
     """
     # TODO Error
     char_counter = 0
@@ -133,7 +163,8 @@ def count_to_dictionary(text):
 def alphabet_occurrence_graph(alphabet_chars_dict):
     """
     Function will show table of char 'alphabet_chars_dict'.
-    This function returns nothing.
+    :param alphabet_chars_dict: Dictionary with letters
+    :return: nothing.
     """
     max_value = 0
 
