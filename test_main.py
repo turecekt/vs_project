@@ -8,7 +8,6 @@ text_test = "abcdadedeefff"
 # spouštění testu:>> pytest
 # test coverage:>> pytest --cov
 
-# TODO Unit testy
 # TODO Docstrings
 # TODO kontrola pomocí flake8 a flake8-docstrings
 
@@ -48,9 +47,8 @@ def test_char_average():
 
 def test_occurrence_to_alphabetic_dict():
     """Test function occurrence of chars"""
-    #TODO upravit ↓
     assert occurrence_to_alphabetic_dict(dict_test) == {'a': 2, 'b': 1, 'c': 1, 'd': 3, 'e': 3, 'f': 3}
-    #assert occurrence_to_alphabetic_dict({"a": 1}) == {'a': 1}
+    assert occurrence_to_alphabetic_dict({"a": 1}) == {'a': 1}
 
     with pytest.raises(TypeError):
         occurrence_to_alphabetic_dict(True)
@@ -59,7 +57,6 @@ def test_occurrence_to_alphabetic_dict():
 
 
 def test_count_to_dictionary():
-    #TODO pridat raiser
     """Test function count_to_dictionary"""
     assert count_to_dictionary(text_test) == 13
     assert count_to_dictionary({"a": 1}) == 1

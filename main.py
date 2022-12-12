@@ -10,7 +10,6 @@ alphabet_chars_dict = {}
 # spouštění programu s textovým souborem:>> py main.py random_text.txt
 # Docstringy - za definici funkce napsat """ a zmáčknout Enter
 
-# TODO Unit testy (dokončit)
 # TODO Docstrings
 # TODO kontrola pomocí flake8 a flake8-docstrings
 
@@ -20,7 +19,6 @@ def main():
     This is main function of this program.
     :return: None
     """
-
     text = ""
 
     if sys.argv[1:]:
@@ -132,7 +130,8 @@ def occurrence_to_alphabetic_dict(char_occurrence_dict):
     :return: alphabet_chars_dict
     """
     error_raiser(char_occurrence_dict)
-
+    alphabet_chars_dict.clear()
+    
     for key, value in char_occurrence_dict.items():
         if key.isalpha():
             alphabet_chars_dict[key] = value
@@ -147,7 +146,6 @@ def count_to_dictionary(text):
     :param text: Text from file or from user input.
     :return: char_counter
     """
-    # TODO Error
     char_counter = 0
     for char in text:
         if char != "#":
