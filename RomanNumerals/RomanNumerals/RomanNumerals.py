@@ -1,9 +1,13 @@
 from NumberSystemConverter import *
 
-user_input = 1666
 
-roman_number = NumberSystemConverter.integerToRoman(user_input)
-integer      = NumberSystemConverter.romanToInteger(roman_number)
+integer_input = 3999
 
+roman_number = integerToRoman(integer_input)
 print(roman_number)
+
+
+roman_input = "IV"
+
+integer      = romanToInteger(roman_input)
 print(integer)

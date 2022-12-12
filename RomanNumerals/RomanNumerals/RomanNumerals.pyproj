@@ -11,6 +11,7 @@
     <OutputPath>.</OutputPath>
     <Name>RomanNumerals</Name>
     <RootNamespace>RomanNumerals</RootNamespace>
+    <TestFramework>Pytest</TestFramework>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
