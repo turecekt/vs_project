@@ -1,3 +1,4 @@
+"""Missing docstring line."""
 import sys
 
 from os.path import exists
@@ -11,12 +12,12 @@ alphabet_chars_dict = {}
 # Docstringy - za definici funkce napsat """ a zmáčknout Enter
 
 # TODO Docstrings
-# TODO kontrola pomocí flake8 a flake8-docstrings
+
 
 
 def main():
-    """
-    This is main function of this program.
+    """Be the main function of this program.
+
     :return: None
     """
     text = ""
@@ -78,8 +79,8 @@ def main():
 
 
 def error_raiser(char_occurrence_dict):
-    """
-    This function checks if entered parameter's type is dictionary. If it's not, function signals an error.
+    """Check the parameter's type.
+
     :param char_occurrence_dict: Dictionary with char occurrence.
     :return: None
     """
@@ -88,50 +89,54 @@ def error_raiser(char_occurrence_dict):
 
 
 def char_average(char_occurrence_dict):
-    """
-    This function counts an average quantity of symbols and rounds it with 2 decimals.
+    """Count an average quantity of chars, rounded with 2 decimals.
+
     :param char_occurrence_dict: Dictionary with char occurrence.
     :return: rounded_average
     """
     error_raiser(char_occurrence_dict)
 
-    rounded_average = round(sum(char_occurrence_dict.values()) / len(char_occurrence_dict), 2)
+    rounded_average = \
+        round(sum(char_occurrence_dict.values())/len(char_occurrence_dict), 2)
     return rounded_average
 
 
 def char_min_values(char_occurrence_dict):
-    """
-    This function counts the least frequent character.
+    """Count the least frequent character.
+
     :param char_occurrence_dict: Dictionary with char occurrence.
     :return: min_values
     """
     error_raiser(char_occurrence_dict)
 
-    min_values = [key for key, value in char_occurrence_dict.items() if value == min(char_occurrence_dict.values())]
+    min_values = \
+        [key for key, value in char_occurrence_dict.items()
+         if value == min(char_occurrence_dict.values())]
     return min_values
 
 
 def char_max_values(char_occurrence_dict):
-    """
-    This function counts the most frequent character.
+    """Count the most frequent character.
+
     :param char_occurrence_dict: Dictionary with char occurrence.
     :return: max_values
     """
     error_raiser(char_occurrence_dict)
 
-    max_values = [key for key, value in char_occurrence_dict.items() if value == max(char_occurrence_dict.values())]
+    max_values = \
+        [key for key, value in char_occurrence_dict.items()
+         if value == max(char_occurrence_dict.values())]
     return max_values
 
 
 def occurrence_to_alphabetic_dict(char_occurrence_dict):
-    """
-    This function saves exceptionally letters from char_occurrence_dict to alphabet_chars_dict.
+    """Save only letters from char_occurrence_dict to alphabet_chars_dict.
+
     :param char_occurrence_dict: Dictionary with char occurrence.
     :return: alphabet_chars_dict
     """
     error_raiser(char_occurrence_dict)
     alphabet_chars_dict.clear()
-    
     for key, value in char_occurrence_dict.items():
         if key.isalpha():
             alphabet_chars_dict[key] = value
@@ -139,8 +144,8 @@ def occurrence_to_alphabetic_dict(char_occurrence_dict):
 
 
 def count_to_dictionary(text):
-    """
-    This function checks if char is in dictionary 'char_occurrence_dict'.
+    """Check if char is in dictionary 'char_occurrence_dict'.
+
     If char is in 'char_occurrence_dict', then add 1 to its count.
     If char is not in 'char_occurrence_dict', then set its count to 1.
     :param text: Text from file or from user input.
@@ -159,8 +164,8 @@ def count_to_dictionary(text):
 
 # Graf četnost znaků
 def alphabet_occurrence_graph(alphabet_chars_dict):
-    """
-    Function will show table of char 'alphabet_chars_dict'.
+    """Show table of char 'alphabet_chars_dict'.
+
     :param alphabet_chars_dict: Dictionary with letters
     :return: None
     """
@@ -172,7 +177,7 @@ def alphabet_occurrence_graph(alphabet_chars_dict):
             max_value = value
 
     if max_value <= len("ČETNOST"):
-        print(f"ZNAK|ČETNOST|NR.")
+        print("ZNAK|ČETNOST|NR.")
     else:
         print(f"ZNAK|ČETNOST{' ' * (max_value - len('ČETNOST'))}|NR.")
 
@@ -180,7 +185,8 @@ def alphabet_occurrence_graph(alphabet_chars_dict):
         if max_value > len("ČETNOST"):
             print(f"   {key}|{'*' * value}{' ' * (max_value-value)}|{value}")
         else:
-            print(f"   {key}|{'*' * value}{' ' * (len('ČETNOST')-value)}|{value}")
+            print(f"   {key}|{'*' * value}{' ' * (len('ČETNOST')-value)}"
+                  f"|{value}")
 
 
 if __name__ == "__main__":
