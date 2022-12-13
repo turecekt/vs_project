@@ -21,7 +21,7 @@ Program nechá uživatele zadávat textové řetězce, dokud řádek neobsahuje 
 
 `Zadejte textový řetězec: naolejujelijuliekoleje`
 
-`Zadejte textový řetězec: nebonaolejujelijuliekoleje#`
+`Zadejte textový řetězec: nebonenaolejujejuliekoleje#`
 
 ####Výstup:
 ```
@@ -30,20 +30,20 @@ Nejméně častý znak: 'b'
 Nejčastější znak: 'e'
 Průměrná četnost: 4.8
 Četnost jednotlivých znaků abecedy:
-ZNAK|ČETNOST    |NR.
-   a|**         |2
-   b|*          |1
-   e|***********|11
-   i|****       |4
-   j|********   |8
-   k|**         |2
-   l|********   |8
-   n|***        |3
-   o|*****      |5
-   u|****       |4
+ZNAK|ČETNOST     |NR.
+   a|**          |2
+   b|*           |1
+   e|************|12
+   i|***         |3
+   j|********    |8
+   k|**          |2
+   l|*******     |7
+   n|****        |4
+   o|*****       |5
+   u|****        |4
 ```
 
-### Ukázka spuštění se souborem .txt jako parametrem
+### Ukázka spuštění se souborem "random_text.txt" jako parametrem
 `py main.py random_text.txt`
 
 ####Částečný výstup:
