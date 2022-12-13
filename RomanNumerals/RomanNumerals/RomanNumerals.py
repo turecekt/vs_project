@@ -1,15 +1,38 @@
+from pickle import TRUE
 from NumberSystemConverter import integerToRoman
 from NumberSystemConverter import romanToInteger
 
 
-print(str(None).isNumeric())
-integer_input = 3999
+def userInterface():
 
-roman_number = integerToRoman(integer_input)
-print(roman_number)
+    while (TRUE):
+
+        print()
+        print("1 - integer to roman")
+        print("2 - roman to integer")
+        print("0 - exit")
+
+        userInput = input("input: ")
+
+        if (not userInput.isnumeric()):
+            print("wrong input")
+            continue
+
+        userInput = int(userInput)
+
+        if (userInput == 1):
+            integer = int(input("integer = "))
+            print("roman   = " + integerToRoman(integer))
+
+        elif (userInput == 2):
+            roman = input("roman   = ")
+            print("integer = " + str(romanToInteger(roman)))
+
+        elif (userInput == 0):
+            return
+
+        else:
+            print("wrong input")
 
 
-roman_input = "IV"
-
-integer = romanToInteger(roman_input)
-print(integer)
+userInterface()
