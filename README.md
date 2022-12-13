@@ -23,7 +23,7 @@ Program nechá uživatele zadávat textové řetězce, dokud řádek neobsahuje 
 
 `Zadejte textový řetězec: nebonenaolejujejuliekoleje#`
 
-####Výstup:
+#### Výstup:
 ```
 Celkový počet znaků: 48
 Nejméně častý znak: 'b'
@@ -46,7 +46,7 @@ ZNAK|ČETNOST     |NR.
 ### Ukázka spuštění se souborem "random_text.txt" jako parametrem
 `py main.py random_text.txt`
 
-####Částečný výstup:
+#### Částečný výstup:
 ```
 Celkový počet znaků: 256
 Nejméně časté znaky: ['X', 'd', 'T', '2', '6', 'P', 'K', 'U']
