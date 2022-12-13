@@ -1,9 +1,12 @@
-# Function for converting integers to Roman numerals.
-# Converts any positive Integer in range from 1 to 3999.
+# Function for converting integers to Roman numbers.
+# Converts any positive integer in range from 1 to 3999.
 def integerToRoman(integer):
 
+    # Checks if the input is None.
+    if (integer is None):
+        return "Input can not be None."
+
     # Checks if the input is really an integer in range 1-3999.
-    # If not, function returns error message.
     if (not str(integer).isnumeric() or (integer < 1 or integer > 3999)):
         return "Input must be any positive integer from 1 to 3999."
 
@@ -66,127 +69,165 @@ def integerToRoman(integer):
             integer -= 1
             roman += "I"
 
-    # Returns value of the input integer in the system of Roman numerals.
+    # Returns value of the input in the system of Roman numerals.
     return roman
 
 
+# Function for converting Roman numbers to integers.
+# Converts any Roman number of valid format.
 def romanToInteger(roman):
 
+    # Checks if the input is None.
+    if (roman is None):
+        return "Input can not be None."
+
+    # Defining allowed characters.
     allowedChars = ['I', 'V', 'X', 'L', 'C', 'D', 'M']
 
+    # Checks if the input contains only allowed characters.
     for char in roman:
-
         if (char not in allowedChars):
-            return "Obsahuje nepovolene znaky."
+            return "Contains illegal characters."
 
+    # Declaration of the variable "parsed_roman", which will contain
+    # individual numerals.
     parsed_roman = [roman[0]]
 
+    # Counter initialization.
     i = 1
+
+    # Filling variable "parsed_roman" with individual numerals.
     while i < len(roman):
 
+        # "last_roman" represents the last numeral that was inserted
+        # into "parsed_roman".
         last_roman = parsed_roman[len(parsed_roman) - 1]
+
+        # "current_roman" represents next character from "roman".
         current_roman = roman[i]
 
+        # If combination of "last_roman" and "current_roman" results
+        # in a valid numeral, last numeral in "parsed_roman" is replaced
+        # by this combination.
         if (valueOf(last_roman + current_roman) > 0):
             parsed_roman[len(parsed_roman) - 1] = last_roman + current_roman
 
+        # If not, "current_roman" is added to "parsed_roman" like a new
+        # last numeral.
         else:
             parsed_roman.append(current_roman)
 
+        # Counter increment.
         i += 1
 
+    # Declaration of the variable "integer", which will represent
+    # the value of the input in the decimal system.
     integer = valueOf(parsed_roman[0])
 
+    # Counter initialization.
     i = 1
+
+    # Filling variable "integer" with its value.
     while i < len(parsed_roman):
 
+        # "last_integer" represents the value of last numeral that was added.
         last_integer = valueOf(parsed_roman[i - 1])
+
+        # "current_integer" represents the value that will be added
+        # in the current step.
         current_integer = valueOf(parsed_roman[i])
 
-        if (last_integer > current_integer):
+        # If "last_integer" is greater than "current_integer" and highest
+        # usable integer after "last_integer" is greater of equal to
+        # "current_integer", it means, that "roman" is in correct format
+        # and "current_integer" is added to "integer".
+        if (last_integer > current_integer and
+                getHighestUsableInteger(last_integer) >= current_integer):
+            integer += current_integer
 
-            if (getHighestUsableInteger(last_integer) >= current_integer):
-                integer += current_integer
-
-            else:
-                return "Cislo je ve spatnem tvaru."
-
+        # If not, error message is returned.
         else:
-            return "Cislo je ve spatnem tvaru."
+            return "Invalid format."
 
+        # Counter increment.
         i += 1
 
+    # Returns value of the input in the decimal system.
     return integer
 
 
-def valueOf(roman_number):
-    if (roman_number == 'I'):
+# Function for converting Roman numerals to integers.
+# Converts any valid Roman numeral.
+# If numeral is not valid, returns 0.
+def valueOf(roman_numeral):
+    if (roman_numeral == 'I'):
         return 1
 
-    elif (roman_number == 'II'):
+    elif (roman_numeral == 'II'):
         return 2
 
-    elif (roman_number == 'III'):
+    elif (roman_numeral == 'III'):
         return 3
 
-    elif (roman_number == 'IV'):
+    elif (roman_numeral == 'IV'):
         return 4
 
-    elif (roman_number == 'V'):
+    elif (roman_numeral == 'V'):
         return 5
 
-    elif (roman_number == 'IX'):
+    elif (roman_numeral == 'IX'):
         return 9
 
-    elif (roman_number == 'X'):
+    elif (roman_numeral == 'X'):
         return 10
 
-    elif (roman_number == 'XX'):
+    elif (roman_numeral == 'XX'):
         return 20
 
-    elif (roman_number == 'XXX'):
+    elif (roman_numeral == 'XXX'):
         return 30
 
-    elif (roman_number == 'XL'):
+    elif (roman_numeral == 'XL'):
         return 40
 
-    elif (roman_number == 'L'):
+    elif (roman_numeral == 'L'):
         return 50
 
-    elif (roman_number == 'XC'):
+    elif (roman_numeral == 'XC'):
         return 90
 
-    elif (roman_number == 'C'):
+    elif (roman_numeral == 'C'):
         return 100
 
-    elif (roman_number == 'CC'):
+    elif (roman_numeral == 'CC'):
         return 200
 
-    elif (roman_number == 'CCC'):
+    elif (roman_numeral == 'CCC'):
         return 300
 
-    elif (roman_number == 'CD'):
+    elif (roman_numeral == 'CD'):
         return 400
 
-    elif (roman_number == 'D'):
+    elif (roman_numeral == 'D'):
         return 500
 
-    elif (roman_number == 'CM'):
+    elif (roman_numeral == 'CM'):
         return 900
 
-    elif (roman_number == 'M'):
+    elif (roman_numeral == 'M'):
         return 1000
 
-    elif (roman_number == 'MM'):
+    elif (roman_numeral == 'MM'):
         return 2000
 
-    elif (roman_number == 'MMM'):
+    elif (roman_numeral == 'MMM'):
         return 3000
 
     else:
         return 0
 
 
+# Returns decimal value of highest usable Roman numeral after "number".
 def getHighestUsableInteger(number):
     if (number >= 1000 and number <= 3000):
         return 900
