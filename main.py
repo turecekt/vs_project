@@ -3,8 +3,14 @@
 
 from triangle import *
 import inputProcessor
+import sys
 
-sides = inputProcessor.getSides()
+debug = False
+
+sides = inputProcessor.getSides(sys.argv, debug)
+
+print("Lengths of the sides of the triangle are:\n"
+      f"{sides[0]}, {sides[1]}, {sides[2]}")
 
 sidea = sides[0]
 sideb = sides[1]
