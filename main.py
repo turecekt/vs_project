@@ -7,13 +7,6 @@ line_separator = "-" * 45
 char_occurrence_dict = {}
 alphabet_chars_dict = {}
 
-# spouštění programu:>> py main.py
-# spouštění programu s textovým souborem:>> py main.py random_text.txt
-# Docstringy - za definici funkce napsat """ a zmáčknout Enter
-
-# TODO Docstrings
-
-
 
 def main():
     """Be the main function of this program.
@@ -72,7 +65,7 @@ def main():
 
     if len(alphabet_chars_dict) > 0:
         # Výskyt znaků abecedy
-        print(f"Četnost jednotlivých znaků abecedy: {alphabet_chars_dict}")
+        print("Četnost jednotlivých znaků abecedy:")
 
         # Výskyt znaků abecedy v grafu
         alphabet_occurrence_graph(alphabet_chars_dict)
@@ -171,7 +164,6 @@ def alphabet_occurrence_graph(alphabet_chars_dict):
     """
     max_value = 0
 
-    print(line_separator)
     for key, value in alphabet_chars_dict.items():
         if value > max_value:
             max_value = value

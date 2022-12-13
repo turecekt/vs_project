@@ -4,14 +4,6 @@ import pytest
 dict_test = {"a": 2, "b": 1, "c": 1, "d": 3, "e": 3, "f": 3, "1": 1, "2": 2}
 text_test = "abcdadedeefff"
 
-# nainstalovat pytest a pytest-cov
-# spouštění testu:>> pytest
-# test coverage:>> pytest --cov
-
-# TODO Docstrings
-# TODO kontrola pomocí flake8 a flake8-docstrings
-
-
 def test_char_min_values():
     """Test function minimum values of chars"""
     assert char_min_values(dict_test) == ["b", "c", "1"]

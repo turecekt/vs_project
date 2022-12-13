@@ -1,56 +1,71 @@
-# Závěrečný projekt z předmětu AP1VS
-Tento repozitář slouží jako podklad a vzor pro závěrečný projekt z předmětu AP1VS.
+# Četnost znaků
+Tento repozitář slouží jako závěrečný projekt z předmětu AP1VS.
 
-## Požadavky na projekt
-* Projekt bude řešen formou forku a odevzdán pomocí pull requestu na githubu
-* Projekt může zpracovávat tým o 2-5 studentech:
-    * hlavní řešitel vytvoří fork a pozve do něj ostatní spoluřešitele
-    * každý z řešitelů musí mít v projektu zařazeny commity
-    * nakonec hlavní řešitel odevzdá projekt pomocí pull requestu
-* Projekt musí být napsán v programovacím jazyce Python 3
-* Témata projektu jsou popsána v pdf dokumentu v systému Moodle
-* Kód musí být okomentovaný (ideálně všechny entity)
-* Kód musí obsahovat unit testy (pokrytí kódu testy by se mělo blížit 100%)
-* Zdrojový kód musí projít kontrolním testem na githubu v sekci Actions (je nutné povolit). Tzn. musí projít všechny unit testy a kontola pomocí flake8 a flake8-docstrings
-* Zároveň dojde k automatickému vygenerování dokumentace s docstringů pomocí knihovny pdoc.
+## Vstup
+* Textový soubor (obsahující text bez diakritiky) jako parametr programu
+* V případě spuštění bez parametru musí program umět zpracovat text ze  
+standardního vstupu až po řádek obsahující ukončovací symbol #
 
+## Výstup
+* Informace o celkovém počtu znaků
+* Informace o nejčastějším znaku
+* Informace o nejméně častém znaku
+* Informace o průměrné četnosti
+* Informace o četnosti jednotlivých znaků abecedy (bez diakritiky)
 
-## Postup
-1. Vytvořte si účet na github.com pokud nemáte (všichni členové týmu).
-2. Nastavte si přístup na GitHub z vašeho počítače, použijte a credential helper jako je [Git Credential Manager](https://github.com/GitCredentialManager/git-credential-manager/blob/main/README.md) nebo si vygenerujte osobní přístupový token: [a personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token). Případně můžete commity provádět přes web GitHubu (což je ale hodně neprogramátorská varianta :wink:).
-2. Jeden z řešitelů udělá Fork projektu a upraví nastavení (Settings nahoře v liště ) projektu, ostatní členové projektu se budou účastnit jako přispěvatelé (Contributors) do projektu hlavního řešitele.
-    1. Fork projektu:
-        * Použijte tlačítko Fork na https://github.com/tureckova/AP1VS-final-project
-    2. Nastavení repozitáře v Settings:
-        * V sekci Actions -> General je nutné vybrat permissions Allow all actions and reusable workflows
-        * V sekci Pages je nutné nastavit Build and Deployment Source na Github Actions.
-        
-3. Naklonujte si svůj repozitář a nastavte si upstream (toto provedou všichni uživatelé, neboť každý uživatel musí provést alespoň jeden commit):
+## Ukázka spuštění programu
+### Spuštění programu bez parametru:
+`py main.py`  
 
-    Naklonování vašeho repozitáře do aktuálního adresáře:
-    
-        git clone https://github.com/your_username/AP1VS-final-project.git
-        
-    Přejděte do adresáře s naklonovaným repozitářem:
-    
-        cd vs_project
-        
-    Přiřaďte originální repozitář k vašemu forku:
-    
-        git remote add upstream https://github.com/tureckova/AP1VS-final-project
+Program nechá uživatele zadávat textové řetězce, dokud řádek neobsahuje ukončovací symobl #.
 
-3. Aktualizace z originálního repozitáře, přijetí změn z upstream:
+`Zadejte textový řetězec: naolejujelijuliekoleje`
 
-        git pull upstream master
-    
-4. Commitujte vaše změny po logických oddílech, každý commit s výstižným popisem:
+`Zadejte textový řetězec: nebonaolejujelijuliekoleje#`
 
-        git commit -m "logical commit description"
-    
-5. Proveďte push vašich změn na server:
+####Výstup:
+```
+Celkový počet znaků: 48
+Nejméně častý znak: 'b'
+Nejčastější znak: 'e'
+Průměrná četnost: 4.8
+Četnost jednotlivých znaků abecedy:
+ZNAK|ČETNOST    |NR.
+   a|**         |2
+   b|*          |1
+   e|***********|11
+   i|****       |4
+   j|********   |8
+   k|**         |2
+   l|********   |8
+   n|***        |3
+   o|*****      |5
+   u|****       |4
+```
 
-        git push
-    
-6. Otevřete tzv. pull request s názvem a popisem projektu, návod jak na to [zde](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork)
-    
-7. Do moodlu každý řešitel odevzdá pouze odkaz na github stránku vašeho projektu - url adresu forku vašeho projektu - a url adresu svého účtu na GitHub.
+### Ukázka spuštění se souborem .txt jako parametrem
+`py main.py random_text.txt`
+
+####Částečný výstup:
+```
+Celkový počet znaků: 256
+Nejméně časté znaky: ['X', 'd', 'T', '2', '6', 'P', 'K', 'U']
+Nejčastější znak: '3'
+Průměrná četnost: 4.13
+Četnost jednotlivých znaků abecedy:
+ZNAK|ČETNOST |NR.
+   A|***     |3
+   B|******  |6
+   C|*****   |5
+   D|*****   |5
+   E|********|8
+   F|**      |2
+   G|**      |2
+   H|***     |3
+   I|**      |2
+   J|****    |4
+   K|*       |1
+        .
+        .
+        .
+```
