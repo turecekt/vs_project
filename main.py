@@ -1,8 +1,9 @@
-"""Missing docstring line."""
+"""ČETNOST ZNAKŮ."""
 import sys
 
 from os.path import exists
 
+# dfsdfsdfsdf
 line_separator = "-" * 45
 char_occurrence_dict = {}
 alphabet_chars_dict = {}
@@ -12,9 +13,9 @@ def main():
     """Be the main function of this program.
 
     :return: None
+    Sample usage:
     """
     text = ""
-
     if sys.argv[1:]:
         if sys.argv[1].endswith(".txt") or sys.argv[1].endswith(".log"):
             if exists(sys.argv[1]):
@@ -90,7 +91,8 @@ def char_average(char_occurrence_dict):
     error_raiser(char_occurrence_dict)
 
     rounded_average = \
-        round(sum(char_occurrence_dict.values())/len(char_occurrence_dict), 2)
+        round(sum(char_occurrence_dict.values()) /
+              len(char_occurrence_dict), 2)
     return rounded_average
 
 
@@ -175,9 +177,9 @@ def alphabet_occurrence_graph(alphabet_chars_dict):
 
     for key, value in sorted(alphabet_chars_dict.items()):
         if max_value > len("ČETNOST"):
-            print(f"   {key}|{'*' * value}{' ' * (max_value-value)}|{value}")
+            print(f"   {key}|{'*' * value}{' ' * (max_value - value)}|{value}")
         else:
-            print(f"   {key}|{'*' * value}{' ' * (len('ČETNOST')-value)}"
+            print(f"   {key}|{'*' * value}{' ' * (len('ČETNOST') - value)}"
                   f"|{value}")
 
 
