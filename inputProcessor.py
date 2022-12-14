@@ -1,21 +1,23 @@
 #!/usr/bin/env python3
-"""Processes input for triangle program."""
+"""Process input for triangle program."""
 
 
 def sideLength(point1, point2):
-    """Returns lenght of side."""
+    """Return lenght of side."""
     vector = (point2[0] - point1[0], point2[1] - point1[1])
     return (vector[0] ** 2 + vector[1] ** 2) ** 0.5
 
 
 def inputPoint(point, coordNames=["x", "y"], debug=False):
+    """Return list of coordinates inputed to console."""
     coords = []
     for coordName in coordNames:
         nok = True
         retries = 0
         while nok:
             try:
-                print(f"Please input point {point}, coordinate {coordName}: ", end="")
+                print(f"Please input point {point}, \
+                    coordinate {coordName}: ", end="")
                 coords.append(float(input()))
                 nok = False
             except Exception as e:
@@ -30,6 +32,11 @@ def inputPoint(point, coordNames=["x", "y"], debug=False):
 
 
 def getPoints(args, debug=False):
+    """
+    Return list of 3 points with 2 coordinates each.
+
+    Coordinates are parsed from provided args list or inputed to console.
+    """
     try:
         points = [
             [float(args[1]), float(args[2])],
@@ -41,24 +48,25 @@ def getPoints(args, debug=False):
         print(f"Reason: {e}") if debug else None
         print("Please enter points now.")
         points = [
-            inputPoint("A"),
-            inputPoint("B"),
-            inputPoint("C"),
+            inputPoint("A", debug=debug),
+            inputPoint("B", debug=debug),
+            inputPoint("C", debug=debug),
         ]
     return points
 
 
 def getSides(args, debug=False):
-
+    """Return list of lengths of 3 sides of triangle."""
     points = getPoints(args, debug)
 
     # Points
-    print(f"\nDebug: Points are {points[0]} {points[1]} {points[2]}\n") if debug else None
+    print(f"\nDebug: Points are {points[0]} {points[1]} \
+        {points[2]}\n") if debug else None
 
     # Side length
     sides = []
     sides.append(sideLength(points[0], points[1]))
     sides.append(sideLength(points[1], points[2]))
     sides.append(sideLength(points[2], points[0]))
-  
+
     return sides
