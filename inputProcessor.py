@@ -16,8 +16,8 @@ def inputPoint(point, coordNames=["x", "y"], debug=False):
         retries = 0
         while nok:
             try:
-                print(f"Please input point {point}, \
-                    coordinate {coordName}: ", end="")
+                print(f"Please input point {point}, "
+                    f"coordinate {coordName}: ", end="")
                 coords.append(float(input()))
                 nok = False
             except Exception as e:
@@ -60,8 +60,8 @@ def getSides(args, debug=False):
     points = getPoints(args, debug)
 
     # Points
-    print(f"\nDebug: Points are {points[0]} {points[1]} \
-        {points[2]}\n") if debug else None
+    print(f"\nDebug: Points are {points[0]} {points[1]}"
+        f"{points[2]}\n") if debug else None
 
     # Side length
     sides = []
