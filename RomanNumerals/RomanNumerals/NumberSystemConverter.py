@@ -100,6 +100,9 @@ def romanToInteger(roman):
     if (roman is None):
         return "Input can not be None."
 
+    # Make sure the input is a string.
+    roman = str(roman)
+
     # Defining allowed characters.
     allowedChars = ['I', 'V', 'X', 'L', 'C', 'D', 'M']
 
@@ -262,35 +265,40 @@ def getHighestUsableNumeralAfter(number):
     :return: int
     """
 
+    if (number is None):
+        return 0
+
+    if (not str(number).isnumeric()):
+        return 0
+
     if (number >= 1000 and number <= 3000):
         return 900
 
-    elif (number == 900):
+    if (number == 900):
         return 90
 
-    elif (number == 500):
+    if (number == 500):
         return 300
 
-    elif (number >= 100 and number <= 400):
+    if (number >= 100 and number <= 400):
         return 90
 
-    elif (number == 90):
+    if (number == 90):
         return 9
 
-    elif (number == 50):
+    if (number == 50):
         return 30
 
-    elif (number >= 10 and number <= 40):
+    if (number >= 10 and number <= 40):
         return 9
 
-    elif (number == 9):
+    if (number == 9):
         return 0
 
-    elif (number == 5):
+    if (number == 5):
         return 3
 
-    elif (number >= 1 and number <= 4):
+    if (number >= 1 and number <= 4):
         return 0
 
-    else:
-        return 0
+    return 0
