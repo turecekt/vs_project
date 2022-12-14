@@ -2,6 +2,7 @@ import unittest
 from NumberSystemConverter import integerToRoman
 from NumberSystemConverter import romanToInteger
 from NumberSystemConverter import valueOf
+from NumberSystemConverter import getHighestUsableNumeralAfter
 
 
 class Test_test_NumberSystemConverter(unittest.TestCase):
@@ -24,9 +25,19 @@ class Test_test_NumberSystemConverter(unittest.TestCase):
         roman = integerToRoman(3.5)
         self.assertEqual(roman, expectedValue)
 
-        expectedValue = "MDCCLXXXIX"
+        expectedValue = "MDCLXVI"
 
-        roman = integerToRoman(1789)
+        roman = integerToRoman(1666)
+        self.assertEqual(roman, expectedValue)
+
+        expectedValue = "CMXCIX"
+
+        roman = integerToRoman(999)
+        self.assertEqual(roman, expectedValue)
+
+        expectedValue = "CDXLIV"
+
+        roman = integerToRoman(444)
         self.assertEqual(roman, expectedValue)
 
     def test_romanToInteger(self):
@@ -38,46 +49,65 @@ class Test_test_NumberSystemConverter(unittest.TestCase):
 
         expectedValue = "Contains illegal characters."
 
-        integer = romanToInteger("1IV")
+        integer = romanToInteger(1)
+        self.assertEqual(integer, expectedValue)
+
+        integer = romanToInteger("P")
         self.assertEqual(integer, expectedValue)
 
         expectedValue = "Invalid format."
 
-        integer = romanToInteger("IVI")
+        integer = romanToInteger("CCM")
         self.assertEqual(integer, expectedValue)
 
-        integer = romanToInteger("CCCC")
+        integer = romanToInteger("XCL")
+        self.assertEqual(integer, expectedValue)
+
+        expectedValue = 1500
+
+        integer = romanToInteger("MD")
         self.assertEqual(integer, expectedValue)
 
     def test_valueOf(self):
 
-        expectedValue = 0
+        self.assertEqual(valueOf(None), 0)
+        self.assertEqual(valueOf("I"), 1)
+        self.assertEqual(valueOf("II"), 2)
+        self.assertEqual(valueOf("III"), 3)
+        self.assertEqual(valueOf("IV"), 4)
+        self.assertEqual(valueOf("V"), 5)
+        self.assertEqual(valueOf("IX"), 9)
+        self.assertEqual(valueOf("X"), 10)
+        self.assertEqual(valueOf("XX"), 20)
+        self.assertEqual(valueOf("XXX"), 30)
+        self.assertEqual(valueOf("XL"), 40)
+        self.assertEqual(valueOf("L"), 50)
+        self.assertEqual(valueOf("XC"), 90)
+        self.assertEqual(valueOf("C"), 100)
+        self.assertEqual(valueOf("CC"), 200)
+        self.assertEqual(valueOf("CCC"), 300)
+        self.assertEqual(valueOf("CD"), 400)
+        self.assertEqual(valueOf("D"), 500)
+        self.assertEqual(valueOf("CM"), 900)
+        self.assertEqual(valueOf("M"), 1000)
+        self.assertEqual(valueOf("MM"), 2000)
+        self.assertEqual(valueOf("MMM"), 3000)
 
-        integer = valueOf(None)
-        self.assertEqual(integer, expectedValue)
+    def test_getHighestUsableNumeralAfter(self):
 
-        integer = valueOf(1)
-        self.assertEqual(integer, expectedValue)
-
-        integer = valueOf("P")
-        self.assertEqual(integer, expectedValue)
-
-        integer = valueOf("i")
-        self.assertEqual(integer, expectedValue)
-
-        integer = valueOf("CCCC")
-        self.assertEqual(integer, expectedValue)
-
-        integer = valueOf("IC")
-        self.assertEqual(integer, expectedValue)
-
-        integer = valueOf("CX")
-        self.assertEqual(integer, expectedValue)
-
-        expectedValue = 90
-
-        integer = valueOf("XC")
-        self.assertEqual(integer, expectedValue)
+        self.assertEqual(getHighestUsableNumeralAfter(1000), 900)
+        self.assertEqual(getHighestUsableNumeralAfter(900), 90)
+        self.assertEqual(getHighestUsableNumeralAfter(500), 300)
+        self.assertEqual(getHighestUsableNumeralAfter(100), 90)
+        self.assertEqual(getHighestUsableNumeralAfter(90), 9)
+        self.assertEqual(getHighestUsableNumeralAfter(50), 30)
+        self.assertEqual(getHighestUsableNumeralAfter(10), 9)
+        self.assertEqual(getHighestUsableNumeralAfter(9), 0)
+        self.assertEqual(getHighestUsableNumeralAfter(5), 3)
+        self.assertEqual(getHighestUsableNumeralAfter(1), 0)
+        self.assertEqual(getHighestUsableNumeralAfter(None), 0)
+        self.assertEqual(getHighestUsableNumeralAfter("I"), 0)
+        self.assertEqual(getHighestUsableNumeralAfter(4000), 0)
 
 
 if __name__ == '__main__':
