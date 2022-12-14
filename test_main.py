@@ -59,7 +59,12 @@ def test_occurrence_to_alphabetic_dict(expected_exception, hodnota):
         occurrence_to_alphabetic_dict(hodnota)
 
 
-def test_count_to_dictionary():
+@pytest.mark.parametrize("expected_exception, hodnota", [(TypeError, True),
+                                                         (TypeError, 5 + 6j)])
+def test_count_to_dictionary(expected_exception, hodnota):
     """Test function count_to_dictionary."""
     assert count_to_dictionary(text_test) == 13
-    assert count_to_dictionary({"a": 1}) == 1
+    assert count_to_dictionary("a") == 1
+
+    with pytest.raises(TypeError):
+        count_to_dictionary(hodnota)

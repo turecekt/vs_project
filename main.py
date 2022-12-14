@@ -3,8 +3,6 @@ import sys
 
 from os.path import exists
 
-# dfsdfsdfsdf
-line_separator = "-" * 45
 char_occurrence_dict = {}
 alphabet_chars_dict = {}
 
@@ -146,6 +144,8 @@ def count_to_dictionary(text):
     :param text: Text from file or from user input.
     :return: char_counter
     """
+    if type(text) != str:
+        raise TypeError("Parametr musí být typu string.")
     char_counter = 0
     for char in text:
         if char != "#":
