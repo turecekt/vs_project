@@ -1,6 +1,19 @@
-# Function for converting integers to Roman numbers.
-# Converts any positive integer in range from 1 to 3999.
+"""
+NumberSystemConverter Package
+----------------------------------
+Contains functions for converting between numeric systems.
+"""
+
+
 def integerToRoman(integer):
+    """
+    Function for converting integers to Roman numbers.
+    Converts any positive integer in range from 1 to 3999.
+
+    :param name: integer - Number to be converted.
+    :param type: int
+    :return: str
+    """
 
     # Checks if the input is None.
     if (integer is None):
@@ -73,9 +86,15 @@ def integerToRoman(integer):
     return roman
 
 
-# Function for converting Roman numbers to integers.
-# Converts any Roman number of valid format.
 def romanToInteger(roman):
+    """
+    Function for converting Roman numbers to integers.
+    Converts any Roman number of valid format.
+
+    :param name: roman - Number to be converted.
+    :param type: str
+    :return: int
+    """
 
     # Checks if the input is None.
     if (roman is None):
@@ -142,7 +161,7 @@ def romanToInteger(roman):
         # "current_integer", it means, that "roman" is in correct format
         # and "current_integer" is added to "integer".
         if (last_integer > current_integer and
-                getHighestUsableInteger(last_integer) >= current_integer):
+                getHighestUsableNumeralAfter(last_integer) >= current_integer):
             integer += current_integer
 
         # If not, error message is returned.
@@ -156,10 +175,17 @@ def romanToInteger(roman):
     return integer
 
 
-# Function for converting Roman numerals to integers.
-# Converts any valid Roman numeral.
-# If numeral is not valid, returns 0.
 def valueOf(roman_numeral):
+    """
+    Function for converting Roman numerals to integers.
+    Converts any valid Roman numeral.
+    If numeral is not valid, returns 0.
+
+    :param name: roman_numeral - Numeral to be converted.
+    :param type: str
+    :return: int
+    """
+
     if (roman_numeral == 'I'):
         return 1
 
@@ -227,8 +253,15 @@ def valueOf(roman_numeral):
         return 0
 
 
-# Returns decimal value of highest usable Roman numeral after "number".
-def getHighestUsableInteger(number):
+def getHighestUsableNumeralAfter(number):
+    """
+    Returns decimal value of highest usable Roman numeral after "number".
+
+    :param name: number - Value of roman numeral.
+    :param type: int
+    :return: int
+    """
+
     if (number >= 1000 and number <= 3000):
         return 900
 
