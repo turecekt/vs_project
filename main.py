@@ -9,24 +9,29 @@ debug = False
 
 sides = inputProcessor.getSides(sys.argv, debug)
 
-print("Lengths of the sides of the triangle are:\n"
-      f"{sides[0]}, {sides[1]}, {sides[2]}")
-
 sidea = sides[0]
 sideb = sides[1]
 sidec = sides[2]
-"""Print results of default calculations."""
 
-# Perimeter
-perimeter = trianglePerimeter(sidea, sideb, sidec)
+# Constructability
+if constructability(sidea, sideb, sidec):
+    print("Lengths of the sides of the triangle are:\n"
+          f"{sides[0]}, {sides[1]}, {sides[2]}")
 
-print(f"Perimeter of the triangle is: {perimeter}")
+    """Print results of default calculations."""
 
-# Area
-area = triangleArea(sidea, sideb, sidec)
+    # Perimeter
+    perimeter = trianglePerimeter(sidea, sideb, sidec)
 
-print(f"Area of the triangle is: {area}")
+    print(f"Perimeter of the triangle is: {perimeter}")
 
-# Orthogonality
-sidesSorted = sorted(sides)
-orthogonal = triangleOrthogonality(sidesSorted[0], sidesSorted[1], sidesSorted[2])
+    # Area
+    area = triangleArea(sidea, sideb, sidec)
+
+    print(f"Area of the triangle is: {area}")
+
+    # Orthogonality
+    sidesSorted = sorted(sides)
+    orthogonal = triangleOrthogonality(sidesSorted[0], sidesSorted[1], sidesSorted[2])
+else:
+    print("This triangle is not constructable!")
