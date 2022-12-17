@@ -1,5 +1,4 @@
-# Morse code Překladač
-
+"""Morse code Překladač."""
 
 # Slovník pro překlad do morseovy abecedy
 slovnik = {
@@ -56,15 +55,17 @@ slovnik_naopak = {value: key for key, value in slovnik.items()}
 
 
 def sifrovani(text):
-    # Funkce sifrovani() rozpozná znaky ve vloženém řetězci a každému
-    # z nich přiřadí korespondující znak ze slovníku a vrátí řetězec
-    # Argumenty:
-    #    - retezec - Vstup funkce
-    # Vrací:
-    #    - string - Výstup funkce
+    """
+    Funkce sifrovani rozpozná znaky ve vloženém řetězci.
 
+    A každému z nich přiřadí korespondující znak ze slovníku a vrátí řetězec.
+    Argumenty:- retezec-Vstup funkce
+    Vrací:-string-Výstup funkce
+    """
     textSifra = ""
+
     # Counter funguje jako ověření, zda se jedná o první iteraci
+
     counter = 1
     for znak in text.upper():
         if counter != 1:
@@ -78,11 +79,12 @@ def sifrovani(text):
 
 
 def desifrovani(text):
-    # Funkce desifrovani() vrací vstupní řetězec převedený z morseovky.
-    # Argumenty:
-    #    - retezec - Vstup funkce
-    # Vrací:
-    #    - string - Výstup funkce
+    """
+    Funkce desifrovani vrací vstupní řetězec převedený z morseovky.
+
+    Argumenty:-retezec-Vstup funkce
+    Vrací:-string-Výstup funkce
+    """
     znaky = text.split()
     # vstup se rozdělí na znaky po jednom a poté je hledá ve slovníku
     textDesifra = []
