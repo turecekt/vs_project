@@ -74,6 +74,7 @@ def sifrovani(text):
             textSifra += slovnik[znak]
             counter = 0
     counter = 1
+    # Vrátí výsledný řetězec textSifra
     return textSifra
 
 
@@ -92,7 +93,7 @@ def desifrovani(text):
         if i in slovnik_naopak:
             textDesifra.append(slovnik_naopak[i])
 
-    # Vrátí výsledný řetězec
+    # Vrátí výsledný řetězec textDesifra
     return "".join(textDesifra)
 
 
