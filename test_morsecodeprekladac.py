@@ -1,9 +1,10 @@
-# Pytest morsecodeprekladac
+"""Pytest morsecodeprekladac."""
+
 from morsecodeprekladac import sifrovani, desifrovani
 
 
 def test_sifrovani():
-    # Testování překladu do abecedy z morseovky
+    """Testování překladu z abecedy do morseovky."""
     assert sifrovani("AHOJ!") == ".- .... --- .--- -.-.--"
     assert sifrovani(
         "733290807") == "--... ...-- ...-- ..--- ----. ----- ---.. ----- --..."
@@ -11,7 +12,7 @@ def test_sifrovani():
 
 
 def test_desifrovani():
-    # Testování překladu z morseovky do abecedy
+    """Testování překladu z morseovky do abecedy."""
     assert desifrovani("--.. -.. .-. .- ...- .. --") == "ZDRAVIM"
     assert desifrovani(
         "-.... ----- ..... ---.. ----. ..--- ----- ----- ---..") == "605892008"
