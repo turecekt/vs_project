@@ -152,7 +152,7 @@ def romanToInteger(roman):
     # Filling variable "integer" with its value.
     while i < len(parsed_roman):
 
-        # "last_integer" represents the value of last numeral that was added.
+        # "last_integer" represents the value of last numeral that was ad0ded.
         last_integer = valueOf(parsed_roman[i - 1])
 
         # "current_integer" represents the value that will be added
@@ -302,3 +302,58 @@ def getHighestUsableNumeralAfter(number):
         return 0
 
     return 0
+
+
+def coverage():
+
+    integerToRoman(None)
+    integerToRoman(0)
+    integerToRoman(4000)
+    integerToRoman(3.5)
+    integerToRoman(1666)
+    integerToRoman(999)
+    integerToRoman(444)
+    
+    romanToInteger(None)
+    romanToInteger(1)
+    romanToInteger("p")
+    romanToInteger("CCM")
+    romanToInteger("XCL")
+    romanToInteger("MD")
+    
+    valueOf(None)
+    valueOf("I")
+    valueOf("II")
+    valueOf("III")
+    valueOf("IV")
+    valueOf("V")
+    valueOf("IX")
+    valueOf("X")
+    valueOf("XX")
+    valueOf("XXX")
+    valueOf("XL")
+    valueOf("L")
+    valueOf("XC")
+    valueOf("C")
+    valueOf("CC")
+    valueOf("CCC")
+    valueOf("CD")
+    valueOf("D")
+    valueOf("CM")
+    valueOf("M")
+    valueOf("MM")
+    valueOf("MMM")
+    
+    getHighestUsableNumeralAfter(1000)
+    getHighestUsableNumeralAfter(900)
+    getHighestUsableNumeralAfter(500)
+    getHighestUsableNumeralAfter(100)
+    getHighestUsableNumeralAfter(90)
+    getHighestUsableNumeralAfter(50)
+    getHighestUsableNumeralAfter(10)
+    getHighestUsableNumeralAfter(9)
+    getHighestUsableNumeralAfter(5)
+    getHighestUsableNumeralAfter(1)
+    getHighestUsableNumeralAfter(None)
+    getHighestUsableNumeralAfter("I")
+    getHighestUsableNumeralAfter(4000)

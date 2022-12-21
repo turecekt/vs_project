@@ -1,6 +1,7 @@
 from pickle import TRUE
 from NumberSystemConverter import integerToRoman
 from NumberSystemConverter import romanToInteger
+from NumberSystemConverter import coverage
 
 
 def userInterface():
@@ -35,4 +36,5 @@ def userInterface():
             print("wrong input")
 
 
+coverage()
 userInterface()
