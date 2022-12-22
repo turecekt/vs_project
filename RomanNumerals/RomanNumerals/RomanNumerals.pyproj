@@ -8,11 +8,13 @@
     </StartupFile>
     <SearchPath>
     </SearchPath>
-    <WorkingDirectory>.</WorkingDirectory>
+    <WorkingDirectory>
+    </WorkingDirectory>
     <OutputPath>.</OutputPath>
     <Name>RomanNumerals</Name>
     <RootNamespace>RomanNumerals</RootNamespace>
     <TestFramework>Pytest</TestFramework>
+    <IsWindowsApplication>False</IsWindowsApplication>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -23,8 +25,8 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="NumberSystemConverter.py" />
-    <Compile Include="test_NumberSystemConverter.py">
+    <Compile Include="number_system_converter.py" />
+    <Compile Include="test_number_system_converter.py">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

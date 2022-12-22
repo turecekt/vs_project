@@ -1,22 +1,19 @@
+"""Contains NumberSystemConverter class."""
 
 
 class NumberSystemConverter:
-    """
-    NumberSystemConverter Class
-    ----------------------------------
-    Contains functions for converting between numeric systems.
-    """
+    """Convert numbers between numeric systems."""
 
-    def integerToRoman(integer):
+    def integer_to_roman(integer):
         """
-        Function for converting integers to Roman numbers.
+        Convert integer to Roman number.
+
         Converts any positive integer in range from 1 to 3999.
 
         :param name: integer - Number to be converted.
         :param type: int
         :return: str
         """
-
         # Checks if the input is None.
         if (integer is None):
             return "Input can not be None."
@@ -87,20 +84,19 @@ class NumberSystemConverter:
         # Returns value of the input in the system of Roman numerals.
         return roman
 
-
-    def romanToInteger(roman):
+    def roman_to_integer(roman):
         """
-        Function for converting Roman numbers to integers.
+        Convert Roman number to integer.
+
         Converts any Roman number of valid format.
 
         :param name: roman - Number to be converted.
         :param type: str
         :return: int
         """
-
         # Checks if the input is None.
         if (roman is None):
-            return "Input can not be None."
+            return 0
 
         # Make sure the input is a string.
         roman = str(roman)
@@ -111,7 +107,7 @@ class NumberSystemConverter:
         # Checks if the input contains only allowed characters.
         for char in roman:
             if (char not in allowedChars):
-                return "Contains illegal characters."
+                return 0
 
         # Declaration of the variable "parsed_roman", which will contain
         # individual numerals.
@@ -133,8 +129,10 @@ class NumberSystemConverter:
             # If combination of "last_roman" and "current_roman" results
             # in a valid numeral, last numeral in "parsed_roman" is replaced
             # by this combination.
-            if (NumberSystemConverter.__valueOf(last_roman + current_roman) > 0):
-                parsed_roman[len(parsed_roman) - 1] = last_roman + current_roman
+            if (NumberSystemConverter.
+                    __value_of(last_roman + current_roman) > 0):
+                parsed_roman[len(parsed_roman) - 1] = \
+                    last_roman + current_roman
 
             # If not, "current_roman" is added to "parsed_roman" like a new
             # last numeral.
@@ -146,7 +144,7 @@ class NumberSystemConverter:
 
         # Declaration of the variable "integer", which will represent
         # the value of the input in the decimal system.
-        integer = NumberSystemConverter.__valueOf(parsed_roman[0])
+        integer = NumberSystemConverter.__value_of(parsed_roman[0])
 
         # Counter initialization.
         i = 1
@@ -154,24 +152,28 @@ class NumberSystemConverter:
         # Filling variable "integer" with its value.
         while i < len(parsed_roman):
 
-            # "last_integer" represents the value of last numeral that was added.
-            last_integer = NumberSystemConverter.__valueOf(parsed_roman[i - 1])
+            # "last_integer" represents the value of last numeral
+            # that was added.
+            last_integer = \
+                NumberSystemConverter.__value_of(parsed_roman[i - 1])
 
             # "current_integer" represents the value that will be added
             # in the current step.
-            current_integer = NumberSystemConverter.__valueOf(parsed_roman[i])
+            current_integer = NumberSystemConverter.__value_of(parsed_roman[i])
 
             # If "last_integer" is greater than "current_integer" and highest
             # usable integer after "last_integer" is greater of equal to
             # "current_integer", it means, that "roman" is in correct format
             # and "current_integer" is added to "integer".
             if (last_integer > current_integer and
-                    NumberSystemConverter.__getHighestUsableNumeralAfter(last_integer) >= current_integer):
+                    NumberSystemConverter.
+                    __get_highest_usable_numeral_after(last_integer) >=
+                    current_integer):
                 integer += current_integer
 
-            # If not, error message is returned.
+            # If not, returns 0.
             else:
-                return "Invalid format."
+                return 0
 
             # Counter increment.
             i += 1
@@ -179,10 +181,10 @@ class NumberSystemConverter:
         # Returns value of the input in the decimal system.
         return integer
 
-
-    def __valueOf(roman_numeral):
+    def __value_of(roman_numeral):
         """
-        Function for converting Roman numerals to integers.
+        Convert Roman numeral to integer.
+
         Converts any valid Roman numeral.
         If numeral is not valid, returns 0.
 
@@ -190,7 +192,6 @@ class NumberSystemConverter:
         :param type: str
         :return: int
         """
-
         if (roman_numeral == 'I'):
             return 1
 
@@ -257,16 +258,14 @@ class NumberSystemConverter:
         else:
             return 0
 
-
-    def __getHighestUsableNumeralAfter(number):
+    def __get_highest_usable_numeral_after(number):
         """
-        Returns decimal value of highest usable Roman numeral after "number".
+        Return decimal value of highest usable Roman numeral after "number".
 
         :param name: number - Value of roman numeral.
         :param type: int
         :return: int
         """
-
         if (number >= 1000 and number <= 3000):
             return 900
 
