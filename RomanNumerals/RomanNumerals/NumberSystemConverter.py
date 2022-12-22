@@ -313,14 +313,14 @@ def coverage():
     integerToRoman(1666)
     integerToRoman(999)
     integerToRoman(444)
-    
+
     romanToInteger(None)
     romanToInteger(1)
     romanToInteger("p")
     romanToInteger("CCM")
     romanToInteger("XCL")
     romanToInteger("MD")
-    
+
     valueOf(None)
     valueOf("I")
     valueOf("II")
@@ -343,7 +343,7 @@ def coverage():
     valueOf("M")
     valueOf("MM")
     valueOf("MMM")
-    
+
     getHighestUsableNumeralAfter(1000)
     getHighestUsableNumeralAfter(900)
     getHighestUsableNumeralAfter(500)
@@ -357,3 +357,7 @@ def coverage():
     getHighestUsableNumeralAfter(None)
     getHighestUsableNumeralAfter("I")
     getHighestUsableNumeralAfter(4000)
+
+
+if __name__ == '__main__':
+    coverage()

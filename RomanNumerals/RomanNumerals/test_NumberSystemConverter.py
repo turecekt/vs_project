@@ -40,7 +40,6 @@ class Test_test_NumberSystemConverter(unittest.TestCase):
         roman = integerToRoman(444)
         self.assertEqual(roman, expectedValue)
 
-
     def test_romanToInteger(self):
 
         expectedValue = "Input can not be None."
@@ -69,7 +68,6 @@ class Test_test_NumberSystemConverter(unittest.TestCase):
         integer = romanToInteger("MD")
         self.assertEqual(integer, expectedValue)
 
-
     def test_valueOf(self):
 
         self.assertEqual(valueOf(None), 0)
@@ -95,7 +93,6 @@ class Test_test_NumberSystemConverter(unittest.TestCase):
         self.assertEqual(valueOf("MM"), 2000)
         self.assertEqual(valueOf("MMM"), 3000)
 
-
     def test_getHighestUsableNumeralAfter(self):
 
         self.assertEqual(getHighestUsableNumeralAfter(1000), 900)
@@ -113,5 +110,5 @@ class Test_test_NumberSystemConverter(unittest.TestCase):
         self.assertEqual(getHighestUsableNumeralAfter(4000), 0)
 
 
-#if __name__ == '__main__':
-#    unittest.main()
+if __name__ == '__main__':
+    unittest.main()
