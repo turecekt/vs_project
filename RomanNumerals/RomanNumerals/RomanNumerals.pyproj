@@ -4,7 +4,8 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>782412f2-9c48-4bb7-b0a3-3d048c494433</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>RomanNumerals.py</StartupFile>
+    <StartupFile>
+    </StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -23,7 +24,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="NumberSystemConverter.py" />
-    <Compile Include="RomanNumerals.py" />
     <Compile Include="test_NumberSystemConverter.py">
       <SubType>Code</SubType>
     </Compile>
