@@ -67,6 +67,3 @@ class Test_test_NumberSystemConverter(unittest.TestCase):
         integer = NumberSystemConverter.romanToInteger("CDXLIV")
         self.assertEqual(integer, expectedValue)
 
-
-if __name__ == "__main__":
-    unittest.main()
