@@ -1,15 +1,29 @@
 #!/usr/bin/env python3
-"""Process input for triangle program."""
+"""Input processing functions for triangle program."""
 
 
 def sideLength(point1, point2):
-    """Return lenght of side."""
+    """
+    Return lenght of side.
+
+    Return distance between point1 and point2 with
+    coordinates x (index 0) and y (index 1)
+    """
     vector = (point2[0] - point1[0], point2[1] - point1[1])
     return (vector[0] ** 2 + vector[1] ** 2) ** 0.5
 
 
 def inputPoint(point, coordNames=["x", "y"], debug=False):
-    """Return list of coordinates inputed to console."""
+    """
+    Return list of coordinates inputed to console.
+
+    Ask user to input coordinates of one point.
+    Function suuport multi-dimension space based on cordNames provided.
+    User is asked to import point coordinates one by one and checks,
+    if inputed coordinate is valid number. If not, it lets user to input
+    coordinate again up to 3 times. Then, if input is not coorect, program
+    is exited with exit code 1.
+    """
     coords = []
     for coordName in coordNames:
         nok = True
@@ -17,7 +31,7 @@ def inputPoint(point, coordNames=["x", "y"], debug=False):
         while nok:
             try:
                 print(f"Please input point {point}, "
-                    f"coordinate {coordName}: ", end="")
+                      f"coordinate {coordName}: ", end="")
                 coords.append(float(input()))
                 nok = False
             except Exception as e:
@@ -35,7 +49,8 @@ def getPoints(args, debug=False):
     """
     Return list of 3 points with 2 coordinates each.
 
-    Coordinates are parsed from provided args list or inputed to console.
+    Coordinates are parsed from provided command line arguments list (args)
+    or interactively inputed to console by user.
     """
     try:
         points = [
@@ -61,7 +76,7 @@ def getSides(args, debug=False):
 
     # Points
     print(f"\nDebug: Points are {points[0]} {points[1]}"
-        f"{points[2]}\n") if debug else None
+          f"{points[2]}\n") if debug else None
 
     # Side length
     sides = []
