@@ -4,7 +4,7 @@ from pickle import TRUE
 from number_system_converter import NumberSystemConverter
 
 
-def roman_numerals():
+def roman_numerals_ui():
     """
     UI for converting integers to roman numbers and back.
 
@@ -67,3 +67,7 @@ def roman_numerals():
         # If input is something else, wrong input message is printed.
         else:
             print(WRONG_INPUT_MESSAGE)
+
+
+if __name__ == "__main__":
+    roman_numerals_ui()

@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>782412f2-9c48-4bb7-b0a3-3d048c494433</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>roman_numerals.py</StartupFile>
+    <StartupFile>roman_numerals_ui.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -23,8 +23,8 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="roman_numerals.py" />
     <Compile Include="number_system_converter.py" />
+    <Compile Include="roman_numerals_ui.py" />
     <Compile Include="test_number_system_converter.py">
       <SubType>Code</SubType>
     </Compile>
