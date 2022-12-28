@@ -1,7 +1,8 @@
 """Contains Roman Numerals UI."""
 
 from pickle import TRUE
-from .number_system_converter import NumberSystemConverter
+from roman_numerals.number_system_converter import (
+        NumberSystemConverter as converter)
 
 
 def roman_numerals_ui():
@@ -45,7 +46,7 @@ def roman_numerals_ui():
                 continue
 
             # Convert input to roman number.
-            roman = NumberSystemConverter.integer_to_roman(int(integer))
+            roman = converter.integer_to_roman(int(integer))
 
             # Print of converted number.
             print("roman = " + roman)
@@ -55,7 +56,7 @@ def roman_numerals_ui():
             roman = input("roman = ")
 
             # Convert input to integer.
-            roman = NumberSystemConverter.roman_to_integer(roman)
+            roman = converter.roman_to_integer(roman)
 
             # Print of converted number.
             print("integer = " + str(roman))
