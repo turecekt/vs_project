@@ -2,7 +2,7 @@
 
 
 import unittest
-from number_system_converter import NumberSystemConverter
+from .number_system_converter import NumberSystemConverter
 
 
 class Test_test_NumberSystemConverter(unittest.TestCase):

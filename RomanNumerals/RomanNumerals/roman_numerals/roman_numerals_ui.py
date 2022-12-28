@@ -1,7 +1,7 @@
 """Contains Roman Numerals UI."""
 
 from pickle import TRUE
-from number_system_converter import NumberSystemConverter
+from .number_system_converter import NumberSystemConverter
 
 
 def roman_numerals_ui():
@@ -67,7 +67,3 @@ def roman_numerals_ui():
         # If input is something else, wrong input message is printed.
         else:
             print(WRONG_INPUT_MESSAGE)
-
-
-if __name__ == "__main__":
-    roman_numerals_ui()
