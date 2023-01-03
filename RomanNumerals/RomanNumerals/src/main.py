@@ -4,12 +4,13 @@ Roman Numerals launcher.
 Contains main function.
 """
 
-import roman_numerals
+
+import romanNumerals.converter as converter
 
 
 def main():
     """Roman Numerals main function."""
-    roman_numerals.ui()
+    converter.Converter.ui()
 
 
 if __name__ == "__main__":

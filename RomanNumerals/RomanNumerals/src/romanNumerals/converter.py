@@ -1,8 +1,74 @@
 """Contains NumberSystemConverter class."""
 
+from pickle import TRUE
 
-class NumberSystemConverter:
+
+class Converter:
     """Convert numbers between numeric systems."""
+
+    def ui():
+        """
+        UI for converting integers to roman numbers and back.
+
+        Converts any positive integer in range from 1 to 3999, and
+        any roman number of valid format.
+        """
+        # Defining a constant.
+        WRONG_INPUT_MESSAGE = "wrong input"
+
+        # Main loop.
+        while (TRUE):
+            # Print of menu options.
+            print()
+            print("1 - integer to roman")
+            print("2 - roman to integer")
+            print("0 - exit")
+
+            # Waiting for input.
+            user_input = input("input: ")
+
+            # If input is not numeric, wrong input message is printed
+            # and loop continues.
+            if (not user_input.isnumeric()):
+                print(WRONG_INPUT_MESSAGE)
+                continue
+
+            # Converts input to integer.
+            user_input = int(user_input)
+
+            # If input is 1, function asks for integer to convert.
+            if (user_input == 1):
+                integer = input("integer = ")
+
+                # If input is not numeric, wrong input message is printed
+                # and loop continues.
+                if (not integer.isnumeric()):
+                    print(WRONG_INPUT_MESSAGE)
+                    continue
+
+                # Convert input to roman number.
+                roman = Converter.integer_to_roman(int(integer))
+
+                # Print of converted number.
+                print("roman = " + roman)
+
+            # If input is 2, function asks for roman number to convert.
+            elif (user_input == 2):
+                roman = input("roman = ")
+
+                # Convert input to integer.
+                roman = Converter.roman_to_integer(roman)
+
+                # Print of converted number.
+                print("integer = " + str(roman))
+
+            # If input is 0, function ends.
+            elif (user_input == 0):
+                return
+
+            # If input is something else, wrong input message is printed.
+            else:
+                print(WRONG_INPUT_MESSAGE)
 
     def integer_to_roman(integer):
         """
@@ -129,7 +195,7 @@ class NumberSystemConverter:
             # If combination of "last_roman" and "current_roman" results
             # in a valid numeral, last numeral in "parsed_roman" is replaced
             # by this combination.
-            if (NumberSystemConverter.
+            if (Converter.
                     __value_of(last_roman + current_roman) > 0):
                 parsed_roman[len(parsed_roman) - 1] = \
                     last_roman + current_roman
@@ -144,7 +210,7 @@ class NumberSystemConverter:
 
         # Declaration of the variable "integer", which will represent
         # the value of the input in the decimal system.
-        integer = NumberSystemConverter.__value_of(parsed_roman[0])
+        integer = Converter.__value_of(parsed_roman[0])
 
         # Counter initialization.
         i = 1
@@ -155,18 +221,18 @@ class NumberSystemConverter:
             # "last_integer" represents the value of last numeral
             # that was added.
             last_integer = \
-                NumberSystemConverter.__value_of(parsed_roman[i - 1])
+                Converter.__value_of(parsed_roman[i - 1])
 
             # "current_integer" represents the value that will be added
             # in the current step.
-            current_integer = NumberSystemConverter.__value_of(parsed_roman[i])
+            current_integer = Converter.__value_of(parsed_roman[i])
 
             # If "last_integer" is greater than "current_integer" and highest
             # usable integer after "last_integer" is greater of equal to
             # "current_integer", it means, that "roman" is in correct format
             # and "current_integer" is added to "integer".
             if (last_integer > current_integer and
-                    NumberSystemConverter.
+                    Converter.
                     __get_highest_usable_numeral_after(last_integer) >=
                     current_integer):
                 integer += current_integer
