@@ -2,8 +2,12 @@
 
 
 import unittest
-from .converter import Converter as conv                #funguje pri testovani ale ne pri generovani dokumentace
-#import RomanNumerals.src.romanNumerals.converter       #funguje pri generovani dokumentace ale ne pri testovani
+
+# funguje pri testovani ale ne pri generovani dokumentace
+from .converter import Converter as conv
+
+# funguje pri generovani dokumentace ale ne pri testovani
+# import RomanNumerals.src.romanNumerals.converter
 
 
 class Test_test_Converter(unittest.TestCase):
