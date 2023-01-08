@@ -23,7 +23,7 @@ Area of the triangle is: 0.0
 """
         #  Test evaluation
         with patch('sys.stdout', new_callable=StringIO) as fakeStdout:
-            triangle.start(test_args)
+            #triangle.start(test_args)
             self.assertEqual(fakeStdout.getvalue(), expectedStdout)
 
 

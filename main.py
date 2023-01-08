@@ -5,33 +5,39 @@ from triangle import *
 import inputProcessor
 import sys
 
-debug = False
+def main():
+    """Main function of triangle program."""
 
-sides = inputProcessor.getSides(sys.argv, debug)
+    debug = True
 
-sidea = sides[0]
-sideb = sides[1]
-sidec = sides[2]
+    sides = inputProcessor.getSides(sys.argv, debug)
 
-# Constructability
-if constructability(sidea, sideb, sidec):
-    print("Lengths of the sides of the triangle are:\n"
-          f"{sides[0]}, {sides[1]}, {sides[2]}")
+    sidea = sides[0]
+    sideb = sides[1]
+    sidec = sides[2]
 
-    """Print results of default calculations."""
+    # Constructability
+    if constructability(sidea, sideb, sidec):
+        print("Lengths of the sides of the triangle are:\n"
+              f"{sides[0]}, {sides[1]}, {sides[2]}")
 
-    # Perimeter
-    perimeter = trianglePerimeter(sidea, sideb, sidec)
+        """Print results of default calculations."""
 
-    print(f"Perimeter of the triangle is: {perimeter}")
+        # Perimeter
+        perimeter = trianglePerimeter(sidea, sideb, sidec)
 
-    # Area
-    area = triangleArea(sidea, sideb, sidec)
+        print(f"Perimeter of the triangle is: {perimeter}")
 
-    print(f"Area of the triangle is: {area}")
+        # Area
+        area = triangleArea(sidea, sideb, sidec)
 
-    # Orthogonality
-    sidesSorted = sorted(sides)
-    orthogonal = triangleOrthogonality(sidesSorted[0], sidesSorted[1], sidesSorted[2])
-else:
-    print("This triangle is not constructable!")
+        print(f"Area of the triangle is: {area}")
+
+        # Orthogonality
+        sidesSorted = sorted(sides)
+        orthogonal = triangleOrthogonality(sidesSorted[0], sidesSorted[1], sidesSorted[2])
+    else:
+        print("This triangle is not constructable!")
+
+if __name__ == '__main__':
+    main()
