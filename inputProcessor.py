@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 """Input processing functions for triangle program."""
 
+import math
+from decimal import Decimal
+
 
 def sideLength(point1, point2):
     """
@@ -9,8 +12,9 @@ def sideLength(point1, point2):
     Return distance between point1 and point2 with
     coordinates x (index 0) and y (index 1)
     """
-    vector = (point2[0] - point1[0], point2[1] - point1[1])
-    return (vector[0] ** 2 + vector[1] ** 2) ** 0.5
+    return round(Decimal(math.dist(point1, point2)), 10)
+#    vector = (point2[0] - point1[0], point2[1] - point1[1])
+#    return (vector[0] ** 2 + vector[1] ** 2) ** 0.5
 
 
 def inputPoint(point, coordNames=["x", "y"], debug=False):
