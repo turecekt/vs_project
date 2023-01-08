@@ -1,14 +1,15 @@
 #!/usr/bin/env python3
 """Run triangle program."""
 
-from triangle import *
+from triangle import (constructability, trianglePerimeter,
+                      triangleArea, triangleOrthogonality)
 import inputProcessor
 import sys
 
-def main():
-    """Main function of triangle program."""
 
-    debug = True
+def main():
+    """Core function of triangle program."""
+    debug = False
 
     sides = inputProcessor.getSides(sys.argv, debug)
 
@@ -35,9 +36,15 @@ def main():
 
         # Orthogonality
         sidesSorted = sorted(sides)
-        orthogonal = triangleOrthogonality(sidesSorted[0], sidesSorted[1], sidesSorted[2])
+        orthogonal = triangleOrthogonality(sidesSorted[0],
+                                           sidesSorted[1],
+                                           sidesSorted[2])
+
+        if orthogonal:
+            print("This triangle is orthogonal")
     else:
         print("This triangle is not constructable!")
+
 
 if __name__ == '__main__':
     main()
