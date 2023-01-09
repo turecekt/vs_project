@@ -6,8 +6,10 @@ from decimal import Decimal
 
 
 def sideLength(point1, point2):
-    """Distance between point1 and point2
-    with coordinates x (index 0) and y (index 1)
+    """Side lenght.
+
+    Distance between point1 and point2 with
+    coordinates x (index 0) and y (index 1).
 
     :return: Lenght of side.
     """
@@ -17,8 +19,10 @@ def sideLength(point1, point2):
 
 
 def inputPoint(point, coordNames=["x", "y"], debug=False):
-    """Ask user to input coordinates of one point.
-    Function suuport multi-dimension space based on cordNames provided.
+    """Input coordinates.
+
+    Ask user to input coordinates of one point.
+    Function support multi-dimension space based on cordNames provided.
     User is asked to import point coordinates one by one and checks,
     if inputed coordinate is valid number. If not, it lets user to input
     coordinate again up to 3 times. Then, if input is not coorect, program
@@ -48,8 +52,10 @@ def inputPoint(point, coordNames=["x", "y"], debug=False):
 
 
 def getPoints(args, debug=False):
-    """Coordinates are parsed from provided command line arguments list (args)
-    or interactively inputed to console by user.
+    """List of points.
+
+    Coordinates are parsed from provided command line arguments
+    list (args) or interactively inputed to console by user.
 
     :return: List of 3 points with 2 coordinates each.
     """
