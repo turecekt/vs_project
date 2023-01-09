@@ -7,10 +7,10 @@ from decimal import Decimal
 
 def sideLength(point1, point2):
     """
-    Return lenght of side.
-
-    Return distance between point1 and point2 with
+    Distance between point1 and point2 with
     coordinates x (index 0) and y (index 1)
+
+    :return: Lenght of side.
     """
     return round(Decimal(math.dist(point1, point2)), 10)
 #    vector = (point2[0] - point1[0], point2[1] - point1[1])
@@ -19,14 +19,14 @@ def sideLength(point1, point2):
 
 def inputPoint(point, coordNames=["x", "y"], debug=False):
     """
-    Return list of coordinates inputed to console.
-
     Ask user to input coordinates of one point.
     Function suuport multi-dimension space based on cordNames provided.
     User is asked to import point coordinates one by one and checks,
     if inputed coordinate is valid number. If not, it lets user to input
     coordinate again up to 3 times. Then, if input is not coorect, program
     is exited with exit code 1.
+
+    :return: List of coordinates entered to console.
     """
     coords = []
     for coordName in coordNames:
@@ -51,10 +51,10 @@ def inputPoint(point, coordNames=["x", "y"], debug=False):
 
 def getPoints(args, debug=False):
     """
-    Return list of 3 points with 2 coordinates each.
-
     Coordinates are parsed from provided command line arguments list (args)
     or interactively inputed to console by user.
+
+    :return: List of 3 points with 2 coordinates each.
     """
     try:
         points = [
@@ -75,7 +75,7 @@ def getPoints(args, debug=False):
 
 
 def getSides(args, debug=False):
-    """Return list of lengths of 3 sides of triangle."""
+    """:return: List of lengths of the 3 sides of a triangle."""
     points = getPoints(args, debug)
 
     # Points
