@@ -6,7 +6,8 @@ from decimal import Decimal
 
 
 def sideLength(point1, point2):
-    """Distance between point1 and point2 with coordinates x (index 0) and y (index 1)
+    """Distance between point1 and point2 
+    with coordinates x (index 0) and y (index 1)
 
     :return: Lenght of side.
     """
