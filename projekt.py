@@ -71,47 +71,45 @@ def is_prime(vstup):
     return True
 
 
-t0 = time.time()
-try:
-
-    vstup = int(input("Please write a number to be checked: "))
-
-    if vstup >= 100:
-        if is_prime(vstup):
-            print("Your number is prime.")
+def main(vstup):
+    try:
+        if vstup >= 100:
+            if is_prime(vstup):
+                print("Your number is prime.")
+            else:
+                print("Your number isn't prime.")
+        elif 100 > vstup > 1:
+            if primes_sieve(vstup):
+                print("Your number is prime. Sieve method was used.")
+            else:
+                print("Your number isn't prime. Sieve method was used.")
         else:
-            print("Your number isn't prime.")
-    elif 100 > vstup > 1:
-        if primes_sieve(vstup):
-            print("Your number is prime. Sieve method was used.")
-        else:
-            print("Your number isn't prime. Sieve method was used.")
-    else:
-        print("Your number isn't prime.")
+            print("Please enter a positive number!")
 
-except ValueError:
-    print("Please enter a whole number!")
-
-t1 = time.time()
-print("Time required :", t1 - t0)
+    except ValueError:
+        print("Please enter a positive number!")
 
 
 def test_is_prime():
-    assert(primes_sieve(7))
-    assert(primes_sieve(67))
-    assert(is_prime(109))
-    assert(is_prime(349))
-    assert(is_prime(73939133))
+    assert(is_prime(73939133)) is True
+    assert(is_prime(228)) is False
+    assert(is_prime(-10)) is False
 
 
-def test_not_prime():
-    assert(primes_sieve(4))
-    assert(primes_sieve(98))
-    assert(primes_sieve(-13))
-    assert(is_prime(228))
-    assert(is_prime(100023154))
-    assert(is_prime(-10))
-    assert(is_prime("A"))
+def test_primes_sieve():
+    assert(primes_sieve(6)) is False
+    assert(primes_sieve(-13)) is False
+    assert(primes_sieve(67)) is True
 
 
+def test_main():
+    assert(main(13)) == "Your number is prime. Sieve method was used."
+    assert(main(40)) == "Your number isn't prime. Sieve method was used."
+    assert(main(73939)) == "Your number is prime."
+    assert(main(73938)) == "Your number isn't prime."
+    assert(main("AAA")) == "Please enter a positive number!"
+    assert(main(0)) == "Please enter a positive number!"
 
+
+if __name__ == '__main__':
+    main(int(input("Please write a number to be checked: ")))
