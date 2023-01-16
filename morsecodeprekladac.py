@@ -59,8 +59,8 @@ def sifrovani(text):
     Funkce sifrovani rozpozná znaky ve vloženém řetězci.
 
     A každému z nich přiřadí korespondující znak ze slovníku a vrátí řetězec.
-    Argumenty:- retezec-Vstup funkce
-    Vrací:-string-Výstup funkce
+    :param text: retezec-Vstup funkce
+    :return: string-Výstup funkce
     """
     textSifra = ""
 
@@ -82,8 +82,8 @@ def desifrovani(text):
     """
     Funkce desifrovani vrací vstupní řetězec převedený z morseovky.
 
-    Argumenty:-retezec-Vstup funkce
-    Vrací:-string-Výstup funkce
+    :param text: retezec-Vstup funkce
+    :return: string-Výstup funkce
     """
     znaky = text.split()
     # vstup se rozdělí na znaky po jednom a poté je hledá ve slovníku
