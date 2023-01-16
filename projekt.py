@@ -109,7 +109,7 @@ def test_not_prime():
     assert(primes_sieve(98))
     assert(primes_sieve(-13))
     assert(is_prime(228))
-    assert(is_prime(1000023154))
+    assert(is_prime(100023154))
     assert(is_prime(-10))
     assert(is_prime("A"))
 
