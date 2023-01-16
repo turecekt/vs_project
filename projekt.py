@@ -1,8 +1,8 @@
-import unittest
+"""Test for primality."""
+
 import math
 
-"""
-This file consists of two methods for determination of primality
+"""This file consists of two methods for determination of primality
 
 First is ''primes_sieve()''
 Deterministic method of finding a prime number.
@@ -13,25 +13,22 @@ also deterministic function
 is designed for faster operation when searching for primality of given number.
 
 Simple timetracker is included for performance measuring.
-Python time library is used.
-"""
+Python time library is used."""
 
 
 def primes_sieve(limit):
-
     """
-    This function is implementation of sieve of Eratosthenes algorithm
-    for finding all prime numbers up to any given limit.
+    Input variable vstup greater than 100 is tested for primality.
+
     List of prime numbers is generated up to the upper limit
     given by the parameter ``limit``.
     Function then tests if ``limit`` is in the generated list.
 
     :param limit: int
-        number that is tested for primality
+    number that is tested for primality
     :return: bool
-        function returns true if parameter limit is prime number
+    function returns true if parameter limit is prime number
     """
-
     limitn = limit + 1
     primes = [i for i in range(2, limitn)]
 
@@ -48,7 +45,8 @@ def primes_sieve(limit):
 
 def is_prime(vstup):
     """
-    This function test if input variable ``vstup`` is prime number.
+    Input variable vstup lower than 100 is tested for primality.
+
     Function reduces number of modulators to save time.
     Python math library needs to imported before deployment of this function.
 
@@ -57,7 +55,6 @@ def is_prime(vstup):
     :return: bool
         function returns true if vstup is primal number
     """
-
     if vstup <= 1:
         return False
     if vstup % 2 == 0:
@@ -71,18 +68,19 @@ def is_prime(vstup):
 
 
 def main(vstup):
-        if vstup >= 100:
-            if is_prime(vstup):
-                print("Your number is prime.")
-            else:
-                print("Your number isn't prime.")
-        elif 100 > vstup > 1:
-            if primes_sieve(vstup):
-                print("Your number is prime. Sieve method was used.")
-            else:
-                print("Your number isn't prime. Sieve method was used.")
+    """Choose an algorithm for primality test."""
+    if vstup >= 100:
+        if is_prime(vstup):
+            print("Your number is prime.")
         else:
-            print("Please enter a positive number!")
+            print("Your number isn't prime.")
+    elif 100 > vstup > 1:
+        if primes_sieve(vstup):
+            print("Your number is prime. Sieve method was used.")
+        else:
+            print("Your number isn't prime. Sieve method was used.")
+    else:
+        print("Please enter a positive number!")
 
 
 if __name__ == '__main__':
