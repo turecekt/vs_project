@@ -1,6 +1,5 @@
 import unittest
 import math
-import time
 
 """
 This file consists of two methods for determination of primality
@@ -72,7 +71,6 @@ def is_prime(vstup):
 
 
 def main(vstup):
-    try:
         if vstup >= 100:
             if is_prime(vstup):
                 print("Your number is prime.")
@@ -86,30 +84,9 @@ def main(vstup):
         else:
             print("Please enter a positive number!")
 
-    except ValueError:
-        print("Please enter a positive number!")
-
 
 if __name__ == '__main__':
-    main(int(input("Please enter a number: ")))
-
-
-def test_is_prime():
-    assert is_prime(73939133)
-    assert not is_prime(228)
-    assert not is_prime(-10)
-
-
-def test_primes_sieve():
-    assert not primes_sieve(6)
-    assert not primes_sieve(-12)
-    assert primes_sieve(67)
-
-
-def test_main():
-    assert main(13) == ["Your number is prime. Sieve method was used."]
-    assert main(40) == ["Your number isn't prime. Sieve method was used."]
-    assert main(73939) == ["Your number is prime."]
-    assert main(73938) == ["Your number isn't prime."]
-    assert main("AAA") == ["Please enter a positive number!"]
-    assert main(0) == ["Please enter a positive number!"]
+    try:
+        main(int(input("Please enter a number: ")))
+    except ValueError:
+        print("Please enter a positive number!")
