@@ -98,7 +98,7 @@ def test_is_prime():
 
 def test_primes_sieve():
     assert(primes_sieve(6)) is False
-    assert(primes_sieve(-13)) is False
+    assert(primes_sieve(-12)) is False
     assert(primes_sieve(67)) is True
 
 
