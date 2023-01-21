@@ -5,12 +5,12 @@ Contains main function.
 """
 
 
-import converter as con
+import converter
 
 
 def main():
     """Roman Numerals main function."""
-    con.Converter.ui()
+    converter.Converter.ui()
 
 
 if __name__ == "__main__":

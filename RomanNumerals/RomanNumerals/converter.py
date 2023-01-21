@@ -361,3 +361,7 @@ class Converter:
 
         if (number >= 1 and number <= 4):
             return 0
+
+
+if __name__ == "__main__":
+    Converter.ui()
