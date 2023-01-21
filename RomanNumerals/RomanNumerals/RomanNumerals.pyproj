@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>782412f2-9c48-4bb7-b0a3-3d048c494433</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>src\main.py</StartupFile>
+    <StartupFile>main.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -23,16 +23,11 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="src\main.py" />
-    <Compile Include="src\romanNumerals\converter.py" />
-    <Compile Include="src\romanNumerals\test_converter.py">
+    <Compile Include="main.py" />
+    <Compile Include="converter.py" />
+    <Compile Include="test_converter.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="src\romanNumerals\__init__.py" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="src\" />
-    <Folder Include="src\romanNumerals\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
