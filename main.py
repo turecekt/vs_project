@@ -34,7 +34,7 @@ def test_MetodaPravidelDelitelnosti():
     """
     
 def test_DeterministickaMetoda():
-    assert DeterministickaMetoda(50011) == False
+    assert DeterministickaMetoda(50013) == False
 
     """
     Funkce test_HeurestickaMetoda zjistuje u téhle metody, jestli je číslo prvočíslo = True nebo není = False.
