@@ -199,7 +199,10 @@ def sort_numbers(numbers):
 
 
 def main():
+    """Runs the main function.
     
+    :returns: void
+    """
     # Input logic
 
     if (len(sys.argv) > 1):
