@@ -15,10 +15,10 @@ from random import randint  # pseudorandom number generator
 def input_file(filename):
     """Read a text file for input.
 
-    :param: filename: name of the input file
-    :type: string
+    :param filename: name of the input file
+    :type filename: string
     :raises: :class:`FileNotFoundError`: no file under filename is found
-    :returns: input numbers
+    :return: input numbers
     :rtype: int array
     """
     numbers_file = open(filename, "r")
@@ -39,13 +39,13 @@ TOP_VALUE = 1000
 def generate_pseoudorandom_array(array_length, ground_value, top_value):
     """Generate pseudorandom array of integers.
 
-    :param: array_length: length of generated array
-    :type: int
-    :param: ground_value: lowest possible value of output integer
-    :type: int
-    :param: top_value: highest possible value of output integer
-    :type: int
-    :returns: numbers
+    :param array_length: length of generated array
+    :type array_length: int
+    :param ground_value: lowest possible value of output integer
+    :type ground_value: int
+    :param top_value: highest possible value of output integer
+    :type top_value: int
+    :return: numbers
     :rtype: int array
     """
     numbers = []
@@ -59,8 +59,8 @@ def bubble_sort(list):
     """Sorts numbers.
 
     :param list: list of numbers
-    :type: int array
-    :returns: list
+    :type list: int array
+    :return: list
     :rtype: int array
     """
     list_lenght = len(list)
@@ -77,8 +77,8 @@ def merge_sort(list):
     """Sorts numbers.
 
     :param list: list of numbers
-    :type: int array
-    :returns: list
+    :type list: int array
+    :return: list
     :rtype: int array
     """
     if len(list) > 1:
@@ -126,8 +126,8 @@ def insertion_sort(list):
     """Sorts numbers.
 
     :param list: list of numbers
-    :type: int array
-    :returns: list
+    :type list: int array
+    :return: list
     :rtype: int array
     """
     # Traverse through 1 to len(list)
@@ -151,8 +151,8 @@ def get_lowest_num(numbers):
     """Get the lowest number from int array.
 
     :param numbers: list of numbers
-    :type: int array
-    :returns: min(numbers)
+    :type numbers: int array
+    :return: min(numbers)
     :rtype: int
     """
     return min(numbers)
@@ -162,8 +162,8 @@ def get_highest_num(numbers):
     """Get the highest number from int array.
 
     :param numbers: list of numbers
-    :type: int array
-    :returns: max(numbers)
+    :type numbers: int array
+    :return: max(numbers)
     :rtype: int
     """
     return max(numbers)
@@ -173,8 +173,8 @@ def sort_numbers(numbers):
     """Sorts numbers given the choice of an algorithm.
 
     :param list: list of numbers
-    :type: int array
-    :returns: list
+    :type list: int array
+    :return: list
     :rtype: int array
     """
     choice_made = False
@@ -201,7 +201,7 @@ def sort_numbers(numbers):
 def main():
     """Run the main function.
 
-    :returns: void
+    :return: void
     """
     # Input logic
     if (len(sys.argv) > 1):
