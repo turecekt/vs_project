@@ -1,5 +1,5 @@
 """
-Testovaci modul k main.py.
+Testovací modul k main.py.
 
 @author: psantler
 """
