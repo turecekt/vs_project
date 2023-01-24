@@ -200,7 +200,7 @@ def sort_numbers(numbers):
 
 def main():
     """Run the main function.
-    
+
     :returns: void
     """
     # Input logic
