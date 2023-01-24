@@ -199,12 +199,11 @@ def sort_numbers(numbers):
 
 
 def main():
-    """Runs the main function.
+    """Run the main function.
     
     :returns: void
     """
     # Input logic
-
     if (len(sys.argv) > 1):
         if (len(sys.argv) == 2 and sys.argv[1].endswith(".txt")):
             numbers = input_file(sys.argv[1])
