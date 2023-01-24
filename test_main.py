@@ -79,7 +79,6 @@ def test_insertion_sort(get_file_numbers):
 
     :param get_file_numbers:
     """
-
     list_numbers_input_pseudorandom = sorted(numbers_input_pseudorandom)
     list_merged = main.insertion_sort(numbers_input_pseudorandom)
     assert list_merged == list_numbers_input_pseudorandom
