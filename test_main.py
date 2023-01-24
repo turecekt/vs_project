@@ -36,7 +36,7 @@ def test_bubble_sort(get_file_numbers):
     Pro kontrolu používá pevnou sadu testovacích dat,
     soubor s předvolenou testovací sadou a nádohně
     generovanou testovací sadu.
-    
+
     :param get_file_numbers: soubor s testovacími daty
     """
     list_numbers_input_pseudorandom = sorted(numbers_input_pseudorandom)
