@@ -32,7 +32,6 @@ def test_generate_pseudorandom():
 
 def test_bubble_sort(get_file_numbers):
     """Test kontrolující funkčnost bubbble sortu.
-    
     Pro kontrolu používá pevnou sadu testovacích dat,
     soubor s předvolenou testovací sadou a nádohně
     generovanou testovací sadu.
@@ -52,7 +51,6 @@ def test_bubble_sort(get_file_numbers):
 
 def test_merge_sort(get_file_numbers):
     """Test kontrolující funkčnost merge sortu.
-    
     Pro kontrolu používá pevnou sadu testovacích dat,
     soubor s předvolenou testovací sadou a nádohně
     generovanou testovací sadu.
@@ -72,7 +70,6 @@ def test_merge_sort(get_file_numbers):
 
 def test_insertion_sort(get_file_numbers):
     """Test kontrolující funkčnost insertion sortu.
-    
     Pro kontrolu používá pevnou sadu testovacích dat,
     soubor s předvolenou testovací sadou a
     nádohně generovanou testovací sadu.
@@ -108,7 +105,6 @@ def test_highest_num(sort_numbers):
 
 def test_sort_numbers(monkeypatch):
     """Test kontrolující funkčnost výběru typu sortu.
-    
     Nejprve proběhne inicializace user inputu,
     poté jeho simulace, nakonec se spustí samotná
     funkce se simulovaným inputem.
@@ -151,11 +147,9 @@ def get_file_numbers(monkeypatch):
 
 @pytest.fixture
 def sort_numbers(get_file_numbers):
-    """Fixture.
-    
+    """Fixture.    
     Díky níž sortujeme čísla pomocí předem definované sort
-    funkce jazyka python pro kontrolu v dalších testech.
-    
+    funkce jazyka python pro kontrolu v dalších testech.    
     :param get_file_numbers:
     :return:
     """
