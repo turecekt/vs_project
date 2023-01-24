@@ -13,7 +13,7 @@ from random import randint  # pseudorandom number generator
 
 
 def input_file(filename):
-    """Reads a text file for input.
+    """Read a text file for input.
 
     :param: filename: name of the input file
     :type: string
@@ -37,7 +37,7 @@ TOP_VALUE = 1000
 
 
 def generate_pseoudorandom_array(array_length, ground_value, top_value):
-    """Generates pseudorandom array of integers.
+    """Generate pseudorandom array of integers.
 
     :param: array_length: length of generated array
     :type: int
@@ -148,7 +148,7 @@ def insertion_sort(list):
 
 
 def get_lowest_num(numbers):
-    """Gets the lowest number from int array.
+    """Get the lowest number from int array.
 
     :param numbers: list of numbers
     :type: int array
@@ -159,7 +159,7 @@ def get_lowest_num(numbers):
 
 
 def get_highest_num(numbers):
-    """Gets the highest number from int array.
+    """Get the highest number from int array.
 
     :param numbers: list of numbers
     :type: int array
@@ -199,10 +199,7 @@ def sort_numbers(numbers):
 
 
 def main():
-    """Main function.
-
-    :return: void
-    """
+    
     # Input logic
 
     if (len(sys.argv) > 1):
