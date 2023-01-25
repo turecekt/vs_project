@@ -11,7 +11,6 @@ Second function ''is_prime''
 also deterministic function
 is designed for faster operation when searching for primality of given number.
 
-Simple timetracker is included for performance measuring.
 Python time library is used.
 """
 
