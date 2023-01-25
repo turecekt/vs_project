@@ -45,7 +45,7 @@ def primes_sieve(limit: int) -> bool:
         return False
 
 
-def is_prime(vstup):
+def is_prime(vstup: int) -> bool:
     """
     Input variable vstup lower than 100 is tested for primality.
 
