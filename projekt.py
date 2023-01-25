@@ -52,10 +52,8 @@ def is_prime(vstup):
     Function reduces number of modulators to save time.
     Python math library needs to imported before deployment of this function.
 
-    :param vstup: int
-        number that is tested for primality
-    :return: bool
-        function returns true if vstup is primal number
+    :param vstup: number that is tested for primality
+    :return: function returns true if vstup is primal number
     """
     if vstup <= 1:
         return False
