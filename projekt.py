@@ -1,8 +1,6 @@
-"""Test for primality."""
+"""Test for primality.
 
-import math
-
-"""This file consists of two methods for determination of primality
+This file consists of two methods for determination of primality
 
 First is ''primes_sieve()''
 Deterministic method of finding a prime number.
