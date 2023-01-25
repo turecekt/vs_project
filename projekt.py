@@ -26,10 +26,8 @@ def primes_sieve(limit: int) -> bool:
     given by the parameter ``limit``.
     Function then tests if ``limit`` is in the generated list.
 
-    :param limit: int
-    number that is tested for primality
-    :return: bool
-    function returns true if parameter limit is prime number
+    :param limit: number that is tested for primality
+    :return: function returns true if parameter limit is prime number
     """
     limitn = limit + 1
     primes = [i for i in range(2, limitn)]
