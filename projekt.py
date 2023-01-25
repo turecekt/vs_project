@@ -1,4 +1,5 @@
-"""Test for primality.
+"""
+Test for primality.
 
 This file consists of two methods for determination of primality
 
@@ -11,7 +12,8 @@ also deterministic function
 is designed for faster operation when searching for primality of given number.
 
 Simple timetracker is included for performance measuring.
-Python time library is used."""
+Python time library is used.
+"""
 
 import math
 
