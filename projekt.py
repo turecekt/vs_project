@@ -10,8 +10,6 @@ Method is more is more suited for creating list of primes.
 Second function ''is_prime''
 also deterministic function
 is designed for faster operation when searching for primality of given number.
-
-Python time library is used.
 """
 
 import math
