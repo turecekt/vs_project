@@ -18,7 +18,7 @@ Python time library is used.
 import math
 
 
-def primes_sieve(limit):
+def primes_sieve(limit: int) -> bool:
     """
     Input variable vstup greater than 100 is tested for primality.
 
