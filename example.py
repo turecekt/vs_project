@@ -1,20 +1,23 @@
-"""Thiss is the "example" module.
+"""This is the "example" module.
 
 The example module supplies functions for math computation.
 """
 
 
-def compute(x):
-    """Functon compute returns the evaluation of expression using argument x.
+def compute(x: int, y: int) -> int:
+    """Expression evaluation.
+
+    Function compute returns the evaluation of expression using arguments.
 
     :param x: First input parameter.
-    :return: Expression value for x.
+    :param y: Second input parameter.
+    :return: Expression value for x and y.
 
-    >>> compute(3)
-    3
+    >>> compute(1, 2)
+    4
     """
-    x2 = x * x
-    return x2 - 2 * x
+    z = y - x
+    return x + y + z
 
 
 if __name__ == '__main__':
