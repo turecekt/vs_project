@@ -37,11 +37,11 @@ This function test if input variable ``vstup`` is prime number.
 
 ## Authors
 
-- [@konj27](https://github.com/konj27)
+- [(https://github.com/konj27)](https://github.com/konj27)
 
-- [@ErikJukin](https://github.com/ErikJukin)
+- [(https://github.com/ErikJukin)](https://github.com/ErikJukin)
 
-- [@MartinStritesky](https://github.com/MartinStritesky)
+- [(https://github.com/MartinStritesky)](https://github.com/MartinStritesky)
 
-- [@Michael00CZ](https://github.com/Michael00CZ)
+- [(https://github.com/Michael00CZ)](https://github.com/Michael00CZ)
 
