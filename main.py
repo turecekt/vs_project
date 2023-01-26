@@ -17,7 +17,7 @@ if __name__ == '__main__':
                        "do Morseovy abecedy. Kromě písmen je možné používat"
                        " pouze tečku, čárku a otazník.")
             '''Instrukce programu a příjem odpovědi uživatele'''
-            result = kodovani(p1)
+            result = kodovani(p1: str)
             '''Odpověď programu podle funkce v jiném kódu'''
             print(result)
             '''Vytisknutí odpovědi programu'''
@@ -26,7 +26,7 @@ if __name__ == '__main__':
             p2 = input("Zadejte kod v Morseově abecedě za použití mezer,"
                        " teček a pomlček.")
             '''Instrukce programu a příjem odpovědi'''
-            result = dekodovani(p2)
+            result = dekodovani(p2: str)
             '''Odpověď programu podle funkce v jiném kódu'''
             print(result)
             '''Vytisknutí odpovědi programu'''
