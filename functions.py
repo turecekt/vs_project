@@ -1,4 +1,4 @@
-'''Hlavní modul funkcí pro hlavní část kódu'''
+"""Hlavní modul funkcí pro hlavní část kódu."""
 PREVOD = {
         'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..',
         'E': '.', 'F': '..-.', 'G': '--.', 'H': '....',
@@ -12,7 +12,7 @@ PREVOD = {
 
 
 def kodovani(p1):
-    '''Funkce kodovani'''
+    """Funkce kodovani."""
     cipher = ""
     '''Příjem programu'''
     p1 = p1.upper()
@@ -32,7 +32,7 @@ def kodovani(p1):
 
 
 def dekodovani(p2):
-    '''Funkce dekodovani'''
+    """Funkce dekodovani."""
     p2 = p2.upper() + ' '
     '''Zadefinování'''
     decipher = ''
