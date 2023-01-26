@@ -5,7 +5,7 @@ from functions import kodovani, dekodovani
 if __name__ == '__main__':
     '''Podminka'''
     while (True):
-    '''Pokud pravda pak:'''
+        '''Pokud pravda pak:'''
         n1 = input("Chcete-li kódovat text do Morseovy abecedy, stiskněte k."
                    " Chcete-li dekódovat text v Morseově abecedě, "
                    "stiskněte d. Po zmáčknutí jiného "
