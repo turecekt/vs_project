@@ -12,7 +12,7 @@ if __name__ == '__main__':
                    "tlačítka bude program ukončen.")
         '''Dotaz programu a příjem odpovědi uživatele'''
         if n1 in ["k", "K"]:
-        '''Odpověď uživatele - 1. možnost'''
+            '''Odpověď uživatele - 1. možnost'''
             p1 = input("Zadejte text (bez diakritiky), který chcete zakódovat "
                        "do Morseovy abecedy. Kromě písmen je možné používat"
                        " pouze tečku, čárku a otazník.")
