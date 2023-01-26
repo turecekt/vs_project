@@ -31,6 +31,6 @@ if __name__ == '__main__':
             print(result)
             '''Vytisknutí odpovědi programu'''
         else:
-        '''Odpověď uživatele - jiné než 1. nebo 2. možnost'''
+            '''Odpověď uživatele - jiné než 1. nebo 2. možnost'''
             break
             '''Konec programu'''
