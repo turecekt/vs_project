@@ -19,7 +19,7 @@ def kodovani(p1: str) -> str:
     :param p1: Zadáme zprávu.
     :return: Vrátí se nám v překladu do Morseovy abecedy.
 
-    >>>kodovani(jo)
+    >>> kodovani(jo)
     .--- ---
     """
     cipher = ""
@@ -48,7 +48,7 @@ def dekodovani(p2: str) -> str:
     :param p1: Zadáme zprávu v Morseově abecedě.
     :return: Vrátí se nám její překlad.
 
-    >>>dekodovani(-. .)
+    >>> dekodovani(-. .)
     ne
     """
     p2 = p2.upper() + ' '
