@@ -1,4 +1,4 @@
-"""Hlavní modul."""
+"""Hlavní modul programu pro překlad textu do a z Morseovy abecedy."""
 from functions import kodovani, dekodovani
 '''Importujeme funkce z jiného kódu'''
 
