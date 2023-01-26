@@ -3,7 +3,7 @@ from functions import kodovani, dekodovani
 '''Importujeme funkce z jiného kódu'''
 
 if __name__ == '__main__':
-'''Podminka'''
+    '''Podminka'''
     while (True):
     '''Pokud pravda pak:'''
         n1 = input("Chcete-li kódovat text do Morseovy abecedy, stiskněte k."
