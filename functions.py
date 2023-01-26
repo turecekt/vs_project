@@ -11,8 +11,17 @@ PREVOD = {
 '''Slovník písmen a jejich zápisu v morseově abecedě'''
 
 
-def kodovani(p1):
-    """Funkce kodovani."""
+def kodovani(p1: str) -> str:
+    """Funkce kodovani.
+
+    Funkce kóduje zprávu do morseovy abecedy.
+
+    :param p1: Zadáme zprávu.
+    :return: Vrátí se nám v překladu do Morseovy abecedy.
+
+    >>>kodovani(jo)
+    .--- ---
+    """
     cipher = ""
     '''Příjem programu'''
     p1 = p1.upper()
@@ -31,8 +40,17 @@ def kodovani(p1):
     '''Odpověď programu'''
 
 
-def dekodovani(p2):
-    """Funkce dekodovani."""
+def dekodovani(p2: str) -> str:
+    """Funkce dekodovani.
+
+    Funkce dekóduje zprávu z morseovy abecedy.
+
+    :param p1: Zadáme zprávu v Morseově abecedě.
+    :return: Vrátí se nám její překlad.
+
+    >>>dekodovani(-. .)
+    ne
+    """
     p2 = p2.upper() + ' '
     '''Zadefinování'''
     decipher = ''
