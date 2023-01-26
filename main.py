@@ -1,4 +1,4 @@
-'''Hlavní část kódů'''
+"""Hlavní modul."""
 from functions import *
 '''Importujeme funkce z jiného kódu'''
 
