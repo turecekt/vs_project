@@ -1,5 +1,5 @@
 """Hlavní modul."""
-from functions import *
+from functions import kodovani, dekodovani
 '''Importujeme funkce z jiného kódu'''
 
 if __name__ == '__main__':
