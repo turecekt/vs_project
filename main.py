@@ -22,7 +22,7 @@ if __name__ == '__main__':
             print(result)
             '''Vytisknutí odpovědi programu'''
         elif n1 in ['d', 'D']:
-        '''Odpověď uživatele - 2. možnost'''
+            '''Odpověď uživatele - 2. možnost'''
             p2 = input("Zadejte kod v Morseově abecedě za použití mezer,"
                        " teček a pomlček.")
             '''Instrukce programu a příjem odpovědi'''
