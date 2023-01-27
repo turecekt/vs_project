@@ -6,8 +6,8 @@ import random
 
 """
     Funkcia 'prvocislo' na overenie či je číslo prvočíslo
-    deterministickou metódou.Delenie od 2 do sqrt(n): Táto 
-    metóda zahŕňa delenie čísla n od 2 až do jeho druhej 
+    deterministickou metódou.Delenie od 2 do sqrt(n): Táto
+    metóda zahŕňa delenie čísla n od 2 až do jeho druhej
     odmocniny. Ak sa nedá deliť žiadnym číslom v tomto rozsahu,
     potom sa považuje za prvočíslo.
 """
@@ -30,17 +30,17 @@ def prvocislo(n):
 
 
 """
-    Funkcia 'prvocislo_mr' naoverenie či je číslo prvočíslo 
+    Funkcia 'prvocislo_mr' naoverenie či je číslo prvočíslo
     heuristickou metódou. Miller-Rabin test funguje tak,
     že pre zadané číslo n, prvý krok je rozklad n-1 na d*2^r.
-    Potom sa vyberie náhodné číslo a, ktoré sa zvolí z 
+    Potom sa vyberie náhodné číslo a, ktoré sa zvolí z
     intervalu od 2 do n-2. Ďalej sa vykoná výpočet a^d mod n.
-    Ak sa výsledok rovná 1 alebo n-1, číslo sa považuje za 
+    Ak sa výsledok rovná 1 alebo n-1, číslo sa považuje za
     možné prvočíslo a test sa opakuje s iným číslom a.
-    Ak sa výsledok nerovná ani 1 ani n-1, prechádza sa 
-    cez cyklus, kde sa výpočet opakuje s výsledkom 
-    predchádzajúceho výpočtu, kým sa neobjaví výsledok 
-    n-1 alebo kým sa nevykoná r-1 iterácií. Ak sa v cykle 
+    Ak sa výsledok nerovná ani 1 ani n-1, prechádza sa
+    cez cyklus, kde sa výpočet opakuje s výsledkom
+    predchádzajúceho výpočtu, kým sa neobjaví výsledok
+    n-1 alebo kým sa nevykoná r-1 iterácií. Ak sa v cykle
     nedosiahne výsledok n-1, číslo sa považuje za zložené.
 """
 
@@ -61,14 +61,19 @@ def prvocislo_mr(n, k=5):
         a = random.randint(2, n - 2)
         # výpočet a^d mod n
         x = pow(a, d, n)
-        # Ak sa výsledok nerovná ani 1 ani n-1, prechádza sa cez cyklus,
-        # kde sa výpočet opakuje s výsledkom predchádzajúceho výpočtu.
-        # kým sa neobjaví výsledok n-1 alebo kým sa nevykoná r-1 iterácií.
+        """
+            Ak sa výsledok nerovná ani 1 ani n-1, prechádza sa cez cyklus,
+            kde sa výpočet opakuje s výsledkom predchádzajúceho výpočtu.
+            kým sa neobjaví výsledok n-1 alebo kým sa nevykoná r-1 iterácií.
+        """
         if x == 1 or x == n - 1:
             continue
         for _ in range(r - 1):
             x = pow(x, 2, n)
-            # Ak sa v cykle nedosiahne výsledok n-1, číslo sa považuje za zložené.
+            """
+                Ak sa v cykle nedosiahne výsledok n-1,
+                číslo sa považuje za zložené.
+            """
             if x == n - 1:
                 break
         else:
@@ -77,8 +82,10 @@ def prvocislo_mr(n, k=5):
 
 
 while True:
-    # Vstup čísla od používateľa a jeho ošetrienie aby bolo
-    # číslo zadané užívateľom kladné celé číslo.
+    """
+        Vstup čísla od používateľa a jeho ošetrienie aby bolo
+        číslo zadané užívateľom kladné celé číslo.
+    """
     try:
         cislo = int(input("Zadaj cislo: "))
         # Podmienka na overenie kladnosti čísla.
@@ -90,16 +97,22 @@ while True:
     except ValueError:
         print("Zadaj validne cele cislo.")
 
-""" Volanie funkcií """
-
-# Ak je číslo väčšie ako 1000 zavolá funkciu 'prvocislo_mr', čiže
-# heuristickú metódu Miller-Rabin test.
+# Volanie funkcií
+"""
+    Ak je číslo väčšie ako 1000 zavolá funkciu 'prvocislo_mr', čiže
+    heuristickú metódu Miller-Rabin test.
+"""
 if cislo > 1000:
     if prvocislo_mr(cislo):
-        print(f"{cislo} je prvocislo. Pouzita heuristicka metoda: Miller-Rabin test.")
+        print(f"{cislo} je prvocislo."
+              f" Pouzita heuristicka metoda: Miller-Rabin test.")
     else:
-        print(f"{cislo} nie je prvocislo. Pouzita heuristicka metoda: Miller-Rabin test.")
-    # Ak je číslo menšie alebo rovno 1000 zavolá funkciu 'prvocislo', čiže metódu delenia od 2 do sqrt(n)
+        print(f"{cislo} nie je prvocislo. "
+              f"Pouzita heuristicka metoda: Miller-Rabin test.")
+    """
+        Ak je číslo menšie alebo rovno 1000 zavolá funkciu 'prvocislo',
+        čiže metódu delenia od 2 do sqrt(n)
+    """
 else:
     if prvocislo(cislo):
         print(f"{cislo} je prvocislo. Pouzita deterministicka metoda.")
