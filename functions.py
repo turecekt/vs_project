@@ -45,7 +45,7 @@ def dekodovani(p2: str) -> str:
 
     Funkce dekóduje zprávu z morseovy abecedy.
 
-    :param p1: Zadáme zprávu v Morseově abecedě.
+    :param p2: Zadáme zprávu v Morseově abecedě.
     :return: Vrátí se nám její překlad.
 
     >>> dekodovani('-. .')
