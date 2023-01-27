@@ -81,40 +81,41 @@ def prvocislo_mr(n, k=5):
     return True
 
 
-while True:
-    """
+if __name__ == '__main__':
+    while True:
+        """
         Vstup čísla od používateľa a jeho ošetrienie aby bolo
         číslo zadané užívateľom kladné celé číslo.
-    """
-    try:
-        cislo = int(input("Zadaj cislo: "))
-        # Podmienka na overenie kladnosti čísla.
-        if cislo <= 0:
-            print("Zadaj kladne celo cislo.")
-            continue
-        break
-    # Výpis chybovej hlášky ak sa zadal vstup iný ako typ int
-    except ValueError:
-        print("Zadaj validne cele cislo.")
+        """
+        try:
+            cislo = int(input("Zadaj cislo: "))
+            # Podmienka na overenie kladnosti čísla.
+            if cislo <= 0:
+                print("Zadaj kladne celo cislo.")
+                continue
+            break
+        # Výpis chybovej hlášky ak sa zadal vstup iný ako typ int
+        except ValueError:
+            print("Zadaj validne cele cislo.")
 
-# Volanie funkcií
-"""
-    Ak je číslo väčšie ako 1000 zavolá funkciu 'prvocislo_mr', čiže
-    heuristickú metódu Miller-Rabin test.
-"""
-if cislo > 1000:
-    if prvocislo_mr(cislo):
-        print(f"{cislo} je prvocislo."
-              f" Pouzita heuristicka metoda: Miller-Rabin test.")
-    else:
-        print(f"{cislo} nie je prvocislo. "
-              f"Pouzita heuristicka metoda: Miller-Rabin test.")
+    # Volanie funkcií
     """
-        Ak je číslo menšie alebo rovno 1000 zavolá funkciu 'prvocislo',
-        čiže metódu delenia od 2 do sqrt(n)
+        Ak je číslo väčšie ako 1000 zavolá funkciu 'prvocislo_mr', čiže
+        heuristickú metódu Miller-Rabin test.
     """
-else:
-    if prvocislo(cislo):
-        print(f"{cislo} je prvocislo. Pouzita deterministicka metoda.")
+    if cislo > 1000:
+        if prvocislo_mr(cislo):
+            print(f"{cislo} je prvocislo."
+                f" Pouzita heuristicka metoda: Miller-Rabin test.")
+        else:
+            print(f"{cislo} nie je prvocislo. "
+                f"Pouzita heuristicka metoda: Miller-Rabin test.")
+        """
+            Ak je číslo menšie alebo rovno 1000 zavolá funkciu 'prvocislo',
+            čiže metódu delenia od 2 do sqrt(n)
+        """
     else:
-        print(f"{cislo} nie je prvocislo. Pouzita deterministicka metoda.")
+        if prvocislo(cislo):
+            print(f"{cislo} je prvocislo. Pouzita deterministicka metoda.")
+        else:
+            print(f"{cislo} nie je prvocislo. Pouzita deterministicka metoda.")
