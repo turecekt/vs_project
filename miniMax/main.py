@@ -6,20 +6,19 @@ Minimax.
 Takes array of numbers and outpust lowest,
 highest number and sorted array.
 """
+import string
 import sys
 from random import randint  # pseudorandom number generator
 
 #  Input operation methods
 
 
-def input_file(filename):
+def input_file(filename: string) -> list[int]:
     """Read a text file for input.
 
     :param filename: name of the input file
-    :type filename: string
     :raises: :class:`FileNotFoundError`: no file under filename is found
     :return: input numbers
-    :rtype: int array
     """
     numbers_file = open(filename, "r")
     numbers = numbers_file.readlines()[0]
@@ -36,17 +35,13 @@ GROUND_VALUE = -1000
 TOP_VALUE = 1000
 
 
-def generate_pseoudorandom_array(array_length, ground_value, top_value):
+def generate_pseoudorandom_array(array_length: int, ground_value: int, top_value: int) -> list[int]:
     """Generate pseudorandom array of integers.
 
     :param array_length: length of generated array
-    :type array_length: int
     :param ground_value: lowest possible value of output integer
-    :type ground_value: int
     :param top_value: highest possible value of output integer
-    :type top_value: int
     :return: numbers
-    :rtype: int array
     """
     numbers = []
     for number in range(1, array_length):
@@ -55,13 +50,11 @@ def generate_pseoudorandom_array(array_length, ground_value, top_value):
     #  Sorting algorithms
 
 
-def bubble_sort(list):
+def bubble_sort(list: list[int]) -> list[int]:
     """Sorts numbers.
 
     :param list: list of numbers
-    :type list: int array
     :return: list
-    :rtype: int array
     """
     list_lenght = len(list)
     for number in range(list_lenght - 1, 0, -1):
@@ -73,13 +66,11 @@ def bubble_sort(list):
     return list
 
 
-def merge_sort(list):
+def merge_sort(list: list[int]) -> list[int]:
     """Sorts numbers.
 
     :param list: list of numbers
-    :type list: int array
     :return: list
-    :rtype: int array
     """
     if len(list) > 1:
         mid = len(list) // 2
@@ -122,13 +113,11 @@ def merge_sort(list):
     return list
 
 
-def insertion_sort(list):
+def insertion_sort(list: list[int]) -> list[int]:
     """Sorts numbers.
 
     :param list: list of numbers
-    :type list: int array
     :return: list
-    :rtype: int array
     """
     # Traverse through 1 to len(list)
     for i in range(1, len(list)):
@@ -147,35 +136,29 @@ def insertion_sort(list):
     #  Output methods
 
 
-def get_lowest_num(numbers):
+def get_lowest_num(numbers: list[int]) -> int:
     """Get the lowest number from int array.
 
     :param numbers: list of numbers
-    :type numbers: int array
     :return: min(numbers)
-    :rtype: int
     """
     return min(numbers)
 
 
-def get_highest_num(numbers):
+def get_highest_num(numbers: list[int]) -> int:
     """Get the highest number from int array.
 
     :param numbers: list of numbers
-    :type numbers: int array
     :return: max(numbers)
-    :rtype: int
     """
     return max(numbers)
 
 
-def sort_numbers(numbers):
+def sort_numbers(numbers: list[int]) -> list[int]:
     """Sorts numbers given the choice of an algorithm.
 
     :param list: list of numbers
-    :type list: int array
     :return: list
-    :rtype: int array
     """
     choice_made = False
     while (not choice_made):

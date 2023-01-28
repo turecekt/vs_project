@@ -3,7 +3,7 @@ Testovací modul k main.py.
 
 @author: psantler
 """
-import main
+from ..miniMax import main
 import pytest
 from io import StringIO
 
