@@ -106,10 +106,10 @@ if __name__ == '__main__':
     if cislo > 1000:
         if prvocislo_mr(cislo):
             print(f"{cislo} je prvocislo."
-                f" Pouzita heuristicka metoda: Miller-Rabin test.")
+                  f" Pouzita heuristicka metoda: Miller-Rabin test.")
         else:
             print(f"{cislo} nie je prvocislo. "
-                f"Pouzita heuristicka metoda: Miller-Rabin test.")
+                  f"Pouzita heuristicka metoda: Miller-Rabin test.")
         """
             Ak je číslo menšie alebo rovno 1000 zavolá funkciu 'prvocislo',
             čiže metódu delenia od 2 do sqrt(n)
