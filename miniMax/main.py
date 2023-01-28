@@ -17,7 +17,7 @@ def input_file(filename: string) -> list[int]:
     """Read a text file for input.
 
     :param filename: name of the input file
-    :raises: :class:`FileNotFoundError`: no file under filename is found
+    :raises: :class:`FileNotFoundError`: if no file under filename is found
     :return: input numbers
     """
     numbers_file = open(filename, "r")
