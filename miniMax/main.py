@@ -36,7 +36,8 @@ TOP_VALUE = 1000
 
 
 def generate_pseoudorandom_array(array_length: int,
-                    ground_value: int, top_value: int) -> list[int]:
+                                 ground_value: int,
+                                 top_value: int) -> list[int]:
     """Generate pseudorandom array of integers.
 
     :param array_length: length of generated array
