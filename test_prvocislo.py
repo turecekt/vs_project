@@ -1,10 +1,10 @@
-""" pytest pre funkciu 'prvocislo' """
+"""pytest pre funkciu 'prvocislo'."""
 
 from main import prvocislo
 
 
 def test_prvocislo():
-    """ Testy pre funkciu prvocislo """
+    """Testy pre funkciu prvocislo."""
     assert prvocislo(1) is False
     assert prvocislo(2) is True
     assert prvocislo(3) is True

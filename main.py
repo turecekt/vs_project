@@ -1,17 +1,20 @@
-""" Importujeme knižnicu random pre generovanie náhodných čísel,
-    pretože ju budeme potrebovať pri heuristickej metóde Miller-Rabin Test.
-"""
+"""Program na overenie, či je zadané číslo prvočíslom."""
+
+#Importujeme knižnicu random pre generovanie náhodných čísel,
+#pretože ju budeme potrebovať pri heuristickej metóde Miller-Rabin Test.
 
 import random
 
 
 def prvocislo(n):
-    """ Funkcia 'prvocislo' na overenie či je číslo prvočíslo
-    deterministickou metódou.Delenie od 2 do sqrt(n): Táto
+
+    """Funkcia 'prvocislo' na overenie či je číslo prvočíslo deterministickou metódou.
+
+    Delenie od 2 do sqrt(n): Táto
     metóda zahŕňa delenie čísla n od 2 až do jeho druhej
     odmocniny. Ak sa nedá deliť žiadnym číslom v tomto rozsahu,
-    potom sa považuje za prvočíslo.
-    """
+    potom sa považuje za prvočíslo."""
+
     # Overenie či číslo je menšie alebo rovné 2
     if n <= 2:
         return n == 2
@@ -28,8 +31,10 @@ def prvocislo(n):
 
 
 def prvocislo_mr(n, k=5):
-    """ Funkcia 'prvocislo_mr' naoverenie či je číslo prvočíslo
-        heuristickou metódou. Miller-Rabin test funguje tak,
+
+    """Funkcia 'prvocislo_mr' naoverenie či je číslo prvočíslo heuristickou metódou.
+
+        Miller-Rabin test funguje tak,
         že pre zadané číslo n, prvý krok je rozklad n-1 na d*2^r.
         Potom sa vyberie náhodné číslo a, ktoré sa zvolí z
         intervalu od 2 do n-2. Ďalej sa vykoná výpočet a^d mod n.
@@ -39,8 +44,8 @@ def prvocislo_mr(n, k=5):
         cez cyklus, kde sa výpočet opakuje s výsledkom
         predchádzajúceho výpočtu, kým sa neobjaví výsledok
         n-1 alebo kým sa nevykoná r-1 iterácií. Ak sa v cykle
-        nedosiahne výsledok n-1, číslo sa považuje za zložené.
-    """
+        nedosiahne výsledok n-1, číslo sa považuje za zložené."""
+
     # Ak je číslo párne alebo delitelné 3, vrátime False.
     if n % 2 == 0 or n % 3 == 0:
         return False
