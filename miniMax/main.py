@@ -35,7 +35,8 @@ GROUND_VALUE = -1000
 TOP_VALUE = 1000
 
 
-def generate_pseoudorandom_array(array_length: int, ground_value: int, top_value: int) -> list[int]:
+def generate_pseoudorandom_array(array_length: int,
+                    ground_value: int, top_value: int) -> list[int]:
     """Generate pseudorandom array of integers.
 
     :param array_length: length of generated array
@@ -157,7 +158,7 @@ def get_highest_num(numbers: list[int]) -> int:
 def sort_numbers(numbers: list[int]) -> list[int]:
     """Sorts numbers given the choice of an algorithm.
 
-    :param list: list of numbers
+    :param numbers: list of numbers
     :return: list
     """
     choice_made = False
