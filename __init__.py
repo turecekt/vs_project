@@ -1,0 +1,4 @@
+"""MiniMax.
+
+.. include:: Readme.md
+"""
