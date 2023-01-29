@@ -14,7 +14,7 @@ def prvocislo(n: int) -> bool:
     odmocniny. Ak sa nedá deliť žiadnym číslom v tomto rozsahu,
     potom sa považuje za prvočíslo.
 
-    :type n: Testované číslo.
+    :param n: Testované číslo.
     :return: Existencia prvočísla.
     """
     # Overenie či číslo je menšie alebo rovné 2
@@ -32,7 +32,7 @@ def prvocislo(n: int) -> bool:
     return True
 
 
-def prvocislo_mr(n: int, k=5) -> bool:
+def prvocislo_mr(n: int, k: int = 5) -> bool:
     """Funkcia 'prvocislo_mr' naoverenie či je číslo prvočíslo.
 
     Miller-Rabin test funguje tak,
@@ -46,6 +46,10 @@ def prvocislo_mr(n: int, k=5) -> bool:
     predchádzajúceho výpočtu, kým sa neobjaví výsledok
     n-1 alebo kým sa nevykoná r-1 iterácií. Ak sa v cykle
     nedosiahne výsledok n-1, číslo sa považuje za zložené.
+
+    :param n: Testované číslo.
+    :param k: Počet iterácií Miller-Rabin testu.
+    :return: Existencia prvočísla.
     """
     # Ak je číslo párne alebo delitelné 3, vrátime False.
     if n % 2 == 0 or n % 3 == 0:
