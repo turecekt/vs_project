@@ -6,13 +6,16 @@
 import random
 
 
-def prvocislo(n):
+def prvocislo(n: int) -> bool:
     """Funkcia 'prvocislo' na overenie, či je číslo prvočíslo.
 
     Delenie od 2 do sqrt(n): Táto
     metóda zahŕňa delenie čísla n od 2 až do jeho druhej
     odmocniny. Ak sa nedá deliť žiadnym číslom v tomto rozsahu,
     potom sa považuje za prvočíslo.
+
+    :type n: Testované číslo.
+    :return: Existencia prvočísla.
     """
     # Overenie či číslo je menšie alebo rovné 2
     if n <= 2:
@@ -29,7 +32,7 @@ def prvocislo(n):
     return True
 
 
-def prvocislo_mr(n, k=5):
+def prvocislo_mr(n: int, k=5) -> bool:
     """Funkcia 'prvocislo_mr' naoverenie či je číslo prvočíslo.
 
     Miller-Rabin test funguje tak,
