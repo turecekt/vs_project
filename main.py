@@ -32,18 +32,18 @@ def prvocislo(n):
 def prvocislo_mr(n, k=5):
     """Funkcia 'prvocislo_mr' naoverenie či je číslo prvočíslo.
 
-        Miller-Rabin test funguje tak,
-        že pre zadané číslo n, prvý krok je rozklad n-1 na d*2^r.
-        Potom sa vyberie náhodné číslo a, ktoré sa zvolí z
-        intervalu od 2 do n-2. Ďalej sa vykoná výpočet a^d mod n.
-        Ak sa výsledok rovná 1 alebo n-1, číslo sa považuje za
-        možné prvočíslo a test sa opakuje s iným číslom a.
-        Ak sa výsledok nerovná ani 1 ani n-1, prechádza sa
-        cez cyklus, kde sa výpočet opakuje s výsledkom
-        predchádzajúceho výpočtu, kým sa neobjaví výsledok
-        n-1 alebo kým sa nevykoná r-1 iterácií. Ak sa v cykle
-        nedosiahne výsledok n-1, číslo sa považuje za zložené.
-        """
+    Miller-Rabin test funguje tak,
+    že pre zadané číslo n, prvý krok je rozklad n-1 na d*2^r.
+    Potom sa vyberie náhodné číslo a, ktoré sa zvolí z
+    intervalu od 2 do n-2. Ďalej sa vykoná výpočet a^d mod n.
+    Ak sa výsledok rovná 1 alebo n-1, číslo sa považuje za
+    možné prvočíslo a test sa opakuje s iným číslom a.
+    Ak sa výsledok nerovná ani 1 ani n-1, prechádza sa
+    cez cyklus, kde sa výpočet opakuje s výsledkom
+    predchádzajúceho výpočtu, kým sa neobjaví výsledok
+    n-1 alebo kým sa nevykoná r-1 iterácií. Ak sa v cykle
+    nedosiahne výsledok n-1, číslo sa považuje za zložené.
+    """
     # Ak je číslo párne alebo delitelné 3, vrátime False.
     if n % 2 == 0 or n % 3 == 0:
         return False
