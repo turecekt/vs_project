@@ -6,14 +6,13 @@ Minimax.
 Takes array of numbers and outpust lowest,
 highest number and sorted array.
 """
-import string
 import sys
 from random import randint  # pseudorandom number generator
 
 #  Input operation methods
 
 
-def input_file(filename: string) -> list[int]:
+def input_file(filename: str) -> list[int]:
     """Read a text file for input.
 
     :param filename: name of the input file
