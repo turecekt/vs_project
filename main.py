@@ -14,7 +14,6 @@ def prvocislo(n):
     odmocniny. Ak sa nedá deliť žiadnym číslom v tomto rozsahu,
     potom sa považuje za prvočíslo.
     """
-
     # Overenie či číslo je menšie alebo rovné 2
     if n <= 2:
         return n == 2
@@ -45,7 +44,6 @@ def prvocislo_mr(n, k=5):
         n-1 alebo kým sa nevykoná r-1 iterácií. Ak sa v cykle
         nedosiahne výsledok n-1, číslo sa považuje za zložené.
         """
-
     # Ak je číslo párne alebo delitelné 3, vrátime False.
     if n % 2 == 0 or n % 3 == 0:
         return False
