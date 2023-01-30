@@ -70,15 +70,14 @@ class Converter:
             else:
                 print(WRONG_INPUT_MESSAGE)
 
-    def integer_to_roman(integer):
+    def integer_to_roman(integer: int) -> str:
         """
         Convert integer to Roman number.
 
         Converts any positive integer in range from 1 to 3999.
 
-        :param name: integer - Number to be converted.
-        :param type: int
-        :return: str
+        :param integer: Number to be converted.
+        :return: Value of the input in the system of Roman numerals.
         """
         # Checks if the input is None.
         if (integer is None):
@@ -156,9 +155,8 @@ class Converter:
 
         Converts any Roman number of valid format.
 
-        :param name: roman - Number to be converted.
-        :param type: str
-        :return: int
+        :param roman: Number to be converted.
+        :return: Value of the input in the decimal system.
         """
         # Checks if the input is None.
         if (roman is None):
@@ -254,9 +252,8 @@ class Converter:
         Converts any valid Roman numeral.
         If numeral is not valid, returns 0.
 
-        :param name: roman_numeral - Numeral to be converted.
-        :param type: str
-        :return: int
+        :param roman_numeral: Numeral to be converted.
+        :return: Value of Roman numeral.
         """
         if (roman_numeral == 'I'):
             return 1
@@ -328,9 +325,8 @@ class Converter:
         """
         Return decimal value of highest usable Roman numeral after "number".
 
-        :param name: number - Value of roman numeral.
-        :param type: int
-        :return: int
+        :param number: Value of Roman numeral.
+        :return: Highest usable Roman numeral after number.
         """
         if (number >= 1000 and number <= 3000):
             return 900
