@@ -121,7 +121,7 @@ def DeterministickaMetoda(cislo):
                 return False
         else:
             print("Zadané číslo" , cislo , "PATŘÍ mezi prvočísla.")
-                return True
+            return True
 
 def HeurestickaMetoda(o):
     
