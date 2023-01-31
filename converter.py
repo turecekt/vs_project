@@ -149,7 +149,7 @@ class Converter:
         # Returns value of the input in the system of Roman numerals.
         return roman
 
-    def roman_to_integer(roman):
+    def roman_to_integer(roman: str) -> int:
         """
         Convert Roman number to integer.
 
@@ -194,7 +194,7 @@ class Converter:
             # in a valid numeral, last numeral in "parsed_roman" is replaced
             # by this combination.
             if (Converter.
-                    __value_of(last_roman + current_roman) > 0):
+                    value_of(last_roman + current_roman) > 0):
                 parsed_roman[len(parsed_roman) - 1] = \
                     last_roman + current_roman
 
@@ -208,7 +208,7 @@ class Converter:
 
         # Declaration of the variable "integer", which will represent
         # the value of the input in the decimal system.
-        integer = Converter.__value_of(parsed_roman[0])
+        integer = Converter.value_of(parsed_roman[0])
 
         # Counter initialization.
         i = 1
@@ -219,11 +219,11 @@ class Converter:
             # "last_integer" represents the value of last numeral
             # that was added.
             last_integer = \
-                Converter.__value_of(parsed_roman[i - 1])
+                Converter.value_of(parsed_roman[i - 1])
 
             # "current_integer" represents the value that will be added
             # in the current step.
-            current_integer = Converter.__value_of(parsed_roman[i])
+            current_integer = Converter.value_of(parsed_roman[i])
 
             # If "last_integer" is greater than "current_integer" and highest
             # usable integer after "last_integer" is greater of equal to
@@ -231,7 +231,7 @@ class Converter:
             # and "current_integer" is added to "integer".
             if (last_integer > current_integer and
                     Converter.
-                    __get_highest_usable_numeral_after(last_integer) >=
+                    get_highest_usable_numeral_after(last_integer) >=
                     current_integer):
                 integer += current_integer
 
@@ -244,8 +244,8 @@ class Converter:
 
         # Returns value of the input in the decimal system.
         return integer
-
-    def __value_of(roman_numeral):
+    
+    def value_of(roman_numeral: str) -> int:
         """
         Convert Roman numeral to integer.
 
@@ -321,7 +321,7 @@ class Converter:
         else:
             return 0
 
-    def __get_highest_usable_numeral_after(number):
+    def get_highest_usable_numeral_after(number: int) -> int:
         """
         Return decimal value of highest usable Roman numeral after "number".
 
