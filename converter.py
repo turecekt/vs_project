@@ -244,7 +244,7 @@ class Converter:
 
         # Returns value of the input in the decimal system.
         return integer
-    
+
     def value_of(roman_numeral: str) -> int:
         """
         Convert Roman numeral to integer.
