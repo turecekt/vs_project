@@ -20,7 +20,8 @@ def test_MetodaPravidelDelitelnosti():
 def test_DeterministickaMetoda():
     
     assert DeterministickaMetoda(50013) is False
-
+    assert DeterministickaMetoda(50011) is False
+    
 # Funkce test_HeurestickaMetoda zjistuje u téhle metody,
 # jestli je číslo prvočíslo = True nebo není = False.
     
@@ -28,6 +29,7 @@ def test_DeterministickaMetoda():
 def test_HeurestickaMetoda():
     assert HeurestickaMetoda(17) is True
     assert HeurestickaMetoda(12) is False
+    assert HeurestickaMetoda(6) is False
     
 # Funkce test_vstup zjistuje, jestli byl vstup zadán špatně nebo správně 
 # (správně pouze celá čísla 0,1,2,3,4,5,6,7,8,9 ne znaky a písmena to je chyba)
