@@ -1,5 +1,3 @@
-import random
-
 #   Funkce test_Metody zjistuje co je použito za metody u kterých čísel.
 
 def test_Metody():
@@ -36,7 +34,8 @@ def test_HeurestickaMetoda():
 
 
 def test_Vstup():
-    assert Vstup(1) is True
+    assert Vstup("1") is True
+    assert Vstup("k") is False
 
 
 def Vstup(Napsanecislo):
