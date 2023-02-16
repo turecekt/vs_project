@@ -16,8 +16,7 @@ def test_Metody():
 # (např. čísla končící na číslo 5 a 0 jdou vždy vydělit 5.
 
 def test_MetodaPravidelDelitelnosti():
-    assert MetodaPravidelDelitelnosti if 88 is True:
-        print('True!')
+    assert MetodaPravidelDelitelnosti(88) is True
 # Funkce test_DeterministickaMetoda zjistuje u téhle metody,
 # jestli je číslo prvočíslo = True nebo není = False.
 def test_DeterministickaMetoda():
