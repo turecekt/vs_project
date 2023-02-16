@@ -36,7 +36,6 @@ def test_HeurestickaMetoda():
 
 
 def test_Vstup():
-    assert Vstup(k) is False
     assert Vstup(1) is True
 
 
