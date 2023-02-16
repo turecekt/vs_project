@@ -90,7 +90,7 @@ def Vystup(pouzitaMetoda=0):
     my_str12 ='Byla použita DETERMINISTICKÁ metoda -Metoda zkouší pokud je číslo'
     my_str13 ='dělitelné některým z již předtím nalezených prvočísel do maximální'
     my_str14 ='hodnoty odmocniny ze zadaného čísla.Pokud číslo není dělitelné,'
-    my_str15 ='je to další prvočíslo.
+    my_str15 ='je to další prvočíslo.'
     
     if (pouzitaMetoda == 1):
         print(my_str4 + my_str5 + my_str6)
