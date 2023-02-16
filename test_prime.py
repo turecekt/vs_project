@@ -21,7 +21,7 @@ def test_MetodaPravidelDelitelnosti():
 # jestli je číslo prvočíslo = True nebo není = False.
 def test_DeterministickaMetoda():
     
-    assert DeterministickaMetoda(50013) = False
+    assert DeterministickaMetoda(50013) is False
     50013 = False
     if x is False:
         print('False!')
@@ -39,8 +39,8 @@ def test_HeurestickaMetoda():
 
 
 def test_Vstup():
-    assert Vstup("k") == False
-    assert Vstup("1") == True
+    assert Vstup("k") is False
+    assert Vstup("1") is True
 
 
 def Vstup(Napsanecislo):
