@@ -13,10 +13,15 @@ def test_Metody():
 # které podle pravidel dělitelnosti, lze vydělit již prvočíslem.
 # (např. čísla končící na číslo 5 a 0 jdou vždy vydělit 5.
 
+
 def test_MetodaPravidelDelitelnosti():
     assert MetodaPravidelDelitelnosti(88) is True
+    assert MetodaPravidelDelitelnosti(87) is False
+    
 # Funkce test_DeterministickaMetoda zjistuje u téhle metody,
 # jestli je číslo prvočíslo = True nebo není = False.
+
+
 def test_DeterministickaMetoda():
     
     assert DeterministickaMetoda(50013) is False
