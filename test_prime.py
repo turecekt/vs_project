@@ -62,12 +62,11 @@ def Vystup(pouzitaMetoda=0):
  
     # Funkce vypíše výstup programu(chybu, je či není prvočíslo; použitá metoda).
 
-    my_str1 ='Nastala CHYBA způsobená uživatelem při zadávání. Zadaná hodnota'
-    my_str2 ='neopodívá formátu, který se dá přečíst pro rozpoznání prvočísla.' 
-    my_str3 ='Zkuste program restartovat a zadat přirozené číslo do nekonečna.'
+    my_str1 ='CHYBA při zadávání. Zadaná hodnota neopodívá formátu,který'
+    my_str2 ='se dá přečíst.Restartuj a zadej přirozené číslo.' 
     
     if (pouzitaMetoda == 0):
-        print(my_str1 + my_str2 + my_str3)
+        print(my_str1 + my_str2)
 
         return
     elif (pouzitaMetoda > 0):
@@ -80,27 +79,23 @@ def Vystup(pouzitaMetoda=0):
 
 # Popis postupů
 
-    my_str4 ='Byla použita HEURISTICKÁ metoda - 1 Metoda rozpozná číslici 1 a'
-    my_str5 ='vyřadí ji z pátrání, protože toto číslo není prvočíslo.' 
-    my_str6 ='(číslo musí být dělitelné DVĚMA čísly, samosebou a jedničkou)'
-    my_str7 ='Byla použita HEURISTICKÁ metoda - pravidla dělitelnosti Metoda'
-    my_str8 ='určí neprvočísla, pomocí toho, že je číslo končí určitým číslem,'
-    my_str9 ='které podle pravidel dělitelnosti, lze vydělit již prvočíslem.'
-    my_str10 ='Byla použita HEURISTICKÁ metoda - Wilsonova věta. Metoda používá'
-    my_str11 ='matematický vztah ((n - 1)! + 1) % n pro zjištění prvočísel.'
-    my_str12 ='Byla použita DETERMINISTICKÁ metoda -Metoda zkouší pokud je číslo'
-    my_str13 ='dělitelné některým z již předtím nalezených prvočísel do maximální'
-    my_str14 ='hodnoty odmocniny ze zadaného čísla.Pokud číslo není dělitelné,'
-    my_str15 ='je to další prvočíslo.'
+    my_str3 ='HEURISTICKÁ metoda-Rozpozná číslici 1 a vyřadí ji, číslo není.'
+    my_str4 ='prvočíslo.(číslo musí být dělitelné DVĚMA čísly, samosebou a jedničkou)'
+    my_str5 ='HEURISTICKÁ metoda-pravidla dělitelnosti.Určí neprvočísla, pomocí toho, že číslo '
+    my_str6 ='končí určitým číslem podle,pravidel dělitelnosti, lze vydělit prvočíslem.'
+    my_str7='HEURISTICKÁ metoda-Wilsonova věta. Používá matematický vztah ((n - 1)! + 1) % n'
+    my_str8 ='DETERMINISTICKÁ metoda-Zkouší pokud je číslo dělitelné některým'
+    my_str9 ='z předtím nalezených prvočísel do maximální hodnoty odmocniny'
+    my_str10 ='ze zadaného čísla.Pokud není dělitelné,je to prvočíslo.'
     
     if (pouzitaMetoda == 1):
-        print(my_str4 + my_str5 + my_str6)
+        print(my_str3 + my_str4)
     elif (pouzitaMetoda == 2):
-        print(my_str7 + my_str8 + my_str9)
+        print(my_str5 + my_str6)
     elif (pouzitaMetoda == 3):
-        print(my_str10 + my_str11)
+        print(my_str7)
     elif (pouzitaMetoda == 4):
-        print(my_str12 + my_str13 + my_str14 + my_str15)
+        print(my_str8 + my_str9 + my_str10)
 
 def Metody(cislo):
 
