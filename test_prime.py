@@ -22,9 +22,6 @@ def test_MetodaPravidelDelitelnosti():
 def test_DeterministickaMetoda():
     
     assert DeterministickaMetoda(50013) is False
-    50013 = False
-    if x is False:
-        print('False!')
 
 # Funkce test_HeurestickaMetoda zjistuje u téhle metody,
 # jestli je číslo prvočíslo = True nebo není = False.
