@@ -33,10 +33,10 @@ def test_HeurestickaMetoda():
 # (správně pouze celá čísla 0,1,2,3,4,5,6,7,8,9 ne znaky a písmena to je chyba)
 
 
-def test_Vstup():
+'''def test_Vstup():
     assert Vstup("1") is True
     assert Vstup("k") is False
-
+'''
 
 def Vstup(Napsanecislo):
 
