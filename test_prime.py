@@ -12,19 +12,19 @@ def test_Metody(a):
     return a
 
 
-def test_MetodaPravidelDelitelnosti(88):
+def test_MetodaPravidelDelitelnosti():
     """Funkce určí některá neprvočísla,pomocí toho, že je číslo končí"""
     """určitým číslem,které podle pravidel,lze vydělit již prvočíslem."""
     assert MetodaPravidelDelitelnosti(88) is True
     assert MetodaPravidelDelitelnosti(87) is False
-    return True
+    return
 
 
-def test_DeterministickaMetoda(50011):
+def test_DeterministickaMetoda():
     """Funkce zjistuje u téhle metody,jestli je číslo prvočíslo"""
     assert DeterministickaMetoda(50013) is False
     assert DeterministickaMetoda(50011) is False
-    return (50011)
+    return
 
 
 def test_HeurestickaMetoda():
