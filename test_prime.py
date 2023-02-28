@@ -1,7 +1,7 @@
 """Funkce test_Metody zjistuje co je použito za metody u kterých čísel."""
 
 
-def test_Metody():
+def test_Metody(1):
     """Test metod"""
     assert Metody(1) == -1
     assert Metody(36) == -2
@@ -9,21 +9,22 @@ def test_Metody():
     assert Metody(8) == -3
     assert Metody(50013) == -4
     assert Metody(50011) == -4
-    pass
+    return False
 
 
-def test_MetodaPravidelDelitelnosti():
+def test_MetodaPravidelDelitelnosti(88):
     """Funkce určí některá neprvočísla,pomocí toho, že je číslo končí"""
     """určitým číslem,které podle pravidel,lze vydělit již prvočíslem."""
     assert MetodaPravidelDelitelnosti(88) is True
     assert MetodaPravidelDelitelnosti(87) is False
+    return True
 
 
-def test_DeterministickaMetoda():
+def test_DeterministickaMetoda(50011):
     """Funkce zjistuje u téhle metody,jestli je číslo prvočíslo"""
-    pass
     assert DeterministickaMetoda(50013) is False
     assert DeterministickaMetoda(50011) is False
+    return (50011)
 
 
 def test_HeurestickaMetoda():
