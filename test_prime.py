@@ -1,7 +1,7 @@
 """Funkce test_Metody zjistuje co je použito za metody u kterých čísel."""
 
 
-def test_Metody(1):
+def test_Metody(a):
     """Test metod"""
     assert Metody(1) == -1
     assert Metody(36) == -2
@@ -9,7 +9,7 @@ def test_Metody(1):
     assert Metody(8) == -3
     assert Metody(50013) == -4
     assert Metody(50011) == -4
-    return False
+    return a
 
 
 def test_MetodaPravidelDelitelnosti(88):
