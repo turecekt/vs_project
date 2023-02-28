@@ -46,8 +46,7 @@ def test_Vstup():
 
 
 def Vstup(Napsanecislo):
-
-    # Funkce získá vstup od uživatele proti chybám.
+    """Funkce získá vstup od uživatele proti chybám."""
 
     for znak in Napsanecislo:
         if not (znak in "0123456789"):
@@ -79,7 +78,7 @@ def Vystup(pouzitaMetoda=0):
 
     if (pouzitaMetoda == 1):
         print('HEURISTICKÁ metoda-Rozpozná číslo 1 a vyřadí ho, číslo není' +
-             'prvočíslo.Číslo musí být dělitelné 2 čísly, sebou a jedničkou')
+              'prvočíslo.Číslo musí být dělitelné 2 čísly, sebou a jedničkou')
     elif (pouzitaMetoda == 2):
         print('HEURISTICKÁ metoda-pravidla dělitelnosti.Určí neprvočísla,' +
               'pomocí toho, že číslo končí určitým číslem podle,pravidel' +
@@ -137,8 +136,8 @@ def DeterministickaMetoda(cislo):
             print("Zadané číslo", cislo, "PATŘÍ mezi prvočísla.")
             return True
 
-def HeurestickaMetoda(o):
 
+def HeurestickaMetoda(o):
 
     #   Funkce zkouší zjistit prvočíslo Heurestickou metodou ((n-1)!+1)%n.
 
