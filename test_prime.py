@@ -1,4 +1,5 @@
-"""   Funkce test_Metody zjistuje co je použito za metody u kterých čísel."""
+"""Funkce test_Metody zjistuje co je použito za metody u kterých čísel."""
+
 
 def test_Metody():
     """Test metod"""
@@ -8,6 +9,7 @@ def test_Metody():
     assert Metody(8) == -3
     assert Metody(50013) == -4
     assert Metody(50011) == -4
+    return()
 
 
 def test_MetodaPravidelDelitelnosti():
@@ -31,7 +33,7 @@ def test_HeurestickaMetoda():
 
 
 def test_Vstup():
-    """Zjistuje, správnost vstupu(správně pouze celá čísla 0-9 ne znaky a písmena)"""
+    """Správně pouze celá čísla 0-9 ne znaky a písmena)"""
     assert Vstup("1") == 1
     assert Vstup("k") == 0
 
@@ -48,7 +50,7 @@ def Vstup(Napsanecislo):
 
 
 def Vystup(pouzitaMetoda=0):
-    """Funkce vypíše výstup programu(chybu,je či není prvočíslo;použitá metoda)."""
+    """Funkce vypíše výstup(chybu,je či není prvočíslo;použitá metoda)."""
     if (pouzitaMetoda == 0):
         print('CHYBA zadávání. Zadaná hodnota neopodívá formátu,který' +
               'se dá přečíst.Restartuj a zadej přirozené číslo.')
@@ -104,12 +106,12 @@ def Metody(cislo):
 
 
 def MetodaPravidelDelitelnosti(cislo):
-    """Je číslo větší jak 9 a zároveň končí čílicí 0,2,4,5,6,8, není prvočíslo."""
+    """Je číslo větší jak 9 a zároveň končí čílicí 0-9 není prvočíslo."""
     return (cislo > 9 and str(cislo)[-1] in "024568")
 
 
 def DeterministickaMetoda(cislo):
-    """Pokud číslo není dělitelné prvočísly odmocnina z čísla, pak je prvočíslo."""
+    """Pokud číslo není dělitelné prvočísly odmocnina z čísla,je prvočíslo."""
     """number=int(input("Zadej celé číslo: "))prvočísla jsou větší než 1"""
     if cislo > 1:
         for i in range(2, cislo):
