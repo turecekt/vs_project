@@ -40,10 +40,10 @@ def test_HeurestickaMetoda():
 # (správně pouze celá čísla 0,1,2,3,4,5,6,7,8,9 ne znaky a písmena to je chyba)
 
 
-'''def test_Vstup():
-    assert Vstup("1") is True
-    assert Vstup("k") is False
-'''
+def test_Vstup():
+    assert Vstup("1") == 1
+    assert Vstup("k") == 0
+
 
 def Vstup(Napsanecislo):
 
@@ -62,11 +62,10 @@ def Vystup(pouzitaMetoda=0):
  
     # Funkce vypíše výstup programu(chybu, je či není prvočíslo; použitá metoda).
 
-    my_str1 ='CHYBA při zadávání. Zadaná hodnota neopodívá formátu,který'
-    my_str2 ='se dá přečíst.Restartuj a zadej přirozené číslo.' 
-    
+
     if (pouzitaMetoda == 0):
-        print(my_str1 + my_str2)
+        print('CHYBA při zadávání. Zadaná hodnota neopodívá formátu,který' +
+              'se dá přečíst.Restartuj a zadej přirozené číslo.')
 
         return
     elif (pouzitaMetoda > 0):
@@ -79,23 +78,18 @@ def Vystup(pouzitaMetoda=0):
 
 # Popis postupů
 
-    my_str3 ='HEURISTICKÁ metoda-Rozpozná číslici 1 a vyřadí ji, číslo není.'
-    my_str4 ='prvočíslo.(číslo musí být dělitelné DVĚMA čísly, samosebou a jedničkou)'
-    my_str5 ='HEURISTICKÁ metoda-pravidla dělitelnosti.Určí neprvočísla, pomocí toho, že číslo '
-    my_str6 ='končí určitým číslem podle,pravidel dělitelnosti, lze vydělit prvočíslem.'
-    my_str7='HEURISTICKÁ metoda-Wilsonova věta. Používá matematický vztah ((n - 1)! + 1) % n'
-    my_str8 ='DETERMINISTICKÁ metoda-Zkouší pokud je číslo dělitelné některým'
-    my_str9 ='z předtím nalezených prvočísel do maximální hodnoty odmocniny'
-    my_str10 ='ze zadaného čísla.Pokud není dělitelné,je to prvočíslo.'
-    
     if (pouzitaMetoda == 1):
-        print(my_str3 + my_str4)
+        print('HEURISTICKÁ metoda-Rozpozná číslici 1 a vyřadí ji, číslo není.' +
+             'prvočíslo.(číslo musí být dělitelné DVĚMA čísly, samosebou a jedničkou)')
     elif (pouzitaMetoda == 2):
-        print(my_str5 + my_str6)
+        print('HEURISTICKÁ metoda-pravidla dělitelnosti.Určí neprvočísla, pomocí toho, že číslo' +
+             'končí určitým číslem podle,pravidel dělitelnosti, lze vydělit prvočíslem.')
     elif (pouzitaMetoda == 3):
-        print(my_str7)
+        print('HEURISTICKÁ metoda-Wilsonova věta. Používá matematický vztah ((n - 1)! + 1) % n')
     elif (pouzitaMetoda == 4):
-        print(my_str8 + my_str9 + my_str10)
+        print('DETERMINISTICKÁ metoda-Zkouší pokud je číslo dělitelné některým' +
+              'z předtím nalezených prvočísel do maximální hodnoty odmocniny' +
+              'ze zadaného čísla.Pokud není dělitelné,je to prvočíslo.')
 
 def Metody(cislo):
 
