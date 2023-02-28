@@ -1,6 +1,7 @@
-#   Funkce test_Metody zjistuje co je použito za metody u kterých čísel.
+"""   Funkce test_Metody zjistuje co je použito za metody u kterých čísel."""
 
 def test_Metody():
+    """Test metod"""
     assert Metody(1) == -1
     assert Metody(36) == -2
     assert Metody(3) == 3
@@ -8,46 +9,35 @@ def test_Metody():
     assert Metody(50013) == -4
     assert Metody(50011) == -4
 
-# Funkce test_MetodaPravidelDelitelnosti určí některá neprvočísla,
-# pomocí toho, že je číslo končí určitým číslem,
-# které podle pravidel dělitelnosti, lze vydělit již prvočíslem.
-# (např. čísla končící na číslo 5 a 0 jdou vždy vydělit 5.
-
 
 def test_MetodaPravidelDelitelnosti():
+    """Funkce určí některá neprvočísla,pomocí toho, že je číslo končí""" +
+    """určitým číslem,které podle pravidel,lze vydělit již prvočíslem."""
     assert MetodaPravidelDelitelnosti(88) is True
     assert MetodaPravidelDelitelnosti(87) is False
 
-# Funkce test_DeterministickaMetoda zjistuje u téhle metody,
-# jestli je číslo prvočíslo = True nebo není = False.
-
 
 def test_DeterministickaMetoda():
-
+    """Funkce zjistuje u téhle metody,jestli je číslo prvočíslo"""
     assert DeterministickaMetoda(50013) is False
     assert DeterministickaMetoda(50011) is False
 
-# Funkce test_HeurestickaMetoda zjistuje u téhle metody,
-# jestli je číslo prvočíslo = True nebo není = False.
-
 
 def test_HeurestickaMetoda():
+    """Funkce zjistuje u téhle metody,jestli je číslo prvočíslo"""
     assert HeurestickaMetoda(17) is True
     assert HeurestickaMetoda(12) is False
     assert HeurestickaMetoda(6) is False
 
-# Funkce test_vstup zjistuje, jestli byl vstup zadán špatně nebo správně
-# (správně pouze celá čísla 0,1,2,3,4,5,6,7,8,9 ne znaky a písmena to je chyba)
-
 
 def test_Vstup():
+    """Zjistuje, správnost vstupu(správně pouze celá čísla 0-9 ne znaky a písmena)"""
     assert Vstup("1") == 1
     assert Vstup("k") == 0
 
 
 def Vstup(Napsanecislo):
     """Funkce získá vstup od uživatele proti chybám."""
-
     for znak in Napsanecislo:
         if not (znak in "0123456789"):
             return 0
@@ -58,9 +48,7 @@ def Vstup(Napsanecislo):
 
 
 def Vystup(pouzitaMetoda=0):
-
-    # Funkce vypíše výstup programu(chybu,je či není prvočíslo;použitá metoda).
-
+    """Funkce vypíše výstup programu(chybu,je či není prvočíslo;použitá metoda)."""
     if (pouzitaMetoda == 0):
         print('CHYBA zadávání. Zadaná hodnota neopodívá formátu,který' +
               'se dá přečíst.Restartuj a zadej přirozené číslo.')
@@ -92,7 +80,7 @@ def Vystup(pouzitaMetoda=0):
 
 
 def Metody(cislo):
-
+    """použita metoda"""
     pouzitaMetoda = 1
     if (cislo <= 1):
         return -pouzitaMetoda
@@ -116,18 +104,13 @@ def Metody(cislo):
 
 
 def MetodaPravidelDelitelnosti(cislo):
-
-    # Je číslo větší jak 9 a zároveň končí čílicí 0,2,4,5,6,8, není prvočíslo.
-
+    """Je číslo větší jak 9 a zároveň končí čílicí 0,2,4,5,6,8, není prvočíslo."""
     return (cislo > 9 and str(cislo)[-1] in "024568")
 
 
 def DeterministickaMetoda(cislo):
-
-    # Pokud číslo není dělitelné prvočísly odmocnina z čísla, pak je prvočíslo.
-
-    # number=int(input("Zadej celé číslo: "))
-    # prvočísla jsou větší než 1
+    """Pokud číslo není dělitelné prvočísly odmocnina z čísla, pak je prvočíslo."""
+    """number=int(input("Zadej celé číslo: "))prvočísla jsou větší než 1"""
     if cislo > 1:
         for i in range(2, cislo):
             if (cislo % i) == 0:
@@ -138,9 +121,7 @@ def DeterministickaMetoda(cislo):
 
 
 def HeurestickaMetoda(o):
-
-    #   Funkce zkouší zjistit prvočíslo Heurestickou metodou ((n-1)!+1)%n.
-
+    """Funkce zkouší zjistit prvočíslo Heurestickou metodou ((n-1)!+1)%n."""
     k = 1
     factorial = 1
     for k in range(1, int(o)):
