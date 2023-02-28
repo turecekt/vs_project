@@ -17,26 +17,26 @@ def test_Metody():
 def test_MetodaPravidelDelitelnosti():
     assert MetodaPravidelDelitelnosti(88) is True
     assert MetodaPravidelDelitelnosti(87) is False
-    
+
 # Funkce test_DeterministickaMetoda zjistuje u téhle metody,
 # jestli je číslo prvočíslo = True nebo není = False.
 
 
 def test_DeterministickaMetoda():
-    
+
     assert DeterministickaMetoda(50013) is False
     assert DeterministickaMetoda(50011) is False
-    
+
 # Funkce test_HeurestickaMetoda zjistuje u téhle metody,
 # jestli je číslo prvočíslo = True nebo není = False.
-    
+
 
 def test_HeurestickaMetoda():
     assert HeurestickaMetoda(17) is True
     assert HeurestickaMetoda(12) is False
     assert HeurestickaMetoda(6) is False
-    
-# Funkce test_vstup zjistuje, jestli byl vstup zadán špatně nebo správně 
+
+# Funkce test_vstup zjistuje, jestli byl vstup zadán špatně nebo správně
 # (správně pouze celá čísla 0,1,2,3,4,5,6,7,8,9 ne znaky a písmena to je chyba)
 
 
@@ -59,12 +59,11 @@ def Vstup(Napsanecislo):
 
 
 def Vystup(pouzitaMetoda=0):
- 
-    # Funkce vypíše výstup programu(chybu, je či není prvočíslo; použitá metoda).
 
+    # Funkce vypíše výstup programu(chybu,je či není prvočíslo;použitá metoda).
 
     if (pouzitaMetoda == 0):
-        print('CHYBA při zadávání. Zadaná hodnota neopodívá formátu,který' +
+        print('CHYBA zadávání. Zadaná hodnota neopodívá formátu,který' +
               'se dá přečíst.Restartuj a zadej přirozené číslo.')
 
         return
@@ -79,37 +78,39 @@ def Vystup(pouzitaMetoda=0):
 # Popis postupů
 
     if (pouzitaMetoda == 1):
-        print('HEURISTICKÁ metoda-Rozpozná číslici 1 a vyřadí ji, číslo není.' +
-             'prvočíslo.(číslo musí být dělitelné DVĚMA čísly, samosebou a jedničkou)')
+        print('HEURISTICKÁ metoda-Rozpozná číslo 1 a vyřadí ho, číslo není' +
+             'prvočíslo.Číslo musí být dělitelné 2 čísly, sebou a jedničkou')
     elif (pouzitaMetoda == 2):
-        print('HEURISTICKÁ metoda-pravidla dělitelnosti.Určí neprvočísla, pomocí toho, že číslo' +
-             'končí určitým číslem podle,pravidel dělitelnosti, lze vydělit prvočíslem.')
+        print('HEURISTICKÁ metoda-pravidla dělitelnosti.Určí neprvočísla,' +
+              'pomocí toho, že číslo končí určitým číslem podle,pravidel' +
+              'dělitelnosti, lze vydělit prvočíslem.')
     elif (pouzitaMetoda == 3):
-        print('HEURISTICKÁ metoda-Wilsonova věta. Používá matematický vztah ((n - 1)! + 1) % n')
+        print('HEURISTICKÁ metoda-Wilsonova věta.Používá vztah n-1!+1%n')
     elif (pouzitaMetoda == 4):
-        print('DETERMINISTICKÁ metoda-Zkouší pokud je číslo dělitelné některým' +
-              'z předtím nalezených prvočísel do maximální hodnoty odmocniny' +
+        print('DETERMINISTICKÁ m.-Zkouší pokud je číslo dělitelné některým' +
+              'z nalezených prvočísel do maximální hodnoty odmocniny' +
               'ze zadaného čísla.Pokud není dělitelné,je to prvočíslo.')
+
 
 def Metody(cislo):
 
     pouzitaMetoda = 1
-    if(cislo <= 1):
+    if (cislo <= 1):
         return -pouzitaMetoda
 
     pouzitaMetoda = 2
-    if(MetodaPravidelDelitelnosti(cislo)):
+    if (MetodaPravidelDelitelnosti(cislo)):
         return -pouzitaMetoda
 
     pouzitaMetoda = 3
-    if(cislo < 40000):
-        if(HeurestickaMetoda(cislo)):
+    if (cislo < 40000):
+        if (HeurestickaMetoda(cislo)):
             return pouzitaMetoda
         else:
             return -pouzitaMetoda
 
     pouzitaMetoda = 4
-    if(DeterministickaMetoda(cislo)):
+    if (DeterministickaMetoda(cislo)):
         return pouzitaMetoda
     else:
         return -pouzitaMetoda
@@ -117,19 +118,18 @@ def Metody(cislo):
 
 def MetodaPravidelDelitelnosti(cislo):
 
-    #Je číslo větší jak 9 a zároveň končí čílicí 0,2,4,5,6,8,tak není prvočíslo.
+    # Je číslo větší jak 9 a zároveň končí čílicí 0,2,4,5,6,8, není prvočíslo.
 
     return (cislo > 9 and str(cislo)[-1] in "024568")
 
 
 def DeterministickaMetoda(cislo):
 
-    # Pokud číslo není dělitelné prvočísly do odmocnina z čísla, pak je prvočíslo.
+    # Pokud číslo není dělitelné prvočísly odmocnina z čísla, pak je prvočíslo.
 
     # number=int(input("Zadej celé číslo: "))
     # prvočísla jsou větší než 1
     if cislo > 1:
-    # omezující podmínky
         for i in range(2, cislo):
             if (cislo % i) == 0:
                 return False
@@ -138,6 +138,7 @@ def DeterministickaMetoda(cislo):
             return True
 
 def HeurestickaMetoda(o):
+
 
     #   Funkce zkouší zjistit prvočíslo Heurestickou metodou ((n-1)!+1)%n.
 
