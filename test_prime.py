@@ -25,23 +25,19 @@ except AssertionError as msg:
     print(msg)
 
 
-def test_DeterministickaMetoda(50013, 50011):
+def test_DeterministickaMetoda():
     """Funkce zjistuje u téhle metody,jestli je číslo prvočíslo"""
     assert DeterministickaMetoda(50013) is False
     assert DeterministickaMetoda(50011) is False
     return test_DeterministickaMetoda
 
-    test_DeterministickaMetoda(50013, 50011)
 
-
-def test_HeurestickaMetoda(17, 12, 6):
+def test_HeurestickaMetoda():
     """Funkce zjistuje u téhle metody,jestli je číslo prvočíslo"""
     assert HeurestickaMetoda(17) is True
     assert HeurestickaMetoda(12) is False
     assert HeurestickaMetoda(6) is False
     return test_HeurestickaMetoda
-
-    test_HeurestickaMetoda(True, False, False)
 
 
 def test_Vstup():
