@@ -9,8 +9,6 @@ def test_Metody():
     assert Metody(8) == -3
     assert Metody(50013) == -4
     assert Metody(50011) == -4
-    pass
-
     print(test_Metody())
 
 
@@ -19,14 +17,14 @@ def test_MetodaPravidelDelitelnosti():
     """určitým číslem,které podle pravidel,lze vydělit již prvočíslem."""
     assert MetodaPravidelDelitelnosti(88) is True
     assert MetodaPravidelDelitelnosti(87) is False
-    return (cislo)
+    return None
 
 
 def test_DeterministickaMetoda():
     """Funkce zjistuje u téhle metody,jestli je číslo prvočíslo"""
     assert DeterministickaMetoda(50013) is False
     assert DeterministickaMetoda(50011) is False
-    return DeterministickaMetoda()
+    return DeterministickaMetoda(cislo)
 
 
 def test_HeurestickaMetoda():
@@ -34,13 +32,14 @@ def test_HeurestickaMetoda():
     assert HeurestickaMetoda(17) is True
     assert HeurestickaMetoda(12) is False
     assert HeurestickaMetoda(6) is False
+    pass
 
 
 def test_Vstup():
     """Správně pouze celá čísla 0-9 ne znaky a písmena)"""
     assert Vstup("1") == 1
     assert Vstup("k") == 0
-    return 0
+    return None
 
 
 def Vstup(Napsanecislo):
