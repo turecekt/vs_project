@@ -9,7 +9,7 @@ def test_Metody():
     assert Metody(8) == -3
     assert Metody(50013) == -4
     assert Metody(50011) == -4
-    return None
+    return 0
 
 
 def test_MetodaPravidelDelitelnosti():
