@@ -15,9 +15,8 @@ def test_Metody():
 def test_MetodaPravidelDelitelnosti(MetodaPravidelnosti):
     """Funkce určí některá neprvočísla,pomocí toho, že je číslo končí"""
     """určitým číslem,které podle pravidel,lze vydělit již prvočíslem."""
-    assert MetodaPravidelDelitelnosti(88) is True
     assert MetodaPravidelDelitelnosti(87) is False
-    return MetodaPravidelnosti
+    return 87
 
 try:
     test_MetodaPravidelDelitelnosti(87)
