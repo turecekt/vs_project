@@ -16,28 +16,32 @@ def test_MetodaPravidelDelitelnosti(MetodaPravidelnosti):
     """Funkce určí některá neprvočísla,pomocí toho, že je číslo končí"""
     """určitým číslem,které podle pravidel,lze vydělit již prvočíslem."""
     assert MetodaPravidelDelitelnosti(88) is True
-    assert MetodaPravidelDelitelnosti(87) is False 'Only positive numbers are allowed'
+    assert MetodaPravidelDelitelnosti(87) is False
     return MetodaPravidelnosti
 
 try:
-    test_MetodaPravidelDelitelnosti(-2)
+    test_MetodaPravidelDelitelnosti(87)
 except AssertionError as msg:
     print(msg)
 
 
-def test_DeterministickaMetoda():
+def test_DeterministickaMetoda(50013, 50011):
     """Funkce zjistuje u téhle metody,jestli je číslo prvočíslo"""
     assert DeterministickaMetoda(50013) is False
     assert DeterministickaMetoda(50011) is False
-    return DeterministickaMetoda(0)
+    return test_DeterministickaMetoda
+
+    test_DeterministickaMetoda(50013, 50011)
 
 
-def test_HeurestickaMetoda():
+def test_HeurestickaMetoda(17, 12, 6):
     """Funkce zjistuje u téhle metody,jestli je číslo prvočíslo"""
     assert HeurestickaMetoda(17) is True
     assert HeurestickaMetoda(12) is False
     assert HeurestickaMetoda(6) is False
-    pass
+    return test_HeurestickaMetoda
+
+    test_HeurestickaMetoda(True, False, False)
 
 
 def test_Vstup():
