@@ -9,15 +9,20 @@ def test_Metody():
     assert Metody(8) == -3
     assert Metody(50013) == -4
     assert Metody(50011) == -4
-    return Metody(1)
+    print ('done')
 
 
-def test_MetodaPravidelDelitelnosti():
+def test_MetodaPravidelDelitelnosti(MetodaPravidelnosti):
     """Funkce určí některá neprvočísla,pomocí toho, že je číslo končí"""
     """určitým číslem,které podle pravidel,lze vydělit již prvočíslem."""
     assert MetodaPravidelDelitelnosti(88) is True
-    assert MetodaPravidelDelitelnosti(87) is False
-    return None
+    assert MetodaPravidelDelitelnosti(87) is False 'Only positive numbers are allowed'
+    return MetodaPravidelnosti
+
+try:
+    test_MetodaPravidelDelitelnosti(-2)
+except AssertionError as msg:
+    print(msg)
 
 
 def test_DeterministickaMetoda():
