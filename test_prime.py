@@ -9,7 +9,7 @@ def test_Metody():
     assert Metody(8) == -3
     assert Metody(50013) == -4
     assert Metody(50011) == -4
-    print(test_Metody())
+    return Metody(1)
 
 
 def test_MetodaPravidelDelitelnosti():
@@ -24,7 +24,7 @@ def test_DeterministickaMetoda():
     """Funkce zjistuje u téhle metody,jestli je číslo prvočíslo"""
     assert DeterministickaMetoda(50013) is False
     assert DeterministickaMetoda(50011) is False
-    return DeterministickaMetoda(cislo)
+    return DeterministickaMetoda(0)
 
 
 def test_HeurestickaMetoda():
