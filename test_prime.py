@@ -2,41 +2,38 @@
 
 
 def test_Metody():
-    """Test metod"""
+    """Test metod."""
     assert Metody(1) == -1
     assert Metody(36) == -2
     assert Metody(3) == 3
     assert Metody(8) == -3
     assert Metody(50013) == -4
     assert Metody(50011) == -4
-    print ('done')
 
 
 def test_MetodaPravidelDelitelnosti():
-    """Funkce určí některá neprvočísla,pomocí toho, že je číslo končí"""
-    """určitým číslem,které podle pravidel,lze vydělit již prvočíslem."""
+    """Test funkce MetodaPravidelDelitelnosti."""
     assert MetodaPravidelDelitelnosti(88) is True
     assert MetodaPravidelDelitelnosti(87) is False
     return 87
 
 
 def test_DeterministickaMetoda():
-    """Funkce zjistuje u téhle metody,jestli je číslo prvočíslo"""
+    """Funkce zjistuje u téhle metody,jestli je číslo prvočíslo."""
     assert DeterministickaMetoda(50013) is False
     assert DeterministickaMetoda(50011) is False
     return test_DeterministickaMetoda
 
 
 def test_HeurestickaMetoda():
-    """Funkce zjistuje u téhle metody,jestli je číslo prvočíslo"""
+    """Funkce zjistuje u téhle metody,jestli je číslo prvočíslo."""
     assert HeurestickaMetoda(17) is True
     assert HeurestickaMetoda(12) is False
     assert HeurestickaMetoda(6) is False
-    return
 
 
 def test_Vstup():
-    """Správně pouze celá čísla 0-9 ne znaky a písmena)"""
+    """Správně pouze celá čísla 0-9 ne znaky a písmena."""
     assert Vstup("1") == 1
     assert Vstup("k") == 0
     return None
@@ -54,7 +51,7 @@ def Vstup(Napsanecislo):
 
 
 def Vystup(pouzitaMetoda=0):
-    """Funkce vypíše výstup(chybu,je či není prvočíslo;použitá metoda)."""
+    """Funkce vypíše výstup chybu,je či není prvočíslo;použitá metoda."""
     if (pouzitaMetoda == 0):
         print('CHYBA zadávání. Zadaná hodnota neopodívá formátu,který' +
               'se dá přečíst.Restartuj a zadej přirozené číslo.')
@@ -86,7 +83,7 @@ def Vystup(pouzitaMetoda=0):
 
 
 def Metody(cislo):
-    """použita metoda"""
+    """použita metoda."""
     pouzitaMetoda = 1
     if (cislo <= 1):
         return -pouzitaMetoda
