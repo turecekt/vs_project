@@ -2,7 +2,7 @@
 
 
 def test_Metody():
-    """Test metod."""
+    """Test všech metod."""
     assert Metody(1) == -1
     assert Metody(36) == -2
     assert Metody(3) == 3
