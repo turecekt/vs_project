@@ -1,4 +1,4 @@
-"""Funkce test_Metody zjistuje co je použito za metody u kterých čísel."""
+"""Funkce test_Metody zjistuje, co je použito za metody u kterých čísel."""
 
 
 def test_Metody():
