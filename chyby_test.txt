@@ -1,0 +1,5 @@
+./morse code/test_RunMorse.py:23:1: D205 1 blank line required between summary line and description
+./morse code/test_RunMorse.py: D209 Multi-line docstring closing quotes should be on a separate line
+./morse code/test_RunMorse.py: D400 First line should end with a period
+./morse code/test_RunMorse.py: D200 One-line docstring should fit on one line with quotes
+Error: Process completed with exit code 1.
