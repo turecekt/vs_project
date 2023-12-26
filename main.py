@@ -11,13 +11,20 @@ class Colors(Enum):
     black = 5
 
 
-def koch(a, order):
+def koch(a, order, instr=None):
+    if instr is None:
+        instr = []
+
     if order > 0:
         for t in [60, -120, 60, 0]:
-            koch(a / 3, order - 1)
+            koch(a / 3, order - 1, instr)
             left(t)
+            instr.append(('left', t))
     else:
         forward(a)
+        instr.append(('forward', a))
+
+    return instr
 
 def getColor(num):
     match num:
@@ -31,6 +38,38 @@ def getColor(num):
             return "yellow"
         case 5:
             return "black"
+        case 6:
+            return "white"
+
+def drawSnowflake(iteration, line, background ):
+    pencolor(getColor(line))
+    bgcolor(getColor(background))
+    size = 400
+
+    # Ensure snowflake is center
+    penup()
+    backward(size / 1.732)
+    left(30)
+    pendown()
+
+    # Make it fast
+    tracer(100)
+    hideturtle()
+    speed(0)
+    begin_fill()
+
+    # Three Koch curves
+    instruction = []
+    for i in range(3):
+        koch(size, iteration)
+        right(120)
+
+    end_fill()
+
+    # Make the last parts appear
+    update()
+
+    exitonclick()
 
 
 if __name__ == "__main__":
@@ -59,32 +98,4 @@ if __name__ == "__main__":
         line = 6
         background = 1
 
-
-    # Choose colours and size
-    pencolor(getColor(line))
-    bgcolor(getColor(background))
-    size = 400
-
-    # Ensure snowflake is center
-    penup()
-    backward(size / 1.732)
-    left(30)
-    pendown()
-
-    # Make it fast
-    tracer(100)
-    hideturtle()
-    speed(0)
-    begin_fill()
-
-    # Three Koch curves
-    for i in range(3):
-        koch(size, iteration)
-        right(120)
-
-    end_fill()
-
-    # Make the last parts appear
-    update()
-
-    exitonclick()
+    drawSnowflake(iteration, line, background)
