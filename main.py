@@ -3,15 +3,18 @@ from turtle import *
 from enum import Enum
 
 
-class Colors(Enum):
-    blue = 1
-    red = 2
-    green = 3
-    yellow = 4
-    black = 5
-
 
 def koch(a, order, instr=None):
+    """ Function contains algorithm that draws one side of Koch's snowflake
+
+    Args:
+        a (int): Size
+        order (int): Number of Koch's snowflake iteration 
+        instr (List[Tuple[str, int]]): List of turtle instruction
+
+    Returns:
+        List[Tuple[str, int]]: _description_
+    """
     if instr is None:
         instr = []
 
@@ -26,7 +29,16 @@ def koch(a, order, instr=None):
 
     return instr
 
+
 def getColor(num):
+    """ Function contains case returning color string 
+
+    Args:
+        num (int): Number assigned to a specific color
+
+    Returns:
+        string: Name of color 
+    """
     match num:
         case 1:
             return "blue"
@@ -41,18 +53,29 @@ def getColor(num):
         case 6:
             return "white"
 
-def drawSnowflake(iteration, line, background ):
+
+def drawSnowflake(iteration, line, background):
+    """ Function sets up snowflake parameters, starting position and puts together all 3 sides of Koch's snowflake
+
+    Args:
+        iteration (int): Number of Koch's snowflake iteration 
+        line (string): Color of snowflake 
+        background (string): Color of background
+    """
+    
     pencolor(getColor(line))
     bgcolor(getColor(background))
+    fillcolor('white')
+    width(2)
     size = 400
 
-    # Ensure snowflake is center
+    # Centers snowflake
     penup()
     backward(size / 1.732)
     left(30)
     pendown()
 
-    # Make it fast
+    # Makes turtle run faster
     tracer(100)
     hideturtle()
     speed(0)
@@ -66,7 +89,6 @@ def drawSnowflake(iteration, line, background ):
 
     end_fill()
 
-    # Make the last parts appear
     update()
 
     exitonclick()
@@ -75,25 +97,30 @@ def drawSnowflake(iteration, line, background ):
 if __name__ == "__main__":
     if len(sys.argv) > 1:
         iteration = int(sys.argv[1])
+        if iteration > 9:
+            iteration = 9
+        if iteration < 0:
+            iteration = 0
 
         print("Choose line color:")
-        print("1. Blue")
-        print("2. Red")
-        print("3. Green")
-        print("4. Yellow")
-        print("5. Black")
-        print("6. White")
+        print("Blue = 1")
+        print("Red = 2")
+        print("Green = 3")
+        print("Yellow = 4")
+        print("Black = 5")
+        print("White = 6")
         line = int(input("Enter your choice: "))
 
         print("Choose background color:")
-        print("1. Blue")
-        print("2. Red")
-        print("3. Green")
-        print("4. Yellow")
-        print("5. Black")
-        print("6. White")
+        print("Blue = 1")
+        print("Red = 2")
+        print("Green = 3")
+        print("Yellow = 4")
+        print("Black = 5")
+        print("White = 6")
         background = int(input("Enter your choice: "))
     else:
+        # Defalut configuration
         iteration = 4
         line = 6
         background = 1
