@@ -1,4 +1,4 @@
-Zadání:
+## Zadání:
 
         Kochova křivka
 
@@ -12,9 +12,10 @@ Zadání:
     VÝSTUP
     • Vykreslení a zobrazení Kochovy vločky
 
-Spuštění:
-• Program se spouští s argumentem udávajícím počet iterací Kochovy křivky (Omezeno z důvodu pomalého vykreslování iteracích vyšších než 9)
-• python main.py x => {x ∈ Z ∣ 0 ≤ x ≤ 9}
-• Následné vepsání čísel reprezentující barvy z výčtu na vstupu
-• Nejprve barvu čáry a následně barvu pozadí
-• Program lze ukončit klikem na okno s Kochovou vločkou
+## Spuštění:
+
+- Program se spouští s argumentem udávajícím počet iterací Kochovy křivky (Omezeno z důvodu pomalého vykreslování iteracích vyšších než 9)
+- python main.py x => {x ∈ Z ∣ 0 ≤ x ≤ 9}
+- Následné vepsání čísel reprezentující barvy z výčtu na vstupu
+- Nejprve barvu čáry a následně barvu pozadí
+- Program lze ukončit klikem na okno s Kochovou vločkou
