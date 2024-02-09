@@ -1,3 +1,8 @@
+"""This is the "example" module.
+
+The example module supplies functions for math computation.
+"""
+
 import sys
 from turtle import *
 from enum import Enum
@@ -5,15 +10,15 @@ from enum import Enum
 
 
 def koch(a, order, instr=None):
-    """ Function contains algorithm that draws one side of Koch's snowflake
+    """Generates instructions for drawing one side of Koch's snowflake.
 
-    Args:
-        a (int): Size
-        order (int): Number of Koch's snowflake iteration 
-        instr (List[Tuple[str, int]]): List of turtle instruction
+    :param a: Size of the side.
+    :param order: Number of iterations for Koch's snowflake.
+    :param instr: List of turtle instructions.
+    :return: List of turtle instructions for drawing one side of Koch's snowflake.
 
-    Returns:
-        List[Tuple[str, int]]: _description_
+    >>> koch(400, 0)
+    [('forward', 400)]
     """
     if instr is None:
         instr = []
@@ -21,23 +26,21 @@ def koch(a, order, instr=None):
     if order > 0:
         for t in [60, -120, 60, 0]:
             koch(a / 3, order - 1, instr)
-            left(t)
             instr.append(('left', t))
     else:
-        forward(a)
         instr.append(('forward', a))
 
     return instr
 
 
 def getColor(num):
-    """ Function contains case returning color string 
+    """Returns the name of a color based on the provided number.
 
-    Args:
-        num (int): Number assigned to a specific color
+    :param num: Number assigned to a specific color.
+    :return: Name of the color.
 
-    Returns:
-        string: Name of color 
+    >>> getColor(5)
+    "black"
     """
     match num:
         case 1:
@@ -55,12 +58,11 @@ def getColor(num):
 
 
 def drawSnowflake(iteration, line, background):
-    """ Function sets up snowflake parameters, starting position and puts together all 3 sides of Koch's snowflake
+    """Sets up snowflake parameters and draws Koch's snowflake.
 
-    Args:
-        iteration (int): Number of Koch's snowflake iteration 
-        line (string): Color of snowflake 
-        background (string): Color of background
+    :param iteration: Number of iterations for Koch's snowflake.
+    :param line: Color of the snowflake.
+    :param background: Color of the background.
     """
     
     pencolor(getColor(line))
@@ -84,7 +86,12 @@ def drawSnowflake(iteration, line, background):
     # Three Koch curves
     instruction = []
     for i in range(3):
-        koch(size, iteration)
+        instructions = koch(size, iteration)
+        for instr in instructions:
+            if instr[0] == 'left':
+                left(instr[1])  # Execute left turn
+            elif instr[0] == 'forward':
+                forward(instr[1])  # Execute forward movement
         right(120)
 
     end_fill()

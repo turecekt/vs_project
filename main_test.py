@@ -3,16 +3,20 @@ from main import *
 
 
 class TestKochFunction(unittest.TestCase):
+    """Unit tests for the Koch function in the main module checks correctness of instructions"""
 
     def test_koch_order_0(self):
-        # Test for order 0
-        expected_instructions = [('forward', 400)]  # Replace with the expected instructions for order 0
+        """This test checks if the Koch function returns the expected instructions for order 0.
+        """
+        expected_instructions = [('forward', 400)]
 
         generated_instructions = koch(400, 0)
 
         self.assertEqual(generated_instructions, expected_instructions)
 
     def test_koch_order_1(self):
+        """This test checks if the Koch function returns the expected instructions for order 1.
+        """
         # Test for order 1
         expected_instructions = [('forward', 133.33333333333334), ('left', 60), ('forward', 133.33333333333334),
                                  ('left', -120), ('forward', 133.33333333333334), ('left', 60),
@@ -23,6 +27,8 @@ class TestKochFunction(unittest.TestCase):
         self.assertEqual(generated_instructions, expected_instructions)
 
     def test_koch_order_2(self):
+        """This test checks if the Koch function returns the expected instructions for order 2.
+        """
         # Test for order 1
         expected_instructions = [('forward', 44.44444444444445), ('left', 60), ('forward', 44.44444444444445),
                                  ('left', -120), ('forward', 44.44444444444445), ('left', 60),
@@ -43,23 +49,48 @@ class TestKochFunction(unittest.TestCase):
 
 
 class TestGetColorFunction(unittest.TestCase):
+    """Unit tests for the getColor function in the main module."""
 
     def test_get_color_blue(self):
+        """Test for color 'blue'.
+
+        Checks if the getColor function returns 'blue' for the input value 1.
+        """
         self.assertEqual(getColor(1), "blue")
 
     def test_get_color_red(self):
+        """Test for color 'blue'.
+
+        Checks if the getColor function returns 'red' for the input value 2.
+        """
         self.assertEqual(getColor(2), "red")
 
     def test_get_color_red(self):
+        """Test for color 'blue'.
+
+        Checks if the getColor function returns 'green' for the input value 3.
+        """
         self.assertEqual(getColor(3), "green")
 
     def test_get_color_red(self):
+        """Test for color 'blue'.
+
+        Checks if the getColor function returns 'yellow' for the input value 4.
+        """
         self.assertEqual(getColor(4), "yellow")
 
     def test_get_color_red(self):
+        """Test for color 'blue'.
+
+        Checks if the getColor function returns 'black' for the input value 5.
+        """
         self.assertEqual(getColor(5), "black")
 
     def test_get_color_red(self):
+        """Test for color 'blue'.
+
+        Checks if the getColor function returns 'white' for the input value 6.
+        """
         self.assertEqual(getColor(6), "white")
 
 
