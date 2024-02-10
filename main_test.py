@@ -8,7 +8,7 @@ from main import koch, getColor
 
 
 class TestKochFunction(unittest.TestCase):
-    """Unit tests for the Koch function checks correctness of instructions"""
+    """Unit tests for the Koch function checks correctness of instructions."""
 
     def test_koch_order_0(self):
         """Test checks Koch function instructions for order 0."""

@@ -7,7 +7,7 @@ import sys
 
 
 def koch(a, order, instr=None):
-    """Generates instructions for drawing one side of Koch's snowflake.
+    """Generate instructions for drawing one side of Koch's snowflake.
 
     :param a: Size of the side.
     :param order: Number of iterations for Koch's snowflake.
@@ -31,7 +31,7 @@ def koch(a, order, instr=None):
 
 
 def getColor(num):
-    """Returns the name of a color based on the provided number.
+    """Return the name of a color based on the provided number.
 
     :param num: Number assigned to a specific color.
     :return: Name of the color.
@@ -55,13 +55,12 @@ def getColor(num):
 
 
 def drawSnowflake(iteration, line, background):
-    """Sets up snowflake parameters and draws Koch's snowflake.
+    """Set up snowflake parameters and draws Koch's snowflake.
 
     :param iteration: Number of iterations for Koch's snowflake.
     :param line: Color of the snowflake.
     :param background: Color of the background.
     """
-
     import turtle
     turtle.pencolor(getColor(line))
     turtle.bgcolor(getColor(background))
