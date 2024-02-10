@@ -20,10 +20,10 @@ class TestKochFunction(unittest.TestCase):
 
     def test_koch_order_1(self):
         """Test checks Koch function instructions for order 1."""
-        e_i = [('forward', 133.33333333333334), ('left', 60)
-            , ('forward', 133.33333333333334),
-            ('left', -120), ('forward', 133.33333333333334), ('left', 60),
-            ('forward', 133.33333333333334), ('left', 0)]
+        e_i = [('forward', 133.33333333333334), ('left', 60),
+               ('forward', 133.33333333333334),
+               ('left', -120), ('forward', 133.33333333333334), ('left', 60),
+               ('forward', 133.33333333333334), ('left', 0)]
 
         generated_instructions = koch(400, 1)
 
@@ -31,29 +31,29 @@ class TestKochFunction(unittest.TestCase):
 
     def test_koch_order_2(self):
         """Test checks Koch function instructions for order 2."""
-        e_i = [('forward', 44.44444444444445), ('left', 60), 
-            ('forward', 44.44444444444445),
-            ('left', -120), ('forward', 44.44444444444445), 
-            ('left', 60),
-            ('forward', 44.44444444444445), ('left', 0), 
-            ('left', 60),
-            ('forward', 44.44444444444445), ('left', 60), 
-            ('forward', 44.44444444444445),
-            ('left', -120), ('forward', 44.44444444444445), 
-            ('left', 60),
-            ('forward', 44.44444444444445), ('left', 0), 
-            ('left', -120),
-            ('forward', 44.44444444444445), ('left', 60), 
-            ('forward', 44.44444444444445),
-            ('left', -120), ('forward', 44.44444444444445), 
-            ('left', 60),
-            ('forward', 44.44444444444445), ('left', 0), 
-            ('left', 60),
-            ('forward', 44.44444444444445), ('left', 60), 
-            ('forward', 44.44444444444445),
-            ('left', -120), ('forward', 44.44444444444445), 
-            ('left', 60),
-            ('forward', 44.44444444444445), ('left', 0), ('left', 0)]
+        e_i = [('forward', 44.44444444444445), ('left', 60),
+               ('forward', 44.44444444444445),
+               ('left', -120), ('forward', 44.44444444444445),
+               ('left', 60),
+               ('forward', 44.44444444444445), ('left', 0),
+               ('left', 60),
+               ('forward', 44.44444444444445), ('left', 60),
+               ('forward', 44.44444444444445),
+               ('left', -120), ('forward', 44.44444444444445),
+               ('left', 60),
+               ('forward', 44.44444444444445), ('left', 0),
+               ('left', -120),
+               ('forward', 44.44444444444445), ('left', 60),
+               ('forward', 44.44444444444445),
+               ('left', -120), ('forward', 44.44444444444445),
+               ('left', 60),
+               ('forward', 44.44444444444445), ('left', 0),
+               ('left', 60),
+               ('forward', 44.44444444444445), ('left', 60),
+               ('forward', 44.44444444444445),
+               ('left', -120), ('forward', 44.44444444444445),
+               ('left', 60),
+               ('forward', 44.44444444444445), ('left', 0), ('left', 0)]
 
         generated_instructions = koch(400, 2)
 
@@ -61,22 +61,22 @@ class TestKochFunction(unittest.TestCase):
 
     def test_koch_order_3(self):
         """Test checks Koch function instructions for order 3."""
-        e_i = [('forward', 44.44444444444445), ('left', 60), 
+        e_i = [('forward', 44.44444444444445), ('left', 60),
                ('forward', 44.44444444444445),
-            ('left', -120), ('forward', 44.44444444444445), ('left', 60),
-            ('forward', 44.44444444444445), ('left', 0), ('left', 60),
-            ('forward', 44.44444444444445), ('left', 60), 
-            ('forward', 44.44444444444445),
-            ('left', -120), ('forward', 44.44444444444445), ('left', 60),
-            ('forward', 44.44444444444445), ('left', 0), ('left', -120),
-            ('forward', 44.44444444444445), ('left', 60), 
-            ('forward', 44.44444444444445),
-            ('left', -120), ('forward', 44.44444444444445), ('left', 60),
-            ('forward', 44.44444444444445), ('left', 0), ('left', 60),
-            ('forward', 44.44444444444445), ('left', 60), 
-            ('forward', 44.44444444444445),
-            ('left', -120), ('forward', 44.44444444444445), ('left', 60),
-            ('forward', 44.44444444444445), ('left', 0), ('left', 0)]
+               ('left', -120), ('forward', 44.44444444444445), ('left', 60),
+               ('forward', 44.44444444444445), ('left', 0), ('left', 60),
+               ('forward', 44.44444444444445), ('left', 60),
+               ('forward', 44.44444444444445),
+               ('left', -120), ('forward', 44.44444444444445), ('left', 60),
+               ('forward', 44.44444444444445), ('left', 0), ('left', -120),
+               ('forward', 44.44444444444445), ('left', 60),
+               ('forward', 44.44444444444445),
+               ('left', -120), ('forward', 44.44444444444445), ('left', 60),
+               ('forward', 44.44444444444445), ('left', 0), ('left', 60),
+               ('forward', 44.44444444444445), ('left', 60),
+               ('forward', 44.44444444444445),
+               ('left', -120), ('forward', 44.44444444444445), ('left', 60),
+               ('forward', 44.44444444444445), ('left', 0), ('left', 0)]
 
         generated_instructions = koch(400, 3)
 
@@ -84,22 +84,22 @@ class TestKochFunction(unittest.TestCase):
 
     def test_koch_order_4(self):
         """Test checks Koch function instructions for order 4."""
-        e_i = [('forward', 44.44444444444445), ('left', 60), 
+        e_i = [('forward', 44.44444444444445), ('left', 60),
                ('forward', 44.44444444444445),
-                ('left', -120), ('forward', 44.44444444444445), ('left', 60),
-                ('forward', 44.44444444444445), ('left', 0), ('left', 60),
-                ('forward', 44.44444444444445), ('left', 60), 
-                ('forward', 44.44444444444445),
-                ('left', -120), ('forward', 44.44444444444445), ('left', 60),
-                ('forward', 44.44444444444445), ('left', 0), ('left', -120),
-                ('forward', 44.44444444444445), ('left', 60), 
-                ('forward', 44.44444444444445),
-                ('left', -120), ('forward', 44.44444444444445), ('left', 60),
-                ('forward', 44.44444444444445), ('left', 0), ('left', 60),
-                ('forward', 44.44444444444445), ('left', 60), 
-                ('forward', 44.44444444444445),
-                ('left', -120), ('forward', 44.44444444444445), ('left', 60),
-                ('forward', 44.44444444444445), ('left', 0), ('left', 0)]
+               ('left', -120), ('forward', 44.44444444444445), ('left', 60),
+               ('forward', 44.44444444444445), ('left', 0), ('left', 60),
+               ('forward', 44.44444444444445), ('left', 60),
+               ('forward', 44.44444444444445),
+               ('left', -120), ('forward', 44.44444444444445), ('left', 60),
+               ('forward', 44.44444444444445), ('left', 0), ('left', -120),
+               ('forward', 44.44444444444445), ('left', 60),
+               ('forward', 44.44444444444445),
+               ('left', -120), ('forward', 44.44444444444445), ('left', 60),
+               ('forward', 44.44444444444445), ('left', 0), ('left', 60),
+               ('forward', 44.44444444444445), ('left', 60),
+               ('forward', 44.44444444444445),
+               ('left', -120), ('forward', 44.44444444444445), ('left', 60),
+               ('forward', 44.44444444444445), ('left', 0), ('left', 0)]
 
         generated_instructions = koch(400, 4)
 

@@ -61,7 +61,7 @@ def drawSnowflake(iteration, line, background):
     :param line: Color of the snowflake.
     :param background: Color of the background.
     """
- 
+
     import turtle
     turtle.pencolor(getColor(line))
     turtle.bgcolor(getColor(background))
