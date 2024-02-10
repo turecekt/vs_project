@@ -6,14 +6,13 @@ Draws Koch's snowflake according to user input
 import sys
 
 
-
 def koch(a, order, instr=None):
     """Generates instructions for drawing one side of Koch's snowflake.
 
     :param a: Size of the side.
     :param order: Number of iterations for Koch's snowflake.
     :param instr: List of turtle instructions.
-    :return: List of turtle instructions for drawing one side of Koch's snowflake.
+    :return: List of turtle instructions for drawing of Koch's snowflake.
 
     >>> koch(400, 0)
     [('forward', 400)]
@@ -62,7 +61,7 @@ def drawSnowflake(iteration, line, background):
     :param line: Color of the snowflake.
     :param background: Color of the background.
     """
-    #from turtle import *
+ 
     import turtle
     turtle.pencolor(getColor(line))
     turtle.bgcolor(getColor(background))

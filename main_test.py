@@ -8,82 +8,102 @@ from main import koch, getColor
 
 
 class TestKochFunction(unittest.TestCase):
-    """Unit tests for the Koch function in the main module checks correctness of instructions""" 
+    """Unit tests for the Koch function checks correctness of instructions"""
 
     def test_koch_order_0(self):
-        """This test checks if the Koch function returns the expected instructions for order 0."""
-        expected_instructions = [('forward', 400)]
+        """Test checks Koch function instructions for order 0."""
+        e_i = [('forward', 400)]
 
         generated_instructions = koch(400, 0)
 
-        self.assertEqual(generated_instructions, expected_instructions)
+        self.assertEqual(generated_instructions, e_i)
 
     def test_koch_order_1(self):
-        """This test checks if the Koch function returns the expected instructions for order 1."""
-        expected_instructions = [('forward', 133.33333333333334), ('left', 60), ('forward', 133.33333333333334),
-                                 ('left', -120), ('forward', 133.33333333333334), ('left', 60),
-                                 ('forward', 133.33333333333334), ('left', 0)]
+        """Test checks Koch function instructions for order 1."""
+        e_i = [('forward', 133.33333333333334), ('left', 60)
+            , ('forward', 133.33333333333334),
+            ('left', -120), ('forward', 133.33333333333334), ('left', 60),
+            ('forward', 133.33333333333334), ('left', 0)]
 
         generated_instructions = koch(400, 1)
 
-        self.assertEqual(generated_instructions, expected_instructions)
+        self.assertEqual(generated_instructions, e_i)
 
     def test_koch_order_2(self):
-        """This test checks if the Koch function returns the expected instructions for order 2."""
-        expected_instructions = [('forward', 44.44444444444445), ('left', 60), ('forward', 44.44444444444445),
-                                 ('left', -120), ('forward', 44.44444444444445), ('left', 60),
-                                 ('forward', 44.44444444444445), ('left', 0), ('left', 60),
-                                 ('forward', 44.44444444444445), ('left', 60), ('forward', 44.44444444444445),
-                                 ('left', -120), ('forward', 44.44444444444445), ('left', 60),
-                                 ('forward', 44.44444444444445), ('left', 0), ('left', -120),
-                                 ('forward', 44.44444444444445), ('left', 60), ('forward', 44.44444444444445),
-                                 ('left', -120), ('forward', 44.44444444444445), ('left', 60),
-                                 ('forward', 44.44444444444445), ('left', 0), ('left', 60),
-                                 ('forward', 44.44444444444445), ('left', 60), ('forward', 44.44444444444445),
-                                 ('left', -120), ('forward', 44.44444444444445), ('left', 60),
-                                 ('forward', 44.44444444444445), ('left', 0), ('left', 0)]
+        """Test checks Koch function instructions for order 2."""
+        e_i = [('forward', 44.44444444444445), ('left', 60), 
+            ('forward', 44.44444444444445),
+            ('left', -120), ('forward', 44.44444444444445), 
+            ('left', 60),
+            ('forward', 44.44444444444445), ('left', 0), 
+            ('left', 60),
+            ('forward', 44.44444444444445), ('left', 60), 
+            ('forward', 44.44444444444445),
+            ('left', -120), ('forward', 44.44444444444445), 
+            ('left', 60),
+            ('forward', 44.44444444444445), ('left', 0), 
+            ('left', -120),
+            ('forward', 44.44444444444445), ('left', 60), 
+            ('forward', 44.44444444444445),
+            ('left', -120), ('forward', 44.44444444444445), 
+            ('left', 60),
+            ('forward', 44.44444444444445), ('left', 0), 
+            ('left', 60),
+            ('forward', 44.44444444444445), ('left', 60), 
+            ('forward', 44.44444444444445),
+            ('left', -120), ('forward', 44.44444444444445), 
+            ('left', 60),
+            ('forward', 44.44444444444445), ('left', 0), ('left', 0)]
 
         generated_instructions = koch(400, 2)
 
-        self.assertEqual(generated_instructions, expected_instructions)
+        self.assertEqual(generated_instructions, e_i)
 
     def test_koch_order_3(self):
-        """This test checks if the Koch function returns the expected instructions for order 3."""
-        expected_instructions = [('forward', 44.44444444444445), ('left', 60), ('forward', 44.44444444444445),
-                                 ('left', -120), ('forward', 44.44444444444445), ('left', 60),
-                                 ('forward', 44.44444444444445), ('left', 0), ('left', 60),
-                                 ('forward', 44.44444444444445), ('left', 60), ('forward', 44.44444444444445),
-                                 ('left', -120), ('forward', 44.44444444444445), ('left', 60),
-                                 ('forward', 44.44444444444445), ('left', 0), ('left', -120),
-                                 ('forward', 44.44444444444445), ('left', 60), ('forward', 44.44444444444445),
-                                 ('left', -120), ('forward', 44.44444444444445), ('left', 60),
-                                 ('forward', 44.44444444444445), ('left', 0), ('left', 60),
-                                 ('forward', 44.44444444444445), ('left', 60), ('forward', 44.44444444444445),
-                                 ('left', -120), ('forward', 44.44444444444445), ('left', 60),
-                                 ('forward', 44.44444444444445), ('left', 0), ('left', 0)]
+        """Test checks Koch function instructions for order 3."""
+        e_i = [('forward', 44.44444444444445), ('left', 60), 
+               ('forward', 44.44444444444445),
+            ('left', -120), ('forward', 44.44444444444445), ('left', 60),
+            ('forward', 44.44444444444445), ('left', 0), ('left', 60),
+            ('forward', 44.44444444444445), ('left', 60), 
+            ('forward', 44.44444444444445),
+            ('left', -120), ('forward', 44.44444444444445), ('left', 60),
+            ('forward', 44.44444444444445), ('left', 0), ('left', -120),
+            ('forward', 44.44444444444445), ('left', 60), 
+            ('forward', 44.44444444444445),
+            ('left', -120), ('forward', 44.44444444444445), ('left', 60),
+            ('forward', 44.44444444444445), ('left', 0), ('left', 60),
+            ('forward', 44.44444444444445), ('left', 60), 
+            ('forward', 44.44444444444445),
+            ('left', -120), ('forward', 44.44444444444445), ('left', 60),
+            ('forward', 44.44444444444445), ('left', 0), ('left', 0)]
 
         generated_instructions = koch(400, 3)
 
-        self.assertNotEqual(generated_instructions, expected_instructions)
+        self.assertNotEqual(generated_instructions, e_i)
 
     def test_koch_order_4(self):
-        """This test checks if the Koch function returns the expected instructions for order 4."""
-        expected_instructions = [('forward', 44.44444444444445), ('left', 60), ('forward', 44.44444444444445),
-                                 ('left', -120), ('forward', 44.44444444444445), ('left', 60),
-                                 ('forward', 44.44444444444445), ('left', 0), ('left', 60),
-                                 ('forward', 44.44444444444445), ('left', 60), ('forward', 44.44444444444445),
-                                 ('left', -120), ('forward', 44.44444444444445), ('left', 60),
-                                 ('forward', 44.44444444444445), ('left', 0), ('left', -120),
-                                 ('forward', 44.44444444444445), ('left', 60), ('forward', 44.44444444444445),
-                                 ('left', -120), ('forward', 44.44444444444445), ('left', 60),
-                                 ('forward', 44.44444444444445), ('left', 0), ('left', 60),
-                                 ('forward', 44.44444444444445), ('left', 60), ('forward', 44.44444444444445),
-                                 ('left', -120), ('forward', 44.44444444444445), ('left', 60),
-                                 ('forward', 44.44444444444445), ('left', 0), ('left', 0)]
+        """Test checks Koch function instructions for order 4."""
+        e_i = [('forward', 44.44444444444445), ('left', 60), 
+               ('forward', 44.44444444444445),
+                ('left', -120), ('forward', 44.44444444444445), ('left', 60),
+                ('forward', 44.44444444444445), ('left', 0), ('left', 60),
+                ('forward', 44.44444444444445), ('left', 60), 
+                ('forward', 44.44444444444445),
+                ('left', -120), ('forward', 44.44444444444445), ('left', 60),
+                ('forward', 44.44444444444445), ('left', 0), ('left', -120),
+                ('forward', 44.44444444444445), ('left', 60), 
+                ('forward', 44.44444444444445),
+                ('left', -120), ('forward', 44.44444444444445), ('left', 60),
+                ('forward', 44.44444444444445), ('left', 0), ('left', 60),
+                ('forward', 44.44444444444445), ('left', 60), 
+                ('forward', 44.44444444444445),
+                ('left', -120), ('forward', 44.44444444444445), ('left', 60),
+                ('forward', 44.44444444444445), ('left', 0), ('left', 0)]
 
         generated_instructions = koch(400, 4)
 
-        self.assertNotEqual(generated_instructions, expected_instructions)
+        self.assertNotEqual(generated_instructions, e_i)
 
 
 class TestGetColorFunction(unittest.TestCase):
