@@ -1,10 +1,9 @@
-"""This is the "example" module.
+"""This is the "main" module.
 
-The example module supplies functions for math computation.
+Draws Koch's snowflake according to user input
 """
 
 import sys
-from enum import Enum
 
 
 
