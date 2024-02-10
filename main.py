@@ -4,7 +4,6 @@ The example module supplies functions for math computation.
 """
 
 import sys
-from turtle import *
 from enum import Enum
 
 
@@ -64,24 +63,25 @@ def drawSnowflake(iteration, line, background):
     :param line: Color of the snowflake.
     :param background: Color of the background.
     """
-    
-    pencolor(getColor(line))
-    bgcolor(getColor(background))
-    fillcolor('white')
-    width(2)
+    #from turtle import *
+    import turtle
+    turtle.pencolor(getColor(line))
+    turtle.bgcolor(getColor(background))
+    turtle.fillcolor('white')
+    turtle.width(2)
     size = 400
 
     # Centers snowflake
-    penup()
-    backward(size / 1.732)
-    left(30)
-    pendown()
+    turtle.penup()
+    turtle.backward(size / 1.732)
+    turtle.left(30)
+    turtle.pendown()
 
     # Makes turtle run faster
-    tracer(100)
-    hideturtle()
-    speed(0)
-    begin_fill()
+    turtle.tracer(100)
+    turtle.hideturtle()
+    turtle.speed(0)
+    turtle.begin_fill()
 
     # Three Koch curves
     instruction = []
@@ -89,16 +89,16 @@ def drawSnowflake(iteration, line, background):
         instructions = koch(size, iteration)
         for instr in instructions:
             if instr[0] == 'left':
-                left(instr[1])  # Execute left turn
+                turtle.left(instr[1])  # Execute left turn
             elif instr[0] == 'forward':
-                forward(instr[1])  # Execute forward movement
-        right(120)
+                turtle.forward(instr[1])  # Execute forward movement
+        turtle.right(120)
 
-    end_fill()
+    turtle.end_fill()
 
-    update()
+    turtle.update()
 
-    exitonclick()
+    turtle.exitonclick()
 
 
 if __name__ == "__main__":
