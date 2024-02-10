@@ -4,11 +4,11 @@ Contains unit tests for main.py
 """
 
 import unittest
-from main import *
+from main import koch, getColor
 
 
 class TestKochFunction(unittest.TestCase):
-    """Unit tests for the Koch function in the main module checks correctness of instructions"""
+    """Unit tests for the Koch function in the main module checks correctness of instructions""" 
 
     def test_koch_order_0(self):
         """This test checks if the Koch function returns the expected instructions for order 0."""
@@ -97,35 +97,35 @@ class TestGetColorFunction(unittest.TestCase):
         self.assertEqual(getColor(1), "blue")
 
     def test_get_color_red(self):
-        """Test for color 'blue'.
+        """Test for color 'red'.
 
         Checks if the getColor function returns 'red' for the input value 2.
         """
         self.assertEqual(getColor(2), "red")
 
-    def test_get_color_red(self):
-        """Test for color 'blue'.
+    def test_get_color_green(self):
+        """Test for color 'green'.
 
         Checks if the getColor function returns 'green' for the input value 3.
         """
         self.assertEqual(getColor(3), "green")
 
-    def test_get_color_red(self):
-        """Test for color 'blue'.
+    def test_get_color_yellow(self):
+        """Test for color 'yellow'.
 
         Checks if the getColor function returns 'yellow' for the input value 4.
         """
         self.assertEqual(getColor(4), "yellow")
 
-    def test_get_color_red(self):
-        """Test for color 'blue'.
+    def test_get_color_black(self):
+        """Test for color 'black'.
 
         Checks if the getColor function returns 'black' for the input value 5.
         """
         self.assertEqual(getColor(5), "black")
 
-    def test_get_color_red(self):
-        """Test for color 'blue'.
+    def test_get_color_white(self):
+        """Test for color 'white'.
 
         Checks if the getColor function returns 'white' for the input value 6.
         """

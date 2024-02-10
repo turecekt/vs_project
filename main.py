@@ -83,7 +83,6 @@ def drawSnowflake(iteration, line, background):
     turtle.begin_fill()
 
     # Three Koch curves
-    instruction = []
     for i in range(3):
         instructions = koch(size, iteration)
         for instr in instructions:
