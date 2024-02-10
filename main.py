@@ -40,7 +40,7 @@ def getColor(num):
     :return: Name of the color.
 
     >>> getColor(5)
-    "black"
+    'black'
     """
     match num:
         case 1:
