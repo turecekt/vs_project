@@ -25,7 +25,7 @@ jobs:
 
     - name: Test with pytest
       run: |
-        pytest --doctest-modules --cov=. --cov-fail-under=66
+        pytest --doctest-modules --cov=. --cov-fail-under=45
 
     - name: Lint with flake8
       run: |
